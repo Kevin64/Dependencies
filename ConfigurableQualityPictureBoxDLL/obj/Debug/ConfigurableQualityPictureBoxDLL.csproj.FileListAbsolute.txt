@@ -1,0 +1,6 @@
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\bin\Debug\ConfigurableQualityPictureBoxDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\bin\Debug\ConfigurableQualityPictureBoxDLL.pdb
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\obj\Debug\ConfigurableQualityPictureBoxDLL.csproj.AssemblyReference.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\obj\Debug\ConfigurableQualityPictureBoxDLL.csproj.CoreCompileInputs.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\obj\Debug\ConfigurableQualityPictureBoxDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\obj\Debug\ConfigurableQualityPictureBoxDLL.pdb

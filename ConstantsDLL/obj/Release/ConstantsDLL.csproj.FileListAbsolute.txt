@@ -1,0 +1,10 @@
+D:\kevin\OneDrive\Documentos\GitHub\C#\ConstantsDLL\bin\Release\ConstantsDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\ConstantsDLL\bin\Release\ConstantsDLL.pdb
+D:\kevin\OneDrive\Documentos\GitHub\C#\ConstantsDLL\obj\Release\ConstantsDLL.csproj.AssemblyReference.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\ConstantsDLL\obj\Release\ConstantsDLL.csproj.CoreCompileInputs.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\ConstantsDLL\obj\Release\ConstantsDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\ConstantsDLL\obj\Release\ConstantsDLL.pdb
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConstantsDLL\bin\Release\ConstantsDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConstantsDLL\obj\Release\ConstantsDLL.csproj.AssemblyReference.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConstantsDLL\obj\Release\ConstantsDLL.csproj.CoreCompileInputs.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConstantsDLL\obj\Release\ConstantsDLL.dll

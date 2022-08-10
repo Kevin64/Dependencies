@@ -1,0 +1,17 @@
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\bin\Debug\HardwareInfoDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\bin\Debug\HardwareInfoDLL.pdb
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\bin\Debug\ConstantsDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\bin\Debug\System.Management.Automation.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\bin\Debug\ConstantsDLL.pdb
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.csproj.AssemblyReference.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.csproj.CoreCompileInputs.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.csproj.CopyComplete
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.pdb
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\HardwareInfoDLL\bin\Debug\HardwareInfoDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\HardwareInfoDLL\bin\Debug\HardwareInfoDLL.pdb
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.csproj.AssemblyReference.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.csproj.CoreCompileInputs.cache
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.csproj.CopyComplete
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.dll
+D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\HardwareInfoDLL\obj\Debug\HardwareInfoDLL.pdb

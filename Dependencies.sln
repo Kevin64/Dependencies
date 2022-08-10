@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstantsDLL", "ConstantsDLL\ConstantsDLL.csproj", "{B26141C5-C9A5-4729-9300-62C9AF4777B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HardwareInfoDLL", "HardwareInfoDLL\HardwareInfoDLL.csproj", "{694029BB-A10F-4149-A5CE-D0EFFA645834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFileReaderDLL", "JsonFileReaderDLL\JsonFileReaderDLL.csproj", "{A325C892-1FFE-4102-BD42-E8F299AF2710}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurableQualityPictureBoxDLL", "ConfigurableQualityPictureBoxDLL\ConfigurableQualityPictureBoxDLL.csproj", "{458D9023-0FE0-48B0-8E26-ECAECD15CB9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B26141C5-C9A5-4729-9300-62C9AF4777B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26141C5-C9A5-4729-9300-62C9AF4777B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26141C5-C9A5-4729-9300-62C9AF4777B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26141C5-C9A5-4729-9300-62C9AF4777B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694029BB-A10F-4149-A5CE-D0EFFA645834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694029BB-A10F-4149-A5CE-D0EFFA645834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694029BB-A10F-4149-A5CE-D0EFFA645834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694029BB-A10F-4149-A5CE-D0EFFA645834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A325C892-1FFE-4102-BD42-E8F299AF2710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A325C892-1FFE-4102-BD42-E8F299AF2710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A325C892-1FFE-4102-BD42-E8F299AF2710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A325C892-1FFE-4102-BD42-E8F299AF2710}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458D9023-0FE0-48B0-8E26-ECAECD15CB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458D9023-0FE0-48B0-8E26-ECAECD15CB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458D9023-0FE0-48B0-8E26-ECAECD15CB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458D9023-0FE0-48B0-8E26-ECAECD15CB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {303B6673-C414-4D0F-B200-481F04E8B6AE}
+	EndGlobalSection
+EndGlobal
