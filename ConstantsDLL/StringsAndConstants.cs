@@ -174,8 +174,10 @@ namespace ConstantsDLL
         public const string introScreen = "Introdução";
         public const string nextText = "Próximo";
         public const string waitText = "Aguarde ";
-        public const string cancelExecution = "Cancelar execução no próximo boot";
-        public const string doExecution = "Executar no próximo boot";
+        public const string cancelExecution = "Apagar dados de entrega e cancelar\n       execução no próximo boot";
+        public const string cancelExecutionResError = "Apagar dados de entrega";
+        public const string doExecution = "Enviar dados de entrega e \nexecutar no próximo boot";
+        public const string doExecutionResError = "Enviar dados de entrega";
         public const string serverNotFound = "Servidor não encontrado. Selecione um servidor válido!";
         public const string fillForm = "Preencha os campos necessários!";
         public const string win7nt = "6.1";
