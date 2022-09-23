@@ -1,1 +1,6 @@
 *.vsidx
+*.dll
+*.pdb
+*.cache
+*.txt
+*.CopyComplete
