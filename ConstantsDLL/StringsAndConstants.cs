@@ -83,8 +83,8 @@ namespace ConstantsDLL
         public const string fileBios = "bios.json";        
         public const string fileShaBios = "bios-checksum.txt";
         public const string formatURL = "recebeDadosFormatacao", maintenanceURL = "recebeDadosManutencao", supplyBiosData = "forneceDadosBIOS.php";
-        public const string nonAHCImodel1 = "7057", nonAHCImodel2 = "8814", nonAHCImodel3 = "6078", nonAHCImodel4 = "560s", nonAHCImodel5 = "945GCM-S2C", nonAHCImodel6 = "G41M-VS3";
-        public const string nvmeModel1 = "A315-56";
+        //public const string nonAHCImodel1 = "7057", nonAHCImodel2 = "8814", nonAHCImodel3 = "6078", nonAHCImodel4 = "560s", nonAHCImodel5 = "945GCM-S2C", nonAHCImodel6 = "G41M-VS3";
+        //public const string nvmeModel1 = "A315-56";
         public const string nonSecBootGPU1 = "210", nonSecBootGPU2 = "430";
         public const string WEBVIEW2_PATH = "runtimes\\win-x86";
         public const string SMART_FAIL = " (Drive com falha iminente)";
@@ -109,7 +109,12 @@ namespace ConstantsDLL
         public const string CLI_BIOS_VERSION_ALERT = "Versão da BIOS/UEFI: ";
         public const string BIOS_VERSION_ALERT = " (Atualizar BIOS/UEFI)";
         public const string CLI_FIRMWARE_TYPE_ALERT = "Tipo de firmware: ";
-        public const string FIRMWARE_TYPE_ALERT = " (PC suporta UEFI, fazer a conversão do sistema)";
+        public const string FIRMWARE_TYPE_ALERT = " (Tipo de firmware incorreto)";
+        public const string TPM_ERROR = " (TPM desativado/versão incorreta)";
+        public const string CLI_TPM_ALERT = "Versão do módulo TPM: ";
+        public const string NOT_ENOUGH_MEMORY = " (Memória insuficiente)";
+        public const string CLI_MEMORY_ALERT = "Memória RAM e nº de slots: ";
+        public const string TOO_MUCH_MEMORY = " (Memória em excesso)";
         public const string CLI_NETWORK_IP_ERROR = "Endereço IP: ";
         public const string CLI_NETWORK_MAC_ERROR = "Endereço MAC: ";
         public const string NETWORK_ERROR = "Computador sem conexão com a Intranet";
@@ -174,6 +179,8 @@ namespace ConstantsDLL
         public const string serverNotFound = "Servidor não encontrado. Selecione um servidor válido!";
         public const string fillForm = "Preencha os campos necessários!";
         public const string win7nt = "6.1";
+        public const int Width = 1280;
+        public const int Height = 720;
 
         /**
          * Code exclusive for FeaturesOverlayPresentation application

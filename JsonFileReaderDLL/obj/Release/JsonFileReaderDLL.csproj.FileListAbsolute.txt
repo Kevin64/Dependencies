@@ -1,8 +1,0 @@
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Release\JsonFileReaderDLL.csproj.AssemblyReference.cache
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Release\JsonFileReaderDLL.csproj.CoreCompileInputs.cache
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\bin\Release\JsonFileReaderDLL.dll
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\bin\Release\ConstantsDLL.dll
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\bin\Release\Newtonsoft.Json.dll
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\bin\Release\Newtonsoft.Json.xml
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Release\JsonFileReaderDLL.csproj.CopyComplete
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Release\JsonFileReaderDLL.dll

@@ -1,9 +1,0 @@
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\bin\Debug\JsonFileReaderDLL.dll
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\bin\Debug\JsonFileReaderDLL.pdb
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\bin\Debug\Newtonsoft.Json.dll
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\bin\Debug\Newtonsoft.Json.xml
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Debug\JsonFileReaderDLL.csproj.AssemblyReference.cache
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Debug\JsonFileReaderDLL.csproj.CoreCompileInputs.cache
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Debug\JsonFileReaderDLL.csproj.CopyComplete
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Debug\JsonFileReaderDLL.dll
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\JsonFileReaderDLL\obj\Debug\JsonFileReaderDLL.pdb

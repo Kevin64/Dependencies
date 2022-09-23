@@ -453,7 +453,6 @@ namespace HardwareInfoDLL
 							{
 								mSpeed = "";
 							}
-
 						}
 					}
 					else
@@ -479,7 +478,6 @@ namespace HardwareInfoDLL
 							{
 								mSpeed = "";
 							}
-
 						}
 					}
 				}
@@ -488,8 +486,33 @@ namespace HardwareInfoDLL
 			return MemSize.ToString() + " " + StringsAndConstants.gb + " " + mType + mSpeed;
 		}
 
-		//Fetches the number of RAM slots on the system
-		public static string GetNumRamSlots()
+        //Fetches the amount of RAM of the system (alternative method)
+        public static string GetPhysicalMemoryAlt()
+        {
+            long MemSize = 0;
+            long mCap;
+			string MemSizeStr;
+
+            ManagementScope scope = new ManagementScope();
+            ObjectQuery objQuery = new ObjectQuery("select * from Win32_PhysicalMemory");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, objQuery);
+            ManagementObjectCollection moc = searcher.Get();
+
+            foreach (ManagementObject queryObj in moc)
+            {
+                if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(StringsAndConstants.systemRom))
+                {
+                    mCap = Convert.ToInt64(queryObj["Capacity"]);
+                    MemSize += mCap;
+                }
+            }
+            MemSize = (MemSize / 1024) / 1024 / 1024;
+			MemSizeStr = MemSize.ToString();
+            return MemSizeStr;
+        }
+
+        //Fetches the number of RAM slots on the system
+        public static string GetNumRamSlots()
 		{
 			int MemSlots = 0;
 

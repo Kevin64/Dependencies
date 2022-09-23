@@ -1,4 +1,0 @@
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\bin\Release\ConfigurableQualityPictureBoxDLL.dll
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\obj\Release\ConfigurableQualityPictureBoxDLL.csproj.AssemblyReference.cache
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\obj\Release\ConfigurableQualityPictureBoxDLL.csproj.CoreCompileInputs.cache
-D:\kevin\OneDrive\Documentos\GitHub\C#\Dependencies\ConfigurableQualityPictureBoxDLL\obj\Release\ConfigurableQualityPictureBoxDLL.dll
