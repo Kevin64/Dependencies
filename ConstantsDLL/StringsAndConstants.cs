@@ -205,6 +205,25 @@ namespace ConstantsDLL
         public const string resChangeFailed = "Falha ao alterar a resolução";
         public const string resChangeSuccess = "Êxito em alterar a resolução";
         public const string resChangeReboot = "Necessário reinicialização para alterar a resolução";
+        public const string PARAMETER_ERROR = "Erro: Um ou mais parâmetros do arquivo INI estão mal formados.";
+        public const string KEY_FINISH = "Pressione Enter para fechar...";
+        public const string HW_MODEL = "Modelo do hardware: ";
+        public const string OS_VERSION = "Versão do sistema: ";
+        public const string OS_ARCH = "Arquitetura do sistema: ";
+        public const string FIRMWARE_TYPE = "Tipo de firmware: ";
+        public const string INSTALLING = "Instalando drivers, aguarde...";
+        public const string INSTALL_FINISHED = "Instalação finalizada!";
+        public const string INI_SECTION_1 = "Definitions";
+        public const string INI_SECTION_1_1 = "InstallDrivers";
+        public const string INI_SECTION_1_2 = "CleanGarbage";
+        public const string INI_SECTION_1_3 = "ChangeResolution";
+        public const string INI_SECTION_1_4 = "ResolutionWidth";
+        public const string INI_SECTION_1_5 = "ResolutionHeight";
+        public const string INI_SECTION_1_6 = "DriverPath";
+        public const string INI_SECTION_1_7 = "RebootAfterFinished";
+        public const string INI_SECTION_1_8 = "Verbose";
+        public const string SHUTDOWN_CMD_1 = "shutdown";
+        public const string SHUTDOWN_CMD_2 = "/r /f /t 0";
 
         /**
          * Code exclusive for OfflineDriverInstallerOOBE application
