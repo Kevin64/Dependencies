@@ -202,10 +202,10 @@ namespace ConstantsDLL
         */
 
         public const string defFile = "definitions.ini";        
-        public const string resChangeFailed = "Falha ao alterar a resolução";
-        public const string resChangeSuccess = "Êxito em alterar a resolução";
-        public const string resChangeReboot = "Necessário reinicialização para alterar a resolução";
-        public const string PARAMETER_ERROR = "Erro: Um ou mais parâmetros do arquivo INI estão mal formados.";
+        public const string resChangeFailed = "Falha ao alterar a resolução!";
+        public const string resChangeSuccess = "Êxito em alterar a resolução!";
+        public const string resChangeReboot = "Necessário reinicialização para alterar a resolução!";
+        public const string PARAMETER_ERROR = "Erro: Um ou mais parâmetros do arquivo INI estão mal formados!";
         public const string KEY_FINISH = "Pressione Enter para fechar...";
         public const string HW_MODEL = "Modelo do hardware: ";
         public const string OS_VERSION = "Versão do sistema: ";
@@ -224,6 +224,17 @@ namespace ConstantsDLL
         public const string INI_SECTION_1_8 = "Verbose";
         public const string SHUTDOWN_CMD_1 = "shutdown";
         public const string SHUTDOWN_CMD_2 = "/r /f /t 0";
+        public const string CHANGING_RESOLUTION = "Alterando resolução...";
+        public const string CHANGING_RESOLUTION_SUCCESSFUL = "Resolução alterada com sucesso!";
+        public const string CHECKING_RESOLUTION = "Verificando resolução atual...";
+        public const string CHECKING_AVAILABLE_RESOLUTIONS = "Verificando resoluções disponíveis...";
+        public const string ERASING_GARBAGE = "Apagando drivers não-utilizados...";
+        public const string ERASING_SUCCESSFUL = "Drivers apagados com êxito!";
+        public const string NOT_ERASING_GARBAGE = "Ignorando exclusão de drivers não-utilizados...";
+        public const string NOT_INSTALLING_DRIVERS = "Ignorando instalação de drivers...";
+        public const string NOT_CHANGING_RESOLUTION = "Ignorando alteração da resolução...";
+        public const string NOT_REBOOTING = "Ignorando reinicialização...";
+        public const string CHANGING_RESOLUTION_UNNECESSARY = "Sem necessidade de alterar resolução!";
 
         /**
          * Code exclusive for OfflineDriverInstallerOOBE application
