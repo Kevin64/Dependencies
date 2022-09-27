@@ -86,9 +86,8 @@ namespace HardwareInfoDLL
 		//Fetches the type of drive the system has (SSD or HDD), and the quantity of each
 		public static string GetStorageType()
 		{
-			//int j = 0;
-			double dresult = 0;
-			string dresultStr = "";
+			double dresult;
+			string dresultStr;
 
 			if (getOSInfoAux().Equals(StringsAndConstants.windows10) || getOSInfoAux().Equals(StringsAndConstants.windows8_1) || getOSInfoAux().Equals(StringsAndConstants.windows8))
 			{
@@ -96,7 +95,7 @@ namespace HardwareInfoDLL
 				string[] type = new string[size];
 				string[] bytesHDD = new string[size];
 				string[] bytesSSD = new string[size];
-				string concat = "", msftName = "Msft Virtual Disk";
+				string concat, msftName = "Msft Virtual Disk";
 
 				ManagementScope scope = new ManagementScope(@"\\.\root\microsoft\windows\storage");
 				ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from MSFT_PhysicalDisk");
@@ -152,7 +151,7 @@ namespace HardwareInfoDLL
 				int size = 10, i = 0;
 				string[] type = new string[size];
 				string[] bytesHDD = new string[size];
-				string concat = "";
+				string concat;
 
 				ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_DiskDrive");
 
@@ -219,7 +218,6 @@ namespace HardwareInfoDLL
 					}
 				}
 			}
-
 			return result.TrimEnd(comma);
 		}
 
@@ -489,7 +487,7 @@ namespace HardwareInfoDLL
         //Fetches the amount of RAM of the system (alternative method)
         public static string GetPhysicalMemoryAlt()
         {
-            long MemSize = 0;
+            double MemSize = 0;
             long mCap;
 			string MemSizeStr;
 
@@ -845,7 +843,7 @@ namespace HardwareInfoDLL
 
 		public static string GetTPMStatus()
 		{
-			string isActivated = "", isEnabled = "", specVersion = "";
+			string isActivated, isEnabled, specVersion = "";
 			ManagementScope scope = new ManagementScope(@"\\.\root\cimv2\Security\MicrosoftTPM");
 			ObjectQuery query = new ObjectQuery("select * from Win32_Tpm");
 			ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
@@ -862,7 +860,5 @@ namespace HardwareInfoDLL
 				specVersion = StringsAndConstants.notExistant;
 			return specVersion;
 		}
-
-
 	}
 }

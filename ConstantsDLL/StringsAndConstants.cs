@@ -30,6 +30,9 @@ namespace ConstantsDLL
          * Code exclusive for HardwareInformation application
          * Start
         */
+        public const string statusBarTextForm1 = "Sistema desenvolvido pelo servidor Kevin Costa, SIAPE 1971957, para uso no serviço da Subdivisão de Tecnologia da Informação do CCSH - UFSM";
+        public const string statusBarTextForm2 = "CCSH - UFSM";
+        public const string formTitlebarText = "Coleta de hardware e cadastro de patrimônio / Subdivisão de Tecnologia da Informação do CCSH - UFSM";
         public const string cliHelpTextServer = "Servidor do sistema de patrimônio (Ex.: 192.168.76.103, localhost, etc)";
         public const string cliHelpTextPort = "Porta do sistema de patrimônio (Ex.: 8081, 80, etc)";
         public const string cliHelpTextMode = "Tipo de serviço realizado (Valores possíveis: F/f para formatação, M/m para manutenção)";
@@ -147,6 +150,10 @@ namespace ConstantsDLL
         public static Color DARK_AGENT = Color.DarkCyan;
         public static Color LIGHT_BACKGROUND = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
         public static Color DARK_BACKGROUND = Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+        public static Color DARK_SUBTLE_LIGHTLIGHTCOLOR = Color.DimGray;
+        public static Color LIGHT_SUBTLE_DARKDARKCOLOR = Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+        public static Color DARK_SUBTLE_LIGHTCOLOR = Color.DarkSlateGray;
+        public static Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
         public static Color BLUE_FOREGROUND = SystemColors.Highlight;
 
         /**
