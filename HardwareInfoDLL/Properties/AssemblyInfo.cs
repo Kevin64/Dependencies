@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Universidade Federal de Santa Maria")]
 [assembly: AssemblyProduct("HardwareInfoDLL")]
-[assembly: AssemblyCopyright("Copyright © Universidade Federal de Santa Maria 2022")]
+[assembly: AssemblyCopyright("Copyright UFSM © 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // É possível especificar todos os valores ou usar como padrão os Números de Build e da Revisão
 // usando o "*" como mostrado abaixo:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.14.0.2208")]
-[assembly: AssemblyFileVersion("3.14.0.2208")]
+[assembly: AssemblyVersion("4.0.0.2209")]
+[assembly: AssemblyFileVersion("4.0.0.2209")]
