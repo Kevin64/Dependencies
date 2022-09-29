@@ -86,8 +86,6 @@ namespace ConstantsDLL
         public const string fileBios = "bios.json";        
         public const string fileShaBios = "bios-checksum.txt";
         public const string formatURL = "recebeDadosFormatacao", maintenanceURL = "recebeDadosManutencao", supplyBiosData = "forneceDadosBIOS.php";
-        //public const string nonAHCImodel1 = "7057", nonAHCImodel2 = "8814", nonAHCImodel3 = "6078", nonAHCImodel4 = "560s", nonAHCImodel5 = "945GCM-S2C", nonAHCImodel6 = "G41M-VS3";
-        //public const string nvmeModel1 = "A315-56";
         public const string nonSecBootGPU1 = "210", nonSecBootGPU2 = "430";
         public const string WEBVIEW2_PATH = "runtimes\\win-x86";
         public const string SMART_FAIL = " (Drive com falha iminente)";
