@@ -88,6 +88,8 @@ namespace ConstantsDLL
         public const string formatURL = "recebeDadosFormatacao", maintenanceURL = "recebeDadosManutencao", supplyBiosData = "forneceDadosBIOS.php";
         public const string nonSecBootGPU1 = "210", nonSecBootGPU2 = "430";
         public const string WEBVIEW2_PATH = "runtimes\\win-x86";
+        public const string WEBVIEW2_REG_PATH = "SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}";
+        public const string WEBVIEW2_SYSTEM_PATH = "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\";
         public const string SMART_FAIL = " (Drive com falha iminente)";
         public const string ONLINE = "ONLINE";
         public const string OFFLINE = "OFFLINE";
