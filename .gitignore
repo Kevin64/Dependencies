@@ -5,3 +5,11 @@
 *.txt
 *.CopyComplete
 *.force
+/ConfigurableQualityPictureBoxDLL/bin/*
+/ConfigurableQualityPictureBoxDLL/obj/*
+/ConstantsDLL/bin/*
+/ConstantsDLL/obj/*
+/HardwareInfoDLL/bin/*
+/HardwareInfoDLL/obj/*
+/JsonFileReaderDLL/bin/*
+/JsonFileReaderDLL/obj/*
