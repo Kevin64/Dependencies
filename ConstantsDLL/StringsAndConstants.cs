@@ -94,6 +94,7 @@ namespace ConstantsDLL
         public const string ONLINE = "ONLINE";
         public const string OFFLINE = "OFFLINE";
         public const string FETCHING = "Coletando...";
+        public const string DASH = "-";
         public const string REGISTERING = "Cadastrando / Atualizando, aguarde...";
         public const string FETCH_AGAIN = "Coletar Novamente";
         public const string REGISTER_AGAIN = "Cadastrar / Atualizar dados";
@@ -155,6 +156,7 @@ namespace ConstantsDLL
         public static Color DARK_SUBTLE_LIGHTCOLOR = Color.DarkSlateGray;
         public static Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
         public static Color BLUE_FOREGROUND = SystemColors.Highlight;
+        public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
 
         /**
          * Code exclusive for HardwareInformation application
