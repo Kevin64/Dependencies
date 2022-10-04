@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.Hosting;
 
 namespace ConstantsDLL
 {
@@ -20,6 +21,15 @@ namespace ConstantsDLL
         public const string SERVER_NOT_FOUND_ERROR = "Servidor não encontrado. Selecione um servidor válido!";
         public const string unknown = "Desconhecido";
         public const string ToBeFilledByOEM = "To Be Filled By O.E.M.";
+        public const string ALPHA_VERSION = "alpha";
+        public const string BETA_VERSION = "beta";
+        public const string LOG_HEADER = "..::Log de execução::.. ";
+        public const string LOG_SEPARATOR = "--------------------------------------------------------------------------";
+        public const string LOG_TIMESTAMP = "HH:mm:ss.ffffff";
+        public const string LOG_FILE_EXT = ".txt";
+        public const string LOG_INFO = "Informação";
+        public const string LOG_ERROR = "Erro";
+        public const string LOG_WARNING = "Aviso";
 
         /**
          * Common code
@@ -158,6 +168,57 @@ namespace ConstantsDLL
         public static Color BLUE_FOREGROUND = SystemColors.Highlight;
         public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
 
+        public const string LOG_INIT = "Inicialização execução";
+        public const string LOG_THEME = "Usando tema escuro";
+        public const string LOG_OFFLINE_MODE = "Modo de execução offline.";
+        public const string LOG_DEBUG_MODE = "Executando em modo DEBUG.";
+        public const string LOG_RELEASE_MODE = "Executando em modo RELEASE.";
+        public const string LOG_CLOSING_FORM = "Finalizando...";
+        public const string LOG_AUTOTHEME_CHANGE = "Selecionando tema automaticamente.";
+        public const string LOG_LIGHTMODE_CHANGE = "Mudando para modo claro.";
+        public const string LOG_DARKMODE_CHANGE = "Mudando para modo escuro.";
+        public const string LOG_START_THREAD = "Inicializando thread de procedimento de coleta...";
+        public const string LOG_LOGOUT = "Logout...";
+        public const string LOG_BM = "Marca";
+        public const string LOG_MODEL = "Modelo";
+        public const string LOG_SERIALNO = "Número de série";
+        public const string LOG_PROCNAME = "Processador";
+        public const string LOG_PM = "Memória";
+        public const string LOG_HDSIZE = "Tamanho total HD";
+        public const string LOG_SMART = "Status SMART";
+        public const string LOG_MEDIATYPE = "Tipo de armazenamento";
+        public const string LOG_MEDIAOP = "Modo de operação";
+        public const string LOG_GPUINFO = "Placa de vídeo";
+        public const string LOG_OS = "Sistema operacional";
+        public const string LOG_HOSTNAME = "Nome do computador";
+        public const string LOG_MAC = "Endereço MAC";
+        public const string LOG_IP = "Endereço IP";
+        public const string LOG_BIOSTYPE = "Tipo de firmware";
+        public const string LOG_SECBOOT = "Secure boot";
+        public const string LOG_BIOS = "Versão da BIOS";
+        public const string LOG_VT = "Tec. de virtualização";
+        public const string LOG_TPM = "Módulo TPM";
+
+        public const string LOG_HOSTNAME_ERROR = HOSTNAME_ALERT;
+        public const string LOG_MEDIAOP_ERROR = MEDIA_OPERATION_ALERT;
+        public const string LOG_SECBOOT_ERROR = SECURE_BOOT_ALERT;
+        public const string LOG_OFFLINE_ERROR = DATABASE_REACH_ERROR;
+        public const string LOG_BIOSVER_ERROR = BIOS_VERSION_ALERT;
+        public const string LOG_FIRMWARE_ERROR = FIRMWARE_TYPE_ALERT;
+        public const string LOG_NETWORK_ERROR = NETWORK_ERROR;
+        public const string LOG_VT_ERROR = VT_ALERT;
+        public const string LOG_SMART_ERROR = SMART_FAIL;
+        public const string LOG_TPM_ERROR = TPM_ERROR;
+        public const string LOG_MEMORYFEW_ERROR = NOT_ENOUGH_MEMORY;
+        public const string LOG_MEMORYMUCH_ERROR = TOO_MUCH_MEMORY;
+
+        public const string LOG_FILENAME_CP = "CadastroPatrimonial";
+        public const string LOG_START_COLLECTING = "Coletando hardware...";
+        public const string LOG_END_COLLECTING = "Finalização da coleta de hardware!";
+        public const string LOG_REGISTERING = "Registrando no servidor de controle patrimonial...";
+        public const string LOG_START_LOADING_WEBVIEW2 = "Iniciando carregamento do WebView2 Runtime...";
+        public const string LOG_END_LOADING_WEBVIEW2 = "Carregamento do WebView2 Runtime finalizado!";
+
         /**
          * Code exclusive for HardwareInformation application
          * End
@@ -192,6 +253,7 @@ namespace ConstantsDLL
         public const string win7nt = "6.1";
         public const int Width = 1280;
         public const int Height = 720;
+        public const string LOG_FILENAME_FOP = "FOP";
 
         /**
          * Code exclusive for FeaturesOverlayPresentation application
@@ -237,6 +299,7 @@ namespace ConstantsDLL
         public const string NOT_CHANGING_RESOLUTION = "Ignorando alteração da resolução...";
         public const string NOT_REBOOTING = "Ignorando reinicialização...";
         public const string CHANGING_RESOLUTION_UNNECESSARY = "Sem necessidade de alterar resolução!";
+        public const string LOG_FILENAME_OOBE = "OfflineDriverInstallerOOBE";
 
         /**
          * Code exclusive for OfflineDriverInstallerOOBE application

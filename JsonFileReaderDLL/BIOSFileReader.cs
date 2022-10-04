@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Net;
 using ConstantsDLL;
+using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
@@ -22,63 +23,69 @@ namespace JsonFileReaderDLL
 		private static WebClient wc;
 		private static StreamReader fileB;
 
-		public static bool checkHost(string ip, string port)
+		public static Task<bool> checkHost(string ip, string port)
         {
-			try
+			return Task.Run(() =>
 			{
-				wc = new WebClient();
-				wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyBiosData);
-				System.Threading.Thread.Sleep(300);
-				wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.fileBios, StringsAndConstants.biosPath);
-				System.Threading.Thread.Sleep(300);
-				sha1 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaBios);
-				System.Threading.Thread.Sleep(300);
-				sha1 = sha1.ToUpper();
-				fileB = new StreamReader(StringsAndConstants.biosPath);
-				aux = StringsAndConstants.biosPath;
-				fileB.Close();
-			}
-			catch
-			{
-				return false;
-			}
-			return true;
+				try
+				{
+					wc = new WebClient();
+					wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyBiosData);
+					System.Threading.Thread.Sleep(300);
+					wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.fileBios, StringsAndConstants.biosPath);
+					System.Threading.Thread.Sleep(300);
+					sha1 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaBios);
+					System.Threading.Thread.Sleep(300);
+					sha1 = sha1.ToUpper();
+					fileB = new StreamReader(StringsAndConstants.biosPath);
+					aux = StringsAndConstants.biosPath;
+					fileB.Close();
+				}
+				catch
+				{
+					return false;
+				}
+				return true;
+			});
 		}
 
 		//Reads a json file retrieved from the server and parses brand, model and BIOS versions, returning the latter
 		[STAThread]
-		public static string[] fetchInfo(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
+		public static Task<string[]> fetchInfo(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
 		{
-			if (!checkHost(ip, port))
-				return null;
-
-			string[] arr;
-			string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
-			fileB = new StreamReader(StringsAndConstants.biosPath);
-			if (MiscMethods.GetSha1Hash(aux).Equals(sha1))
+			return Task.Run(async () =>
 			{
-				jsonFile = fileB.ReadToEnd();
-				jFile[] jsonParse = JsonConvert.DeserializeObject<jFile[]>(@jsonFile);
+				if (!await checkHost(ip, port))
+					return null;
 
-				for(int i = 0; i < jsonParse.Length; i++)
+				string[] arr;
+				string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
+				fileB = new StreamReader(StringsAndConstants.biosPath);
+				if (MiscMethods.GetSha1Hash(aux).Equals(sha1))
 				{
-					if (mod.Contains(jsonParse[i].modelo) && brd.Contains(jsonParse[i].marca))
+					jsonFile = fileB.ReadToEnd();
+					jFile[] jsonParse = JsonConvert.DeserializeObject<jFile[]>(@jsonFile);
+
+					for (int i = 0; i < jsonParse.Length; i++)
 					{
-						if (!type.Equals(jsonParse[i].tipo))
-							typeRet = "false";
-                        if (!tpm.Equals(jsonParse[i].tpm))
-                            tpmRet = "false";
-                        if (!mediaOp.Equals(jsonParse[i].mediaOp))
-                            mediaOpRet = "false";
-                        arr = new String[] { jsonParse[i].versao, typeRet, tpmRet, mediaOpRet };
-                        fileB.Close();
-                        return arr;
+						if (mod.Contains(jsonParse[i].modelo) && brd.Contains(jsonParse[i].marca))
+						{
+							if (!type.Equals(jsonParse[i].tipo))
+								typeRet = "false";
+							if (!tpm.Equals(jsonParse[i].tpm))
+								tpmRet = "false";
+							if (!mediaOp.Equals(jsonParse[i].mediaOp))
+								mediaOpRet = "false";
+							arr = new String[] { jsonParse[i].versao, typeRet, tpmRet, mediaOpRet };
+							fileB.Close();
+							return arr;
+						}
 					}
 				}
-			}
-			arr = new String[] {"-1", "-1"};
-			fileB.Close();
-			return arr;
+				arr = new String[] { "-1", "-1" };
+				fileB.Close();
+				return arr;
+			});
 		}
 	}
 }
