@@ -25,10 +25,10 @@ namespace LogGeneratorDLL
             {
                 txtWriter.WriteLine(StringsAndConstants.LOG_SEPARATOR);
                 txtWriter.WriteLine();
-                txtWriter.WriteLine(StringsAndConstants.LOG_HEADER);
                 txtWriter.WriteLine(softwareName);
                 txtWriter.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
                 txtWriter.WriteLine();
+                txtWriter.WriteLine(StringsAndConstants.LOG_HEADER);
             }
             catch (Exception e)
             {
