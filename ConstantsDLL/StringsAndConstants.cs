@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.Hosting;
 
 namespace ConstantsDLL
 {
@@ -23,13 +22,20 @@ namespace ConstantsDLL
         public const string ToBeFilledByOEM = "To Be Filled By O.E.M.";
         public const string ALPHA_VERSION = "alpha";
         public const string BETA_VERSION = "beta";
-        public const string LOG_HEADER = "..::Log de execução::.. ";
-        public const string LOG_SEPARATOR = "--------------------------------------------------------------------------";
+        public const string LOG_HEADER = "------------------------LOG DE EXECUÇÃO------------------------";
+        public const string LOG_SEPARATOR_SMALL = "------------------------------------------------";
+        public const string LOG_SEPARATOR = "____________________________________________________________________________________________________";
         public const string LOG_TIMESTAMP = "HH:mm:ss.ffffff";
-        public const string LOG_FILE_EXT = ".txt";
-        public const string LOG_INFO = "Informação";
-        public const string LOG_ERROR = "Erro";
-        public const string LOG_WARNING = "Aviso";
+        public const string LOG_FILE_EXT = ".log";
+        public const int LOG_INFO = 0;        
+        public const int LOG_WARNING = 1;
+        public const int LOG_ERROR = 2;
+        public const int LOG_MISC = 3;
+        public const string LOG_INFO_ATTR = "<INFORMAÇÃO>";        
+        public const string LOG_WARNING_ATTR = "<AVISO>";
+        public const string LOG_ERROR_ATTR = "<ERRO>";
+        public const string LOG_PASSWORD_PLACEHOLDER = "XXXXXXXXXXXXXXX";
+        public const string LOG_ARGS_ERROR = ARGS_ERROR;
 
         /**
          * Common code
@@ -78,6 +84,8 @@ namespace ConstantsDLL
         public const string student = "Aluno";
         public const string replacedBattery = "C/ troca de pilha";
         public const string sameBattery = "S/ troca de pilha";
+        public const bool consoleOutCLI = true;
+        public const bool consoleOutGUI = false;
         public static readonly List<string> defaultServerIP = new List<string>() { "192.168.76.103", "localhost" };
         public static readonly List<string> defaultServerPort = new List<string>() { "8081", "80" };
         public static readonly List<string> listBuilding = new List<string>() { "21", "67", "74A", "74B", "74C", "74D", "AR" };
@@ -134,7 +142,7 @@ namespace ConstantsDLL
         public const string NETWORK_ERROR = "Computador sem conexão com a Intranet";
         public const string CLI_VT_ALERT = "Tecnologia de Virtualização: ";
         public const string VT_ALERT = " (Ativar Tecnologia de Virtualização na BIOS/UEFI)";
-        public const string PENDENCY_ERROR = "Resolva as pendencias exibidas em vermelho!";
+        public const string PENDENCY_ERROR = "Resolva as pendências exibidas em vermelho!";
         public const string MANDATORY_FIELD = "Preencha os campos obrigatórios";
         public const string DAYS_PASSED_TEXT = " dias desde a última ";
         public const string FORMAT_TEXT = "formatação";
@@ -175,6 +183,7 @@ namespace ConstantsDLL
         public const string LOG_RELEASE_MODE = "Executando em modo RELEASE";
         public const string LOG_CLOSING_MAINFORM = "Finalizando form principal";
         public const string LOG_CLOSING_LOGINFORM = "Finalizando form de login";
+        public const string LOG_CLOSING_CLI = "Finalizando sequência do programa";
         public const string LOG_AUTOTHEME_CHANGE = "Selecionando tema automaticamente";
         public const string LOG_LIGHTMODE_CHANGE = "Mudando para modo claro";
         public const string LOG_DARKMODE_CHANGE = "Mudando para modo escuro";
@@ -214,7 +223,7 @@ namespace ConstantsDLL
         public const string LOG_MEMORYMUCH_ERROR = TOO_MUCH_MEMORY;
         public const string LOG_SERVER_UNREACHABLE = SERVER_NOT_FOUND_ERROR;
         public const string LOG_MANDATORY_FIELD_ERROR = MANDATORY_FIELD;
-        public const string LOG_PENDENCY_ERROR = PENDENCY_ERROR;
+        public const string LOG_PENDENCY_ERROR = "Pendências detectadas";
         public const string LOG_ALREADY_REGISTERED_TODAY = ALREADY_REGISTERED_TODAY;
 
         public const string LOG_FILENAME_CP = "CadastroPatrimonial";
@@ -222,8 +231,11 @@ namespace ConstantsDLL
         public const string LOG_END_COLLECTING = "Finalização da coleta de hardware";
         public const string LOG_INIT_REGISTRY = "Iniciando processo de registro";
         public const string LOG_INIT_LOGIN = "Autenticando usuário";
+        public const string LOG_SERVER_DETAIL = "Servidor e porta";
         public const string LOG_NO_INTRANET = INTRANET_REQUIRED;
         public const string LOG_PINGGING_SERVER = "Verificando disponibilidade do servidor";
+        public const string LOG_OFFLINE_SERVER = "Servidor está OFFLINE";
+        public const string LOG_ONLINE_SERVER = "Servidor está ONLINE";
         public const string LOG_LOGIN_FAILED = "Falha na autenticação";
         public const string LOG_LOGIN_SUCCESS = "Autenticação realizada com êxito";
         public const string LOG_LOGIN_INCOMPLETE = NO_AUTH;
@@ -236,6 +248,8 @@ namespace ConstantsDLL
         public const string LOG_HARDWARE_PASSED = "Configuração sem pendências, pronto para registro";
         public const string LOG_RESETING_INSTALLDATE = "Recalculando data da última formatação";
         public const string LOG_RESETING_MAINTENANCEDATE = "Recalculando data da última manutenção";
+        public const string LOG_CLI_MODE = "Argumentos detectados, iniciando em modo CLI. Lista de argumentos";
+        public const string LOG_GUI_MODE = "Argumentos ausentes, iniciando em modo GUI";
 
         /**
          * Code exclusive for HardwareInformation application

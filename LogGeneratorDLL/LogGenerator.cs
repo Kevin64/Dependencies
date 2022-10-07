@@ -36,13 +36,13 @@ namespace LogGeneratorDLL
             }
         }
 
-        public void LogWrite(string logType, string logMessage1, string logMessage2)
+        public void LogWrite(int logType, string logMessage1, string logMessage2, bool consoleOut)
         {
             try
             {
                 using (StreamWriter w = File.AppendText(m_exePath + "\\" + fileNameStr))
                 {
-                    Log(logType, logMessage1, logMessage2, w);
+                    Log(logType, logMessage1, logMessage2, w, consoleOut);
                 }
             }
             catch (Exception e)
@@ -50,14 +50,45 @@ namespace LogGeneratorDLL
             }
         }
 
-        public void Log(string logType, string logMessage1, string logMessage2, TextWriter txtWriter)
+        public void Log(int logType, string logMessage1, string logMessage2, TextWriter txtWriter, bool consoleOut)
         {
+            string logTypeAttr;
+            
             try
             {
-                if(!logMessage2.Equals(string.Empty))
-                    txtWriter.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logType, logMessage1, logMessage2);
+                if (logType == 2)
+                {
+                    logTypeAttr = StringsAndConstants.LOG_ERROR_ATTR;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else if (logType == 1)
+                {
+                    logTypeAttr = StringsAndConstants.LOG_WARNING_ATTR;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+                else if (logType == 0)
+                {
+                    logTypeAttr = StringsAndConstants.LOG_INFO_ATTR;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
                 else
-                    txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logType, logMessage1);
+                {
+                    logTypeAttr = string.Empty;
+                }
+
+                if (!logMessage2.Equals(string.Empty))
+                {
+                    txtWriter.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1, logMessage2);
+                    if (consoleOut)
+                        Console.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1, logMessage2);
+                }
+                else
+                {
+                    txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1);
+                    if (consoleOut)
+                        Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1);
+                }
+                Console.ResetColor();
             }
             catch (Exception e)
             {

@@ -3,7 +3,6 @@ using System;
 using System.IO;
 using System.Net;
 using ConstantsDLL;
-using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
@@ -22,7 +21,8 @@ namespace JsonFileReaderDLL
 		private static WebClient wc;
 		private static StreamReader fileL;
 
-		public static Task<bool> checkHost(string ip, string port)
+        //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
+        public static Task<bool> checkHost(string ip, string port)
         {
 			return Task.Run(() =>
 			{
@@ -48,8 +48,31 @@ namespace JsonFileReaderDLL
 			});
 		}
 
-		//Reads a json file retrieved from the server and parses username and encoded password, returning the latter
-		[STAThread]
+        //Checks if the server is answering any requests, through a json file verification (single threaded)
+        public static bool checkHostST(string ip, string port)
+        {
+            try
+            {
+                wc = new WebClient();
+                wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyLoginData);
+                System.Threading.Thread.Sleep(300);
+                wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.fileLogin, StringsAndConstants.loginPath);
+                System.Threading.Thread.Sleep(300);
+                sha1 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaLogin);
+                System.Threading.Thread.Sleep(300);
+                sha1 = sha1.ToUpper();
+                fileL = new StreamReader(StringsAndConstants.loginPath);
+                aux = StringsAndConstants.loginPath;
+                fileL.Close();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
 		public static Task<string[]> fetchInfo(string nome, string senha, string ip, string port)
 		{
 			return Task.Run(async () =>
@@ -79,5 +102,33 @@ namespace JsonFileReaderDLL
 				return arr;
 			});
 		}
+
+        //Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
+        public static string[] fetchInfoST(string nome, string senha, string ip, string port)
+        {
+            if (!checkHostST(ip, port))
+                return null;
+
+            string[] arr;
+            fileL = new StreamReader(StringsAndConstants.loginPath);
+            if (MiscMethods.GetSha1Hash(aux).Equals(sha1))
+            {
+                jsonFile = fileL.ReadToEnd();
+                lFile[] jsonParse = JsonConvert.DeserializeObject<lFile[]>(@jsonFile);
+
+                for (int i = 0; i < jsonParse.Length; i++)
+                {
+                    if (nome.Equals(jsonParse[i].usuario) && MiscMethods.HashMd5Generator(senha).Equals(jsonParse[i].senha))
+                    {
+                        arr = new string[] { "true", jsonParse[i].usuario };
+                        fileL.Close();
+                        return arr;
+                    }
+                }
+            }
+            arr = new string[] { "false" }; ;
+            fileL.Close();
+            return arr;
+        }
     }
 }

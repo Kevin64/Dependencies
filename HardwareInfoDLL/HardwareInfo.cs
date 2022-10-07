@@ -175,7 +175,6 @@ namespace HardwareInfoDLL
 
 				return concat;
 			}
-			//return StorageDetail.HasNominalMediaRotationRate("\\\\.\\PhysicalDrive0");
 		}
 
 		//Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them
@@ -826,7 +825,8 @@ namespace HardwareInfoDLL
 			return false;
 		}
 
-		public static string GetSMARTStatus()
+        //Fetches the S.M.A.R.T. status
+        public static string GetSMARTStatus()
 		{
 			string statusCaption, statusValue;
 			ManagementObjectSearcher searcher = new ManagementObjectSearcher("Select * from Win32_DiskDrive");
@@ -841,7 +841,8 @@ namespace HardwareInfoDLL
 			return StringsAndConstants.ok;
 		}
 
-		public static string GetTPMStatus()
+        //Fetches the TPM version
+        public static string GetTPMStatus()
 		{
 			string isActivated, isEnabled, specVersion = "";
 			ManagementScope scope = new ManagementScope(@"\\.\root\cimv2\Security\MicrosoftTPM");
