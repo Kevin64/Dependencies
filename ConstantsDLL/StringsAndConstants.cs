@@ -150,7 +150,7 @@ namespace ConstantsDLL
         public const string SINCE_UNKNOWN = "(Não foi possível determinar a data do último serviço)";
         public const string ALREADY_REGISTERED_TODAY = "Serviço já registrado para esta dia. Caso seja necessário outro registro, escolha outra data.";
         public const string OFFLINE_MODE_ACTIVATED = "Modo OFFLINE!";
-        public const string FIX_PROBLEMS = "Corrija o problemas a seguir antes de prosseguir:";
+        public const string FIX_PROBLEMS = "Corrija os problemas a seguir antes de prosseguir:";
         public const string ARGS_ERROR = "Um ou mais argumentos contém erros! Saindo do programa...";
         public const string AUTH_ERROR = "Erro de autenticação! Saindo do programa...";
         public const string AUTH_INVALID = "Credenciais inválidas. Tente novamente.";
@@ -187,6 +187,7 @@ namespace ConstantsDLL
         public const string LOG_AUTOTHEME_CHANGE = "Selecionando tema automaticamente";
         public const string LOG_LIGHTMODE_CHANGE = "Mudando para modo claro";
         public const string LOG_DARKMODE_CHANGE = "Mudando para modo escuro";
+        public const string LOG_OPENING_LOG = "Abrindo log de eventos";
         public const string LOG_START_THREAD = "Inicializando thread de procedimento de coleta";
         public const string LOG_LOGOUT = "Logout";
         public const string LOG_BM = "Marca";
