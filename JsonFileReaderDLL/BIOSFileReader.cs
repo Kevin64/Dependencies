@@ -106,7 +106,7 @@ namespace JsonFileReaderDLL
 						}
 					}
 				}
-				arr = new String[] { "-1", "-1" };
+				arr = new String[] { "-1", "-1", "-1", "-1" };
 				fileB.Close();
 				return arr;
 			});
@@ -142,7 +142,7 @@ namespace JsonFileReaderDLL
                     }
                 }
             }
-            arr = new String[] { "-1", "-1" };
+            arr = new String[] { "-1", "-1", "-1", "-1" };
             fileB.Close();
             return arr;
         }

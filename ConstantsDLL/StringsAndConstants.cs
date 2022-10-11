@@ -106,8 +106,10 @@ namespace ConstantsDLL
         public const string formatURL = "recebeDadosFormatacao", maintenanceURL = "recebeDadosManutencao", supplyBiosData = "forneceDadosBIOS.php";
         public const string nonSecBootGPU1 = "210", nonSecBootGPU2 = "430";
         public const string WEBVIEW2_PATH = "runtimes\\win-x86";
-        public const string WEBVIEW2_REG_PATH = "SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}";
-        public const string WEBVIEW2_SYSTEM_PATH = "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\";
+        public const string WEBVIEW2_REG_PATH_X64 = "SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}";
+        public const string WEBVIEW2_REG_PATH_X86 = "SOFTWARE\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}";
+        public const string WEBVIEW2_SYSTEM_PATH_X64 = "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\";
+        public const string WEBVIEW2_SYSTEM_PATH_X86 = "C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\";
         public const string SMART_FAIL = " (Drive com falha iminente)";
         public const string ONLINE = "ONLINE";
         public const string OFFLINE = "OFFLINE";
@@ -251,6 +253,15 @@ namespace ConstantsDLL
         public const string LOG_RESETING_MAINTENANCEDATE = "Recalculando data da última manutenção";
         public const string LOG_CLI_MODE = "Argumentos detectados, iniciando em modo CLI. Lista de argumentos";
         public const string LOG_GUI_MODE = "Argumentos ausentes, iniciando em modo GUI";
+        public const string LOG_WEBVIEW2_NOT_FOUND = "WebView2 Runtime não encontrado";
+        public const string LOG_INSTALLING_WEBVIEW2 = "Instalando WebView2 Runtime";
+        public const string LOG_WEBVIEW2_INSTALLED = "WebView2 Runtime instalado";
+        public const string LOG_WEBVIEW2_ALREADY_INSTALLED = "WebView2 Runtime já está instalado";
+        public const string LOG_CHECKING_WEBVIEW2 = "Verificando presença do WebView2 Runtime no sistema";
+
+        public const string webview2url = "https://go.microsoft.com/fwlink/p/?LinkId=2124703";
+        public const string webview2file = "webview2installer.exe";
+        public static string webview2filePath = System.IO.Path.GetTempPath() + webview2file;
 
         /**
          * Code exclusive for HardwareInformation application

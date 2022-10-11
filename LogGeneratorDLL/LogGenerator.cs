@@ -45,7 +45,7 @@ namespace LogGeneratorDLL
                     Log(logType, logMessage1, logMessage2, w, consoleOut);
                 }
             }
-            catch (Exception e)
+            catch
             {
             }
         }
@@ -92,7 +92,7 @@ namespace LogGeneratorDLL
             }
             catch (Exception e)
             {
-                txtWriter.WriteLine(e);
+                txtWriter.WriteLine(e.Message);
             }
         }
 
