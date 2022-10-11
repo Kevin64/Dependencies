@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using static System.Environment;
 
 namespace ConstantsDLL
 {
@@ -110,6 +112,8 @@ namespace ConstantsDLL
         public const string WEBVIEW2_REG_PATH_X86 = "SOFTWARE\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}";
         public const string WEBVIEW2_SYSTEM_PATH_X64 = "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\";
         public const string WEBVIEW2_SYSTEM_PATH_X86 = "C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\";
+        public static string LOGFILE_LOCATION = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\" + PROGRAMDATA_FOLDERNAME + "\\";
+        public const string PROGRAMDATA_FOLDERNAME = "HardwareInformation";
         public const string SMART_FAIL = " (Drive com falha iminente)";
         public const string ONLINE = "ONLINE";
         public const string OFFLINE = "OFFLINE";
@@ -177,6 +181,7 @@ namespace ConstantsDLL
         public static Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
         public static Color BLUE_FOREGROUND = SystemColors.Highlight;
         public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+        public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
 
         public const string LOG_INIT = "Inicialização execução";
         public const string LOG_THEME = "Usando tema escuro";
@@ -255,7 +260,8 @@ namespace ConstantsDLL
         public const string LOG_GUI_MODE = "Argumentos ausentes, iniciando em modo GUI";
         public const string LOG_WEBVIEW2_NOT_FOUND = "WebView2 Runtime não encontrado";
         public const string LOG_INSTALLING_WEBVIEW2 = "Instalando WebView2 Runtime";
-        public const string LOG_WEBVIEW2_INSTALLED = "WebView2 Runtime instalado";
+        public const string LOG_WEBVIEW2_INSTALLED = "WebView2 Runtime instalado com êxito";
+        public const string LOG_WEBVIEW2_INSTALL_FAILED = "Falha na instalação do WebView2 Runtime, tente novamente";
         public const string LOG_WEBVIEW2_ALREADY_INSTALLED = "WebView2 Runtime já está instalado";
         public const string LOG_CHECKING_WEBVIEW2 = "Verificando presença do WebView2 Runtime no sistema";
 

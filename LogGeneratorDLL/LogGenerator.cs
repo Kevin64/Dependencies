@@ -7,19 +7,19 @@ namespace LogGeneratorDLL
 {
     public class LogGenerator
     {
-        private string m_exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        private string path = StringsAndConstants.LOGFILE_LOCATION;
         private string fileNameStr;
 
-        public LogGenerator(string softwareName, string fileName)
+        public LogGenerator(string softwareName, string fileName, bool consoleOut)
         {
-            using (StreamWriter w = File.AppendText(m_exePath + "\\" + fileName))
+            using (StreamWriter w = File.AppendText(path + "\\" + fileName))
             {
                 fileNameStr = fileName;
-                LogInit(w, softwareName);
+                LogInit(w, softwareName, consoleOut);
             }
         }
 
-        public void LogInit(TextWriter txtWriter, string softwareName)
+        public void LogInit(TextWriter txtWriter, string softwareName, bool consoleOut)
         {
             try
             {
@@ -29,6 +29,17 @@ namespace LogGeneratorDLL
                 txtWriter.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
                 txtWriter.WriteLine();
                 txtWriter.WriteLine(StringsAndConstants.LOG_HEADER);
+                if (consoleOut)
+                {
+                    Console.ForegroundColor = StringsAndConstants.MISC_CONSOLE_COLOR;
+                    Console.WriteLine(StringsAndConstants.LOG_SEPARATOR);
+                    Console.WriteLine();
+                    Console.WriteLine(softwareName);
+                    Console.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
+                    Console.WriteLine();
+                    Console.WriteLine(StringsAndConstants.LOG_HEADER);
+                    Console.ResetColor();
+                }
             }
             catch (Exception e)
             {
@@ -40,7 +51,7 @@ namespace LogGeneratorDLL
         {
             try
             {
-                using (StreamWriter w = File.AppendText(m_exePath + "\\" + fileNameStr))
+                using (StreamWriter w = File.AppendText(path + "\\" + fileNameStr))
                 {
                     Log(logType, logMessage1, logMessage2, w, consoleOut);
                 }
@@ -74,6 +85,7 @@ namespace LogGeneratorDLL
                 else
                 {
                     logTypeAttr = string.Empty;
+                    Console.ForegroundColor = StringsAndConstants.MISC_CONSOLE_COLOR;
                 }
 
                 if (!logMessage2.Equals(string.Empty))
