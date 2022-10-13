@@ -22,8 +22,6 @@ namespace ConstantsDLL
         public const string SERVER_NOT_FOUND_ERROR = "Servidor não encontrado. Selecione um servidor válido!";
         public const string unknown = "Desconhecido";
         public const string ToBeFilledByOEM = "To Be Filled By O.E.M.";
-        public const string ALPHA_VERSION = "alpha";
-        public const string BETA_VERSION = "beta";
         public const string LOG_HEADER = "------------------------LOG DE EXECUÇÃO------------------------";
         public const string LOG_SEPARATOR_SMALL = "------------------------------------------------";
         public const string LOG_SEPARATOR = "____________________________________________________________________________________________________";
