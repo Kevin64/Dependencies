@@ -38,6 +38,9 @@ namespace ConstantsDLL
         public const string LOG_ERROR_ATTR = "<ERRO>";
         public const string LOG_PASSWORD_PLACEHOLDER = "XXXXXXXXXXXXXXX";
         public const string LOG_ARGS_ERROR = ARGS_ERROR;
+        public const int RETURN_SUCCESS = 0;
+        public const int RETURN_WARNING = 1;
+        public const int RETURN_ERROR = 2;
 
         /**
          * Common code
@@ -159,8 +162,8 @@ namespace ConstantsDLL
         public const string ALREADY_REGISTERED_TODAY = "Serviço já registrado para esta dia. Caso seja necessário outro registro, escolha outra data.";
         public const string OFFLINE_MODE_ACTIVATED = "Modo OFFLINE!";
         public const string FIX_PROBLEMS = "Corrija os problemas a seguir antes de prosseguir:";
-        public const string ARGS_ERROR = "Um ou mais argumentos contém erros! Saindo do programa...";
-        public const string AUTH_ERROR = "Erro de autenticação! Saindo do programa...";
+        public const string ARGS_ERROR = "Um ou mais argumentos contém erros! Saindo do programa";
+        public const string AUTH_ERROR = "Erro de autenticação! Saindo do programa";
         public const string AUTH_INVALID = "Credenciais inválidas. Tente novamente.";
         public const int TIMER_INTERVAL = 1000;
         public const int MAX_SIZE = 100;
