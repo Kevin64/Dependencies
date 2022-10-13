@@ -113,6 +113,8 @@ namespace ConstantsDLL
         public const string WEBVIEW2_SYSTEM_PATH_X64 = "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\";
         public const string WEBVIEW2_SYSTEM_PATH_X86 = "C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\";
         public static string LOGFILE_LOCATION = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\" + PROGRAMDATA_FOLDERNAME + "\\";
+        public const string LOGFILE_NOTEXISTS = "Arquivo de log inexistente, criando novo arquivo";
+        public const string LOGFILE_EXISTS = "Arquivo de log encontrado, acrescentando informações";
         public const string PROGRAMDATA_FOLDERNAME = "HardwareInformation";
         public const string SMART_FAIL = " (Drive com falha iminente)";
         public const string ONLINE = "ONLINE";
