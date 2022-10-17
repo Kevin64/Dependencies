@@ -12,8 +12,15 @@ namespace ConstantsDLL
          * Start
         */
 
+        public const int LOG_INFO = 0;
+        public const int LOG_WARNING = 1;
+        public const int LOG_ERROR = 2;
+        public const int LOG_MISC = 3;
+        public const int RETURN_SUCCESS = 0;
+        public const int RETURN_WARNING = 1;
+        public const int RETURN_ERROR = 2;
+
         public const string fileLogin = "login.json";
-        public static string loginPath = System.IO.Path.GetTempPath() + fileLogin;
         public const string fileShaLogin = "login-checksum.txt";
         public const string supplyLoginData = "forneceDadosUsuario.php";
         public const string INTRANET_REQUIRED = "É necessário conexão com a intranet.";
@@ -27,18 +34,13 @@ namespace ConstantsDLL
         public const string LOG_SEPARATOR = "____________________________________________________________________________________________________";
         public const string LOG_TIMESTAMP = "HH:mm:ss.ffffff";
         public const string LOG_FILE_EXT = ".log";
-        public const int LOG_INFO = 0;        
-        public const int LOG_WARNING = 1;
-        public const int LOG_ERROR = 2;
-        public const int LOG_MISC = 3;
         public const string LOG_INFO_ATTR = "<INFORMAÇÃO>";        
         public const string LOG_WARNING_ATTR = "<AVISO>";
         public const string LOG_ERROR_ATTR = "<ERRO>";
         public const string LOG_PASSWORD_PLACEHOLDER = "XXXXXXXXXXXXXXX";
         public const string LOG_ARGS_ERROR = ARGS_ERROR;
-        public const int RETURN_SUCCESS = 0;
-        public const int RETURN_WARNING = 1;
-        public const int RETURN_ERROR = 2;
+
+        public static string loginPath = System.IO.Path.GetTempPath() + fileLogin;
 
         /**
          * Common code
@@ -49,6 +51,12 @@ namespace ConstantsDLL
          * Code exclusive for HardwareInformation application
          * Start
         */
+        public const bool consoleOutCLI = true;
+        public const bool consoleOutGUI = false;
+
+        public const int TIMER_INTERVAL = 1000;
+        public const int MAX_SIZE = 100;
+
         public const string statusBarTextForm1 = "Sistema desenvolvido pelo servidor Kevin Costa, SIAPE 1971957, para uso no serviço da Subdivisão de Tecnologia da Informação do CCSH - UFSM";
         public const string statusBarTextForm2 = "CCSH - UFSM";
         public const string formTitlebarText = "Coleta de hardware e cadastro de patrimônio / Subdivisão de Tecnologia da Informação do CCSH - UFSM";
@@ -87,33 +95,21 @@ namespace ConstantsDLL
         public const string student = "Aluno";
         public const string replacedBattery = "C/ troca de pilha";
         public const string sameBattery = "S/ troca de pilha";
-        public const bool consoleOutCLI = true;
-        public const bool consoleOutGUI = false;
-        public static readonly List<string> defaultServerIP = new List<string>() { "192.168.76.103", "localhost" };
-        public static readonly List<string> defaultServerPort = new List<string>() { "8081", "80" };
-        public static readonly List<string> listBuilding = new List<string>() { "21", "67", "74A", "74B", "74C", "74D", "AR" };
-        public static readonly List<string> listMode = new List<string>() { "F", "f", "M", "m" };
-        public static readonly List<string> listActiveDirectory = new List<string>() { "Sim", "Não" };
-        public static readonly List<string> listStandard = new List<string>() { "Funcionário", "Aluno" };
-        public static readonly List<string> listInUse = new List<string>() { "Sim", "Não" };
-        public static readonly List<string> listTag = new List<string>() { "Sim", "Não" };
-        public static readonly List<string> listType = new List<string>() { "Desktop", "Notebook", "Tablet" };
-        public static readonly List<string> listBattery = new List<string>() { "Sim", "Não" };
-        public static string biosPath = System.IO.Path.GetTempPath() + fileBios;
         public const string THEME_REG_PATH = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
         public const string HWINFO_REG_PATH = @"Software\HardwareInformation";
         public const string THEME_REG_KEY = "AppsUseLightTheme";
         public const string lastInstall = "LastInstallation", lastMaintenance = "LastMaintenance";
-        public const string fileBios = "bios.json";        
+        public const string fileBios = "bios.json";
         public const string fileShaBios = "bios-checksum.txt";
         public const string formatURL = "recebeDadosFormatacao", maintenanceURL = "recebeDadosManutencao", supplyBiosData = "forneceDadosBIOS.php";
         public const string nonSecBootGPU1 = "210", nonSecBootGPU2 = "430";
+        public const string webview2url = "https://go.microsoft.com/fwlink/p/?LinkId=2124703";
+        public const string webview2file = "webview2installer.exe";
         public const string WEBVIEW2_PATH = "runtimes\\win-x86";
         public const string WEBVIEW2_REG_PATH_X64 = "SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}";
         public const string WEBVIEW2_REG_PATH_X86 = "SOFTWARE\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}";
         public const string WEBVIEW2_SYSTEM_PATH_X64 = "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\";
         public const string WEBVIEW2_SYSTEM_PATH_X86 = "C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\";
-        public static string LOGFILE_LOCATION = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\" + PROGRAMDATA_FOLDERNAME + "\\";
         public const string LOGFILE_NOTEXISTS = "Arquivo de log inexistente, criando novo arquivo";
         public const string LOGFILE_EXISTS = "Arquivo de log encontrado, acrescentando informações";
         public const string PROGRAMDATA_FOLDERNAME = "HardwareInformation";
@@ -163,29 +159,6 @@ namespace ConstantsDLL
         public const string ARGS_ERROR = "Um ou mais argumentos contém erros! Saindo do programa";
         public const string AUTH_ERROR = "Erro de autenticação! Saindo do programa";
         public const string AUTH_INVALID = "Credenciais inválidas. Tente novamente.";
-        public const int TIMER_INTERVAL = 1000;
-        public const int MAX_SIZE = 100;
-        public static Color LIGHT_FORECOLOR = SystemColors.ControlText;
-        public static Color LIGHT_BACKCOLOR = SystemColors.ControlLight;
-        public static Color LIGHT_ASTERISKCOLOR = Color.Red;
-        public static Color LIGHT_AGENT = Color.DarkCyan;
-        public static Color ALERT_COLOR = Color.Red;
-        public static Color OFFLINE_ALERT = Color.Red;
-        public static Color ONLINE_ALERT = Color.Lime;
-        public static Color DARK_FORECOLOR = SystemColors.ControlLightLight;
-        public static Color DARK_BACKCOLOR = Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-        public static Color DARK_ASTERISKCOLOR = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-        public static Color DARK_AGENT = Color.DarkCyan;
-        public static Color LIGHT_BACKGROUND = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-        public static Color DARK_BACKGROUND = Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-        public static Color DARK_SUBTLE_LIGHTLIGHTCOLOR = Color.DimGray;
-        public static Color LIGHT_SUBTLE_DARKDARKCOLOR = Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-        public static Color DARK_SUBTLE_LIGHTCOLOR = Color.DarkSlateGray;
-        public static Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
-        public static Color BLUE_FOREGROUND = SystemColors.Highlight;
-        public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-        public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
-
         public const string LOG_INIT = "Inicialização execução";
         public const string LOG_THEME = "Usando tema escuro";
         public const string LOG_OFFLINE_MODE = "Modo de execução offline";
@@ -219,24 +192,6 @@ namespace ConstantsDLL
         public const string LOG_BIOS = "Versão da BIOS/UEFI";
         public const string LOG_VT = "Tecnologia de Virtualização";
         public const string LOG_TPM = "Versão do módulo TPM";
-
-        public const string LOG_HOSTNAME_ERROR = HOSTNAME_ALERT;
-        public const string LOG_MEDIAOP_ERROR = MEDIA_OPERATION_ALERT;
-        public const string LOG_SECBOOT_ERROR = SECURE_BOOT_ALERT;
-        public const string LOG_OFFLINE_ERROR = DATABASE_REACH_ERROR;
-        public const string LOG_BIOSVER_ERROR = BIOS_VERSION_ALERT;
-        public const string LOG_FIRMWARE_ERROR = FIRMWARE_TYPE_ALERT;
-        public const string LOG_NETWORK_ERROR = NETWORK_ERROR;
-        public const string LOG_VT_ERROR = VT_ALERT;
-        public const string LOG_SMART_ERROR = SMART_FAIL;
-        public const string LOG_TPM_ERROR = TPM_ERROR;
-        public const string LOG_MEMORYFEW_ERROR = NOT_ENOUGH_MEMORY;
-        public const string LOG_MEMORYMUCH_ERROR = TOO_MUCH_MEMORY;
-        public const string LOG_SERVER_UNREACHABLE = SERVER_NOT_FOUND_ERROR;
-        public const string LOG_MANDATORY_FIELD_ERROR = MANDATORY_FIELD;
-        public const string LOG_PENDENCY_ERROR = "Pendências detectadas";
-        public const string LOG_ALREADY_REGISTERED_TODAY = ALREADY_REGISTERED_TODAY;
-
         public const string LOG_FILENAME_CP = "CadastroPatrimonial";
         public const string LOG_START_COLLECTING = "Coletando hardware";
         public const string LOG_END_COLLECTING = "Finalização da coleta de hardware";
@@ -267,10 +222,59 @@ namespace ConstantsDLL
         public const string LOG_WEBVIEW2_INSTALL_FAILED = "Falha na instalação do WebView2 Runtime, tente novamente";
         public const string LOG_WEBVIEW2_ALREADY_INSTALLED = "WebView2 Runtime já está instalado";
         public const string LOG_CHECKING_WEBVIEW2 = "Verificando presença do WebView2 Runtime no sistema";
+        public const string LOG_PENDENCY_ERROR = "Pendências detectadas";
+        public const string LOG_HOSTNAME_ERROR = HOSTNAME_ALERT;
+        public const string LOG_MEDIAOP_ERROR = MEDIA_OPERATION_ALERT;
+        public const string LOG_SECBOOT_ERROR = SECURE_BOOT_ALERT;
+        public const string LOG_OFFLINE_ERROR = DATABASE_REACH_ERROR;
+        public const string LOG_BIOSVER_ERROR = BIOS_VERSION_ALERT;
+        public const string LOG_FIRMWARE_ERROR = FIRMWARE_TYPE_ALERT;
+        public const string LOG_NETWORK_ERROR = NETWORK_ERROR;
+        public const string LOG_VT_ERROR = VT_ALERT;
+        public const string LOG_SMART_ERROR = SMART_FAIL;
+        public const string LOG_TPM_ERROR = TPM_ERROR;
+        public const string LOG_MEMORYFEW_ERROR = NOT_ENOUGH_MEMORY;
+        public const string LOG_MEMORYMUCH_ERROR = TOO_MUCH_MEMORY;
+        public const string LOG_SERVER_UNREACHABLE = SERVER_NOT_FOUND_ERROR;
+        public const string LOG_MANDATORY_FIELD_ERROR = MANDATORY_FIELD;
+        public const string LOG_ALREADY_REGISTERED_TODAY = ALREADY_REGISTERED_TODAY;
 
-        public const string webview2url = "https://go.microsoft.com/fwlink/p/?LinkId=2124703";
-        public const string webview2file = "webview2installer.exe";
+        public static string biosPath = System.IO.Path.GetTempPath() + fileBios;
+        public static string LOGFILE_LOCATION = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\" + PROGRAMDATA_FOLDERNAME + "\\";
         public static string webview2filePath = System.IO.Path.GetTempPath() + webview2file;
+
+        public static readonly List<string> defaultServerIP = new List<string>() { "192.168.76.103", "localhost" };
+        public static readonly List<string> defaultServerPort = new List<string>() { "8081", "80" };
+        public static readonly List<string> listBuilding = new List<string>() { "21", "67", "74A", "74B", "74C", "74D", "AR" };
+        public static readonly List<string> listMode = new List<string>() { "F", "f", "M", "m" };
+        public static readonly List<string> listActiveDirectory = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> listStandard = new List<string>() { "Funcionário", "Aluno" };
+        public static readonly List<string> listInUse = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> listTag = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> listType = new List<string>() { "Desktop", "Notebook", "Tablet" };
+        public static readonly List<string> listBattery = new List<string>() { "Sim", "Não" };
+        
+        public static Color LIGHT_FORECOLOR = SystemColors.ControlText;
+        public static Color LIGHT_BACKCOLOR = SystemColors.ControlLight;
+        public static Color LIGHT_ASTERISKCOLOR = Color.Red;
+        public static Color LIGHT_AGENT = Color.DarkCyan;
+        public static Color ALERT_COLOR = Color.Red;
+        public static Color OFFLINE_ALERT = Color.Red;
+        public static Color ONLINE_ALERT = Color.Lime;
+        public static Color DARK_FORECOLOR = SystemColors.ControlLightLight;
+        public static Color DARK_BACKCOLOR = Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+        public static Color DARK_ASTERISKCOLOR = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+        public static Color DARK_AGENT = Color.DarkCyan;
+        public static Color LIGHT_BACKGROUND = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+        public static Color DARK_BACKGROUND = Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+        public static Color DARK_SUBTLE_LIGHTLIGHTCOLOR = Color.DimGray;
+        public static Color LIGHT_SUBTLE_DARKDARKCOLOR = Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+        public static Color DARK_SUBTLE_LIGHTCOLOR = Color.DarkSlateGray;
+        public static Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
+        public static Color BLUE_FOREGROUND = SystemColors.Highlight;
+        public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+
+        public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
 
         /**
          * Code exclusive for HardwareInformation application
@@ -281,6 +285,9 @@ namespace ConstantsDLL
          * Code exclusive for FeaturesOverlayPresentation application
          * Start
         */
+
+        public const int Width = 1280;
+        public const int Height = 720;
 
         public const string DidItRunAlready = "DidItRunAlready";
         public const string FOP = "FOP";
@@ -304,8 +311,6 @@ namespace ConstantsDLL
         public const string serverNotFound = "Servidor não encontrado. Selecione um servidor válido!";
         public const string fillForm = "Preencha os campos necessários!";
         public const string win7nt = "6.1";
-        public const int Width = 1280;
-        public const int Height = 720;
         public const string LOG_FILENAME_FOP = "FOP";
 
         /**
