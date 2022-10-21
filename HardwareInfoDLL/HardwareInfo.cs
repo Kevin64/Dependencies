@@ -182,16 +182,19 @@ namespace HardwareInfoDLL
 
                     foreach (ManagementObject queryObj in searcher.Get())
                     {
-                        dresult = Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
-                        dresult = Math.Round(dresult / 1000000000, 0);
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            dresult = Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
+                            dresult = Math.Round(dresult / 1000000000, 0);
 
-                        if (Math.Log10(dresult) > 2.9999)
-                            dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + StringsAndConstants.tb;
-                        else
-                            dresultStr = dresult + " " + StringsAndConstants.gb;
-                        type[i] = StringsAndConstants.hdd;
-                        bytesHDD[i] = dresultStr;
-                        i++;
+                            if (Math.Log10(dresult) > 2.9999)
+                                dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + StringsAndConstants.tb;
+                            else
+                                dresultStr = dresult + " " + StringsAndConstants.gb;
+                            type[i] = StringsAndConstants.hdd;
+                            bytesHDD[i] = dresultStr;
+                            i++;
+                        }
                     }
                     var typeSliced = type.Take(i);
                     var typeSlicedHDD = bytesHDD.Take(i);
@@ -291,7 +294,10 @@ namespace HardwareInfoDLL
 
                     foreach (ManagementObject queryObj in searcher.Get())
                     {
-                        dresult += Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            dresult += Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
+                        }
                     }
                 }
                 dresult = Math.Round(dresult / 1000000000, 0);
