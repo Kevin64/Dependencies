@@ -6,12 +6,13 @@ namespace LogGeneratorDLL
 {
     public class LogGenerator
     {
-        private string path = StringsAndConstants.LOGFILE_LOCATION;
+        private string path;
         private string fileNameStr;
 
-        public LogGenerator(string softwareName, string fileName, bool consoleOut)
+        public LogGenerator(string softwareName, string path, string fileName, bool consoleOut)
         {
-            using (StreamWriter w = File.AppendText(path + "\\" + fileName))
+            this.path = path;
+            using (StreamWriter w = File.AppendText(this.path + "\\" + fileName))
             {
                 fileNameStr = fileName;
                 LogInit(w, softwareName, consoleOut);
@@ -50,7 +51,7 @@ namespace LogGeneratorDLL
         {
             try
             {
-                using (StreamWriter w = File.AppendText(path + "\\" + fileNameStr))
+                using (StreamWriter w = File.AppendText(this.path + "\\" + fileNameStr))
                 {
                     Log(logType, logMessage1, logMessage2, w, consoleOut);
                 }
@@ -103,7 +104,11 @@ namespace LogGeneratorDLL
             }
             catch (Exception e)
             {
-                txtWriter.WriteLine(e.Message);
+                Console.ForegroundColor = ConsoleColor.Red;
+                txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), StringsAndConstants.LOG_ERROR_ATTR, e.Message);
+                if(consoleOut)
+                    Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), StringsAndConstants.LOG_ERROR_ATTR, e.Message);
+                Console.ResetColor();
             }
         }
 

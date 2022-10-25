@@ -40,6 +40,7 @@ namespace ConstantsDLL
         public const string LOG_ERROR_ATTR = "<ERRO>";
         public const string LOG_PASSWORD_PLACEHOLDER = "XXXXXXXXXXXXXXX";
         public const string LOG_ARGS_ERROR = ARGS_ERROR;
+        public const string PROGRAMDATA_FOLDERNAME = "AppLog";
 
         public static string loginPath = System.IO.Path.GetTempPath() + fileLogin;
 
@@ -113,7 +114,6 @@ namespace ConstantsDLL
         public const string WEBVIEW2_SYSTEM_PATH_X86 = "C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\";
         public const string LOGFILE_NOTEXISTS = "Arquivo de log inexistente, criando novo arquivo";
         public const string LOGFILE_EXISTS = "Arquivo de log encontrado, acrescentando informações";
-        public const string PROGRAMDATA_FOLDERNAME = "HardwareInformation";
         public const string SMART_FAIL = " (Drive com falha iminente)";
         public const string ONLINE = "ONLINE";
         public const string OFFLINE = "OFFLINE";
@@ -241,7 +241,7 @@ namespace ConstantsDLL
         public const string LOG_ALREADY_REGISTERED_TODAY = ALREADY_REGISTERED_TODAY;
 
         public static string biosPath = System.IO.Path.GetTempPath() + fileBios;
-        public static string LOGFILE_LOCATION = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\" + PROGRAMDATA_FOLDERNAME + "\\";
+        public static string LOGFILE_LOCATION = "C:\\br.ufsm.ccsh.ti\\" + PROGRAMDATA_FOLDERNAME + "\\";
         public static string webview2filePath = System.IO.Path.GetTempPath() + webview2file;
 
         public static readonly List<string> defaultServerIP = new List<string>() { "192.168.76.103", "localhost" };
@@ -325,17 +325,17 @@ namespace ConstantsDLL
         */
 
         public const string defFile = "definitions.ini";        
-        public const string resChangeFailed = "Falha ao alterar a resolução!";
-        public const string resChangeSuccess = "Êxito em alterar a resolução!";
-        public const string resChangeReboot = "Necessário reinicialização para alterar a resolução!";
-        public const string PARAMETER_ERROR = "Erro: Um ou mais parâmetros do arquivo INI estão mal formados!";
+        public const string resChangeFailed = "Falha ao alterar a resolução";
+        public const string resChangeSuccess = "Êxito em alterar a resolução";
+        public const string resChangeReboot = "Necessário reinicialização para alterar a resolução";
+        public const string PARAMETER_ERROR = "Um ou mais parâmetros do arquivo INI estão mal formados";
         public const string KEY_FINISH = "Pressione Enter para fechar...";
-        public const string HW_MODEL = "Modelo do hardware: ";
-        public const string OS_VERSION = "Versão do sistema: ";
-        public const string OS_ARCH = "Arquitetura do sistema: ";
-        public const string FIRMWARE_TYPE = "Tipo de firmware: ";
-        public const string INSTALLING = "Instalando drivers, aguarde...";
-        public const string INSTALL_FINISHED = "Instalação finalizada!";
+        public const string HW_MODEL = "Modelo do hardware";
+        public const string OS_VERSION = "Versão do sistema";
+        public const string OS_ARCH = "Arquitetura do sistema";
+        public const string FIRMWARE_TYPE = "Tipo de firmware";
+        public const string INSTALLING = "Instalando drivers";
+        public const string INSTALL_FINISHED = "Instalação finalizada";
         public const string INI_SECTION_1 = "Definitions";
         public const string INI_SECTION_1_1 = "InstallDrivers";
         public const string INI_SECTION_1_2 = "CleanGarbage";
@@ -344,21 +344,29 @@ namespace ConstantsDLL
         public const string INI_SECTION_1_5 = "ResolutionHeight";
         public const string INI_SECTION_1_6 = "DriverPath";
         public const string INI_SECTION_1_7 = "RebootAfterFinished";
-        public const string INI_SECTION_1_8 = "Verbose";
+        public const string INI_SECTION_1_8 = "PauseAfterFinished";
+        public const string INI_SECTION_1_9 = "LogLocation";
         public const string SHUTDOWN_CMD_1 = "shutdown";
         public const string SHUTDOWN_CMD_2 = "/r /f /t 0";
-        public const string CHANGING_RESOLUTION = "Alterando resolução...";
-        public const string CHANGING_RESOLUTION_SUCCESSFUL = "Resolução alterada com sucesso!";
-        public const string CHECKING_RESOLUTION = "Verificando resolução atual...";
-        public const string CHECKING_AVAILABLE_RESOLUTIONS = "Verificando resoluções disponíveis...";
-        public const string ERASING_GARBAGE = "Apagando drivers não-utilizados...";
-        public const string ERASING_SUCCESSFUL = "Drivers apagados com êxito!";
-        public const string NOT_ERASING_GARBAGE = "Ignorando exclusão de drivers não-utilizados...";
-        public const string NOT_INSTALLING_DRIVERS = "Ignorando instalação de drivers...";
-        public const string NOT_CHANGING_RESOLUTION = "Ignorando alteração da resolução...";
-        public const string NOT_REBOOTING = "Ignorando reinicialização...";
-        public const string CHANGING_RESOLUTION_UNNECESSARY = "Sem necessidade de alterar resolução!";
+        public const string CHANGING_RESOLUTION = "Alterando resolução";
+        public const string CHANGING_RESOLUTION_SUCCESSFUL = "Resolução alterada com sucesso";
+        public const string CHECKING_RESOLUTION = "Verificando resolução atual";
+        public const string CHECKING_AVAILABLE_RESOLUTIONS = "Verificando resoluções disponíveis";
+        public const string FAILED_CHANGING_RESOLUTION = "Falha ao alterar a resolução";
+        public const string REBOOT_CHANGING_RESOLUTION = "Reinicialização necessária para alterar a resolução";
+        public const string ERASING_GARBAGE = "Apagando drivers não utilizados";
+        public const string ERASING_SUCCESSFUL = "Drivers não utilizados apagados com êxito";
+        public const string NOT_ERASING_GARBAGE = "Ignorando exclusão de drivers não utilizados";
+        public const string NOT_INSTALLING_DRIVERS = "Ignorando instalação de drivers";
+        public const string NOT_CHANGING_RESOLUTION = "Ignorando alteração da resolução";
+        public const string NOT_REBOOTING = "Ignorando reinicialização";
+        public const string CHANGING_RESOLUTION_UNNECESSARY = "Sem necessidade de alterar resolução";
         public const string LOG_FILENAME_OOBE = "OfflineDriverInstallerOOBE";
+        public const string LOG_DEFFILE_NOT_FOUND = "Arquivo de definição não encontrado";
+        public const string DEF_FOUND = "Definição encontrada";
+        public const string DRIVER_INSTALL_FAILED = "Falha na instalação dos drivers";
+        public const string DIRECTORY_DO_NOT_EXIST = "Repositório de drivers não encontrado";
+        public const string UNSUPPORTED_OS = "Sistema não suportado";
 
         /**
          * Code exclusive for OfflineDriverInstallerOOBE application
