@@ -19,6 +19,7 @@ namespace ConstantsDLL
         public const int RETURN_WARNING = 1;
         public const int RETURN_ERROR = 2;
 
+        public const string defFile = "definitions.ini";
         public const string fileLogin = "login.json";
         public const string fileShaLogin = "login-checksum.txt";
         public const string supplyLoginData = "forneceDadosUsuario.php";
@@ -323,7 +324,6 @@ namespace ConstantsDLL
          * Start
         */
 
-        public const string defFile = "definitions.ini";        
         public const string resChangeFailed = "Falha ao alterar a resolução";
         public const string resChangeSuccess = "Êxito em alterar a resolução";
         public const string resChangeReboot = "Necessário reinicialização para alterar a resolução";
