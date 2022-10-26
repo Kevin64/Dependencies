@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using static System.Environment;
 
 namespace ConstantsDLL
 {
@@ -363,6 +362,7 @@ namespace ConstantsDLL
         public const string CHANGING_RESOLUTION_UNNECESSARY = "Sem necessidade de alterar resolução";
         public const string LOG_FILENAME_OOBE = "OfflineDriverInstallerOOBE";
         public const string LOG_DEFFILE_NOT_FOUND = "Arquivo de definição não encontrado";
+        public const string LOG_DEFFILE_FOUND = "Arquivo de definições encontrado";
         public const string DEF_FOUND = "Definição encontrada";
         public const string DRIVER_INSTALL_FAILED = "Falha na instalação dos drivers";
         public const string DIRECTORY_DO_NOT_EXIST = "Repositório de drivers não encontrado";
