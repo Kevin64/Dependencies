@@ -87,7 +87,7 @@ namespace ConstantsDLL
         public const string frequency = "MHz";
         public const string ddr2 = "DDR2", ddr3 = "DDR3", ddr3smbios = "24", ddr3memorytype = "24", ddr4 = "DDR4", ddr4smbios = "26";
         public const string systemRom = "SYSTEM ROM", arch32 = "32", arch64 = "64";
-        public const string windows10 = "10", windows8_1 = "8.1", windows8 = "8", windows7 = "7";
+        public const string windows11 = "11", windows10 = "10", windows8_1 = "8.1", windows8 = "8", windows7 = "7";
         public const string bios = "BIOS", uefi = "UEFI";
         public const string hdd = "HDD", ssd = "SSD";
         public const string build = "build";
@@ -295,6 +295,7 @@ namespace ConstantsDLL
         public const string FopRegKey = @"Software\FOP";
         public const string win7imgDir = "\\img-windows7\\";
         public const string win10imgDir = "\\img-windows10\\";
+        public const string win11imgDir = "\\img-windows11\\";
         public const string FopRunOnceKey = @"Software\Microsoft\Windows\CurrentVersion\RunOnce";
         public const string FOPx86 = "C:\\Program Files (x86)\\FOP\\Rever tutorial de uso do computador.lnk";
         public const string FOPx64 = "C:\\Program Files\\FOP\\Rever tutorial de uso do computador.lnk";
@@ -311,7 +312,12 @@ namespace ConstantsDLL
         public const string doExecutionResError = "Enviar dados de entrega";
         public const string serverNotFound = "Servidor não encontrado. Selecione um servidor válido!";
         public const string fillForm = "Preencha os campos necessários!";
-        public const string win7nt = "6.1";
+        public const string win7ntBuild = "6.1.7601";
+        public const string win7ntBuildMinor = "7601";
+        public const string win10ntBuild = "10.0.19041";
+        public const string win10ntBuildMinor = "19041";
+        public const string win11ntBuild = "10.0.22000";
+        public const string win11ntBuildMinor = "22000";
         public const string LOG_FILENAME_FOP = "FOP";
 
         /**
