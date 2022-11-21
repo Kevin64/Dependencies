@@ -312,13 +312,22 @@ namespace ConstantsDLL
         public const string doExecutionResError = "Enviar dados de entrega";
         public const string serverNotFound = "Servidor não encontrado. Selecione um servidor válido!";
         public const string fillForm = "Preencha os campos necessários!";
-        public const string win7ntBuild = "6.1.7601";
-        public const string win7ntBuildMinor = "7601";
-        public const string win10ntBuild = "10.0.19041";
-        public const string win10ntBuildMinor = "19041";
-        public const string win11ntBuild = "10.0.22000";
-        public const string win11ntBuildMinor = "22000";
+        public const string win7ntMajor = "6";
+        public const string win7ntMinor = "1";
+        public const string win7ntBuild = "7601";
+        public const string win7ntFullVersion = "6.1.7601";
+        public const string win10ntMajor = "10";
+        public const string win10ntMinor = "0";
+        public const string win10ntBuild = "19041";
+        public const string win10ntFullVersion = "10.0.19041";
+        public const string win11ntMajor = "10";
+        public const string win11ntMinor = "0";
+        public const string win11ntBuild = "22000";
+        public const string win11ntFullVersion = "10.0.22000";
         public const string LOG_FILENAME_FOP = "FOP";
+        public const string STI_URL = "https://www.ufsm.br/unidades-universitarias/ccsh/unidade-de-tecnologia-da-informacao/";
+        public const string UFSM_URL = "https://www.ufsm.br/";
+        public const string CCSH_URL = "https://www.ufsm.br/unidades-universitarias/ccsh/";
 
         /**
          * Code exclusive for FeaturesOverlayPresentation application
