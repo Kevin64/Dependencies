@@ -310,7 +310,6 @@ namespace ConstantsDLL
         public const string cancelExecutionResError = "Apagar dados de entrega";
         public const string doExecution = "Enviar dados de entrega e \nexecutar no próximo boot";
         public const string doExecutionResError = "Enviar dados de entrega";
-        public const string serverNotFound = "Servidor não encontrado. Selecione um servidor válido!";
         public const string fillForm = "Preencha os campos necessários!";
         public const string win7ntMajor = "6";
         public const string win7ntMinor = "1";
@@ -329,6 +328,24 @@ namespace ConstantsDLL
         public const string STI_URL = "https://www.ufsm.br/unidades-universitarias/ccsh/unidade-de-tecnologia-da-informacao/";
         public const string UFSM_URL = "https://www.ufsm.br/";
         public const string CCSH_URL = "https://www.ufsm.br/unidades-universitarias/ccsh/";
+        public const string LOG_IMG_NOTFOUND = "Diretório de imagens não encontrado";
+        public const string LOG_IMG_FOUND = "Diretório de imagens encontrado";
+        public const string LOG_RUNNING = "Executando janela principal";
+        public const string LOG_CLOSING = "Fechando programa";
+        public const string LOG_SCHEDULING = "Criando entrada de inicialização";
+        public const string LOG_NOTSCHEDULING = "Excluindo entrada de inicialização e registro no banco de dados";
+        public const string LOG_EMPLOYEEAWAY = "Funcionário ausente";
+        public const string LOG_EMPLOYEEPRESENT = "Funcionário presente";
+        public const string LOG_REGISTERING_DELIVERY = "Registrando entrega";
+        public const string LOG_FILLFORM = fillForm;
+        public const string LOG_SERVER_NOT_FOUND = SERVER_NOT_FOUND_ERROR;
+        public const string LOG_ADDING_REG = "Adicionando chaves de registro";
+        public const string LOG_REMOVING_REG = "Excluindo chaves de registro";
+        public const string LOG_RESOLUTION_PASSED = "Resolução adequada para exibição";
+        public const string LOG_RESOLUTION_FAILED = "Resolução abaixo do requisito";
+        public const string LOG_DETECTING_OS = "Detectando sistema operacional";
+        public const string LOG_ENUM_FILES = "Reunindo arquivos de imagem";
+
 
         /**
          * Code exclusive for FeaturesOverlayPresentation application
