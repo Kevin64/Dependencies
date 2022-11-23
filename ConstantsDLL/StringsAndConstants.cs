@@ -287,8 +287,8 @@ namespace ConstantsDLL
          * Start
         */
 
-        public const int Width = 1280;
-        public const int Height = 720;
+        public const int Width = 1366;
+        public const int Height = 768;
 
         public const string DidItRunAlready = "DidItRunAlready";
         public const string FOP = "FOP";
@@ -325,6 +325,7 @@ namespace ConstantsDLL
         public const string win11ntBuild = "22000";
         public const string win11ntFullVersion = "10.0.22000";
         public const string LOG_FILENAME_FOP = "FOP";
+        public const double FADE_TIME = 0.2d;
         public const string STI_URL = "https://www.ufsm.br/unidades-universitarias/ccsh/unidade-de-tecnologia-da-informacao/";
         public const string UFSM_URL = "https://www.ufsm.br/";
         public const string CCSH_URL = "https://www.ufsm.br/unidades-universitarias/ccsh/";
