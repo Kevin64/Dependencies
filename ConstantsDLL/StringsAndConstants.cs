@@ -300,7 +300,7 @@ namespace ConstantsDLL
         public const string FOPx86 = "C:\\Program Files (x86)\\FOP\\Rever tutorial de uso do computador.lnk";
         public const string FOPx64 = "C:\\Program Files\\FOP\\Rever tutorial de uso do computador.lnk";
         public const string imgExt = ".png";
-        public const string resolutionWarning = "Resolução insuficiente. Este programa suporta apenas resoluções iguais ou superiores a 1280x720.";
+        public static string resolutionWarning = "Resolução insuficiente. Este programa suporta apenas resoluções iguais ou superiores a " + Width + "x" + Height + ".";
         public const string finaleScreen = "Finalização";
         public const string finishText = "Finalizar";
         public const string introScreen = "Introdução";
