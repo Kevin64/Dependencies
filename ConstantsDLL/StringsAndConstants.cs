@@ -366,7 +366,8 @@ namespace ConstantsDLL
         public const string OS_VERSION = "Versão do sistema";
         public const string OS_ARCH = "Arquitetura do sistema";
         public const string FIRMWARE_TYPE = "Tipo de firmware";
-        public const string INSTALLING = "Instalando drivers";
+        public const string ADDING_INSTALLING = "Adicionando e instalando drivers";
+        public const string ADDING = "Apenas adicionando drivers";
         public const string INSTALL_FINISHED = "Instalação finalizada";
         public const string INI_SECTION_1 = "Definitions";
         public const string INI_SECTION_1_1 = "InstallDrivers";
@@ -378,6 +379,7 @@ namespace ConstantsDLL
         public const string INI_SECTION_1_7 = "RebootAfterFinished";
         public const string INI_SECTION_1_8 = "PauseAfterFinished";
         public const string INI_SECTION_1_9 = "LogLocation";
+        public const string INI_SECTION_1_10 = "AddDrivers";
         public const string SHUTDOWN_CMD_1 = "shutdown";
         public const string SHUTDOWN_CMD_2 = "/r /f /t 0";
         public const string CHANGING_RESOLUTION = "Alterando resolução";
@@ -389,7 +391,7 @@ namespace ConstantsDLL
         public const string ERASING_GARBAGE = "Apagando drivers não utilizados";
         public const string ERASING_SUCCESSFUL = "Drivers não utilizados apagados com êxito";
         public const string NOT_ERASING_GARBAGE = "Ignorando exclusão de drivers não utilizados";
-        public const string NOT_INSTALLING_DRIVERS = "Ignorando instalação de drivers";
+        public const string NOT_INSTALLING_DRIVERS = "Ignorando a adição e instalação de drivers";
         public const string NOT_CHANGING_RESOLUTION = "Ignorando alteração da resolução";
         public const string NOT_REBOOTING = "Ignorando reinicialização";
         public const string CHANGING_RESOLUTION_UNNECESSARY = "Sem necessidade de alterar resolução";
