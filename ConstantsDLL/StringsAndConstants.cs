@@ -340,11 +340,15 @@ namespace ConstantsDLL
         public const string LOG_FILLFORM = fillForm;
         public const string LOG_SERVER_NOT_FOUND = SERVER_NOT_FOUND_ERROR;
         public const string LOG_ADDING_REG = "Adicionando chaves de registro";
+        public const string LOG_NOT_ADDING_REG = "Não adicionar chaves de registro";
         public const string LOG_REMOVING_REG = "Excluindo chaves de registro";
         public const string LOG_RESOLUTION_PASSED = "Resolução adequada para exibição";
         public const string LOG_RESOLUTION_FAILED = "Resolução abaixo do requisito";
         public const string LOG_DETECTING_OS = "Detectando sistema operacional";
         public const string LOG_ENUM_FILES = "Reunindo arquivos de imagem";
+        public const string LOG_SERVICE_TYPE = "Tipo de serviço";
+        public const string LOG_FORMAT_SERVICE = "Formatação";
+        public const string LOG_MAINTENANCE_SERVICE = "Manutenção";
 
 
         /**
