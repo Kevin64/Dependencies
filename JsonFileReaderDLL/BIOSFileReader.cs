@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-	public class jFile
+	public class bFile
 	{
 		public string id { get; set; }
 		public string marca { get; set; }
@@ -19,12 +19,12 @@ namespace JsonFileReaderDLL
     }
 	public static class BIOSFileReader
 	{
-		private static string jsonFile, sha1, aux;
+		private static string jsonFile, sha256, aux;
 		private static WebClient wc;
 		private static StreamReader fileB;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> checkHost(string ip, string port)
+        public static Task<bool> checkHostMT(string ip, string port)
         {
 			return Task.Run(() =>
 			{
@@ -35,9 +35,9 @@ namespace JsonFileReaderDLL
 					System.Threading.Thread.Sleep(300);
 					wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.fileBios, StringsAndConstants.biosPath);
 					System.Threading.Thread.Sleep(300);
-					sha1 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaBios);
+					sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaBios);
 					System.Threading.Thread.Sleep(300);
-					sha1 = sha1.ToUpper();
+					sha256 = sha256.ToUpper();
 					fileB = new StreamReader(StringsAndConstants.biosPath);
 					aux = StringsAndConstants.biosPath;
 					fileB.Close();
@@ -60,9 +60,9 @@ namespace JsonFileReaderDLL
                 System.Threading.Thread.Sleep(300);
                 wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.fileBios, StringsAndConstants.biosPath);
                 System.Threading.Thread.Sleep(300);
-                sha1 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaBios);
+                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaBios);
                 System.Threading.Thread.Sleep(300);
-                sha1 = sha1.ToUpper();
+                sha256 = sha256.ToUpper();
                 fileB = new StreamReader(StringsAndConstants.biosPath);
                 aux = StringsAndConstants.biosPath;
                 fileB.Close();
@@ -75,20 +75,20 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses brand, model, BIOS versions, operatin mode and TPM version, returning them (creates a separate thread)
-		public static Task<string[]> fetchInfo(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
+		public static Task<string[]> fetchInfoMT(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
 		{
 			return Task.Run(async () =>
 			{
-				if (!await checkHost(ip, port))
+				if (!await checkHostMT(ip, port))
 					return null;
 
 				string[] arr;
 				string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
 				fileB = new StreamReader(StringsAndConstants.biosPath);
-				if (MiscMethods.GetSha1Hash(aux).Equals(sha1))
+				if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
 				{
 					jsonFile = fileB.ReadToEnd();
-					jFile[] jsonParse = JsonConvert.DeserializeObject<jFile[]>(@jsonFile);
+					bFile[] jsonParse = JsonConvert.DeserializeObject<bFile[]>(@jsonFile);
 
 					for (int i = 0; i < jsonParse.Length; i++)
 					{
@@ -121,10 +121,10 @@ namespace JsonFileReaderDLL
             string[] arr;
             string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
             fileB = new StreamReader(StringsAndConstants.biosPath);
-            if (MiscMethods.GetSha1Hash(aux).Equals(sha1))
+            if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileB.ReadToEnd();
-                jFile[] jsonParse = JsonConvert.DeserializeObject<jFile[]>(@jsonFile);
+                bFile[] jsonParse = JsonConvert.DeserializeObject<bFile[]>(@jsonFile);
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
