@@ -345,6 +345,8 @@ namespace ConstantsDLL
         public const string LOG_REMOVING_REG = "Desfazendo chaves de registro";
         public const string LOG_RESOLUTION_PASSED = "Resolução adequada para exibição";
         public const string LOG_RESOLUTION_FAILED = "Resolução abaixo do requisito";
+        public const string LOG_RESOLUTION_ERROR = "Erro de resolução";
+        public const string LOG_DISABLE_BOOT = "Não ativar inicialização em boot";
         public const string LOG_DETECTING_OS = "Detectando sistema operacional";
         public const string LOG_ENUM_FILES = "Reunindo arquivos de imagem";
         public const string LOG_SERVICE_TYPE = "Tipo de serviço";
