@@ -290,6 +290,7 @@ namespace ConstantsDLL
         public const int Width = 1366;
         public const int Height = 768;
 
+        public static readonly List<string> fopFileList = new List<string>() { "BCrypt.Net-Next.dll", "ConstantsDLL.dll", "INIFileParser.dll", "JsonFileReaderDLL.dll", "LogGeneratorDLL.dll", "Microsoft.Xaml.Behaviors.dll", "Newtonsoft.Json.dll", "System.Buffers.dll", "System.Memory.dll", "System.Numerics.Vectors.dll", "System.Runtime.CompilerServices.Unsafe.dll", "TutorialDeUsoDaEstaçãoDeTrabalho.exe", "TutorialDeUsoDaEstaçãoDeTrabalho.exe.config" };
         public const string DidItRunAlready = "DidItRunAlready";
         public const string FOP = "FOP";
         public const string FopRegKey = @"Software\FOP";
@@ -333,7 +334,7 @@ namespace ConstantsDLL
         public const string LOG_RUNNING = "Executando janela principal";
         public const string LOG_CLOSING = "Fechando programa";
         public const string LOG_SCHEDULING = "Criando entrada de inicialização";
-        public const string LOG_NOTSCHEDULING = "Excluindo entrada de inicialização e registro no banco de dados";
+        public const string LOG_NOTSCHEDULING = "Excluindo registro no banco de dados";
         public const string LOG_EMPLOYEEAWAY = "Funcionário ausente";
         public const string LOG_EMPLOYEEPRESENT = "Funcionário presente";
         public const string LOG_REGISTERING_DELIVERY = "Registrando entrega";
@@ -341,7 +342,7 @@ namespace ConstantsDLL
         public const string LOG_SERVER_NOT_FOUND = SERVER_NOT_FOUND_ERROR;
         public const string LOG_ADDING_REG = "Adicionando chaves de registro";
         public const string LOG_NOT_ADDING_REG = "Não adicionar chaves de registro";
-        public const string LOG_REMOVING_REG = "Excluindo chaves de registro";
+        public const string LOG_REMOVING_REG = "Desfazendo chaves de registro";
         public const string LOG_RESOLUTION_PASSED = "Resolução adequada para exibição";
         public const string LOG_RESOLUTION_FAILED = "Resolução abaixo do requisito";
         public const string LOG_DETECTING_OS = "Detectando sistema operacional";
@@ -349,6 +350,7 @@ namespace ConstantsDLL
         public const string LOG_SERVICE_TYPE = "Tipo de serviço";
         public const string LOG_FORMAT_SERVICE = "Formatação";
         public const string LOG_MAINTENANCE_SERVICE = "Manutenção";
+        public const string LOG_PATR_NUM = "Número de patrimônio";
 
 
         /**
@@ -401,6 +403,8 @@ namespace ConstantsDLL
         public const string CHANGING_RESOLUTION_UNNECESSARY = "Sem necessidade de alterar resolução";
         public const string LOG_FILENAME_OOBE = "OfflineDriverInstallerOOBE";
         public const string LOG_DEFFILE_NOT_FOUND = "Arquivo de definição não encontrado";
+        public const string LOG_APPFILE_NOT_FOUND = "Um ou mais arquivos de dependência ausentes";
+        public const string LOG_APPFILE_FOUND = "Arquivos de dependência encontrados";
         public const string LOG_DEFFILE_FOUND = "Arquivo de definições encontrado";
         public const string DEF_FOUND = "Definição encontrada";
         public const string DRIVER_INSTALL_FAILED = "Falha na instalação dos drivers";
