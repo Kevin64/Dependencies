@@ -88,7 +88,7 @@ namespace JsonFileReaderDLL
 
 					for (int i = 0; i < jsonParse.Length; i++)
 					{
-						if (nome.Equals(jsonParse[i].usuario) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].senha))
+						if (nome.Equals(jsonParse[i].usuario) && !jsonParse[i].nivel.Equals(StringsAndConstants.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].senha))
 						{
 							arr = new string[] { "true", jsonParse[i].usuario };
 							fileL.Close();
@@ -117,7 +117,7 @@ namespace JsonFileReaderDLL
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (nome.Equals(jsonParse[i].usuario) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].senha))
+                    if (nome.Equals(jsonParse[i].usuario) && !jsonParse[i].nivel.Equals(StringsAndConstants.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].senha))
                     {
                         arr = new string[] { "true", jsonParse[i].usuario };
                         fileL.Close();

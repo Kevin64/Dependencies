@@ -19,6 +19,7 @@ namespace ConstantsDLL
         public const int RETURN_WARNING = 1;
         public const int RETURN_ERROR = 2;
 
+        public const string limitedUserType = "limit";
         public const string defFile = "definitions.ini";
         public const string fileLogin = "login.json";
         public const string fileShaLogin = "login-checksum.txt";
