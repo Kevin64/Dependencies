@@ -67,7 +67,7 @@ namespace ConstantsDLL
         public const string cliHelpTextPort = "Porta do sistema de patrimônio (Ex.: 8081, 80, etc)";
         public const string cliHelpTextMode = "Tipo de serviço realizado (Valores possíveis: F/f para formatação, M/m para manutenção)";
         public const string cliHelpTextPatrimony = "Patrimônio do equipamento (Ex.: 123456)";
-        public const string cliHelpTextSeal = "Lacre do equipamento (se houver) (Ex.: 12345678)";
+        public const string cliHelpTextSeal = "Lacre do equipamento (se houver) (Ex.: 12345678 ou 'mesmo' para manter inalterado)";
         public const string cliHelpTextRoom = "Sala onde o equipamento estará localizado (Ex.: 1234)";
         public const string cliHelpTextBuilding = "Prédio onde o equipamento estará localizado (Valores possíveis: 21, 67, 74A, 74B, 74C, 74D, AR)";
         public const string cliHelpTextActiveDirectory = "Cadastrado no Active Directory (Valores possíveis: Sim, Não)";
@@ -81,6 +81,7 @@ namespace ConstantsDLL
         public const string cliHelpTextUser = "Usuário de login";
         public const string cliHelpTextPassword = "Senha de login";
         public const string today = "hoje";
+        public const string sameSeal = "mesmo";
         public const string ok = "OK", activated = "Ativado", deactivated = "Desativado";
         public const string notSupported = "Não suportado", notDetermined = "Não determinado", notExistant = "Não existente";
         public const string tb = "TB", gb = "GB", mb = "MB", predFail = "Pred Fail";
@@ -250,7 +251,7 @@ namespace ConstantsDLL
         public static readonly List<string> listBuilding = new List<string>() { "21", "67", "74A", "74B", "74C", "74D", "AR" };
         public static readonly List<string> listMode = new List<string>() { "F", "f", "M", "m" };
         public static readonly List<string> listActiveDirectory = new List<string>() { "Sim", "Não" };
-        public static readonly List<string> listStandard = new List<string>() { "Funcionário", "Aluno" };
+        public static readonly List<string> listStandard = new List<string>() { "F", "f", "A", "a" };
         public static readonly List<string> listInUse = new List<string>() { "Sim", "Não" };
         public static readonly List<string> listTag = new List<string>() { "Sim", "Não" };
         public static readonly List<string> listType = new List<string>() { "Desktop", "Notebook", "Tablet" };
