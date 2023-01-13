@@ -60,6 +60,9 @@ namespace ConstantsDLL
         public const int TIMER_INTERVAL = 1000;
         public const int MAX_SIZE = 100;
 
+        public const string UTF8_NO = "Não";
+        public const string ANSI_NO = "Nao";
+
         public const string statusBarTextForm1 = "Sistema desenvolvido pelo servidor Kevin Costa, SIAPE 1971957, para uso no serviço da Subdivisão de Tecnologia da Informação do CCSH - UFSM";
         public const string statusBarTextForm2 = "CCSH - UFSM";
         public const string formTitlebarText = "Coleta de hardware e cadastro de patrimônio / Subdivisão de Tecnologia da Informação do CCSH - UFSM";
@@ -70,13 +73,13 @@ namespace ConstantsDLL
         public const string cliHelpTextSeal = "Lacre do equipamento (se houver) (Ex.: 12345678 ou 'mesmo' para manter inalterado)";
         public const string cliHelpTextRoom = "Sala onde o equipamento estará localizado (Ex.: 1234)";
         public const string cliHelpTextBuilding = "Prédio onde o equipamento estará localizado (Valores possíveis: 21, 67, 74A, 74B, 74C, 74D, AR)";
-        public const string cliHelpTextActiveDirectory = "Cadastrado no Active Directory (Valores possíveis: Sim, Não)";
+        public const string cliHelpTextActiveDirectory = "Cadastrado no Active Directory (Valores possíveis: Sim, Nao)";
         public const string cliHelpTextStandard = "Padrão da imagem implantado no equipamento (Valores possíveis: F/f para funcionário, A/a para aluno)";
         public const string cliHelpTextDate = "Data do serviço realizado (Valores possíveis: hoje, ou especificar data, ex.: 12/12/2020)";
-        public const string cliHelpTextBattery = "Realizada troca de pilha? (Valores possíveis: Sim, Não)";
+        public const string cliHelpTextBattery = "Realizada troca de pilha? (Valores possíveis: Sim, Nao)";
         public const string cliHelpTextTicket = "Número do chamado aberto (Ex.: 123456)";
-        public const string cliHelpTextInUse = "Equipamento em uso? (Valores possíveis: Sim, Não)";
-        public const string cliHelpTextTag = "Equipamento possui etiqueta? (Valores possíveis: Sim, Não)";
+        public const string cliHelpTextInUse = "Equipamento em uso? (Valores possíveis: Sim, Nao)";
+        public const string cliHelpTextTag = "Equipamento possui etiqueta? (Valores possíveis: Sim, Nao)";
         public const string cliHelpTextType = "Categoria do equipamento (Valores possíveis: Desktop, Notebook, Tablet)";
         public const string cliHelpTextUser = "Usuário de login";
         public const string cliHelpTextPassword = "Senha de login";
@@ -250,12 +253,12 @@ namespace ConstantsDLL
         public static readonly List<string> defaultServerPort = new List<string>() { "8081", "80" };
         public static readonly List<string> listBuilding = new List<string>() { "21", "67", "74A", "74B", "74C", "74D", "AR" };
         public static readonly List<string> listMode = new List<string>() { "F", "f", "M", "m" };
-        public static readonly List<string> listActiveDirectory = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> listActiveDirectory = new List<string>() { "Sim", ANSI_NO };
         public static readonly List<string> listStandard = new List<string>() { "F", "f", "A", "a" };
-        public static readonly List<string> listInUse = new List<string>() { "Sim", "Não" };
-        public static readonly List<string> listTag = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> listInUse = new List<string>() { "Sim", ANSI_NO };
+        public static readonly List<string> listTag = new List<string>() { "Sim", ANSI_NO };
         public static readonly List<string> listType = new List<string>() { "Desktop", "Notebook", "Tablet" };
-        public static readonly List<string> listBattery = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> listBattery = new List<string>() { "Sim", ANSI_NO };
         
         public static Color LIGHT_FORECOLOR = SystemColors.ControlText;
         public static Color LIGHT_BACKCOLOR = SystemColors.ControlLight;
