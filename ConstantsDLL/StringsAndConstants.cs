@@ -254,7 +254,8 @@ namespace ConstantsDLL
         public static readonly List<string> listBuilding = new List<string>() { "21", "67", "74A", "74B", "74C", "74D", "AR" };
         public static readonly List<string> listMode = new List<string>() { "F", "f", "M", "m" };
         public static readonly List<string> listActiveDirectory = new List<string>() { "Sim", ANSI_NO };
-        public static readonly List<string> listStandard = new List<string>() { "F", "f", "A", "a" };
+        public static readonly List<string> listStandardGUI = new List<string>() { "Funcionário", "Aluno" };
+        public static readonly List<string> listStandardCLI = new List<string>() { "F", "f", "A", "a" };
         public static readonly List<string> listInUse = new List<string>() { "Sim", ANSI_NO };
         public static readonly List<string> listTag = new List<string>() { "Sim", ANSI_NO };
         public static readonly List<string> listType = new List<string>() { "Desktop", "Notebook", "Tablet" };
