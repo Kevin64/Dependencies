@@ -13,4 +13,6 @@
 /HardwareInfoDLL/obj/*
 /JsonFileReaderDLL/bin/*
 /JsonFileReaderDLL/obj/*
+/LogGeneratorDLL/bin/*
+/LogGeneratorDLL/obj/*
 /packages/*
