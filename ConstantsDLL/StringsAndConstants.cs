@@ -42,6 +42,8 @@ namespace ConstantsDLL
         public const string LOG_PASSWORD_PLACEHOLDER = "XXXXXXXXXXXXXXX";
         public const string LOG_ARGS_ERROR = ARGS_ERROR;
         public const string PROGRAMDATA_FOLDERNAME = "AppLog";
+        public const string INI_SECTION_1 = "Definitions";
+        public const string INI_SECTION_1_9 = "LogLocation";
 
         public static string loginPath = System.IO.Path.GetTempPath() + fileLogin;
 
@@ -60,31 +62,32 @@ namespace ConstantsDLL
         public const int TIMER_INTERVAL = 1000;
         public const int MAX_SIZE = 100;
 
+        public const string YES = "Sim";
         public const string UTF8_NO = "Não";
         public const string ANSI_NO = "Nao";
 
         public const string statusBarTextForm1 = "Sistema desenvolvido pelo servidor Kevin Costa, SIAPE 1971957, para uso no serviço da Subdivisão de Tecnologia da Informação do CCSH - UFSM";
         public const string statusBarTextForm2 = "CCSH - UFSM";
         public const string formTitlebarText = "Coleta de hardware e cadastro de patrimônio / Subdivisão de Tecnologia da Informação do CCSH - UFSM";
-        public const string cliHelpTextServer = "Servidor do sistema de patrimônio (Ex.: 192.168.76.103 (padrão), localhost, etc) - Opcional";
-        public const string cliHelpTextPort = "Porta do sistema de patrimônio (Ex.: 8081 (padrão), 80, etc) - Opcional";
+        public const string cliHelpTextServer = "Servidor do sistema de patrimônio (Ex.: 192.168.76.103, localhost, etc. Modificar arquivo INI para configuração estática. Primeiro IP da lista será o escolhido caso o parâmetro esteja ausente) - Opcional";
+        public const string cliHelpTextPort = "Porta do sistema de patrimônio (Ex.: 8081, 80, etc. Modificar arquivo INI para configuração estática. Primeira porta da lista será a escolhida caso o parâmetro esteja ausente) - Opcional";
         public const string cliHelpTextMode = "Tipo de serviço realizado (Valores possíveis: M/m para manutenção (padrão), F/f para formatação) - Opcional";
-        public const string cliHelpTextPatrimony = "Patrimônio do equipamento (Ex.: 123456) - OBRIGATÓRIO";
-        public const string cliHelpTextSeal = "Lacre do equipamento (se houver) (Ex.: digitar 'mesmo' (padrão) para manter inalterado, ou número como 12345678) - Opcional";
-        public const string cliHelpTextRoom = "Sala onde o equipamento estará localizado (Ex.: 1234) - OBRIGATÓRIO";
-        public const string cliHelpTextBuilding = "Prédio onde o equipamento estará localizado (Valores possíveis: 21, 67, 74A, 74B, 74C, 74D, AR) - OBRIGATÓRIO";
-        public const string cliHelpTextActiveDirectory = "Cadastrado no Active Directory (Valores possíveis: Sim (padrão), Nao) - Opcional";
-        public const string cliHelpTextStandard = "Padrão da imagem implantado no equipamento (Valores possíveis: A/a para aluno (padrão), F/f para funcionário) - Opcional";
+        public const string cliHelpTextPatrimony = "Patrimônio do equipamento (Ex.: 123456). Caso o parâmetro esteja ausente, será coletado pelo hostname PC-123456 (padrão) - Opcional";
+        public const string cliHelpTextSeal = "Lacre do equipamento (se houver) (Ex.: 12345678, ou 'mesmo' (padrão) para manter inalterado) - Opcional";
+        public const string cliHelpTextRoom = "Sala onde o equipamento estará localizado (Ex.: 1234, ou 'mesmo' (padrão) para manter inalterado) - Opcional";
+        public const string cliHelpTextBuilding = "Prédio onde o equipamento estará localizado (Valores possíveis: 21, 67, 74A, 74B, 74C, 74D, AR, ou 'mesmo' (padrão) para manter inalterado) - Opcional";
+        public const string cliHelpTextActiveDirectory = "Cadastrado no Active Directory (Valores possíveis: S/s (Sim), N/n (Não), ou 'mesmo' (padrão) para manter inalterado) - Opcional";
+        public const string cliHelpTextStandard = "Padrão da imagem implantado no equipamento (Valores possíveis: A/a para aluno, F/f para funcionário, ou 'mesmo' (padrão) para manter inalterado) - Opcional";
         public const string cliHelpTextDate = "Data do serviço realizado (Valores possíveis: hoje (padrão), ou especificar data, ex.: 12/12/2020) - Opcional";
-        public const string cliHelpTextBattery = "Realizada troca de pilha? (Valores possíveis: Sim, Nao) - OBRIGATÓRIO";
+        public const string cliHelpTextBattery = "Realizada troca de pilha? (Valores possíveis: S/s (Sim), N/n (Não)) - OBRIGATÓRIO";
         public const string cliHelpTextTicket = "Número do chamado aberto (Ex.: 123456) - OBRIGATÓRIO";
-        public const string cliHelpTextInUse = "Equipamento em uso? (Valores possíveis: Sim (padrão), Nao) - Opcional";
-        public const string cliHelpTextTag = "Equipamento possui etiqueta? (Valores possíveis: Sim, Nao) - OBRIGATÓRIO";
-        public const string cliHelpTextType = "Categoria do equipamento (Valores possíveis: Desktop (padrão), Notebook, Tablet) - Opcional";
+        public const string cliHelpTextInUse = "Equipamento em uso? (Valores possíveis: S/s (Sim), N/n (Não), ou 'mesmo' (padrão) para manter inalterado) - Opcional";
+        public const string cliHelpTextTag = "Equipamento possui etiqueta? (Valores possíveis: S/s (Sim), N/n (Não), ou 'mesmo' (padrão) para manter inalterado) - Opcional";
+        public const string cliHelpTextType = "Categoria do equipamento (Valores possíveis: Desktop, Notebook, Tablet, ou 'mesmo' (padrão) para manter inalterado) - Opcional";
         public const string cliHelpTextUser = "Usuário de login - OBRIGATÓRIO";
         public const string cliHelpTextPassword = "Senha de login - OBRIGATÓRIO";
         public const string today = "hoje";
-        public const string sameSeal = "mesmo";
+        public const string sameWord = "mesmo";
         public const string ok = "OK", activated = "Ativado", deactivated = "Desativado";
         public const string notSupported = "Não suportado", notDetermined = "Não determinado", notExistant = "Não existente";
         public const string tb = "TB", gb = "GB", mb = "MB", predFail = "Pred Fail";
@@ -108,7 +111,9 @@ namespace ConstantsDLL
         public const string lastInstall = "LastInstallation", lastMaintenance = "LastMaintenance";
         public const string fileBios = "bios.json";
         public const string fileShaBios = "bios-checksum.txt";
-        public const string formatURL = "recebeDadosFormatacao", maintenanceURL = "recebeDadosManutencao", supplyBiosData = "forneceDadosBIOS.php";
+        public const string filePC = "pc.json";
+        public const string fileShaPC = "pc-checksum.txt";
+        public const string formatURL = "recebeDadosFormatacao", maintenanceURL = "recebeDadosManutencao", supplyBiosData = "forneceDadosBIOS.php", supplyPCData = "forneceDadosPC.php";
         public const string nonSecBootGPU1 = "210", nonSecBootGPU2 = "430";
         public const string webview2url = "https://go.microsoft.com/fwlink/p/?LinkId=2124703";
         public const string webview2file = "webview2installer.exe";
@@ -229,6 +234,7 @@ namespace ConstantsDLL
         public const string LOG_WEBVIEW2_ALREADY_INSTALLED = "WebView2 Runtime já está instalado";
         public const string LOG_CHECKING_WEBVIEW2 = "Verificando presença do WebView2 Runtime no sistema";
         public const string LOG_PENDENCY_ERROR = "Pendências detectadas";
+        public const string LOG_SAMEWORD_NOFIRSTREGISTRY = "Um ou mais argumentos 'mesmo' detectados, porém não há registro existente para o patrimônio atual. Computador deve ser registrado primeiramente via GUI ou via CLI com todas as opções de linha de comando corretamente preenchidas";
         public const string LOG_SHOWING_HELP = "Exibindo lista de comandos";
         public const string LOG_HOSTNAME_ERROR = HOSTNAME_ALERT;
         public const string LOG_MEDIAOP_ERROR = MEDIA_OPERATION_ALERT;
@@ -246,22 +252,29 @@ namespace ConstantsDLL
         public const string LOG_MANDATORY_FIELD_ERROR = MANDATORY_FIELD;
         public const string LOG_ALREADY_REGISTERED_TODAY = ALREADY_REGISTERED_TODAY;
 
+        public static string pcPath = System.IO.Path.GetTempPath() + filePC;
         public static string biosPath = System.IO.Path.GetTempPath() + fileBios;
-        public static string LOGFILE_LOCATION = "C:\\br.ufsm.ccsh.ti\\" + PROGRAMDATA_FOLDERNAME + "\\";
+        //public static string LOGFILE_LOCATION = "C:\\br.ufsm.ccsh.ti\\" + PROGRAMDATA_FOLDERNAME + "\\";
         public static string webview2filePath = System.IO.Path.GetTempPath() + webview2file;
 
-        public static readonly List<string> defaultServerIP = new List<string>() { "192.168.76.103", "localhost" };
-        public static readonly List<string> defaultServerPort = new List<string>() { "8081", "80" };
-        public static readonly List<string> listBuilding = new List<string>() { "21", "67", "74A", "74B", "74C", "74D", "AR" };
-        public static readonly List<string> listMode = new List<string>() { "F", "f", "M", "m" };
-        public static readonly List<string> listActiveDirectory = new List<string>() { "Sim", ANSI_NO };
-        public static readonly List<string> listStandardGUI = new List<string>() { "Funcionário", "Aluno" };
+        public static readonly List<string> listModeCLI = new List<string>() { "F", "f", "M", "m" };
+        public static readonly List<string> listModeGUI = new List<string>() { "Formatação", "Manutenção" };
+        public static readonly List<string> listActiveDirectoryCLI = new List<string>() { "S", "s", "N", "n" };
+        public static readonly List<string> listActiveDirectoryGUI = new List<string>() { "Sim", "Não" };
         public static readonly List<string> listStandardCLI = new List<string>() { "F", "f", "A", "a" };
-        public static readonly List<string> listInUse = new List<string>() { "Sim", ANSI_NO };
-        public static readonly List<string> listTag = new List<string>() { "Sim", ANSI_NO };
-        public static readonly List<string> listType = new List<string>() { "Desktop", "Notebook", "Tablet" };
-        public static readonly List<string> listBattery = new List<string>() { "Sim", ANSI_NO };
-        
+        public static readonly List<string> listStandardGUI = new List<string>() { "Funcionário", "Aluno" };
+        public static readonly List<string> listInUseCLI = new List<string>() { "S", "s", "N", "n" };
+        public static readonly List<string> listInUseGUI = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> listTagCLI = new List<string>() { "S", "s", "N", "n" };
+        public static readonly List<string> listTagGUI = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> listBatteryCLI = new List<string>() { "S", "s", "N", "n" };
+        public static readonly List<string> listBatteryGUI = new List<string>() { "Sim", "Não" };
+
+        public const string INI_SECTION_1_11 = "ServerIP";
+        public const string INI_SECTION_1_12 = "ServerPort";
+        public const string INI_SECTION_1_13 = "Buildings";
+        public const string INI_SECTION_1_14 = "HWTypes";
+
         public static Color LIGHT_FORECOLOR = SystemColors.ControlText;
         public static Color LIGHT_BACKCOLOR = SystemColors.ControlLight;
         public static Color LIGHT_ASTERISKCOLOR = Color.Red;
@@ -384,7 +397,6 @@ namespace ConstantsDLL
         public const string ADDING_INSTALLING = "Adicionando e instalando drivers";
         public const string ADDING = "Apenas adicionando drivers";
         public const string INSTALL_FINISHED = "Instalação finalizada";
-        public const string INI_SECTION_1 = "Definitions";
         public const string INI_SECTION_1_1 = "InstallDrivers";
         public const string INI_SECTION_1_2 = "CleanGarbage";
         public const string INI_SECTION_1_3 = "ChangeResolution";
@@ -393,7 +405,6 @@ namespace ConstantsDLL
         public const string INI_SECTION_1_6 = "DriverPath";
         public const string INI_SECTION_1_7 = "RebootAfterFinished";
         public const string INI_SECTION_1_8 = "PauseAfterFinished";
-        public const string INI_SECTION_1_9 = "LogLocation";
         public const string INI_SECTION_1_10 = "AddDrivers";
         public const string SHUTDOWN_CMD_1 = "shutdown";
         public const string SHUTDOWN_CMD_2 = "/r /f /t 0";

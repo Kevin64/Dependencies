@@ -21,7 +21,7 @@ namespace JsonFileReaderDLL
 		private static StreamReader fileL;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> checkHost(string ip, string port)
+        public static Task<bool> checkHostMT(string ip, string port)
         {
 			return Task.Run(() =>
 			{
@@ -72,11 +72,11 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
-		public static Task<string[]> fetchInfo(string nome, string senha, string ip, string port)
+		public static Task<string[]> fetchInfoMT(string nome, string senha, string ip, string port)
 		{
 			return Task.Run(async () =>
 			{
-				if (!await checkHost(ip, port))
+				if (!await checkHostMT(ip, port))
 					return null;
 
 				string[] arr;
