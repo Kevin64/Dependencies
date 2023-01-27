@@ -91,7 +91,7 @@ namespace ConstantsDLL
         public const string ok = "OK", activated = "Ativado", deactivated = "Desativado";
         public const string notSupported = "Não suportado", notDetermined = "Não determinado", notExistant = "Não existente";
         public const string tb = "TB", gb = "GB", mb = "MB", predFail = "Pred Fail";
-        public const string ahci = "AHCI", nvme = "NVMe", ide = "IDE/Legacy ou RAID", sata = "SATA", raid = "RAID";
+        public const string ahci = "AHCI", nvme = "NVMe", ide = "IDE/RAID", sata = "SATA", raid = "RAID";
         public const string frequency = "MHz";
         public const string ddr2 = "DDR2", ddr3 = "DDR3", ddr3smbios = "24", ddr3memorytype = "24", ddr4 = "DDR4", ddr4smbios = "26";
         public const string systemRom = "SYSTEM ROM", arch32 = "32", arch64 = "64";
