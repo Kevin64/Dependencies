@@ -36,7 +36,7 @@ namespace ConstantsDLL
         public const string LOG_SEPARATOR = "____________________________________________________________________________________________________";
         public const string LOG_TIMESTAMP = "HH:mm:ss.ffffff";
         public const string LOG_FILE_EXT = ".log";
-        public const string LOG_INFO_ATTR = "<INFORMAÇÃO>";        
+        public const string LOG_INFO_ATTR = "<INFORMAÇÃO>";
         public const string LOG_WARNING_ATTR = "<AVISO>";
         public const string LOG_ERROR_ATTR = "<ERRO>";
         public const string LOG_PASSWORD_PLACEHOLDER = "XXXXXXXXXXXXXXX";
@@ -65,6 +65,7 @@ namespace ConstantsDLL
         public const string YES = "Sim";
         public const string UTF8_NO = "Não";
         public const string ANSI_NO = "Nao";
+        public const string HOSTNAME_PATTERN = "PC-";
 
         public const string statusBarTextForm1 = "Sistema desenvolvido pelo servidor Kevin Costa, SIAPE 1971957, para uso no serviço da Subdivisão de Tecnologia da Informação do CCSH - UFSM";
         public const string statusBarTextForm2 = "CCSH - UFSM";
@@ -165,6 +166,7 @@ namespace ConstantsDLL
         public const string MAINTENANCE_TEXT = "manutenção";
         public const string SINCE_UNKNOWN = "(Não foi possível determinar a data do último serviço)";
         public const string ALREADY_REGISTERED_TODAY = "Serviço já registrado para esta dia. Caso seja necessário outro registro, escolha outra data.";
+        public const string PC_DROPPED = "Patrimônio baixado, cadastro cancelado. Reverta a baixa e tente novamente";
         public const string OFFLINE_MODE_ACTIVATED = "Modo OFFLINE!";
         public const string FIX_PROBLEMS = "Corrija os problemas a seguir antes de prosseguir:";
         public const string ARGS_ERROR = "Um ou mais argumentos contém erros! Saindo do programa";
@@ -251,6 +253,7 @@ namespace ConstantsDLL
         public const string LOG_SERVER_UNREACHABLE = SERVER_NOT_FOUND_ERROR;
         public const string LOG_MANDATORY_FIELD_ERROR = MANDATORY_FIELD;
         public const string LOG_ALREADY_REGISTERED_TODAY = ALREADY_REGISTERED_TODAY;
+        public const string LOG_PC_DROPPED = PC_DROPPED;
 
         public static string pcPath = System.IO.Path.GetTempPath() + filePC;
         public static string biosPath = System.IO.Path.GetTempPath() + fileBios;

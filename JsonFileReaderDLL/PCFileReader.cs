@@ -17,6 +17,7 @@ namespace JsonFileReaderDLL
         public string lacre { get; set; }
         public string etiqueta { get; set; }
         public string tipo { get; set; }
+        public string descarte { get; set; }
     }
     public static class PCFileReader
     {
@@ -94,7 +95,7 @@ namespace JsonFileReaderDLL
                     {
                         if (patrimonio.Equals(jsonParse[i].patrimonio))
                         {
-                            arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo };
+                            arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo, jsonParse[i].descarte };
                             filePC.Close();
                             return arr;
                         }
@@ -112,7 +113,7 @@ namespace JsonFileReaderDLL
             if (!checkHostST(ip, port, patrimonio))
                 return null;
 
-            string[] arr;
+            string[] arr;   
             filePC = new StreamReader(StringsAndConstants.pcPath);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
@@ -123,7 +124,7 @@ namespace JsonFileReaderDLL
                 {
                     if (patrimonio.Equals(jsonParse[i].patrimonio))
                     {
-                        arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo };
+                        arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo, jsonParse[i].descarte };
                         filePC.Close();
                         return arr;
                     }
