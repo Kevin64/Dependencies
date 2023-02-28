@@ -346,11 +346,13 @@ namespace ConstantsDLL
         public static readonly List<string> listTagGUI = new List<string>() { "Sim", "Não" };
         public static readonly List<string> listBatteryCLI = new List<string>() { "S", "s", "N", "n" };
         public static readonly List<string> listBatteryGUI = new List<string>() { "Sim", "Não" };
+        public static readonly List<string> themeGUI = new List<string>() { "Auto", "Light", "Dark" };
 
         public const string INI_SECTION_1_11 = "ServerIP";
         public const string INI_SECTION_1_12 = "ServerPort";
         public const string INI_SECTION_1_13 = "Buildings";
         public const string INI_SECTION_1_14 = "HWTypes";
+        public const string INI_SECTION_1_15 = "ThemeUI";
 
         public static Color LIGHT_FORECOLOR = SystemColors.ControlText;
         public static Color LIGHT_BACKCOLOR = SystemColors.ControlLight;
