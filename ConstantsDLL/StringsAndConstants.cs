@@ -43,7 +43,15 @@ namespace ConstantsDLL
         public const string LOG_ARGS_ERROR = ARGS_ERROR;
         public const string PROGRAMDATA_FOLDERNAME = "AppLog";
         public const string INI_SECTION_1 = "Definitions";
+        public const string INI_SECTION_2 = "OrgData";
         public const string INI_SECTION_1_9 = "LogLocation";
+
+        public const string INI_SECTION_2_1 = "OrganizationFullName";
+        public const string INI_SECTION_2_2 = "OrganizationAcronym";
+        public const string INI_SECTION_2_3 = "DepartamentFullName";
+        public const string INI_SECTION_2_4 = "DepartamentAcronym";
+        public const string INI_SECTION_2_5 = "SubDepartamentFullName";
+        public const string INI_SECTION_2_6 = "SubDepartamentAcronym";
 
         public static string loginPath = System.IO.Path.GetTempPath() + fileLogin;
 
