@@ -75,11 +75,25 @@ namespace ConstantsDLL
         public const string ANSI_NO = "Nao";
         public const string HOSTNAME_PATTERN = "PC-";
 
+        public const int rotatingCircleNumberSpoke = 28;
+        public const int rotatingCircleSpokeThickness = 4;
+        public const int rotatingCircleInnerCircleRadius = 8;
+        public const int rotatingCircleOuterCircleRadius = 9;
+        public const int rotatingCircleRotationSpeed = 1;
+        public static readonly Color rotatingCircleColor = SystemColors.MenuHighlight;
+
         public const string login_banner_light_path = "Resources\\header\\login_banner_light.png";
         public const string login_banner_dark_path = "Resources\\header\\login_banner_dark.png";
 
         public const string main_banner_light_path = "Resources\\header\\main_banner_light.png";
         public const string main_banner_dark_path = "Resources\\header\\main_banner_dark.png";
+
+        public const string icon_user_light_path = "Resources\\icons\\icon_user_light.png";
+        public const string icon_user_dark_path = "Resources\\icons\\icon_user_dark.png";
+        public const string icon_port_light_path = "Resources\\icons\\icon_port_light.png";
+        public const string icon_port_dark_path = "Resources\\icons\\icon_port_dark.png";
+        public const string icon_password_light_path = "Resources\\icons\\icon_password_light.png";
+        public const string icon_password_dark_path = "Resources\\icons\\icon_password_dark.png";
 
         public const string icon_brand_light_path = "Resources\\icons\\icon_brand_light.png";
         public const string icon_brand_dark_path = "Resources\\icons\\icon_brand_dark.png";
@@ -339,7 +353,6 @@ namespace ConstantsDLL
 
         public static string pcPath = System.IO.Path.GetTempPath() + filePC;
         public static string biosPath = System.IO.Path.GetTempPath() + fileBios;
-        //public static string LOGFILE_LOCATION = "C:\\br.ufsm.ccsh.ti\\" + PROGRAMDATA_FOLDERNAME + "\\";
         public static string webview2filePath = System.IO.Path.GetTempPath() + webview2file;
 
         public static readonly List<string> listModeCLI = new List<string>() { "F", "f", "M", "m" };
@@ -354,7 +367,7 @@ namespace ConstantsDLL
         public static readonly List<string> listTagGUI = new List<string>() { "Sim", "Não" };
         public static readonly List<string> listBatteryCLI = new List<string>() { "S", "s", "N", "n" };
         public static readonly List<string> listBatteryGUI = new List<string>() { "Sim", "Não" };
-        public static readonly List<string> themeGUI = new List<string>() { "Auto", "Light", "Dark" };
+        public static readonly List<string> listThemeGUI = new List<string>() { "Auto", "Light", "Dark" };
 
         public const string INI_SECTION_1_11 = "ServerIP";
         public const string INI_SECTION_1_12 = "ServerPort";
