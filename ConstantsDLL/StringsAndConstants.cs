@@ -75,12 +75,63 @@ namespace ConstantsDLL
         public const string ANSI_NO = "Nao";
         public const string HOSTNAME_PATTERN = "PC-";
 
-        public const int rotatingCircleNumberSpoke = 28;
-        public const int rotatingCircleSpokeThickness = 4;
-        public const int rotatingCircleInnerCircleRadius = 8;
-        public const int rotatingCircleOuterCircleRadius = 9;
-        public const int rotatingCircleRotationSpeed = 1;
+        //LoadingCircle for 350%
+        public const int rotatingCircleNumberSpoke350 = 60;
+        public const int rotatingCircleSpokeThickness350 = 5;
+        public const int rotatingCircleInnerCircleRadius350 = 24;
+        public const int rotatingCircleOuterCircleRadius350 = 35;
+
+        //LoadingCircle for 300%
+        public const int rotatingCircleNumberSpoke300 = 56;
+        public const int rotatingCircleSpokeThickness300 = 5;
+        public const int rotatingCircleInnerCircleRadius300 = 22;
+        public const int rotatingCircleOuterCircleRadius300 = 32;
+
+        //LoadingCircle for 250%
+        public const int rotatingCircleNumberSpoke250 = 52;
+        public const int rotatingCircleSpokeThickness250 = 5;
+        public const int rotatingCircleInnerCircleRadius250 = 17;
+        public const int rotatingCircleOuterCircleRadius250 = 24;
+
+        //LoadingCircle for 225%
+        public const int rotatingCircleNumberSpoke225 = 48;
+        public const int rotatingCircleSpokeThickness225 = 5;
+        public const int rotatingCircleInnerCircleRadius225 = 17;
+        public const int rotatingCircleOuterCircleRadius225 = 24;
+
+        //LoadingCircle for 200%
+        public const int rotatingCircleNumberSpoke200 = 44;
+        public const int rotatingCircleSpokeThickness200 = 5;
+        public const int rotatingCircleInnerCircleRadius200 = 15;
+        public const int rotatingCircleOuterCircleRadius200 = 22;
+
+        //LoadingCircle for 175%
+        public const int rotatingCircleNumberSpoke175 = 40;
+        public const int rotatingCircleSpokeThickness175 = 5;
+        public const int rotatingCircleInnerCircleRadius175 = 14;
+        public const int rotatingCircleOuterCircleRadius175 = 18;
+
+        //LoadingCircle for 150%
+        public const int rotatingCircleNumberSpoke150 = 36;
+        public const int rotatingCircleSpokeThickness150 = 5;
+        public const int rotatingCircleInnerCircleRadius150 = 11;
+        public const int rotatingCircleOuterCircleRadius150 = 15;
+
+        //LoadingCircle for 125%
+        public const int rotatingCircleNumberSpoke125 = 32;
+        public const int rotatingCircleSpokeThickness125 = 5;
+        public const int rotatingCircleInnerCircleRadius125 = 10;
+        public const int rotatingCircleOuterCircleRadius125 = 12;
+
+        //LoadingCircle for 100%
+        public const int rotatingCircleNumberSpoke100 = 28;
+        public const int rotatingCircleSpokeThickness100 = 4;
+        public const int rotatingCircleInnerCircleRadius100 = 8;
+        public const int rotatingCircleOuterCircleRadius100 = 9;
+        
+        //LoadingCircle Color and Speed
         public static readonly Color rotatingCircleColor = SystemColors.MenuHighlight;
+        public const int rotatingCircleRotationSpeed = 1;
 
         public const string login_banner_light_path = "Resources\\header\\login_banner_light.png";
         public const string login_banner_dark_path = "Resources\\header\\login_banner_dark.png";
