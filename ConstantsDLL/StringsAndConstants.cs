@@ -427,7 +427,7 @@ namespace ConstantsDLL
         public const string INI_SECTION_1_15 = "ThemeUI";
 
         public static Color LIGHT_FORECOLOR = SystemColors.ControlText;
-        public static Color LIGHT_BACKCOLOR = SystemColors.ControlLight;
+        public static Color LIGHT_BACKCOLOR = SystemColors.Window;
         public static Color LIGHT_ASTERISKCOLOR = Color.Red;
         public static Color LIGHT_AGENT = Color.DarkCyan;
         public static Color ALERT_COLOR = Color.Red;
@@ -437,10 +437,10 @@ namespace ConstantsDLL
         public static Color DARK_BACKCOLOR = Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
         public static Color DARK_ASTERISKCOLOR = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
         public static Color DARK_AGENT = Color.DarkCyan;
-        public static Color LIGHT_BACKGROUND = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+        public static Color LIGHT_BACKGROUND = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
         public static Color DARK_BACKGROUND = Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
         public static Color DARK_SUBTLE_LIGHTLIGHTCOLOR = Color.DimGray;
-        public static Color LIGHT_SUBTLE_DARKDARKCOLOR = Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+        public static Color LIGHT_SUBTLE_DARKDARKCOLOR = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
         public static Color DARK_SUBTLE_LIGHTCOLOR = Color.DarkSlateGray;
         public static Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
         public static Color BLUE_FOREGROUND = SystemColors.Highlight;
