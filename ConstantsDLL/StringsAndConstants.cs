@@ -146,6 +146,17 @@ namespace ConstantsDLL
         public const string icon_password_light_path = "Resources\\icons\\icon_password_light.png";
         public const string icon_password_dark_path = "Resources\\icons\\icon_password_dark.png";
 
+        public const string icon_log_light_path = "Resources\\icons\\icon_log_light.png";
+        public const string icon_log_dark_path = "Resources\\icons\\icon_log_dark.png";
+        public const string icon_about_light_path = "Resources\\icons\\icon_about_light.png";
+        public const string icon_about_dark_path = "Resources\\icons\\icon_about_dark.png";
+
+        public const string icon_autotheme_light_path = "Resources\\icons\\icon_autotheme_light.png";
+        public const string icon_autotheme_dark_path = "Resources\\icons\\icon_autotheme_dark.png";
+        public const string icon_lighttheme_light_path = "Resources\\icons\\icon_lighttheme_light.png";
+        public const string icon_lighttheme_dark_path = "Resources\\icons\\icon_lighttheme_dark.png";
+        public const string icon_darktheme_light_path = "Resources\\icons\\icon_darktheme_light.png";
+        public const string icon_darktheme_dark_path = "Resources\\icons\\icon_darktheme_dark.png";
         public const string icon_brand_light_path = "Resources\\icons\\icon_brand_light.png";
         public const string icon_brand_dark_path = "Resources\\icons\\icon_brand_dark.png";
         public const string icon_model_light_path = "Resources\\icons\\icon_model_light.png";
@@ -434,9 +445,10 @@ namespace ConstantsDLL
         public static Color OFFLINE_ALERT = Color.Red;
         public static Color ONLINE_ALERT = Color.Lime;
         public static Color DARK_FORECOLOR = SystemColors.ControlLightLight;
-        public static Color DARK_BACKCOLOR = Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+        public static Color DARK_BACKCOLOR = Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
         public static Color DARK_ASTERISKCOLOR = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
         public static Color DARK_AGENT = Color.DarkCyan;
+        public static Color LIGHT_DROPDOWN_BORDER = Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
         public static Color LIGHT_BACKGROUND = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
         public static Color DARK_BACKGROUND = Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
         public static Color DARK_SUBTLE_LIGHTLIGHTCOLOR = Color.DimGray;
@@ -445,6 +457,7 @@ namespace ConstantsDLL
         public static Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
         public static Color BLUE_FOREGROUND = SystemColors.Highlight;
         public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+        public static Color HIGHLIGHT_LABEL_COLOR = Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
 
         public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
 
