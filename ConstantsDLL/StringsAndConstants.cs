@@ -458,6 +458,7 @@ namespace ConstantsDLL
         public static Color BLUE_FOREGROUND = SystemColors.Highlight;
         public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
         public static Color HIGHLIGHT_LABEL_COLOR = Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+        public static Color PRESSED_STRIP_BUTTON = Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
 
         public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
 
