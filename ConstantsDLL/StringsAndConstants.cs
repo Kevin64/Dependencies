@@ -323,6 +323,8 @@ namespace ConstantsDLL
         public const string FORMAT_TEXT = "formatação";
         public const string MAINTENANCE_TEXT = "manutenção";
         public const string SINCE_UNKNOWN = "(Não foi possível determinar a data do último serviço)";
+        public const string INCORRECT_REGISTER_DATE = "Data de registro anterior à data da última manutenção.";
+        public const string INCORRECT_FUTURE_REGISTER_DATE = "Não é possível registrar para uma data no futuro.";
         public const string ALREADY_REGISTERED_TODAY = "Serviço já registrado para esta dia. Caso seja necessário outro registro, escolha outra data.";
         public const string PC_DROPPED = "Patrimônio baixado, cadastro cancelado. Reverta a baixa e tente novamente";
         public const string OFFLINE_MODE_ACTIVATED = "Modo OFFLINE!";
@@ -410,6 +412,8 @@ namespace ConstantsDLL
         public const string LOG_MEMORYMUCH_ERROR = TOO_MUCH_MEMORY;
         public const string LOG_SERVER_UNREACHABLE = SERVER_NOT_FOUND_ERROR;
         public const string LOG_MANDATORY_FIELD_ERROR = MANDATORY_FIELD;
+        public const string LOG_INCORRECT_REGISTER_DATE = INCORRECT_REGISTER_DATE;
+        public const string LOG_INCORRECT_FUTURE_REGISTER_DATE = INCORRECT_FUTURE_REGISTER_DATE;
         public const string LOG_ALREADY_REGISTERED_TODAY = ALREADY_REGISTERED_TODAY;
         public const string LOG_PC_DROPPED = PC_DROPPED;
 

@@ -18,6 +18,7 @@ namespace JsonFileReaderDLL
         public string etiqueta { get; set; }
         public string tipo { get; set; }
         public string descarte { get; set; }
+        public string dataFormatacao { get; set; }
     }
     public static class PCFileReader
     {
@@ -95,7 +96,7 @@ namespace JsonFileReaderDLL
                     {
                         if (patrimonio.Equals(jsonParse[i].patrimonio))
                         {
-                            arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo, jsonParse[i].descarte };
+                            arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo, jsonParse[i].descarte, jsonParse[i].dataFormatacao };
                             filePC.Close();
                             return arr;
                         }
@@ -124,7 +125,7 @@ namespace JsonFileReaderDLL
                 {
                     if (patrimonio.Equals(jsonParse[i].patrimonio))
                     {
-                        arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo, jsonParse[i].descarte };
+                        arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo, jsonParse[i].descarte, jsonParse[i].dataFormatacao };
                         filePC.Close();
                         return arr;
                     }
