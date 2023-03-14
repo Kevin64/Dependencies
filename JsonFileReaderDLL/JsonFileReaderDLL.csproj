@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BIOSFileReader.cs" />
+    <Compile Include="ConfigFileReader.cs" />
     <Compile Include="LoginFileReader.cs" />
     <Compile Include="MiscMethods.cs" />
     <Compile Include="PCFileReader.cs" />

@@ -36,9 +36,9 @@ namespace JsonFileReaderDLL
                     wc = new WebClient();
                     wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyPCData + "?patrimonio=" + patr);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.filePC, StringsAndConstants.pcPath);
+                    wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.filePC, StringsAndConstants.pcPath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaPC);
+                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileShaPC);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
                     filePC = new StreamReader(StringsAndConstants.pcPath);
@@ -61,9 +61,9 @@ namespace JsonFileReaderDLL
                 wc = new WebClient();
                 wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyPCData + "?patrimonio=" + patr);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.filePC, StringsAndConstants.pcPath);
+                wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.filePC, StringsAndConstants.pcPath);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaPC);
+                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileShaPC);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
                 filePC = new StreamReader(StringsAndConstants.pcPath);

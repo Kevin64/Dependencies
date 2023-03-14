@@ -19,11 +19,16 @@ namespace ConstantsDLL
         public const int RETURN_WARNING = 1;
         public const int RETURN_ERROR = 2;
 
-        public const string limitedUserType = "limit";
+        public const string limitedUserType = "Limitado";
         public const string defFile = "definitions.ini";
+        public const string jsonServerPath = "output/";
         public const string fileLogin = "login.json";
         public const string fileShaLogin = "login-checksum.txt";
+        public const string fileConfig = "config.json";
+        public const string fileConfigPath = "/etc/";
+        public const string fileShaConfig = "config-checksum.txt";
         public const string supplyLoginData = "forneceDadosUsuario.php";
+        public const string supplyConfigData = "/etc/config.json";
         public const string INTRANET_REQUIRED = "É necessário conexão com a intranet.";
         public const string ERROR_WINDOWTITLE = "Erro";
         public const string NO_AUTH = "Preencha suas credenciais.";
@@ -54,6 +59,7 @@ namespace ConstantsDLL
         public const string INI_SECTION_2_6 = "SubDepartamentAcronym";
 
         public static string loginPath = System.IO.Path.GetTempPath() + fileLogin;
+        public static string configPath = System.IO.Path.GetTempPath() + fileConfig;
 
         /**
          * Common code
@@ -375,6 +381,7 @@ namespace ConstantsDLL
         public const string LOG_PINGGING_SERVER = "Verificando disponibilidade do servidor";
         public const string LOG_OFFLINE_SERVER = "Servidor está OFFLINE";
         public const string LOG_ONLINE_SERVER = "Servidor está ONLINE";
+        public const string LOG_FETCHING_SERVER_DATA = "Buscando do servidor prédios e tipos de hardware";
         public const string LOG_LOGIN_FAILED = "Falha na autenticação";
         public const string LOG_LOGIN_SUCCESS = "Autenticação realizada com êxito";
         public const string LOG_LOGIN_INCOMPLETE = NO_AUTH;
