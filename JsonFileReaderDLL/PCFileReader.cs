@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using ConstantsDLL;
+using Newtonsoft.Json;
 using System.IO;
 using System.Net;
-using ConstantsDLL;
 using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
@@ -114,7 +114,7 @@ namespace JsonFileReaderDLL
             if (!CheckHostST(ip, port, patrimonio))
                 return null;
 
-            string[] arr;   
+            string[] arr;
             filePC = new StreamReader(StringsAndConstants.pcPath);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {

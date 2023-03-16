@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ConstantsDLL;
+using System;
 using System.IO;
-using ConstantsDLL;
 
 namespace LogGeneratorDLL
 {
@@ -63,7 +63,7 @@ namespace LogGeneratorDLL
         public void Log(int logType, string logMessage1, string logMessage2, TextWriter txtWriter, bool consoleOut)
         {
             string logTypeAttr;
-            
+
             try
             {
                 if (logType == 2)
@@ -105,7 +105,7 @@ namespace LogGeneratorDLL
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), StringsAndConstants.LOG_ERROR_ATTR, e.Message);
-                if(consoleOut)
+                if (consoleOut)
                     Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), StringsAndConstants.LOG_ERROR_ATTR, e.Message);
                 Console.ResetColor();
             }

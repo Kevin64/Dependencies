@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using ConstantsDLL;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using ConstantsDLL;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 
 namespace JsonFileReaderDLL
 {
@@ -124,7 +124,7 @@ namespace JsonFileReaderDLL
 
             List<string[]> arr;
             fileC = new StreamReader(StringsAndConstants.configPath);
-            
+
             jsonFile = fileC.ReadToEnd();
             CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
 
