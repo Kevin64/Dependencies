@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-    public class pcFile
+    public class PcFile
     {
-        public string patrimonio { get; set; }
-        public string predio { get; set; }
-        public string sala { get; set; }
-        public string padrao { get; set; }
-        public string ad { get; set; }
-        public string emUso { get; set; }
-        public string lacre { get; set; }
-        public string etiqueta { get; set; }
-        public string tipo { get; set; }
-        public string descarte { get; set; }
-        public string dataFormatacao { get; set; }
+        public string Patrimonio { get; set; }
+        public string Predio { get; set; }
+        public string Sala { get; set; }
+        public string Padrao { get; set; }
+        public string Ad { get; set; }
+        public string EmUso { get; set; }
+        public string Lacre { get; set; }
+        public string Etiqueta { get; set; }
+        public string Tipo { get; set; }
+        public string Descarte { get; set; }
+        public string DataFormatacao { get; set; }
     }
     public static class PCFileReader
     {
@@ -27,7 +27,7 @@ namespace JsonFileReaderDLL
         private static StreamReader filePC;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> checkHostMT(string ip, string port, string patr)
+        public static Task<bool> CheckHostMT(string ip, string port, string patr)
         {
             return Task.Run(() =>
             {
@@ -54,7 +54,7 @@ namespace JsonFileReaderDLL
         }
 
         //Checks if the server is answering any requests, through a json file verification (single threaded)
-        public static bool checkHostST(string ip, string port, string patr)
+        public static bool CheckHostST(string ip, string port, string patr)
         {
             try
             {
@@ -78,11 +78,11 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
-        public static Task<string[]> fetchInfoMT(string patrimonio, string ip, string port)
+        public static Task<string[]> FetchInfoMT(string patrimonio, string ip, string port)
         {
             return Task.Run(async () =>
             {
-                if (!await checkHostMT(ip, port, patrimonio))
+                if (!await CheckHostMT(ip, port, patrimonio))
                     return null;
 
                 string[] arr;
@@ -90,13 +90,13 @@ namespace JsonFileReaderDLL
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = filePC.ReadToEnd();
-                    pcFile[] jsonParse = JsonConvert.DeserializeObject<pcFile[]>(@jsonFile);
+                    PcFile[] jsonParse = JsonConvert.DeserializeObject<PcFile[]>(@jsonFile);
 
                     for (int i = 0; i < jsonParse.Length; i++)
                     {
-                        if (patrimonio.Equals(jsonParse[i].patrimonio))
+                        if (patrimonio.Equals(jsonParse[i].Patrimonio))
                         {
-                            arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo, jsonParse[i].descarte, jsonParse[i].dataFormatacao };
+                            arr = new string[] { jsonParse[i].Patrimonio, jsonParse[i].Predio, jsonParse[i].Sala, jsonParse[i].Padrao, jsonParse[i].Ad, jsonParse[i].EmUso, jsonParse[i].Lacre, jsonParse[i].Etiqueta, jsonParse[i].Tipo, jsonParse[i].Descarte, jsonParse[i].DataFormatacao };
                             filePC.Close();
                             return arr;
                         }
@@ -109,9 +109,9 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
-        public static string[] fetchInfoST(string patrimonio, string ip, string port)
+        public static string[] FetchInfoST(string patrimonio, string ip, string port)
         {
-            if (!checkHostST(ip, port, patrimonio))
+            if (!CheckHostST(ip, port, patrimonio))
                 return null;
 
             string[] arr;   
@@ -119,13 +119,13 @@ namespace JsonFileReaderDLL
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = filePC.ReadToEnd();
-                pcFile[] jsonParse = JsonConvert.DeserializeObject<pcFile[]>(@jsonFile);
+                PcFile[] jsonParse = JsonConvert.DeserializeObject<PcFile[]>(@jsonFile);
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (patrimonio.Equals(jsonParse[i].patrimonio))
+                    if (patrimonio.Equals(jsonParse[i].Patrimonio))
                     {
-                        arr = new string[] { jsonParse[i].patrimonio, jsonParse[i].predio, jsonParse[i].sala, jsonParse[i].padrao, jsonParse[i].ad, jsonParse[i].emUso, jsonParse[i].lacre, jsonParse[i].etiqueta, jsonParse[i].tipo, jsonParse[i].descarte, jsonParse[i].dataFormatacao };
+                        arr = new string[] { jsonParse[i].Patrimonio, jsonParse[i].Predio, jsonParse[i].Sala, jsonParse[i].Padrao, jsonParse[i].Ad, jsonParse[i].EmUso, jsonParse[i].Lacre, jsonParse[i].Etiqueta, jsonParse[i].Tipo, jsonParse[i].Descarte, jsonParse[i].DataFormatacao };
                         filePC.Close();
                         return arr;
                     }

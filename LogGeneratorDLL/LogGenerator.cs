@@ -6,8 +6,7 @@ namespace LogGeneratorDLL
 {
     public class LogGenerator
     {
-        private string path;
-        private string fileNameStr;
+        private readonly string path, fileNameStr;
 
         public LogGenerator(string softwareName, string path, string fileName, bool consoleOut)
         {

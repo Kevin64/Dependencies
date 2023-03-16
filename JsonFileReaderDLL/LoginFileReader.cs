@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-	public class lFile
+	public class LFile
 	{
-		public string id { get; set; }
-		public string usuario { get; set; }
-		public string senha { get; set; }
-		public string nivel { get; set; }
-		public string status { get; set; }
+		public string Id { get; set; }
+		public string Usuario { get; set; }
+		public string Senha { get; set; }
+		public string Nivel { get; set; }
+        public string Status { get; set; }
 	}
 	public static class LoginFileReader
 	{		
@@ -21,7 +21,7 @@ namespace JsonFileReaderDLL
 		private static StreamReader fileL;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> checkHostMT(string ip, string port)
+        public static Task<bool> CheckHostMT(string ip, string port)
         {
 			return Task.Run(() =>
 			{
@@ -48,7 +48,7 @@ namespace JsonFileReaderDLL
 		}
 
         //Checks if the server is answering any requests, through a json file verification (single threaded)
-        public static bool checkHostST(string ip, string port)
+        public static bool CheckHostST(string ip, string port)
         {
             try
             {
@@ -72,11 +72,11 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
-		public static Task<string[]> fetchInfoMT(string nome, string senha, string ip, string port)
+		public static Task<string[]> FetchInfoMT(string nome, string senha, string ip, string port)
 		{
 			return Task.Run(async () =>
 			{
-				if (!await checkHostMT(ip, port))
+				if (!await CheckHostMT(ip, port))
 					return null;
 
 				string[] arr;
@@ -84,13 +84,13 @@ namespace JsonFileReaderDLL
 				if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
 				{
 					jsonFile = fileL.ReadToEnd();
-					lFile[] jsonParse = JsonConvert.DeserializeObject<lFile[]>(@jsonFile);
+					LFile[] jsonParse = JsonConvert.DeserializeObject<LFile[]>(@jsonFile);
 
 					for (int i = 0; i < jsonParse.Length; i++)
 					{
-						if (nome.Equals(jsonParse[i].usuario) && !jsonParse[i].nivel.Equals(StringsAndConstants.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].senha))
+						if (nome.Equals(jsonParse[i].Usuario) && !jsonParse[i].Nivel.Equals(StringsAndConstants.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].Senha))
 						{
-							arr = new string[] { "true", jsonParse[i].usuario };
+							arr = new string[] { "true", jsonParse[i].Usuario };
 							fileL.Close();
 							return arr;
 						}
@@ -103,9 +103,9 @@ namespace JsonFileReaderDLL
 		}
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
-        public static string[] fetchInfoST(string nome, string senha, string ip, string port)
+        public static string[] FetchInfoST(string nome, string senha, string ip, string port)
         {
-            if (!checkHostST(ip, port))
+            if (!CheckHostST(ip, port))
                 return null;
 
             string[] arr;
@@ -113,13 +113,13 @@ namespace JsonFileReaderDLL
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileL.ReadToEnd();
-                lFile[] jsonParse = JsonConvert.DeserializeObject<lFile[]>(@jsonFile);
+                LFile[] jsonParse = JsonConvert.DeserializeObject<LFile[]>(@jsonFile);
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (nome.Equals(jsonParse[i].usuario) && !jsonParse[i].nivel.Equals(StringsAndConstants.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].senha))
+                    if (nome.Equals(jsonParse[i].Usuario) && !jsonParse[i].Nivel.Equals(StringsAndConstants.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].Senha))
                     {
-                        arr = new string[] { "true", jsonParse[i].usuario };
+                        arr = new string[] { "true", jsonParse[i].Usuario };
                         fileL.Close();
                         return arr;
                     }

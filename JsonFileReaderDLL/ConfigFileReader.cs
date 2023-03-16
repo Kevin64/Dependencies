@@ -7,11 +7,11 @@ using System.Collections.Generic;
 
 namespace JsonFileReaderDLL
 {
-    public class cFile
+    public class CFile
     {
-        public Definitions definitions { get; set; }
-        public OrgData orgdata { get; set; }
-        public DbSettings dbsettings { get; set; }
+        public Definitions Definitions { get; set; }
+        public OrgData Orgdata { get; set; }
+        public DbSettings Dbsettings { get; set; }
     }
 
     public class Definitions
@@ -47,12 +47,12 @@ namespace JsonFileReaderDLL
 
     public static class ConfigFileReader
     {
-        private static string jsonFile, sha256, aux;
+        private static string jsonFile, sha256;
         private static WebClient wc;
         private static StreamReader fileC;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> checkHostMT(string ip, string port)
+        public static Task<bool> CheckHostMT(string ip, string port)
         {
             return Task.Run(() =>
             {
@@ -67,7 +67,6 @@ namespace JsonFileReaderDLL
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
                     fileC = new StreamReader(StringsAndConstants.configPath);
-                    aux = StringsAndConstants.configPath;
                     fileC.Close();
                 }
                 catch
@@ -79,7 +78,7 @@ namespace JsonFileReaderDLL
         }
 
         //Checks if the server is answering any requests, through a json file verification (single threaded)
-        public static bool checkHostST(string ip, string port)
+        public static bool CheckHostST(string ip, string port)
         {
             try
             {
@@ -87,7 +86,6 @@ namespace JsonFileReaderDLL
                 wc.DownloadFile("http://" + ip + ":" + port + StringsAndConstants.fileConfigPath + StringsAndConstants.fileConfig, StringsAndConstants.configPath);
                 System.Threading.Thread.Sleep(300);
                 fileC = new StreamReader(StringsAndConstants.configPath);
-                aux = StringsAndConstants.configPath;
                 fileC.Close();
             }
             catch
@@ -98,20 +96,20 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
-        public static Task<List<string[]>> fetchInfoMT(string ip, string port)
+        public static Task<List<string[]>> FetchInfoMT(string ip, string port)
         {
             return Task.Run(async () =>
             {
-                if (!await checkHostMT(ip, port))
+                if (!await CheckHostMT(ip, port))
                     return null;
 
                 List<string[]> arr;
                 fileC = new StreamReader(StringsAndConstants.configPath);
 
                 jsonFile = fileC.ReadToEnd();
-                cFile jsonParse = JsonConvert.DeserializeObject<cFile>(@jsonFile);
+                CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
 
-                arr = new List<string[]>() { jsonParse.definitions.Buildings, jsonParse.definitions.HWTypes };
+                arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HWTypes };
 
                 fileC.Close();
                 return arr;
@@ -119,18 +117,18 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
-        public static List<string[]> fetchInfoST(string ip, string port)
+        public static List<string[]> FetchInfoST(string ip, string port)
         {
-            if (!checkHostST(ip, port))
+            if (!CheckHostST(ip, port))
                 return null;
 
             List<string[]> arr;
             fileC = new StreamReader(StringsAndConstants.configPath);
             
             jsonFile = fileC.ReadToEnd();
-            cFile jsonParse = JsonConvert.DeserializeObject<cFile>(@jsonFile);
+            CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
 
-            arr = new List<string[]>() { jsonParse.definitions.Buildings, jsonParse.definitions.HWTypes };
+            arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HWTypes };
 
             fileC.Close();
             return arr;

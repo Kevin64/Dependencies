@@ -25,7 +25,7 @@ namespace HardwareInfoDLL
             {
                 foreach (var item in searcher.Get())
                     logical = item["NumberOfLogicalProcessors"].ToString();
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     Id = queryObj.Properties["name"].Value.ToString() + " " + queryObj.Properties["CurrentClockSpeed"].Value.ToString()
                        + " " + StringsAndConstants.frequency + " (" + queryObj.Properties["NumberOfCores"].Value.ToString() + "C/" + logical + "T)";
@@ -53,7 +53,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
                     {
@@ -87,13 +87,13 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     if (queryObj["Name"].ToString().Contains("NVM"))
                         return StringsAndConstants.nvme;
 
                 searcher = new ManagementObjectSearcher("select * from Win32_IDEController");
 
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     if ((queryObj["Name"].ToString().Contains(StringsAndConstants.ahci) || queryObj["Name"].ToString().Contains(StringsAndConstants.sata)) && !queryObj["Name"].ToString().Contains(StringsAndConstants.raid))
                         return StringsAndConstants.ahci;
 
@@ -113,7 +113,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (getOSInfoAux().Equals(StringsAndConstants.windows10) || getOSInfoAux().Equals(StringsAndConstants.windows8_1) || getOSInfoAux().Equals(StringsAndConstants.windows8))
+                if (GetOSInfoAux().Equals(StringsAndConstants.windows10) || GetOSInfoAux().Equals(StringsAndConstants.windows8_1) || GetOSInfoAux().Equals(StringsAndConstants.windows8))
                 {
                     int size = 10, i = 0;
                     string[] type = new string[size];
@@ -127,7 +127,7 @@ namespace HardwareInfoDLL
                     searcher.Scope = scope;
 
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
@@ -167,7 +167,7 @@ namespace HardwareInfoDLL
                     var typeSlicedHDD = bytesHDD.Take(i);
                     var typeSlicedSSD = bytesSSD.Take(i);
                     searcher.Dispose();
-                    concat = countDistinct(typeSliced.ToArray(), typeSlicedHDD.ToArray(), typeSlicedSSD.ToArray());
+                    concat = CountDistinct(typeSliced.ToArray(), typeSlicedHDD.ToArray(), typeSlicedSSD.ToArray());
 
                     return concat;
                 }
@@ -180,7 +180,7 @@ namespace HardwareInfoDLL
 
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -199,7 +199,7 @@ namespace HardwareInfoDLL
                     var typeSliced = type.Take(i);
                     var typeSlicedHDD = bytesHDD.Take(i);
                     searcher.Dispose();
-                    concat = countDistinct(typeSliced.ToArray(), typeSlicedHDD.ToArray(), typeSlicedHDD.ToArray());
+                    concat = CountDistinct(typeSliced.ToArray(), typeSlicedHDD.ToArray(), typeSlicedHDD.ToArray());
 
                     return concat;
                 }
@@ -211,7 +211,7 @@ namespace HardwareInfoDLL
 		}
 
 		//Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them
-		public static string countDistinct(string[] array, string[] array2, string[] array3)
+		public static string CountDistinct(string[] array, string[] array2, string[] array3)
 		{
 			string result = "";
 			int j = 0;
@@ -269,14 +269,14 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (getOSInfoAux().Equals(StringsAndConstants.windows10) || getOSInfoAux().Equals(StringsAndConstants.windows8_1) || getOSInfoAux().Equals(StringsAndConstants.windows8))
+                if (GetOSInfoAux().Equals(StringsAndConstants.windows10) || GetOSInfoAux().Equals(StringsAndConstants.windows8_1) || GetOSInfoAux().Equals(StringsAndConstants.windows8))
                 {
                     ManagementScope scope = new ManagementScope(@"\\.\root\microsoft\windows\storage");
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from MSFT_PhysicalDisk");
                     scope.Connect();
                     searcher.Scope = scope;
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4))
                         {
@@ -285,14 +285,14 @@ namespace HardwareInfoDLL
                         }
                     }
                     if (i == 0)
-                        foreach (ManagementObject queryObj in searcher.Get())
+                        foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                             dresult += Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
                 }
                 else
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -328,7 +328,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject mo in moc)
+                foreach (ManagementObject mo in moc.Cast<ManagementObject>())
                 {
                     string[] gat = (string[])mo["DefaultIPGateway"];
                     if (MACAddress == String.Empty)
@@ -356,7 +356,7 @@ namespace HardwareInfoDLL
 			ManagementObjectCollection moc = mc.GetInstances();
             try
             {
-                foreach (ManagementObject mo in moc)
+                foreach (ManagementObject mo in moc.Cast<ManagementObject>())
 				{
 					string[] gat = (string[])mo["DefaultIPGateway"];
 					if ((bool)mo["IPEnabled"] == true && gat != null)
@@ -378,7 +378,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
                 return StringsAndConstants.unknown;
             }
@@ -395,7 +395,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
                 return StringsAndConstants.unknown;
             }
@@ -412,7 +412,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Model").ToString();
                 return StringsAndConstants.unknown;
             }
@@ -429,7 +429,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Product").ToString();
                 return StringsAndConstants.unknown;
             }
@@ -446,7 +446,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
                 return StringsAndConstants.unknown;
             }
@@ -470,13 +470,13 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(StringsAndConstants.systemRom))
                     {
                         mCap = Convert.ToInt64(queryObj["Capacity"]);
                         MemSize += mCap;
-                        if (getOSInfoAux().Equals(StringsAndConstants.windows10))
+                        if (GetOSInfoAux().Equals(StringsAndConstants.windows10))
                         {
                             if (queryObj["SMBIOSMemoryType"].ToString().Equals(StringsAndConstants.ddr4smbios))
                             {
@@ -556,7 +556,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(StringsAndConstants.systemRom))
                     {
@@ -586,7 +586,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                     if (Convert.ToString(queryObj["Tag"]).Equals("Physical Memory Array 0"))
                         MemSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
                 return MemSlots.ToString();
@@ -610,7 +610,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(StringsAndConstants.systemRom))
                     {
@@ -636,7 +636,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     if (gateway == String.Empty)
                         if ((bool)queryObj["IPEnabled"] == true)
@@ -653,7 +653,7 @@ namespace HardwareInfoDLL
 		}
 
 		//Fetches the OS architecture
-		public static string getOSArch()
+		public static string GetOSArch()
 		{
 			bool is64bit = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"));
 			if (is64bit)
@@ -663,13 +663,13 @@ namespace HardwareInfoDLL
 		}
 
 		//Fetches the OS architecture (alternative method)
-		public static string getOSArchAlt()
+		public static string GetOSArchAlt()
 		{
 			ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_OperatingSystem");
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     try
                     {
@@ -687,8 +687,8 @@ namespace HardwareInfoDLL
             }
 		}
 
-		//Fetches the NT version
-		public static string getOSInfoAux()
+        //Fetches the NT version
+        public static string GetOSInfoAux()
 		{
 			string operatingSystem = "";
 
@@ -734,9 +734,9 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (getOSInfoAux().Equals(StringsAndConstants.windows10))
+                    if (GetOSInfoAux().Equals(StringsAndConstants.windows10))
                     {
                         if (Convert.ToInt32(releaseId) <= 2004)
                             return (((string)queryObj["Caption"]).Trim() + ", v" + releaseId + ", " + StringsAndConstants.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
@@ -756,13 +756,13 @@ namespace HardwareInfoDLL
 		}
 
 		//Fetches the OS build number
-		public static string getOSVersion()
+		public static string GetOSVersion()
 		{
 			ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_OperatingSystem");
 
             try
             {
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
 					return queryObj.GetPropertyValue("Version").ToString();
                 return StringsAndConstants.unknown;
             }
@@ -783,7 +783,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                     info = (string)queryObj["Name"];
                 return info;
             }
@@ -803,7 +803,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                     biosVersion = (string)queryObj["SMBIOSBIOSVersion"];
                 return biosVersion;
             }
@@ -846,7 +846,7 @@ namespace HardwareInfoDLL
 		{
             try
             {
-                if (getOSInfoAux().Equals(StringsAndConstants.windows10) || getOSInfoAux().Equals(StringsAndConstants.windows8_1) || getOSInfoAux().Equals(StringsAndConstants.windows8))
+                if (GetOSInfoAux().Equals(StringsAndConstants.windows10) || GetOSInfoAux().Equals(StringsAndConstants.windows8_1) || GetOSInfoAux().Equals(StringsAndConstants.windows8))
                 {
                     uint firmwaretype = 0;
                     if (GetFirmwareType(ref firmwaretype))
@@ -911,12 +911,12 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (!getOSInfoAux().Equals(StringsAndConstants.windows7))
+                if (!GetOSInfoAux().Equals(StringsAndConstants.windows7))
                 {
                     ManagementClass mc = new ManagementClass("win32_processor");
                     ManagementObjectCollection moc = mc.GetInstances();
 
-                    foreach (ManagementObject queryObj in moc)
+                    foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                     {
                         if (queryObj["VirtualizationFirmwareEnabled"].ToString().Equals("True"))
                             flag = 2;
@@ -957,7 +957,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     featureName = (string)queryObj.Properties["Name"].Value;
                     featureToggle = (UInt32)queryObj.Properties["InstallState"].Value;
@@ -982,7 +982,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (ManagementObject queryObj in moc)
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     statusCaption = (string)queryObj.Properties["Caption"].Value;
                     statusValue = (string)queryObj.Properties["Status"].Value;
@@ -1007,7 +1007,7 @@ namespace HardwareInfoDLL
 
 			try
 			{
-                foreach (ManagementObject queryObj in searcher.Get())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     isActivated = queryObj.Properties["IsActivated_InitialValue"].Value.ToString();
                     isEnabled = queryObj.Properties["IsEnabled_InitialValue"].Value.ToString();

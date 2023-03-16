@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-	public class bFile
+	public class BFile
 	{
-		public string id { get; set; }
-		public string marca { get; set; }
-		public string modelo { get; set; }
-		public string versao { get; set; }
-		public string tipo { get; set; }
-        public string tpm { get; set; }
-        public string mediaOp { get; set; }
+		public string Id { get; set; }
+		public string Marca { get; set; }
+		public string Modelo { get; set; }
+		public string Versao { get; set; }
+		public string Tipo { get; set; }
+        public string Tpm { get; set; }
+        public string MediaOp { get; set; }
     }
 	public static class BIOSFileReader
 	{
@@ -24,7 +24,7 @@ namespace JsonFileReaderDLL
 		private static StreamReader fileB;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> checkHostMT(string ip, string port)
+        public static Task<bool> CheckHostMT(string ip, string port)
         {
 			return Task.Run(() =>
 			{
@@ -51,7 +51,7 @@ namespace JsonFileReaderDLL
 		}
 
         //Checks if the server is answering any requests, through a json file verification (single threaded)
-        public static bool checkHostST(string ip, string port)
+        public static bool CheckHostST(string ip, string port)
         {
             try
             {
@@ -75,11 +75,11 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses brand, model, BIOS versions, operatin mode and TPM version, returning them (creates a separate thread)
-		public static Task<string[]> fetchInfoMT(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
+		public static Task<string[]> FetchInfoMT(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
 		{
 			return Task.Run(async () =>
 			{
-				if (!await checkHostMT(ip, port))
+				if (!await CheckHostMT(ip, port))
 					return null;
 
 				string[] arr;
@@ -88,19 +88,19 @@ namespace JsonFileReaderDLL
 				if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
 				{
 					jsonFile = fileB.ReadToEnd();
-					bFile[] jsonParse = JsonConvert.DeserializeObject<bFile[]>(@jsonFile);
+					BFile[] jsonParse = JsonConvert.DeserializeObject<BFile[]>(@jsonFile);
 
 					for (int i = 0; i < jsonParse.Length; i++)
 					{
-						if (mod.Contains(jsonParse[i].modelo) && brd.Contains(jsonParse[i].marca))
+						if (mod.Contains(jsonParse[i].Modelo) && brd.Contains(jsonParse[i].Marca))
 						{
-							if (!type.Equals(jsonParse[i].tipo))
+							if (!type.Equals(jsonParse[i].Tipo))
 								typeRet = "false";
-							if (!tpm.Equals(jsonParse[i].tpm))
+							if (!tpm.Equals(jsonParse[i].Tpm))
 								tpmRet = "false";
-							if (!mediaOp.Equals(jsonParse[i].mediaOp))
+							if (!mediaOp.Equals(jsonParse[i].MediaOp))
 								mediaOpRet = "false";
-							arr = new String[] { jsonParse[i].versao, typeRet, tpmRet, mediaOpRet };
+							arr = new String[] { jsonParse[i].Versao, typeRet, tpmRet, mediaOpRet };
 							fileB.Close();
 							return arr;
 						}
@@ -113,9 +113,9 @@ namespace JsonFileReaderDLL
 		}
 
         //Reads a json file retrieved from the server and parses brand, model, BIOS versions, operatin mode and TPM version, returning them (single threaded)
-        public static string[] fetchInfoST(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
+        public static string[] FetchInfoST(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
         {
-            if (!checkHostST(ip, port))
+            if (!CheckHostST(ip, port))
                 return null;
 
             string[] arr;
@@ -124,19 +124,19 @@ namespace JsonFileReaderDLL
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileB.ReadToEnd();
-                bFile[] jsonParse = JsonConvert.DeserializeObject<bFile[]>(@jsonFile);
+                BFile[] jsonParse = JsonConvert.DeserializeObject<BFile[]>(@jsonFile);
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (mod.Contains(jsonParse[i].modelo) && brd.Contains(jsonParse[i].marca))
+                    if (mod.Contains(jsonParse[i].Modelo) && brd.Contains(jsonParse[i].Marca))
                     {
-                        if (!type.Equals(jsonParse[i].tipo))
+                        if (!type.Equals(jsonParse[i].Tipo))
                             typeRet = "false";
-                        if (!tpm.Equals(jsonParse[i].tpm))
+                        if (!tpm.Equals(jsonParse[i].Tpm))
                             tpmRet = "false";
-                        if (!mediaOp.Equals(jsonParse[i].mediaOp))
+                        if (!mediaOp.Equals(jsonParse[i].MediaOp))
                             mediaOpRet = "false";
-                        arr = new String[] { jsonParse[i].versao, typeRet, tpmRet, mediaOpRet };
+                        arr = new String[] { jsonParse[i].Versao, typeRet, tpmRet, mediaOpRet };
                         fileB.Close();
                         return arr;
                     }

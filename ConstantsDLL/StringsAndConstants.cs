@@ -34,6 +34,7 @@ namespace ConstantsDLL
         public const string NO_AUTH = "Preencha suas credenciais.";
         public const string SERVER_NOT_FOUND_ERROR = "Servidor não encontrado. Selecione um servidor válido!";
         public const string unknown = "Desconhecido";
+        public const string pcNotRegistered = "Patrimônio não registrado inicialmente pelo software 'Coleta de hardware e Cadastro de Patrimônio'. Primeiramente realize o cadastro e depois tente novamente.";
         public const string ToBeFilledByOEM = "To Be Filled By O.E.M.";
         public const string ALREADY_RUNNING = "Já existe uma instância do programa em execução!";
         public const string LOG_HEADER = "------------------------LOG DE EXECUÇÃO------------------------";
@@ -46,6 +47,7 @@ namespace ConstantsDLL
         public const string LOG_ERROR_ATTR = "<ERRO>";
         public const string LOG_PASSWORD_PLACEHOLDER = "XXXXXXXXXXXXXXX";
         public const string LOG_ARGS_ERROR = ARGS_ERROR;
+        public const string LOG_PC_NOT_REGISTERED = pcNotRegistered;
         public const string PROGRAMDATA_FOLDERNAME = "AppLog";
         public const string INI_SECTION_1 = "Definitions";
         public const string INI_SECTION_2 = "OrgData";
