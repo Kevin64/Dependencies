@@ -50,7 +50,7 @@ namespace LogGeneratorDLL
         {
             try
             {
-                using (StreamWriter w = File.AppendText(this.path + "\\" + fileNameStr))
+                using (StreamWriter w = File.AppendText(path + "\\" + fileNameStr))
                 {
                     Log(logType, logMessage1, logMessage2, w, consoleOut);
                 }
@@ -91,13 +91,17 @@ namespace LogGeneratorDLL
                 {
                     txtWriter.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1, logMessage2);
                     if (consoleOut)
+                    {
                         Console.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1, logMessage2);
+                    }
                 }
                 else
                 {
                     txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1);
                     if (consoleOut)
+                    {
                         Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1);
+                    }
                 }
                 Console.ResetColor();
             }
@@ -106,7 +110,10 @@ namespace LogGeneratorDLL
                 Console.ForegroundColor = ConsoleColor.Red;
                 txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), StringsAndConstants.LOG_ERROR_ATTR, e.Message);
                 if (consoleOut)
+                {
                     Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), StringsAndConstants.LOG_ERROR_ATTR, e.Message);
+                }
+
                 Console.ResetColor();
             }
         }

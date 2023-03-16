@@ -458,20 +458,20 @@ namespace ConstantsDLL
         public static Color OFFLINE_ALERT = Color.Red;
         public static Color ONLINE_ALERT = Color.Lime;
         public static Color DARK_FORECOLOR = SystemColors.ControlLightLight;
-        public static Color DARK_BACKCOLOR = Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-        public static Color DARK_ASTERISKCOLOR = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+        public static Color DARK_BACKCOLOR = Color.FromArgb(64, 64, 64);
+        public static Color DARK_ASTERISKCOLOR = Color.FromArgb(255, 200, 0);
         public static Color DARK_AGENT = Color.DarkCyan;
-        public static Color LIGHT_DROPDOWN_BORDER = Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
-        public static Color LIGHT_BACKGROUND = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-        public static Color DARK_BACKGROUND = Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+        public static Color LIGHT_DROPDOWN_BORDER = Color.FromArgb(122, 122, 122);
+        public static Color LIGHT_BACKGROUND = Color.FromArgb(248, 248, 248);
+        public static Color DARK_BACKGROUND = Color.FromArgb(32, 32, 32);
         public static Color DARK_SUBTLE_LIGHTLIGHTCOLOR = Color.DimGray;
-        public static Color LIGHT_SUBTLE_DARKDARKCOLOR = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+        public static Color LIGHT_SUBTLE_DARKDARKCOLOR = Color.FromArgb(192, 192, 192);
         public static Color DARK_SUBTLE_LIGHTCOLOR = Color.DarkSlateGray;
         public static Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
         public static Color BLUE_FOREGROUND = SystemColors.Highlight;
-        public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-        public static Color HIGHLIGHT_LABEL_COLOR = Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-        public static Color PRESSED_STRIP_BUTTON = Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+        public static Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(204, 204, 204);
+        public static Color HIGHLIGHT_LABEL_COLOR = Color.FromArgb(127, 127, 127);
+        public static Color PRESSED_STRIP_BUTTON = Color.FromArgb(128, 128, 128);
 
         public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
 

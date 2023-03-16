@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("LogGeneratorDLL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Universidade Federal de Santa Maria")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("LogGeneratorDLL")]
-[assembly: AssemblyCopyright("Copyright © Universidade Federal de Santa Maria 2022")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

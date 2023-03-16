@@ -23,8 +23,11 @@ namespace HardwareInfoDLL
 
             try
             {
-                foreach (var item in searcher.Get())
+                foreach (ManagementBaseObject item in searcher.Get())
+                {
                     logical = item["NumberOfLogicalProcessors"].ToString();
+                }
+
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     Id = queryObj.Properties["name"].Value.ToString() + " " + queryObj.Properties["CurrentClockSpeed"].Value.ToString()
@@ -61,10 +64,9 @@ namespace HardwareInfoDLL
                         {
                             gpuram = Convert.ToInt64(queryObj["AdapterRAM"]);
                             gpuram = Math.Round(gpuram / 1048576, 0);
-                            if (Math.Ceiling(Math.Log10(gpuram)) > 3)
-                                gpuramStr = Convert.ToString(Math.Round(gpuram / 1024, 1)) + " " + StringsAndConstants.gb;
-                            else
-                                gpuramStr = gpuram + " " + StringsAndConstants.mb;
+                            gpuramStr = Math.Ceiling(Math.Log10(gpuram)) > 3
+                                ? Convert.ToString(Math.Round(gpuram / 1024, 1)) + " " + StringsAndConstants.gb
+                                : gpuram + " " + StringsAndConstants.mb;
                             gpuname = queryObj["Caption"].ToString() + " (" + gpuramStr + ")";
                         }
                     }
@@ -88,14 +90,22 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
                     if (queryObj["Name"].ToString().Contains("NVM"))
+                    {
                         return StringsAndConstants.nvme;
+                    }
+                }
 
                 searcher = new ManagementObjectSearcher("select * from Win32_IDEController");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
                     if ((queryObj["Name"].ToString().Contains(StringsAndConstants.ahci) || queryObj["Name"].ToString().Contains(StringsAndConstants.sata)) && !queryObj["Name"].ToString().Contains(StringsAndConstants.raid))
+                    {
                         return StringsAndConstants.ahci;
+                    }
+                }
 
                 return StringsAndConstants.ide;
             }
@@ -136,10 +146,9 @@ namespace HardwareInfoDLL
                                 dresult = Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
                                 dresult = Math.Round(dresult / 1000000000, 0);
 
-                                if (Math.Log10(dresult) > 2.9999)
-                                    dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + StringsAndConstants.tb;
-                                else
-                                    dresultStr = dresult + " " + StringsAndConstants.gb;
+                                dresultStr = Math.Log10(dresult) > 2.9999
+                                    ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + StringsAndConstants.tb
+                                    : dresult + " " + StringsAndConstants.gb;
 
                                 switch (Convert.ToInt16(queryObj["MediaType"]))
                                 {
@@ -163,9 +172,9 @@ namespace HardwareInfoDLL
                         }
                     }
 
-                    var typeSliced = type.Take(i);
-                    var typeSlicedHDD = bytesHDD.Take(i);
-                    var typeSlicedSSD = bytesSSD.Take(i);
+                    IEnumerable<string> typeSliced = type.Take(i);
+                    IEnumerable<string> typeSlicedHDD = bytesHDD.Take(i);
+                    IEnumerable<string> typeSlicedSSD = bytesSSD.Take(i);
                     searcher.Dispose();
                     concat = CountDistinct(typeSliced.ToArray(), typeSlicedHDD.ToArray(), typeSlicedSSD.ToArray());
 
@@ -187,17 +196,16 @@ namespace HardwareInfoDLL
                             dresult = Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
                             dresult = Math.Round(dresult / 1000000000, 0);
 
-                            if (Math.Log10(dresult) > 2.9999)
-                                dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + StringsAndConstants.tb;
-                            else
-                                dresultStr = dresult + " " + StringsAndConstants.gb;
+                            dresultStr = Math.Log10(dresult) > 2.9999
+                                ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + StringsAndConstants.tb
+                                : dresult + " " + StringsAndConstants.gb;
                             type[i] = StringsAndConstants.hdd;
                             bytesHDD[i] = dresultStr;
                             i++;
                         }
                     }
-                    var typeSliced = type.Take(i);
-                    var typeSlicedHDD = bytesHDD.Take(i);
+                    IEnumerable<string> typeSliced = type.Take(i);
+                    IEnumerable<string> typeSlicedHDD = bytesHDD.Take(i);
                     searcher.Dispose();
                     concat = CountDistinct(typeSliced.ToArray(), typeSlicedHDD.ToArray(), typeSlicedHDD.ToArray());
 
@@ -218,11 +226,11 @@ namespace HardwareInfoDLL
             List<string> sizesHDD = new List<string>();
             List<string> sizesSSD = new List<string>();
             char[] comma = { ',', ' ' };
-            var groups = array.GroupBy(z => z);
+            IEnumerable<IGrouping<string, string>> groups = array.GroupBy(z => z);
 
             try
             {
-                foreach (var group in groups)
+                foreach (IGrouping<string, string> group in groups)
                 {
                     j = 0;
                     result += group.Count() + "x " + group.Key;
@@ -244,9 +252,14 @@ namespace HardwareInfoDLL
                             if (group.Count() == j)
                             {
                                 if (group.Key == StringsAndConstants.hdd)
+                                {
                                     result += " (" + string.Join(", ", sizesHDD) + ")" + ", ";
+                                }
                                 else
+                                {
                                     result += " (" + string.Join(", ", sizesSSD) + ")" + ", ";
+                                }
+
                                 break;
                             }
                         }
@@ -285,8 +298,12 @@ namespace HardwareInfoDLL
                         }
                     }
                     if (i == 0)
+                    {
                         foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                        {
                             dresult += Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
+                        }
+                    }
                 }
                 else
                 {
@@ -331,15 +348,17 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject mo in moc.Cast<ManagementObject>())
                 {
                     string[] gat = (string[])mo["DefaultIPGateway"];
-                    if (MACAddress == String.Empty)
+                    if (MACAddress == string.Empty)
+                    {
                         if ((bool)mo["IPEnabled"] == true && gat != null)
+                        {
                             MACAddress = mo["MacAddress"].ToString();
+                        }
+                    }
+
                     mo.Dispose();
                 }
-                if (MACAddress != "")
-                    return MACAddress;
-                else
-                    return null;
+                return MACAddress != "" ? MACAddress : null;
             }
             catch (Exception e)
             {
@@ -360,7 +379,10 @@ namespace HardwareInfoDLL
                 {
                     string[] gat = (string[])mo["DefaultIPGateway"];
                     if ((bool)mo["IPEnabled"] == true && gat != null)
+                    {
                         IPAddress = (string[])mo["IPAddress"];
+                    }
+
                     mo.Dispose();
                 }
                 return IPAddress[0];
@@ -379,7 +401,10 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
+                }
+
                 return StringsAndConstants.unknown;
             }
             catch (Exception e)
@@ -396,7 +421,10 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
+                }
+
                 return StringsAndConstants.unknown;
             }
             catch (Exception e)
@@ -413,7 +441,10 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
                     return queryObj.GetPropertyValue("Model").ToString();
+                }
+
                 return StringsAndConstants.unknown;
             }
             catch (Exception e)
@@ -430,7 +461,10 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
                     return queryObj.GetPropertyValue("Product").ToString();
+                }
+
                 return StringsAndConstants.unknown;
             }
             catch (Exception e)
@@ -447,7 +481,10 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
+                }
+
                 return StringsAndConstants.unknown;
             }
             catch (Exception e)
@@ -533,7 +570,7 @@ namespace HardwareInfoDLL
                         }
                     }
                 }
-                MemSize = (MemSize / 1024) / 1024 / 1024;
+                MemSize = MemSize / 1024 / 1024 / 1024;
                 return MemSize.ToString() + " " + StringsAndConstants.gb + " " + mType + mSpeed;
             }
             catch (Exception e)
@@ -564,7 +601,7 @@ namespace HardwareInfoDLL
                         MemSize += mCap;
                     }
                 }
-                MemSize = (MemSize / 1024) / 1024 / 1024;
+                MemSize = MemSize / 1024 / 1024 / 1024;
                 MemSizeStr = MemSize.ToString();
                 return MemSizeStr;
             }
@@ -587,8 +624,13 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                {
                     if (Convert.ToString(queryObj["Tag"]).Equals("Physical Memory Array 0"))
+                    {
                         MemSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
+                    }
+                }
+
                 return MemSlots.ToString();
             }
             catch (Exception e)
@@ -638,9 +680,14 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
-                    if (gateway == String.Empty)
+                    if (gateway == string.Empty)
+                    {
                         if ((bool)queryObj["IPEnabled"] == true)
+                        {
                             gateway = queryObj["DefaultIPGateway"].ToString();
+                        }
+                    }
+
                     queryObj.Dispose();
                 }
                 gateway = gateway.Replace(":", "");
@@ -656,10 +703,7 @@ namespace HardwareInfoDLL
         public static string GetOSArch()
         {
             bool is64bit = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"));
-            if (is64bit)
-                return StringsAndConstants.arch64;
-            else
-                return StringsAndConstants.arch32;
+            return is64bit ? StringsAndConstants.arch64 : StringsAndConstants.arch32;
         }
 
         //Fetches the OS architecture (alternative method)
@@ -703,11 +747,14 @@ namespace HardwareInfoDLL
                     {
                         case 6:
                             if (vs.Minor == 1)
+                            {
                                 operatingSystem = StringsAndConstants.windows7;
-                            else if (vs.Minor == 2)
-                                operatingSystem = StringsAndConstants.windows8;
+                            }
                             else
-                                operatingSystem = StringsAndConstants.windows8_1;
+                            {
+                                operatingSystem = vs.Minor == 2 ? StringsAndConstants.windows8 : StringsAndConstants.windows8_1;
+                            }
+
                             break;
                         case 10:
                             operatingSystem = StringsAndConstants.windows10;
@@ -738,13 +785,14 @@ namespace HardwareInfoDLL
                 {
                     if (GetOSInfoAux().Equals(StringsAndConstants.windows10))
                     {
-                        if (Convert.ToInt32(releaseId) <= 2004)
-                            return (((string)queryObj["Caption"]).Trim() + ", v" + releaseId + ", " + StringsAndConstants.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
-                        else
-                            return (((string)queryObj["Caption"]).Trim() + ", v" + displayVersion + ", " + StringsAndConstants.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
+                        return Convert.ToInt32(releaseId) <= 2004
+                            ? (((string)queryObj["Caption"]).Trim() + ", v" + releaseId + ", " + StringsAndConstants.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
+                            : (((string)queryObj["Caption"]).Trim() + ", v" + displayVersion + ", " + StringsAndConstants.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
                     }
                     else
+                    {
                         return (((string)queryObj["Caption"]).Trim() + " " + (string)queryObj["CSDVersion"] + ", " + StringsAndConstants.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
+                    }
                 }
                 return StringsAndConstants.unknown;
             }
@@ -763,7 +811,10 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
                     return queryObj.GetPropertyValue("Version").ToString();
+                }
+
                 return StringsAndConstants.unknown;
             }
             catch (Exception e)
@@ -784,7 +835,10 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                {
                     info = (string)queryObj["Name"];
+                }
+
                 return info;
             }
             catch (Exception e)
@@ -804,7 +858,10 @@ namespace HardwareInfoDLL
             try
             {
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                {
                     biosVersion = (string)queryObj["SMBIOSBIOSVersion"];
+                }
+
                 return biosVersion;
             }
             catch (Exception e)
@@ -826,12 +883,9 @@ namespace HardwareInfoDLL
         {
             try
             {
-                GetFirmwareType("", "{00000000-0000-0000-0000-000000000000}", IntPtr.Zero, 0);
+                _ = GetFirmwareType("", "{00000000-0000-0000-0000-000000000000}", IntPtr.Zero, 0);
 
-                if (Marshal.GetLastWin32Error() == ERROR_INVALID_FUNCTION)
-                    return StringsAndConstants.bios;
-                else
-                    return StringsAndConstants.uefi;
+                return Marshal.GetLastWin32Error() == ERROR_INVALID_FUNCTION ? StringsAndConstants.bios : StringsAndConstants.uefi;
             }
             catch (Exception e)
             {
@@ -841,7 +895,7 @@ namespace HardwareInfoDLL
 
         //Fetches the BIOS type (BIOS or UEFI) on Windows 8 and later
         [DllImport("kernel32.dll")]
-        static extern bool GetFirmwareType(ref uint FirmwareType);
+        private static extern bool GetFirmwareType(ref uint FirmwareType);
         public static string GetBIOSType()
         {
             try
@@ -852,14 +906,20 @@ namespace HardwareInfoDLL
                     if (GetFirmwareType(ref firmwaretype))
                     {
                         if (firmwaretype == 1)
+                        {
                             return StringsAndConstants.bios;
+                        }
                         else if (firmwaretype == 2)
+                        {
                             return StringsAndConstants.uefi;
+                        }
                     }
                     return StringsAndConstants.notDetermined;
                 }
                 else
+                {
                     return GetBIOSType7();
+                }
             }
             catch (Exception e)
             {
@@ -874,11 +934,14 @@ namespace HardwareInfoDLL
             try
             {
                 PowerShell PowerShellInst = PowerShell.Create();
-                PowerShellInst.AddScript("Confirm-SecureBootUEFI");
+                _ = PowerShellInst.AddScript("Confirm-SecureBootUEFI");
                 Collection<PSObject> PSOutput = PowerShellInst.Invoke();
 
                 foreach (PSObject queryObj in PSOutput)
+                {
                     return StringsAndConstants.activated;
+                }
+
                 return StringsAndConstants.deactivated;
             }
             catch
@@ -893,10 +956,7 @@ namespace HardwareInfoDLL
             try
             {
                 string secBoot = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot\State", "UEFISecureBootEnabled", 0).ToString();
-                if (secBoot.Equals("0"))
-                    return StringsAndConstants.deactivated;
-                else
-                    return StringsAndConstants.activated;
+                return secBoot.Equals("0") ? StringsAndConstants.deactivated : StringsAndConstants.activated;
             }
             catch
             {
@@ -919,25 +979,28 @@ namespace HardwareInfoDLL
                     foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                     {
                         if (queryObj["VirtualizationFirmwareEnabled"].ToString().Equals("True"))
+                        {
                             flag = 2;
+                        }
                         else if (bool.Parse(GetHyperVStatus()))
+                        {
                             flag = 2;
+                        }
                     }
                     if (flag != 2)
                     {
-                        if (GetBIOSType() == StringsAndConstants.uefi)
-                            flag = 1;
-                        else
-                            flag = 0;
+                        flag = GetBIOSType() == StringsAndConstants.uefi ? 1 : 0;
                     }
                 }
 
                 if (flag == 2)
+                {
                     return StringsAndConstants.activated;
-                else if (flag == 1)
-                    return StringsAndConstants.deactivated;
+                }
                 else
-                    return StringsAndConstants.notSupported;
+                {
+                    return flag == 1 ? StringsAndConstants.deactivated : StringsAndConstants.notSupported;
+                }
             }
             catch (Exception e)
             {
@@ -950,7 +1013,7 @@ namespace HardwareInfoDLL
         public static string GetHyperVStatus()
         {
             string featureName;
-            UInt32 featureToggle;
+            uint featureToggle;
 
             ManagementClass mc = new ManagementClass("Win32_OptionalFeature");
             ManagementObjectCollection moc = mc.GetInstances();
@@ -960,10 +1023,12 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     featureName = (string)queryObj.Properties["Name"].Value;
-                    featureToggle = (UInt32)queryObj.Properties["InstallState"].Value;
+                    featureToggle = (uint)queryObj.Properties["InstallState"].Value;
 
                     if ((featureName.Equals("Microsoft-Hyper-V") && featureToggle.Equals(1)) || (featureName.Equals("Microsoft-Hyper-V-Hypervisor") && featureToggle.Equals(1)) || (featureName.Equals("Containers-DisposableClientVM") && featureToggle.Equals(1)))
+                    {
                         return "true";
+                    }
                 }
                 return "false";
             }
@@ -987,7 +1052,9 @@ namespace HardwareInfoDLL
                     statusCaption = (string)queryObj.Properties["Caption"].Value;
                     statusValue = (string)queryObj.Properties["Status"].Value;
                     if (statusValue == StringsAndConstants.predFail)
+                    {
                         return statusCaption;
+                    }
                 }
                 return StringsAndConstants.ok;
             }
@@ -1013,10 +1080,7 @@ namespace HardwareInfoDLL
                     isEnabled = queryObj.Properties["IsEnabled_InitialValue"].Value.ToString();
                     specVersion = queryObj.Properties["SpecVersion"].Value.ToString();
                 }
-                if (specVersion != "")
-                    specVersion = specVersion.Substring(0, 3);
-                else
-                    specVersion = StringsAndConstants.notExistant;
+                specVersion = specVersion != "" ? specVersion.Substring(0, 3) : StringsAndConstants.notExistant;
                 return specVersion;
             }
             catch (Exception e)

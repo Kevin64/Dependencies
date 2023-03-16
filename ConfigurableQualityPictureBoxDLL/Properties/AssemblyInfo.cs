@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ConfigurableQualityPictureBoxDLL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Universidade Federal de Santa Maria")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ConfigurableQualityPictureBoxDLL")]
-[assembly: AssemblyCopyright("Copyright UFSM © 2022")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -28,7 +28,7 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyLoginData);
+                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyLoginData);
                     System.Threading.Thread.Sleep(300);
                     wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileLogin, StringsAndConstants.loginPath);
                     System.Threading.Thread.Sleep(300);
@@ -53,7 +53,7 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyLoginData);
+                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyLoginData);
                 System.Threading.Thread.Sleep(300);
                 wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileLogin, StringsAndConstants.loginPath);
                 System.Threading.Thread.Sleep(300);
@@ -77,7 +77,9 @@ namespace JsonFileReaderDLL
             return Task.Run(async () =>
             {
                 if (!await CheckHostMT(ip, port))
+                {
                     return null;
+                }
 
                 string[] arr;
                 fileL = new StreamReader(StringsAndConstants.loginPath);
@@ -106,7 +108,9 @@ namespace JsonFileReaderDLL
         public static string[] FetchInfoST(string nome, string senha, string ip, string port)
         {
             if (!CheckHostST(ip, port))
+            {
                 return null;
+            }
 
             string[] arr;
             fileL = new StreamReader(StringsAndConstants.loginPath);

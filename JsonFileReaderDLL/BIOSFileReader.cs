@@ -1,6 +1,5 @@
 ﻿using ConstantsDLL;
 using Newtonsoft.Json;
-using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -31,7 +30,7 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyBiosData);
+                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyBiosData);
                     System.Threading.Thread.Sleep(300);
                     wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileBios, StringsAndConstants.biosPath);
                     System.Threading.Thread.Sleep(300);
@@ -56,7 +55,7 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyBiosData);
+                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyBiosData);
                 System.Threading.Thread.Sleep(300);
                 wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileBios, StringsAndConstants.biosPath);
                 System.Threading.Thread.Sleep(300);
@@ -80,7 +79,9 @@ namespace JsonFileReaderDLL
             return Task.Run(async () =>
             {
                 if (!await CheckHostMT(ip, port))
+                {
                     return null;
+                }
 
                 string[] arr;
                 string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
@@ -95,18 +96,27 @@ namespace JsonFileReaderDLL
                         if (mod.Contains(jsonParse[i].Modelo) && brd.Contains(jsonParse[i].Marca))
                         {
                             if (!type.Equals(jsonParse[i].Tipo))
+                            {
                                 typeRet = "false";
+                            }
+
                             if (!tpm.Equals(jsonParse[i].Tpm))
+                            {
                                 tpmRet = "false";
+                            }
+
                             if (!mediaOp.Equals(jsonParse[i].MediaOp))
+                            {
                                 mediaOpRet = "false";
-                            arr = new String[] { jsonParse[i].Versao, typeRet, tpmRet, mediaOpRet };
+                            }
+
+                            arr = new string[] { jsonParse[i].Versao, typeRet, tpmRet, mediaOpRet };
                             fileB.Close();
                             return arr;
                         }
                     }
                 }
-                arr = new String[] { "-1", "-1", "-1", "-1" };
+                arr = new string[] { "-1", "-1", "-1", "-1" };
                 fileB.Close();
                 return arr;
             });
@@ -116,7 +126,9 @@ namespace JsonFileReaderDLL
         public static string[] FetchInfoST(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
         {
             if (!CheckHostST(ip, port))
+            {
                 return null;
+            }
 
             string[] arr;
             string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
@@ -131,18 +143,27 @@ namespace JsonFileReaderDLL
                     if (mod.Contains(jsonParse[i].Modelo) && brd.Contains(jsonParse[i].Marca))
                     {
                         if (!type.Equals(jsonParse[i].Tipo))
+                        {
                             typeRet = "false";
+                        }
+
                         if (!tpm.Equals(jsonParse[i].Tpm))
+                        {
                             tpmRet = "false";
+                        }
+
                         if (!mediaOp.Equals(jsonParse[i].MediaOp))
+                        {
                             mediaOpRet = "false";
-                        arr = new String[] { jsonParse[i].Versao, typeRet, tpmRet, mediaOpRet };
+                        }
+
+                        arr = new string[] { jsonParse[i].Versao, typeRet, tpmRet, mediaOpRet };
                         fileB.Close();
                         return arr;
                     }
                 }
             }
-            arr = new String[] { "-1", "-1", "-1", "-1" };
+            arr = new string[] { "-1", "-1", "-1", "-1" };
             fileB.Close();
             return arr;
         }

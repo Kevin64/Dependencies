@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("JsonFileReaderDLL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Universidade Federal de Santa Maria")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("JsonFileReaderDLL")]
-[assembly: AssemblyCopyright("Copyright UFSM © 2022")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

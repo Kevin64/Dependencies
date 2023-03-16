@@ -34,7 +34,7 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyPCData + "?patrimonio=" + patr);
+                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyPCData + "?patrimonio=" + patr);
                     System.Threading.Thread.Sleep(300);
                     wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.filePC, StringsAndConstants.pcPath);
                     System.Threading.Thread.Sleep(300);
@@ -59,7 +59,7 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyPCData + "?patrimonio=" + patr);
+                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyPCData + "?patrimonio=" + patr);
                 System.Threading.Thread.Sleep(300);
                 wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.filePC, StringsAndConstants.pcPath);
                 System.Threading.Thread.Sleep(300);
@@ -83,7 +83,9 @@ namespace JsonFileReaderDLL
             return Task.Run(async () =>
             {
                 if (!await CheckHostMT(ip, port, patrimonio))
+                {
                     return null;
+                }
 
                 string[] arr;
                 filePC = new StreamReader(StringsAndConstants.pcPath);
@@ -112,7 +114,9 @@ namespace JsonFileReaderDLL
         public static string[] FetchInfoST(string patrimonio, string ip, string port)
         {
             if (!CheckHostST(ip, port, patrimonio))
+            {
                 return null;
+            }
 
             string[] arr;
             filePC = new StreamReader(StringsAndConstants.pcPath);
