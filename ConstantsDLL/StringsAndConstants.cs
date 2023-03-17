@@ -449,6 +449,9 @@ namespace ConstantsDLL
         public const string INI_SECTION_1_13 = "Buildings";
         public const string INI_SECTION_1_14 = "HWTypes";
         public const string INI_SECTION_1_15 = "ThemeUI";
+        public const string INI_SECTION_1_16 = "Logo1URL";
+        public const string INI_SECTION_1_17 = "Logo2URL";
+        public const string INI_SECTION_1_18 = "Logo3URL";
 
         public static Color LIGHT_FORECOLOR = SystemColors.ControlText;
         public static Color LIGHT_BACKCOLOR = SystemColors.Window;
@@ -524,9 +527,6 @@ namespace ConstantsDLL
         public const string win11ntFullVersion = "10.0.22000";
         public const string LOG_FILENAME_FOP = "FOP";
         public const double FADE_TIME = 0.2d;
-        public const string STI_URL = "https://www.ufsm.br/unidades-universitarias/ccsh/unidade-de-tecnologia-da-informacao/";
-        public const string UFSM_URL = "https://www.ufsm.br/";
-        public const string CCSH_URL = "https://www.ufsm.br/unidades-universitarias/ccsh/";
         public const string LOG_IMG_NOTFOUND = "Diretório de imagens não encontrado";
         public const string LOG_IMG_FOUND = "Diretório de imagens encontrado";
         public const string LOG_RUNNING = "Executando janela principal";
