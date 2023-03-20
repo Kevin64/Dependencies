@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("HardwareInfoDLL")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyCopyright("Copyright © 2023 Kevin Vinícius Teixeira Costa")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
