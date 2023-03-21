@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AAAString1" xml:space="preserve">
+    <value />
+    <comment>HardwareInformation.Resources</comment>
+  </data>
+  <data name="ahci" xml:space="preserve">
+    <value>AHCI</value>
+  </data>
+  <data name="arch32" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="arch64" xml:space="preserve">
+    <value>64</value>
+  </data>
+  <data name="bios" xml:space="preserve">
+    <value>BIOS</value>
+  </data>
+  <data name="build" xml:space="preserve">
+    <value>build</value>
+  </data>
+  <data name="DASH" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ddr2" xml:space="preserve">
+    <value>DDR2</value>
+  </data>
+  <data name="ddr3" xml:space="preserve">
+    <value>DDR3</value>
+  </data>
+  <data name="ddr3memorytype" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="ddr3smbios" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="ddr4" xml:space="preserve">
+    <value>DDR4</value>
+  </data>
+  <data name="ddr4smbios" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="defFile" xml:space="preserve">
+    <value>definitions.ini</value>
+  </data>
+  <data name="fileBios" xml:space="preserve">
+    <value>bios.json</value>
+  </data>
+  <data name="fileConfig" xml:space="preserve">
+    <value>config.json</value>
+  </data>
+  <data name="fileConfigPath" xml:space="preserve">
+    <value>/etc/</value>
+  </data>
+  <data name="fileLogin" xml:space="preserve">
+    <value>login.json</value>
+  </data>
+  <data name="filePC" xml:space="preserve">
+    <value>pc.json</value>
+  </data>
+  <data name="fileShaBios" xml:space="preserve">
+    <value>bios-checksum.txt</value>
+  </data>
+  <data name="fileShaConfig" xml:space="preserve">
+    <value>config-checksum.txt</value>
+  </data>
+  <data name="fileShaLogin" xml:space="preserve">
+    <value>login-checksum.txt</value>
+  </data>
+  <data name="fileShaPC" xml:space="preserve">
+    <value>pc-checksum.txt</value>
+  </data>
+  <data name="formatURL" xml:space="preserve">
+    <value>recebeDadosFormatacao</value>
+  </data>
+  <data name="frequency" xml:space="preserve">
+    <value>MHz</value>
+  </data>
+  <data name="gb" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="hdd" xml:space="preserve">
+    <value>HDD</value>
+  </data>
+  <data name="HWINFO_REG_PATH" xml:space="preserve">
+    <value>Software\HardwareInformation</value>
+  </data>
+  <data name="ide" xml:space="preserve">
+    <value>IDE/RAID</value>
+  </data>
+  <data name="INI_SECTION_1" xml:space="preserve">
+    <value>Definitions</value>
+  </data>
+  <data name="INI_SECTION_1_11" xml:space="preserve">
+    <value>ServerIP</value>
+  </data>
+  <data name="INI_SECTION_1_12" xml:space="preserve">
+    <value>ServerPort</value>
+  </data>
+  <data name="INI_SECTION_1_13" xml:space="preserve">
+    <value>Buildings</value>
+  </data>
+  <data name="INI_SECTION_1_14" xml:space="preserve">
+    <value>HWTypes</value>
+  </data>
+  <data name="INI_SECTION_1_15" xml:space="preserve">
+    <value>ThemeUI</value>
+  </data>
+  <data name="INI_SECTION_1_9" xml:space="preserve">
+    <value>LogLocation</value>
+  </data>
+  <data name="INI_SECTION_2" xml:space="preserve">
+    <value>OrgData</value>
+  </data>
+  <data name="INI_SECTION_2_1" xml:space="preserve">
+    <value>OrganizationFullName</value>
+  </data>
+  <data name="INI_SECTION_2_2" xml:space="preserve">
+    <value>OrganizationAcronym</value>
+  </data>
+  <data name="INI_SECTION_2_3" xml:space="preserve">
+    <value>DepartamentFullName</value>
+  </data>
+  <data name="INI_SECTION_2_4" xml:space="preserve">
+    <value>DepartamentAcronym</value>
+  </data>
+  <data name="INI_SECTION_2_5" xml:space="preserve">
+    <value>SubDepartamentFullName</value>
+  </data>
+  <data name="INI_SECTION_2_6" xml:space="preserve">
+    <value>SubDepartamentAcronym</value>
+  </data>
+  <data name="jsonServerPath" xml:space="preserve">
+    <value>output/</value>
+  </data>
+  <data name="lastInstall" xml:space="preserve">
+    <value>LastInstallation</value>
+  </data>
+  <data name="lastMaintenance" xml:space="preserve">
+    <value>LastMaintenance</value>
+  </data>
+  <data name="LOG_FILE_EXT" xml:space="preserve">
+    <value>.log</value>
+  </data>
+  <data name="LOG_HEADER" xml:space="preserve">
+    <value>------------------------LOG DE EXECUÇÃO------------------------</value>
+  </data>
+  <data name="LOG_PASSWORD_PLACEHOLDER" xml:space="preserve">
+    <value>XXXXXXXXXXXXXXX</value>
+  </data>
+  <data name="LOG_SEPARATOR" xml:space="preserve">
+    <value>____________________________________________________________________________________________________</value>
+  </data>
+  <data name="LOG_SEPARATOR_SMALL" xml:space="preserve">
+    <value>------------------------------------------------</value>
+  </data>
+  <data name="LOG_TIMESTAMP" xml:space="preserve">
+    <value>HH:mm:ss.ffffff</value>
+  </data>
+  <data name="maintenanceURL" xml:space="preserve">
+    <value>recebeDadosManutencao</value>
+  </data>
+  <data name="mb" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="nonSecBootGPU1" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="nonSecBootGPU2" xml:space="preserve">
+    <value>430</value>
+  </data>
+  <data name="nvme" xml:space="preserve">
+    <value>NVMe</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="predFail" xml:space="preserve">
+    <value>Pred Fail</value>
+  </data>
+  <data name="PROGRAMDATA_FOLDERNAME" xml:space="preserve">
+    <value>AppLog</value>
+  </data>
+  <data name="raid" xml:space="preserve">
+    <value>RAID</value>
+  </data>
+  <data name="sata" xml:space="preserve">
+    <value>SATA</value>
+  </data>
+  <data name="ssd" xml:space="preserve">
+    <value>SSD</value>
+  </data>
+  <data name="supplyBiosData" xml:space="preserve">
+    <value>forneceDadosBIOS.php</value>
+  </data>
+  <data name="supplyConfigData" xml:space="preserve">
+    <value>/etc/config.json</value>
+  </data>
+  <data name="supplyPCData" xml:space="preserve">
+    <value>forneceDadosPC.php</value>
+  </data>
+  <data name="systemRom" xml:space="preserve">
+    <value>SYSTEM ROM</value>
+  </data>
+  <data name="tb" xml:space="preserve">
+    <value>TB</value>
+  </data>
+  <data name="THEME_REG_KEY" xml:space="preserve">
+    <value>AppsUseLightTheme</value>
+  </data>
+  <data name="THEME_REG_PATH" xml:space="preserve">
+    <value>SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize</value>
+  </data>
+  <data name="ToBeFilledByOEM" xml:space="preserve">
+    <value>To Be Filled By O.E.M.</value>
+  </data>
+  <data name="uefi" xml:space="preserve">
+    <value>UEFI</value>
+  </data>
+  <data name="webview2file" xml:space="preserve">
+    <value>webview2installer.exe</value>
+  </data>
+  <data name="webview2url" xml:space="preserve">
+    <value>https://go.microsoft.com/fwlink/p/?LinkId=2124703</value>
+  </data>
+  <data name="WEBVIEW2_REG_PATH_X64" xml:space="preserve">
+    <value>SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}</value>
+  </data>
+  <data name="WEBVIEW2_REG_PATH_X86" xml:space="preserve">
+    <value>SOFTWARE\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}</value>
+  </data>
+  <data name="WEBVIEW2_SYSTEM_PATH_X64" xml:space="preserve">
+    <value>C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\</value>
+  </data>
+  <data name="WEBVIEW2_SYSTEM_PATH_X86" xml:space="preserve">
+    <value>C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\</value>
+  </data>
+  <data name="windows10" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="windows11" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="windows7" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="windows8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="windows8_1" xml:space="preserve">
+    <value>8.1</value>
+  </data>
+</root>
