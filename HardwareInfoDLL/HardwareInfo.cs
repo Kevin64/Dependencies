@@ -15,7 +15,8 @@ namespace HardwareInfoDLL
         //Fetches the CPU information, including the number of cores/threads
         public static string GetProcessorCores()
         {
-            string Id = "", logical = "";
+            string Id = string.Empty;
+            string logical = string.Empty;
 
             ManagementClass mc = new ManagementClass("win32_processor");
             ManagementObjectCollection moc = mc.GetInstances();
@@ -34,9 +35,9 @@ namespace HardwareInfoDLL
                        + " " + ConstantsDLL.Properties.Resources.frequency + " (" + queryObj.Properties["NumberOfCores"].Value.ToString() + "C/" + logical + "T)";
                     break;
                 }
-                Id = Id.Replace("(R)", "");
-                Id = Id.Replace("(TM)", "");
-                Id = Id.Replace("(tm)", "");
+                Id = Id.Replace("(R)", string.Empty);
+                Id = Id.Replace("(TM)", string.Empty);
+                Id = Id.Replace("(tm)", string.Empty);
                 return Id;
             }
             catch (Exception e)
@@ -49,7 +50,8 @@ namespace HardwareInfoDLL
         //Fetches the GPU information
         public static string GetGPUInfo()
         {
-            string gpuname = "", gpuramStr;
+            string gpuname = string.Empty;
+            string gpuramStr;
             double gpuram;
 
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_VideoController");
@@ -71,9 +73,9 @@ namespace HardwareInfoDLL
                         }
                     }
                 }
-                gpuname = gpuname.Replace("(R)", "");
-                gpuname = gpuname.Replace("(TM)", "");
-                gpuname = gpuname.Replace("(tm)", "");
+                gpuname = gpuname.Replace("(R)", string.Empty);
+                gpuname = gpuname.Replace("(TM)", string.Empty);
+                gpuname = gpuname.Replace("(tm)", string.Empty);
                 return gpuname;
             }
             catch (Exception e)
@@ -182,7 +184,8 @@ namespace HardwareInfoDLL
                 }
                 else
                 {
-                    int size = 10, i = 0;
+                    int size = 10;
+                    int i = 0;
                     string[] type = new string[size];
                     string[] bytesHDD = new string[size];
                     string concat;
@@ -221,7 +224,7 @@ namespace HardwareInfoDLL
         //Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them
         public static string CountDistinct(string[] array, string[] array2, string[] array3)
         {
-            string result = "";
+            string result = string.Empty;
             int j = 0;
             List<string> sizesHDD = new List<string>();
             List<string> sizesSSD = new List<string>();
@@ -238,7 +241,7 @@ namespace HardwareInfoDLL
                     {
                         if (array[i] == group.Key)
                         {
-                            array[i] = "";
+                            array[i] = string.Empty;
                             if (group.Key == ConstantsDLL.Properties.Resources.hdd)
                             {
                                 sizesHDD.Add(array2[i]);
@@ -338,7 +341,7 @@ namespace HardwareInfoDLL
         //Fetches the primary MAC Address
         public static string GetMACAddress()
         {
-            string MACAddress = "";
+            string MACAddress = string.Empty;
 
             ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
             ManagementObjectCollection moc = mc.GetInstances();
@@ -358,7 +361,7 @@ namespace HardwareInfoDLL
 
                     mo.Dispose();
                 }
-                return MACAddress != "" ? MACAddress : null;
+                return MACAddress != string.Empty ? MACAddress : null;
             }
             catch (Exception e)
             {
@@ -498,7 +501,8 @@ namespace HardwareInfoDLL
         {
             long MemSize = 0;
             long mCap;
-            string mType = "", mSpeed = "";
+            string mType = string.Empty;
+            string mSpeed = string.Empty;
 
             ManagementScope scope = new ManagementScope();
             ObjectQuery objQuery = new ObjectQuery("select * from Win32_PhysicalMemory");
@@ -527,8 +531,8 @@ namespace HardwareInfoDLL
                             }
                             else if (queryObj["SMBIOSMemoryType"].ToString().Equals("3"))
                             {
-                                mType = "";
-                                mSpeed = "";
+                                mType = string.Empty;
+                                mSpeed = string.Empty;
                             }
                             else
                             {
@@ -539,7 +543,7 @@ namespace HardwareInfoDLL
                                 }
                                 catch
                                 {
-                                    mSpeed = "";
+                                    mSpeed = string.Empty;
                                 }
                             }
                         }
@@ -552,8 +556,8 @@ namespace HardwareInfoDLL
                             }
                             else if (queryObj["MemoryType"].ToString().Equals("2") || queryObj["MemoryType"].ToString().Equals("0"))
                             {
-                                mType = "";
-                                mSpeed = "";
+                                mType = string.Empty;
+                                mSpeed = string.Empty;
                             }
                             else
                             {
@@ -564,7 +568,7 @@ namespace HardwareInfoDLL
                                 }
                                 catch
                                 {
-                                    mSpeed = "";
+                                    mSpeed = string.Empty;
                                 }
                             }
                         }
@@ -671,7 +675,7 @@ namespace HardwareInfoDLL
         //Fetches the default gateway of the NIC
         public static string GetDefaultIPGateway()
         {
-            string gateway = "";
+            string gateway = string.Empty;
 
             ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
             ManagementObjectCollection moc = mc.GetInstances();
@@ -690,7 +694,7 @@ namespace HardwareInfoDLL
 
                     queryObj.Dispose();
                 }
-                gateway = gateway.Replace(":", "");
+                gateway = gateway.Replace(":", string.Empty);
                 return gateway;
             }
             catch (Exception e)
@@ -734,7 +738,7 @@ namespace HardwareInfoDLL
         //Fetches the NT version
         public static string GetOSInfoAux()
         {
-            string operatingSystem = "";
+            string operatingSystem = string.Empty;
 
             OperatingSystem os = Environment.OSVersion;
             Version vs = os.Version;
@@ -774,8 +778,8 @@ namespace HardwareInfoDLL
         //Fetches the operating system information
         public static string GetOSInformation()
         {
-            string displayVersion = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", "").ToString();
-            string releaseId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "releaseId", "").ToString();
+            string displayVersion = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", string.Empty).ToString();
+            string releaseId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "releaseId", string.Empty).ToString();
 
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_OperatingSystem");
 
@@ -827,7 +831,7 @@ namespace HardwareInfoDLL
         //Fetches the computer's hostname
         public static string GetComputerName()
         {
-            string info = "";
+            string info = string.Empty;
 
             ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
             ManagementObjectCollection moc = mc.GetInstances();
@@ -850,7 +854,7 @@ namespace HardwareInfoDLL
         //Fetches the BIOS version
         public static string GetComputerBIOS()
         {
-            string biosVersion = "";
+            string biosVersion = string.Empty;
 
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_BIOS");
             ManagementObjectCollection moc = searcher.Get();
@@ -883,7 +887,7 @@ namespace HardwareInfoDLL
         {
             try
             {
-                _ = GetFirmwareType("", "{00000000-0000-0000-0000-000000000000}", IntPtr.Zero, 0);
+                _ = GetFirmwareType(string.Empty, "{00000000-0000-0000-0000-000000000000}", IntPtr.Zero, 0);
 
                 return Marshal.GetLastWin32Error() == ERROR_INVALID_FUNCTION ? ConstantsDLL.Properties.Resources.bios : ConstantsDLL.Properties.Resources.uefi;
             }
@@ -1067,7 +1071,9 @@ namespace HardwareInfoDLL
         //Fetches the TPM version
         public static string GetTPMStatus()
         {
-            string isActivated, isEnabled, specVersion = "";
+            string isActivated;
+            string isEnabled;
+            string specVersion = string.Empty;
             ManagementScope scope = new ManagementScope(@"\\.\root\cimv2\Security\MicrosoftTPM");
             ObjectQuery query = new ObjectQuery("select * from Win32_Tpm");
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
@@ -1080,7 +1086,7 @@ namespace HardwareInfoDLL
                     isEnabled = queryObj.Properties["IsEnabled_InitialValue"].Value.ToString();
                     specVersion = queryObj.Properties["SpecVersion"].Value.ToString();
                 }
-                specVersion = specVersion != "" ? specVersion.Substring(0, 3) : ConstantsDLL.Properties.Strings.notExistant;
+                specVersion = specVersion != string.Empty ? specVersion.Substring(0, 3) : ConstantsDLL.Properties.Strings.notExistant;
                 return specVersion;
             }
             catch (Exception e)
