@@ -124,29 +124,17 @@
   <data name="activated" xml:space="preserve">
     <value>Ativado</value>
   </data>
+  <data name="ALREADY_RUNNING" xml:space="preserve">
+    <value>Já existe uma instância do programa em execução!</value>
+  </data>
   <data name="deactivated" xml:space="preserve">
     <value>Desativado</value>
   </data>
+  <data name="ERROR_WINDOWTITLE" xml:space="preserve">
+    <value>Erro</value>
+  </data>
   <data name="INTRANET_REQUIRED" xml:space="preserve">
     <value>É necessário conexão com a intranet.</value>
-  </data>
-  <data name="listActiveDirectoryGUINo" xml:space="preserve">
-    <value>Não</value>
-  </data>
-  <data name="listActiveDirectoryGUIYes" xml:space="preserve">
-    <value>Sim</value>
-  </data>
-  <data name="listBatteryGUINo" xml:space="preserve">
-    <value>Não</value>
-  </data>
-  <data name="listBatteryGUIYes" xml:space="preserve">
-    <value>Sim</value>
-  </data>
-  <data name="listInUseGUINo" xml:space="preserve">
-    <value>Não</value>
-  </data>
-  <data name="listInUseGUIYes" xml:space="preserve">
-    <value>Sim</value>
   </data>
   <data name="listModeGUIFormat" xml:space="preserve">
     <value>Formatação</value>
@@ -154,17 +142,41 @@
   <data name="listModeGUIMaintenance" xml:space="preserve">
     <value>Manutenção</value>
   </data>
+  <data name="listNo0" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="listNo1" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="listNo2" xml:space="preserve">
+    <value>n</value>
+  </data>
   <data name="listStandardGUIEmployee" xml:space="preserve">
     <value>Funcionário</value>
   </data>
   <data name="listStandardGUIStudent" xml:space="preserve">
     <value>Aluno</value>
   </data>
-  <data name="listTagGUINo" xml:space="preserve">
-    <value>Não</value>
-  </data>
-  <data name="listTagGUIYes" xml:space="preserve">
+  <data name="listYes0" xml:space="preserve">
     <value>Sim</value>
+  </data>
+  <data name="listYes1" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="listYes2" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="LOG_ERROR_ATTR" xml:space="preserve">
+    <value>&lt;ERRO&gt;</value>
+  </data>
+  <data name="LOG_HEADER" xml:space="preserve">
+    <value>------------------------ LOG DE EXECUÇÃO ------------------------</value>
+  </data>
+  <data name="LOG_INFO_ATTR" xml:space="preserve">
+    <value>&lt;INFORMAÇÃO&gt;</value>
+  </data>
+  <data name="LOG_WARNING_ATTR" xml:space="preserve">
+    <value>&lt;AVISO&gt;</value>
   </data>
   <data name="notDetermined" xml:space="preserve">
     <value>Não determinado</value>
@@ -175,7 +187,16 @@
   <data name="notSupported" xml:space="preserve">
     <value>Não suportado</value>
   </data>
+  <data name="NO_AUTH" xml:space="preserve">
+    <value>Preencha suas credenciais.</value>
+  </data>
+  <data name="pcNotRegistered" xml:space="preserve">
+    <value>Patrimônio não registrado inicialmente pelo software 'Coleta de hardware e Cadastro de Patrimônio'. Primeiramente realize o cadastro e depois tente novamente.</value>
+  </data>
   <data name="SERVER_NOT_FOUND_ERROR" xml:space="preserve">
     <value>Servidor não encontrado. Selecione um servidor válido!</value>
+  </data>
+  <data name="unknown" xml:space="preserve">
+    <value>Desconhecido</value>
   </data>
 </root>

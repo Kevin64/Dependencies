@@ -70,7 +70,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Activated.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Enabled.
         /// </summary>
         public static string activated {
             get {
@@ -79,11 +79,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Deactivated.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a There is already an instance of the program running!.
+        /// </summary>
+        public static string ALREADY_RUNNING {
+            get {
+                return ResourceManager.GetString("ALREADY_RUNNING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Disabled.
         /// </summary>
         public static string deactivated {
             get {
                 return ResourceManager.GetString("deactivated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Error.
+        /// </summary>
+        public static string ERROR_WINDOWTITLE {
+            get {
+                return ResourceManager.GetString("ERROR_WINDOWTITLE", resourceCulture);
             }
         }
         
@@ -93,60 +111,6 @@ namespace ConstantsDLL.Properties {
         public static string INTRANET_REQUIRED {
             get {
                 return ResourceManager.GetString("INTRANET_REQUIRED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a No.
-        /// </summary>
-        public static string listActiveDirectoryGUINo {
-            get {
-                return ResourceManager.GetString("listActiveDirectoryGUINo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
-        /// </summary>
-        public static string listActiveDirectoryGUIYes {
-            get {
-                return ResourceManager.GetString("listActiveDirectoryGUIYes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a No.
-        /// </summary>
-        public static string listBatteryGUINo {
-            get {
-                return ResourceManager.GetString("listBatteryGUINo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
-        /// </summary>
-        public static string listBatteryGUIYes {
-            get {
-                return ResourceManager.GetString("listBatteryGUIYes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a No.
-        /// </summary>
-        public static string listInUseGUINo {
-            get {
-                return ResourceManager.GetString("listInUseGUINo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
-        /// </summary>
-        public static string listInUseGUIYes {
-            get {
-                return ResourceManager.GetString("listInUseGUIYes", resourceCulture);
             }
         }
         
@@ -169,6 +133,33 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a No.
+        /// </summary>
+        public static string listNo0 {
+            get {
+                return ResourceManager.GetString("listNo0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a N.
+        /// </summary>
+        public static string listNo1 {
+            get {
+                return ResourceManager.GetString("listNo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a n.
+        /// </summary>
+        public static string listNo2 {
+            get {
+                return ResourceManager.GetString("listNo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Employee.
         /// </summary>
         public static string listStandardGUIEmployee {
@@ -187,20 +178,74 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a No.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
         /// </summary>
-        public static string listTagGUINo {
+        public static string listYes0 {
             get {
-                return ResourceManager.GetString("listTagGUINo", resourceCulture);
+                return ResourceManager.GetString("listYes0", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Y.
         /// </summary>
-        public static string listTagGUIYes {
+        public static string listYes1 {
             get {
-                return ResourceManager.GetString("listTagGUIYes", resourceCulture);
+                return ResourceManager.GetString("listYes1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a y.
+        /// </summary>
+        public static string listYes2 {
+            get {
+                return ResourceManager.GetString("listYes2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;ERROR&gt;.
+        /// </summary>
+        public static string LOG_ERROR_ATTR {
+            get {
+                return ResourceManager.GetString("LOG_ERROR_ATTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ------------------------ EXECUTION LOG ------------------------.
+        /// </summary>
+        public static string LOG_HEADER {
+            get {
+                return ResourceManager.GetString("LOG_HEADER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;INFORMATION&gt;.
+        /// </summary>
+        public static string LOG_INFO_ATTR {
+            get {
+                return ResourceManager.GetString("LOG_INFO_ATTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;WARNING&gt;.
+        /// </summary>
+        public static string LOG_WARNING_ATTR {
+            get {
+                return ResourceManager.GetString("LOG_WARNING_ATTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Fill in your credentials..
+        /// </summary>
+        public static string NO_AUTH {
+            get {
+                return ResourceManager.GetString("NO_AUTH", resourceCulture);
             }
         }
         
@@ -232,11 +277,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Assets not initially registered by the &apos;Hardware Collection and Asset Registration&apos; software. First register and then try again..
+        /// </summary>
+        public static string pcNotRegistered {
+            get {
+                return ResourceManager.GetString("pcNotRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Server not found. Please select a valid server!.
         /// </summary>
         public static string SERVER_NOT_FOUND_ERROR {
             get {
                 return ResourceManager.GetString("SERVER_NOT_FOUND_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Unknown.
+        /// </summary>
+        public static string unknown {
+            get {
+                return ResourceManager.GetString("unknown", resourceCulture);
             }
         }
     }

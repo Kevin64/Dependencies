@@ -22,21 +22,21 @@ namespace LogGeneratorDLL
         {
             try
             {
-                txtWriter.WriteLine(StringsAndConstants.LOG_SEPARATOR);
+                txtWriter.WriteLine(ConstantsDLL.Properties.Resources.LOG_SEPARATOR);
                 txtWriter.WriteLine();
                 txtWriter.WriteLine(softwareName);
                 txtWriter.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
                 txtWriter.WriteLine();
-                txtWriter.WriteLine(StringsAndConstants.LOG_HEADER);
+                txtWriter.WriteLine(ConstantsDLL.Properties.Strings.LOG_HEADER);
                 if (consoleOut)
                 {
                     Console.ForegroundColor = StringsAndConstants.MISC_CONSOLE_COLOR;
-                    Console.WriteLine(StringsAndConstants.LOG_SEPARATOR);
+                    Console.WriteLine(ConstantsDLL.Properties.Resources.LOG_SEPARATOR);
                     Console.WriteLine();
                     Console.WriteLine(softwareName);
                     Console.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
                     Console.WriteLine();
-                    Console.WriteLine(StringsAndConstants.LOG_HEADER);
+                    Console.WriteLine(ConstantsDLL.Properties.Strings.LOG_HEADER);
                     Console.ResetColor();
                 }
             }
@@ -68,17 +68,17 @@ namespace LogGeneratorDLL
             {
                 if (logType == 2)
                 {
-                    logTypeAttr = StringsAndConstants.LOG_ERROR_ATTR;
+                    logTypeAttr = ConstantsDLL.Properties.Strings.LOG_ERROR_ATTR;
                     Console.ForegroundColor = ConsoleColor.Red;
                 }
                 else if (logType == 1)
                 {
-                    logTypeAttr = StringsAndConstants.LOG_WARNING_ATTR;
+                    logTypeAttr = ConstantsDLL.Properties.Strings.LOG_WARNING_ATTR;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                 }
                 else if (logType == 0)
                 {
-                    logTypeAttr = StringsAndConstants.LOG_INFO_ATTR;
+                    logTypeAttr = ConstantsDLL.Properties.Strings.LOG_INFO_ATTR;
                     Console.ForegroundColor = ConsoleColor.Green;
                 }
                 else
@@ -89,18 +89,18 @@ namespace LogGeneratorDLL
 
                 if (!logMessage2.Equals(string.Empty))
                 {
-                    txtWriter.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1, logMessage2);
+                    txtWriter.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(ConstantsDLL.Properties.Resources.LOG_TIMESTAMP), logTypeAttr, logMessage1, logMessage2);
                     if (consoleOut)
                     {
-                        Console.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1, logMessage2);
+                        Console.WriteLine("[{0}] : {1}: {2} - {3}", DateTime.Now.ToString(ConstantsDLL.Properties.Resources.LOG_TIMESTAMP), logTypeAttr, logMessage1, logMessage2);
                     }
                 }
                 else
                 {
-                    txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1);
+                    txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(ConstantsDLL.Properties.Resources.LOG_TIMESTAMP), logTypeAttr, logMessage1);
                     if (consoleOut)
                     {
-                        Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), logTypeAttr, logMessage1);
+                        Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(ConstantsDLL.Properties.Resources.LOG_TIMESTAMP), logTypeAttr, logMessage1);
                     }
                 }
                 Console.ResetColor();
@@ -108,10 +108,10 @@ namespace LogGeneratorDLL
             catch (Exception e)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), StringsAndConstants.LOG_ERROR_ATTR, e.Message);
+                txtWriter.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(ConstantsDLL.Properties.Resources.LOG_TIMESTAMP), ConstantsDLL.Properties.Strings.LOG_ERROR_ATTR, e.Message);
                 if (consoleOut)
                 {
-                    Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(StringsAndConstants.LOG_TIMESTAMP), StringsAndConstants.LOG_ERROR_ATTR, e.Message);
+                    Console.WriteLine("[{0}] : {1}: {2}", DateTime.Now.ToString(ConstantsDLL.Properties.Resources.LOG_TIMESTAMP), ConstantsDLL.Properties.Strings.LOG_ERROR_ATTR, e.Message);
                 }
 
                 Console.ResetColor();
@@ -123,7 +123,7 @@ namespace LogGeneratorDLL
             try
             {
                 txtWriter.WriteLine();
-                txtWriter.WriteLine(StringsAndConstants.LOG_SEPARATOR);
+                txtWriter.WriteLine(ConstantsDLL.Properties.Resources.LOG_SEPARATOR);
             }
             catch (Exception e)
             {

@@ -59,14 +59,14 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyConfigData);
+                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyConfigData);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.fileConfig, StringsAndConstants.configPath);
+                    wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileConfig, ConstantsDLL.Properties.Resources.configPath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.fileShaConfig);
+                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileShaConfig);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
-                    fileC = new StreamReader(StringsAndConstants.configPath);
+                    fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
                     fileC.Close();
                 }
                 catch
@@ -83,9 +83,9 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                wc.DownloadFile("http://" + ip + ":" + port + StringsAndConstants.fileConfigPath + StringsAndConstants.fileConfig, StringsAndConstants.configPath);
+                wc.DownloadFile("http://" + ip + ":" + port + ConstantsDLL.Properties.Resources.fileConfigPath + ConstantsDLL.Properties.Resources.fileConfig, ConstantsDLL.Properties.Resources.configPath);
                 System.Threading.Thread.Sleep(300);
-                fileC = new StreamReader(StringsAndConstants.configPath);
+                fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
                 fileC.Close();
             }
             catch
@@ -106,7 +106,7 @@ namespace JsonFileReaderDLL
                 }
 
                 List<string[]> arr;
-                fileC = new StreamReader(StringsAndConstants.configPath);
+                fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
 
                 jsonFile = fileC.ReadToEnd();
                 CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
@@ -127,7 +127,7 @@ namespace JsonFileReaderDLL
             }
 
             List<string[]> arr;
-            fileC = new StreamReader(StringsAndConstants.configPath);
+            fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
 
             jsonFile = fileC.ReadToEnd();
             CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);

@@ -30,15 +30,15 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyBiosData);
+                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyBiosData);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileBios, StringsAndConstants.biosPath);
+                    wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileBios, ConstantsDLL.Properties.Resources.biosPath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileShaBios);
+                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaBios);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
-                    fileB = new StreamReader(StringsAndConstants.biosPath);
-                    aux = StringsAndConstants.biosPath;
+                    fileB = new StreamReader(ConstantsDLL.Properties.Resources.biosPath);
+                    aux = ConstantsDLL.Properties.Resources.biosPath;
                     fileB.Close();
                 }
                 catch
@@ -55,15 +55,15 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyBiosData);
+                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyBiosData);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileBios, StringsAndConstants.biosPath);
+                wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileBios, ConstantsDLL.Properties.Resources.biosPath);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileShaBios);
+                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaBios);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
-                fileB = new StreamReader(StringsAndConstants.biosPath);
-                aux = StringsAndConstants.biosPath;
+                fileB = new StreamReader(ConstantsDLL.Properties.Resources.biosPath);
+                aux = ConstantsDLL.Properties.Resources.biosPath;
                 fileB.Close();
             }
             catch
@@ -85,7 +85,7 @@ namespace JsonFileReaderDLL
 
                 string[] arr;
                 string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
-                fileB = new StreamReader(StringsAndConstants.biosPath);
+                fileB = new StreamReader(ConstantsDLL.Properties.Resources.biosPath);
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = fileB.ReadToEnd();
@@ -132,7 +132,7 @@ namespace JsonFileReaderDLL
 
             string[] arr;
             string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
-            fileB = new StreamReader(StringsAndConstants.biosPath);
+            fileB = new StreamReader(ConstantsDLL.Properties.Resources.biosPath);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileB.ReadToEnd();

@@ -408,7 +408,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
                 }
 
-                return StringsAndConstants.unknown;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
             catch (Exception e)
             {
@@ -428,7 +428,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
                 }
 
-                return StringsAndConstants.unknown;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
             catch (Exception e)
             {
@@ -448,7 +448,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Model").ToString();
                 }
 
-                return StringsAndConstants.unknown;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
             catch (Exception e)
             {
@@ -468,7 +468,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Product").ToString();
                 }
 
-                return StringsAndConstants.unknown;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
             catch (Exception e)
             {
@@ -488,7 +488,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
                 }
 
-                return StringsAndConstants.unknown;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
             catch (Exception e)
             {
@@ -727,7 +727,7 @@ namespace HardwareInfoDLL
                     {
                     }
                 }
-                return StringsAndConstants.unknown;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
             catch (Exception e)
             {
@@ -798,7 +798,7 @@ namespace HardwareInfoDLL
                         return (((string)queryObj["Caption"]).Trim() + " " + (string)queryObj["CSDVersion"] + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
                     }
                 }
-                return StringsAndConstants.unknown;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
             catch (Exception e)
             {
@@ -819,7 +819,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Version").ToString();
                 }
 
-                return StringsAndConstants.unknown;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
             catch (Exception e)
             {

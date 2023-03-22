@@ -106,11 +106,47 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.fileBios.
+        /// </summary>
+        public static string biosPath {
+            get {
+                return ResourceManager.GetString("biosPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a build.
         /// </summary>
         public static string build {
             get {
                 return ResourceManager.GetString("build", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.fileConfig.
+        /// </summary>
+        public static string configPath {
+            get {
+                return ResourceManager.GetString("configPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a true.
+        /// </summary>
+        public static string consoleOutCLI {
+            get {
+                return ResourceManager.GetString("consoleOutCLI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a false.
+        /// </summary>
+        public static string consoleOutGUI {
+            get {
+                return ResourceManager.GetString("consoleOutGUI", resourceCulture);
             }
         }
         
@@ -268,7 +304,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a recebeDadosFormatacao.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a receiveFormattingData.
         /// </summary>
         public static string formatURL {
             get {
@@ -304,11 +340,758 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a PC-.
+        /// </summary>
+        public static string HOSTNAME_PATTERN {
+            get {
+                return ResourceManager.GetString("HOSTNAME_PATTERN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Software\HardwareInformation.
         /// </summary>
         public static string HWINFO_REG_PATH {
             get {
                 return ResourceManager.GetString("HWINFO_REG_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_about_dark.png.
+        /// </summary>
+        public static string icon_about_dark_path {
+            get {
+                return ResourceManager.GetString("icon_about_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_about_light.png.
+        /// </summary>
+        public static string icon_about_light_path {
+            get {
+                return ResourceManager.GetString("icon_about_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ahci_dark.png.
+        /// </summary>
+        public static string icon_ahci_dark_path {
+            get {
+                return ResourceManager.GetString("icon_ahci_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ahci_light.png.
+        /// </summary>
+        public static string icon_ahci_light_path {
+            get {
+                return ResourceManager.GetString("icon_ahci_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_autotheme_dark.png.
+        /// </summary>
+        public static string icon_autotheme_dark_path {
+            get {
+                return ResourceManager.GetString("icon_autotheme_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_autotheme_light.png.
+        /// </summary>
+        public static string icon_autotheme_light_path {
+            get {
+                return ResourceManager.GetString("icon_autotheme_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_bios_dark.png.
+        /// </summary>
+        public static string icon_bios_dark_path {
+            get {
+                return ResourceManager.GetString("icon_bios_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_bios_light.png.
+        /// </summary>
+        public static string icon_bios_light_path {
+            get {
+                return ResourceManager.GetString("icon_bios_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_bios_version_dark.png.
+        /// </summary>
+        public static string icon_bios_version_dark_path {
+            get {
+                return ResourceManager.GetString("icon_bios_version_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_bios_version_light.png.
+        /// </summary>
+        public static string icon_bios_version_light_path {
+            get {
+                return ResourceManager.GetString("icon_bios_version_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_brand_dark.png.
+        /// </summary>
+        public static string icon_brand_dark_path {
+            get {
+                return ResourceManager.GetString("icon_brand_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_brand_light.png.
+        /// </summary>
+        public static string icon_brand_light_path {
+            get {
+                return ResourceManager.GetString("icon_brand_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_building_dark.png.
+        /// </summary>
+        public static string icon_building_dark_path {
+            get {
+                return ResourceManager.GetString("icon_building_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_building_light.png.
+        /// </summary>
+        public static string icon_building_light_path {
+            get {
+                return ResourceManager.GetString("icon_building_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_cmos_battery_dark.png.
+        /// </summary>
+        public static string icon_cmos_battery_dark_path {
+            get {
+                return ResourceManager.GetString("icon_cmos_battery_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_cmos_battery_light.png.
+        /// </summary>
+        public static string icon_cmos_battery_light_path {
+            get {
+                return ResourceManager.GetString("icon_cmos_battery_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_cpu_dark.png.
+        /// </summary>
+        public static string icon_cpu_dark_path {
+            get {
+                return ResourceManager.GetString("icon_cpu_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_cpu_light.png.
+        /// </summary>
+        public static string icon_cpu_light_path {
+            get {
+                return ResourceManager.GetString("icon_cpu_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_darktheme_dark.png.
+        /// </summary>
+        public static string icon_darktheme_dark_path {
+            get {
+                return ResourceManager.GetString("icon_darktheme_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_darktheme_light.png.
+        /// </summary>
+        public static string icon_darktheme_light_path {
+            get {
+                return ResourceManager.GetString("icon_darktheme_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_disk_size_dark.png.
+        /// </summary>
+        public static string icon_disk_size_dark_path {
+            get {
+                return ResourceManager.GetString("icon_disk_size_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_disk_size_light.png.
+        /// </summary>
+        public static string icon_disk_size_light_path {
+            get {
+                return ResourceManager.GetString("icon_disk_size_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_gpu_dark.png.
+        /// </summary>
+        public static string icon_gpu_dark_path {
+            get {
+                return ResourceManager.GetString("icon_gpu_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_gpu_light.png.
+        /// </summary>
+        public static string icon_gpu_light_path {
+            get {
+                return ResourceManager.GetString("icon_gpu_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_hdd_dark.png.
+        /// </summary>
+        public static string icon_hdd_dark_path {
+            get {
+                return ResourceManager.GetString("icon_hdd_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_hdd_light.png.
+        /// </summary>
+        public static string icon_hdd_light_path {
+            get {
+                return ResourceManager.GetString("icon_hdd_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_hostname_dark.png.
+        /// </summary>
+        public static string icon_hostname_dark_path {
+            get {
+                return ResourceManager.GetString("icon_hostname_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_hostname_light.png.
+        /// </summary>
+        public static string icon_hostname_light_path {
+            get {
+                return ResourceManager.GetString("icon_hostname_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_in_use_dark.png.
+        /// </summary>
+        public static string icon_in_use_dark_path {
+            get {
+                return ResourceManager.GetString("icon_in_use_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_in_use_light.png.
+        /// </summary>
+        public static string icon_in_use_light_path {
+            get {
+                return ResourceManager.GetString("icon_in_use_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ip_dark.png.
+        /// </summary>
+        public static string icon_ip_dark_path {
+            get {
+                return ResourceManager.GetString("icon_ip_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ip_light.png.
+        /// </summary>
+        public static string icon_ip_light_path {
+            get {
+                return ResourceManager.GetString("icon_ip_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_letter_dark.png.
+        /// </summary>
+        public static string icon_letter_dark_path {
+            get {
+                return ResourceManager.GetString("icon_letter_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_letter_light.png.
+        /// </summary>
+        public static string icon_letter_light_path {
+            get {
+                return ResourceManager.GetString("icon_letter_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_lighttheme_dark.png.
+        /// </summary>
+        public static string icon_lighttheme_dark_path {
+            get {
+                return ResourceManager.GetString("icon_lighttheme_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_lighttheme_light.png.
+        /// </summary>
+        public static string icon_lighttheme_light_path {
+            get {
+                return ResourceManager.GetString("icon_lighttheme_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_log_dark.png.
+        /// </summary>
+        public static string icon_log_dark_path {
+            get {
+                return ResourceManager.GetString("icon_log_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_log_light.png.
+        /// </summary>
+        public static string icon_log_light_path {
+            get {
+                return ResourceManager.GetString("icon_log_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_mac_dark.png.
+        /// </summary>
+        public static string icon_mac_dark_path {
+            get {
+                return ResourceManager.GetString("icon_mac_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_mac_light.png.
+        /// </summary>
+        public static string icon_mac_light_path {
+            get {
+                return ResourceManager.GetString("icon_mac_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_model_dark.png.
+        /// </summary>
+        public static string icon_model_dark_path {
+            get {
+                return ResourceManager.GetString("icon_model_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_model_light.png.
+        /// </summary>
+        public static string icon_model_light_path {
+            get {
+                return ResourceManager.GetString("icon_model_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_password_dark.png.
+        /// </summary>
+        public static string icon_password_dark_path {
+            get {
+                return ResourceManager.GetString("icon_password_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_password_light.png.
+        /// </summary>
+        public static string icon_password_light_path {
+            get {
+                return ResourceManager.GetString("icon_password_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_patr_dark.png.
+        /// </summary>
+        public static string icon_patr_dark_path {
+            get {
+                return ResourceManager.GetString("icon_patr_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_patr_light.png.
+        /// </summary>
+        public static string icon_patr_light_path {
+            get {
+                return ResourceManager.GetString("icon_patr_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_port_dark.png.
+        /// </summary>
+        public static string icon_port_dark_path {
+            get {
+                return ResourceManager.GetString("icon_port_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_port_light.png.
+        /// </summary>
+        public static string icon_port_light_path {
+            get {
+                return ResourceManager.GetString("icon_port_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ram_dark.png.
+        /// </summary>
+        public static string icon_ram_dark_path {
+            get {
+                return ResourceManager.GetString("icon_ram_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ram_light.png.
+        /// </summary>
+        public static string icon_ram_light_path {
+            get {
+                return ResourceManager.GetString("icon_ram_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_room_dark.png.
+        /// </summary>
+        public static string icon_room_dark_path {
+            get {
+                return ResourceManager.GetString("icon_room_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_room_light.png.
+        /// </summary>
+        public static string icon_room_light_path {
+            get {
+                return ResourceManager.GetString("icon_room_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_seal_dark.png.
+        /// </summary>
+        public static string icon_seal_dark_path {
+            get {
+                return ResourceManager.GetString("icon_seal_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_seal_light.png.
+        /// </summary>
+        public static string icon_seal_light_path {
+            get {
+                return ResourceManager.GetString("icon_seal_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_secure_boot_dark.png.
+        /// </summary>
+        public static string icon_secure_boot_dark_path {
+            get {
+                return ResourceManager.GetString("icon_secure_boot_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_secure_boot_light.png.
+        /// </summary>
+        public static string icon_secure_boot_light_path {
+            get {
+                return ResourceManager.GetString("icon_secure_boot_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_serial_no_dark.png.
+        /// </summary>
+        public static string icon_serial_no_dark_path {
+            get {
+                return ResourceManager.GetString("icon_serial_no_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_serial_no_light.png.
+        /// </summary>
+        public static string icon_serial_no_light_path {
+            get {
+                return ResourceManager.GetString("icon_serial_no_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_server_dark.png.
+        /// </summary>
+        public static string icon_server_dark_path {
+            get {
+                return ResourceManager.GetString("icon_server_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_server_light.png.
+        /// </summary>
+        public static string icon_server_light_path {
+            get {
+                return ResourceManager.GetString("icon_server_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_service_dark.png.
+        /// </summary>
+        public static string icon_service_dark_path {
+            get {
+                return ResourceManager.GetString("icon_service_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_service_light.png.
+        /// </summary>
+        public static string icon_service_light_path {
+            get {
+                return ResourceManager.GetString("icon_service_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_smart_dark.png.
+        /// </summary>
+        public static string icon_smart_dark_path {
+            get {
+                return ResourceManager.GetString("icon_smart_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_smart_light.png.
+        /// </summary>
+        public static string icon_smart_light_path {
+            get {
+                return ResourceManager.GetString("icon_smart_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_standard_dark.png.
+        /// </summary>
+        public static string icon_standard_dark_path {
+            get {
+                return ResourceManager.GetString("icon_standard_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_standard_light.png.
+        /// </summary>
+        public static string icon_standard_light_path {
+            get {
+                return ResourceManager.GetString("icon_standard_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_sticker_dark.png.
+        /// </summary>
+        public static string icon_sticker_dark_path {
+            get {
+                return ResourceManager.GetString("icon_sticker_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_sticker_light.png.
+        /// </summary>
+        public static string icon_sticker_light_path {
+            get {
+                return ResourceManager.GetString("icon_sticker_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ticket_dark.png.
+        /// </summary>
+        public static string icon_ticket_dark_path {
+            get {
+                return ResourceManager.GetString("icon_ticket_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ticket_light.png.
+        /// </summary>
+        public static string icon_ticket_light_path {
+            get {
+                return ResourceManager.GetString("icon_ticket_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_tpm_dark.png.
+        /// </summary>
+        public static string icon_tpm_dark_path {
+            get {
+                return ResourceManager.GetString("icon_tpm_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_tpm_light.png.
+        /// </summary>
+        public static string icon_tpm_light_path {
+            get {
+                return ResourceManager.GetString("icon_tpm_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_type_dark.png.
+        /// </summary>
+        public static string icon_type_dark_path {
+            get {
+                return ResourceManager.GetString("icon_type_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_type_light.png.
+        /// </summary>
+        public static string icon_type_light_path {
+            get {
+                return ResourceManager.GetString("icon_type_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_user_dark.png.
+        /// </summary>
+        public static string icon_user_dark_path {
+            get {
+                return ResourceManager.GetString("icon_user_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_user_light.png.
+        /// </summary>
+        public static string icon_user_light_path {
+            get {
+                return ResourceManager.GetString("icon_user_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_VT_x_dark.png.
+        /// </summary>
+        public static string icon_VT_x_dark_path {
+            get {
+                return ResourceManager.GetString("icon_VT_x_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_VT_x_light.png.
+        /// </summary>
+        public static string icon_VT_x_light_path {
+            get {
+                return ResourceManager.GetString("icon_VT_x_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_who_dark.png.
+        /// </summary>
+        public static string icon_who_dark_path {
+            get {
+                return ResourceManager.GetString("icon_who_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_who_light.png.
+        /// </summary>
+        public static string icon_who_light_path {
+            get {
+                return ResourceManager.GetString("icon_who_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_windows_dark.png.
+        /// </summary>
+        public static string icon_windows_dark_path {
+            get {
+                return ResourceManager.GetString("icon_windows_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_windows_light.png.
+        /// </summary>
+        public static string icon_windows_light_path {
+            get {
+                return ResourceManager.GetString("icon_windows_light_path", resourceCulture);
             }
         }
         
@@ -475,6 +1258,24 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Limited.
+        /// </summary>
+        public static string limitedUserType {
+            get {
+                return ResourceManager.GetString("limitedUserType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
+        /// </summary>
+        public static string LOG_ERROR {
+            get {
+                return ResourceManager.GetString("LOG_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .log.
         /// </summary>
         public static string LOG_FILE_EXT {
@@ -484,11 +1285,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a ------------------------LOG DE EXECUÇÃO------------------------.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a IT-Asset-Registration.
         /// </summary>
-        public static string LOG_HEADER {
+        public static string LOG_FILENAME_CP {
             get {
-                return ResourceManager.GetString("LOG_HEADER", resourceCulture);
+                return ResourceManager.GetString("LOG_FILENAME_CP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
+        /// </summary>
+        public static string LOG_INFO {
+            get {
+                return ResourceManager.GetString("LOG_INFO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 3.
+        /// </summary>
+        public static string LOG_MISC {
+            get {
+                return ResourceManager.GetString("LOG_MISC", resourceCulture);
             }
         }
         
@@ -529,11 +1348,74 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a recebeDadosManutencao.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string LOG_WARNING {
+            get {
+                return ResourceManager.GetString("LOG_WARNING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\login_banner_dark.png.
+        /// </summary>
+        public static string login_banner_dark_path {
+            get {
+                return ResourceManager.GetString("login_banner_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\login_banner_light.png.
+        /// </summary>
+        public static string login_banner_light_path {
+            get {
+                return ResourceManager.GetString("login_banner_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.fileLogin.
+        /// </summary>
+        public static string loginPath {
+            get {
+                return ResourceManager.GetString("loginPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\main_banner_dark.png.
+        /// </summary>
+        public static string main_banner_dark_path {
+            get {
+                return ResourceManager.GetString("main_banner_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\main_banner_light.png.
+        /// </summary>
+        public static string main_banner_light_path {
+            get {
+                return ResourceManager.GetString("main_banner_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a receiveMaintenanceData.
         /// </summary>
         public static string maintenanceURL {
             get {
                 return ResourceManager.GetString("maintenanceURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 100.
+        /// </summary>
+        public static string MAX_SIZE {
+            get {
+                return ResourceManager.GetString("MAX_SIZE", resourceCulture);
             }
         }
         
@@ -543,6 +1425,15 @@ namespace ConstantsDLL.Properties {
         public static string mb {
             get {
                 return ResourceManager.GetString("mb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a No.
+        /// </summary>
+        public static string NO {
+            get {
+                return ResourceManager.GetString("NO", resourceCulture);
             }
         }
         
@@ -583,6 +1474,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.filePC.
+        /// </summary>
+        public static string pcPath {
+            get {
+                return ResourceManager.GetString("pcPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Pred Fail.
         /// </summary>
         public static string predFail {
@@ -606,6 +1506,375 @@ namespace ConstantsDLL.Properties {
         public static string raid {
             get {
                 return ResourceManager.GetString("raid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
+        /// </summary>
+        public static string RETURN_ERROR {
+            get {
+                return ResourceManager.GetString("RETURN_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
+        /// </summary>
+        public static string RETURN_SUCCESS {
+            get {
+                return ResourceManager.GetString("RETURN_SUCCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string RETURN_WARNING {
+            get {
+                return ResourceManager.GetString("RETURN_WARNING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 8.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius100 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius125 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius125", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 11.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius150 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius150", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 14.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius175 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius175", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 15.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius200 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius200", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 17.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius225 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius225", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 17.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius250 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius250", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 22.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius300 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius300", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
+        /// </summary>
+        public static string rotatingCircleInnerCircleRadius350 {
+            get {
+                return ResourceManager.GetString("rotatingCircleInnerCircleRadius350", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 28.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke100 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke125 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke125", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 36.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke150 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke150", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 40.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke175 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke175", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 44.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke200 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke200", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 48.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke225 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke225", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 52.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke250 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke250", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 56.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke300 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke300", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 60.
+        /// </summary>
+        public static string rotatingCircleNumberSpoke350 {
+            get {
+                return ResourceManager.GetString("rotatingCircleNumberSpoke350", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 9.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius100 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 12.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius125 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius125", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 15.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius150 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius150", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 18.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius175 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius175", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 22.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius200 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius200", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius225 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius225", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius250 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius250", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius300 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius300", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 35.
+        /// </summary>
+        public static string rotatingCircleOuterCircleRadius350 {
+            get {
+                return ResourceManager.GetString("rotatingCircleOuterCircleRadius350", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string rotatingCircleRotationSpeed {
+            get {
+                return ResourceManager.GetString("rotatingCircleRotationSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 4.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness100 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness125 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness125", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness150 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness150", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness175 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness175", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness200 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness200", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness225 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness225", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness250 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness250", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness300 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness300", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
+        /// </summary>
+        public static string rotatingCircleSpokeThickness350 {
+            get {
+                return ResourceManager.GetString("rotatingCircleSpokeThickness350", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a same.
+        /// </summary>
+        public static string sameWord {
+            get {
+                return ResourceManager.GetString("sameWord", resourceCulture);
             }
         }
         
@@ -642,6 +1911,15 @@ namespace ConstantsDLL.Properties {
         public static string supplyConfigData {
             get {
                 return ResourceManager.GetString("supplyConfigData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a forneceDadosUsuario.php.
+        /// </summary>
+        public static string supplyLoginData {
+            get {
+                return ResourceManager.GetString("supplyLoginData", resourceCulture);
             }
         }
         
@@ -691,11 +1969,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1000.
+        /// </summary>
+        public static string TIMER_INTERVAL {
+            get {
+                return ResourceManager.GetString("TIMER_INTERVAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a To Be Filled By O.E.M..
         /// </summary>
         public static string ToBeFilledByOEM {
             get {
                 return ResourceManager.GetString("ToBeFilledByOEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a today.
+        /// </summary>
+        public static string today {
+            get {
+                return ResourceManager.GetString("today", resourceCulture);
             }
         }
         
@@ -754,6 +2050,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.webview2file.
+        /// </summary>
+        public static string webview2filePath {
+            get {
+                return ResourceManager.GetString("webview2filePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a https://go.microsoft.com/fwlink/p/?LinkId=2124703.
         /// </summary>
         public static string webview2url {
@@ -804,6 +2109,15 @@ namespace ConstantsDLL.Properties {
         public static string windows8_1 {
             get {
                 return ResourceManager.GetString("windows8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
+        /// </summary>
+        public static string YES {
+            get {
+                return ResourceManager.GetString("YES", resourceCulture);
             }
         }
     }

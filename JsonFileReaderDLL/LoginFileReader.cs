@@ -28,15 +28,15 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyLoginData);
+                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyLoginData);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileLogin, StringsAndConstants.loginPath);
+                    wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileLogin, ConstantsDLL.Properties.Resources.loginPath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileShaLogin);
+                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaLogin);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
-                    fileL = new StreamReader(StringsAndConstants.loginPath);
-                    aux = StringsAndConstants.loginPath;
+                    fileL = new StreamReader(ConstantsDLL.Properties.Resources.loginPath);
+                    aux = ConstantsDLL.Properties.Resources.loginPath;
                     fileL.Close();
                 }
                 catch
@@ -53,15 +53,15 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyLoginData);
+                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyLoginData);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileLogin, StringsAndConstants.loginPath);
+                wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileLogin, ConstantsDLL.Properties.Resources.loginPath);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileShaLogin);
+                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaLogin);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
-                fileL = new StreamReader(StringsAndConstants.loginPath);
-                aux = StringsAndConstants.loginPath;
+                fileL = new StreamReader(ConstantsDLL.Properties.Resources.loginPath);
+                aux = ConstantsDLL.Properties.Resources.loginPath;
                 fileL.Close();
             }
             catch
@@ -82,7 +82,7 @@ namespace JsonFileReaderDLL
                 }
 
                 string[] arr;
-                fileL = new StreamReader(StringsAndConstants.loginPath);
+                fileL = new StreamReader(ConstantsDLL.Properties.Resources.loginPath);
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = fileL.ReadToEnd();
@@ -90,7 +90,7 @@ namespace JsonFileReaderDLL
 
                     for (int i = 0; i < jsonParse.Length; i++)
                     {
-                        if (nome.Equals(jsonParse[i].Usuario) && !jsonParse[i].Nivel.Equals(StringsAndConstants.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].Senha))
+                        if (nome.Equals(jsonParse[i].Usuario) && !jsonParse[i].Nivel.Equals(ConstantsDLL.Properties.Resources.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].Senha))
                         {
                             arr = new string[] { "true", jsonParse[i].Usuario };
                             fileL.Close();
@@ -113,7 +113,7 @@ namespace JsonFileReaderDLL
             }
 
             string[] arr;
-            fileL = new StreamReader(StringsAndConstants.loginPath);
+            fileL = new StreamReader(ConstantsDLL.Properties.Resources.loginPath);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileL.ReadToEnd();
@@ -121,7 +121,7 @@ namespace JsonFileReaderDLL
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (nome.Equals(jsonParse[i].Usuario) && !jsonParse[i].Nivel.Equals(StringsAndConstants.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].Senha))
+                    if (nome.Equals(jsonParse[i].Usuario) && !jsonParse[i].Nivel.Equals(ConstantsDLL.Properties.Resources.limitedUserType) && BCrypt.Net.BCrypt.Verify(senha, jsonParse[i].Senha))
                     {
                         arr = new string[] { "true", jsonParse[i].Usuario };
                         fileL.Close();

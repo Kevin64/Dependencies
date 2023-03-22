@@ -34,15 +34,15 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyPCData + "?patrimonio=" + patr);
+                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + "?patrimonio=" + patr);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.filePC, StringsAndConstants.pcPath);
+                    wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, ConstantsDLL.Properties.Resources.pcPath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileShaPC);
+                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaPC);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
-                    filePC = new StreamReader(StringsAndConstants.pcPath);
-                    aux = StringsAndConstants.pcPath;
+                    filePC = new StreamReader(ConstantsDLL.Properties.Resources.pcPath);
+                    aux = ConstantsDLL.Properties.Resources.pcPath;
                     filePC.Close();
                 }
                 catch
@@ -59,15 +59,15 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.supplyPCData + "?patrimonio=" + patr);
+                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + "?patrimonio=" + patr);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.filePC, StringsAndConstants.pcPath);
+                wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, ConstantsDLL.Properties.Resources.pcPath);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + StringsAndConstants.jsonServerPath + StringsAndConstants.fileShaPC);
+                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaPC);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
-                filePC = new StreamReader(StringsAndConstants.pcPath);
-                aux = StringsAndConstants.pcPath;
+                filePC = new StreamReader(ConstantsDLL.Properties.Resources.pcPath);
+                aux = ConstantsDLL.Properties.Resources.pcPath;
                 filePC.Close();
             }
             catch
@@ -88,7 +88,7 @@ namespace JsonFileReaderDLL
                 }
 
                 string[] arr;
-                filePC = new StreamReader(StringsAndConstants.pcPath);
+                filePC = new StreamReader(ConstantsDLL.Properties.Resources.pcPath);
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = filePC.ReadToEnd();
@@ -119,7 +119,7 @@ namespace JsonFileReaderDLL
             }
 
             string[] arr;
-            filePC = new StreamReader(StringsAndConstants.pcPath);
+            filePC = new StreamReader(ConstantsDLL.Properties.Resources.pcPath);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = filePC.ReadToEnd();
