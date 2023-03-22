@@ -127,14 +127,38 @@
   <data name="ALREADY_RUNNING" xml:space="preserve">
     <value>There is already an instance of the program running!</value>
   </data>
+  <data name="cancelExecution" xml:space="preserve">
+    <value>Clear delivery data and cancel run on next boot</value>
+  </data>
+  <data name="cancelExecutionResError" xml:space="preserve">
+    <value>Delete delivery data</value>
+  </data>
   <data name="deactivated" xml:space="preserve">
     <value>Disabled</value>
+  </data>
+  <data name="doExecution" xml:space="preserve">
+    <value>Send delivery data and run on next boot</value>
+  </data>
+  <data name="doExecutionResError" xml:space="preserve">
+    <value>Send delivery data</value>
   </data>
   <data name="ERROR_WINDOWTITLE" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="fillForm" xml:space="preserve">
+    <value>Fill in the required fields!</value>
+  </data>
+  <data name="finaleScreen" xml:space="preserve">
+    <value>Finishing up</value>
+  </data>
+  <data name="finishText" xml:space="preserve">
+    <value>Finish</value>
+  </data>
   <data name="INTRANET_REQUIRED" xml:space="preserve">
     <value>Intranet connection required.</value>
+  </data>
+  <data name="introScreen" xml:space="preserve">
+    <value>Intro</value>
   </data>
   <data name="listModeGUIFormat" xml:space="preserve">
     <value>Formatting</value>
@@ -166,6 +190,15 @@
   <data name="listYes2" xml:space="preserve">
     <value>y</value>
   </data>
+  <data name="LOGFILE_EXISTS" xml:space="preserve">
+    <value>Found log file, adding information</value>
+  </data>
+  <data name="LOGFILE_NOTEXISTS" xml:space="preserve">
+    <value>Nonexistent log file, creating new file</value>
+  </data>
+  <data name="LOG_DEBUG_MODE" xml:space="preserve">
+    <value>Running in DEBUG mode</value>
+  </data>
   <data name="LOG_ERROR_ATTR" xml:space="preserve">
     <value>&lt;ERROR&gt;</value>
   </data>
@@ -175,8 +208,23 @@
   <data name="LOG_INFO_ATTR" xml:space="preserve">
     <value>&lt;INFORMATION&gt;</value>
   </data>
+  <data name="LOG_INIT" xml:space="preserve">
+    <value>Start of execution</value>
+  </data>
+  <data name="LOG_INIT_LOGIN" xml:space="preserve">
+    <value>Authenticating user</value>
+  </data>
+  <data name="LOG_LOGIN_FAILED" xml:space="preserve">
+    <value>Authentication failed</value>
+  </data>
+  <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
+    <value>Authentication performed successfully</value>
+  </data>
   <data name="LOG_WARNING_ATTR" xml:space="preserve">
     <value>&lt;WARNING&gt;</value>
+  </data>
+  <data name="nextText" xml:space="preserve">
+    <value>Next</value>
   </data>
   <data name="notDetermined" xml:space="preserve">
     <value>Not determined</value>
@@ -193,10 +241,19 @@
   <data name="pcNotRegistered" xml:space="preserve">
     <value>Assets not initially registered by the 'Hardware Collection and Asset Registration' software. First register and then try again.</value>
   </data>
+  <data name="PC_DROPPED" xml:space="preserve">
+    <value>Asset dropped, registration cancelled. Revert drop and try again</value>
+  </data>
+  <data name="resolutionWarning" xml:space="preserve">
+    <value>Insufficient resolution. This program only supports resolutions equal to or greater than {0}x{1}.</value>
+  </data>
   <data name="SERVER_NOT_FOUND_ERROR" xml:space="preserve">
     <value>Server not found. Please select a valid server!</value>
   </data>
   <data name="unknown" xml:space="preserve">
     <value>Unknown</value>
+  </data>
+  <data name="waitText" xml:space="preserve">
+    <value>Please wait</value>
   </data>
 </root>

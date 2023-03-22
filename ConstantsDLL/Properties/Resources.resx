@@ -172,6 +172,9 @@
   <data name="defFile" xml:space="preserve">
     <value>definitions.ini</value>
   </data>
+  <data name="DidItRunAlready" xml:space="preserve">
+    <value>DidItRunAlready</value>
+  </data>
   <data name="fileBios" xml:space="preserve">
     <value>bios.json</value>
   </data>
@@ -199,6 +202,21 @@
   <data name="fileShaPC" xml:space="preserve">
     <value>pc-checksum.txt</value>
   </data>
+  <data name="FOP" xml:space="preserve">
+    <value>FOP</value>
+  </data>
+  <data name="FopRegKey" xml:space="preserve">
+    <value>Software\\FOP</value>
+  </data>
+  <data name="FopRunOnceKey" xml:space="preserve">
+    <value>Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</value>
+  </data>
+  <data name="FOPx64" xml:space="preserve">
+    <value>C:\\Program Files\\FOP\\Rever tutorial de uso do computador.lnk</value>
+  </data>
+  <data name="FOPx86" xml:space="preserve">
+    <value>C:\\Program Files (x86)\\FOP\\Rever tutorial de uso do computador.lnk</value>
+  </data>
   <data name="formatURL" xml:space="preserve">
     <value>receiveFormattingData</value>
   </data>
@@ -210,6 +228,9 @@
   </data>
   <data name="hdd" xml:space="preserve">
     <value>HDD</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>768</value>
   </data>
   <data name="HOSTNAME_PATTERN" xml:space="preserve">
     <value>PC-</value>
@@ -466,6 +487,9 @@
   <data name="ide" xml:space="preserve">
     <value>IDE/RAID</value>
   </data>
+  <data name="imgExt" xml:space="preserve">
+    <value>.png</value>
+  </data>
   <data name="INI_SECTION_1" xml:space="preserve">
     <value>Definitions</value>
   </data>
@@ -483,6 +507,15 @@
   </data>
   <data name="INI_SECTION_1_15" xml:space="preserve">
     <value>ThemeUI</value>
+  </data>
+  <data name="INI_SECTION_1_16" xml:space="preserve">
+    <value>Logo1URL</value>
+  </data>
+  <data name="INI_SECTION_1_17" xml:space="preserve">
+    <value>Logo2URL</value>
+  </data>
+  <data name="INI_SECTION_1_18" xml:space="preserve">
+    <value>Logo3URL</value>
   </data>
   <data name="INI_SECTION_1_9" xml:space="preserve">
     <value>LogLocation</value>
@@ -534,6 +567,9 @@
   </data>
   <data name="LOG_FILENAME_CP" xml:space="preserve">
     <value>IT-Asset-Registration</value>
+  </data>
+  <data name="LOG_FILENAME_FOP" xml:space="preserve">
+    <value>FOP</value>
   </data>
   <data name="LOG_FILE_EXT" xml:space="preserve">
     <value>.log</value>
@@ -786,6 +822,54 @@
   </data>
   <data name="WEBVIEW2_SYSTEM_PATH_X86" xml:space="preserve">
     <value>C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>1366</value>
+  </data>
+  <data name="win10imgDir" xml:space="preserve">
+    <value>\\img-windows10\\</value>
+  </data>
+  <data name="win10ntBuild" xml:space="preserve">
+    <value>19041</value>
+  </data>
+  <data name="win10ntFullVersion" xml:space="preserve">
+    <value>10.0.19041</value>
+  </data>
+  <data name="win10ntMajor" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="win10ntMinor" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="win11imgDir" xml:space="preserve">
+    <value>\\img-windows11\\</value>
+  </data>
+  <data name="win11ntBuild" xml:space="preserve">
+    <value>22000</value>
+  </data>
+  <data name="win11ntFullVersion" xml:space="preserve">
+    <value>10.0.22000</value>
+  </data>
+  <data name="win11ntMajor" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="win11ntMinor" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="win7imgDir" xml:space="preserve">
+    <value>\\img-windows7\\</value>
+  </data>
+  <data name="win7ntBuild" xml:space="preserve">
+    <value>7601</value>
+  </data>
+  <data name="win7ntFullVersion" xml:space="preserve">
+    <value>6.1.7601</value>
+  </data>
+  <data name="win7ntMajor" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="win7ntMinor" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="windows10" xml:space="preserve">
     <value>10</value>

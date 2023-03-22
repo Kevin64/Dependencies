@@ -88,11 +88,47 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Clear delivery data and cancel run on next boot.
+        /// </summary>
+        public static string cancelExecution {
+            get {
+                return ResourceManager.GetString("cancelExecution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Delete delivery data.
+        /// </summary>
+        public static string cancelExecutionResError {
+            get {
+                return ResourceManager.GetString("cancelExecutionResError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Disabled.
         /// </summary>
         public static string deactivated {
             get {
                 return ResourceManager.GetString("deactivated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Send delivery data and run on next boot.
+        /// </summary>
+        public static string doExecution {
+            get {
+                return ResourceManager.GetString("doExecution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Send delivery data.
+        /// </summary>
+        public static string doExecutionResError {
+            get {
+                return ResourceManager.GetString("doExecutionResError", resourceCulture);
             }
         }
         
@@ -106,11 +142,47 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Fill in the required fields!.
+        /// </summary>
+        public static string fillForm {
+            get {
+                return ResourceManager.GetString("fillForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Finishing up.
+        /// </summary>
+        public static string finaleScreen {
+            get {
+                return ResourceManager.GetString("finaleScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Finish.
+        /// </summary>
+        public static string finishText {
+            get {
+                return ResourceManager.GetString("finishText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Intranet connection required..
         /// </summary>
         public static string INTRANET_REQUIRED {
             get {
                 return ResourceManager.GetString("INTRANET_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Intro.
+        /// </summary>
+        public static string introScreen {
+            get {
+                return ResourceManager.GetString("introScreen", resourceCulture);
             }
         }
         
@@ -205,6 +277,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Running in DEBUG mode.
+        /// </summary>
+        public static string LOG_DEBUG_MODE {
+            get {
+                return ResourceManager.GetString("LOG_DEBUG_MODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;ERROR&gt;.
         /// </summary>
         public static string LOG_ERROR_ATTR {
@@ -232,11 +313,74 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Start of execution.
+        /// </summary>
+        public static string LOG_INIT {
+            get {
+                return ResourceManager.GetString("LOG_INIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Authenticating user.
+        /// </summary>
+        public static string LOG_INIT_LOGIN {
+            get {
+                return ResourceManager.GetString("LOG_INIT_LOGIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Authentication failed.
+        /// </summary>
+        public static string LOG_LOGIN_FAILED {
+            get {
+                return ResourceManager.GetString("LOG_LOGIN_FAILED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Authentication performed successfully.
+        /// </summary>
+        public static string LOG_LOGIN_SUCCESS {
+            get {
+                return ResourceManager.GetString("LOG_LOGIN_SUCCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;WARNING&gt;.
         /// </summary>
         public static string LOG_WARNING_ATTR {
             get {
                 return ResourceManager.GetString("LOG_WARNING_ATTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Found log file, adding information.
+        /// </summary>
+        public static string LOGFILE_EXISTS {
+            get {
+                return ResourceManager.GetString("LOGFILE_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nonexistent log file, creating new file.
+        /// </summary>
+        public static string LOGFILE_NOTEXISTS {
+            get {
+                return ResourceManager.GetString("LOGFILE_NOTEXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Next.
+        /// </summary>
+        public static string nextText {
+            get {
+                return ResourceManager.GetString("nextText", resourceCulture);
             }
         }
         
@@ -277,11 +421,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Asset dropped, registration cancelled. Revert drop and try again.
+        /// </summary>
+        public static string PC_DROPPED {
+            get {
+                return ResourceManager.GetString("PC_DROPPED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Assets not initially registered by the &apos;Hardware Collection and Asset Registration&apos; software. First register and then try again..
         /// </summary>
         public static string pcNotRegistered {
             get {
                 return ResourceManager.GetString("pcNotRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Insufficient resolution. This program only supports resolutions equal to or greater than {0}x{1}..
+        /// </summary>
+        public static string resolutionWarning {
+            get {
+                return ResourceManager.GetString("resolutionWarning", resourceCulture);
             }
         }
         
@@ -300,6 +462,15 @@ namespace ConstantsDLL.Properties {
         public static string unknown {
             get {
                 return ResourceManager.GetString("unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Please wait.
+        /// </summary>
+        public static string waitText {
+            get {
+                return ResourceManager.GetString("waitText", resourceCulture);
             }
         }
     }

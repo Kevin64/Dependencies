@@ -223,6 +223,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a DidItRunAlready.
+        /// </summary>
+        public static string DidItRunAlready {
+            get {
+                return ResourceManager.GetString("DidItRunAlready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a bios.json.
         /// </summary>
         public static string fileBios {
@@ -304,6 +313,51 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a FOP.
+        /// </summary>
+        public static string FOP {
+            get {
+                return ResourceManager.GetString("FOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Software\\FOP.
+        /// </summary>
+        public static string FopRegKey {
+            get {
+                return ResourceManager.GetString("FopRegKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce.
+        /// </summary>
+        public static string FopRunOnceKey {
+            get {
+                return ResourceManager.GetString("FopRunOnceKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a C:\\Program Files\\FOP\\Rever tutorial de uso do computador.lnk.
+        /// </summary>
+        public static string FOPx64 {
+            get {
+                return ResourceManager.GetString("FOPx64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a C:\\Program Files (x86)\\FOP\\Rever tutorial de uso do computador.lnk.
+        /// </summary>
+        public static string FOPx86 {
+            get {
+                return ResourceManager.GetString("FOPx86", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a receiveFormattingData.
         /// </summary>
         public static string formatURL {
@@ -336,6 +390,15 @@ namespace ConstantsDLL.Properties {
         public static string hdd {
             get {
                 return ResourceManager.GetString("hdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 768.
+        /// </summary>
+        public static string Height {
+            get {
+                return ResourceManager.GetString("Height", resourceCulture);
             }
         }
         
@@ -1105,6 +1168,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .png.
+        /// </summary>
+        public static string imgExt {
+            get {
+                return ResourceManager.GetString("imgExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Definitions.
         /// </summary>
         public static string INI_SECTION_1 {
@@ -1155,6 +1227,33 @@ namespace ConstantsDLL.Properties {
         public static string INI_SECTION_1_15 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Logo1URL.
+        /// </summary>
+        public static string INI_SECTION_1_16 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Logo2URL.
+        /// </summary>
+        public static string INI_SECTION_1_17 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Logo3URL.
+        /// </summary>
+        public static string INI_SECTION_1_18 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_18", resourceCulture);
             }
         }
         
@@ -1290,6 +1389,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_FILENAME_CP {
             get {
                 return ResourceManager.GetString("LOG_FILENAME_CP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a FOP.
+        /// </summary>
+        public static string LOG_FILENAME_FOP {
+            get {
+                return ResourceManager.GetString("LOG_FILENAME_FOP", resourceCulture);
             }
         }
         
@@ -2064,6 +2172,150 @@ namespace ConstantsDLL.Properties {
         public static string webview2url {
             get {
                 return ResourceManager.GetString("webview2url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1366.
+        /// </summary>
+        public static string Width {
+            get {
+                return ResourceManager.GetString("Width", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\img-windows10\\.
+        /// </summary>
+        public static string win10imgDir {
+            get {
+                return ResourceManager.GetString("win10imgDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 19041.
+        /// </summary>
+        public static string win10ntBuild {
+            get {
+                return ResourceManager.GetString("win10ntBuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 10.0.19041.
+        /// </summary>
+        public static string win10ntFullVersion {
+            get {
+                return ResourceManager.GetString("win10ntFullVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
+        /// </summary>
+        public static string win10ntMajor {
+            get {
+                return ResourceManager.GetString("win10ntMajor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
+        /// </summary>
+        public static string win10ntMinor {
+            get {
+                return ResourceManager.GetString("win10ntMinor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\img-windows11\\.
+        /// </summary>
+        public static string win11imgDir {
+            get {
+                return ResourceManager.GetString("win11imgDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 22000.
+        /// </summary>
+        public static string win11ntBuild {
+            get {
+                return ResourceManager.GetString("win11ntBuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 10.0.22000.
+        /// </summary>
+        public static string win11ntFullVersion {
+            get {
+                return ResourceManager.GetString("win11ntFullVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
+        /// </summary>
+        public static string win11ntMajor {
+            get {
+                return ResourceManager.GetString("win11ntMajor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
+        /// </summary>
+        public static string win11ntMinor {
+            get {
+                return ResourceManager.GetString("win11ntMinor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\img-windows7\\.
+        /// </summary>
+        public static string win7imgDir {
+            get {
+                return ResourceManager.GetString("win7imgDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 7601.
+        /// </summary>
+        public static string win7ntBuild {
+            get {
+                return ResourceManager.GetString("win7ntBuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 6.1.7601.
+        /// </summary>
+        public static string win7ntFullVersion {
+            get {
+                return ResourceManager.GetString("win7ntFullVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 6.
+        /// </summary>
+        public static string win7ntMajor {
+            get {
+                return ResourceManager.GetString("win7ntMajor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string win7ntMinor {
+            get {
+                return ResourceManager.GetString("win7ntMinor", resourceCulture);
             }
         }
         

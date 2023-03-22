@@ -80,44 +80,23 @@ namespace ConstantsDLL
          * Start
         */
 
-        public const int Width = 1366;
-        public const int Height = 768;
+        //public const int Width = 1366;
+        //public const int Height = 768;
 
         public static readonly List<string> fopFileList = new List<string>() { "BCrypt.Net-Next.dll", "ConstantsDLL.dll", "INIFileParser.dll", "JsonFileReaderDLL.dll", "LogGeneratorDLL.dll", "Microsoft.Xaml.Behaviors.dll", "Newtonsoft.Json.dll", "TutorialDeUsoDaEstaçãoDeTrabalho.exe", "TutorialDeUsoDaEstaçãoDeTrabalho.exe.config" };
-        public const string DidItRunAlready = "DidItRunAlready";
-        public const string FOP = "FOP";
-        public const string FopRegKey = @"Software\FOP";
-        public const string win7imgDir = "\\img-windows7\\";
-        public const string win10imgDir = "\\img-windows10\\";
-        public const string win11imgDir = "\\img-windows11\\";
-        public const string FopRunOnceKey = @"Software\Microsoft\Windows\CurrentVersion\RunOnce";
-        public const string FOPx86 = "C:\\Program Files (x86)\\FOP\\Rever tutorial de uso do computador.lnk";
-        public const string FOPx64 = "C:\\Program Files\\FOP\\Rever tutorial de uso do computador.lnk";
-        public const string imgExt = ".png";
-        public static string resolutionWarning = "Resolução insuficiente. Este programa suporta apenas resoluções iguais ou superiores a " + Width + "x" + Height + ".";
-        public const string finaleScreen = "Finalização";
-        public const string finishText = "Finalizar";
-        public const string introScreen = "Introdução";
-        public const string nextText = "Próximo";
-        public const string waitText = "Aguarde ";
-        public const string cancelExecution = "Apagar dados de entrega e cancelar\n       execução no próximo boot";
-        public const string cancelExecutionResError = "Apagar dados de entrega";
-        public const string doExecution = "Enviar dados de entrega e \nexecutar no próximo boot";
-        public const string doExecutionResError = "Enviar dados de entrega";
-        public const string fillForm = "Preencha os campos necessários!";
-        public const string win7ntMajor = "6";
-        public const string win7ntMinor = "1";
-        public const string win7ntBuild = "7601";
-        public const string win7ntFullVersion = "6.1.7601";
-        public const string win10ntMajor = "10";
-        public const string win10ntMinor = "0";
-        public const string win10ntBuild = "19041";
-        public const string win10ntFullVersion = "10.0.19041";
-        public const string win11ntMajor = "10";
-        public const string win11ntMinor = "0";
-        public const string win11ntBuild = "22000";
-        public const string win11ntFullVersion = "10.0.22000";
-        public const string LOG_FILENAME_FOP = "FOP";
+
+        //public const string finaleScreen = "Finalização";
+        //public const string finishText = "Finalizar";
+        //public const string introScreen = "Introdução";
+        //public const string nextText = "Próximo";
+        //public const string waitText = "Aguarde ";
+        //public const string cancelExecution = "Apagar dados de entrega e cancelar\n       execução no próximo boot";
+        //public const string cancelExecutionResError = "Apagar dados de entrega";
+        //public const string doExecution = "Enviar dados de entrega e \nexecutar no próximo boot";
+        //public const string doExecutionResError = "Enviar dados de entrega";
+        //public const string fillForm = "Preencha os campos necessários!";
+
+        
         public const double FADE_TIME = 0.2d;
         public const string LOG_IMG_NOTFOUND = "Diretório de imagens não encontrado";
         public const string LOG_IMG_FOUND = "Diretório de imagens encontrado";
@@ -128,7 +107,7 @@ namespace ConstantsDLL
         public const string LOG_EMPLOYEEAWAY = "Funcionário ausente";
         public const string LOG_EMPLOYEEPRESENT = "Funcionário presente";
         public const string LOG_REGISTERING_DELIVERY = "Registrando entrega";
-        public const string LOG_FILLFORM = fillForm;
+        //public const string LOG_FILLFORM = fillForm;
         public const string LOG_SERVER_NOT_FOUND = "";
         public const string LOG_ADDING_REG = "Adicionando chaves de registro";
         public const string LOG_NOT_ADDING_REG = "Não adicionar chaves de registro";
@@ -143,10 +122,6 @@ namespace ConstantsDLL
         public const string LOG_FORMAT_SERVICE = "Formatação";
         public const string LOG_MAINTENANCE_SERVICE = "Manutenção";
         public const string LOG_PATR_NUM = "Número de patrimônio";
-
-        public const string INI_SECTION_1_16 = "Logo1URL";
-        public const string INI_SECTION_1_17 = "Logo2URL";
-        public const string INI_SECTION_1_18 = "Logo3URL";
 
         /**
          * Code exclusive for FeaturesOverlayPresentation application
