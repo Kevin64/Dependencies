@@ -83,7 +83,7 @@ namespace ConstantsDLL
          * Start
         */
 
-        public static readonly List<string> fopFileList = new List<string>() { "BCrypt.Net-Next.dll", "ConstantsDLL.dll", "INIFileParser.dll", "JsonFileReaderDLL.dll", "LogGeneratorDLL.dll", "Microsoft.Xaml.Behaviors.dll", "Newtonsoft.Json.dll", "TutorialDeUsoDaEstaçãoDeTrabalho.exe", "TutorialDeUsoDaEstaçãoDeTrabalho.exe.config" };
+        public static readonly List<string> fopFileList = new List<string>() { "BCrypt.Net-Next.dll", "ConstantsDLL.dll", "INIFileParser.dll", "JsonFileReaderDLL.dll", "LogGeneratorDLL.dll", "Microsoft.Xaml.Behaviors.dll", "Newtonsoft.Json.dll", "FeaturesOverlayPresentation.exe", "FeaturesOverlayPresentation.exe.config" };
         public const double FADE_TIME = 0.2d;
 
         /**
