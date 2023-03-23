@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AAAString1" xml:space="preserve">
+  <data name="aaaPROJECTaaa" xml:space="preserve">
     <value />
     <comment>ConstantsDLL.Strings.Generic</comment>
   </data>
@@ -160,6 +160,9 @@
   <data name="introScreen" xml:space="preserve">
     <value>Intro</value>
   </data>
+  <data name="KEY_FINISH" xml:space="preserve">
+    <value>Press Enter to close...</value>
+  </data>
   <data name="listModeGUIFormat" xml:space="preserve">
     <value>Formatting</value>
   </data>
@@ -196,8 +199,20 @@
   <data name="LOGFILE_NOTEXISTS" xml:space="preserve">
     <value>Nonexistent log file, creating new file</value>
   </data>
+  <data name="LOG_APPFILE_FOUND" xml:space="preserve">
+    <value>Found dependency files</value>
+  </data>
+  <data name="LOG_APPFILE_NOT_FOUND" xml:space="preserve">
+    <value>One or more missing dependency files</value>
+  </data>
   <data name="LOG_DEBUG_MODE" xml:space="preserve">
     <value>Running in DEBUG mode</value>
+  </data>
+  <data name="LOG_DEFFILE_FOUND" xml:space="preserve">
+    <value>Definitions file found</value>
+  </data>
+  <data name="LOG_DEFFILE_NOT_FOUND" xml:space="preserve">
+    <value>Definitions file not found</value>
   </data>
   <data name="LOG_ERROR_ATTR" xml:space="preserve">
     <value>&lt;ERROR&gt;</value>
@@ -220,6 +235,9 @@
   <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
     <value>Authentication performed successfully</value>
   </data>
+  <data name="LOG_RELEASE_MODE" xml:space="preserve">
+    <value>Running in RELEASE mode</value>
+  </data>
   <data name="LOG_WARNING_ATTR" xml:space="preserve">
     <value>&lt;WARNING&gt;</value>
   </data>
@@ -237,6 +255,9 @@
   </data>
   <data name="NO_AUTH" xml:space="preserve">
     <value>Fill in your credentials.</value>
+  </data>
+  <data name="PARAMETER_ERROR" xml:space="preserve">
+    <value>One or more INI file parameters are malformed</value>
   </data>
   <data name="pcNotRegistered" xml:space="preserve">
     <value>Assets not initially registered by the 'Hardware Collection and Asset Registration' software. First register and then try again.</value>

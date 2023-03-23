@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AAAString1" xml:space="preserve">
+  <data name="aaaPROJECTaaa" xml:space="preserve">
     <value />
     <comment>ConstantsDLL.Resources</comment>
   </data>
@@ -236,7 +236,7 @@
     <value>PC-</value>
   </data>
   <data name="HWINFO_REG_PATH" xml:space="preserve">
-    <value>Software\HardwareInformation</value>
+    <value>Software\\HardwareInformation</value>
   </data>
   <data name="icon_about_dark_path" xml:space="preserve">
     <value>Resources\\icons\\icon_about_dark.png</value>
@@ -493,6 +493,12 @@
   <data name="INI_SECTION_1" xml:space="preserve">
     <value>Definitions</value>
   </data>
+  <data name="INI_SECTION_1_1" xml:space="preserve">
+    <value>InstallDrivers</value>
+  </data>
+  <data name="INI_SECTION_1_10" xml:space="preserve">
+    <value>AddDrivers</value>
+  </data>
   <data name="INI_SECTION_1_11" xml:space="preserve">
     <value>ServerIP</value>
   </data>
@@ -516,6 +522,27 @@
   </data>
   <data name="INI_SECTION_1_18" xml:space="preserve">
     <value>Logo3URL</value>
+  </data>
+  <data name="INI_SECTION_1_2" xml:space="preserve">
+    <value>CleanGarbage</value>
+  </data>
+  <data name="INI_SECTION_1_3" xml:space="preserve">
+    <value>ChangeResolution</value>
+  </data>
+  <data name="INI_SECTION_1_4" xml:space="preserve">
+    <value>ResolutionWidth</value>
+  </data>
+  <data name="INI_SECTION_1_5" xml:space="preserve">
+    <value>ResolutionHeight</value>
+  </data>
+  <data name="INI_SECTION_1_6" xml:space="preserve">
+    <value>DriverPath</value>
+  </data>
+  <data name="INI_SECTION_1_7" xml:space="preserve">
+    <value>RebootAfterFinished</value>
+  </data>
+  <data name="INI_SECTION_1_8" xml:space="preserve">
+    <value>PauseAfterFinished</value>
   </data>
   <data name="INI_SECTION_1_9" xml:space="preserve">
     <value>LogLocation</value>
@@ -570,6 +597,9 @@
   </data>
   <data name="LOG_FILENAME_FOP" xml:space="preserve">
     <value>FOP</value>
+  </data>
+  <data name="LOG_FILENAME_OOBE" xml:space="preserve">
+    <value>OfflineDriverInstallerOOBE</value>
   </data>
   <data name="LOG_FILE_EXT" xml:space="preserve">
     <value>.log</value>
@@ -763,20 +793,26 @@
   <data name="sata" xml:space="preserve">
     <value>SATA</value>
   </data>
+  <data name="SHUTDOWN_CMD_1" xml:space="preserve">
+    <value>shutdown</value>
+  </data>
+  <data name="SHUTDOWN_CMD_2" xml:space="preserve">
+    <value>/r /f /t 0</value>
+  </data>
   <data name="ssd" xml:space="preserve">
     <value>SSD</value>
   </data>
   <data name="supplyBiosData" xml:space="preserve">
-    <value>forneceDadosBIOS.php</value>
+    <value>generateModelData.php</value>
   </data>
   <data name="supplyConfigData" xml:space="preserve">
     <value>/etc/config.json</value>
   </data>
   <data name="supplyLoginData" xml:space="preserve">
-    <value>forneceDadosUsuario.php</value>
+    <value>generateUserData.php</value>
   </data>
   <data name="supplyPCData" xml:space="preserve">
-    <value>forneceDadosPC.php</value>
+    <value>generateAssetData.php</value>
   </data>
   <data name="systemRom" xml:space="preserve">
     <value>SYSTEM ROM</value>
@@ -832,9 +868,6 @@
   <data name="win10ntBuild" xml:space="preserve">
     <value>19041</value>
   </data>
-  <data name="win10ntFullVersion" xml:space="preserve">
-    <value>10.0.19041</value>
-  </data>
   <data name="win10ntMajor" xml:space="preserve">
     <value>10</value>
   </data>
@@ -847,9 +880,6 @@
   <data name="win11ntBuild" xml:space="preserve">
     <value>22000</value>
   </data>
-  <data name="win11ntFullVersion" xml:space="preserve">
-    <value>10.0.22000</value>
-  </data>
   <data name="win11ntMajor" xml:space="preserve">
     <value>10</value>
   </data>
@@ -861,9 +891,6 @@
   </data>
   <data name="win7ntBuild" xml:space="preserve">
     <value>7601</value>
-  </data>
-  <data name="win7ntFullVersion" xml:space="preserve">
-    <value>6.1.7601</value>
   </data>
   <data name="win7ntMajor" xml:space="preserve">
     <value>6</value>

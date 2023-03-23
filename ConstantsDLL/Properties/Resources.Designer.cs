@@ -63,9 +63,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
-        public static string AAAString1 {
+        public static string aaaPROJECTaaa {
             get {
-                return ResourceManager.GetString("AAAString1", resourceCulture);
+                return ResourceManager.GetString("aaaPROJECTaaa", resourceCulture);
             }
         }
         
@@ -412,7 +412,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Software\HardwareInformation.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Software\\HardwareInformation.
         /// </summary>
         public static string HWINFO_REG_PATH {
             get {
@@ -1186,6 +1186,24 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a InstallDrivers.
+        /// </summary>
+        public static string INI_SECTION_1_1 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a AddDrivers.
+        /// </summary>
+        public static string INI_SECTION_1_10 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ServerIP.
         /// </summary>
         public static string INI_SECTION_1_11 {
@@ -1254,6 +1272,69 @@ namespace ConstantsDLL.Properties {
         public static string INI_SECTION_1_18 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CleanGarbage.
+        /// </summary>
+        public static string INI_SECTION_1_2 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ChangeResolution.
+        /// </summary>
+        public static string INI_SECTION_1_3 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ResolutionWidth.
+        /// </summary>
+        public static string INI_SECTION_1_4 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ResolutionHeight.
+        /// </summary>
+        public static string INI_SECTION_1_5 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a DriverPath.
+        /// </summary>
+        public static string INI_SECTION_1_6 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a RebootAfterFinished.
+        /// </summary>
+        public static string INI_SECTION_1_7 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a PauseAfterFinished.
+        /// </summary>
+        public static string INI_SECTION_1_8 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_8", resourceCulture);
             }
         }
         
@@ -1398,6 +1479,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_FILENAME_FOP {
             get {
                 return ResourceManager.GetString("LOG_FILENAME_FOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a OfflineDriverInstallerOOBE.
+        /// </summary>
+        public static string LOG_FILENAME_OOBE {
+            get {
+                return ResourceManager.GetString("LOG_FILENAME_OOBE", resourceCulture);
             }
         }
         
@@ -1996,6 +2086,24 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a shutdown.
+        /// </summary>
+        public static string SHUTDOWN_CMD_1 {
+            get {
+                return ResourceManager.GetString("SHUTDOWN_CMD_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /r /f /t 0.
+        /// </summary>
+        public static string SHUTDOWN_CMD_2 {
+            get {
+                return ResourceManager.GetString("SHUTDOWN_CMD_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SSD.
         /// </summary>
         public static string ssd {
@@ -2005,7 +2113,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a forneceDadosBIOS.php.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a generateModelData.php.
         /// </summary>
         public static string supplyBiosData {
             get {
@@ -2023,7 +2131,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a forneceDadosUsuario.php.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a generateUserData.php.
         /// </summary>
         public static string supplyLoginData {
             get {
@@ -2032,7 +2140,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a forneceDadosPC.php.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a generateAssetData.php.
         /// </summary>
         public static string supplyPCData {
             get {
@@ -2203,15 +2311,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 10.0.19041.
-        /// </summary>
-        public static string win10ntFullVersion {
-            get {
-                return ResourceManager.GetString("win10ntFullVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
         /// </summary>
         public static string win10ntMajor {
@@ -2248,15 +2347,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 10.0.22000.
-        /// </summary>
-        public static string win11ntFullVersion {
-            get {
-                return ResourceManager.GetString("win11ntFullVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
         /// </summary>
         public static string win11ntMajor {
@@ -2289,15 +2379,6 @@ namespace ConstantsDLL.Properties {
         public static string win7ntBuild {
             get {
                 return ResourceManager.GetString("win7ntBuild", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 6.1.7601.
-        /// </summary>
-        public static string win7ntFullVersion {
-            get {
-                return ResourceManager.GetString("win7ntFullVersion", resourceCulture);
             }
         }
         

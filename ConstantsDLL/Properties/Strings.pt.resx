@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AAAString1" xml:space="preserve">
+  <data name="aaaPROJECTaaa" xml:space="preserve">
     <value />
     <comment>ConstantsDLL.Strings.PT</comment>
   </data>
@@ -128,7 +128,7 @@
     <value>Já existe uma instância do programa em execução!</value>
   </data>
   <data name="cancelExecution" xml:space="preserve">
-    <value>Apagar dados de entrega e cancelar\n       execução no próximo boot</value>
+    <value>Apagar dados de entrega e cancelar execução no próximo boot</value>
   </data>
   <data name="cancelExecutionResError" xml:space="preserve">
     <value>Apagar dados de entrega</value>
@@ -137,7 +137,7 @@
     <value>Desativado</value>
   </data>
   <data name="doExecution" xml:space="preserve">
-    <value>Enviar dados de entrega e \nexecutar no próximo boot</value>
+    <value>Enviar dados de entrega e executar no próximo boot</value>
   </data>
   <data name="doExecutionResError" xml:space="preserve">
     <value>Enviar dados de entrega</value>
@@ -159,6 +159,9 @@
   </data>
   <data name="introScreen" xml:space="preserve">
     <value>Introdução</value>
+  </data>
+  <data name="KEY_FINISH" xml:space="preserve">
+    <value>Pressione Enter para fechar...</value>
   </data>
   <data name="listModeGUIFormat" xml:space="preserve">
     <value>Formatação</value>
@@ -196,8 +199,20 @@
   <data name="LOGFILE_NOTEXISTS" xml:space="preserve">
     <value>Arquivo de log inexistente, criando novo arquivo</value>
   </data>
+  <data name="LOG_APPFILE_FOUND" xml:space="preserve">
+    <value>Arquivos de dependência encontrados</value>
+  </data>
+  <data name="LOG_APPFILE_NOT_FOUND" xml:space="preserve">
+    <value>Um ou mais arquivos de dependência ausentes</value>
+  </data>
   <data name="LOG_DEBUG_MODE" xml:space="preserve">
     <value>Executando em modo DEBUG</value>
+  </data>
+  <data name="LOG_DEFFILE_FOUND" xml:space="preserve">
+    <value>Arquivo de definições encontrado</value>
+  </data>
+  <data name="LOG_DEFFILE_NOT_FOUND" xml:space="preserve">
+    <value>Arquivo de definições não encontrado</value>
   </data>
   <data name="LOG_ERROR_ATTR" xml:space="preserve">
     <value>&lt;ERRO&gt;</value>
@@ -220,6 +235,9 @@
   <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
     <value>Autenticação realizada com êxito</value>
   </data>
+  <data name="LOG_RELEASE_MODE" xml:space="preserve">
+    <value>Executando em modo RELEASE</value>
+  </data>
   <data name="LOG_WARNING_ATTR" xml:space="preserve">
     <value>&lt;AVISO&gt;</value>
   </data>
@@ -237,6 +255,9 @@
   </data>
   <data name="NO_AUTH" xml:space="preserve">
     <value>Preencha suas credenciais.</value>
+  </data>
+  <data name="PARAMETER_ERROR" xml:space="preserve">
+    <value>Um ou mais parâmetros do arquivo INI estão mal formados</value>
   </data>
   <data name="pcNotRegistered" xml:space="preserve">
     <value>Patrimônio não registrado inicialmente pelo software 'Coleta de hardware e Cadastro de Patrimônio'. Primeiramente realize o cadastro e depois tente novamente.</value>

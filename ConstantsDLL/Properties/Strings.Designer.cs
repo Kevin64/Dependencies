@@ -63,9 +63,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
-        public static string AAAString1 {
+        public static string aaaPROJECTaaa {
             get {
-                return ResourceManager.GetString("AAAString1", resourceCulture);
+                return ResourceManager.GetString("aaaPROJECTaaa", resourceCulture);
             }
         }
         
@@ -187,6 +187,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Press Enter to close....
+        /// </summary>
+        public static string KEY_FINISH {
+            get {
+                return ResourceManager.GetString("KEY_FINISH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Formatting.
         /// </summary>
         public static string listModeGUIFormat {
@@ -277,11 +286,47 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Found dependency files.
+        /// </summary>
+        public static string LOG_APPFILE_FOUND {
+            get {
+                return ResourceManager.GetString("LOG_APPFILE_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a One or more missing dependency files.
+        /// </summary>
+        public static string LOG_APPFILE_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("LOG_APPFILE_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Running in DEBUG mode.
         /// </summary>
         public static string LOG_DEBUG_MODE {
             get {
                 return ResourceManager.GetString("LOG_DEBUG_MODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Definitions file found.
+        /// </summary>
+        public static string LOG_DEFFILE_FOUND {
+            get {
+                return ResourceManager.GetString("LOG_DEFFILE_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Definitions file not found.
+        /// </summary>
+        public static string LOG_DEFFILE_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("LOG_DEFFILE_NOT_FOUND", resourceCulture);
             }
         }
         
@@ -345,6 +390,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_LOGIN_SUCCESS {
             get {
                 return ResourceManager.GetString("LOG_LOGIN_SUCCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Running in RELEASE mode.
+        /// </summary>
+        public static string LOG_RELEASE_MODE {
+            get {
+                return ResourceManager.GetString("LOG_RELEASE_MODE", resourceCulture);
             }
         }
         
@@ -417,6 +471,15 @@ namespace ConstantsDLL.Properties {
         public static string notSupported {
             get {
                 return ResourceManager.GetString("notSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a One or more INI file parameters are malformed.
+        /// </summary>
+        public static string PARAMETER_ERROR {
+            get {
+                return ResourceManager.GetString("PARAMETER_ERROR", resourceCulture);
             }
         }
         
