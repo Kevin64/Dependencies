@@ -160,6 +160,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a yyyy-MM-dd.
+        /// </summary>
+        public static string dateFormat {
+            get {
+                return ResourceManager.GetString("dateFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DDR2.
         /// </summary>
         public static string ddr2 {
@@ -232,7 +241,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a bios.json.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a model.json.
         /// </summary>
         public static string fileBios {
             get {
@@ -259,7 +268,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a login.json.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a users.json.
         /// </summary>
         public static string fileLogin {
             get {
@@ -268,7 +277,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a pc.json.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a asset.json.
         /// </summary>
         public static string filePC {
             get {
@@ -277,7 +286,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a bios-checksum.txt.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a model-checksum.txt.
         /// </summary>
         public static string fileShaBios {
             get {
@@ -295,7 +304,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a login-checksum.txt.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a users-checksum.txt.
         /// </summary>
         public static string fileShaLogin {
             get {
@@ -304,7 +313,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a pc-checksum.txt.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a asset-checksum.txt.
         /// </summary>
         public static string fileShaPC {
             get {
@@ -358,7 +367,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a receiveFormattingData.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalFormattingData.
         /// </summary>
         public static string formatURL {
             get {
@@ -1159,7 +1168,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a IDE/RAID.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a IDE/Legacy.
         /// </summary>
         public static string ide {
             get {
@@ -1600,7 +1609,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a receiveMaintenanceData.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalMaintenanceData.
         /// </summary>
         public static string maintenanceURL {
             get {
@@ -1677,6 +1686,294 @@ namespace ConstantsDLL.Properties {
         public static string pcPath {
             get {
                 return ResourceManager.GetString("pcPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;adRegistered=.
+        /// </summary>
+        public static string phpAdRegistered {
+            get {
+                return ResourceManager.GetString("phpAdRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;agent=.
+        /// </summary>
+        public static string phpAgent {
+            get {
+                return ResourceManager.GetString("phpAgent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ?assetNumber=.
+        /// </summary>
+        public static string phpAssetNumber {
+            get {
+                return ResourceManager.GetString("phpAssetNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;batteryChange=.
+        /// </summary>
+        public static string phpBatteryChange {
+            get {
+                return ResourceManager.GetString("phpBatteryChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;brand=.
+        /// </summary>
+        public static string phpBrand {
+            get {
+                return ResourceManager.GetString("phpBrand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;building=.
+        /// </summary>
+        public static string phpBuilding {
+            get {
+                return ResourceManager.GetString("phpBuilding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;fwType=.
+        /// </summary>
+        public static string phpFwType {
+            get {
+                return ResourceManager.GetString("phpFwType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;fwVersion=.
+        /// </summary>
+        public static string phpFwVersion {
+            get {
+                return ResourceManager.GetString("phpFwVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;hostname=.
+        /// </summary>
+        public static string phpHostname {
+            get {
+                return ResourceManager.GetString("phpHostname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;hwType=.
+        /// </summary>
+        public static string phpHwType {
+            get {
+                return ResourceManager.GetString("phpHwType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;inUse=.
+        /// </summary>
+        public static string phpInUse {
+            get {
+                return ResourceManager.GetString("phpInUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ipAddress=.
+        /// </summary>
+        public static string phpIpAddress {
+            get {
+                return ResourceManager.GetString("phpIpAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;macAddress=.
+        /// </summary>
+        public static string phpMacAddress {
+            get {
+                return ResourceManager.GetString("phpMacAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;mediaOperationMode=.
+        /// </summary>
+        public static string phpMediaOperationMode {
+            get {
+                return ResourceManager.GetString("phpMediaOperationMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;model=.
+        /// </summary>
+        public static string phpModel {
+            get {
+                return ResourceManager.GetString("phpModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;operatingSystem=.
+        /// </summary>
+        public static string phpOperatingSystem {
+            get {
+                return ResourceManager.GetString("phpOperatingSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;previousServiceDates=.
+        /// </summary>
+        public static string phpPreviousServiceDates {
+            get {
+                return ResourceManager.GetString("phpPreviousServiceDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;processor=.
+        /// </summary>
+        public static string phpProcessor {
+            get {
+                return ResourceManager.GetString("phpProcessor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ram=.
+        /// </summary>
+        public static string phpRam {
+            get {
+                return ResourceManager.GetString("phpRam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;room=.
+        /// </summary>
+        public static string phpRoom {
+            get {
+                return ResourceManager.GetString("phpRoom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;sealNumber=.
+        /// </summary>
+        public static string phpSealNumber {
+            get {
+                return ResourceManager.GetString("phpSealNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;secureBoot=.
+        /// </summary>
+        public static string phpSecureBoot {
+            get {
+                return ResourceManager.GetString("phpSecureBoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;serialNumber=.
+        /// </summary>
+        public static string phpSerialNumber {
+            get {
+                return ResourceManager.GetString("phpSerialNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;serviceDate=.
+        /// </summary>
+        public static string phpServiceDate {
+            get {
+                return ResourceManager.GetString("phpServiceDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;standard=.
+        /// </summary>
+        public static string phpStandard {
+            get {
+                return ResourceManager.GetString("phpStandard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;storageSize=.
+        /// </summary>
+        public static string phpStorageSize {
+            get {
+                return ResourceManager.GetString("phpStorageSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;storageType=.
+        /// </summary>
+        public static string phpStorageType {
+            get {
+                return ResourceManager.GetString("phpStorageType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;tag=.
+        /// </summary>
+        public static string phpTag {
+            get {
+                return ResourceManager.GetString("phpTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ticketNumber=.
+        /// </summary>
+        public static string phpTicketNumber {
+            get {
+                return ResourceManager.GetString("phpTicketNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;tpmVersion=.
+        /// </summary>
+        public static string phpTpmVersion {
+            get {
+                return ResourceManager.GetString("phpTpmVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;videoCard=.
+        /// </summary>
+        public static string phpVideoCard {
+            get {
+                return ResourceManager.GetString("phpVideoCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;virtualizationTechnology=.
+        /// </summary>
+        public static string phpVirtualizationTechnology {
+            get {
+                return ResourceManager.GetString("phpVirtualizationTechnology", resourceCulture);
             }
         }
         

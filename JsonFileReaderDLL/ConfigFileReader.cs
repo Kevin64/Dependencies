@@ -20,7 +20,7 @@ namespace JsonFileReaderDLL
         public string ServerIP { get; set; }
         public string ServerPort { get; set; }
         public string[] Buildings { get; set; }
-        public string[] HWTypes { get; set; }
+        public string[] HardwareTypes { get; set; }
         public string ThemeUI { get; set; }
     }
 
@@ -52,18 +52,18 @@ namespace JsonFileReaderDLL
         private static StreamReader fileC;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> CheckHostMT(string ip, string port)
+        public static Task<bool> CheckHostMT(string ipAddress, string port)
         {
             return Task.Run(() =>
             {
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyConfigData);
+                    _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyConfigData);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileConfig, ConstantsDLL.Properties.Resources.configPath);
+                    wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileConfig, ConstantsDLL.Properties.Resources.configPath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileShaConfig);
+                    sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileShaConfig);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
                     fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
@@ -78,12 +78,12 @@ namespace JsonFileReaderDLL
         }
 
         //Checks if the server is answering any requests, through a json file verification (single threaded)
-        public static bool CheckHostST(string ip, string port)
+        public static bool CheckHostST(string ipAddress, string port)
         {
             try
             {
                 wc = new WebClient();
-                wc.DownloadFile("http://" + ip + ":" + port + ConstantsDLL.Properties.Resources.fileConfigPath + ConstantsDLL.Properties.Resources.fileConfig, ConstantsDLL.Properties.Resources.configPath);
+                wc.DownloadFile("http://" + ipAddress + ":" + port + ConstantsDLL.Properties.Resources.fileConfigPath + ConstantsDLL.Properties.Resources.fileConfig, ConstantsDLL.Properties.Resources.configPath);
                 System.Threading.Thread.Sleep(300);
                 fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
                 fileC.Close();
@@ -96,11 +96,11 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
-        public static Task<List<string[]>> FetchInfoMT(string ip, string port)
+        public static Task<List<string[]>> FetchInfoMT(string ipAddress, string port)
         {
             return Task.Run(async () =>
             {
-                if (!await CheckHostMT(ip, port))
+                if (!await CheckHostMT(ipAddress, port))
                 {
                     return null;
                 }
@@ -111,7 +111,7 @@ namespace JsonFileReaderDLL
                 jsonFile = fileC.ReadToEnd();
                 CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
 
-                arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HWTypes };
+                arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HardwareTypes };
 
                 fileC.Close();
                 return arr;
@@ -119,9 +119,9 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
-        public static List<string[]> FetchInfoST(string ip, string port)
+        public static List<string[]> FetchInfoST(string ipAddress, string port)
         {
-            if (!CheckHostST(ip, port))
+            if (!CheckHostST(ipAddress, port))
             {
                 return null;
             }
@@ -132,7 +132,7 @@ namespace JsonFileReaderDLL
             jsonFile = fileC.ReadToEnd();
             CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
 
-            arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HWTypes };
+            arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HardwareTypes };
 
             fileC.Close();
             return arr;

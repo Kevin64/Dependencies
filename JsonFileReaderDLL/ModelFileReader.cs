@@ -6,35 +6,35 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-    public class BFile
+    public class MFile
     {
         public string Id { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public string Versao { get; set; }
-        public string Tipo { get; set; }
-        public string Tpm { get; set; }
-        public string MediaOp { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public string FwVersion { get; set; }
+        public string FwType { get; set; }
+        public string TpmVersion { get; set; }
+        public string MediaOperationMode { get; set; }
     }
-    public static class BIOSFileReader
+    public static class ModelFileReader
     {
         private static string jsonFile, sha256, aux;
         private static WebClient wc;
         private static StreamReader fileB;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> CheckHostMT(string ip, string port)
+        public static Task<bool> CheckHostMT(string ipAddress, string port)
         {
             return Task.Run(() =>
             {
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyBiosData);
+                    _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyBiosData);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileBios, ConstantsDLL.Properties.Resources.biosPath);
+                    wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileBios, ConstantsDLL.Properties.Resources.biosPath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaBios);
+                    sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaBios);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
                     fileB = new StreamReader(ConstantsDLL.Properties.Resources.biosPath);
@@ -50,16 +50,16 @@ namespace JsonFileReaderDLL
         }
 
         //Checks if the server is answering any requests, through a json file verification (single threaded)
-        public static bool CheckHostST(string ip, string port)
+        public static bool CheckHostST(string ipAddress, string port)
         {
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyBiosData);
+                _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyBiosData);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileBios, ConstantsDLL.Properties.Resources.biosPath);
+                wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileBios, ConstantsDLL.Properties.Resources.biosPath);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaBios);
+                sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaBios);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
                 fileB = new StreamReader(ConstantsDLL.Properties.Resources.biosPath);
@@ -74,11 +74,11 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses brand, model, BIOS versions, operatin mode and TPM version, returning them (creates a separate thread)
-        public static Task<string[]> FetchInfoMT(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
+        public static Task<string[]> FetchInfoMT(string brand, string model, string hwType, string tpmVersion, string mediaOperationMode, string ipAddress, string port)
         {
             return Task.Run(async () =>
             {
-                if (!await CheckHostMT(ip, port))
+                if (!await CheckHostMT(ipAddress, port))
                 {
                     return null;
                 }
@@ -89,28 +89,28 @@ namespace JsonFileReaderDLL
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = fileB.ReadToEnd();
-                    BFile[] jsonParse = JsonConvert.DeserializeObject<BFile[]>(@jsonFile);
+                    MFile[] jsonParse = JsonConvert.DeserializeObject<MFile[]>(@jsonFile);
 
                     for (int i = 0; i < jsonParse.Length; i++)
                     {
-                        if (mod.Contains(jsonParse[i].Modelo) && brd.Contains(jsonParse[i].Marca))
+                        if (model.Contains(jsonParse[i].Model) && brand.Contains(jsonParse[i].Brand))
                         {
-                            if (!type.Equals(jsonParse[i].Tipo))
+                            if (!hwType.Equals(jsonParse[i].FwType))
                             {
                                 typeRet = "false";
                             }
 
-                            if (!tpm.Equals(jsonParse[i].Tpm))
+                            if (!tpmVersion.Equals(jsonParse[i].TpmVersion))
                             {
                                 tpmRet = "false";
                             }
 
-                            if (!mediaOp.Equals(jsonParse[i].MediaOp))
+                            if (!mediaOperationMode.Equals(jsonParse[i].MediaOperationMode))
                             {
                                 mediaOpRet = "false";
                             }
 
-                            arr = new string[] { jsonParse[i].Versao, typeRet, tpmRet, mediaOpRet };
+                            arr = new string[] { jsonParse[i].FwVersion, typeRet, tpmRet, mediaOpRet };
                             fileB.Close();
                             return arr;
                         }
@@ -123,9 +123,9 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses brand, model, BIOS versions, operatin mode and TPM version, returning them (single threaded)
-        public static string[] FetchInfoST(string brd, string mod, string type, string tpm, string mediaOp, string ip, string port)
+        public static string[] FetchInfoST(string brand, string model, string hwType, string tpmVersion, string mediaOperationMode, string ipAddress, string port)
         {
-            if (!CheckHostST(ip, port))
+            if (!CheckHostST(ipAddress, port))
             {
                 return null;
             }
@@ -136,28 +136,28 @@ namespace JsonFileReaderDLL
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileB.ReadToEnd();
-                BFile[] jsonParse = JsonConvert.DeserializeObject<BFile[]>(@jsonFile);
+                MFile[] jsonParse = JsonConvert.DeserializeObject<MFile[]>(@jsonFile);
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (mod.Contains(jsonParse[i].Modelo) && brd.Contains(jsonParse[i].Marca))
+                    if (model.Contains(jsonParse[i].Model) && brand.Contains(jsonParse[i].Brand))
                     {
-                        if (!type.Equals(jsonParse[i].Tipo))
+                        if (!hwType.Equals(jsonParse[i].FwType))
                         {
                             typeRet = "false";
                         }
 
-                        if (!tpm.Equals(jsonParse[i].Tpm))
+                        if (!tpmVersion.Equals(jsonParse[i].TpmVersion))
                         {
                             tpmRet = "false";
                         }
 
-                        if (!mediaOp.Equals(jsonParse[i].MediaOp))
+                        if (!mediaOperationMode.Equals(jsonParse[i].MediaOperationMode))
                         {
                             mediaOpRet = "false";
                         }
 
-                        arr = new string[] { jsonParse[i].Versao, typeRet, tpmRet, mediaOpRet };
+                        arr = new string[] { jsonParse[i].FwVersion, typeRet, tpmRet, mediaOpRet };
                         fileB.Close();
                         return arr;
                     }

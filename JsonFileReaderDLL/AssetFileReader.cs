@@ -6,39 +6,39 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-    public class PcFile
+    public class AFile
     {
-        public string Patrimonio { get; set; }
-        public string Predio { get; set; }
-        public string Sala { get; set; }
-        public string Padrao { get; set; }
-        public string Ad { get; set; }
-        public string EmUso { get; set; }
-        public string Lacre { get; set; }
-        public string Etiqueta { get; set; }
-        public string Tipo { get; set; }
-        public string Descarte { get; set; }
-        public string DataFormatacao { get; set; }
+        public string AssetNumber { get; set; }
+        public string Building { get; set; }
+        public string Room { get; set; }
+        public string Standard { get; set; }
+        public string AdRegistered { get; set; }
+        public string InUse { get; set; }
+        public string SealNumber { get; set; }
+        public string Tag { get; set; }
+        public string HwType { get; set; }
+        public string Discarded { get; set; }
+        public string ServiceDate { get; set; }
     }
-    public static class PCFileReader
+    public static class AssetFileReader
     {
         private static string jsonFile, sha256, aux;
         private static WebClient wc;
         private static StreamReader filePC;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        public static Task<bool> CheckHostMT(string ip, string port, string patr)
+        public static Task<bool> CheckHostMT(string ipAddress, string port, string assetNumber)
         {
             return Task.Run(() =>
             {
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + "?patrimonio=" + patr);
+                    _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + "?patrimonio=" + assetNumber);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, ConstantsDLL.Properties.Resources.pcPath);
+                    wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, ConstantsDLL.Properties.Resources.pcPath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaPC);
+                    sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaPC);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
                     filePC = new StreamReader(ConstantsDLL.Properties.Resources.pcPath);
@@ -54,16 +54,16 @@ namespace JsonFileReaderDLL
         }
 
         //Checks if the server is answering any requests, through a json file verification (single threaded)
-        public static bool CheckHostST(string ip, string port, string patr)
+        public static bool CheckHostST(string ipAddress, string port, string assetNumber)
         {
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + "?patrimonio=" + patr);
+                _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + "?patrimonio=" + assetNumber);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, ConstantsDLL.Properties.Resources.pcPath);
+                wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, ConstantsDLL.Properties.Resources.pcPath);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString("http://" + ip + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaPC);
+                sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaPC);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
                 filePC = new StreamReader(ConstantsDLL.Properties.Resources.pcPath);
@@ -78,11 +78,11 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
-        public static Task<string[]> FetchInfoMT(string patrimonio, string ip, string port)
+        public static Task<string[]> FetchInfoMT(string assetNumber, string ipAddress, string port)
         {
             return Task.Run(async () =>
             {
-                if (!await CheckHostMT(ip, port, patrimonio))
+                if (!await CheckHostMT(ipAddress, port, assetNumber))
                 {
                     return null;
                 }
@@ -92,13 +92,13 @@ namespace JsonFileReaderDLL
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = filePC.ReadToEnd();
-                    PcFile[] jsonParse = JsonConvert.DeserializeObject<PcFile[]>(@jsonFile);
+                    AFile[] jsonParse = JsonConvert.DeserializeObject<AFile[]>(@jsonFile);
 
                     for (int i = 0; i < jsonParse.Length; i++)
                     {
-                        if (patrimonio.Equals(jsonParse[i].Patrimonio))
+                        if (assetNumber.Equals(jsonParse[i].AssetNumber))
                         {
-                            arr = new string[] { jsonParse[i].Patrimonio, jsonParse[i].Predio, jsonParse[i].Sala, jsonParse[i].Padrao, jsonParse[i].Ad, jsonParse[i].EmUso, jsonParse[i].Lacre, jsonParse[i].Etiqueta, jsonParse[i].Tipo, jsonParse[i].Descarte, jsonParse[i].DataFormatacao };
+                            arr = new string[] { jsonParse[i].AssetNumber, jsonParse[i].Building, jsonParse[i].Room, jsonParse[i].Standard, jsonParse[i].AdRegistered, jsonParse[i].InUse, jsonParse[i].SealNumber, jsonParse[i].Tag, jsonParse[i].HwType, jsonParse[i].Discarded, jsonParse[i].ServiceDate };
                             filePC.Close();
                             return arr;
                         }
@@ -111,9 +111,9 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
-        public static string[] FetchInfoST(string patrimonio, string ip, string port)
+        public static string[] FetchInfoST(string assetNumber, string ipAddress, string port)
         {
-            if (!CheckHostST(ip, port, patrimonio))
+            if (!CheckHostST(ipAddress, port, assetNumber))
             {
                 return null;
             }
@@ -123,13 +123,13 @@ namespace JsonFileReaderDLL
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = filePC.ReadToEnd();
-                PcFile[] jsonParse = JsonConvert.DeserializeObject<PcFile[]>(@jsonFile);
+                AFile[] jsonParse = JsonConvert.DeserializeObject<AFile[]>(@jsonFile);
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (patrimonio.Equals(jsonParse[i].Patrimonio))
+                    if (assetNumber.Equals(jsonParse[i].AssetNumber))
                     {
-                        arr = new string[] { jsonParse[i].Patrimonio, jsonParse[i].Predio, jsonParse[i].Sala, jsonParse[i].Padrao, jsonParse[i].Ad, jsonParse[i].EmUso, jsonParse[i].Lacre, jsonParse[i].Etiqueta, jsonParse[i].Tipo, jsonParse[i].Descarte, jsonParse[i].DataFormatacao };
+                        arr = new string[] { jsonParse[i].AssetNumber, jsonParse[i].Building, jsonParse[i].Room, jsonParse[i].Standard, jsonParse[i].AdRegistered, jsonParse[i].InUse, jsonParse[i].SealNumber, jsonParse[i].Tag, jsonParse[i].HwType, jsonParse[i].Discarded, jsonParse[i].ServiceDate };
                         filePC.Close();
                         return arr;
                     }

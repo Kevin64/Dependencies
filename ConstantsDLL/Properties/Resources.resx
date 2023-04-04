@@ -151,6 +151,9 @@
   <data name="DASH" xml:space="preserve">
     <value>-</value>
   </data>
+  <data name="dateFormat" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
   <data name="ddr2" xml:space="preserve">
     <value>DDR2</value>
   </data>
@@ -176,7 +179,7 @@
     <value>DidItRunAlready</value>
   </data>
   <data name="fileBios" xml:space="preserve">
-    <value>bios.json</value>
+    <value>model.json</value>
   </data>
   <data name="fileConfig" xml:space="preserve">
     <value>config.json</value>
@@ -185,22 +188,22 @@
     <value>/etc/</value>
   </data>
   <data name="fileLogin" xml:space="preserve">
-    <value>login.json</value>
+    <value>users.json</value>
   </data>
   <data name="filePC" xml:space="preserve">
-    <value>pc.json</value>
+    <value>asset.json</value>
   </data>
   <data name="fileShaBios" xml:space="preserve">
-    <value>bios-checksum.txt</value>
+    <value>model-checksum.txt</value>
   </data>
   <data name="fileShaConfig" xml:space="preserve">
     <value>config-checksum.txt</value>
   </data>
   <data name="fileShaLogin" xml:space="preserve">
-    <value>login-checksum.txt</value>
+    <value>users-checksum.txt</value>
   </data>
   <data name="fileShaPC" xml:space="preserve">
-    <value>pc-checksum.txt</value>
+    <value>asset-checksum.txt</value>
   </data>
   <data name="FOP" xml:space="preserve">
     <value>FOP</value>
@@ -218,7 +221,7 @@
     <value>C:\\Program Files (x86)\\FOP\\Rever tutorial de uso do computador.lnk</value>
   </data>
   <data name="formatURL" xml:space="preserve">
-    <value>receiveFormattingData</value>
+    <value>getExternalFormattingData</value>
   </data>
   <data name="frequency" xml:space="preserve">
     <value>MHz</value>
@@ -485,7 +488,7 @@
     <value>Resources\\icons\\icon_windows_light.png</value>
   </data>
   <data name="ide" xml:space="preserve">
-    <value>IDE/RAID</value>
+    <value>IDE/Legacy</value>
   </data>
   <data name="imgExt" xml:space="preserve">
     <value>.png</value>
@@ -626,7 +629,7 @@
     <value>1</value>
   </data>
   <data name="maintenanceURL" xml:space="preserve">
-    <value>receiveMaintenanceData</value>
+    <value>getExternalMaintenanceData</value>
   </data>
   <data name="main_banner_dark_path" xml:space="preserve">
     <value>Resources\\header\\main_banner_dark.png</value>
@@ -657,6 +660,102 @@
   </data>
   <data name="pcPath" xml:space="preserve">
     <value>System.IO.Path.GetTempPath() + Resources.filePC</value>
+  </data>
+  <data name="phpAdRegistered" xml:space="preserve">
+    <value>&amp;adRegistered=</value>
+  </data>
+  <data name="phpAgent" xml:space="preserve">
+    <value>&amp;agent=</value>
+  </data>
+  <data name="phpAssetNumber" xml:space="preserve">
+    <value>?assetNumber=</value>
+  </data>
+  <data name="phpBatteryChange" xml:space="preserve">
+    <value>&amp;batteryChange=</value>
+  </data>
+  <data name="phpBrand" xml:space="preserve">
+    <value>&amp;brand=</value>
+  </data>
+  <data name="phpBuilding" xml:space="preserve">
+    <value>&amp;building=</value>
+  </data>
+  <data name="phpFwType" xml:space="preserve">
+    <value>&amp;fwType=</value>
+  </data>
+  <data name="phpFwVersion" xml:space="preserve">
+    <value>&amp;fwVersion=</value>
+  </data>
+  <data name="phpHostname" xml:space="preserve">
+    <value>&amp;hostname=</value>
+  </data>
+  <data name="phpHwType" xml:space="preserve">
+    <value>&amp;hwType=</value>
+  </data>
+  <data name="phpInUse" xml:space="preserve">
+    <value>&amp;inUse=</value>
+  </data>
+  <data name="phpIpAddress" xml:space="preserve">
+    <value>&amp;ipAddress=</value>
+  </data>
+  <data name="phpMacAddress" xml:space="preserve">
+    <value>&amp;macAddress=</value>
+  </data>
+  <data name="phpMediaOperationMode" xml:space="preserve">
+    <value>&amp;mediaOperationMode=</value>
+  </data>
+  <data name="phpModel" xml:space="preserve">
+    <value>&amp;model=</value>
+  </data>
+  <data name="phpOperatingSystem" xml:space="preserve">
+    <value>&amp;operatingSystem=</value>
+  </data>
+  <data name="phpPreviousServiceDates" xml:space="preserve">
+    <value>&amp;previousServiceDates=</value>
+  </data>
+  <data name="phpProcessor" xml:space="preserve">
+    <value>&amp;processor=</value>
+  </data>
+  <data name="phpRam" xml:space="preserve">
+    <value>&amp;ram=</value>
+  </data>
+  <data name="phpRoom" xml:space="preserve">
+    <value>&amp;room=</value>
+  </data>
+  <data name="phpSealNumber" xml:space="preserve">
+    <value>&amp;sealNumber=</value>
+  </data>
+  <data name="phpSecureBoot" xml:space="preserve">
+    <value>&amp;secureBoot=</value>
+  </data>
+  <data name="phpSerialNumber" xml:space="preserve">
+    <value>&amp;serialNumber=</value>
+  </data>
+  <data name="phpServiceDate" xml:space="preserve">
+    <value>&amp;serviceDate=</value>
+  </data>
+  <data name="phpStandard" xml:space="preserve">
+    <value>&amp;standard=</value>
+  </data>
+  <data name="phpStorageSize" xml:space="preserve">
+    <value>&amp;storageSize=</value>
+  </data>
+  <data name="phpStorageType" xml:space="preserve">
+    <value>&amp;storageType=</value>
+  </data>
+  <data name="phpTag" xml:space="preserve">
+    <value>&amp;tag=</value>
+  </data>
+  <data name="phpTicketNumber" xml:space="preserve">
+    <value>&amp;ticketNumber=</value>
+  </data>
+  <data name="phpTpmVersion" xml:space="preserve">
+    <value>&amp;tpmVersion=</value>
+  </data>
+  <data name="phpVideoCard" xml:space="preserve">
+    <value>&amp;videoCard=</value>
+  </data>
+  <data name="phpVirtualizationTechnology" xml:space="preserve">
+    <value>&amp;virtualizationTechnology=</value>
   </data>
   <data name="predFail" xml:space="preserve">
     <value>Pred Fail</value>

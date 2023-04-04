@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BIOSFileReader.cs" />
+    <Compile Include="ModelFileReader.cs" />
     <Compile Include="ConfigFileReader.cs" />
-    <Compile Include="LoginFileReader.cs" />
+    <Compile Include="CredentialsFileReader.cs" />
     <Compile Include="MiscMethods.cs" />
-    <Compile Include="PCFileReader.cs" />
+    <Compile Include="AssetFileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
