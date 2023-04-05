@@ -10,39 +10,17 @@ namespace JsonFileReaderDLL
     public class CFile
     {
         public Definitions Definitions { get; set; }
-        public OrgData Orgdata { get; set; }
-        public DbSettings Dbsettings { get; set; }
     }
 
     public class Definitions
     {
-        public string LogLocation { get; set; }
-        public string ServerIP { get; set; }
-        public string ServerPort { get; set; }
         public string[] Buildings { get; set; }
         public string[] HardwareTypes { get; set; }
-        public string ThemeUI { get; set; }
-    }
-
-    public class OrgData
-    {
-        public string OrganizationFullName { get; set; }
-        public string OrganizationAcronym { get; set; }
-        public string DepartamentFullName { get; set; }
-        public string DepartamentAcronym { get; set; }
-        public string SubDepartamentFullName { get; set; }
-        public string SubDepartamentAcronym { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-    }
-
-    public class DbSettings
-    {
-        public string DbUser { get; set; }
-        public string DbPassword { get; set; }
-        public string DbName { get; set; }
-        public string DbIP { get; set; }
-        public string DbPort { get; set; }
+        public string[] FirmwareTypes { get; set; }
+        public string[] TpmTypes { get; set; }
+        public string[] MediaOperationTypes { get; set; }
+        public string[] SecureBootStates { get; set; }
+        public string[] VirtualizationTechnologyStates { get; set; }
     }
 
     public static class ConfigFileReader
@@ -111,7 +89,7 @@ namespace JsonFileReaderDLL
                 jsonFile = fileC.ReadToEnd();
                 CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
 
-                arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HardwareTypes };
+                arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HardwareTypes, jsonParse.Definitions.FirmwareTypes, jsonParse.Definitions.TpmTypes, jsonParse.Definitions.MediaOperationTypes, jsonParse.Definitions.SecureBootStates, jsonParse.Definitions.VirtualizationTechnologyStates };
 
                 fileC.Close();
                 return arr;
@@ -132,7 +110,7 @@ namespace JsonFileReaderDLL
             jsonFile = fileC.ReadToEnd();
             CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
 
-            arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HardwareTypes };
+            arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HardwareTypes, jsonParse.Definitions.FirmwareTypes, jsonParse.Definitions.TpmTypes, jsonParse.Definitions.MediaOperationTypes, jsonParse.Definitions.SecureBootStates, jsonParse.Definitions.VirtualizationTechnologyStates };
 
             fileC.Close();
             return arr;

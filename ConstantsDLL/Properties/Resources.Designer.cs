@@ -70,7 +70,16 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a AHCI.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
+        /// </summary>
+        public static string activated {
+            get {
+                return ResourceManager.GetString("activated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
         /// </summary>
         public static string ahci {
             get {
@@ -97,7 +106,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a BIOS.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
         /// </summary>
         public static string bios {
             get {
@@ -219,6 +228,15 @@ namespace ConstantsDLL.Properties {
         public static string ddr4smbios {
             get {
                 return ResourceManager.GetString("ddr4smbios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string deactivated {
+            get {
+                return ResourceManager.GetString("deactivated", resourceCulture);
             }
         }
         
@@ -381,6 +399,24 @@ namespace ConstantsDLL.Properties {
         public static string frequency {
             get {
                 return ResourceManager.GetString("frequency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a BIOS.
+        /// </summary>
+        public static string fwTypeBIOS {
+            get {
+                return ResourceManager.GetString("fwTypeBIOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a UEFI.
+        /// </summary>
+        public static string fwTypeUEFI {
+            get {
+                return ResourceManager.GetString("fwTypeUEFI", resourceCulture);
             }
         }
         
@@ -1168,7 +1204,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a IDE/Legacy.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
         /// </summary>
         public static string ide {
             get {
@@ -1636,6 +1672,33 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a AHCI.
+        /// </summary>
+        public static string mediaOperationAhci {
+            get {
+                return ResourceManager.GetString("mediaOperationAhci", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a IDE/Legacy.
+        /// </summary>
+        public static string mediaOperationIde {
+            get {
+                return ResourceManager.GetString("mediaOperationIde", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a NVMe.
+        /// </summary>
+        public static string mediaOperationNvme {
+            get {
+                return ResourceManager.GetString("mediaOperationNvme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a No.
         /// </summary>
         public static string NO {
@@ -1663,7 +1726,25 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a NVMe.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
+        /// </summary>
+        public static string noTpm {
+            get {
+                return ResourceManager.GetString("noTpm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
+        /// </summary>
+        public static string notSupported {
+            get {
+                return ResourceManager.GetString("notSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
         /// </summary>
         public static string nvme {
             get {
@@ -2509,7 +2590,43 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a UEFI.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string tpm1_2 {
+            get {
+                return ResourceManager.GetString("tpm1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.2.
+        /// </summary>
+        public static string tpm1_2Name {
+            get {
+                return ResourceManager.GetString("tpm1_2Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
+        /// </summary>
+        public static string tpm2_0 {
+            get {
+                return ResourceManager.GetString("tpm2_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.0.
+        /// </summary>
+        public static string tpm2_0Name {
+            get {
+                return ResourceManager.GetString("tpm2_0Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
         /// </summary>
         public static string uefi {
             get {

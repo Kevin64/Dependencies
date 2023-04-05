@@ -121,8 +121,11 @@
     <value />
     <comment>ConstantsDLL.Resources</comment>
   </data>
+  <data name="activated" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="ahci" xml:space="preserve">
-    <value>AHCI</value>
+    <value>1</value>
   </data>
   <data name="arch32" xml:space="preserve">
     <value>32</value>
@@ -131,7 +134,7 @@
     <value>64</value>
   </data>
   <data name="bios" xml:space="preserve">
-    <value>BIOS</value>
+    <value>0</value>
   </data>
   <data name="biosPath" xml:space="preserve">
     <value>System.IO.Path.GetTempPath() + Resources.fileBios</value>
@@ -171,6 +174,9 @@
   </data>
   <data name="ddr4smbios" xml:space="preserve">
     <value>26</value>
+  </data>
+  <data name="deactivated" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="defFile" xml:space="preserve">
     <value>definitions.ini</value>
@@ -225,6 +231,12 @@
   </data>
   <data name="frequency" xml:space="preserve">
     <value>MHz</value>
+  </data>
+  <data name="fwTypeBIOS" xml:space="preserve">
+    <value>BIOS</value>
+  </data>
+  <data name="fwTypeUEFI" xml:space="preserve">
+    <value>UEFI</value>
   </data>
   <data name="gb" xml:space="preserve">
     <value>GB</value>
@@ -488,7 +500,7 @@
     <value>Resources\\icons\\icon_windows_light.png</value>
   </data>
   <data name="ide" xml:space="preserve">
-    <value>IDE/Legacy</value>
+    <value>0</value>
   </data>
   <data name="imgExt" xml:space="preserve">
     <value>.png</value>
@@ -643,6 +655,15 @@
   <data name="mb" xml:space="preserve">
     <value>MB</value>
   </data>
+  <data name="mediaOperationAhci" xml:space="preserve">
+    <value>AHCI</value>
+  </data>
+  <data name="mediaOperationIde" xml:space="preserve">
+    <value>IDE/Legacy</value>
+  </data>
+  <data name="mediaOperationNvme" xml:space="preserve">
+    <value>NVMe</value>
+  </data>
   <data name="NO" xml:space="preserve">
     <value>No</value>
   </data>
@@ -652,8 +673,14 @@
   <data name="nonSecBootGPU2" xml:space="preserve">
     <value>430</value>
   </data>
+  <data name="noTpm" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="notSupported" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="nvme" xml:space="preserve">
-    <value>NVMe</value>
+    <value>2</value>
   </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
@@ -934,8 +961,20 @@
   <data name="today" xml:space="preserve">
     <value>today</value>
   </data>
+  <data name="tpm1_2" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpm1_2Name" xml:space="preserve">
+    <value>1.2</value>
+  </data>
+  <data name="tpm2_0" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpm2_0Name" xml:space="preserve">
+    <value>2.0</value>
+  </data>
   <data name="uefi" xml:space="preserve">
-    <value>UEFI</value>
+    <value>1</value>
   </data>
   <data name="webview2file" xml:space="preserve">
     <value>webview2installer.exe</value>

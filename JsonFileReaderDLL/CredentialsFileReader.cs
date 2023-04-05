@@ -92,7 +92,7 @@ namespace JsonFileReaderDLL
                     {
                         if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(ConstantsDLL.Properties.Resources.limitedUserType) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
                         {
-                            arr = new string[] { "true", jsonParse[i].Username };
+                            arr = new string[] { jsonParse[i].Id, jsonParse[i].Username };
                             fileL.Close();
                             return arr;
                         }
@@ -123,7 +123,7 @@ namespace JsonFileReaderDLL
                 {
                     if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(ConstantsDLL.Properties.Resources.limitedUserType) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
                     {
-                        arr = new string[] { "true", jsonParse[i].Username };
+                        arr = new string[] { jsonParse[i].Id, jsonParse[i].Username };
                         fileL.Close();
                         return arr;
                     }

@@ -1,5 +1,4 @@
-﻿using ConstantsDLL;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -750,14 +749,9 @@ namespace HardwareInfoDLL
                     switch (vs.Major)
                     {
                         case 6:
-                            if (vs.Minor == 1)
-                            {
-                                operatingSystem = ConstantsDLL.Properties.Resources.windows7;
-                            }
-                            else
-                            {
-                                operatingSystem = vs.Minor == 2 ? ConstantsDLL.Properties.Resources.windows8 : ConstantsDLL.Properties.Resources.windows8_1;
-                            }
+                            operatingSystem = vs.Minor == 1
+                                ? ConstantsDLL.Properties.Resources.windows7
+                                : vs.Minor == 2 ? ConstantsDLL.Properties.Resources.windows8 : ConstantsDLL.Properties.Resources.windows8_1;
 
                             break;
                         case 10:
@@ -787,16 +781,11 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows10))
-                    {
-                        return Convert.ToInt32(releaseId) <= 2004
+                    return GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows10)
+                        ? Convert.ToInt32(releaseId) <= 2004
                             ? (((string)queryObj["Caption"]).Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
-                            : (((string)queryObj["Caption"]).Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
-                    }
-                    else
-                    {
-                        return (((string)queryObj["Caption"]).Trim() + " " + (string)queryObj["CSDVersion"] + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
-                    }
+                            : (((string)queryObj["Caption"]).Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
+                        : (((string)queryObj["Caption"]).Trim() + " " + (string)queryObj["CSDVersion"] + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
                 }
                 return ConstantsDLL.Properties.Strings.unknown;
             }
@@ -943,14 +932,14 @@ namespace HardwareInfoDLL
 
                 foreach (PSObject queryObj in PSOutput)
                 {
-                    return ConstantsDLL.Properties.Strings.activated;
+                    return ConstantsDLL.Properties.Resources.activated;
                 }
 
-                return ConstantsDLL.Properties.Strings.deactivated;
+                return ConstantsDLL.Properties.Resources.deactivated;
             }
             catch
             {
-                return ConstantsDLL.Properties.Strings.notSupported;
+                return ConstantsDLL.Properties.Resources.notSupported;
             }
         }
 
@@ -960,11 +949,11 @@ namespace HardwareInfoDLL
             try
             {
                 string secBoot = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot\State", "UEFISecureBootEnabled", 0).ToString();
-                return secBoot.Equals("0") ? ConstantsDLL.Properties.Strings.deactivated : ConstantsDLL.Properties.Strings.activated;
+                return secBoot.Equals("0") ? ConstantsDLL.Properties.Resources.deactivated : ConstantsDLL.Properties.Resources.activated;
             }
             catch
             {
-                return ConstantsDLL.Properties.Strings.notSupported;
+                return ConstantsDLL.Properties.Resources.notSupported;
             }
         }
 
@@ -997,14 +986,9 @@ namespace HardwareInfoDLL
                     }
                 }
 
-                if (flag == 2)
-                {
-                    return ConstantsDLL.Properties.Strings.activated;
-                }
-                else
-                {
-                    return flag == 1 ? ConstantsDLL.Properties.Strings.deactivated : ConstantsDLL.Properties.Strings.notSupported;
-                }
+                return flag == 2
+                    ? ConstantsDLL.Properties.Resources.activated
+                    : flag == 1 ? ConstantsDLL.Properties.Resources.deactivated : ConstantsDLL.Properties.Resources.notSupported;
             }
             catch (Exception e)
             {
@@ -1071,8 +1055,6 @@ namespace HardwareInfoDLL
         //Fetches the TPM version
         public static string GetTPMStatus()
         {
-            string isActivated;
-            string isEnabled;
             string specVersion = string.Empty;
             ManagementScope scope = new ManagementScope(@"\\.\root\cimv2\Security\MicrosoftTPM");
             ObjectQuery query = new ObjectQuery("select * from Win32_Tpm");
@@ -1082,12 +1064,19 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    isActivated = queryObj.Properties["IsActivated_InitialValue"].Value.ToString();
-                    isEnabled = queryObj.Properties["IsEnabled_InitialValue"].Value.ToString();
                     specVersion = queryObj.Properties["SpecVersion"].Value.ToString();
                 }
-                specVersion = specVersion != string.Empty ? specVersion.Substring(0, 3) : ConstantsDLL.Properties.Strings.notExistant;
-                return specVersion;
+
+                if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm1_2Name))
+                {
+                    return ConstantsDLL.Properties.Resources.tpm1_2;
+                }
+                else
+                {
+                    return specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm2_0Name)
+                        ? ConstantsDLL.Properties.Resources.tpm2_0
+                        : ConstantsDLL.Properties.Resources.noTpm;
+                }
             }
             catch (Exception e)
             {

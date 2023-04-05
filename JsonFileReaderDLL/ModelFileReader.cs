@@ -74,7 +74,7 @@ namespace JsonFileReaderDLL
         }
 
         //Reads a json file retrieved from the server and parses brand, model, BIOS versions, operatin mode and TPM version, returning them (creates a separate thread)
-        public static Task<string[]> FetchInfoMT(string brand, string model, string hwType, string tpmVersion, string mediaOperationMode, string ipAddress, string port)
+        public static Task<string[]> FetchInfoMT(string brand, string model, string fwType, string tpmVersion, string mediaOperationMode, string ipAddress, string port)
         {
             return Task.Run(async () =>
             {
@@ -95,7 +95,7 @@ namespace JsonFileReaderDLL
                     {
                         if (model.Contains(jsonParse[i].Model) && brand.Contains(jsonParse[i].Brand))
                         {
-                            if (!hwType.Equals(jsonParse[i].FwType))
+                            if (!fwType.Equals(jsonParse[i].FwType))
                             {
                                 typeRet = "false";
                             }
