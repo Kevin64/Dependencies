@@ -484,14 +484,13 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return queryObj.GetPropertyValue("SerialNumber").ToString();
+                    return queryObj.GetPropertyValue("PartNumber").ToString();
                 }
-
                 return ConstantsDLL.Properties.Strings.unknown;
             }
-            catch (Exception e)
+            catch
             {
-                return e.Message;
+                return ConstantsDLL.Properties.Strings.unknown;
             }
         }
 
@@ -1056,6 +1055,7 @@ namespace HardwareInfoDLL
         public static string GetTPMStatus()
         {
             string specVersion = string.Empty;
+            string str = string.Empty;
             ManagementScope scope = new ManagementScope(@"\\.\root\cimv2\Security\MicrosoftTPM");
             ObjectQuery query = new ObjectQuery("select * from Win32_Tpm");
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
@@ -1067,15 +1067,21 @@ namespace HardwareInfoDLL
                     specVersion = queryObj.Properties["SpecVersion"].Value.ToString();
                 }
 
-                if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm1_2Name))
+                if (specVersion != string.Empty)
                 {
-                    return ConstantsDLL.Properties.Resources.tpm1_2;
+                    if(specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm1_2Name))
+                    {
+                        str = ConstantsDLL.Properties.Resources.tpm1_2;
+                    }
+                    else if(specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm2_0Name))
+                    {
+                        str = ConstantsDLL.Properties.Resources.tpm2_0;
+                    }
+                    return str;
                 }
                 else
                 {
-                    return specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm2_0Name)
-                        ? ConstantsDLL.Properties.Resources.tpm2_0
-                        : ConstantsDLL.Properties.Resources.noTpm;
+                    return ConstantsDLL.Properties.Resources.noTpm;
                 }
             }
             catch (Exception e)
