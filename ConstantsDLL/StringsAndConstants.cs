@@ -44,6 +44,7 @@ namespace ConstantsDLL
         public static readonly List<string> listTagGUI = new List<string>() { Strings.listYes0, Strings.listNo0 };
         public static readonly List<string> listBatteryCLI = new List<string>() { Strings.listYes1, Strings.listYes2, Strings.listNo1, Strings.listNo2 };
         public static readonly List<string> listBatteryGUI = new List<string>() { Strings.listYes0, Strings.listNo0 };
+        public static readonly List<string> listStates = new List<string>() { Strings.notSupported, Strings.deactivated, Strings.activated };
         public static readonly List<string> listThemeGUI = new List<string>() { "Auto", "Light", "Dark" };
 
         //UI colors

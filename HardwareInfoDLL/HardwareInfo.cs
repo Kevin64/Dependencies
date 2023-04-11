@@ -484,7 +484,7 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return queryObj.GetPropertyValue("PartNumber").ToString();
+                    return queryObj.GetPropertyValue("SerialNumber").ToString();
                 }
                 return ConstantsDLL.Properties.Strings.unknown;
             }
@@ -1069,11 +1069,11 @@ namespace HardwareInfoDLL
 
                 if (specVersion != string.Empty)
                 {
-                    if(specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm1_2Name))
+                    if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm1_2Name))
                     {
                         str = ConstantsDLL.Properties.Resources.tpm1_2;
                     }
-                    else if(specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm2_0Name))
+                    else if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm2_0Name))
                     {
                         str = ConstantsDLL.Properties.Resources.tpm2_0;
                     }

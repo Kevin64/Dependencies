@@ -34,7 +34,7 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + "?patrimonio=" + assetNumber);
+                    _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + ConstantsDLL.Properties.Resources.phpAssetNumber + assetNumber);
                     System.Threading.Thread.Sleep(300);
                     wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, ConstantsDLL.Properties.Resources.pcPath);
                     System.Threading.Thread.Sleep(300);
@@ -59,7 +59,7 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + "?patrimonio=" + assetNumber);
+                _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + ConstantsDLL.Properties.Resources.phpAssetNumber + assetNumber);
                 System.Threading.Thread.Sleep(300);
                 wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, ConstantsDLL.Properties.Resources.pcPath);
                 System.Threading.Thread.Sleep(300);
