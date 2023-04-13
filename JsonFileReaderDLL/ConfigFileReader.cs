@@ -25,7 +25,7 @@ namespace JsonFileReaderDLL
 
     public static class ConfigFileReader
     {
-        private static string jsonFile, sha256;
+        private static string jsonFile;
         private static WebClient wc;
         private static StreamReader fileC;
 
@@ -37,15 +37,8 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyConfigData);
+                    wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileConfig, StringsAndConstants.configFilePath);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileConfig, ConstantsDLL.Properties.Resources.configPath);
-                    System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileShaConfig);
-                    System.Threading.Thread.Sleep(300);
-                    sha256 = sha256.ToUpper();
-                    fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
-                    fileC.Close();
                 }
                 catch
                 {
@@ -61,10 +54,8 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                wc.DownloadFile("http://" + ipAddress + ":" + port + ConstantsDLL.Properties.Resources.fileConfigPath + ConstantsDLL.Properties.Resources.fileConfig, ConstantsDLL.Properties.Resources.configPath);
+                wc.DownloadFile("http://" + ipAddress + ":" + port + ConstantsDLL.Properties.Resources.fileConfigPath + ConstantsDLL.Properties.Resources.fileConfig, StringsAndConstants.configFilePath);
                 System.Threading.Thread.Sleep(300);
-                fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
-                fileC.Close();
             }
             catch
             {
@@ -84,7 +75,7 @@ namespace JsonFileReaderDLL
                 }
 
                 List<string[]> arr;
-                fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
+                fileC = new StreamReader(StringsAndConstants.configFilePath);
 
                 jsonFile = fileC.ReadToEnd();
                 CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
@@ -105,7 +96,21 @@ namespace JsonFileReaderDLL
             }
 
             List<string[]> arr;
-            fileC = new StreamReader(ConstantsDLL.Properties.Resources.configPath);
+            fileC = new StreamReader(StringsAndConstants.configFilePath);
+
+            jsonFile = fileC.ReadToEnd();
+            CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
+
+            arr = new List<string[]>() { jsonParse.Definitions.Buildings, jsonParse.Definitions.HardwareTypes, jsonParse.Definitions.FirmwareTypes, jsonParse.Definitions.TpmTypes, jsonParse.Definitions.MediaOperationTypes, jsonParse.Definitions.SecureBootStates, jsonParse.Definitions.VirtualizationTechnologyStates };
+
+            fileC.Close();
+            return arr;
+        }
+
+        public static List<string[]> GetOfflineModeConfigFile()
+        {
+            List<string[]> arr;
+            fileC = new StreamReader(ConstantsDLL.Properties.Resources.offlineModeConfig);
 
             jsonFile = fileC.ReadToEnd();
             CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);

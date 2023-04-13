@@ -136,14 +136,8 @@
   <data name="bios" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="biosPath" xml:space="preserve">
-    <value>System.IO.Path.GetTempPath() + Resources.fileBios</value>
-  </data>
   <data name="build" xml:space="preserve">
     <value>build</value>
-  </data>
-  <data name="configPath" xml:space="preserve">
-    <value>System.IO.Path.GetTempPath() + Resources.fileConfig</value>
   </data>
   <data name="consoleOutCLI" xml:space="preserve">
     <value>true</value>
@@ -183,6 +177,9 @@
   </data>
   <data name="DidItRunAlready" xml:space="preserve">
     <value>DidItRunAlready</value>
+  </data>
+  <data name="DOUBLE_DASH" xml:space="preserve">
+    <value>--</value>
   </data>
   <data name="fileBios" xml:space="preserve">
     <value>model.json</value>
@@ -249,6 +246,9 @@
   </data>
   <data name="HOSTNAME_PATTERN" xml:space="preserve">
     <value>PC-</value>
+  </data>
+  <data name="HTTP" xml:space="preserve">
+    <value>http://</value>
   </data>
   <data name="HWINFO_REG_PATH" xml:space="preserve">
     <value>Software\\HardwareInformation</value>
@@ -538,8 +538,14 @@
   <data name="INI_SECTION_1_18" xml:space="preserve">
     <value>Logo3URL</value>
   </data>
+  <data name="INI_SECTION_1_19" xml:space="preserve">
+    <value>SecureBootEnforcementForUEFI</value>
+  </data>
   <data name="INI_SECTION_1_2" xml:space="preserve">
     <value>CleanGarbage</value>
+  </data>
+  <data name="INI_SECTION_1_20" xml:space="preserve">
+    <value>VirtualizationTechnologyEnforcementForUEFI</value>
   </data>
   <data name="INI_SECTION_1_3" xml:space="preserve">
     <value>ChangeResolution</value>
@@ -594,9 +600,6 @@
   </data>
   <data name="limitedUserType" xml:space="preserve">
     <value>Limited</value>
-  </data>
-  <data name="loginPath" xml:space="preserve">
-    <value>System.IO.Path.GetTempPath() + Resources.fileLogin</value>
   </data>
   <data name="login_banner_dark_path" xml:space="preserve">
     <value>Resources\\header\\login_banner_dark.png</value>
@@ -682,11 +685,11 @@
   <data name="nvme" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="offlineModeConfig" xml:space="preserve">
+    <value>offlineModeConfig.json</value>
+  </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="pcPath" xml:space="preserve">
-    <value>System.IO.Path.GetTempPath() + Resources.filePC</value>
   </data>
   <data name="phpAdRegistered" xml:space="preserve">
     <value>&amp;adRegistered=</value>
@@ -746,7 +749,7 @@
     <value>&amp;ram=</value>
   </data>
   <data name="phpRoom" xml:space="preserve">
-    <value>&amp;room=</value>
+    <value>&amp;roomNumber=</value>
   </data>
   <data name="phpSealNumber" xml:space="preserve">
     <value>&amp;sealNumber=</value>
@@ -913,9 +916,6 @@
   <data name="rotatingCircleSpokeThickness350" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="sameWord" xml:space="preserve">
-    <value>same</value>
-  </data>
   <data name="sata" xml:space="preserve">
     <value>SATA</value>
   </data>
@@ -978,9 +978,6 @@
   </data>
   <data name="webview2file" xml:space="preserve">
     <value>webview2installer.exe</value>
-  </data>
-  <data name="webview2filePath" xml:space="preserve">
-    <value>System.IO.Path.GetTempPath() + Resources.webview2file</value>
   </data>
   <data name="webview2url" xml:space="preserve">
     <value>https://go.microsoft.com/fwlink/p/?LinkId=2124703</value>

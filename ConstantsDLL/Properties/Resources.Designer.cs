@@ -115,29 +115,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.fileBios.
-        /// </summary>
-        public static string biosPath {
-            get {
-                return ResourceManager.GetString("biosPath", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a build.
         /// </summary>
         public static string build {
             get {
                 return ResourceManager.GetString("build", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.fileConfig.
-        /// </summary>
-        public static string configPath {
-            get {
-                return ResourceManager.GetString("configPath", resourceCulture);
             }
         }
         
@@ -255,6 +237,15 @@ namespace ConstantsDLL.Properties {
         public static string DidItRunAlready {
             get {
                 return ResourceManager.GetString("DidItRunAlready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a --.
+        /// </summary>
+        public static string DOUBLE_DASH {
+            get {
+                return ResourceManager.GetString("DOUBLE_DASH", resourceCulture);
             }
         }
         
@@ -453,6 +444,15 @@ namespace ConstantsDLL.Properties {
         public static string HOSTNAME_PATTERN {
             get {
                 return ResourceManager.GetString("HOSTNAME_PATTERN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a http://.
+        /// </summary>
+        public static string HTTP {
+            get {
+                return ResourceManager.GetString("HTTP", resourceCulture);
             }
         }
         
@@ -1321,11 +1321,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SecureBootEnforcementForUEFI.
+        /// </summary>
+        public static string INI_SECTION_1_19 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a CleanGarbage.
         /// </summary>
         public static string INI_SECTION_1_2 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a VirtualizationTechnologyEnforcementForUEFI.
+        /// </summary>
+        public static string INI_SECTION_1_20 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_1_20", resourceCulture);
             }
         }
         
@@ -1618,15 +1636,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.fileLogin.
-        /// </summary>
-        public static string loginPath {
-            get {
-                return ResourceManager.GetString("loginPath", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\main_banner_dark.png.
         /// </summary>
         public static string main_banner_dark_path {
@@ -1753,20 +1762,20 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a offlineModeConfig.json.
+        /// </summary>
+        public static string offlineModeConfig {
+            get {
+                return ResourceManager.GetString("offlineModeConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a OK.
         /// </summary>
         public static string ok {
             get {
                 return ResourceManager.GetString("ok", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.filePC.
-        /// </summary>
-        public static string pcPath {
-            get {
-                return ResourceManager.GetString("pcPath", resourceCulture);
             }
         }
         
@@ -1942,7 +1951,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;room=.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;roomNumber=.
         /// </summary>
         public static string phpRoom {
             get {
@@ -2446,15 +2455,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a same.
-        /// </summary>
-        public static string sameWord {
-            get {
-                return ResourceManager.GetString("sameWord", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SATA.
         /// </summary>
         public static string sata {
@@ -2676,15 +2676,6 @@ namespace ConstantsDLL.Properties {
         public static string webview2file {
             get {
                 return ResourceManager.GetString("webview2file", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a System.IO.Path.GetTempPath() + Resources.webview2file.
-        /// </summary>
-        public static string webview2filePath {
-            get {
-                return ResourceManager.GetString("webview2filePath", resourceCulture);
             }
         }
         
