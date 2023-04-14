@@ -506,7 +506,7 @@
     <value>.png</value>
   </data>
   <data name="INI_SECTION_1" xml:space="preserve">
-    <value>Definitions</value>
+    <value>Parameters</value>
   </data>
   <data name="INI_SECTION_1_1" xml:space="preserve">
     <value>InstallDrivers</value>
@@ -538,14 +538,8 @@
   <data name="INI_SECTION_1_18" xml:space="preserve">
     <value>Logo3URL</value>
   </data>
-  <data name="INI_SECTION_1_19" xml:space="preserve">
-    <value>SecureBootEnforcementForUEFI</value>
-  </data>
   <data name="INI_SECTION_1_2" xml:space="preserve">
     <value>CleanGarbage</value>
-  </data>
-  <data name="INI_SECTION_1_20" xml:space="preserve">
-    <value>VirtualizationTechnologyEnforcementForUEFI</value>
   </data>
   <data name="INI_SECTION_1_3" xml:space="preserve">
     <value>ChangeResolution</value>
@@ -569,24 +563,54 @@
     <value>LogLocation</value>
   </data>
   <data name="INI_SECTION_2" xml:space="preserve">
-    <value>OrgData</value>
+    <value>Enforcement</value>
   </data>
   <data name="INI_SECTION_2_1" xml:space="preserve">
-    <value>OrganizationFullName</value>
+    <value>RamLimitEnforcement</value>
   </data>
   <data name="INI_SECTION_2_2" xml:space="preserve">
-    <value>OrganizationAcronym</value>
+    <value>SmartStatusEnforcement</value>
   </data>
   <data name="INI_SECTION_2_3" xml:space="preserve">
-    <value>DepartamentFullName</value>
+    <value>MediaOperationModeEnforcement</value>
   </data>
   <data name="INI_SECTION_2_4" xml:space="preserve">
-    <value>DepartamentAcronym</value>
+    <value>HostnameEnforcement</value>
   </data>
   <data name="INI_SECTION_2_5" xml:space="preserve">
-    <value>SubDepartamentFullName</value>
+    <value>FirmwareTypeEnforcement</value>
   </data>
   <data name="INI_SECTION_2_6" xml:space="preserve">
+    <value>FirmwareVersionEnforcement</value>
+  </data>
+  <data name="INI_SECTION_2_7" xml:space="preserve">
+    <value>SecureBootEnforcement</value>
+  </data>
+  <data name="INI_SECTION_2_8" xml:space="preserve">
+    <value>VirtualizationTechnologyEnforcement</value>
+  </data>
+  <data name="INI_SECTION_2_9" xml:space="preserve">
+    <value>TpmEnforcement</value>
+  </data>
+  <data name="INI_SECTION_3" xml:space="preserve">
+    <value>OrgData</value>
+  </data>
+  <data name="INI_SECTION_3_1" xml:space="preserve">
+    <value>OrganizationFullName</value>
+  </data>
+  <data name="INI_SECTION_3_2" xml:space="preserve">
+    <value>OrganizationAcronym</value>
+  </data>
+  <data name="INI_SECTION_3_3" xml:space="preserve">
+    <value>DepartamentFullName</value>
+  </data>
+  <data name="INI_SECTION_3_4" xml:space="preserve">
+    <value>DepartamentAcronym</value>
+  </data>
+  <data name="INI_SECTION_3_5" xml:space="preserve">
+    <value>SubDepartamentFullName</value>
+  </data>
+  <data name="INI_SECTION_3_6" xml:space="preserve">
     <value>SubDepartamentAcronym</value>
   </data>
   <data name="jsonServerPath" xml:space="preserve">

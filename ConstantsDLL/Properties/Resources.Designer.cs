@@ -1222,7 +1222,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Definitions.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Parameters.
         /// </summary>
         public static string INI_SECTION_1 {
             get {
@@ -1321,29 +1321,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a SecureBootEnforcementForUEFI.
-        /// </summary>
-        public static string INI_SECTION_1_19 {
-            get {
-                return ResourceManager.GetString("INI_SECTION_1_19", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a CleanGarbage.
         /// </summary>
         public static string INI_SECTION_1_2 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a VirtualizationTechnologyEnforcementForUEFI.
-        /// </summary>
-        public static string INI_SECTION_1_20 {
-            get {
-                return ResourceManager.GetString("INI_SECTION_1_20", resourceCulture);
             }
         }
         
@@ -1411,7 +1393,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a OrgData.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Enforcement.
         /// </summary>
         public static string INI_SECTION_2 {
             get {
@@ -1420,7 +1402,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a OrganizationFullName.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a RamLimitEnforcement.
         /// </summary>
         public static string INI_SECTION_2_1 {
             get {
@@ -1429,7 +1411,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a OrganizationAcronym.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SmartStatusEnforcement.
         /// </summary>
         public static string INI_SECTION_2_2 {
             get {
@@ -1438,7 +1420,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a DepartamentFullName.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a MediaOperationModeEnforcement.
         /// </summary>
         public static string INI_SECTION_2_3 {
             get {
@@ -1447,7 +1429,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a DepartamentAcronym.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a HostnameEnforcement.
         /// </summary>
         public static string INI_SECTION_2_4 {
             get {
@@ -1456,7 +1438,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a SubDepartamentFullName.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a FirmwareTypeEnforcement.
         /// </summary>
         public static string INI_SECTION_2_5 {
             get {
@@ -1465,11 +1447,101 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a SubDepartamentAcronym.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a FirmwareVersionEnforcement.
         /// </summary>
         public static string INI_SECTION_2_6 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SecureBootEnforcement.
+        /// </summary>
+        public static string INI_SECTION_2_7 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a VirtualizationTechnologyEnforcement.
+        /// </summary>
+        public static string INI_SECTION_2_8 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a TpmEnforcement.
+        /// </summary>
+        public static string INI_SECTION_2_9 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_2_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a OrgData.
+        /// </summary>
+        public static string INI_SECTION_3 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a OrganizationFullName.
+        /// </summary>
+        public static string INI_SECTION_3_1 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a OrganizationAcronym.
+        /// </summary>
+        public static string INI_SECTION_3_2 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a DepartamentFullName.
+        /// </summary>
+        public static string INI_SECTION_3_3 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a DepartamentAcronym.
+        /// </summary>
+        public static string INI_SECTION_3_4 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SubDepartamentFullName.
+        /// </summary>
+        public static string INI_SECTION_3_5 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SubDepartamentAcronym.
+        /// </summary>
+        public static string INI_SECTION_3_6 {
+            get {
+                return ResourceManager.GetString("INI_SECTION_3_6", resourceCulture);
             }
         }
         
