@@ -260,10 +260,10 @@
     <value>Um ou mais parâmetros do arquivo INI estão mal formados</value>
   </data>
   <data name="pcNotRegistered" xml:space="preserve">
-    <value>Patrimônio não registrado inicialmente pelo software 'Coleta de hardware e Cadastro de Patrimônio'. Primeiramente realize o cadastro e depois tente novamente.</value>
+    <value>Ativo não registrado inicialmente pelo software 'Asset Information and Registration'. Primeiramente realize o cadastro e depois tente novamente.</value>
   </data>
   <data name="PC_DROPPED" xml:space="preserve">
-    <value>Patrimônio baixado, cadastro cancelado. Reverta a baixa e tente novamente</value>
+    <value>Ativo baixado, cadastro cancelado. Reverta a baixa e tente novamente</value>
   </data>
   <data name="resolutionWarning" xml:space="preserve">
     <value>Resolução insuficiente. Este programa suporta apenas resoluções iguais ou superiores a {0}x{1}.</value>

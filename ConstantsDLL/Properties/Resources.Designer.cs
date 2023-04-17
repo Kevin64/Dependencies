@@ -457,7 +457,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Software\\HardwareInformation.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Software\\AssetInformationAndRegistration.
         /// </summary>
         public static string HWINFO_REG_PATH {
             get {
@@ -1600,7 +1600,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a IT-Asset-Registration.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a AssetInformationAndRegistration.
         /// </summary>
         public static string LOG_FILENAME_CP {
             get {

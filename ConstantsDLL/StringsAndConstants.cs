@@ -24,7 +24,7 @@ namespace ConstantsDLL
         */
 
         /**
-         * Code exclusive for HardwareInformation application
+         * Code exclusive for AssetInformationAndRegistration application
          * Start
         */
 
@@ -126,7 +126,7 @@ namespace ConstantsDLL
         public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
 
         /**
-         * Code exclusive for HardwareInformation application
+         * Code exclusive for AssetInformationAndRegistration application
          * End
         */
 

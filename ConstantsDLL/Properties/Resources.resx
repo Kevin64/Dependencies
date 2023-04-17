@@ -251,7 +251,7 @@
     <value>http://</value>
   </data>
   <data name="HWINFO_REG_PATH" xml:space="preserve">
-    <value>Software\\HardwareInformation</value>
+    <value>Software\\AssetInformationAndRegistration</value>
   </data>
   <data name="icon_about_dark_path" xml:space="preserve">
     <value>Resources\\icons\\icon_about_dark.png</value>
@@ -635,7 +635,7 @@
     <value>2</value>
   </data>
   <data name="LOG_FILENAME_CP" xml:space="preserve">
-    <value>IT-Asset-Registration</value>
+    <value>AssetInformationAndRegistration</value>
   </data>
   <data name="LOG_FILENAME_FOP" xml:space="preserve">
     <value>FOP</value>
