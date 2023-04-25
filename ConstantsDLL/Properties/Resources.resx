@@ -185,7 +185,7 @@
     <value>model.json</value>
   </data>
   <data name="fileConfig" xml:space="preserve">
-    <value>config.json</value>
+    <value>parameters.json</value>
   </data>
   <data name="fileConfigPath" xml:space="preserve">
     <value>/etc/</value>

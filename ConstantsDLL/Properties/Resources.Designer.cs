@@ -259,7 +259,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a config.json.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a parameters.json.
         /// </summary>
         public static string fileConfig {
             get {
