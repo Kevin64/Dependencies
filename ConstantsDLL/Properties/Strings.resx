@@ -121,6 +121,9 @@
     <value />
     <comment>ConstantsDLL.Strings.Generic</comment>
   </data>
+  <data name="absent" xml:space="preserve">
+    <value>Absent</value>
+  </data>
   <data name="activated" xml:space="preserve">
     <value>Enabled</value>
   </data>

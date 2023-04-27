@@ -70,6 +70,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Absent.
+        /// </summary>
+        public static string absent {
+            get {
+                return ResourceManager.GetString("absent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Enabled.
         /// </summary>
         public static string activated {

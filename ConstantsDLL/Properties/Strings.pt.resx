@@ -121,6 +121,9 @@
     <value />
     <comment>ConstantsDLL.Strings.PT</comment>
   </data>
+  <data name="absent" xml:space="preserve">
+    <value>Ausente</value>
+  </data>
   <data name="activated" xml:space="preserve">
     <value>Ativado</value>
   </data>

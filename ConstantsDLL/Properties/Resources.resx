@@ -175,6 +175,9 @@
   <data name="defFile" xml:space="preserve">
     <value>definitions.ini</value>
   </data>
+  <data name="deliveryURL" xml:space="preserve">
+    <value>getExternalDeliveryData</value>
+  </data>
   <data name="DidItRunAlready" xml:space="preserve">
     <value>DidItRunAlready</value>
   </data>
@@ -502,6 +505,9 @@
   <data name="ide" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="imgDir" xml:space="preserve">
+    <value>\\img\\</value>
+  </data>
   <data name="imgExt" xml:space="preserve">
     <value>.png</value>
   </data>
@@ -733,6 +739,9 @@
   <data name="phpBuilding" xml:space="preserve">
     <value>&amp;building=</value>
   </data>
+  <data name="phpDeliveredToRegistrationNumber" xml:space="preserve">
+    <value>&amp;deliveredToRegistrationNumber=</value>
+  </data>
   <data name="phpFwType" xml:space="preserve">
     <value>&amp;fwType=</value>
   </data>
@@ -750,6 +759,12 @@
   </data>
   <data name="phpIpAddress" xml:space="preserve">
     <value>&amp;ipAddress=</value>
+  </data>
+  <data name="phpLastDeliveryDate" xml:space="preserve">
+    <value>&amp;lastDeliveryDate=</value>
+  </data>
+  <data name="phpLastDeliveryMadeBy" xml:space="preserve">
+    <value>&amp;lastDeliveryMadeBy=</value>
   </data>
   <data name="phpMacAddress" xml:space="preserve">
     <value>&amp;macAddress=</value>
@@ -819,6 +834,9 @@
   </data>
   <data name="raid" xml:space="preserve">
     <value>RAID</value>
+  </data>
+  <data name="resourcesDir" xml:space="preserve">
+    <value>\\resources\\</value>
   </data>
   <data name="RETURN_ERROR" xml:space="preserve">
     <value>2</value>

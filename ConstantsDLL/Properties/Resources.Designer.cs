@@ -232,6 +232,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalDeliveryData.
+        /// </summary>
+        public static string deliveryURL {
+            get {
+                return ResourceManager.GetString("deliveryURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DidItRunAlready.
         /// </summary>
         public static string DidItRunAlready {
@@ -1213,6 +1222,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\img\\.
+        /// </summary>
+        public static string imgDir {
+            get {
+                return ResourceManager.GetString("imgDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .png.
         /// </summary>
         public static string imgExt {
@@ -1906,6 +1924,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;deliveredToRegistrationNumber=.
+        /// </summary>
+        public static string phpDeliveredToRegistrationNumber {
+            get {
+                return ResourceManager.GetString("phpDeliveredToRegistrationNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;fwType=.
         /// </summary>
         public static string phpFwType {
@@ -1956,6 +1983,24 @@ namespace ConstantsDLL.Properties {
         public static string phpIpAddress {
             get {
                 return ResourceManager.GetString("phpIpAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;lastDeliveryDate=.
+        /// </summary>
+        public static string phpLastDeliveryDate {
+            get {
+                return ResourceManager.GetString("phpLastDeliveryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;lastDeliveryMadeBy=.
+        /// </summary>
+        public static string phpLastDeliveryMadeBy {
+            get {
+                return ResourceManager.GetString("phpLastDeliveryMadeBy", resourceCulture);
             }
         }
         
@@ -2163,6 +2208,15 @@ namespace ConstantsDLL.Properties {
         public static string raid {
             get {
                 return ResourceManager.GetString("raid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\resources\\.
+        /// </summary>
+        public static string resourcesDir {
+            get {
+                return ResourceManager.GetString("resourcesDir", resourceCulture);
             }
         }
         
