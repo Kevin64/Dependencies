@@ -64,13 +64,13 @@ namespace ConstantsDLL
         public const string optional = "Optional";
 
         //CLI switch text
-        public const string cliHelpTextServerIP = "Asset system server IP address (Ex.: 192.168.1.100, 10.0.0.10, localhost, etc. Modify INI file for fixed configuration. The first IP in the file will be chosen if the parameter is absent) - " + optional;
-        public const string cliHelpTextServerPort = "Asset system server port (Ex.: 80, 8080, etc. Modify INI file for fixed configuration. The first port in the file will be chosen if the parameter is absent) - " + optional;
+        public const string cliHelpTextServerIP = "APCS server IP address (Ex.: 192.168.1.100, 10.0.0.10, localhost, etc. Modify INI file for fixed configuration. The first IP in the file will be chosen if the parameter is absent) - " + optional;
+        public const string cliHelpTextServerPort = "APCS server port (Ex.: 80, 8080, etc. Modify INI file for fixed configuration. The first port in the file will be chosen if the parameter is absent) - " + optional;
         public const string cliHelpTextServiceType = "Type of service performed (Possible values: \'" + cliServiceType1 + "\' for maintenance (default), \'" + cliServiceType0 + "\' for formatting) - " + optional;
         public const string cliHelpTextAssetNumber = "Equipment's asset number (Ex.: 123456). If the parameter is absent, it will be collected by hostname PC-123456 (default) - " + optional;
         public const string cliHelpTextSealNumber = "Equipament's seal number (if exists) (Ex.: 12345678, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
         public const string cliHelpTextRoomNumber = "Room where the equipment will be located (Ex.: 1234, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextBuilding = "Building where the equipment will be located (Possible values: see asset system for a list of building names, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
+        public const string cliHelpTextBuilding = "Building where the equipment will be located (Possible values: see APCS for a list of building names, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
         public const string cliHelpTextAdRegistered = "Registered in Active Directory (Possible values: \'" + listYesAbbrev + "\' (Yes), \'" + listNoAbbrev + "\' (No), or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
         public const string cliHelpTextStandard = "Type of image deployed (Possible values: \'" + cliEmployeeType1 + "\' for student, \'" + cliEmployeeType0 + "\' for employee, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
         public const string cliHelpTextServiceDate = "Date of service performed (Possible values: \'" + cliDefaultServiceDate + "\' (default), or specify a date in the 'yyyy-mm-dd' format, ex.: 2020-12-25) - " + optional;
@@ -78,7 +78,7 @@ namespace ConstantsDLL
         public const string cliHelpTextTicketNumber = "Ticket number (Ex.: 123456) - " + mandatory;
         public const string cliHelpTextInUse = "Equipment in use? (Possible values: \'" + listYesAbbrev + "\' (Yes), \'" + listNoAbbrev + "\' (No), or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
         public const string cliHelpTextTag = "Does the equipment have a label? (Possible value: \'" + listYesAbbrev + "\' (Yes), \'" + listNoAbbrev + "\' (No), or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextHwType = "Equipment category (Possible values: see asset system for a list of categories, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
+        public const string cliHelpTextHwType = "Equipment category (Possible values: see APCS for a list of categories, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
         public const string cliHelpTextUsername = "Login username - " + mandatory;
         public const string cliHelpTextPassword = "Login password - " + mandatory;
 
