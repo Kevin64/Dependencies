@@ -184,7 +184,7 @@
   <data name="DOUBLE_DASH" xml:space="preserve">
     <value>--</value>
   </data>
-  <data name="fileBios" xml:space="preserve">
+  <data name="fileModel" xml:space="preserve">
     <value>model.json</value>
   </data>
   <data name="fileConfig" xml:space="preserve">
@@ -193,22 +193,22 @@
   <data name="fileConfigPath" xml:space="preserve">
     <value>/etc/</value>
   </data>
-  <data name="fileLogin" xml:space="preserve">
+  <data name="fileCredentials" xml:space="preserve">
     <value>users.json</value>
   </data>
-  <data name="filePC" xml:space="preserve">
+  <data name="fileAsset" xml:space="preserve">
     <value>asset.json</value>
   </data>
-  <data name="fileShaBios" xml:space="preserve">
+  <data name="fileShaModel" xml:space="preserve">
     <value>model-checksum.txt</value>
   </data>
   <data name="fileShaConfig" xml:space="preserve">
     <value>config-checksum.txt</value>
   </data>
-  <data name="fileShaLogin" xml:space="preserve">
+  <data name="fileShaCredentials" xml:space="preserve">
     <value>users-checksum.txt</value>
   </data>
-  <data name="fileShaPC" xml:space="preserve">
+  <data name="fileShaAsset" xml:space="preserve">
     <value>asset-checksum.txt</value>
   </data>
   <data name="FOP" xml:space="preserve">
@@ -261,6 +261,12 @@
   </data>
   <data name="icon_about_light_path" xml:space="preserve">
     <value>Resources\\icons\\icon_about_light.png</value>
+  </data>
+  <data name="icon_agent_dark_path" xml:space="preserve">
+    <value>Resources\\icons\\icon_user_dark.png</value>
+  </data>
+  <data name="icon_agent_light_path" xml:space="preserve">
+    <value>Resources\\icons\\icon_user_light.png</value>
   </data>
   <data name="icon_ahci_dark_path" xml:space="preserve">
     <value>Resources\\icons\\icon_ahci_dark.png</value>
@@ -477,12 +483,6 @@
   </data>
   <data name="icon_type_light_path" xml:space="preserve">
     <value>Resources\\icons\\icon_type_light.png</value>
-  </data>
-  <data name="icon_user_dark_path" xml:space="preserve">
-    <value>Resources\\icons\\icon_user_dark.png</value>
-  </data>
-  <data name="icon_user_light_path" xml:space="preserve">
-    <value>Resources\\icons\\icon_user_light.png</value>
   </data>
   <data name="icon_VT_x_dark_path" xml:space="preserve">
     <value>Resources\\icons\\icon_VT_x_dark.png</value>
@@ -970,16 +970,16 @@
   <data name="ssd" xml:space="preserve">
     <value>SSD</value>
   </data>
-  <data name="supplyBiosData" xml:space="preserve">
+  <data name="supplyModelData" xml:space="preserve">
     <value>generateModelData.php</value>
   </data>
   <data name="supplyConfigData" xml:space="preserve">
     <value>/etc/config.json</value>
   </data>
-  <data name="supplyLoginData" xml:space="preserve">
-    <value>generateUserData.php</value>
+  <data name="supplyCredentialsData" xml:space="preserve">
+    <value>generateAgentData.php</value>
   </data>
-  <data name="supplyPCData" xml:space="preserve">
+  <data name="supplyAssetData" xml:space="preserve">
     <value>generateAssetData.php</value>
   </data>
   <data name="systemRom" xml:space="preserve">

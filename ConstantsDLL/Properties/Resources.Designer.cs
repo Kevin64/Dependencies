@@ -261,9 +261,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a model.json.
         /// </summary>
-        public static string fileBios {
+        public static string fileModel {
             get {
-                return ResourceManager.GetString("fileBios", resourceCulture);
+                return ResourceManager.GetString("fileModel", resourceCulture);
             }
         }
         
@@ -288,27 +288,27 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a users.json.
         /// </summary>
-        public static string fileLogin {
+        public static string fileCredentials {
             get {
-                return ResourceManager.GetString("fileLogin", resourceCulture);
+                return ResourceManager.GetString("fileCredentials", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a asset.json.
         /// </summary>
-        public static string filePC {
+        public static string fileAsset {
             get {
-                return ResourceManager.GetString("filePC", resourceCulture);
+                return ResourceManager.GetString("fileAsset", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a model-checksum.txt.
         /// </summary>
-        public static string fileShaBios {
+        public static string fileShaModel {
             get {
-                return ResourceManager.GetString("fileShaBios", resourceCulture);
+                return ResourceManager.GetString("fileShaModel", resourceCulture);
             }
         }
         
@@ -324,18 +324,18 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a users-checksum.txt.
         /// </summary>
-        public static string fileShaLogin {
+        public static string fileShaCredentials {
             get {
-                return ResourceManager.GetString("fileShaLogin", resourceCulture);
+                return ResourceManager.GetString("fileShaCredentials", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a asset-checksum.txt.
         /// </summary>
-        public static string fileShaPC {
+        public static string fileShaAsset {
             get {
-                return ResourceManager.GetString("fileShaPC", resourceCulture);
+                return ResourceManager.GetString("fileShaAsset", resourceCulture);
             }
         }
         
@@ -489,6 +489,24 @@ namespace ConstantsDLL.Properties {
         public static string icon_about_light_path {
             get {
                 return ResourceManager.GetString("icon_about_light_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_user_dark.png.
+        /// </summary>
+        public static string icon_agent_dark_path {
+            get {
+                return ResourceManager.GetString("icon_agent_dark_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_user_light.png.
+        /// </summary>
+        public static string icon_agent_light_path {
+            get {
+                return ResourceManager.GetString("icon_agent_light_path", resourceCulture);
             }
         }
         
@@ -1137,24 +1155,6 @@ namespace ConstantsDLL.Properties {
         public static string icon_type_light_path {
             get {
                 return ResourceManager.GetString("icon_type_light_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_user_dark.png.
-        /// </summary>
-        public static string icon_user_dark_path {
-            get {
-                return ResourceManager.GetString("icon_user_dark_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_user_light.png.
-        /// </summary>
-        public static string icon_user_light_path {
-            get {
-                return ResourceManager.GetString("icon_user_light_path", resourceCulture);
             }
         }
         
@@ -2619,9 +2619,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a generateModelData.php.
         /// </summary>
-        public static string supplyBiosData {
+        public static string supplyModelData {
             get {
-                return ResourceManager.GetString("supplyBiosData", resourceCulture);
+                return ResourceManager.GetString("supplyModelData", resourceCulture);
             }
         }
         
@@ -2635,20 +2635,20 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a generateUserData.php.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a generateAgentData.php.
         /// </summary>
-        public static string supplyLoginData {
+        public static string supplyCredentialsData {
             get {
-                return ResourceManager.GetString("supplyLoginData", resourceCulture);
+                return ResourceManager.GetString("supplyCredentialsData", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a generateAssetData.php.
         /// </summary>
-        public static string supplyPCData {
+        public static string supplyAssetData {
             get {
-                return ResourceManager.GetString("supplyPCData", resourceCulture);
+                return ResourceManager.GetString("supplyAssetData", resourceCulture);
             }
         }
         

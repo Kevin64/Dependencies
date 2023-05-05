@@ -24,7 +24,7 @@ namespace JsonFileReaderDLL
     {
         private static string jsonFile, sha256, aux;
         private static WebClient wc;
-        private static StreamReader filePC;
+        private static StreamReader fileAsset;
 
         //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
         public static Task<bool> CheckHostMT(string ipAddress, string port, string assetNumber)
@@ -34,11 +34,11 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + ConstantsDLL.Properties.Resources.phpAssetNumber + assetNumber);
+                    _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyAssetData + ConstantsDLL.Properties.Resources.phpAssetNumber + assetNumber);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, StringsAndConstants.assetFilePath);
+                    wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileAsset, StringsAndConstants.assetFilePath);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaPC);
+                    sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaAsset);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
                     aux = StringsAndConstants.assetFilePath;
@@ -57,11 +57,11 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyPCData + ConstantsDLL.Properties.Resources.phpAssetNumber + assetNumber);
+                _ = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyAssetData + ConstantsDLL.Properties.Resources.phpAssetNumber + assetNumber);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.filePC, StringsAndConstants.assetFilePath);
+                wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileAsset, StringsAndConstants.assetFilePath);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaPC);
+                sha256 = wc.DownloadString("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaAsset);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
                 aux = StringsAndConstants.assetFilePath;
@@ -84,10 +84,10 @@ namespace JsonFileReaderDLL
                 }
 
                 string[] arr;
-                filePC = new StreamReader(StringsAndConstants.assetFilePath);
+                fileAsset = new StreamReader(StringsAndConstants.assetFilePath);
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
-                    jsonFile = filePC.ReadToEnd();
+                    jsonFile = fileAsset.ReadToEnd();
                     AFile[] jsonParse = JsonConvert.DeserializeObject<AFile[]>(@jsonFile);
 
                     for (int i = 0; i < jsonParse.Length; i++)
@@ -95,13 +95,13 @@ namespace JsonFileReaderDLL
                         if (assetNumber.Equals(jsonParse[i].AssetNumber))
                         {
                             arr = new string[] { jsonParse[i].AssetNumber, jsonParse[i].Building, jsonParse[i].RoomNumber, jsonParse[i].Standard, jsonParse[i].AdRegistered, jsonParse[i].InUse, jsonParse[i].SealNumber, jsonParse[i].Tag, jsonParse[i].HwType, jsonParse[i].Discarded, jsonParse[i].ServiceDate };
-                            filePC.Close();
+                            fileAsset.Close();
                             return arr;
                         }
                     }
                 }
                 arr = new string[] { "false" }; ;
-                filePC.Close();
+                fileAsset.Close();
                 return arr;
             });
         }
@@ -115,10 +115,10 @@ namespace JsonFileReaderDLL
             }
 
             string[] arr;
-            filePC = new StreamReader(StringsAndConstants.assetFilePath);
+            fileAsset = new StreamReader(StringsAndConstants.assetFilePath);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
-                jsonFile = filePC.ReadToEnd();
+                jsonFile = fileAsset.ReadToEnd();
                 AFile[] jsonParse = JsonConvert.DeserializeObject<AFile[]>(@jsonFile);
 
                 for (int i = 0; i < jsonParse.Length; i++)
@@ -126,13 +126,13 @@ namespace JsonFileReaderDLL
                     if (assetNumber.Equals(jsonParse[i].AssetNumber))
                     {
                         arr = new string[] { jsonParse[i].AssetNumber, jsonParse[i].Building, jsonParse[i].RoomNumber, jsonParse[i].Standard, jsonParse[i].AdRegistered, jsonParse[i].InUse, jsonParse[i].SealNumber, jsonParse[i].Tag, jsonParse[i].HwType, jsonParse[i].Discarded, jsonParse[i].ServiceDate };
-                        filePC.Close();
+                        fileAsset.Close();
                         return arr;
                     }
                 }
             }
             arr = new string[] { "false" }; ;
-            filePC.Close();
+            fileAsset.Close();
             return arr;
         }
     }

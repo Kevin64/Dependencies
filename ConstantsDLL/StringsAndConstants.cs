@@ -12,10 +12,10 @@ namespace ConstantsDLL
          * Start
         */
 
-        public static readonly string modelFilePath = System.IO.Path.GetTempPath() + Resources.fileBios;
+        public static readonly string modelFilePath = System.IO.Path.GetTempPath() + Resources.fileModel;
         public static readonly string configFilePath = System.IO.Path.GetTempPath() + Resources.fileConfig;
-        public static readonly string credentialsFilePath = System.IO.Path.GetTempPath() + Resources.fileLogin;
-        public static readonly string assetFilePath = System.IO.Path.GetTempPath() + Resources.filePC;
+        public static readonly string credentialsFilePath = System.IO.Path.GetTempPath() + Resources.fileCredentials;
+        public static readonly string assetFilePath = System.IO.Path.GetTempPath() + Resources.fileAsset;
         public static readonly string webView2filePath = System.IO.Path.GetTempPath() + Resources.webview2file;
 
         /**
