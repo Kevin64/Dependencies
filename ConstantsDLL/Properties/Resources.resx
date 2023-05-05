@@ -1040,7 +1040,7 @@
     <value>1366</value>
   </data>
   <data name="win10imgDir" xml:space="preserve">
-    <value>\\img-windows10\\</value>
+    <value>\\windows10\\</value>
   </data>
   <data name="win10ntBuild" xml:space="preserve">
     <value>19041</value>
@@ -1052,7 +1052,7 @@
     <value>0</value>
   </data>
   <data name="win11imgDir" xml:space="preserve">
-    <value>\\img-windows11\\</value>
+    <value>\\windows11\\</value>
   </data>
   <data name="win11ntBuild" xml:space="preserve">
     <value>22000</value>
@@ -1064,7 +1064,7 @@
     <value>0</value>
   </data>
   <data name="win7imgDir" xml:space="preserve">
-    <value>\\img-windows7\\</value>
+    <value>\\windows7\\</value>
   </data>
   <data name="win7ntBuild" xml:space="preserve">
     <value>7601</value>

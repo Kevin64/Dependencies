@@ -259,11 +259,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a model.json.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a asset.json.
         /// </summary>
-        public static string fileModel {
+        public static string fileAsset {
             get {
-                return ResourceManager.GetString("fileModel", resourceCulture);
+                return ResourceManager.GetString("fileAsset", resourceCulture);
             }
         }
         
@@ -295,20 +295,20 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a asset.json.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a model.json.
         /// </summary>
-        public static string fileAsset {
+        public static string fileModel {
             get {
-                return ResourceManager.GetString("fileAsset", resourceCulture);
+                return ResourceManager.GetString("fileModel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a model-checksum.txt.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a asset-checksum.txt.
         /// </summary>
-        public static string fileShaModel {
+        public static string fileShaAsset {
             get {
-                return ResourceManager.GetString("fileShaModel", resourceCulture);
+                return ResourceManager.GetString("fileShaAsset", resourceCulture);
             }
         }
         
@@ -331,11 +331,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a asset-checksum.txt.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a model-checksum.txt.
         /// </summary>
-        public static string fileShaAsset {
+        public static string fileShaModel {
             get {
-                return ResourceManager.GetString("fileShaAsset", resourceCulture);
+                return ResourceManager.GetString("fileShaModel", resourceCulture);
             }
         }
         
@@ -2617,11 +2617,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a generateModelData.php.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a generateAssetData.php.
         /// </summary>
-        public static string supplyModelData {
+        public static string supplyAssetData {
             get {
-                return ResourceManager.GetString("supplyModelData", resourceCulture);
+                return ResourceManager.GetString("supplyAssetData", resourceCulture);
             }
         }
         
@@ -2644,11 +2644,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a generateAssetData.php.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a generateModelData.php.
         /// </summary>
-        public static string supplyAssetData {
+        public static string supplyModelData {
             get {
-                return ResourceManager.GetString("supplyAssetData", resourceCulture);
+                return ResourceManager.GetString("supplyModelData", resourceCulture);
             }
         }
         
@@ -2824,7 +2824,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a \\img-windows10\\.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\windows10\\.
         /// </summary>
         public static string win10imgDir {
             get {
@@ -2860,7 +2860,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a \\img-windows11\\.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\windows11\\.
         /// </summary>
         public static string win11imgDir {
             get {
@@ -2896,7 +2896,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a \\img-windows7\\.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\windows7\\.
         /// </summary>
         public static string win7imgDir {
             get {
