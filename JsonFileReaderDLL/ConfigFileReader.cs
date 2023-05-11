@@ -37,7 +37,7 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    wc.DownloadFile("http://" + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileConfig, StringsAndConstants.configFilePath);
+                    wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileConfig, StringsAndConstants.configFilePath);
                     System.Threading.Thread.Sleep(300);
                 }
                 catch
@@ -54,7 +54,7 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                wc.DownloadFile("http://" + ipAddress + ":" + port + ConstantsDLL.Properties.Resources.fileConfigPath + ConstantsDLL.Properties.Resources.fileConfig, StringsAndConstants.configFilePath);
+                wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + ConstantsDLL.Properties.Resources.fileConfigPath + ConstantsDLL.Properties.Resources.fileConfig, StringsAndConstants.configFilePath);
                 System.Threading.Thread.Sleep(300);
             }
             catch

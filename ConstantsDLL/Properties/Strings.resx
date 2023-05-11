@@ -259,6 +259,9 @@
   <data name="NO_AUTH" xml:space="preserve">
     <value>Fill in your credentials.</value>
   </data>
+  <data name="of" xml:space="preserve">
+    <value>of</value>
+  </data>
   <data name="PARAMETER_ERROR" xml:space="preserve">
     <value>One or more INI file parameters are malformed</value>
   </data>

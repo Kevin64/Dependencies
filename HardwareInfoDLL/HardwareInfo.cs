@@ -12,7 +12,7 @@ namespace HardwareInfoDLL
     public static class HardwareInfo
     {
         //Fetches the CPU information, including the number of cores/threads
-        public static string GetProcessorCores()
+        public static string GetProcessorInfo()
         {
             string Id = string.Empty;
             string logical = string.Empty;
@@ -47,7 +47,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the GPU information
-        public static string GetGPUInfo()
+        public static string GetVideoCardInfo()
         {
             string gpuname = string.Empty;
             string gpuramStr;
@@ -84,7 +84,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the operation mode that the storage is running (IDE/AHCI/NVMe)
-        public static string GetStorageOperation()
+        public static string GetMediaOperationMode()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_SCSIController");
 
@@ -124,7 +124,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows10) || GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows8))
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8))
                 {
                     int size = 10, i = 0;
                     string[] type = new string[size];
@@ -276,7 +276,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the SSD/HDD total size (sums all drives sizes)
-        public static string GetHDSize()
+        public static string GetStorageSize()
         {
             int i = 0;
             double dresult = 0;
@@ -284,7 +284,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows10) || GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows8))
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8))
                 {
                     ManagementScope scope = new ManagementScope(@"\\.\root\microsoft\windows\storage");
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from MSFT_PhysicalDisk");
@@ -338,7 +338,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the primary MAC Address
-        public static string GetMACAddress()
+        public static string GetMacAddress()
         {
             string MACAddress = string.Empty;
 
@@ -369,7 +369,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the primary IP address
-        public static string GetIPAddress()
+        public static string GetIpAddress()
         {
             string[] IPAddress = null;
 
@@ -396,7 +396,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the computer's manufacturer
-        public static string GetBoardMaker()
+        public static string GetBrand()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_ComputerSystem");
 
@@ -416,7 +416,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the computer's manufacturer (alternative method)
-        public static string GetBoardMakerAlt()
+        public static string GetBrandAlt()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_BaseBoard");
 
@@ -476,7 +476,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the motherboard serial number
-        public static string GetBoardProductId()
+        public static string GetSerialNumber()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_BaseBoard");
 
@@ -495,7 +495,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the amount of RAM of the system
-        public static string GetPhysicalMemory()
+        public static string GetRam()
         {
             long MemSize = 0;
             long mCap;
@@ -515,7 +515,7 @@ namespace HardwareInfoDLL
                     {
                         mCap = Convert.ToInt64(queryObj["Capacity"]);
                         MemSize += mCap;
-                        if (GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows10))
+                        if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10))
                         {
                             if (queryObj["SMBIOSMemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.ddr4smbios))
                             {
@@ -582,7 +582,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the amount of RAM of the system (alternative method)
-        public static string GetPhysicalMemoryAlt()
+        public static string GetRamAlt()
         {
             double MemSize = 0;
             long mCap;
@@ -671,7 +671,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the default gateway of the NIC
-        public static string GetDefaultIPGateway()
+        public static string GetDefaultIpGateway()
         {
             string gateway = string.Empty;
 
@@ -734,7 +734,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the NT version
-        public static string GetOSInfoAux()
+        public static string GetWinVersion()
         {
             string operatingSystem = string.Empty;
 
@@ -769,7 +769,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the operating system information
-        public static string GetOSInformation()
+        public static string GetOSString()
         {
             string displayVersion = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", string.Empty).ToString();
             string releaseId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "releaseId", string.Empty).ToString();
@@ -780,7 +780,7 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows10)
+                    return GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10)
                         ? Convert.ToInt32(releaseId) <= 2004
                             ? (((string)queryObj["Caption"]).Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
                             : (((string)queryObj["Caption"]).Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
@@ -817,7 +817,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the computer's hostname
-        public static string GetComputerName()
+        public static string GetHostname()
         {
             string info = string.Empty;
 
@@ -840,7 +840,7 @@ namespace HardwareInfoDLL
         }
 
         //Fetches the BIOS version
-        public static string GetComputerBIOS()
+        public static string GetFirmwareVersion()
         {
             string biosVersion = string.Empty;
 
@@ -871,7 +871,7 @@ namespace HardwareInfoDLL
             ExactSpelling = true,
             CallingConvention = CallingConvention.StdCall)]
         public static extern int GetFirmwareType(string lpName, string lpGUID, IntPtr pBuffer, uint size);
-        public static string GetBIOSType7()
+        public static string GetFwType7()
         {
             try
             {
@@ -888,11 +888,11 @@ namespace HardwareInfoDLL
         //Fetches the BIOS type (BIOS or UEFI) on Windows 8 and later
         [DllImport("kernel32.dll")]
         private static extern bool GetFirmwareType(ref uint FirmwareType);
-        public static string GetBIOSType()
+        public static string GetFwType()
         {
             try
             {
-                if (GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows10) || GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows8))
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8))
                 {
                     uint firmwaretype = 0;
                     if (GetFirmwareType(ref firmwaretype))
@@ -910,7 +910,7 @@ namespace HardwareInfoDLL
                 }
                 else
                 {
-                    return GetBIOSType7();
+                    return GetFwType7();
                 }
             }
             catch (Exception e)
@@ -963,7 +963,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (!GetOSInfoAux().Equals(ConstantsDLL.Properties.Resources.windows7))
+                if (!GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows7))
                 {
                     ManagementClass mc = new ManagementClass("win32_processor");
                     ManagementObjectCollection moc = mc.GetInstances();
@@ -981,7 +981,7 @@ namespace HardwareInfoDLL
                     }
                     if (flag != 2)
                     {
-                        flag = GetBIOSType() == ConstantsDLL.Properties.Resources.uefi ? 1 : 0;
+                        flag = GetFwType() == ConstantsDLL.Properties.Resources.uefi ? 1 : 0;
                     }
                 }
 
