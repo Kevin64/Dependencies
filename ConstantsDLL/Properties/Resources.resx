@@ -121,130 +121,130 @@
     <value />
     <comment>ConstantsDLL.Resources</comment>
   </data>
-  <data name="activated" xml:space="preserve">
+  <data name="ACTIVATED" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ahci" xml:space="preserve">
+  <data name="AHCI" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="arch32" xml:space="preserve">
+  <data name="ARCH32" xml:space="preserve">
     <value>32</value>
   </data>
-  <data name="arch64" xml:space="preserve">
+  <data name="ARCH64" xml:space="preserve">
     <value>64</value>
   </data>
-  <data name="bios" xml:space="preserve">
+  <data name="BIOS" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="build" xml:space="preserve">
+  <data name="BUILD" xml:space="preserve">
     <value>build</value>
   </data>
-  <data name="consoleOutCLI" xml:space="preserve">
+  <data name="CONSOLE_OUT_CLI" xml:space="preserve">
     <value>true</value>
   </data>
-  <data name="consoleOutGUI" xml:space="preserve">
+  <data name="CONSOLE_OUT_GUI" xml:space="preserve">
     <value>false</value>
   </data>
   <data name="DASH" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="dateFormat" xml:space="preserve">
+  <data name="DATE_FORMAT" xml:space="preserve">
     <value>yyyy-MM-dd</value>
   </data>
-  <data name="ddr2" xml:space="preserve">
+  <data name="DDR2" xml:space="preserve">
     <value>DDR2</value>
   </data>
-  <data name="ddr3" xml:space="preserve">
+  <data name="DDR3" xml:space="preserve">
     <value>DDR3</value>
   </data>
-  <data name="ddr3memorytype" xml:space="preserve">
+  <data name="DDR3_MEMORY_TYPE" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="ddr3smbios" xml:space="preserve">
+  <data name="DDR3_SMBIOS" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="ddr4" xml:space="preserve">
+  <data name="DDR4" xml:space="preserve">
     <value>DDR4</value>
   </data>
-  <data name="ddr4smbios" xml:space="preserve">
+  <data name="DDR4_SMBIOS" xml:space="preserve">
     <value>26</value>
   </data>
-  <data name="deactivated" xml:space="preserve">
+  <data name="DEACTIVATED" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="defFile" xml:space="preserve">
+  <data name="DEF_FILE" xml:space="preserve">
     <value>definitions.ini</value>
   </data>
-  <data name="deliveryURL" xml:space="preserve">
+  <data name="DELIVERY_URL" xml:space="preserve">
     <value>getExternalDeliveryData</value>
   </data>
-  <data name="DidItRunAlready" xml:space="preserve">
+  <data name="DID_IT_RUN_ALREADY" xml:space="preserve">
     <value>DidItRunAlready</value>
   </data>
   <data name="DOUBLE_DASH" xml:space="preserve">
     <value>--</value>
   </data>
-  <data name="fileModel" xml:space="preserve">
+  <data name="FILE_MODEL" xml:space="preserve">
     <value>model.json</value>
   </data>
-  <data name="fileConfig" xml:space="preserve">
+  <data name="FILE_CONFIG" xml:space="preserve">
     <value>parameters.json</value>
   </data>
-  <data name="fileConfigPath" xml:space="preserve">
+  <data name="FILE_CONFIG_PATH" xml:space="preserve">
     <value>/etc/</value>
   </data>
-  <data name="fileCredentials" xml:space="preserve">
+  <data name="FILE_CREDENTIALS" xml:space="preserve">
     <value>users.json</value>
   </data>
-  <data name="fileAsset" xml:space="preserve">
+  <data name="FILE_ASSET" xml:space="preserve">
     <value>asset.json</value>
   </data>
-  <data name="fileShaModel" xml:space="preserve">
+  <data name="FILE_SHA_MODEL" xml:space="preserve">
     <value>model-checksum.txt</value>
   </data>
-  <data name="fileShaConfig" xml:space="preserve">
+  <data name="FILE_SHA_CONFIG" xml:space="preserve">
     <value>config-checksum.txt</value>
   </data>
-  <data name="fileShaCredentials" xml:space="preserve">
+  <data name="FILE_SHA_CREDENTIALS" xml:space="preserve">
     <value>users-checksum.txt</value>
   </data>
-  <data name="fileShaAsset" xml:space="preserve">
+  <data name="FILE_SHA_ASSET" xml:space="preserve">
     <value>asset-checksum.txt</value>
   </data>
   <data name="FOP" xml:space="preserve">
     <value>FOP</value>
   </data>
-  <data name="FopRegKey" xml:space="preserve">
+  <data name="FOP_REG_KEY" xml:space="preserve">
     <value>Software\\FOP</value>
   </data>
-  <data name="FopRunOnceKey" xml:space="preserve">
+  <data name="FOP_RUN_ONCE_KEY" xml:space="preserve">
     <value>Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</value>
   </data>
-  <data name="FOPx64" xml:space="preserve">
+  <data name="FOP_X64" xml:space="preserve">
     <value>"C:\Program Files\FOP\Rever tutorial de uso do computador.lnk"</value>
   </data>
-  <data name="FOPx86" xml:space="preserve">
+  <data name="FOP_X86" xml:space="preserve">
     <value>"C:\Program Files (x86)\FOP\Rever tutorial de uso do computador.lnk"</value>
   </data>
-  <data name="formatURL" xml:space="preserve">
+  <data name="FORMAT_URL" xml:space="preserve">
     <value>getExternalFormattingData</value>
   </data>
-  <data name="frequency" xml:space="preserve">
+  <data name="FREQUENCY" xml:space="preserve">
     <value>MHz</value>
   </data>
-  <data name="fwTypeBIOS" xml:space="preserve">
+  <data name="FW_TYPE_BIOS" xml:space="preserve">
     <value>BIOS</value>
   </data>
-  <data name="fwTypeUEFI" xml:space="preserve">
+  <data name="FW_TYPE_UEFI" xml:space="preserve">
     <value>UEFI</value>
   </data>
-  <data name="gb" xml:space="preserve">
+  <data name="GB" xml:space="preserve">
     <value>GB</value>
   </data>
-  <data name="hdd" xml:space="preserve">
+  <data name="HDD" xml:space="preserve">
     <value>HDD</value>
   </data>
-  <data name="Height" xml:space="preserve">
+  <data name="HEIGHT" xml:space="preserve">
     <value>768</value>
   </data>
   <data name="HOSTNAME_PATTERN" xml:space="preserve">
@@ -256,259 +256,259 @@
   <data name="HWINFO_REG_PATH" xml:space="preserve">
     <value>Software\\AssetInformationAndRegistration</value>
   </data>
-  <data name="icon_about_dark_path" xml:space="preserve">
+  <data name="ICON_ABOUT_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_about_dark.png</value>
   </data>
-  <data name="icon_about_light_path" xml:space="preserve">
+  <data name="ICON_ABOUT_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_about_light.png</value>
   </data>
-  <data name="icon_agent_dark_path" xml:space="preserve">
+  <data name="ICON_AGENT_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_user_dark.png</value>
   </data>
-  <data name="icon_agent_light_path" xml:space="preserve">
+  <data name="ICON_AGENT_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_user_light.png</value>
   </data>
-  <data name="icon_ahci_dark_path" xml:space="preserve">
+  <data name="ICON_AHCI_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ahci_dark.png</value>
   </data>
-  <data name="icon_ahci_light_path" xml:space="preserve">
+  <data name="ICON_AHCI_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ahci_light.png</value>
   </data>
-  <data name="icon_autotheme_dark_path" xml:space="preserve">
+  <data name="ICON_AUTOTHEME_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_autotheme_dark.png</value>
   </data>
-  <data name="icon_autotheme_light_path" xml:space="preserve">
+  <data name="ICON_AUTOTHEME_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_autotheme_light.png</value>
   </data>
-  <data name="icon_bios_dark_path" xml:space="preserve">
+  <data name="ICON_BIOS_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_bios_dark.png</value>
   </data>
-  <data name="icon_bios_light_path" xml:space="preserve">
+  <data name="ICON_BIOS_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_bios_light.png</value>
   </data>
-  <data name="icon_bios_version_dark_path" xml:space="preserve">
+  <data name="ICON_BIOS_VERSION_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_bios_version_dark.png</value>
   </data>
-  <data name="icon_bios_version_light_path" xml:space="preserve">
+  <data name="ICON_BIOS_VERSION_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_bios_version_light.png</value>
   </data>
-  <data name="icon_brand_dark_path" xml:space="preserve">
+  <data name="ICON_BRAND_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_brand_dark.png</value>
   </data>
-  <data name="icon_brand_light_path" xml:space="preserve">
+  <data name="ICON_BRAND_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_brand_light.png</value>
   </data>
-  <data name="icon_building_dark_path" xml:space="preserve">
+  <data name="ICON_BUILDING_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_building_dark.png</value>
   </data>
-  <data name="icon_building_light_path" xml:space="preserve">
+  <data name="ICON_BUILDING_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_building_light.png</value>
   </data>
-  <data name="icon_cmos_battery_dark_path" xml:space="preserve">
+  <data name="ICON_CMOS_BATTERY_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_cmos_battery_dark.png</value>
   </data>
-  <data name="icon_cmos_battery_light_path" xml:space="preserve">
+  <data name="ICON_CMOS_BATTERY_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_cmos_battery_light.png</value>
   </data>
-  <data name="icon_cpu_dark_path" xml:space="preserve">
+  <data name="ICON_CPU_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_cpu_dark.png</value>
   </data>
-  <data name="icon_cpu_light_path" xml:space="preserve">
+  <data name="ICON_CPU_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_cpu_light.png</value>
   </data>
-  <data name="icon_darktheme_dark_path" xml:space="preserve">
+  <data name="ICON_DARKTHEME_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_darktheme_dark.png</value>
   </data>
-  <data name="icon_darktheme_light_path" xml:space="preserve">
+  <data name="ICON_DARKTHEME_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_darktheme_light.png</value>
   </data>
-  <data name="icon_disk_size_dark_path" xml:space="preserve">
+  <data name="ICON_DISK_SIZE_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_disk_size_dark.png</value>
   </data>
-  <data name="icon_disk_size_light_path" xml:space="preserve">
+  <data name="ICON_DISK_SIZE_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_disk_size_light.png</value>
   </data>
-  <data name="icon_gpu_dark_path" xml:space="preserve">
+  <data name="ICON_GPU_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_gpu_dark.png</value>
   </data>
-  <data name="icon_gpu_light_path" xml:space="preserve">
+  <data name="ICON_GPU_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_gpu_light.png</value>
   </data>
-  <data name="icon_hdd_dark_path" xml:space="preserve">
+  <data name="ICON_HDD_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_hdd_dark.png</value>
   </data>
-  <data name="icon_hdd_light_path" xml:space="preserve">
+  <data name="ICON_HDD_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_hdd_light.png</value>
   </data>
-  <data name="icon_hostname_dark_path" xml:space="preserve">
+  <data name="ICON_HOSTNAME_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_hostname_dark.png</value>
   </data>
-  <data name="icon_hostname_light_path" xml:space="preserve">
+  <data name="ICON_HOSTNAME_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_hostname_light.png</value>
   </data>
-  <data name="icon_in_use_dark_path" xml:space="preserve">
+  <data name="ICON_IN_USE_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_in_use_dark.png</value>
   </data>
-  <data name="icon_in_use_light_path" xml:space="preserve">
+  <data name="ICON_IN_USE_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_in_use_light.png</value>
   </data>
-  <data name="icon_ip_dark_path" xml:space="preserve">
+  <data name="ICON_IP_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ip_dark.png</value>
   </data>
-  <data name="icon_ip_light_path" xml:space="preserve">
+  <data name="ICON_IP_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ip_light.png</value>
   </data>
-  <data name="icon_letter_dark_path" xml:space="preserve">
+  <data name="ICON_LETTER_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_letter_dark.png</value>
   </data>
-  <data name="icon_letter_light_path" xml:space="preserve">
+  <data name="ICON_LETTER_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_letter_light.png</value>
   </data>
-  <data name="icon_lighttheme_dark_path" xml:space="preserve">
+  <data name="ICON_LIGHTTHEME_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_lighttheme_dark.png</value>
   </data>
-  <data name="icon_lighttheme_light_path" xml:space="preserve">
+  <data name="ICON_LIGHTTHEME_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_lighttheme_light.png</value>
   </data>
-  <data name="icon_log_dark_path" xml:space="preserve">
+  <data name="ICON_LOG_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_log_dark.png</value>
   </data>
-  <data name="icon_log_light_path" xml:space="preserve">
+  <data name="ICON_LOG_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_log_light.png</value>
   </data>
-  <data name="icon_mac_dark_path" xml:space="preserve">
+  <data name="ICON_MAC_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_mac_dark.png</value>
   </data>
-  <data name="icon_mac_light_path" xml:space="preserve">
+  <data name="ICON_MAC_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_mac_light.png</value>
   </data>
-  <data name="icon_model_dark_path" xml:space="preserve">
+  <data name="ICON_MODEL_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_model_dark.png</value>
   </data>
-  <data name="icon_model_light_path" xml:space="preserve">
+  <data name="ICON_MODEL_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_model_light.png</value>
   </data>
-  <data name="icon_password_dark_path" xml:space="preserve">
+  <data name="ICON_PASSWORD_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_password_dark.png</value>
   </data>
-  <data name="icon_password_light_path" xml:space="preserve">
+  <data name="ICON_PASSWORD_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_password_light.png</value>
   </data>
-  <data name="icon_patr_dark_path" xml:space="preserve">
-    <value>Resources\\icons\\icon_patr_dark.png</value>
+  <data name="ICON_ASSET_DARK_PATH" xml:space="preserve">
+    <value>Resources\\icons\\icon_asset_dark.png</value>
   </data>
-  <data name="icon_patr_light_path" xml:space="preserve">
-    <value>Resources\\icons\\icon_patr_light.png</value>
+  <data name="ICON_ASSET_LIGHT_PATH" xml:space="preserve">
+    <value>Resources\\icons\\icon_asset_light.png</value>
   </data>
-  <data name="icon_port_dark_path" xml:space="preserve">
+  <data name="ICON_PORT_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_port_dark.png</value>
   </data>
-  <data name="icon_port_light_path" xml:space="preserve">
+  <data name="ICON_PORT_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_port_light.png</value>
   </data>
-  <data name="icon_ram_dark_path" xml:space="preserve">
+  <data name="ICON_RAM_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ram_dark.png</value>
   </data>
-  <data name="icon_ram_light_path" xml:space="preserve">
+  <data name="ICON_RAM_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ram_light.png</value>
   </data>
-  <data name="icon_room_dark_path" xml:space="preserve">
+  <data name="ICON_ROOM_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_room_dark.png</value>
   </data>
-  <data name="icon_room_light_path" xml:space="preserve">
+  <data name="ICON_ROOM_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_room_light.png</value>
   </data>
-  <data name="icon_seal_dark_path" xml:space="preserve">
+  <data name="ICON_SEAL_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_seal_dark.png</value>
   </data>
-  <data name="icon_seal_light_path" xml:space="preserve">
+  <data name="ICON_SEAL_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_seal_light.png</value>
   </data>
-  <data name="icon_secure_boot_dark_path" xml:space="preserve">
+  <data name="ICON_SECURE_BOOT_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_secure_boot_dark.png</value>
   </data>
-  <data name="icon_secure_boot_light_path" xml:space="preserve">
+  <data name="ICON_SECURE_BOOT_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_secure_boot_light.png</value>
   </data>
-  <data name="icon_serial_no_dark_path" xml:space="preserve">
+  <data name="ICON_SERIAL_NUMBER_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_serial_no_dark.png</value>
   </data>
-  <data name="icon_serial_no_light_path" xml:space="preserve">
+  <data name="ICON_SERIAL_NUMBER_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_serial_no_light.png</value>
   </data>
-  <data name="icon_server_dark_path" xml:space="preserve">
+  <data name="ICON_SERVER_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_server_dark.png</value>
   </data>
-  <data name="icon_server_light_path" xml:space="preserve">
+  <data name="ICON_SERVER_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_server_light.png</value>
   </data>
-  <data name="icon_service_dark_path" xml:space="preserve">
+  <data name="ICON_SERVICE_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_service_dark.png</value>
   </data>
-  <data name="icon_service_light_path" xml:space="preserve">
+  <data name="ICON_SERVICE_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_service_light.png</value>
   </data>
-  <data name="icon_smart_dark_path" xml:space="preserve">
+  <data name="ICON_SMART_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_smart_dark.png</value>
   </data>
-  <data name="icon_smart_light_path" xml:space="preserve">
+  <data name="ICON_SMART_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_smart_light.png</value>
   </data>
-  <data name="icon_standard_dark_path" xml:space="preserve">
+  <data name="ICON_STARDARD_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_standard_dark.png</value>
   </data>
-  <data name="icon_standard_light_path" xml:space="preserve">
+  <data name="ICON_STANDARD_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_standard_light.png</value>
   </data>
-  <data name="icon_sticker_dark_path" xml:space="preserve">
+  <data name="ICON_STICKER_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_sticker_dark.png</value>
   </data>
-  <data name="icon_sticker_light_path" xml:space="preserve">
+  <data name="ICON_STICKER_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_sticker_light.png</value>
   </data>
-  <data name="icon_ticket_dark_path" xml:space="preserve">
+  <data name="ICON_TICKET_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ticket_dark.png</value>
   </data>
-  <data name="icon_ticket_light_path" xml:space="preserve">
+  <data name="ICON_TICKET_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ticket_light.png</value>
   </data>
-  <data name="icon_tpm_dark_path" xml:space="preserve">
+  <data name="ICON_TPM_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_tpm_dark.png</value>
   </data>
-  <data name="icon_tpm_light_path" xml:space="preserve">
+  <data name="ICON_TPM_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_tpm_light.png</value>
   </data>
-  <data name="icon_type_dark_path" xml:space="preserve">
+  <data name="ICON_TYPE_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_type_dark.png</value>
   </data>
-  <data name="icon_type_light_path" xml:space="preserve">
+  <data name="ICON_TYPE_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_type_light.png</value>
   </data>
-  <data name="icon_VT_x_dark_path" xml:space="preserve">
+  <data name="ICON_VT_X_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_VT_x_dark.png</value>
   </data>
-  <data name="icon_VT_x_light_path" xml:space="preserve">
+  <data name="ICON_VT_X_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_VT_x_light.png</value>
   </data>
-  <data name="icon_who_dark_path" xml:space="preserve">
+  <data name="ICON_WHO_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_who_dark.png</value>
   </data>
-  <data name="icon_who_light_path" xml:space="preserve">
+  <data name="ICON_WHO_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_who_light.png</value>
   </data>
-  <data name="icon_windows_dark_path" xml:space="preserve">
+  <data name="ICON_WINDOWS_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_windows_dark.png</value>
   </data>
-  <data name="icon_windows_light_path" xml:space="preserve">
+  <data name="ICON_WINDOWS_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_windows_light.png</value>
   </data>
-  <data name="ide" xml:space="preserve">
+  <data name="IDE" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="imgDir" xml:space="preserve">
+  <data name="IMG_DIR" xml:space="preserve">
     <value>\\img\\</value>
   </data>
-  <data name="imgExt" xml:space="preserve">
+  <data name="IMG_EXT" xml:space="preserve">
     <value>.png</value>
   </data>
   <data name="INI_SECTION_1" xml:space="preserve">
@@ -619,22 +619,22 @@
   <data name="INI_SECTION_3_6" xml:space="preserve">
     <value>SubDepartamentAcronym</value>
   </data>
-  <data name="jsonServerPath" xml:space="preserve">
+  <data name="JSON_SERVER_PATH" xml:space="preserve">
     <value>output/</value>
   </data>
-  <data name="lastInstall" xml:space="preserve">
+  <data name="LAST_INSTALL" xml:space="preserve">
     <value>LastInstallation</value>
   </data>
-  <data name="lastMaintenance" xml:space="preserve">
+  <data name="LAST_MAINTENANCE" xml:space="preserve">
     <value>LastMaintenance</value>
   </data>
-  <data name="limitedUserType" xml:space="preserve">
+  <data name="LIMITED_USER_TYPE" xml:space="preserve">
     <value>Limited</value>
   </data>
-  <data name="login_banner_dark_path" xml:space="preserve">
+  <data name="LOGIN_BANNER_DARK_PATH" xml:space="preserve">
     <value>Resources\\header\\login_banner_dark.png</value>
   </data>
-  <data name="login_banner_light_path" xml:space="preserve">
+  <data name="LOGIN_BANNER_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\header\\login_banner_light.png</value>
   </data>
   <data name="LOG_ERROR" xml:space="preserve">
@@ -673,169 +673,169 @@
   <data name="LOG_WARNING" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="maintenanceURL" xml:space="preserve">
+  <data name="MAINTENANCE_URL" xml:space="preserve">
     <value>getExternalMaintenanceData</value>
   </data>
-  <data name="main_banner_dark_path" xml:space="preserve">
+  <data name="MAIN_BANNER_DARK_PATH" xml:space="preserve">
     <value>Resources\\header\\main_banner_dark.png</value>
   </data>
-  <data name="main_banner_light_path" xml:space="preserve">
+  <data name="MAIN_BANNER_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\header\\main_banner_light.png</value>
   </data>
   <data name="MAX_SIZE" xml:space="preserve">
     <value>100</value>
   </data>
-  <data name="mb" xml:space="preserve">
+  <data name="MB" xml:space="preserve">
     <value>MB</value>
   </data>
-  <data name="mediaOperationAhci" xml:space="preserve">
+  <data name="MEDIA_OPERATION_AHCI" xml:space="preserve">
     <value>AHCI</value>
   </data>
-  <data name="mediaOperationIde" xml:space="preserve">
+  <data name="MEDIA_OPERATION_IDE" xml:space="preserve">
     <value>IDE/Legacy</value>
   </data>
-  <data name="mediaOperationNvme" xml:space="preserve">
+  <data name="MEDIA_OPERATION_NVME" xml:space="preserve">
     <value>NVMe</value>
   </data>
   <data name="NO" xml:space="preserve">
     <value>No</value>
   </data>
-  <data name="nonSecBootGPU1" xml:space="preserve">
+  <data name="NON_SECBOOT_GPU_1" xml:space="preserve">
     <value>210</value>
   </data>
-  <data name="nonSecBootGPU2" xml:space="preserve">
+  <data name="NON_SECBOOT_GPU_2" xml:space="preserve">
     <value>430</value>
   </data>
-  <data name="noTpm" xml:space="preserve">
+  <data name="NO_TPM" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="notSupported" xml:space="preserve">
+  <data name="NOT_SUPPORTED" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="nvme" xml:space="preserve">
+  <data name="NVME" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="offlineModeConfig" xml:space="preserve">
+  <data name="OFFLINE_MODE_CONFIG" xml:space="preserve">
     <value>offlineModeConfig.json</value>
   </data>
-  <data name="ok" xml:space="preserve">
+  <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="phpAdRegistered" xml:space="preserve">
+  <data name="PHP_AD_REGISTERED" xml:space="preserve">
     <value>&amp;adRegistered=</value>
   </data>
-  <data name="phpAgent" xml:space="preserve">
+  <data name="PHP_AGENT" xml:space="preserve">
     <value>&amp;agent=</value>
   </data>
-  <data name="phpAssetNumber" xml:space="preserve">
+  <data name="PHP_ASSET_NUMBER" xml:space="preserve">
     <value>?assetNumber=</value>
   </data>
-  <data name="phpBatteryChange" xml:space="preserve">
+  <data name="PHP_BATTERY_CHANGE" xml:space="preserve">
     <value>&amp;batteryChange=</value>
   </data>
-  <data name="phpBrand" xml:space="preserve">
+  <data name="PHP_BRAND" xml:space="preserve">
     <value>&amp;brand=</value>
   </data>
-  <data name="phpBuilding" xml:space="preserve">
+  <data name="PHP_BUILDING" xml:space="preserve">
     <value>&amp;building=</value>
   </data>
-  <data name="phpDeliveredToRegistrationNumber" xml:space="preserve">
+  <data name="PHP_DELIVERED_TO_REGISTRATION_NUMBER" xml:space="preserve">
     <value>&amp;deliveredToRegistrationNumber=</value>
   </data>
-  <data name="phpFwType" xml:space="preserve">
+  <data name="PHP_FW_TYPE" xml:space="preserve">
     <value>&amp;fwType=</value>
   </data>
-  <data name="phpFwVersion" xml:space="preserve">
+  <data name="PHP_FW_VERSION" xml:space="preserve">
     <value>&amp;fwVersion=</value>
   </data>
-  <data name="phpHostname" xml:space="preserve">
+  <data name="PHP_HOSTNAME" xml:space="preserve">
     <value>&amp;hostname=</value>
   </data>
-  <data name="phpHwType" xml:space="preserve">
+  <data name="PHP_HW_TYPE" xml:space="preserve">
     <value>&amp;hwType=</value>
   </data>
-  <data name="phpInUse" xml:space="preserve">
+  <data name="PHP_IN_USE" xml:space="preserve">
     <value>&amp;inUse=</value>
   </data>
-  <data name="phpIpAddress" xml:space="preserve">
+  <data name="PHP_IP_ADDRESS" xml:space="preserve">
     <value>&amp;ipAddress=</value>
   </data>
-  <data name="phpLastDeliveryDate" xml:space="preserve">
+  <data name="PHP_LAST_DELIVERY_DATE" xml:space="preserve">
     <value>&amp;lastDeliveryDate=</value>
   </data>
-  <data name="phpLastDeliveryMadeBy" xml:space="preserve">
+  <data name="PHP_LAST_DELIVERY_MADE_BY" xml:space="preserve">
     <value>&amp;lastDeliveryMadeBy=</value>
   </data>
-  <data name="phpMacAddress" xml:space="preserve">
+  <data name="PHP_MAC_ADDRESS" xml:space="preserve">
     <value>&amp;macAddress=</value>
   </data>
-  <data name="phpMediaOperationMode" xml:space="preserve">
+  <data name="PHP_MEDIA_OPERATION_MODE" xml:space="preserve">
     <value>&amp;mediaOperationMode=</value>
   </data>
-  <data name="phpModel" xml:space="preserve">
+  <data name="PHP_MODEL" xml:space="preserve">
     <value>&amp;model=</value>
   </data>
-  <data name="phpOperatingSystem" xml:space="preserve">
+  <data name="PHP_OPERATING_SYSTEM" xml:space="preserve">
     <value>&amp;operatingSystem=</value>
   </data>
-  <data name="phpPreviousServiceDates" xml:space="preserve">
+  <data name="PHP_PREVIOUS_SERVICE_DATES" xml:space="preserve">
     <value>&amp;previousServiceDates=</value>
   </data>
-  <data name="phpProcessor" xml:space="preserve">
+  <data name="PHP_PROCESSOR" xml:space="preserve">
     <value>&amp;processor=</value>
   </data>
-  <data name="phpRam" xml:space="preserve">
+  <data name="PHP_RAM" xml:space="preserve">
     <value>&amp;ram=</value>
   </data>
-  <data name="phpRoom" xml:space="preserve">
+  <data name="PHP_ROOM" xml:space="preserve">
     <value>&amp;roomNumber=</value>
   </data>
-  <data name="phpSealNumber" xml:space="preserve">
+  <data name="PHP_SEAL_NUMBER" xml:space="preserve">
     <value>&amp;sealNumber=</value>
   </data>
-  <data name="phpSecureBoot" xml:space="preserve">
+  <data name="PHP_SECURE_BOOT" xml:space="preserve">
     <value>&amp;secureBoot=</value>
   </data>
-  <data name="phpSerialNumber" xml:space="preserve">
+  <data name="PHP_SERIAL_NUMBER" xml:space="preserve">
     <value>&amp;serialNumber=</value>
   </data>
-  <data name="phpServiceDate" xml:space="preserve">
+  <data name="PHP_SERVICE_DATE" xml:space="preserve">
     <value>&amp;serviceDate=</value>
   </data>
-  <data name="phpStandard" xml:space="preserve">
+  <data name="PHP_STANDARD" xml:space="preserve">
     <value>&amp;standard=</value>
   </data>
-  <data name="phpStorageSize" xml:space="preserve">
+  <data name="PHP_STORAGE_SIZE" xml:space="preserve">
     <value>&amp;storageSize=</value>
   </data>
-  <data name="phpStorageType" xml:space="preserve">
+  <data name="PHP_STORAGE_TYPE" xml:space="preserve">
     <value>&amp;storageType=</value>
   </data>
-  <data name="phpTag" xml:space="preserve">
+  <data name="PHP_TAG" xml:space="preserve">
     <value>&amp;tag=</value>
   </data>
-  <data name="phpTicketNumber" xml:space="preserve">
+  <data name="PHP_TICKET_NUMBER" xml:space="preserve">
     <value>&amp;ticketNumber=</value>
   </data>
-  <data name="phpTpmVersion" xml:space="preserve">
+  <data name="PHP_TPM_VERSION" xml:space="preserve">
     <value>&amp;tpmVersion=</value>
   </data>
-  <data name="phpVideoCard" xml:space="preserve">
+  <data name="PHP_VIDEO_CARD" xml:space="preserve">
     <value>&amp;videoCard=</value>
   </data>
-  <data name="phpVirtualizationTechnology" xml:space="preserve">
+  <data name="PHP_VIRTUALIZATION_TECHNOLOGY" xml:space="preserve">
     <value>&amp;virtualizationTechnology=</value>
   </data>
-  <data name="predFail" xml:space="preserve">
+  <data name="PRED_FAIL" xml:space="preserve">
     <value>Pred Fail</value>
   </data>
   <data name="PROGRAMDATA_FOLDERNAME" xml:space="preserve">
     <value>AppLog</value>
   </data>
-  <data name="raid" xml:space="preserve">
+  <data name="RAID" xml:space="preserve">
     <value>RAID</value>
   </data>
-  <data name="resourcesDir" xml:space="preserve">
+  <data name="RESOURCES_DIR" xml:space="preserve">
     <value>\\resources\\</value>
   </data>
   <data name="RETURN_ERROR" xml:space="preserve">
@@ -847,118 +847,118 @@
   <data name="RETURN_WARNING" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius100" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_100" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius125" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_125" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius150" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_150" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius175" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_175" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius200" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_200" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius225" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_225" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius250" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_250" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius300" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_300" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="rotatingCircleInnerCircleRadius350" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_INNER_RADIUS_350" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="rotatingCircleNumberSpoke100" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_100" xml:space="preserve">
     <value>28</value>
   </data>
-  <data name="rotatingCircleNumberSpoke125" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_125" xml:space="preserve">
     <value>32</value>
   </data>
-  <data name="rotatingCircleNumberSpoke150" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_150" xml:space="preserve">
     <value>36</value>
   </data>
-  <data name="rotatingCircleNumberSpoke175" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_175" xml:space="preserve">
     <value>40</value>
   </data>
-  <data name="rotatingCircleNumberSpoke200" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_200" xml:space="preserve">
     <value>44</value>
   </data>
-  <data name="rotatingCircleNumberSpoke225" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_225" xml:space="preserve">
     <value>48</value>
   </data>
-  <data name="rotatingCircleNumberSpoke250" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_250" xml:space="preserve">
     <value>52</value>
   </data>
-  <data name="rotatingCircleNumberSpoke300" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_300" xml:space="preserve">
     <value>56</value>
   </data>
-  <data name="rotatingCircleNumberSpoke350" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_350" xml:space="preserve">
     <value>60</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius100" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_100" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius125" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_125" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius150" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_150" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius175" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_175" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius200" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_200" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius225" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_225" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius250" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_250" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius300" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_300" xml:space="preserve">
     <value>32</value>
   </data>
-  <data name="rotatingCircleOuterCircleRadius350" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_OUTER_RADIUS_350" xml:space="preserve">
     <value>35</value>
   </data>
-  <data name="rotatingCircleRotationSpeed" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_ROTATION_SPEED" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="rotatingCircleSpokeThickness100" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_100" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="rotatingCircleSpokeThickness125" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_125" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="rotatingCircleSpokeThickness150" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_150" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="rotatingCircleSpokeThickness175" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_175" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="rotatingCircleSpokeThickness200" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_200" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="rotatingCircleSpokeThickness225" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_225" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="rotatingCircleSpokeThickness250" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_250" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="rotatingCircleSpokeThickness300" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_300" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="rotatingCircleSpokeThickness350" xml:space="preserve">
+  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_350" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="sata" xml:space="preserve">
+  <data name="SATA" xml:space="preserve">
     <value>SATA</value>
   </data>
   <data name="SHUTDOWN_CMD_1" xml:space="preserve">
@@ -967,25 +967,25 @@
   <data name="SHUTDOWN_CMD_2" xml:space="preserve">
     <value>/r /f /t 0</value>
   </data>
-  <data name="ssd" xml:space="preserve">
+  <data name="SSD" xml:space="preserve">
     <value>SSD</value>
   </data>
-  <data name="supplyModelData" xml:space="preserve">
+  <data name="SUPPLY_MODEL_DATA" xml:space="preserve">
     <value>generateModelData.php</value>
   </data>
-  <data name="supplyConfigData" xml:space="preserve">
+  <data name="SUPPLY_CONFIG_DATA" xml:space="preserve">
     <value>/etc/config.json</value>
   </data>
-  <data name="supplyCredentialsData" xml:space="preserve">
+  <data name="SUPPLY_CREDENTIALS_DATA" xml:space="preserve">
     <value>generateAgentData.php</value>
   </data>
-  <data name="supplyAssetData" xml:space="preserve">
+  <data name="SUPPLY_ASSET_DATA" xml:space="preserve">
     <value>generateAssetData.php</value>
   </data>
-  <data name="systemRom" xml:space="preserve">
+  <data name="SYSTEM_ROM" xml:space="preserve">
     <value>SYSTEM ROM</value>
   </data>
-  <data name="tb" xml:space="preserve">
+  <data name="TB" xml:space="preserve">
     <value>TB</value>
   </data>
   <data name="THEME_REG_KEY" xml:space="preserve">
@@ -997,31 +997,31 @@
   <data name="TIMER_INTERVAL" xml:space="preserve">
     <value>1000</value>
   </data>
-  <data name="ToBeFilledByOEM" xml:space="preserve">
+  <data name="TO_BE_FILLED_BY_OEM" xml:space="preserve">
     <value>To Be Filled By O.E.M.</value>
   </data>
-  <data name="today" xml:space="preserve">
+  <data name="TODAY" xml:space="preserve">
     <value>today</value>
   </data>
-  <data name="tpm1_2" xml:space="preserve">
+  <data name="TPM_1_2" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tpm1_2Name" xml:space="preserve">
+  <data name="TPM_1_2_NAME" xml:space="preserve">
     <value>1.2</value>
   </data>
-  <data name="tpm2_0" xml:space="preserve">
+  <data name="TPM_2_0" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tpm2_0Name" xml:space="preserve">
+  <data name="TPM_2_0_NAME" xml:space="preserve">
     <value>2.0</value>
   </data>
-  <data name="uefi" xml:space="preserve">
+  <data name="UEFI" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="webview2file" xml:space="preserve">
+  <data name="WEBVIEW2_FILE" xml:space="preserve">
     <value>webview2installer.exe</value>
   </data>
-  <data name="webview2url" xml:space="preserve">
+  <data name="WEBVIEW2_URL" xml:space="preserve">
     <value>https://go.microsoft.com/fwlink/p/?LinkId=2124703</value>
   </data>
   <data name="WEBVIEW2_REG_PATH_X64" xml:space="preserve">
@@ -1036,58 +1036,58 @@
   <data name="WEBVIEW2_SYSTEM_PATH_X86" xml:space="preserve">
     <value>C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\</value>
   </data>
-  <data name="Width" xml:space="preserve">
+  <data name="WIDTH" xml:space="preserve">
     <value>1366</value>
   </data>
-  <data name="win10imgDir" xml:space="preserve">
+  <data name="WIN_10_IMG_DIR" xml:space="preserve">
     <value>\\windows10\\</value>
   </data>
-  <data name="win10ntBuild" xml:space="preserve">
+  <data name="WIN_10_NT_BUILD" xml:space="preserve">
     <value>19041</value>
   </data>
-  <data name="win10ntMajor" xml:space="preserve">
+  <data name="WIN_10_NT_MAJOR" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="win10ntMinor" xml:space="preserve">
+  <data name="WIN_10_NT_MINOR" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="win11imgDir" xml:space="preserve">
+  <data name="WIN_11_IMG_DIR" xml:space="preserve">
     <value>\\windows11\\</value>
   </data>
-  <data name="win11ntBuild" xml:space="preserve">
+  <data name="WIN_11_NT_BUILD" xml:space="preserve">
     <value>22000</value>
   </data>
-  <data name="win11ntMajor" xml:space="preserve">
+  <data name="WIN_11_NT_MAJOR" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="win11ntMinor" xml:space="preserve">
+  <data name="WIN_11_NT_MINOR" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="win7imgDir" xml:space="preserve">
+  <data name="WIN_7_IMG_DIR" xml:space="preserve">
     <value>\\windows7\\</value>
   </data>
-  <data name="win7ntBuild" xml:space="preserve">
+  <data name="WIN_7_NT_BUILD" xml:space="preserve">
     <value>7601</value>
   </data>
-  <data name="win7ntMajor" xml:space="preserve">
+  <data name="WIN_7_NT_MAJOR" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="win7ntMinor" xml:space="preserve">
+  <data name="WIN_7_NT_MINOR" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="windows10" xml:space="preserve">
+  <data name="WINDOWS_10" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="windows11" xml:space="preserve">
+  <data name="WINDOWS_11" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="windows7" xml:space="preserve">
+  <data name="WINDOWS_7" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="windows8" xml:space="preserve">
+  <data name="WINDOWS_8" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="windows8_1" xml:space="preserve">
+  <data name="WINDOWS_8_1" xml:space="preserve">
     <value>8.1</value>
   </data>
   <data name="YES" xml:space="preserve">

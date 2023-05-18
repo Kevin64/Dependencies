@@ -37,7 +37,7 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.fileConfig, StringsAndConstants.configFilePath);
+                    wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.FILE_CONFIG, StringsAndConstants.CONFIG_FILE_PATH);
                     System.Threading.Thread.Sleep(300);
                 }
                 catch
@@ -54,7 +54,7 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + ConstantsDLL.Properties.Resources.fileConfigPath + ConstantsDLL.Properties.Resources.fileConfig, StringsAndConstants.configFilePath);
+                wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + ConstantsDLL.Properties.Resources.FILE_CONFIG_PATH + ConstantsDLL.Properties.Resources.FILE_CONFIG, StringsAndConstants.CONFIG_FILE_PATH);
                 System.Threading.Thread.Sleep(300);
             }
             catch
@@ -75,7 +75,7 @@ namespace JsonFileReaderDLL
                 }
 
                 List<string[]> arr;
-                fileC = new StreamReader(StringsAndConstants.configFilePath);
+                fileC = new StreamReader(StringsAndConstants.CONFIG_FILE_PATH);
 
                 jsonFile = fileC.ReadToEnd();
                 CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
@@ -96,7 +96,7 @@ namespace JsonFileReaderDLL
             }
 
             List<string[]> arr;
-            fileC = new StreamReader(StringsAndConstants.configFilePath);
+            fileC = new StreamReader(StringsAndConstants.CONFIG_FILE_PATH);
 
             jsonFile = fileC.ReadToEnd();
             CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);
@@ -110,7 +110,7 @@ namespace JsonFileReaderDLL
         public static List<string[]> GetOfflineModeConfigFile()
         {
             List<string[]> arr;
-            fileC = new StreamReader(ConstantsDLL.Properties.Resources.offlineModeConfig);
+            fileC = new StreamReader(ConstantsDLL.Properties.Resources.OFFLINE_MODE_CONFIG);
 
             jsonFile = fileC.ReadToEnd();
             CFile jsonParse = JsonConvert.DeserializeObject<CFile>(@jsonFile);

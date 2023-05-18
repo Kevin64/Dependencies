@@ -72,18 +72,18 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Absent.
         /// </summary>
-        public static string absent {
+        public static string ABSENT {
             get {
-                return ResourceManager.GetString("absent", resourceCulture);
+                return ResourceManager.GetString("ABSENT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Enabled.
         /// </summary>
-        public static string activated {
+        public static string ACTIVATED {
             get {
-                return ResourceManager.GetString("activated", resourceCulture);
+                return ResourceManager.GetString("ACTIVATED", resourceCulture);
             }
         }
         
@@ -97,47 +97,65 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Asset dropped, registration cancelled. Revert drop and try again.
+        /// </summary>
+        public static string ASSET_DROPPED {
+            get {
+                return ResourceManager.GetString("ASSET_DROPPED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Assets not initially registered by the &apos;Hardware Collection and Asset Registration&apos; software. First register and then try again..
+        /// </summary>
+        public static string ASSET_NOT_REGISTERED {
+            get {
+                return ResourceManager.GetString("ASSET_NOT_REGISTERED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Clear delivery data and cancel run on next boot.
         /// </summary>
-        public static string cancelExecution {
+        public static string CANCEL_EXECUTION {
             get {
-                return ResourceManager.GetString("cancelExecution", resourceCulture);
+                return ResourceManager.GetString("CANCEL_EXECUTION", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Delete delivery data.
         /// </summary>
-        public static string cancelExecutionResError {
+        public static string CANCEL_EXECUTION_RES_ERROR {
             get {
-                return ResourceManager.GetString("cancelExecutionResError", resourceCulture);
+                return ResourceManager.GetString("CANCEL_EXECUTION_RES_ERROR", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Disabled.
         /// </summary>
-        public static string deactivated {
+        public static string DEACTIVATED {
             get {
-                return ResourceManager.GetString("deactivated", resourceCulture);
+                return ResourceManager.GetString("DEACTIVATED", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Send delivery data and run on next boot.
         /// </summary>
-        public static string doExecution {
+        public static string DO_EXECUTION {
             get {
-                return ResourceManager.GetString("doExecution", resourceCulture);
+                return ResourceManager.GetString("DO_EXECUTION", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Send delivery data.
         /// </summary>
-        public static string doExecutionResError {
+        public static string DO_EXECUTION_RES_ERROR {
             get {
-                return ResourceManager.GetString("doExecutionResError", resourceCulture);
+                return ResourceManager.GetString("DO_EXECUTION_RES_ERROR", resourceCulture);
             }
         }
         
@@ -153,27 +171,27 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Fill in the required fields!.
         /// </summary>
-        public static string fillForm {
+        public static string FILL_FORM {
             get {
-                return ResourceManager.GetString("fillForm", resourceCulture);
+                return ResourceManager.GetString("FILL_FORM", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Finishing up.
         /// </summary>
-        public static string finaleScreen {
+        public static string FINALE_SCREEN {
             get {
-                return ResourceManager.GetString("finaleScreen", resourceCulture);
+                return ResourceManager.GetString("FINALE_SCREEN", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Finish.
         /// </summary>
-        public static string finishText {
+        public static string FINISH_TEXT {
             get {
-                return ResourceManager.GetString("finishText", resourceCulture);
+                return ResourceManager.GetString("FINISH_TEXT", resourceCulture);
             }
         }
         
@@ -189,9 +207,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Intro.
         /// </summary>
-        public static string introScreen {
+        public static string INTRO_SCREEN {
             get {
-                return ResourceManager.GetString("introScreen", resourceCulture);
+                return ResourceManager.GetString("INTRO_SCREEN", resourceCulture);
             }
         }
         
@@ -207,90 +225,90 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Formatting.
         /// </summary>
-        public static string listModeGUIFormat {
+        public static string LIST_MODE_GUI_FORMAT {
             get {
-                return ResourceManager.GetString("listModeGUIFormat", resourceCulture);
+                return ResourceManager.GetString("LIST_MODE_GUI_FORMAT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Maintenance.
         /// </summary>
-        public static string listModeGUIMaintenance {
+        public static string LIST_MODE_GUI_MAINTENANCE {
             get {
-                return ResourceManager.GetString("listModeGUIMaintenance", resourceCulture);
+                return ResourceManager.GetString("LIST_MODE_GUI_MAINTENANCE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a No.
         /// </summary>
-        public static string listNo0 {
+        public static string LIST_NO_0 {
             get {
-                return ResourceManager.GetString("listNo0", resourceCulture);
+                return ResourceManager.GetString("LIST_NO_0", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a N.
         /// </summary>
-        public static string listNo1 {
+        public static string LIST_NO_1 {
             get {
-                return ResourceManager.GetString("listNo1", resourceCulture);
+                return ResourceManager.GetString("LIST_NO_1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a n.
         /// </summary>
-        public static string listNo2 {
+        public static string LIST_NO_2 {
             get {
-                return ResourceManager.GetString("listNo2", resourceCulture);
+                return ResourceManager.GetString("LIST_NO_2", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Employee.
         /// </summary>
-        public static string listStandardGUIEmployee {
+        public static string LIST_STANDARD_GUI_EMPLOYEE {
             get {
-                return ResourceManager.GetString("listStandardGUIEmployee", resourceCulture);
+                return ResourceManager.GetString("LIST_STANDARD_GUI_EMPLOYEE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Student.
         /// </summary>
-        public static string listStandardGUIStudent {
+        public static string LIST_STANDARD_GUI_STUDENT {
             get {
-                return ResourceManager.GetString("listStandardGUIStudent", resourceCulture);
+                return ResourceManager.GetString("LIST_STANDARD_GUI_STUDENT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
         /// </summary>
-        public static string listYes0 {
+        public static string LIST_YES_0 {
             get {
-                return ResourceManager.GetString("listYes0", resourceCulture);
+                return ResourceManager.GetString("LIST_YES_0", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Y.
         /// </summary>
-        public static string listYes1 {
+        public static string LIST_YES_1 {
             get {
-                return ResourceManager.GetString("listYes1", resourceCulture);
+                return ResourceManager.GetString("LIST_YES_1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a y.
         /// </summary>
-        public static string listYes2 {
+        public static string LIST_YES_2 {
             get {
-                return ResourceManager.GetString("listYes2", resourceCulture);
+                return ResourceManager.GetString("LIST_YES_2", resourceCulture);
             }
         }
         
@@ -441,9 +459,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Next.
         /// </summary>
-        public static string nextText {
+        public static string NEXT_TEXT {
             get {
-                return ResourceManager.GetString("nextText", resourceCulture);
+                return ResourceManager.GetString("NEXT_TEXT", resourceCulture);
             }
         }
         
@@ -459,36 +477,36 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Not determined.
         /// </summary>
-        public static string notDetermined {
+        public static string NOT_DETERMINED {
             get {
-                return ResourceManager.GetString("notDetermined", resourceCulture);
+                return ResourceManager.GetString("NOT_DETERMINED", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Nonexistent.
         /// </summary>
-        public static string notExistant {
+        public static string NOT_EXISTANT {
             get {
-                return ResourceManager.GetString("notExistant", resourceCulture);
+                return ResourceManager.GetString("NOT_EXISTANT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Not supported.
         /// </summary>
-        public static string notSupported {
+        public static string NOT_SUPPORTED {
             get {
-                return ResourceManager.GetString("notSupported", resourceCulture);
+                return ResourceManager.GetString("NOT_SUPPORTED", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a of.
         /// </summary>
-        public static string of {
+        public static string OF {
             get {
-                return ResourceManager.GetString("of", resourceCulture);
+                return ResourceManager.GetString("OF", resourceCulture);
             }
         }
         
@@ -502,29 +520,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Asset dropped, registration cancelled. Revert drop and try again.
-        /// </summary>
-        public static string PC_DROPPED {
-            get {
-                return ResourceManager.GetString("PC_DROPPED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Assets not initially registered by the &apos;Hardware Collection and Asset Registration&apos; software. First register and then try again..
-        /// </summary>
-        public static string pcNotRegistered {
-            get {
-                return ResourceManager.GetString("pcNotRegistered", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Insufficient resolution. This program only supports resolutions equal to or greater than {0}x{1}..
         /// </summary>
-        public static string resolutionWarning {
+        public static string RESOLUTION_WARNING {
             get {
-                return ResourceManager.GetString("resolutionWarning", resourceCulture);
+                return ResourceManager.GetString("RESOLUTION_WARNING", resourceCulture);
             }
         }
         
@@ -540,18 +540,18 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Unknown.
         /// </summary>
-        public static string unknown {
+        public static string UNKNOWN {
             get {
-                return ResourceManager.GetString("unknown", resourceCulture);
+                return ResourceManager.GetString("UNKNOWN", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Please wait.
         /// </summary>
-        public static string waitText {
+        public static string WAIT_TEXT {
             get {
-                return ResourceManager.GetString("waitText", resourceCulture);
+                return ResourceManager.GetString("WAIT_TEXT", resourceCulture);
             }
         }
     }

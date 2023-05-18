@@ -121,79 +121,85 @@
     <value />
     <comment>ConstantsDLL.Strings.PT</comment>
   </data>
-  <data name="absent" xml:space="preserve">
+  <data name="ABSENT" xml:space="preserve">
     <value>Ausente</value>
   </data>
-  <data name="activated" xml:space="preserve">
+  <data name="ACTIVATED" xml:space="preserve">
     <value>Ativado</value>
   </data>
   <data name="ALREADY_RUNNING" xml:space="preserve">
     <value>Já existe uma instância do programa em execução!</value>
   </data>
-  <data name="cancelExecution" xml:space="preserve">
+  <data name="ASSET_DROPPED" xml:space="preserve">
+    <value>Ativo baixado, cadastro cancelado. Reverta a baixa e tente novamente</value>
+  </data>
+  <data name="ASSET_NOT_REGISTERED" xml:space="preserve">
+    <value>Ativo não registrado inicialmente pelo software 'Asset Information and Registration'. Primeiramente realize o cadastro e depois tente novamente.</value>
+  </data>
+  <data name="CANCEL_EXECUTION" xml:space="preserve">
     <value>Apagar dados de entrega e cancelar execução no próximo boot</value>
   </data>
-  <data name="cancelExecutionResError" xml:space="preserve">
+  <data name="CANCEL_EXECUTION_RES_ERROR" xml:space="preserve">
     <value>Apagar dados de entrega</value>
   </data>
-  <data name="deactivated" xml:space="preserve">
+  <data name="DEACTIVATED" xml:space="preserve">
     <value>Desativado</value>
   </data>
-  <data name="doExecution" xml:space="preserve">
+  <data name="DO_EXECUTION" xml:space="preserve">
     <value>Enviar dados de entrega e executar no próximo boot</value>
   </data>
-  <data name="doExecutionResError" xml:space="preserve">
+  <data name="DO_EXECUTION_RES_ERROR" xml:space="preserve">
     <value>Enviar dados de entrega</value>
   </data>
   <data name="ERROR_WINDOWTITLE" xml:space="preserve">
     <value>Erro</value>
   </data>
-  <data name="fillForm" xml:space="preserve">
+  <data name="FILL_FORM" xml:space="preserve">
     <value>Preencha os campos necessários!</value>
   </data>
-  <data name="finaleScreen" xml:space="preserve">
+  <data name="FINALE_SCREEN" xml:space="preserve">
     <value>Finalização</value>
   </data>
-  <data name="finishText" xml:space="preserve">
+  <data name="FINISH_TEXT" xml:space="preserve">
     <value>Finalizar</value>
   </data>
   <data name="INTRANET_REQUIRED" xml:space="preserve">
     <value>É necessário conexão com a intranet.</value>
   </data>
-  <data name="introScreen" xml:space="preserve">
+  <data name="INTRO_SCREEN" xml:space="preserve">
     <value>Introdução</value>
   </data>
   <data name="KEY_FINISH" xml:space="preserve">
     <value>Pressione Enter para fechar...</value>
   </data>
-  <data name="listModeGUIFormat" xml:space="preserve">
+  <data name="LIST_MODE_GUI_FORMAT" xml:space="preserve">
     <value>Formatação</value>
   </data>
-  <data name="listModeGUIMaintenance" xml:space="preserve">
+  <data name="LIST_MODE_GUI_MAINTENANCE" xml:space="preserve">
     <value>Manutenção</value>
   </data>
-  <data name="listNo0" xml:space="preserve">
+  <data name="LIST_NO_0" xml:space="preserve">
     <value>Não</value>
   </data>
-  <data name="listNo1" xml:space="preserve">
+  <data name="LIST_NO_1" xml:space="preserve">
     <value>N</value>
   </data>
-  <data name="listNo2" xml:space="preserve">
+  <data name="LIST_NO_2" xml:space="preserve">
     <value>n</value>
   </data>
-  <data name="listStandardGUIEmployee" xml:space="preserve">
+  <data name="LIST_STANDARD_GUI_EMPLOYEE" xml:space="preserve">
     <value>Funcionário</value>
   </data>
-  <data name="listStandardGUIStudent" xml:space="preserve">
+  <data name="LIST_STANDARD_GUI_STUDENT" xml:space="preserve">
     <value>Aluno</value>
   </data>
-  <data name="listYes0" xml:space="preserve">
+  <data name="LIST_YES_0" xml:space="preserve">
     <value>Sim</value>
   </data>
-  <data name="listYes1" xml:space="preserve">
+  <data name="LIST_YES_1" xml:space="preserve">
     <value>S</value>
   </data>
-  <data name="listYes2" xml:space="preserve">
+  <data name="LIST_YES_2" xml:space="preserve">
     <value>s</value>
   </data>
   <data name="LOGFILE_EXISTS" xml:space="preserve">
@@ -244,43 +250,37 @@
   <data name="LOG_WARNING_ATTR" xml:space="preserve">
     <value>&lt;AVISO&gt;</value>
   </data>
-  <data name="nextText" xml:space="preserve">
+  <data name="NEXT_TEXT" xml:space="preserve">
     <value>Próximo</value>
   </data>
-  <data name="notDetermined" xml:space="preserve">
+  <data name="NOT_DETERMINED" xml:space="preserve">
     <value>Não determinado</value>
   </data>
-  <data name="notExistant" xml:space="preserve">
+  <data name="NOT_EXISTANT" xml:space="preserve">
     <value>Não existente</value>
   </data>
-  <data name="notSupported" xml:space="preserve">
+  <data name="NOT_SUPPORTED" xml:space="preserve">
     <value>Não suportado</value>
   </data>
   <data name="NO_AUTH" xml:space="preserve">
     <value>Preencha suas credenciais.</value>
   </data>
-  <data name="of" xml:space="preserve">
+  <data name="OF" xml:space="preserve">
     <value>de</value>
   </data>
   <data name="PARAMETER_ERROR" xml:space="preserve">
     <value>Um ou mais parâmetros do arquivo INI estão mal formados</value>
   </data>
-  <data name="pcNotRegistered" xml:space="preserve">
-    <value>Ativo não registrado inicialmente pelo software 'Asset Information and Registration'. Primeiramente realize o cadastro e depois tente novamente.</value>
-  </data>
-  <data name="PC_DROPPED" xml:space="preserve">
-    <value>Ativo baixado, cadastro cancelado. Reverta a baixa e tente novamente</value>
-  </data>
-  <data name="resolutionWarning" xml:space="preserve">
+  <data name="RESOLUTION_WARNING" xml:space="preserve">
     <value>Resolução insuficiente. Este programa suporta apenas resoluções iguais ou superiores a {0}x{1}.</value>
   </data>
   <data name="SERVER_NOT_FOUND_ERROR" xml:space="preserve">
     <value>Servidor não encontrado. Selecione um servidor válido!</value>
   </data>
-  <data name="unknown" xml:space="preserve">
+  <data name="UNKNOWN" xml:space="preserve">
     <value>Desconhecido</value>
   </data>
-  <data name="waitText" xml:space="preserve">
+  <data name="WAIT_TEXT" xml:space="preserve">
     <value>Aguarde </value>
   </data>
 </root>

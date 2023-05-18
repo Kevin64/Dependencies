@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Management.Automation;
@@ -31,7 +32,7 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
                     Id = queryObj.Properties["name"].Value.ToString() + " " + queryObj.Properties["CurrentClockSpeed"].Value.ToString()
-                       + " " + ConstantsDLL.Properties.Resources.frequency + " (" + queryObj.Properties["NumberOfCores"].Value.ToString() + "C/" + logical + "T)";
+                       + " " + ConstantsDLL.Properties.Resources.FREQUENCY + " (" + queryObj.Properties["NumberOfCores"].Value.ToString() + "C/" + logical + "T)";
                     break;
                 }
                 Id = Id.Replace("(R)", string.Empty);
@@ -66,8 +67,8 @@ namespace HardwareInfoDLL
                             gpuram = Convert.ToInt64(queryObj["AdapterRAM"]);
                             gpuram = Math.Round(gpuram / 1048576, 0);
                             gpuramStr = Math.Ceiling(Math.Log10(gpuram)) > 3
-                                ? Convert.ToString(Math.Round(gpuram / 1024, 1)) + " " + ConstantsDLL.Properties.Resources.gb
-                                : gpuram + " " + ConstantsDLL.Properties.Resources.mb;
+                                ? Convert.ToString(Math.Round(gpuram / 1024, 1)) + " " + ConstantsDLL.Properties.Resources.GB
+                                : gpuram + " " + ConstantsDLL.Properties.Resources.MB;
                             gpuname = queryObj["Caption"].ToString() + " (" + gpuramStr + ")";
                         }
                     }
@@ -94,7 +95,7 @@ namespace HardwareInfoDLL
                 {
                     if (queryObj["Name"].ToString().Contains("NVM"))
                     {
-                        return ConstantsDLL.Properties.Resources.nvme;
+                        return ConstantsDLL.Properties.Resources.NVME;
                     }
                 }
 
@@ -102,13 +103,13 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if ((queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.ahci) || queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.sata)) && !queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.raid))
+                    if ((queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.AHCI) || queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.SATA)) && !queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.RAID))
                     {
-                        return ConstantsDLL.Properties.Resources.ahci;
+                        return ConstantsDLL.Properties.Resources.AHCI;
                     }
                 }
 
-                return ConstantsDLL.Properties.Resources.ide;
+                return ConstantsDLL.Properties.Resources.IDE;
             }
             catch (Exception e)
             {
@@ -124,7 +125,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8))
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
                 {
                     int size = 10, i = 0;
                     string[] type = new string[size];
@@ -148,23 +149,23 @@ namespace HardwareInfoDLL
                                 dresult = Math.Round(dresult / 1000000000, 0);
 
                                 dresultStr = Math.Log10(dresult) > 2.9999
-                                    ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.tb
-                                    : dresult + " " + ConstantsDLL.Properties.Resources.gb;
+                                    ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB
+                                    : dresult + " " + ConstantsDLL.Properties.Resources.GB;
 
                                 switch (Convert.ToInt16(queryObj["MediaType"]))
                                 {
                                     case 3:
-                                        type[i] = ConstantsDLL.Properties.Resources.hdd;
+                                        type[i] = ConstantsDLL.Properties.Resources.HDD;
                                         bytesHDD[i] = dresultStr;
                                         i++;
                                         break;
                                     case 4:
-                                        type[i] = ConstantsDLL.Properties.Resources.ssd;
+                                        type[i] = ConstantsDLL.Properties.Resources.SSD;
                                         bytesSSD[i] = dresultStr;
                                         i++;
                                         break;
                                     case 0:
-                                        type[i] = ConstantsDLL.Properties.Resources.hdd;
+                                        type[i] = ConstantsDLL.Properties.Resources.HDD;
                                         bytesHDD[i] = dresultStr;
                                         i++;
                                         break;
@@ -199,9 +200,9 @@ namespace HardwareInfoDLL
                             dresult = Math.Round(dresult / 1000000000, 0);
 
                             dresultStr = Math.Log10(dresult) > 2.9999
-                                ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.tb
-                                : dresult + " " + ConstantsDLL.Properties.Resources.gb;
-                            type[i] = ConstantsDLL.Properties.Resources.hdd;
+                                ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB
+                                : dresult + " " + ConstantsDLL.Properties.Resources.GB;
+                            type[i] = ConstantsDLL.Properties.Resources.HDD;
                             bytesHDD[i] = dresultStr;
                             i++;
                         }
@@ -241,7 +242,7 @@ namespace HardwareInfoDLL
                         if (array[i] == group.Key)
                         {
                             array[i] = string.Empty;
-                            if (group.Key == ConstantsDLL.Properties.Resources.hdd)
+                            if (group.Key == ConstantsDLL.Properties.Resources.HDD)
                             {
                                 sizesHDD.Add(array2[i]);
                                 j++;
@@ -253,7 +254,7 @@ namespace HardwareInfoDLL
                             }
                             if (group.Count() == j)
                             {
-                                if (group.Key == ConstantsDLL.Properties.Resources.hdd)
+                                if (group.Key == ConstantsDLL.Properties.Resources.HDD)
                                 {
                                     result += " (" + string.Join(", ", sizesHDD) + ")" + ", ";
                                 }
@@ -284,7 +285,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8))
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
                 {
                     ManagementScope scope = new ManagementScope(@"\\.\root\microsoft\windows\storage");
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from MSFT_PhysicalDisk");
@@ -322,12 +323,12 @@ namespace HardwareInfoDLL
                 dresult = Math.Round(dresult / 1000000000, 0);
                 if (Math.Log10(dresult) > 2.9999)
                 {
-                    dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.tb;
+                    dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB;
                     return dresultStr;
                 }
                 else
                 {
-                    dresultStr = dresult + " " + ConstantsDLL.Properties.Resources.gb;
+                    dresultStr = dresult + " " + ConstantsDLL.Properties.Resources.GB;
                     return dresultStr;
                 }
             }
@@ -407,7 +408,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
                 }
 
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (Exception e)
             {
@@ -427,7 +428,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
                 }
 
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (Exception e)
             {
@@ -447,7 +448,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Model").ToString();
                 }
 
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (Exception e)
             {
@@ -467,7 +468,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Product").ToString();
                 }
 
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (Exception e)
             {
@@ -486,11 +487,11 @@ namespace HardwareInfoDLL
                 {
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
                 }
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch
             {
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
         }
 
@@ -511,21 +512,21 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
-                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.systemRom))
+                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.SYSTEM_ROM))
                     {
                         mCap = Convert.ToInt64(queryObj["Capacity"]);
                         MemSize += mCap;
-                        if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10))
+                        if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10))
                         {
-                            if (queryObj["SMBIOSMemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.ddr4smbios))
+                            if (queryObj["SMBIOSMemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.DDR4_SMBIOS))
                             {
-                                mType = ConstantsDLL.Properties.Resources.ddr4;
-                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.frequency;
+                                mType = ConstantsDLL.Properties.Resources.DDR4;
+                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
                             }
-                            else if (queryObj["SMBIOSMemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.ddr3smbios))
+                            else if (queryObj["SMBIOSMemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.DDR3_SMBIOS))
                             {
-                                mType = ConstantsDLL.Properties.Resources.ddr3;
-                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.frequency;
+                                mType = ConstantsDLL.Properties.Resources.DDR3;
+                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
                             }
                             else if (queryObj["SMBIOSMemoryType"].ToString().Equals("3"))
                             {
@@ -534,10 +535,10 @@ namespace HardwareInfoDLL
                             }
                             else
                             {
-                                mType = ConstantsDLL.Properties.Resources.ddr2;
+                                mType = ConstantsDLL.Properties.Resources.DDR2;
                                 try
                                 {
-                                    mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.frequency;
+                                    mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
                                 }
                                 catch
                                 {
@@ -547,10 +548,10 @@ namespace HardwareInfoDLL
                         }
                         else
                         {
-                            if (queryObj["MemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.ddr3memorytype))
+                            if (queryObj["MemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.DDR3_MEMORY_TYPE))
                             {
-                                mType = ConstantsDLL.Properties.Resources.ddr3;
-                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.frequency;
+                                mType = ConstantsDLL.Properties.Resources.DDR3;
+                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
                             }
                             else if (queryObj["MemoryType"].ToString().Equals("2") || queryObj["MemoryType"].ToString().Equals("0"))
                             {
@@ -559,10 +560,10 @@ namespace HardwareInfoDLL
                             }
                             else
                             {
-                                mType = ConstantsDLL.Properties.Resources.ddr2;
+                                mType = ConstantsDLL.Properties.Resources.DDR2;
                                 try
                                 {
-                                    mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.frequency;
+                                    mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
                                 }
                                 catch
                                 {
@@ -573,7 +574,7 @@ namespace HardwareInfoDLL
                     }
                 }
                 MemSize = MemSize / 1024 / 1024 / 1024;
-                return MemSize.ToString() + " " + ConstantsDLL.Properties.Resources.gb + " " + mType + mSpeed;
+                return MemSize.ToString() + " " + ConstantsDLL.Properties.Resources.GB + " " + mType + mSpeed;
             }
             catch (Exception e)
             {
@@ -597,7 +598,7 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
-                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.systemRom))
+                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.SYSTEM_ROM))
                     {
                         mCap = Convert.ToInt64(queryObj["Capacity"]);
                         MemSize += mCap;
@@ -656,7 +657,7 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
                 {
-                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.systemRom))
+                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.SYSTEM_ROM))
                     {
                         MemSlotsUsed[i] = Convert.ToString(queryObj["DeviceLocator"]);
                         i++;
@@ -705,7 +706,7 @@ namespace HardwareInfoDLL
         public static string GetOSArch()
         {
             bool is64bit = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"));
-            return is64bit ? ConstantsDLL.Properties.Resources.arch64 : ConstantsDLL.Properties.Resources.arch32;
+            return is64bit ? ConstantsDLL.Properties.Resources.ARCH64 : ConstantsDLL.Properties.Resources.ARCH32;
         }
 
         //Fetches the OS architecture (alternative method)
@@ -725,7 +726,7 @@ namespace HardwareInfoDLL
                     {
                     }
                 }
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (Exception e)
             {
@@ -749,12 +750,12 @@ namespace HardwareInfoDLL
                     {
                         case 6:
                             operatingSystem = vs.Minor == 1
-                                ? ConstantsDLL.Properties.Resources.windows7
-                                : vs.Minor == 2 ? ConstantsDLL.Properties.Resources.windows8 : ConstantsDLL.Properties.Resources.windows8_1;
+                                ? ConstantsDLL.Properties.Resources.WINDOWS_7
+                                : vs.Minor == 2 ? ConstantsDLL.Properties.Resources.WINDOWS_8 : ConstantsDLL.Properties.Resources.WINDOWS_8_1;
 
                             break;
                         case 10:
-                            operatingSystem = ConstantsDLL.Properties.Resources.windows10;
+                            operatingSystem = ConstantsDLL.Properties.Resources.WINDOWS_10;
                             break;
                         default:
                             break;
@@ -780,13 +781,13 @@ namespace HardwareInfoDLL
             {
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10)
+                    return GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10)
                         ? Convert.ToInt32(releaseId) <= 2004
-                            ? (((string)queryObj["Caption"]).Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
-                            : (((string)queryObj["Caption"]).Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
-                        : (((string)queryObj["Caption"]).Trim() + " " + (string)queryObj["CSDVersion"] + ", " + ConstantsDLL.Properties.Resources.build + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
+                            ? (((string)queryObj["Caption"]).Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
+                            : (((string)queryObj["Caption"]).Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
+                        : (((string)queryObj["Caption"]).Trim() + " " + (string)queryObj["CSDVersion"] + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
                 }
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (Exception e)
             {
@@ -807,7 +808,7 @@ namespace HardwareInfoDLL
                     return queryObj.GetPropertyValue("Version").ToString();
                 }
 
-                return ConstantsDLL.Properties.Strings.unknown;
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (Exception e)
             {
@@ -877,7 +878,7 @@ namespace HardwareInfoDLL
             {
                 _ = GetFirmwareType(string.Empty, "{00000000-0000-0000-0000-000000000000}", IntPtr.Zero, 0);
 
-                return Marshal.GetLastWin32Error() == ERROR_INVALID_FUNCTION ? ConstantsDLL.Properties.Resources.bios : ConstantsDLL.Properties.Resources.uefi;
+                return Marshal.GetLastWin32Error() == ERROR_INVALID_FUNCTION ? ConstantsDLL.Properties.Resources.BIOS : ConstantsDLL.Properties.Resources.UEFI;
             }
             catch (Exception e)
             {
@@ -892,21 +893,21 @@ namespace HardwareInfoDLL
         {
             try
             {
-                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows8))
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
                 {
                     uint firmwaretype = 0;
                     if (GetFirmwareType(ref firmwaretype))
                     {
                         if (firmwaretype == 1)
                         {
-                            return ConstantsDLL.Properties.Resources.bios;
+                            return ConstantsDLL.Properties.Resources.BIOS;
                         }
                         else if (firmwaretype == 2)
                         {
-                            return ConstantsDLL.Properties.Resources.uefi;
+                            return ConstantsDLL.Properties.Resources.UEFI;
                         }
                     }
-                    return ConstantsDLL.Properties.Strings.notDetermined;
+                    return ConstantsDLL.Properties.Strings.NOT_DETERMINED;
                 }
                 else
                 {
@@ -931,14 +932,14 @@ namespace HardwareInfoDLL
 
                 foreach (PSObject queryObj in PSOutput)
                 {
-                    return ConstantsDLL.Properties.Resources.activated;
+                    return ConstantsDLL.Properties.Resources.ACTIVATED;
                 }
 
-                return ConstantsDLL.Properties.Resources.deactivated;
+                return ConstantsDLL.Properties.Resources.DEACTIVATED;
             }
             catch
             {
-                return ConstantsDLL.Properties.Resources.notSupported;
+                return ConstantsDLL.Properties.Resources.NOT_SUPPORTED;
             }
         }
 
@@ -948,11 +949,11 @@ namespace HardwareInfoDLL
             try
             {
                 string secBoot = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot\State", "UEFISecureBootEnabled", 0).ToString();
-                return secBoot.Equals("0") ? ConstantsDLL.Properties.Resources.deactivated : ConstantsDLL.Properties.Resources.activated;
+                return secBoot.Equals("0") ? ConstantsDLL.Properties.Resources.DEACTIVATED : ConstantsDLL.Properties.Resources.ACTIVATED;
             }
             catch
             {
-                return ConstantsDLL.Properties.Resources.notSupported;
+                return ConstantsDLL.Properties.Resources.NOT_SUPPORTED;
             }
         }
 
@@ -963,7 +964,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (!GetWinVersion().Equals(ConstantsDLL.Properties.Resources.windows7))
+                if (!GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_7))
                 {
                     ManagementClass mc = new ManagementClass("win32_processor");
                     ManagementObjectCollection moc = mc.GetInstances();
@@ -981,13 +982,13 @@ namespace HardwareInfoDLL
                     }
                     if (flag != 2)
                     {
-                        flag = GetFwType() == ConstantsDLL.Properties.Resources.uefi ? 1 : 0;
+                        flag = GetFwType() == ConstantsDLL.Properties.Resources.UEFI ? 1 : 0;
                     }
                 }
 
                 return flag == 2
-                    ? ConstantsDLL.Properties.Resources.activated
-                    : flag == 1 ? ConstantsDLL.Properties.Resources.deactivated : ConstantsDLL.Properties.Resources.notSupported;
+                    ? ConstantsDLL.Properties.Resources.ACTIVATED
+                    : flag == 1 ? ConstantsDLL.Properties.Resources.DEACTIVATED : ConstantsDLL.Properties.Resources.NOT_SUPPORTED;
             }
             catch (Exception e)
             {
@@ -1038,12 +1039,12 @@ namespace HardwareInfoDLL
                 {
                     statusCaption = (string)queryObj.Properties["Caption"].Value;
                     statusValue = (string)queryObj.Properties["Status"].Value;
-                    if (statusValue == ConstantsDLL.Properties.Resources.predFail)
+                    if (statusValue == ConstantsDLL.Properties.Resources.PRED_FAIL)
                     {
                         return statusCaption;
                     }
                 }
-                return ConstantsDLL.Properties.Resources.ok;
+                return ConstantsDLL.Properties.Resources.OK;
             }
             catch (Exception e)
             {
@@ -1069,24 +1070,75 @@ namespace HardwareInfoDLL
 
                 if (specVersion != string.Empty)
                 {
-                    if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm1_2Name))
+                    if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.TPM_1_2_NAME))
                     {
-                        str = ConstantsDLL.Properties.Resources.tpm1_2;
+                        str = ConstantsDLL.Properties.Resources.TPM_1_2;
                     }
-                    else if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.tpm2_0Name))
+                    else if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.TPM_2_0_NAME))
                     {
-                        str = ConstantsDLL.Properties.Resources.tpm2_0;
+                        str = ConstantsDLL.Properties.Resources.TPM_2_0;
                     }
                     return str;
                 }
                 else
                 {
-                    return ConstantsDLL.Properties.Resources.noTpm;
+                    return ConstantsDLL.Properties.Resources.NO_TPM;
                 }
             }
             catch (Exception e)
             {
                 return e.Message;
+            }
+        }
+
+        public static List<string> GetOEMInstanceIdList()
+        {
+            int idSplitChar, infSplitChar;
+            string idValue, infValue;
+            List<string> output = new List<string>();
+            List<string> fullInstanceIdList = new List<string>();
+            List<string> oemInstanceIdList = new List<string>();
+            ManagementClass mc = new ManagementClass("Win32_PnpEntity");
+            ManagementObjectCollection moc = mc.GetInstances();
+
+            try
+            {
+                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                {
+                    fullInstanceIdList.Add((string)queryObj.Properties["DeviceId"].Value);
+                }
+                foreach(string str in fullInstanceIdList)
+                {
+                    output.Clear();
+                    //Create pnputil process with args
+                    Process process = new Process();
+                    process.StartInfo.FileName = "pnputil.exe";
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.Arguments = "/enum-devices /instanceid " + str;
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.CreateNoWindow = true;
+                    _ = process.Start();
+                    while (!process.StandardOutput.EndOfStream)
+                    {
+                        output.Add(process.StandardOutput.ReadLine());
+                    }
+                    process.WaitForExit();
+                    process.Close();
+
+                    idSplitChar = output[2].IndexOf(":");
+                    infSplitChar = output[8].IndexOf(":");
+                    idValue = output[2].Substring(idSplitChar + 1).Trim();
+                    infValue = output[8].Substring(infSplitChar + 1).Trim();
+                    if (infValue.Contains("oem"))
+                    {
+                        oemInstanceIdList.Add(idValue);
+                    }
+                }
+                return oemInstanceIdList;
+            }
+            catch
+            {
+                return null;
             }
         }
     }

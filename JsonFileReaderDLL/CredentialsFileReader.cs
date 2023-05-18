@@ -28,14 +28,14 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyCredentialsData);
+                    _ = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.SUPPLY_CREDENTIALS_DATA);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileCredentials, StringsAndConstants.credentialsFilePath);
+                    wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.JSON_SERVER_PATH + ConstantsDLL.Properties.Resources.FILE_CREDENTIALS, StringsAndConstants.CREDENTIALS_FILE_PATH);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaCredentials);
+                    sha256 = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.JSON_SERVER_PATH + ConstantsDLL.Properties.Resources.FILE_SHA_CREDENTIALS);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
-                    aux = StringsAndConstants.credentialsFilePath;
+                    aux = StringsAndConstants.CREDENTIALS_FILE_PATH;
                 }
                 catch
                 {
@@ -51,14 +51,14 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyCredentialsData);
+                _ = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.SUPPLY_CREDENTIALS_DATA);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileCredentials, StringsAndConstants.credentialsFilePath);
+                wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.JSON_SERVER_PATH + ConstantsDLL.Properties.Resources.FILE_CREDENTIALS, StringsAndConstants.CREDENTIALS_FILE_PATH);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaCredentials);
+                sha256 = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.JSON_SERVER_PATH + ConstantsDLL.Properties.Resources.FILE_SHA_CREDENTIALS);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
-                aux = StringsAndConstants.credentialsFilePath;
+                aux = StringsAndConstants.CREDENTIALS_FILE_PATH;
             }
             catch
             {
@@ -78,7 +78,7 @@ namespace JsonFileReaderDLL
                 }
 
                 string[] arr;
-                fileL = new StreamReader(StringsAndConstants.credentialsFilePath);
+                fileL = new StreamReader(StringsAndConstants.CREDENTIALS_FILE_PATH);
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = fileL.ReadToEnd();
@@ -86,7 +86,7 @@ namespace JsonFileReaderDLL
 
                     for (int i = 0; i < jsonParse.Length; i++)
                     {
-                        if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(ConstantsDLL.Properties.Resources.limitedUserType) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
+                        if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(ConstantsDLL.Properties.Resources.LIMITED_USER_TYPE) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
                         {
                             arr = new string[] { jsonParse[i].Id, jsonParse[i].Username };
                             fileL.Close();
@@ -109,7 +109,7 @@ namespace JsonFileReaderDLL
             }
 
             string[] arr;
-            fileL = new StreamReader(StringsAndConstants.credentialsFilePath);
+            fileL = new StreamReader(StringsAndConstants.CREDENTIALS_FILE_PATH);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileL.ReadToEnd();
@@ -117,7 +117,7 @@ namespace JsonFileReaderDLL
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(ConstantsDLL.Properties.Resources.limitedUserType) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
+                    if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(ConstantsDLL.Properties.Resources.LIMITED_USER_TYPE) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
                     {
                         arr = new string[] { jsonParse[i].Id, jsonParse[i].Username };
                         fileL.Close();

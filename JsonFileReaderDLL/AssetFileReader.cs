@@ -34,14 +34,14 @@ namespace JsonFileReaderDLL
                 try
                 {
                     wc = new WebClient();
-                    _ = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyAssetData + ConstantsDLL.Properties.Resources.phpAssetNumber + assetNumber);
+                    _ = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.SUPPLY_ASSET_DATA + ConstantsDLL.Properties.Resources.PHP_ASSET_NUMBER + assetNumber);
                     System.Threading.Thread.Sleep(300);
-                    wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileAsset, StringsAndConstants.assetFilePath);
+                    wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.JSON_SERVER_PATH + ConstantsDLL.Properties.Resources.FILE_ASSET, StringsAndConstants.ASSET_FILE_PATH);
                     System.Threading.Thread.Sleep(300);
-                    sha256 = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaAsset);
+                    sha256 = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.JSON_SERVER_PATH + ConstantsDLL.Properties.Resources.FILE_SHA_ASSET);
                     System.Threading.Thread.Sleep(300);
                     sha256 = sha256.ToUpper();
-                    aux = StringsAndConstants.assetFilePath;
+                    aux = StringsAndConstants.ASSET_FILE_PATH;
                 }
                 catch
                 {
@@ -57,14 +57,14 @@ namespace JsonFileReaderDLL
             try
             {
                 wc = new WebClient();
-                _ = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.supplyAssetData + ConstantsDLL.Properties.Resources.phpAssetNumber + assetNumber);
+                _ = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.SUPPLY_ASSET_DATA + ConstantsDLL.Properties.Resources.PHP_ASSET_NUMBER + assetNumber);
                 System.Threading.Thread.Sleep(300);
-                wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileAsset, StringsAndConstants.assetFilePath);
+                wc.DownloadFile(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.JSON_SERVER_PATH + ConstantsDLL.Properties.Resources.FILE_ASSET, StringsAndConstants.ASSET_FILE_PATH);
                 System.Threading.Thread.Sleep(300);
-                sha256 = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.jsonServerPath + ConstantsDLL.Properties.Resources.fileShaAsset);
+                sha256 = wc.DownloadString(ConstantsDLL.Properties.Resources.HTTP + ipAddress + ":" + port + "/" + ConstantsDLL.Properties.Resources.JSON_SERVER_PATH + ConstantsDLL.Properties.Resources.FILE_SHA_ASSET);
                 System.Threading.Thread.Sleep(300);
                 sha256 = sha256.ToUpper();
-                aux = StringsAndConstants.assetFilePath;
+                aux = StringsAndConstants.ASSET_FILE_PATH;
             }
             catch
             {
@@ -84,7 +84,7 @@ namespace JsonFileReaderDLL
                 }
 
                 string[] arr;
-                fileAsset = new StreamReader(StringsAndConstants.assetFilePath);
+                fileAsset = new StreamReader(StringsAndConstants.ASSET_FILE_PATH);
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = fileAsset.ReadToEnd();
@@ -115,7 +115,7 @@ namespace JsonFileReaderDLL
             }
 
             string[] arr;
-            fileAsset = new StreamReader(StringsAndConstants.assetFilePath);
+            fileAsset = new StreamReader(StringsAndConstants.ASSET_FILE_PATH);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileAsset.ReadToEnd();

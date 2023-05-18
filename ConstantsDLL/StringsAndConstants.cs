@@ -12,11 +12,11 @@ namespace ConstantsDLL
          * Start
         */
 
-        public static readonly string modelFilePath = System.IO.Path.GetTempPath() + Resources.fileModel;
-        public static readonly string configFilePath = System.IO.Path.GetTempPath() + Resources.fileConfig;
-        public static readonly string credentialsFilePath = System.IO.Path.GetTempPath() + Resources.fileCredentials;
-        public static readonly string assetFilePath = System.IO.Path.GetTempPath() + Resources.fileAsset;
-        public static readonly string webView2filePath = System.IO.Path.GetTempPath() + Resources.webview2file;
+        public static readonly string MODEL_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_MODEL;
+        public static readonly string CONFIG_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_CONFIG;
+        public static readonly string CREDENTIALS_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_CREDENTIALS;
+        public static readonly string ASSET_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_ASSET;
+        public static readonly string WEBVIEW2_FILE_PATH = System.IO.Path.GetTempPath() + Resources.WEBVIEW2_FILE;
 
         /**
          * Common code
@@ -28,75 +28,75 @@ namespace ConstantsDLL
          * Start
         */
 
-        public const string cliServerIPSwitch = "serverIP";
-        public const string cliServerPortSwitch = "serverPort";
-        public const string cliServiceTypeSwitch = "serviceType";
-        public const string cliAssetNumberSwitch = "assetNumber";
-        public const string cliSealNumberSwitch = "sealNumber";
-        public const string cliRoomNumberSwitch = "roomNumber";
-        public const string cliBuildingSwitch = "building";
-        public const string cliAdRegisteredSwitch = "adRegistered";
-        public const string cliStandardSwitch = "standard";
-        public const string cliServiceDateSwitch = "serviceDate";
-        public const string cliBatteryChangeSwitch = "batteryChanged";
-        public const string cliTicketNumberSwitch = "ticketNumber";
-        public const string cliInUseSwitch = "inUse";
-        public const string cliTagSwitch = "tag";
-        public const string cliHwTypeSwitch = "hwType";
-        public const string cliUsernameSwitch = "username";
-        public const string cliPasswordSwitch = "password";
-        public const string cliHelpSwitch = "help";
+        public const string CLI_SERVER_IP_SWITCH = "serverIP";
+        public const string CLI_SERVER_PORT_SWITCH = "serverPort";
+        public const string CLI_SERVICE_TYPE_SWITCH = "serviceType";
+        public const string CLI_ASSET_NUMBER_SWITCH = "assetNumber";
+        public const string CLI_SEAL_NUMBER_SWITCH = "sealNumber";
+        public const string CLI_ROOM_NUMBER_SWITCH = "roomNumber";
+        public const string CLI_BUILDING_SWITCH = "building";
+        public const string CLI_AD_REGISTERED_SWITCH = "adRegistered";
+        public const string CLI_STANDARD_SWITCH = "standard";
+        public const string CLI_SERVICE_DATE_SWITCH = "serviceDate";
+        public const string CLI_BATTERY_CHANGE_SWITCH = "batteryChanged";
+        public const string CLI_TICKET_NUMBER_SWITCH = "ticketNumber";
+        public const string CLI_IN_USE_SWITCH = "inUse";
+        public const string CLI_TAG_SWITCH = "tag";
+        public const string CLI_HW_TYPE_SWITCH = "hwType";
+        public const string CLI_USERNAME_SWITCH = "username";
+        public const string CLI_PASSWORD_SWITCH = "password";
+        public const string CLI_HELP_SWITCH = "help";
 
-        public const string cliDefaultUnchanged = "same";
-        public const string cliDefaultServiceType = "m";
-        public const string cliDefaultServiceDate = "today";
+        public const string CLI_DEFAULT_UNCHANGED = "same";
+        public const string CLI_DEFAULT_SERVICE_TYPE = "m";
+        public const string CLI_DEFAULT_SERVICE_DATE = "today";
 
-        public const string cliEmployeeType0 = "e";
-        public const string cliEmployeeType1 = "s";
+        public const string CLI_EMPLOYEE_TYPE_0 = "e";
+        public const string CLI_EMPLOYEE_TYPE_1 = "s";
 
-        public const string cliServiceType0 = "f";
-        public const string cliServiceType1 = "m";
+        public const string CLI_SERVICE_TYPE_0 = "f";
+        public const string CLI_SERVICE_TYPE_1 = "m";
 
-        public const string listYesAbbrev = "y";
-        public const string listNoAbbrev = "n";
+        public const string LIST_YES_ABBREV = "y";
+        public const string LIST_NO_ABBREV = "n";
 
-        public const string mandatory = "MANDATORY";
-        public const string optional = "Optional";
+        public const string MANDATORY = "MANDATORY";
+        public const string OPTIONAL = "Optional";
 
         //CLI switch text
-        public const string cliHelpTextServerIP = "APCS server IP address (Ex.: 192.168.1.100, 10.0.0.10, localhost, etc. Modify INI file for fixed configuration. The first IP in the file will be chosen if the parameter is absent) - " + optional;
-        public const string cliHelpTextServerPort = "APCS server port (Ex.: 80, 8080, etc. Modify INI file for fixed configuration. The first port in the file will be chosen if the parameter is absent) - " + optional;
-        public const string cliHelpTextServiceType = "Type of service performed (Possible values: \'" + cliServiceType1 + "\' for maintenance (default), \'" + cliServiceType0 + "\' for formatting) - " + optional;
-        public const string cliHelpTextAssetNumber = "Equipment's asset number (Ex.: 123456). If the parameter is absent, it will be collected by hostname PC-123456 (default) - " + optional;
-        public const string cliHelpTextSealNumber = "Equipament's seal number (if exists) (Ex.: 12345678, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextRoomNumber = "Room where the equipment will be located (Ex.: 1234, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextBuilding = "Building where the equipment will be located (Possible values: see APCS for a list of building names, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextAdRegistered = "Registered in Active Directory (Possible values: \'" + listYesAbbrev + "\' (Yes), \'" + listNoAbbrev + "\' (No), or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextStandard = "Type of image deployed (Possible values: \'" + cliEmployeeType1 + "\' for student, \'" + cliEmployeeType0 + "\' for employee, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextServiceDate = "Date of service performed (Possible values: \'" + cliDefaultServiceDate + "\' (default), or specify a date in the 'yyyy-mm-dd' format, ex.: 2020-12-25) - " + optional;
-        public const string cliHelpTextBatteryChange = "CMOS Battery replaced? (Possible values: \'" + listYesAbbrev + "\' (Yes), \'" + listNoAbbrev + "\' (No)) - " + mandatory;
-        public const string cliHelpTextTicketNumber = "Ticket number (Ex.: 123456) - " + mandatory;
-        public const string cliHelpTextInUse = "Equipment in use? (Possible values: \'" + listYesAbbrev + "\' (Yes), \'" + listNoAbbrev + "\' (No), or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextTag = "Does the equipment have a label? (Possible value: \'" + listYesAbbrev + "\' (Yes), \'" + listNoAbbrev + "\' (No), or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextHwType = "Equipment category (Possible values: see APCS for a list of categories, or \'" + cliDefaultUnchanged + "\' (default) to keep unchanged) - " + optional;
-        public const string cliHelpTextUsername = "Login username - " + mandatory;
-        public const string cliHelpTextPassword = "Login password - " + mandatory;
+        public const string CLI_HELP_TEXT_SERVER_IP = "APCS server IP address (Ex.: 192.168.1.100, 10.0.0.10, localhost, etc. Modify INI file for fixed configuration. The first IP in the file will be chosen if the parameter is absent) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_SERVER_PORT = "APCS server port (Ex.: 80, 8080, etc. Modify INI file for fixed configuration. The first port in the file will be chosen if the parameter is absent) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_SERVICE_TYPE = "Type of service performed (Possible values: \'" + CLI_SERVICE_TYPE_1 + "\' for maintenance (default), \'" + CLI_SERVICE_TYPE_0 + "\' for formatting) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_ASSET_NUMBER = "Equipment's asset number (Ex.: 123456). If the parameter is absent, it will be collected by hostname PC-123456 (default) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_SEAL_NUMBER = "Equipament's seal number (if exists) (Ex.: 12345678, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_ROOM_NUMBER = "Room where the equipment will be located (Ex.: 1234, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_BUILDING = "Building where the equipment will be located (Possible values: see APCS for a list of building names, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_AD_REGISTERED = "Registered in Active Directory (Possible values: \'" + LIST_YES_ABBREV + "\' (Yes), \'" + LIST_NO_ABBREV + "\' (No), or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_STANDARD = "Type of image deployed (Possible values: \'" + CLI_EMPLOYEE_TYPE_1 + "\' for student, \'" + CLI_EMPLOYEE_TYPE_0 + "\' for employee, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_SERVICE_DATE = "Date of service performed (Possible values: \'" + CLI_DEFAULT_SERVICE_DATE + "\' (default), or specify a date in the 'yyyy-mm-dd' format, ex.: 2020-12-25) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_BATTERY_CHANGE = "CMOS Battery replaced? (Possible values: \'" + LIST_YES_ABBREV + "\' (Yes), \'" + LIST_NO_ABBREV + "\' (No)) - " + MANDATORY;
+        public const string CLI_HELP_TEXT_TICKET_NUMBER = "Ticket number (Ex.: 123456) - " + MANDATORY;
+        public const string CLI_HELP_TEXT_IN_USE = "Equipment in use? (Possible values: \'" + LIST_YES_ABBREV + "\' (Yes), \'" + LIST_NO_ABBREV + "\' (No), or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_TAG = "Does the equipment have a label? (Possible value: \'" + LIST_YES_ABBREV + "\' (Yes), \'" + LIST_NO_ABBREV + "\' (No), or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_HW_TYPE = "Equipment category (Possible values: see APCS for a list of categories, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_USERNAME = "Login username - " + MANDATORY;
+        public const string CLI_HELP_TEXT_PASSWORD = "Login password - " + MANDATORY;
 
         //Parameters list
-        public static readonly List<string> listModeCLI = new List<string>() { cliServiceType0, cliServiceType1 };
-        public static readonly List<string> listModeGUI = new List<string>() { Strings.listModeGUIFormat, Strings.listModeGUIMaintenance };
-        public static readonly List<string> listActiveDirectoryCLI = new List<string>() { listYesAbbrev, listNoAbbrev };
-        public static readonly List<string> listActiveDirectoryGUI = new List<string>() { Strings.listYes0, Strings.listNo0 };
-        public static readonly List<string> listStandardCLI = new List<string>() { cliEmployeeType0, cliEmployeeType1 };
-        public static readonly List<string> listStandardGUI = new List<string>() { Strings.listStandardGUIEmployee, Strings.listStandardGUIStudent };
-        public static readonly List<string> listInUseCLI = new List<string>() { listYesAbbrev, listNoAbbrev };
-        public static readonly List<string> listInUseGUI = new List<string>() { Strings.listYes0, Strings.listNo0 };
-        public static readonly List<string> listTagCLI = new List<string>() { listYesAbbrev, listNoAbbrev };
-        public static readonly List<string> listTagGUI = new List<string>() { Strings.listYes0, Strings.listNo0 };
-        public static readonly List<string> listBatteryCLI = new List<string>() { listYesAbbrev, listNoAbbrev };
-        public static readonly List<string> listBatteryGUI = new List<string>() { Strings.listYes0, Strings.listNo0 };
-        public static readonly List<string> listStates = new List<string>() { Strings.notSupported, Strings.deactivated, Strings.activated };
-        public static readonly List<string> listThemeGUI = new List<string>() { "Auto", "Light", "Dark" };
+        public static readonly List<string> LIST_MODE_CLI = new List<string>() { CLI_SERVICE_TYPE_0, CLI_SERVICE_TYPE_1 };
+        public static readonly List<string> LIST_MODE_GUI = new List<string>() { Strings.LIST_MODE_GUI_FORMAT, Strings.LIST_MODE_GUI_MAINTENANCE };
+        public static readonly List<string> LIST_ACTIVE_DIRECTORY_CLI = new List<string>() { LIST_YES_ABBREV, LIST_NO_ABBREV };
+        public static readonly List<string> LIST_ACTIVE_DIRECTORY_GUI = new List<string>() { Strings.LIST_YES_0, Strings.LIST_NO_0 };
+        public static readonly List<string> LIST_STANDARD_CLI = new List<string>() { CLI_EMPLOYEE_TYPE_0, CLI_EMPLOYEE_TYPE_1 };
+        public static readonly List<string> LIST_STANDARD_GUI = new List<string>() { Strings.LIST_STANDARD_GUI_EMPLOYEE, Strings.LIST_STANDARD_GUI_STUDENT };
+        public static readonly List<string> LIST_IN_USE_CLI = new List<string>() { LIST_YES_ABBREV, LIST_NO_ABBREV };
+        public static readonly List<string> LIST_IN_USE_GUI = new List<string>() { Strings.LIST_YES_0, Strings.LIST_NO_0 };
+        public static readonly List<string> LIST_TAG_CLI = new List<string>() { LIST_YES_ABBREV, LIST_NO_ABBREV };
+        public static readonly List<string> LIST_TAG_GUI = new List<string>() { Strings.LIST_YES_0, Strings.LIST_NO_0 };
+        public static readonly List<string> LIST_BATTERY_CLI = new List<string>() { LIST_YES_ABBREV, LIST_NO_ABBREV };
+        public static readonly List<string> LIST_BATTERY_GUI = new List<string>() { Strings.LIST_YES_0, Strings.LIST_NO_0 };
+        public static readonly List<string> LIST_STATES = new List<string>() { Strings.NOT_SUPPORTED, Strings.DEACTIVATED, Strings.ACTIVATED };
+        public static readonly List<string> LIST_THEME_GUI = new List<string>() { "Auto", "Light", "Dark" };
 
         //UI colors
         public static readonly Color LIGHT_FORECOLOR = SystemColors.ControlText;
@@ -121,7 +121,7 @@ namespace ConstantsDLL
         public static readonly Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(204, 204, 204);
         public static readonly Color HIGHLIGHT_LABEL_COLOR = Color.FromArgb(127, 127, 127);
         public static readonly Color PRESSED_STRIP_BUTTON = Color.FromArgb(128, 128, 128);
-        public static readonly Color rotatingCircleColor = SystemColors.MenuHighlight;
+        public static readonly Color ROTATING_CIRCLE_COLOR = SystemColors.MenuHighlight;
 
         public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
 
