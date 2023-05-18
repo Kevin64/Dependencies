@@ -493,7 +493,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_user_dark.png.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_agent_dark.png.
         /// </summary>
         public static string ICON_AGENT_DARK_PATH {
             get {
@@ -502,7 +502,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_user_light.png.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_agent_light.png.
         /// </summary>
         public static string ICON_AGENT_LIGHT_PATH {
             get {

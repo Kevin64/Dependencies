@@ -263,10 +263,10 @@
     <value>Resources\\icons\\icon_about_light.png</value>
   </data>
   <data name="ICON_AGENT_DARK_PATH" xml:space="preserve">
-    <value>Resources\\icons\\icon_user_dark.png</value>
+    <value>Resources\\icons\\icon_agent_dark.png</value>
   </data>
   <data name="ICON_AGENT_LIGHT_PATH" xml:space="preserve">
-    <value>Resources\\icons\\icon_user_light.png</value>
+    <value>Resources\\icons\\icon_agent_light.png</value>
   </data>
   <data name="ICON_AHCI_DARK_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_ahci_dark.png</value>
