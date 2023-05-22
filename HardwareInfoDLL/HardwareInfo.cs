@@ -1015,10 +1015,10 @@ namespace HardwareInfoDLL
 
                     if ((featureName.Equals("Microsoft-Hyper-V") && featureToggle.Equals(1)) || (featureName.Equals("Microsoft-Hyper-V-Hypervisor") && featureToggle.Equals(1)) || (featureName.Equals("Containers-DisposableClientVM") && featureToggle.Equals(1)))
                     {
-                        return "true";
+                        return ConstantsDLL.Properties.Resources.TRUE;
                     }
                 }
-                return "false";
+                return ConstantsDLL.Properties.Resources.FALSE;
             }
             catch (Exception e)
             {

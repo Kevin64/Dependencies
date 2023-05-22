@@ -94,7 +94,7 @@ namespace JsonFileReaderDLL
                         }
                     }
                 }
-                arr = new string[] { "false" }; ;
+                arr = new string[] { ConstantsDLL.Properties.Resources.FALSE }; ;
                 fileL.Close();
                 return arr;
             });
@@ -125,7 +125,7 @@ namespace JsonFileReaderDLL
                     }
                 }
             }
-            arr = new string[] { "false" }; ;
+            arr = new string[] { ConstantsDLL.Properties.Resources.FALSE }; ;
             fileL.Close();
             return arr;
         }

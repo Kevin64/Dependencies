@@ -259,6 +259,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a false.
+        /// </summary>
+        public static string FALSE {
+            get {
+                return ResourceManager.GetString("FALSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a asset.json.
         /// </summary>
         public static string FILE_ASSET {
@@ -2748,6 +2757,15 @@ namespace ConstantsDLL.Properties {
         public static string TPM_2_0_NAME {
             get {
                 return ResourceManager.GetString("TPM_2_0_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a true.
+        /// </summary>
+        public static string TRUE {
+            get {
+                return ResourceManager.GetString("TRUE", resourceCulture);
             }
         }
         

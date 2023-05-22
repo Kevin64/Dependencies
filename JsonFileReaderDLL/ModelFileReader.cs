@@ -80,7 +80,7 @@ namespace JsonFileReaderDLL
                 }
 
                 string[] arr;
-                string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
+                string typeRet = ConstantsDLL.Properties.Resources.TRUE, tpmRet = ConstantsDLL.Properties.Resources.TRUE, mediaOpRet = ConstantsDLL.Properties.Resources.TRUE;
                 fileB = new StreamReader(StringsAndConstants.MODEL_FILE_PATH);
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
@@ -93,17 +93,17 @@ namespace JsonFileReaderDLL
                         {
                             if (!fwType.Equals(jsonParse[i].FwType))
                             {
-                                typeRet = "false";
+                                typeRet = ConstantsDLL.Properties.Resources.FALSE;
                             }
 
                             if (!tpmVersion.Equals(jsonParse[i].TpmVersion))
                             {
-                                tpmRet = "false";
+                                tpmRet = ConstantsDLL.Properties.Resources.FALSE;
                             }
 
                             if (!mediaOperationMode.Equals(jsonParse[i].MediaOperationMode))
                             {
-                                mediaOpRet = "false";
+                                mediaOpRet = ConstantsDLL.Properties.Resources.FALSE;
                             }
 
                             arr = new string[] { jsonParse[i].FwVersion, typeRet, tpmRet, mediaOpRet };
@@ -127,7 +127,7 @@ namespace JsonFileReaderDLL
             }
 
             string[] arr;
-            string typeRet = "true", tpmRet = "true", mediaOpRet = "true";
+            string typeRet = ConstantsDLL.Properties.Resources.TRUE, tpmRet = ConstantsDLL.Properties.Resources.TRUE, mediaOpRet = ConstantsDLL.Properties.Resources.TRUE;
             fileB = new StreamReader(StringsAndConstants.MODEL_FILE_PATH);
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
@@ -140,17 +140,17 @@ namespace JsonFileReaderDLL
                     {
                         if (!fwType.Equals(jsonParse[i].FwType))
                         {
-                            typeRet = "false";
+                            typeRet = ConstantsDLL.Properties.Resources.FALSE;
                         }
 
                         if (!tpmVersion.Equals(jsonParse[i].TpmVersion))
                         {
-                            tpmRet = "false";
+                            tpmRet = ConstantsDLL.Properties.Resources.FALSE;
                         }
 
                         if (!mediaOperationMode.Equals(jsonParse[i].MediaOperationMode))
                         {
-                            mediaOpRet = "false";
+                            mediaOpRet = ConstantsDLL.Properties.Resources.FALSE;
                         }
 
                         arr = new string[] { jsonParse[i].FwVersion, typeRet, tpmRet, mediaOpRet };

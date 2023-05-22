@@ -1093,4 +1093,10 @@
   <data name="YES" xml:space="preserve">
     <value>Yes</value>
   </data>
+  <data name="FALSE" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="TRUE" xml:space="preserve">
+    <value>true</value>
+  </data>
 </root>
