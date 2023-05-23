@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Management.Automation;
@@ -10,9 +9,12 @@ using System.Runtime.InteropServices;
 
 namespace HardwareInfoDLL
 {
+    ///<summary>Class for handling various hardware and setting detection tasks</summary>
     public static class HardwareInfo
     {
-        //Fetches the CPU information, including the number of cores/threads
+        ///<summary>Fetches the CPU information, including the number of cores/threads</summary>
+        ///<returns>String with the CPU information</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetProcessorInfo()
         {
             string Id = string.Empty;
@@ -44,10 +46,11 @@ namespace HardwareInfoDLL
             {
                 return e.Message;
             }
-
         }
 
-        //Fetches the GPU information
+        ///<summary>Fetches the GPU information</summary>
+        ///<returns>String with the GPU information</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetVideoCardInfo()
         {
             string gpuname = string.Empty;
@@ -84,7 +87,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the operation mode that the storage is running (IDE/AHCI/NVMe)
+        ///<summary>Fetches the operation mode that the storage is running (IDE/AHCI/NVMe)</summary>
+        ///<returns>String with the current media operation mode</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetMediaOperationMode()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_SCSIController");
@@ -117,7 +122,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the type of drive the system has (SSD or HDD), and the quantity of each
+        ///<summary>Fetches the type of drive the system has (SSD or HDD), and the quantity of each</summary>
+        ///<returns>String with the SSD/HDD amount</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetStorageType()
         {
             double dresult;
@@ -221,7 +228,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them
+        ///<summary>Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them</summary>
+        ///<returns>String with the SSD/HDD amount</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string CountDistinct(string[] array, string[] array2, string[] array3)
         {
             string result = string.Empty;
@@ -276,7 +285,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the SSD/HDD total size (sums all drives sizes)
+        ///<summary>Fetches the SSD/HDD total size (sums all drives sizes)</summary>
+        ///<returns>String with the SSD/HDD total size</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetStorageSize()
         {
             int i = 0;
@@ -338,7 +349,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the primary MAC Address
+        ///<summary>Fetches the primary MAC Address</summary>
+        ///<returns>String with the primary MAC Address, or 'null' otherwise</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetMacAddress()
         {
             string MACAddress = string.Empty;
@@ -369,7 +382,8 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the primary IP address
+        ///<summary>Fetches the primary IP address</summary>
+        ///<returns>String with the primary IP address, or 'null' otherwise</returns>
         public static string GetIpAddress()
         {
             string[] IPAddress = null;
@@ -396,7 +410,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the computer's manufacturer
+        ///<summary>Fetches the computer's manufacturer</summary>
+        ///<returns>String with the computer's manufacturer, or 'Unknown' otherwise</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetBrand()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_ComputerSystem");
@@ -416,7 +432,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the computer's manufacturer (alternative method)
+        ///<summary>Fetches the computer's manufacturer (alternative method)</summary>
+        ///<returns>String with the computer's manufacturer, or 'Unknown' otherwise</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetBrandAlt()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_BaseBoard");
@@ -436,7 +454,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the computer's model
+        ///<summary>Fetches the computer's model</summary>
+        ///<returns>String with the computer's model, or 'Unknown' otherwise</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetModel()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_ComputerSystem");
@@ -456,7 +476,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the computer's model (alternative method)
+        ///<summary>Fetches the computer's model (alternative method)</summary>
+        ///<returns>String with the computer's model, or 'Unknown' otherwise</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetModelAlt()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_BaseBoard");
@@ -476,7 +498,8 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the motherboard serial number
+        ///<summary>Fetches the motherboard serial number</summary>
+        ///<returns>String with the motherboard serial number, or 'Unknown' otherwise</returns>
         public static string GetSerialNumber()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_BaseBoard");
@@ -495,7 +518,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the amount of RAM of the system
+        ///<summary>Fetches the amount of RAM of the system</summary>
+        ///<returns>String with the amount of RAM of the system</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetRam()
         {
             long MemSize = 0;
@@ -582,7 +607,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the amount of RAM of the system (alternative method)
+        ///<summary>Fetches the amount of RAM of the system (alternative method)</summary>
+        ///<returns>String with the amount of RAM of the system</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetRamAlt()
         {
             double MemSize = 0;
@@ -614,7 +641,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the number of RAM slots on the system
+        ///<summary>Fetches the number of RAM slots on the system</summary>
+        ///<returns>String with the number of RAM slots</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetNumRamSlots()
         {
             int MemSlots = 0;
@@ -642,7 +671,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the number of free RAM slots on the system
+        ///<summary>Fetches the number of free RAM slots on the system</summary>
+        ///<returns>String with the number of free RAM slots</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetNumFreeRamSlots(int num)
         {
             int i = 0;
@@ -671,7 +702,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the default gateway of the NIC
+        ///<summary>Fetches the default gateway of the NIC</summary>
+        ///<returns>String with the NIC's gateway</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetDefaultIpGateway()
         {
             string gateway = string.Empty;
@@ -702,14 +735,17 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the OS architecture
+        ///<summary>Fetches the OS architecture</summary>
+        ///<returns>String with the OS architecture. '64' for x64, '32' for x86</returns>
         public static string GetOSArch()
         {
             bool is64bit = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"));
             return is64bit ? ConstantsDLL.Properties.Resources.ARCH64 : ConstantsDLL.Properties.Resources.ARCH32;
         }
 
-        //Fetches the OS architecture (alternative method)
+        ///<summary>Fetches the OS architecture (alternative method)</summary>
+        ///<returns>String with the OS architecture. '64-bit' for x64, '32-bit' for x86</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetOSArchAlt()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_OperatingSystem");
@@ -734,7 +770,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the NT version
+        ///<summary>Fetches the NT version</summary>
+        ///<returns>String with the NT version. '7' for Windows 7, '8' for Windows 8, '8.1' for Windows 8.1, '10' for Windows 10</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetWinVersion()
         {
             string operatingSystem = string.Empty;
@@ -769,7 +807,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the operating system information
+        ///<summary>Fetches the operating system information</summary>
+        ///<returns>String with the operating system information, or 'Unknown' otherwise</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetOSString()
         {
             string displayVersion = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", string.Empty).ToString();
@@ -793,10 +833,11 @@ namespace HardwareInfoDLL
             {
                 return e.Message;
             }
-
         }
 
-        //Fetches the OS build number
+        ///<summary>Fetches the OS build number</summary>
+        ///<returns>String with the OS build number, or 'Unknown' otherwise</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetOSVersion()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_OperatingSystem");
@@ -817,7 +858,9 @@ namespace HardwareInfoDLL
 
         }
 
-        //Fetches the computer's hostname
+        ///<summary>Fetches the computer's hostname</summary>
+        ///<returns>String with the hostname</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetHostname()
         {
             string info = string.Empty;
@@ -840,7 +883,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the BIOS version
+        ///<summary>Fetches the firmware version</summary>
+        ///<returns>String with the firmware version</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetFirmwareVersion()
         {
             string biosVersion = string.Empty;
@@ -863,7 +908,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the BIOS type (BIOS or UEFI) on Windows 7
+        ///<summary>Fetches the firmware type on Windows 7</summary>
+        ///<returns>String with the firmware type code. '1' for UEFI, '0' for BIOS</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public const int ERROR_INVALID_FUNCTION = 1;
         [DllImport("kernel32.dll",
             EntryPoint = "GetFirmwareEnvironmentVariableW",
@@ -886,7 +933,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the BIOS type (BIOS or UEFI) on Windows 8 and later
+        ///<summary>Fetches the firmware type on Windows 8 and later</summary>
+        ///<returns>String with the firmware type code. '1' for UEFI, '0' for BIOS, 'Not determined' for not determined</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         [DllImport("kernel32.dll")]
         private static extern bool GetFirmwareType(ref uint FirmwareType);
         public static string GetFwType()
@@ -921,7 +970,8 @@ namespace HardwareInfoDLL
 
         }
 
-        //Fetches the Secure Boot status (alternative method)
+        ///<summary>Fetches the Secure Boot status (alternative method)</summary>
+        ///<returns>String with the Secure Boot status. '2' for activated, '1' for deactivated, '0' for not supported</returns>
         public static string GetSecureBootAlt()
         {
             try
@@ -943,7 +993,8 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the Secure Boot status
+        ///<summary>Fetches the Secure Boot status</summary>
+        ///<returns>String with the Secure Boot status. '2' for activated, '1' for deactivated, '0' for not supported</returns>
         public static string GetSecureBoot()
         {
             try
@@ -957,7 +1008,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the Virtualization Technology status
+        ///<summary>Fetches the Virtualization Technology status</summary>
+        ///<returns>String with the Virtualization Technology status. '2' for activated, '1' for deactivated, '0' for not supported</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetVirtualizationTechnology()
         {
             int flag = 0;
@@ -997,7 +1050,9 @@ namespace HardwareInfoDLL
 
         }
 
-        //Fetches the Hyper-V installation status
+        ///<summary>Fetches the Hyper-V installation status</summary>
+        ///<returns>String with the Hyper-V status. 'true' for true, 'false' for false</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetHyperVStatus()
         {
             string featureName;
@@ -1026,7 +1081,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the S.M.A.R.T. status
+        ///<summary>Fetches the S.M.A.R.T. status</summary>
+        ///<returns>String with the S.M.A.R.T. status. 'OK' for ok, everything else for a problem</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetSMARTStatus()
         {
             string statusCaption, statusValue;
@@ -1052,7 +1109,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        //Fetches the TPM version
+        ///<summary>Fetches the TPM version</summary>
+        ///<returns>String with the TPM version code. '0' for none, '1' for 1.2, '2' for 2.0</returns>
+        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
         public static string GetTPMStatus()
         {
             string specVersion = string.Empty;
@@ -1088,57 +1147,6 @@ namespace HardwareInfoDLL
             catch (Exception e)
             {
                 return e.Message;
-            }
-        }
-
-        public static List<string> GetOEMInstanceIdList()
-        {
-            int idSplitChar, infSplitChar;
-            string idValue, infValue;
-            List<string> output = new List<string>();
-            List<string> fullInstanceIdList = new List<string>();
-            List<string> oemInstanceIdList = new List<string>();
-            ManagementClass mc = new ManagementClass("Win32_PnpEntity");
-            ManagementObjectCollection moc = mc.GetInstances();
-
-            try
-            {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
-                {
-                    fullInstanceIdList.Add((string)queryObj.Properties["DeviceId"].Value);
-                }
-                foreach(string str in fullInstanceIdList)
-                {
-                    output.Clear();
-                    //Create pnputil process with args
-                    Process process = new Process();
-                    process.StartInfo.FileName = "pnputil.exe";
-                    process.StartInfo.RedirectStandardOutput = true;
-                    process.StartInfo.Arguments = "/enum-devices /instanceid " + str;
-                    process.StartInfo.UseShellExecute = false;
-                    process.StartInfo.CreateNoWindow = true;
-                    _ = process.Start();
-                    while (!process.StandardOutput.EndOfStream)
-                    {
-                        output.Add(process.StandardOutput.ReadLine());
-                    }
-                    process.WaitForExit();
-                    process.Close();
-
-                    idSplitChar = output[2].IndexOf(":");
-                    infSplitChar = output[8].IndexOf(":");
-                    idValue = output[2].Substring(idSplitChar + 1).Trim();
-                    infValue = output[8].Substring(infSplitChar + 1).Trim();
-                    if (infValue.Contains("oem"))
-                    {
-                        oemInstanceIdList.Add(idValue);
-                    }
-                }
-                return oemInstanceIdList;
-            }
-            catch
-            {
-                return null;
             }
         }
     }

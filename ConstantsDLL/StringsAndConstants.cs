@@ -5,29 +5,22 @@ using System.Drawing;
 
 namespace ConstantsDLL
 {
+    ///<summary>Class that keeps some of the program constants</summary>
     public static class StringsAndConstants
     {
-        /**
-         * Common code
-         * Start
-        */
-
+        //////////////////////
+        // Common code - START
         public static readonly string MODEL_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_MODEL;
         public static readonly string CONFIG_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_CONFIG;
         public static readonly string CREDENTIALS_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_CREDENTIALS;
         public static readonly string ASSET_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_ASSET;
         public static readonly string WEBVIEW2_FILE_PATH = System.IO.Path.GetTempPath() + Resources.WEBVIEW2_FILE;
+        // Common code - END
+        ////////////////////
 
-        /**
-         * Common code
-         * End
-        */
 
-        /**
-         * Code exclusive for AssetInformationAndRegistration application
-         * Start
-        */
-
+        /////////////////////////////////////////////////////////////////////////
+        // Code exclusive for AssetInformationAndRegistration application - START
         public const string CLI_SERVER_IP_SWITCH = "serverIP";
         public const string CLI_SERVER_PORT_SWITCH = "serverPort";
         public const string CLI_SERVICE_TYPE_SWITCH = "serviceType";
@@ -46,20 +39,15 @@ namespace ConstantsDLL
         public const string CLI_USERNAME_SWITCH = "username";
         public const string CLI_PASSWORD_SWITCH = "password";
         public const string CLI_HELP_SWITCH = "help";
-
         public const string CLI_DEFAULT_UNCHANGED = "same";
         public const string CLI_DEFAULT_SERVICE_TYPE = "m";
         public const string CLI_DEFAULT_SERVICE_DATE = "today";
-
         public const string CLI_EMPLOYEE_TYPE_0 = "e";
         public const string CLI_EMPLOYEE_TYPE_1 = "s";
-
         public const string CLI_SERVICE_TYPE_0 = "f";
         public const string CLI_SERVICE_TYPE_1 = "m";
-
         public const string LIST_YES_ABBREV = "y";
         public const string LIST_NO_ABBREV = "n";
-
         public const string MANDATORY = "MANDATORY";
         public const string OPTIONAL = "Optional";
 
@@ -124,22 +112,14 @@ namespace ConstantsDLL
         public static readonly Color ROTATING_CIRCLE_COLOR = SystemColors.MenuHighlight;
 
         public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
+        // Code exclusive for AssetInformationAndRegistration application - END
+        ///////////////////////////////////////////////////////////////////////
 
-        /**
-         * Code exclusive for AssetInformationAndRegistration application
-         * End
-        */
 
-        /**
-         * Code exclusive for FeaturesOverlayPresentation application
-         * Start
-        */
-
+        /////////////////////////////////////////////////////////////////////
+        // Code exclusive for FeaturesOverlayPresentation application - START
         public const double FADE_TIME = 0.2d;
-
-        /**
-         * Code exclusive for FeaturesOverlayPresentation application
-         * End
-        */
+        // Code exclusive for FeaturesOverlayPresentation application - END
+        ///////////////////////////////////////////////////////////////////
     }
 }

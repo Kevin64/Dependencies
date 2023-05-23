@@ -4,10 +4,16 @@ using System.IO;
 
 namespace LogGeneratorDLL
 {
+    ///<summary>Class for LogGenerator</summary>
     public class LogGenerator
     {
         private readonly string path, fileNameStr;
 
+        ///<summary>LogGenerator constructor</summary>
+        ///<param name="softwareName">Name of the software</param>
+        ///<param name="path">Path where the log file will be written</param>
+        ///<param name="fileName">Name of the log file</param>
+        ///<param name="consoleOut">Toggle for CLI output</param>
         public LogGenerator(string softwareName, string path, string fileName, bool consoleOut)
         {
             this.path = path;
@@ -18,6 +24,10 @@ namespace LogGeneratorDLL
             }
         }
 
+        ///<summary>Initiates a log file</summary>
+        ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
+        ///<param name="softwareName">Name of the software</param>
+        ///<param name="consoleOut">Toggle for CLI output</param>
         public void LogInit(TextWriter txtWriter, string softwareName, bool consoleOut)
         {
             try
@@ -46,6 +56,11 @@ namespace LogGeneratorDLL
             }
         }
 
+        ///<summary>Method that appends a log line into the file</summary>
+        ///<param name="logType">Severity of the event</param>
+        ///<param name="logMessage1">Log message for first field - Key/Title</param>
+        ///<param name="logMessage2">Log message for second field - Value/Explanation</param>
+        ///<param name="consoleOut">Toggle for CLI output</param>
         public void LogWrite(int logType, string logMessage1, string logMessage2, bool consoleOut)
         {
             try
@@ -60,6 +75,12 @@ namespace LogGeneratorDLL
             }
         }
 
+        ///<summary>Method that define how log entries will be written</summary>
+        ///<param name="logType">Severity of the event</param>
+        ///<param name="logMessage1">Log message for first field - Key/Title</param>
+        ///<param name="logMessage2">Log message for second field - Value/Explanation</param>
+        ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
+        ///<param name="consoleOut">Toggle for CLI output</param>
         public void Log(int logType, string logMessage1, string logMessage2, TextWriter txtWriter, bool consoleOut)
         {
             string logTypeAttr;
@@ -118,6 +139,8 @@ namespace LogGeneratorDLL
             }
         }
 
+        ///<summary>Ends a log file</summary>
+        ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
         public void LogEnd(TextWriter txtWriter)
         {
             try

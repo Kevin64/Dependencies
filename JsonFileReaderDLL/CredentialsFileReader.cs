@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-    public class CredFile
+    ///<summary>Template class for 'Credentials'</summary>
+    public class CredentialsFile
     {
         public string Id { get; set; }
         public string Username { get; set; }
@@ -14,13 +15,20 @@ namespace JsonFileReaderDLL
         public string PrivilegeLevel { get; set; }
         public string LastLoginDate { get; set; }
     }
+
+    ///<summary>Class for handling a 'Credentials' json file</summary>
     public static class CredentialsFileReader
     {
         private static string jsonFile, sha256, aux;
         private static WebClient wc;
         private static StreamReader fileL;
 
-        //Checks if the server is answering any requests, through a json file verification (creates a separate thread)
+        ///<summary>
+        ///Checks if the server is answering any requests, through a json file verification (creates a separate thread)
+        ///</summary>
+        ///<param name="ipAddress">Server IP address</param>
+        ///<param name="port">Server port</param>
+        ///<returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
         public static Task<bool> CheckHostMT(string ipAddress, string port)
         {
             return Task.Run(() =>
@@ -45,7 +53,12 @@ namespace JsonFileReaderDLL
             });
         }
 
-        //Checks if the server is answering any requests, through a json file verification (single threaded)
+        ///<summary>
+        ///Checks if the server is answering any requests, through a json file verification (single threaded)
+        ///</summary>
+        ///<param name="ipAddress">Server IP address</param>
+        ///<param name="port">Server port</param>
+        ///<returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
         public static bool CheckHostST(string ipAddress, string port)
         {
             try
@@ -67,7 +80,14 @@ namespace JsonFileReaderDLL
             return true;
         }
 
-        //Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
+        ///<summary>
+        ///Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
+        ///</summary>
+        ///<param name="username">Username</param>
+        ///<param name="password">User's password</param>
+        ///<param name="ipAddress">Server IP address</param>
+        ///<param name="port">Server port</param>
+        ///<returns>If user exists on the fetched json file, returns a string array with the username and respective id. If not, returns a single position array with a "false" string.</returns>
         public static Task<string[]> FetchInfoMT(string username, string password, string ipAddress, string port)
         {
             return Task.Run(async () =>
@@ -82,7 +102,7 @@ namespace JsonFileReaderDLL
                 if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
                 {
                     jsonFile = fileL.ReadToEnd();
-                    CredFile[] jsonParse = JsonConvert.DeserializeObject<CredFile[]>(@jsonFile);
+                    CredentialsFile[] jsonParse = JsonConvert.DeserializeObject<CredentialsFile[]>(@jsonFile);
 
                     for (int i = 0; i < jsonParse.Length; i++)
                     {
@@ -100,7 +120,14 @@ namespace JsonFileReaderDLL
             });
         }
 
-        //Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
+        ///<summary>
+        ///Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
+        ///</summary>
+        ///<param name="username">Username</param>
+        ///<param name="password">User's password</param>
+        ///<param name="ipAddress">Server IP address</param>
+        ///<param name="port">Server port</param>
+        ///<returns>If user exists on the fetched json file, returns a string array with the username and respective id. If not, returns a single position array with a "false" string.</returns>
         public static string[] FetchInfoST(string username, string password, string ipAddress, string port)
         {
             if (!CheckHostST(ipAddress, port))
@@ -113,7 +140,7 @@ namespace JsonFileReaderDLL
             if (MiscMethods.GetSha256Hash(aux).Equals(sha256))
             {
                 jsonFile = fileL.ReadToEnd();
-                CredFile[] jsonParse = JsonConvert.DeserializeObject<CredFile[]>(@jsonFile);
+                CredentialsFile[] jsonParse = JsonConvert.DeserializeObject<CredentialsFile[]>(@jsonFile);
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {

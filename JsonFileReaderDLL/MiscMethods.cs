@@ -4,10 +4,14 @@ using System.Security.Cryptography;
 
 namespace JsonFileReaderDLL
 {
+    ///<summary>Class for miscelaneous methods</summary>
     public static class MiscMethods
     {
-
-        //Get SHA1 Hash from file input
+        ///<summary>
+        ///Gets the SHA-256 hash from a specific file
+        ///</summary>
+        ///<param name="filePath">Path of the file you want to know the hash</param>
+        ///<returns>The SHA-256 hash.</returns>
         public static string GetSha256Hash(string filePath)
         {
             using (FileStream fs = File.OpenRead(filePath))
