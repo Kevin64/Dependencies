@@ -221,10 +221,10 @@
     <value>Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</value>
   </data>
   <data name="FOP_X64" xml:space="preserve">
-    <value>"C:\Program Files\FOP\Rever tutorial de uso do computador.lnk"</value>
+    <value>"C:\Program Files\FOP\FOP.lnk"</value>
   </data>
   <data name="FOP_X86" xml:space="preserve">
-    <value>"C:\Program Files (x86)\FOP\Rever tutorial de uso do computador.lnk"</value>
+    <value>"C:\Program Files (x86)\FOP\FOP.lnk"</value>
   </data>
   <data name="FORMAT_URL" xml:space="preserve">
     <value>getExternalFormattingData</value>

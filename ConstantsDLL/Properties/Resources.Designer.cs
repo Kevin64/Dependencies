@@ -376,7 +376,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;C:\Program Files\FOP\Rever tutorial de uso do computador.lnk&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;C:\Program Files\FOP\FOP.lnk&quot;.
         /// </summary>
         public static string FOP_X64 {
             get {
@@ -385,7 +385,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;C:\Program Files (x86)\FOP\Rever tutorial de uso do computador.lnk&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;C:\Program Files (x86)\FOP\FOP.lnk&quot;.
         /// </summary>
         public static string FOP_X86 {
             get {
