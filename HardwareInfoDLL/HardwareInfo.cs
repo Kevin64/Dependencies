@@ -14,24 +14,22 @@ namespace HardwareInfoDLL
     {
         ///<summary>Fetches the CPU information, including the number of cores/threads</summary>
         ///<returns>String with the CPU information</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetProcessorInfo()
         {
             string Id = string.Empty;
             string logical = string.Empty;
 
-            ManagementClass mc = new ManagementClass("win32_processor");
-            ManagementObjectCollection moc = mc.GetInstances();
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_ComputerSystem");
-
             try
             {
-                foreach (ManagementBaseObject item in searcher.Get())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    logical = item["NumberOfLogicalProcessors"].ToString();
+                    logical = queryObj["NumberOfLogicalProcessors"].ToString();
                 }
 
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     Id = queryObj.Properties["name"].Value.ToString() + " " + queryObj.Properties["CurrentClockSpeed"].Value.ToString()
                        + " " + ConstantsDLL.Properties.Resources.FREQUENCY + " (" + queryObj.Properties["NumberOfCores"].Value.ToString() + "C/" + logical + "T)";
@@ -42,7 +40,7 @@ namespace HardwareInfoDLL
                 Id = Id.Replace("(tm)", string.Empty);
                 return Id;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -50,17 +48,17 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the GPU information</summary>
         ///<returns>String with the GPU information</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetVideoCardInfo()
         {
             string gpuname = string.Empty;
             string gpuramStr;
             double gpuram;
 
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_VideoController");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
@@ -81,7 +79,7 @@ namespace HardwareInfoDLL
                 gpuname = gpuname.Replace("(tm)", string.Empty);
                 return gpuname;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -89,13 +87,13 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the operation mode that the storage is running (IDE/AHCI/NVMe)</summary>
         ///<returns>String with the current media operation mode</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetMediaOperationMode()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_SCSIController");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_SCSIController");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (queryObj["Name"].ToString().Contains("NVM"))
@@ -104,7 +102,7 @@ namespace HardwareInfoDLL
                     }
                 }
 
-                searcher = new ManagementObjectSearcher("select * from Win32_IDEController");
+                searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_IDEController");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
@@ -113,10 +111,9 @@ namespace HardwareInfoDLL
                         return ConstantsDLL.Properties.Resources.AHCI;
                     }
                 }
-
                 return ConstantsDLL.Properties.Resources.IDE;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -124,7 +121,7 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the type of drive the system has (SSD or HDD), and the quantity of each</summary>
         ///<returns>String with the SSD/HDD amount</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetStorageType()
         {
             double dresult;
@@ -140,11 +137,7 @@ namespace HardwareInfoDLL
                     string[] bytesSSD = new string[size];
                     string concat, msftName = "Msft Virtual Disk";
 
-                    ManagementScope scope = new ManagementScope(@"\\.\root\microsoft\windows\storage");
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from MSFT_PhysicalDisk");
-                    scope.Connect();
-                    searcher.Scope = scope;
-
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
                     foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
@@ -186,7 +179,6 @@ namespace HardwareInfoDLL
                     IEnumerable<string> typeSlicedSSD = bytesSSD.Take(i);
                     searcher.Dispose();
                     concat = CountDistinct(typeSliced.ToArray(), typeSlicedHDD.ToArray(), typeSlicedSSD.ToArray());
-
                     return concat;
                 }
                 else
@@ -197,7 +189,7 @@ namespace HardwareInfoDLL
                     string[] bytesHDD = new string[size];
                     string concat;
 
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_DiskDrive");
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
                     foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
@@ -218,11 +210,10 @@ namespace HardwareInfoDLL
                     IEnumerable<string> typeSlicedHDD = bytesHDD.Take(i);
                     searcher.Dispose();
                     concat = CountDistinct(typeSliced.ToArray(), typeSlicedHDD.ToArray(), typeSlicedHDD.ToArray());
-
                     return concat;
                 }
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -271,7 +262,6 @@ namespace HardwareInfoDLL
                                 {
                                     result += " (" + string.Join(", ", sizesSSD) + ")" + ", ";
                                 }
-
                                 break;
                             }
                         }
@@ -287,7 +277,7 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the SSD/HDD total size (sums all drives sizes)</summary>
         ///<returns>String with the SSD/HDD total size</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetStorageSize()
         {
             int i = 0;
@@ -298,10 +288,7 @@ namespace HardwareInfoDLL
             {
                 if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
                 {
-                    ManagementScope scope = new ManagementScope(@"\\.\root\microsoft\windows\storage");
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from MSFT_PhysicalDisk");
-                    scope.Connect();
-                    searcher.Scope = scope;
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
                     foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
@@ -321,7 +308,7 @@ namespace HardwareInfoDLL
                 }
                 else
                 {
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_DiskDrive");
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
                     foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
@@ -343,7 +330,7 @@ namespace HardwareInfoDLL
                     return dresultStr;
                 }
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -351,32 +338,30 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the primary MAC Address</summary>
         ///<returns>String with the primary MAC Address, or 'null' otherwise</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetMacAddress()
         {
             string MACAddress = string.Empty;
 
-            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
-            ManagementObjectCollection moc = mc.GetInstances();
-
             try
             {
-                foreach (ManagementObject mo in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_NetworkAdapterConfiguration");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    string[] gat = (string[])mo["DefaultIPGateway"];
+                    string[] gat = (string[])queryObj["DefaultIPGateway"];
                     if (MACAddress == string.Empty)
                     {
-                        if ((bool)mo["IPEnabled"] == true && gat != null)
+                        if ((bool)queryObj["IPEnabled"] == true && gat != null)
                         {
-                            MACAddress = mo["MacAddress"].ToString();
+                            MACAddress = queryObj["MacAddress"].ToString();
                         }
                     }
-
-                    mo.Dispose();
+                    queryObj.Dispose();
                 }
                 return MACAddress != string.Empty ? MACAddress : null;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -388,19 +373,18 @@ namespace HardwareInfoDLL
         {
             string[] IPAddress = null;
 
-            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
-            ManagementObjectCollection moc = mc.GetInstances();
             try
             {
-                foreach (ManagementObject mo in moc.Cast<ManagementObject>())
-                {
-                    string[] gat = (string[])mo["DefaultIPGateway"];
-                    if ((bool)mo["IPEnabled"] == true && gat != null)
-                    {
-                        IPAddress = (string[])mo["IPAddress"];
-                    }
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_NetworkAdapterConfiguration");
 
-                    mo.Dispose();
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    string[] gat = (string[])queryObj["DefaultIPGateway"];
+                    if ((bool)queryObj["IPEnabled"] == true && gat != null)
+                    {
+                        IPAddress = (string[])queryObj["IPAddress"];
+                    }
+                    queryObj.Dispose();
                 }
                 return IPAddress[0];
             }
@@ -412,21 +396,20 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the computer's manufacturer</summary>
         ///<returns>String with the computer's manufacturer, or 'Unknown' otherwise</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetBrand()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_ComputerSystem");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_ComputerSystem");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
                 }
-
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -434,21 +417,20 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the computer's manufacturer (alternative method)</summary>
         ///<returns>String with the computer's manufacturer, or 'Unknown' otherwise</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetBrandAlt()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_BaseBoard");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BaseBoard");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
                 }
-
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -456,21 +438,20 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the computer's model</summary>
         ///<returns>String with the computer's model, or 'Unknown' otherwise</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetModel()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_ComputerSystem");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_ComputerSystem");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     return queryObj.GetPropertyValue("Model").ToString();
                 }
-
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -478,21 +459,20 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the computer's model (alternative method)</summary>
         ///<returns>String with the computer's model, or 'Unknown' otherwise</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetModelAlt()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_BaseBoard");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BaseBoard");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     return queryObj.GetPropertyValue("Product").ToString();
                 }
-
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -500,27 +480,28 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the motherboard serial number</summary>
         ///<returns>String with the motherboard serial number, or 'Unknown' otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetSerialNumber()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_BaseBoard");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BaseBoard");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
-            catch
+            catch (ManagementException e)
             {
-                return ConstantsDLL.Properties.Strings.UNKNOWN;
+                return e.Message;
             }
         }
 
         ///<summary>Fetches the amount of RAM of the system</summary>
         ///<returns>String with the amount of RAM of the system</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetRam()
         {
             long MemSize = 0;
@@ -528,14 +509,11 @@ namespace HardwareInfoDLL
             string mType = string.Empty;
             string mSpeed = string.Empty;
 
-            ManagementScope scope = new ManagementScope();
-            ObjectQuery objQuery = new ObjectQuery("select * from Win32_PhysicalMemory");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, objQuery);
-            ManagementObjectCollection moc = searcher.Get();
-
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.SYSTEM_ROM))
                     {
@@ -601,7 +579,7 @@ namespace HardwareInfoDLL
                 MemSize = MemSize / 1024 / 1024 / 1024;
                 return MemSize.ToString() + " " + ConstantsDLL.Properties.Resources.GB + " " + mType + mSpeed;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -609,21 +587,18 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the amount of RAM of the system (alternative method)</summary>
         ///<returns>String with the amount of RAM of the system</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetRamAlt()
         {
             double MemSize = 0;
             long mCap;
             string MemSizeStr;
 
-            ManagementScope scope = new ManagementScope();
-            ObjectQuery objQuery = new ObjectQuery("select * from Win32_PhysicalMemory");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, objQuery);
-            ManagementObjectCollection moc = searcher.Get();
-
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.SYSTEM_ROM))
                     {
@@ -635,7 +610,7 @@ namespace HardwareInfoDLL
                 MemSizeStr = MemSize.ToString();
                 return MemSizeStr;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -643,29 +618,25 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the number of RAM slots on the system</summary>
         ///<returns>String with the number of RAM slots</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetNumRamSlots()
         {
             int MemSlots = 0;
 
-            ManagementScope scope = new ManagementScope();
-            ObjectQuery objQuery = new ObjectQuery("select * from Win32_PhysicalMemoryArray");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, objQuery);
-            ManagementObjectCollection moc = searcher.Get();
-
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (Convert.ToString(queryObj["Tag"]).Equals("Physical Memory Array 0"))
                     {
                         MemSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
                     }
                 }
-
                 return MemSlots.ToString();
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -673,30 +644,25 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the number of free RAM slots on the system</summary>
         ///<returns>String with the number of free RAM slots</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
-        public static string GetNumFreeRamSlots(int num)
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static string GetNumFreeRamSlots()
         {
             int i = 0;
-            string[] MemSlotsUsed = new string[num];
-
-            ManagementScope scope = new ManagementScope();
-            ObjectQuery objQuery = new ObjectQuery("select * from Win32_PhysicalMemory");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, objQuery);
-            ManagementObjectCollection moc = searcher.Get();
 
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.SYSTEM_ROM))
                     {
-                        MemSlotsUsed[i] = Convert.ToString(queryObj["DeviceLocator"]);
                         i++;
                     }
                 }
                 return i.ToString();
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -704,17 +670,16 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the default gateway of the NIC</summary>
         ///<returns>String with the NIC's gateway</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetDefaultIpGateway()
         {
             string gateway = string.Empty;
 
-            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
-            ManagementObjectCollection moc = mc.GetInstances();
-
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_NetworkAdapterConfiguration");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (gateway == string.Empty)
                     {
@@ -723,13 +688,12 @@ namespace HardwareInfoDLL
                             gateway = queryObj["DefaultIPGateway"].ToString();
                         }
                     }
-
                     queryObj.Dispose();
                 }
                 gateway = gateway.Replace(":", string.Empty);
                 return gateway;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -745,26 +709,27 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the OS architecture (alternative method)</summary>
         ///<returns>String with the OS architecture. '64-bit' for x64, '32-bit' for x86</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSArchAlt()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_OperatingSystem");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_OperatingSystem");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    try
+                    if (queryObj.GetPropertyValue("OSArchitecture").ToString().Contains(ConstantsDLL.Properties.Resources.ARCH64))
                     {
-                        return queryObj.GetPropertyValue("OSArchitecture").ToString();
+                        return ConstantsDLL.Properties.Resources.X64;
                     }
-                    catch
+                    else
                     {
+                        return ConstantsDLL.Properties.Resources.X86;
                     }
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -772,7 +737,7 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the NT version</summary>
         ///<returns>String with the NT version. '7' for Windows 7, '8' for Windows 8, '8.1' for Windows 8.1, '10' for Windows 10</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
         public static string GetWinVersion()
         {
             string operatingSystem = string.Empty;
@@ -809,27 +774,28 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the operating system information</summary>
         ///<returns>String with the operating system information, or 'Unknown' otherwise</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSString()
         {
             string displayVersion = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", string.Empty).ToString();
             string releaseId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "releaseId", string.Empty).ToString();
-
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_OperatingSystem");
+            string updateBuildRevision = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "UBR", string.Empty).ToString();
 
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_OperatingSystem");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     return GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10)
                         ? Convert.ToInt32(releaseId) <= 2004
-                            ? (((string)queryObj["Caption"]).Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
-                            : (((string)queryObj["Caption"]).Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10)
-                        : (((string)queryObj["Caption"]).Trim() + " " + (string)queryObj["CSDVersion"] + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + (string)queryObj["Version"] + ", " + (string)queryObj["OSArchitecture"]).Substring(10);
+                            ? ((queryObj["Caption"]).ToString().Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10)
+                            : ((queryObj["Caption"]).ToString().Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10)
+                        : ((queryObj["Caption"]).ToString().Trim() + " " + queryObj["CSDVersion"].ToString() + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -837,21 +803,20 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the OS build number</summary>
         ///<returns>String with the OS build number, or 'Unknown' otherwise</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSVersion()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "select * from Win32_OperatingSystem");
-
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_OperatingSystem");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     return queryObj.GetPropertyValue("Version").ToString();
                 }
-
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -860,24 +825,22 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the computer's hostname</summary>
         ///<returns>String with the hostname</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetHostname()
         {
             string info = string.Empty;
 
-            ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
-            ManagementObjectCollection moc = mc.GetInstances();
-
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_ComputerSystem");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     info = (string)queryObj["Name"];
                 }
-
                 return info;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -885,24 +848,22 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the firmware version</summary>
         ///<returns>String with the firmware version</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException ">Thrown when there is a problem with the query</exception>
         public static string GetFirmwareVersion()
         {
             string biosVersion = string.Empty;
 
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_BIOS");
-            ManagementObjectCollection moc = searcher.Get();
-
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BIOS");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     biosVersion = (string)queryObj["SMBIOSBIOSVersion"];
                 }
-
                 return biosVersion;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -924,7 +885,6 @@ namespace HardwareInfoDLL
             try
             {
                 _ = GetFirmwareType(string.Empty, "{00000000-0000-0000-0000-000000000000}", IntPtr.Zero, 0);
-
                 return Marshal.GetLastWin32Error() == ERROR_INVALID_FUNCTION ? ConstantsDLL.Properties.Resources.BIOS : ConstantsDLL.Properties.Resources.UEFI;
             }
             catch (Exception e)
@@ -967,7 +927,6 @@ namespace HardwareInfoDLL
             {
                 return e.Message;
             }
-
         }
 
         ///<summary>Fetches the Secure Boot status (alternative method)</summary>
@@ -984,7 +943,6 @@ namespace HardwareInfoDLL
                 {
                     return ConstantsDLL.Properties.Resources.ACTIVATED;
                 }
-
                 return ConstantsDLL.Properties.Resources.DEACTIVATED;
             }
             catch
@@ -1010,7 +968,7 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the Virtualization Technology status</summary>
         ///<returns>String with the Virtualization Technology status. '2' for activated, '1' for deactivated, '0' for not supported</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException ">Thrown when there is a problem with the query</exception>
         public static string GetVirtualizationTechnology()
         {
             int flag = 0;
@@ -1019,10 +977,9 @@ namespace HardwareInfoDLL
             {
                 if (!GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_7))
                 {
-                    ManagementClass mc = new ManagementClass("win32_processor");
-                    ManagementObjectCollection moc = mc.GetInstances();
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
-                    foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (queryObj["VirtualizationFirmwareEnabled"].ToString().Equals("True"))
                         {
@@ -1038,32 +995,29 @@ namespace HardwareInfoDLL
                         flag = GetFwType() == ConstantsDLL.Properties.Resources.UEFI ? 1 : 0;
                     }
                 }
-
                 return flag == 2
                     ? ConstantsDLL.Properties.Resources.ACTIVATED
                     : flag == 1 ? ConstantsDLL.Properties.Resources.DEACTIVATED : ConstantsDLL.Properties.Resources.NOT_SUPPORTED;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
-
         }
 
         ///<summary>Fetches the Hyper-V installation status</summary>
         ///<returns>String with the Hyper-V status. 'true' for true, 'false' for false</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetHyperVStatus()
         {
             string featureName;
             uint featureToggle;
 
-            ManagementClass mc = new ManagementClass("Win32_OptionalFeature");
-            ManagementObjectCollection moc = mc.GetInstances();
-
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_OptionalFeature");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     featureName = (string)queryObj.Properties["Name"].Value;
                     featureToggle = (uint)queryObj.Properties["InstallState"].Value;
@@ -1075,7 +1029,7 @@ namespace HardwareInfoDLL
                 }
                 return ConstantsDLL.Properties.Resources.FALSE;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -1083,16 +1037,16 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the S.M.A.R.T. status</summary>
         ///<returns>String with the S.M.A.R.T. status. 'OK' for ok, everything else for a problem</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetSMARTStatus()
         {
             string statusCaption, statusValue;
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("Select * from Win32_DiskDrive");
-            ManagementObjectCollection moc = searcher.Get();
 
             try
             {
-                foreach (ManagementObject queryObj in moc.Cast<ManagementObject>())
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     statusCaption = (string)queryObj.Properties["Caption"].Value;
                     statusValue = (string)queryObj.Properties["Status"].Value;
@@ -1103,7 +1057,7 @@ namespace HardwareInfoDLL
                 }
                 return ConstantsDLL.Properties.Resources.OK;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }
@@ -1111,17 +1065,16 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the TPM version</summary>
         ///<returns>String with the TPM version code. '0' for none, '1' for 1.2, '2' for 2.0</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetTPMStatus()
         {
             string specVersion = string.Empty;
             string str = string.Empty;
-            ManagementScope scope = new ManagementScope(@"\\.\root\cimv2\Security\MicrosoftTPM");
-            ObjectQuery query = new ObjectQuery("select * from Win32_Tpm");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
 
             try
             {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2\\Security\\MicrosoftTpm", "SELECT * FROM Win32_Tpm");
+
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     specVersion = queryObj.Properties["SpecVersion"].Value.ToString();
@@ -1144,7 +1097,7 @@ namespace HardwareInfoDLL
                     return ConstantsDLL.Properties.Resources.NO_TPM;
                 }
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
                 return e.Message;
             }

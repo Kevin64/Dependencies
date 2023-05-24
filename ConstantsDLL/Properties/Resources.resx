@@ -1099,4 +1099,10 @@
   <data name="TRUE" xml:space="preserve">
     <value>true</value>
   </data>
+  <data name="X64" xml:space="preserve">
+    <value>x64</value>
+  </data>
+  <data name="X86" xml:space="preserve">
+    <value>x86</value>
+  </data>
 </root>

@@ -2995,6 +2995,24 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a x64.
+        /// </summary>
+        public static string X64 {
+            get {
+                return ResourceManager.GetString("X64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a x86.
+        /// </summary>
+        public static string X86 {
+            get {
+                return ResourceManager.GetString("X86", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
         /// </summary>
         public static string YES {
