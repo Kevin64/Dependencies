@@ -28,7 +28,7 @@ namespace LogGeneratorDLL
         ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
         ///<param name="softwareName">Name of the software</param>
         ///<param name="consoleOut">Toggle for CLI output</param>
-        public void LogInit(TextWriter txtWriter, string softwareName, bool consoleOut)
+        private void LogInit(TextWriter txtWriter, string softwareName, bool consoleOut)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace LogGeneratorDLL
         ///<param name="logMessage2">Log message for second field - Value/Explanation</param>
         ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
         ///<param name="consoleOut">Toggle for CLI output</param>
-        public void Log(int logType, string logMessage1, string logMessage2, TextWriter txtWriter, bool consoleOut)
+        private void Log(int logType, string logMessage1, string logMessage2, TextWriter txtWriter, bool consoleOut)
         {
             string logTypeAttr;
 
@@ -141,7 +141,7 @@ namespace LogGeneratorDLL
 
         ///<summary>Ends a log file</summary>
         ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
-        public void LogEnd(TextWriter txtWriter)
+        private void LogEnd(TextWriter txtWriter)
         {
             try
             {

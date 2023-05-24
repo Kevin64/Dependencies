@@ -221,7 +221,7 @@ namespace HardwareInfoDLL
 
         ///<summary>Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them</summary>
         ///<returns>String with the SSD/HDD amount</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
         public static string CountDistinct(string[] array, string[] array2, string[] array3)
         {
             string result = string.Empty;
@@ -441,13 +441,22 @@ namespace HardwareInfoDLL
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetModel()
         {
+            string str;
             try
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_ComputerSystem");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return queryObj.GetPropertyValue("Model").ToString();
+                    str = queryObj.GetPropertyValue("Model").ToString();
+                    if (str != string.Empty)
+                    {
+                        return str;
+                    }
+                    else
+                    {
+                        return ConstantsDLL.Properties.Strings.UNKNOWN;
+                    }
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
@@ -462,13 +471,22 @@ namespace HardwareInfoDLL
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetModelAlt()
         {
+            string str;
             try
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BaseBoard");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return queryObj.GetPropertyValue("Product").ToString();
+                    str = queryObj.GetPropertyValue("Product").ToString();
+                    if(str != string.Empty)
+                    {
+                        return str;
+                    }
+                    else
+                    {
+                        return ConstantsDLL.Properties.Strings.UNKNOWN;
+                    }
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
@@ -871,7 +889,7 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the firmware type on Windows 7</summary>
         ///<returns>String with the firmware type code. '1' for UEFI, '0' for BIOS</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
         public const int ERROR_INVALID_FUNCTION = 1;
         [DllImport("kernel32.dll",
             EntryPoint = "GetFirmwareEnvironmentVariableW",
@@ -895,7 +913,7 @@ namespace HardwareInfoDLL
 
         ///<summary>Fetches the firmware type on Windows 8 and later</summary>
         ///<returns>String with the firmware type code. '1' for UEFI, '0' for BIOS, 'Not determined' for not determined</returns>
-        ///<exception cref="System.Exception">Thrown when there is a problem with the query</exception>
+        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
         [DllImport("kernel32.dll")]
         private static extern bool GetFirmwareType(ref uint FirmwareType);
         public static string GetFwType()
