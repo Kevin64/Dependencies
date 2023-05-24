@@ -449,14 +449,7 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     str = queryObj.GetPropertyValue("Model").ToString();
-                    if (str != string.Empty)
-                    {
-                        return str;
-                    }
-                    else
-                    {
-                        return ConstantsDLL.Properties.Strings.UNKNOWN;
-                    }
+                    return str != string.Empty ? str : ConstantsDLL.Properties.Strings.UNKNOWN;
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
@@ -479,14 +472,7 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     str = queryObj.GetPropertyValue("Product").ToString();
-                    if(str != string.Empty)
-                    {
-                        return str;
-                    }
-                    else
-                    {
-                        return ConstantsDLL.Properties.Strings.UNKNOWN;
-                    }
+                    return str != string.Empty ? str : ConstantsDLL.Properties.Strings.UNKNOWN;
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
@@ -736,14 +722,9 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (queryObj.GetPropertyValue("OSArchitecture").ToString().Contains(ConstantsDLL.Properties.Resources.ARCH64))
-                    {
-                        return ConstantsDLL.Properties.Resources.X64;
-                    }
-                    else
-                    {
-                        return ConstantsDLL.Properties.Resources.X86;
-                    }
+                    return queryObj.GetPropertyValue("OSArchitecture").ToString().Contains(ConstantsDLL.Properties.Resources.ARCH64)
+                        ? ConstantsDLL.Properties.Resources.X64
+                        : ConstantsDLL.Properties.Resources.X86;
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
@@ -807,9 +788,9 @@ namespace HardwareInfoDLL
                 {
                     return GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10)
                         ? Convert.ToInt32(releaseId) <= 2004
-                            ? ((queryObj["Caption"]).ToString().Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10)
-                            : ((queryObj["Caption"]).ToString().Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10)
-                        : ((queryObj["Caption"]).ToString().Trim() + " " + queryObj["CSDVersion"].ToString() + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                            ? (queryObj["Caption"].ToString().Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10)
+                            : (queryObj["Caption"].ToString().Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10)
+                        : (queryObj["Caption"].ToString().Trim() + " " + queryObj["CSDVersion"].ToString() + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
