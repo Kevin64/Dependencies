@@ -46,12 +46,6 @@ namespace HardwareInfoDLL
             ENABLED
         }
 
-        public enum ServiceTypes
-        {
-            FORMATTING,
-            MAINTENANCE
-        }
-
         ///<summary>Fetches the CPU information, including the number of cores/threads</summary>
         ///<returns>String with the CPU information</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
@@ -1022,21 +1016,21 @@ namespace HardwareInfoDLL
                     {
                         if (queryObj["VirtualizationFirmwareEnabled"].ToString().Equals("True"))
                         {
-                            flag = 2;
+                            flag = (int)VirtualizationTechnologyStates.ENABLED;
                         }
                         else if (bool.Parse(GetHyperVStatus()))
                         {
-                            flag = 2;
+                            flag = (int)VirtualizationTechnologyStates.ENABLED;
                         }
                     }
-                    if (flag != 2)
+                    if (flag != (int)VirtualizationTechnologyStates.ENABLED)
                     {
-                        flag = GetFwType() == ((int)FirmwareTypes.UEFI).ToString() ? 1 : 0;
+                        flag = GetFwType() == ((int)FirmwareTypes.UEFI).ToString() ? (int)VirtualizationTechnologyStates.DISABLED : (int)VirtualizationTechnologyStates.NOT_SUPPORTED;
                     }
                 }
-                return flag == 2
+                return flag == (int)VirtualizationTechnologyStates.ENABLED
                     ? ((int)SecureBootStates.ENABLED).ToString()
-                    : flag == 1 ? ((int)SecureBootStates.DISABLED).ToString() : ((int)SecureBootStates.NOT_SUPPORTED).ToString();
+                    : flag == (int)VirtualizationTechnologyStates.DISABLED ? ((int)SecureBootStates.DISABLED).ToString() : ((int)SecureBootStates.NOT_SUPPORTED).ToString();
             }
             catch (ManagementException e)
             {
