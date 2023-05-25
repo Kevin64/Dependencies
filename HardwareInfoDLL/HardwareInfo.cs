@@ -12,6 +12,46 @@ namespace HardwareInfoDLL
     ///<summary>Class for handling various hardware and setting detection tasks</summary>
     public static class HardwareInfo
     {
+        public enum MediaOperationTypes
+        {
+            IDE_RAID,
+            AHCI,
+            NVMe
+        }
+
+        public enum TpmTypes
+        {
+            N_A,
+            v1_2,
+            v2_0
+        }
+
+        public enum FirmwareTypes
+        {
+            BIOS,
+            UEFI
+        }
+
+        public enum SecureBootStates
+        {
+            NOT_SUPPORTED,
+            DISABLED,
+            ENABLED
+        }
+
+        public enum VirtualizationTechnologyStates
+        {
+            NOT_SUPPORTED,
+            DISABLED,
+            ENABLED
+        }
+
+        public enum ServiceTypes
+        {
+            FORMATTING,
+            MAINTENANCE
+        }
+
         ///<summary>Fetches the CPU information, including the number of cores/threads</summary>
         ///<returns>String with the CPU information</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
@@ -98,7 +138,7 @@ namespace HardwareInfoDLL
                 {
                     if (queryObj["Name"].ToString().Contains("NVM"))
                     {
-                        return ConstantsDLL.Properties.Resources.NVME;
+                        return ((int)MediaOperationTypes.NVMe).ToString();
                     }
                 }
 
@@ -106,12 +146,12 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if ((queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.AHCI) || queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.SATA)) && !queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.RAID))
+                    if ((queryObj["Name"].ToString().Contains(MediaOperationTypes.AHCI.ToString()) || queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.SATA)) && !queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.RAID))
                     {
-                        return ConstantsDLL.Properties.Resources.AHCI;
+                        return ((int)MediaOperationTypes.AHCI).ToString();
                     }
                 }
-                return ConstantsDLL.Properties.Resources.IDE;
+                return ((int)MediaOperationTypes.IDE_RAID).ToString();
             }
             catch (ManagementException e)
             {
@@ -884,7 +924,7 @@ namespace HardwareInfoDLL
             try
             {
                 _ = GetFirmwareType(string.Empty, "{00000000-0000-0000-0000-000000000000}", IntPtr.Zero, 0);
-                return Marshal.GetLastWin32Error() == ERROR_INVALID_FUNCTION ? ConstantsDLL.Properties.Resources.BIOS : ConstantsDLL.Properties.Resources.UEFI;
+                return Marshal.GetLastWin32Error() == ERROR_INVALID_FUNCTION ? ((int)FirmwareTypes.BIOS).ToString() : ((int)FirmwareTypes.UEFI).ToString();
             }
             catch (Exception e)
             {
@@ -908,11 +948,11 @@ namespace HardwareInfoDLL
                     {
                         if (firmwaretype == 1)
                         {
-                            return ConstantsDLL.Properties.Resources.BIOS;
+                            return ((int)FirmwareTypes.BIOS).ToString();
                         }
                         else if (firmwaretype == 2)
                         {
-                            return ConstantsDLL.Properties.Resources.UEFI;
+                            return ((int)FirmwareTypes.UEFI).ToString();
                         }
                     }
                     return ConstantsDLL.Properties.Strings.NOT_DETERMINED;
@@ -940,13 +980,13 @@ namespace HardwareInfoDLL
 
                 foreach (PSObject queryObj in PSOutput)
                 {
-                    return ConstantsDLL.Properties.Resources.ACTIVATED;
+                    return ((int)SecureBootStates.ENABLED).ToString();
                 }
-                return ConstantsDLL.Properties.Resources.DEACTIVATED;
+                return ((int)SecureBootStates.DISABLED).ToString();
             }
             catch
             {
-                return ConstantsDLL.Properties.Resources.NOT_SUPPORTED;
+                return ((int)SecureBootStates.NOT_SUPPORTED).ToString();
             }
         }
 
@@ -957,11 +997,11 @@ namespace HardwareInfoDLL
             try
             {
                 string secBoot = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot\State", "UEFISecureBootEnabled", 0).ToString();
-                return secBoot.Equals("0") ? ConstantsDLL.Properties.Resources.DEACTIVATED : ConstantsDLL.Properties.Resources.ACTIVATED;
+                return secBoot.Equals("0") ? ((int)SecureBootStates.DISABLED).ToString() : ((int)SecureBootStates.ENABLED).ToString();
             }
             catch
             {
-                return ConstantsDLL.Properties.Resources.NOT_SUPPORTED;
+                return ((int)SecureBootStates.NOT_SUPPORTED).ToString();
             }
         }
 
@@ -991,12 +1031,12 @@ namespace HardwareInfoDLL
                     }
                     if (flag != 2)
                     {
-                        flag = GetFwType() == ConstantsDLL.Properties.Resources.UEFI ? 1 : 0;
+                        flag = GetFwType() == ((int)FirmwareTypes.UEFI).ToString() ? 1 : 0;
                     }
                 }
                 return flag == 2
-                    ? ConstantsDLL.Properties.Resources.ACTIVATED
-                    : flag == 1 ? ConstantsDLL.Properties.Resources.DEACTIVATED : ConstantsDLL.Properties.Resources.NOT_SUPPORTED;
+                    ? ((int)SecureBootStates.ENABLED).ToString()
+                    : flag == 1 ? ((int)SecureBootStates.DISABLED).ToString() : ((int)SecureBootStates.NOT_SUPPORTED).ToString();
             }
             catch (ManagementException e)
             {
@@ -1083,17 +1123,17 @@ namespace HardwareInfoDLL
                 {
                     if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.TPM_1_2_NAME))
                     {
-                        str = ConstantsDLL.Properties.Resources.TPM_1_2;
+                        str = ((int)TpmTypes.v1_2).ToString();
                     }
                     else if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.TPM_2_0_NAME))
                     {
-                        str = ConstantsDLL.Properties.Resources.TPM_2_0;
+                        str = ((int)TpmTypes.v2_0).ToString();
                     }
                     return str;
                 }
                 else
                 {
-                    return ConstantsDLL.Properties.Resources.NO_TPM;
+                    return ((int)TpmTypes.N_A).ToString();
                 }
             }
             catch (ManagementException e)

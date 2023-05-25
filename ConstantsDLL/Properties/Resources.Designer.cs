@@ -70,24 +70,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
-        /// </summary>
-        public static string ACTIVATED {
-            get {
-                return ResourceManager.GetString("ACTIVATED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
-        public static string AHCI {
-            get {
-                return ResourceManager.GetString("AHCI", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
         /// </summary>
         public static string ARCH32 {
@@ -102,15 +84,6 @@ namespace ConstantsDLL.Properties {
         public static string ARCH64 {
             get {
                 return ResourceManager.GetString("ARCH64", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
-        public static string BIOS {
-            get {
-                return ResourceManager.GetString("BIOS", resourceCulture);
             }
         }
         
@@ -210,15 +183,6 @@ namespace ConstantsDLL.Properties {
         public static string DDR4_SMBIOS {
             get {
                 return ResourceManager.GetString("DDR4_SMBIOS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
-        public static string DEACTIVATED {
-            get {
-                return ResourceManager.GetString("DEACTIVATED", resourceCulture);
             }
         }
         
@@ -1222,15 +1186,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
-        public static string IDE {
-            get {
-                return ResourceManager.GetString("IDE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a \\img\\.
         /// </summary>
         public static string IMG_DIR {
@@ -1609,15 +1564,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
-        /// </summary>
-        public static string LOG_ERROR {
-            get {
-                return ResourceManager.GetString("LOG_ERROR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .log.
         /// </summary>
         public static string LOG_FILE_EXT {
@@ -1654,24 +1600,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
-        public static string LOG_INFO {
-            get {
-                return ResourceManager.GetString("LOG_INFO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 3.
-        /// </summary>
-        public static string LOG_MISC {
-            get {
-                return ResourceManager.GetString("LOG_MISC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a XXXXXXXXXXXXXXX.
         /// </summary>
         public static string LOG_PASSWORD_PLACEHOLDER {
@@ -1704,15 +1632,6 @@ namespace ConstantsDLL.Properties {
         public static string LOG_TIMESTAMP {
             get {
                 return ResourceManager.GetString("LOG_TIMESTAMP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
-        public static string LOG_WARNING {
-            get {
-                return ResourceManager.GetString("LOG_WARNING", resourceCulture);
             }
         }
         
@@ -1816,15 +1735,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
-        public static string NO_TPM {
-            get {
-                return ResourceManager.GetString("NO_TPM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 210.
         /// </summary>
         public static string NON_SECBOOT_GPU_1 {
@@ -1839,24 +1749,6 @@ namespace ConstantsDLL.Properties {
         public static string NON_SECBOOT_GPU_2 {
             get {
                 return ResourceManager.GetString("NON_SECBOOT_GPU_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
-        public static string NOT_SUPPORTED {
-            get {
-                return ResourceManager.GetString("NOT_SUPPORTED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
-        /// </summary>
-        public static string NVME {
-            get {
-                return ResourceManager.GetString("NVME", resourceCulture);
             }
         }
         
@@ -2226,33 +2118,6 @@ namespace ConstantsDLL.Properties {
         public static string RESOURCES_DIR {
             get {
                 return ResourceManager.GetString("RESOURCES_DIR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
-        /// </summary>
-        public static string RETURN_ERROR {
-            get {
-                return ResourceManager.GetString("RETURN_ERROR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
-        public static string RETURN_SUCCESS {
-            get {
-                return ResourceManager.GetString("RETURN_SUCCESS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
-        public static string RETURN_WARNING {
-            get {
-                return ResourceManager.GetString("RETURN_WARNING", resourceCulture);
             }
         }
         
@@ -2725,29 +2590,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
-        public static string TPM_1_2 {
-            get {
-                return ResourceManager.GetString("TPM_1_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1.2.
         /// </summary>
         public static string TPM_1_2_NAME {
             get {
                 return ResourceManager.GetString("TPM_1_2_NAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
-        /// </summary>
-        public static string TPM_2_0 {
-            get {
-                return ResourceManager.GetString("TPM_2_0", resourceCulture);
             }
         }
         
@@ -2766,15 +2613,6 @@ namespace ConstantsDLL.Properties {
         public static string TRUE {
             get {
                 return ResourceManager.GetString("TRUE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
-        public static string UEFI {
-            get {
-                return ResourceManager.GetString("UEFI", resourceCulture);
             }
         }
         

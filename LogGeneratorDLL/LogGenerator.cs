@@ -9,6 +9,15 @@ namespace LogGeneratorDLL
     {
         private readonly string path, fileNameStr;
 
+        ///<summary>Log states enumeration</summary>
+        public enum LOG_SEVERITY
+        {
+            LOG_INFO,
+            LOG_WARNING,
+            LOG_ERROR,
+            LOG_MISC
+        }
+
         ///<summary>LogGenerator constructor</summary>
         ///<param name="softwareName">Name of the software</param>
         ///<param name="path">Path where the log file will be written</param>
@@ -28,6 +37,7 @@ namespace LogGeneratorDLL
         ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
         ///<param name="softwareName">Name of the software</param>
         ///<param name="consoleOut">Toggle for CLI output</param>
+        ///<exception cref="Exception">Throws when logging is not possible</exception>
         private void LogInit(TextWriter txtWriter, string softwareName, bool consoleOut)
         {
             try
@@ -81,23 +91,24 @@ namespace LogGeneratorDLL
         ///<param name="logMessage2">Log message for second field - Value/Explanation</param>
         ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
         ///<param name="consoleOut">Toggle for CLI output</param>
+        ///<exception cref="Exception">Throws when logging is not possible</exception>
         private void Log(int logType, string logMessage1, string logMessage2, TextWriter txtWriter, bool consoleOut)
         {
             string logTypeAttr;
 
             try
             {
-                if (logType == 2)
+                if (logType == Convert.ToInt32(LOG_SEVERITY.LOG_ERROR))
                 {
                     logTypeAttr = ConstantsDLL.Properties.Strings.LOG_ERROR_ATTR;
                     Console.ForegroundColor = ConsoleColor.Red;
                 }
-                else if (logType == 1)
+                else if (logType == Convert.ToInt32(LOG_SEVERITY.LOG_WARNING))
                 {
                     logTypeAttr = ConstantsDLL.Properties.Strings.LOG_WARNING_ATTR;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                 }
-                else if (logType == 0)
+                else if (logType == Convert.ToInt32(LOG_SEVERITY.LOG_INFO))
                 {
                     logTypeAttr = ConstantsDLL.Properties.Strings.LOG_INFO_ATTR;
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -136,21 +147,6 @@ namespace LogGeneratorDLL
                 }
 
                 Console.ResetColor();
-            }
-        }
-
-        ///<summary>Ends a log file</summary>
-        ///<param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
-        private void LogEnd(TextWriter txtWriter)
-        {
-            try
-            {
-                txtWriter.WriteLine();
-                txtWriter.WriteLine(ConstantsDLL.Properties.Resources.LOG_SEPARATOR);
-            }
-            catch (Exception e)
-            {
-                txtWriter.WriteLine(e);
             }
         }
     }

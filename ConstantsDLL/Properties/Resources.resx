@@ -121,20 +121,11 @@
     <value />
     <comment>ConstantsDLL.Resources</comment>
   </data>
-  <data name="ACTIVATED" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AHCI" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="ARCH32" xml:space="preserve">
     <value>32</value>
   </data>
   <data name="ARCH64" xml:space="preserve">
     <value>64</value>
-  </data>
-  <data name="BIOS" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="BUILD" xml:space="preserve">
     <value>build</value>
@@ -168,9 +159,6 @@
   </data>
   <data name="DDR4_SMBIOS" xml:space="preserve">
     <value>26</value>
-  </data>
-  <data name="DEACTIVATED" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="DEF_FILE" xml:space="preserve">
     <value>definitions.ini</value>
@@ -502,9 +490,6 @@
   <data name="ICON_WINDOWS_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_windows_light.png</value>
   </data>
-  <data name="IDE" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="IMG_DIR" xml:space="preserve">
     <value>\\img\\</value>
   </data>
@@ -637,9 +622,6 @@
   <data name="LOGIN_BANNER_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\header\\login_banner_light.png</value>
   </data>
-  <data name="LOG_ERROR" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="LOG_FILENAME_CP" xml:space="preserve">
     <value>AssetInformationAndRegistration</value>
   </data>
@@ -652,12 +634,6 @@
   <data name="LOG_FILE_EXT" xml:space="preserve">
     <value>.log</value>
   </data>
-  <data name="LOG_INFO" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LOG_MISC" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="LOG_PASSWORD_PLACEHOLDER" xml:space="preserve">
     <value>XXXXXXXXXXXXXXX</value>
   </data>
@@ -669,9 +645,6 @@
   </data>
   <data name="LOG_TIMESTAMP" xml:space="preserve">
     <value>HH:mm:ss.ffffff</value>
-  </data>
-  <data name="LOG_WARNING" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="MAINTENANCE_URL" xml:space="preserve">
     <value>getExternalMaintenanceData</value>
@@ -705,15 +678,6 @@
   </data>
   <data name="NON_SECBOOT_GPU_2" xml:space="preserve">
     <value>430</value>
-  </data>
-  <data name="NO_TPM" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="NOT_SUPPORTED" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="NVME" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="OFFLINE_MODE_CONFIG" xml:space="preserve">
     <value>offlineModeConfig.json</value>
@@ -837,15 +801,6 @@
   </data>
   <data name="RESOURCES_DIR" xml:space="preserve">
     <value>\\resources\\</value>
-  </data>
-  <data name="RETURN_ERROR" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="RETURN_SUCCESS" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="RETURN_WARNING" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="ROTATING_CIRCLE_INNER_RADIUS_100" xml:space="preserve">
     <value>8</value>
@@ -1003,20 +958,11 @@
   <data name="TODAY" xml:space="preserve">
     <value>today</value>
   </data>
-  <data name="TPM_1_2" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="TPM_1_2_NAME" xml:space="preserve">
     <value>1.2</value>
   </data>
-  <data name="TPM_2_0" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="TPM_2_0_NAME" xml:space="preserve">
     <value>2.0</value>
-  </data>
-  <data name="UEFI" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="WEBVIEW2_FILE" xml:space="preserve">
     <value>webview2installer.exe</value>
