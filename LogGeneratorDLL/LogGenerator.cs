@@ -9,7 +9,6 @@ namespace LogGeneratorDLL
     {
         private readonly string path, fileNameStr;
 
-        ///<summary>Log states enumeration</summary>
         public enum LOG_SEVERITY
         {
             LOG_INFO,
