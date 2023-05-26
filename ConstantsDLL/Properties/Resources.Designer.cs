@@ -1537,6 +1537,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string LABEL_SCROLL_SPEED {
+            get {
+                return ResourceManager.GetString("LABEL_SCROLL_SPEED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a LastInstallation.
         /// </summary>
         public static string LAST_INSTALL {
