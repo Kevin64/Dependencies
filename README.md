@@ -3,10 +3,10 @@ DLLs for softwares
 
 Library dependencies to the following projects:
 
-  - HardwareInformation - https://github.com/Kevin64/HardwareInformation
+  - [asset-information-and-registration](https://github.com/Kevin64/asset-information-and-registration)
 
-  - FeaturesOverlayPresentation - https://github.com/Kevin64/FeaturesOverlayPresentation
+  - [features-overlay-presentation](https://github.com/Kevin64/features-overlay-presentation)
 
-  - OfflineDriverInstallerOOBE - https://github.com/Kevin64/OfflineDriverInstallerOOBE
+  - [oobe-offline-driver-installer](https://github.com/Kevin64/oobe-offline-driver-installer)
 
-  - Get-Drivers - https://github.com/Kevin64/Get-Drivers
+  - [Get-Drivers](https://github.com/Kevin64/Get-Drivers)
