@@ -1,11 +1,18 @@
 ﻿using ConstantsDLL;
 using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
+    public enum PrivilegeLevel
+    {
+        ADMINISTRATOR,
+        STANDARD,
+        LIMITED
+    }
     ///<summary>Template class for 'Credentials'</summary>
     public class CredentialsFile
     {
@@ -106,7 +113,7 @@ namespace JsonFileReaderDLL
 
                     for (int i = 0; i < jsonParse.Length; i++)
                     {
-                        if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(ConstantsDLL.Properties.Resources.LIMITED_USER_TYPE) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
+                        if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(Convert.ToInt32(PrivilegeLevel.LIMITED).ToString()) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
                         {
                             arr = new string[] { jsonParse[i].Id, jsonParse[i].Username };
                             fileL.Close();
@@ -144,7 +151,7 @@ namespace JsonFileReaderDLL
 
                 for (int i = 0; i < jsonParse.Length; i++)
                 {
-                    if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(ConstantsDLL.Properties.Resources.LIMITED_USER_TYPE) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
+                    if (username.Equals(jsonParse[i].Username) && !jsonParse[i].PrivilegeLevel.Equals(Convert.ToInt32(PrivilegeLevel.LIMITED).ToString()) && BCrypt.Net.BCrypt.Verify(password, jsonParse[i].Password))
                     {
                         arr = new string[] { jsonParse[i].Id, jsonParse[i].Username };
                         fileL.Close();
