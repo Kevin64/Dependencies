@@ -5,6 +5,13 @@ using System.Drawing;
 
 namespace ConstantsDLL
 {
+    public enum ExitCodes
+    {
+        SUCCESS,
+        WARNING,
+        ERROR
+    }
+
     ///<summary>Class that keeps some of the program constants</summary>
     public static class StringsAndConstants
     {

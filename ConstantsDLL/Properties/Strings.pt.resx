@@ -131,7 +131,7 @@
     <value>Já existe uma instância do programa em execução!</value>
   </data>
   <data name="ASSET_DROPPED" xml:space="preserve">
-    <value>Ativo baixado, cadastro cancelado. Reverta a baixa e tente novamente</value>
+    <value>Ativo descartado, cadastro cancelado. Reverta o descarte e tente novamente</value>
   </data>
   <data name="ASSET_NOT_REGISTERED" xml:space="preserve">
     <value>Ativo não registrado inicialmente pelo software 'Asset Information and Registration'. Primeiramente realize o cadastro e depois tente novamente.</value>
