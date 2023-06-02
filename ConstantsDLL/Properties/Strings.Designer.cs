@@ -457,6 +457,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New version available!.
+        /// </summary>
+        public static string NEW_VERSION_AVAILABLE {
+            get {
+                return ResourceManager.GetString("NEW_VERSION_AVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string NEXT_TEXT {
@@ -471,6 +480,15 @@ namespace ConstantsDLL.Properties {
         public static string NO_AUTH {
             get {
                 return ResourceManager.GetString("NO_AUTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your software is up-to-date..
+        /// </summary>
+        public static string NO_VERSION_AVAILABLE {
+            get {
+                return ResourceManager.GetString("NO_VERSION_AVAILABLE", resourceCulture);
             }
         }
         

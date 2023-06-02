@@ -250,6 +250,9 @@
   <data name="LOG_WARNING_ATTR" xml:space="preserve">
     <value>&lt;AVISO&gt;</value>
   </data>
+  <data name="NEW_VERSION_AVAILABLE" xml:space="preserve">
+    <value>Nova versão disponível!</value>
+  </data>
   <data name="NEXT_TEXT" xml:space="preserve">
     <value>Próximo</value>
   </data>
@@ -264,6 +267,9 @@
   </data>
   <data name="NO_AUTH" xml:space="preserve">
     <value>Preencha suas credenciais.</value>
+  </data>
+  <data name="NO_VERSION_AVAILABLE" xml:space="preserve">
+    <value>Seu software está atualizado.</value>
   </data>
   <data name="OF" xml:space="preserve">
     <value>de</value>
