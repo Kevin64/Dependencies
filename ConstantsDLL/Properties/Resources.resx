@@ -1054,4 +1054,16 @@
   <data name="LABEL_SCROLL_SPEED" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="GITHUB_OWNER_AIR" xml:space="preserve">
+    <value>Kevin64</value>
+  </data>
+  <data name="GITHUB_OWNER_FOP" xml:space="preserve">
+    <value>Kevin64</value>
+  </data>
+  <data name="GITHUB_REPO_AIR" xml:space="preserve">
+    <value>asset-information-and-registration</value>
+  </data>
+  <data name="GITHUB_REPO_FOP" xml:space="preserve">
+    <value>features-overlay-presentation</value>
+  </data>
 </root>

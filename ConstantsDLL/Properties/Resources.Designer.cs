@@ -403,6 +403,42 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kevin64.
+        /// </summary>
+        public static string GITHUB_OWNER_AIR {
+            get {
+                return ResourceManager.GetString("GITHUB_OWNER_AIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kevin64.
+        /// </summary>
+        public static string GITHUB_OWNER_FOP {
+            get {
+                return ResourceManager.GetString("GITHUB_OWNER_FOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to asset-information-and-registration.
+        /// </summary>
+        public static string GITHUB_REPO_AIR {
+            get {
+                return ResourceManager.GetString("GITHUB_REPO_AIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to features-overlay-presentation.
+        /// </summary>
+        public static string GITHUB_REPO_FOP {
+            get {
+                return ResourceManager.GetString("GITHUB_REPO_FOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to HDD.
         /// </summary>
         public static string HDD {
