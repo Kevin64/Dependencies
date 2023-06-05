@@ -331,6 +331,33 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checking for updates.
+        /// </summary>
+        public static string LOG_CHECKING_FOR_UPDATES {
+            get {
+                return ResourceManager.GetString("LOG_CHECKING_FOR_UPDATES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Closing updater window.
+        /// </summary>
+        public static string LOG_CLOSING_UPDATER {
+            get {
+                return ResourceManager.GetString("LOG_CLOSING_UPDATER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connecting to GitHub.
+        /// </summary>
+        public static string LOG_CONNECTING_GITHUB {
+            get {
+                return ResourceManager.GetString("LOG_CONNECTING_GITHUB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Running in DEBUG mode.
         /// </summary>
         public static string LOG_DEBUG_MODE {
@@ -363,6 +390,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_ERROR_ATTR {
             get {
                 return ResourceManager.GetString("LOG_ERROR_ATTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GitHub unreachable.
+        /// </summary>
+        public static string LOG_GITHUB_UNREACHABLE {
+            get {
+                return ResourceManager.GetString("LOG_GITHUB_UNREACHABLE", resourceCulture);
             }
         }
         
@@ -421,11 +457,47 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No internet connection available.
+        /// </summary>
+        public static string LOG_NO_INTERNET_AVAILABLE {
+            get {
+                return ResourceManager.GetString("LOG_NO_INTERNET_AVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opening About window.
+        /// </summary>
+        public static string LOG_OPENING_ABOUTBOX {
+            get {
+                return ResourceManager.GetString("LOG_OPENING_ABOUTBOX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accessing release on GitHub.
+        /// </summary>
+        public static string LOG_OPENING_GITHUB {
+            get {
+                return ResourceManager.GetString("LOG_OPENING_GITHUB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Running in RELEASE mode.
         /// </summary>
         public static string LOG_RELEASE_MODE {
             get {
                 return ResourceManager.GetString("LOG_RELEASE_MODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to check for updates.
+        /// </summary>
+        public static string LOG_UPDATE_CHECK_IMPOSSIBLE {
+            get {
+                return ResourceManager.GetString("LOG_UPDATE_CHECK_IMPOSSIBLE", resourceCulture);
             }
         }
         

@@ -214,6 +214,15 @@
   <data name="LOG_APPFILE_NOT_FOUND" xml:space="preserve">
     <value>Um ou mais arquivos de dependência ausentes</value>
   </data>
+  <data name="LOG_CHECKING_FOR_UPDATES" xml:space="preserve">
+    <value>Verificando atualizações</value>
+  </data>
+  <data name="LOG_CLOSING_UPDATER" xml:space="preserve">
+    <value>Fechando janela do atualizador</value>
+  </data>
+  <data name="LOG_CONNECTING_GITHUB" xml:space="preserve">
+    <value>Conectando ao GitHub</value>
+  </data>
   <data name="LOG_DEBUG_MODE" xml:space="preserve">
     <value>Executando em modo DEBUG</value>
   </data>
@@ -225,6 +234,9 @@
   </data>
   <data name="LOG_ERROR_ATTR" xml:space="preserve">
     <value>&lt;ERRO&gt;</value>
+  </data>
+  <data name="LOG_GITHUB_UNREACHABLE" xml:space="preserve">
+    <value>GitHub inacessível</value>
   </data>
   <data name="LOG_HEADER" xml:space="preserve">
     <value>------------------------ LOG DE EXECUÇÃO ------------------------</value>
@@ -244,8 +256,20 @@
   <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
     <value>Autenticação realizada com êxito</value>
   </data>
+  <data name="LOG_NO_INTERNET_AVAILABLE" xml:space="preserve">
+    <value>Sem conexão com a Internet disponível</value>
+  </data>
+  <data name="LOG_OPENING_ABOUTBOX" xml:space="preserve">
+    <value>Abrindo janela Sobre</value>
+  </data>
+  <data name="LOG_OPENING_GITHUB" xml:space="preserve">
+    <value>Acessando release no GitHub</value>
+  </data>
   <data name="LOG_RELEASE_MODE" xml:space="preserve">
     <value>Executando em modo RELEASE</value>
+  </data>
+  <data name="LOG_UPDATE_CHECK_IMPOSSIBLE" xml:space="preserve">
+    <value>Não foi possível verificar por atualizações</value>
   </data>
   <data name="LOG_WARNING_ATTR" xml:space="preserve">
     <value>&lt;AVISO&gt;</value>
