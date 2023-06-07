@@ -31,6 +31,6 @@ Library dependencies to the following repos:
    - [License: (MIT)](https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt)
 
 #### System.Buffers, System.Memory, System.Numerics.Vectors, System.Runtime.CompilerServices.Unsafe
-   - Copyright (c) .NET Foundation and Contributors
+   - Copyright © .NET Foundation and Contributors
    - [URL](https://dot.net/)
    - [License: (MIT)](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT)
