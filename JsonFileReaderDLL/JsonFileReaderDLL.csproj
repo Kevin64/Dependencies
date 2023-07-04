@@ -68,6 +68,7 @@
     <Compile Include="MiscMethods.cs" />
     <Compile Include="AssetFileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdaterFileReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

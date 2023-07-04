@@ -28,6 +28,8 @@ namespace ConstantsDLL
 
         /////////////////////////////////////////////////////////////////////////
         // Code exclusive for AssetInformationAndRegistration application - START
+        public static readonly string AIR_UPDATER_FILE_PATH = System.IO.Path.GetTempPath() + Resources.AIR_FILE_UPDATER;
+
         public const string CLI_SERVER_IP_SWITCH = "serverIP";
         public const string CLI_SERVER_PORT_SWITCH = "serverPort";
         public const string CLI_SERVICE_TYPE_SWITCH = "serviceType";
@@ -126,6 +128,7 @@ namespace ConstantsDLL
         /////////////////////////////////////////////////////////////////////
         // Code exclusive for FeaturesOverlayPresentation application - START
         public const double FADE_TIME = 0.2d;
+        public static readonly string FOP_UPDATER_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FOP_FILE_UPDATER;
         // Code exclusive for FeaturesOverlayPresentation application - END
         ///////////////////////////////////////////////////////////////////
     }
