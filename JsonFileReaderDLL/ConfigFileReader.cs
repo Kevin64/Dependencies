@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-    ///<summary>Template class for 'Parameters'</summary>
+    /// <summary> 
+    /// Template class for 'Parameters'
+    /// </summary>
     public class ConfigFile
     {
         public Parameters Parameters { get; set; }
     }
 
-    ///<summary>Template class for 'Parameters'</summary>
+    /// <summary> 
+    /// Template class for 'Parameters'
+    /// </summary>
     public class Parameters
     {
         public string[] Buildings { get; set; }
@@ -25,19 +29,23 @@ namespace JsonFileReaderDLL
         public string[] VirtualizationTechnologyStates { get; set; }
     }
 
-    ///<summary>Class for handling a 'Config' json file</summary>
+    /// <summary> 
+    /// Class for handling a 'Config' json file
+    /// </summary>
     public static class ConfigFileReader
     {
         private static string jsonFile;
         private static WebClient wc;
         private static StreamReader fileC;
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        ///</summary>
-        ///<param name="ipAddress">Server IP address</param>
-        ///<param name="port">Server port</param>
-        ///<returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
+        ///
+        /// </summary>
+        /// <param name="ipAddress">Server IP address</param>
+        /// <param name="port">Server port</param>
+        /// <returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
         public static Task<bool> CheckHostMT(string ipAddress, string port)
         {
             return Task.Run(() =>
@@ -56,12 +64,14 @@ namespace JsonFileReaderDLL
             });
         }
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Checks if the server is answering any requests, through a json file verification (single threaded)
-        ///</summary>
-        ///<param name="ipAddress">Server IP address</param>
-        ///<param name="port">Server port</param>
-        ///<returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
+        ///
+        /// </summary>
+        /// <param name="ipAddress">Server IP address</param>
+        /// <param name="port">Server port</param>
+        /// <returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
         public static bool CheckHostST(string ipAddress, string port)
         {
             try
@@ -77,12 +87,14 @@ namespace JsonFileReaderDLL
             return true;
         }
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Reads a json file retrieved from the server and parses standard building list, hardware types, firmware types, TPM types, Media operation types, secure boot states and virtualization technology states, returning them (creates a separate thread)
-        ///</summary>
-        ///<param name="ipAddress">Server IP address</param>
-        ///<param name="port">Server port</param>
-        ///<returns>An array with all data fetched.</returns>
+        ///
+        /// </summary>
+        /// <param name="ipAddress">Server IP address</param>
+        /// <param name="port">Server port</param>
+        /// <returns>An array with all data fetched.</returns>
         public static Task<List<string[]>> FetchInfoMT(string ipAddress, string port)
         {
             return Task.Run(async () =>
@@ -105,12 +117,14 @@ namespace JsonFileReaderDLL
             });
         }
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Reads a json file retrieved from the server and parses standard building list, hardware types, firmware types, TPM types, Media operation types, secure boot states and virtualization technology states, returning them (single threaded)
-        ///</summary>
-        ///<param name="ipAddress">Server IP address</param>
-        ///<param name="port">Server port</param>
-        ///<returns>An array with all data fetched.</returns>
+        ///
+        /// </summary>
+        /// <param name="ipAddress">Server IP address</param>
+        /// <param name="port">Server port</param>
+        /// <returns>An array with all data fetched.</returns>
         public static List<string[]> FetchInfoST(string ipAddress, string port)
         {
             if (!CheckHostST(ipAddress, port))
@@ -130,10 +144,12 @@ namespace JsonFileReaderDLL
             return arr;
         }
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Reads a json file retrieved from the application folder and parses standard building list, hardware types, firmware types, TPM types, Media operation types, secure boot states and virtualization technology states, returning them (single threaded)
-        ///</summary>
-        ///<returns>An array with all data fetched.</returns>
+        ///
+        /// </summary>
+        /// <returns>An array with all data fetched.</returns>
         public static List<string[]> GetOfflineModeConfigFile()
         {
             List<string[]> arr;

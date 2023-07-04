@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace JsonFileReaderDLL
 {
-    ///<summary>Template class for 'Asset'</summary>
+    /// <summary> 
+    /// Template class for 'Asset'
+    /// </summary>
     public class AssetFile
     {
         public string AssetNumber { get; set; }
@@ -22,20 +24,24 @@ namespace JsonFileReaderDLL
         public string ServiceDate { get; set; }
     }
 
-    ///<summary>Class for handling a 'Asset' json file</summary>
+    /// <summary> 
+    /// Class for handling a 'Asset' json file
+    /// </summary>
     public static class AssetFileReader
     {
         private static string jsonFile, sha256, aux;
         private static WebClient wc;
         private static StreamReader fileAsset;
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Checks if the server is answering any requests, through a json file verification (creates a separate thread)
-        ///</summary>
-        ///<param name="ipAddress">Server IP address</param>
-        ///<param name="port">Server port</param>
-        ///<param name="assetNumber">Asset number</param>
-        ///<returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
+        ///
+        /// </summary>
+        /// <param name="ipAddress">Server IP address</param>
+        /// <param name="port">Server port</param>
+        /// <param name="assetNumber">Asset number</param>
+        /// <returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
         public static Task<bool> CheckHostMT(string ipAddress, string port, string assetNumber)
         {
             return Task.Run(() =>
@@ -60,13 +66,15 @@ namespace JsonFileReaderDLL
             });
         }
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Checks if the server is answering any requests, through a json file verification (single threaded)
-        ///</summary>
-        ///<param name="ipAddress">Server IP address</param>
-        ///<param name="port">Server port</param>
-        ///<param name="assetNumber">Asset number</param>
-        ///<returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
+        ///
+        /// </summary>
+        /// <param name="ipAddress">Server IP address</param>
+        /// <param name="port">Server port</param>
+        /// <param name="assetNumber">Asset number</param>
+        /// <returns>If server is reachable and sends a json file, returns true. If not, returns false.</returns>
         public static bool CheckHostST(string ipAddress, string port, string assetNumber)
         {
             try
@@ -88,13 +96,15 @@ namespace JsonFileReaderDLL
             return true;
         }
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Reads a json file retrieved from the server and parses username and encoded password, returning them (creates a separate thread)
-        ///</summary>
-        ///<param name="assetNumber">Asset number</param>
-        ///<param name="ipAddress">Server IP address</param>
-        ///<param name="port">Server port</param>
-        ///<returns>If user exists on the fetched json file, returns a string array with the username and respective id. If not, returns a single position array with a "false" string.</returns>
+        ///
+        /// </summary>
+        /// <param name="assetNumber">Asset number</param>
+        /// <param name="ipAddress">Server IP address</param>
+        /// <param name="port">Server port</param>
+        /// <returns>If user exists on the fetched json file, returns a string array with the username and respective id. If not, returns a single position array with a "false" string.</returns>
         public static Task<string[]> FetchInfoMT(string assetNumber, string ipAddress, string port)
         {
             return Task.Run(async () =>
@@ -127,13 +137,15 @@ namespace JsonFileReaderDLL
             });
         }
 
-        ///<summary>
+        /// <summary> 
+        /// 
         ///Reads a json file retrieved from the server and parses username and encoded password, returning them  (single threaded)
-        ///</summary>
-        ///<param name="assetNumber">Asset number</param>
-        ///<param name="ipAddress">Server IP address</param>
-        ///<param name="port">Server port</param>
-        ///<returns>If user exists on the fetched json file, returns a string array with the username and respective id. If not, returns a single position array with a "false" string.</returns>
+        ///
+        /// </summary>
+        /// <param name="assetNumber">Asset number</param>
+        /// <param name="ipAddress">Server IP address</param>
+        /// <param name="port">Server port</param>
+        /// <returns>If user exists on the fetched json file, returns a string array with the username and respective id. If not, returns a single position array with a "false" string.</returns>
         public static string[] FetchInfoST(string assetNumber, string ipAddress, string port)
         {
             if (!CheckHostST(ipAddress, port, assetNumber))

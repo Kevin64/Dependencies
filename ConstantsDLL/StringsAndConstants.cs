@@ -12,7 +12,9 @@ namespace ConstantsDLL
         ERROR
     }
 
-    ///<summary>Class that keeps some of the program constants</summary>
+    /// <summary> 
+    /// Class that keeps some of the program constants
+    /// </summary>
     public static class StringsAndConstants
     {
         //////////////////////

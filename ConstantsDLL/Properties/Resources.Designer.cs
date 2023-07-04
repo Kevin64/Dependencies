@@ -14,7 +14,8 @@ namespace ConstantsDLL.Properties {
     
     /// <summary>
     ///   Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
-    /// </summary>
+    /// 
+/// </summary>
     // Essa classe foi gerada automaticamente pela classe StronglyTypedResourceBuilder
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
@@ -34,7 +35,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
-        /// </summary>
+        /// 
+/// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
@@ -49,7 +51,8 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Substitui a propriedade CurrentUICulture do thread atual para todas as
         ///   pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
-        /// </summary>
+        /// 
+/// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         public static global::System.Globalization.CultureInfo Culture {
             get {
@@ -62,7 +65,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
-        /// </summary>
+        /// 
+/// </summary>
         public static string aaaPROJECTaaa {
             get {
                 return ResourceManager.GetString("aaaPROJECTaaa", resourceCulture);
@@ -71,7 +75,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a https://api.github.com/repos/Kevin64/asset-information-and-registration/releases/latest.
-        /// </summary>
+        /// 
+/// </summary>
         public static string AIR_API_URL {
             get {
                 return ResourceManager.GetString("AIR_API_URL", resourceCulture);
@@ -80,7 +85,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ARCH32 {
             get {
                 return ResourceManager.GetString("ARCH32", resourceCulture);
@@ -89,7 +95,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 64.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ARCH64 {
             get {
                 return ResourceManager.GetString("ARCH64", resourceCulture);
@@ -98,7 +105,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Body.
-        /// </summary>
+        /// 
+/// </summary>
         public static string BODY {
             get {
                 return ResourceManager.GetString("BODY", resourceCulture);
@@ -107,7 +115,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a build.
-        /// </summary>
+        /// 
+/// </summary>
         public static string BUILD {
             get {
                 return ResourceManager.GetString("BUILD", resourceCulture);
@@ -116,7 +125,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a true.
-        /// </summary>
+        /// 
+/// </summary>
         public static string CONSOLE_OUT_CLI {
             get {
                 return ResourceManager.GetString("CONSOLE_OUT_CLI", resourceCulture);
@@ -125,7 +135,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a false.
-        /// </summary>
+        /// 
+/// </summary>
         public static string CONSOLE_OUT_GUI {
             get {
                 return ResourceManager.GetString("CONSOLE_OUT_GUI", resourceCulture);
@@ -134,7 +145,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a -.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DASH {
             get {
                 return ResourceManager.GetString("DASH", resourceCulture);
@@ -143,7 +155,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a yyyy-MM-dd.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DATE_FORMAT {
             get {
                 return ResourceManager.GetString("DATE_FORMAT", resourceCulture);
@@ -152,7 +165,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DDR2.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DDR2 {
             get {
                 return ResourceManager.GetString("DDR2", resourceCulture);
@@ -161,7 +175,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DDR3.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DDR3 {
             get {
                 return ResourceManager.GetString("DDR3", resourceCulture);
@@ -170,7 +185,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DDR3_MEMORY_TYPE {
             get {
                 return ResourceManager.GetString("DDR3_MEMORY_TYPE", resourceCulture);
@@ -179,7 +195,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DDR3_SMBIOS {
             get {
                 return ResourceManager.GetString("DDR3_SMBIOS", resourceCulture);
@@ -188,7 +205,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DDR4.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DDR4 {
             get {
                 return ResourceManager.GetString("DDR4", resourceCulture);
@@ -197,7 +215,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 26.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DDR4_SMBIOS {
             get {
                 return ResourceManager.GetString("DDR4_SMBIOS", resourceCulture);
@@ -206,7 +225,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a definitions.ini.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DEF_FILE {
             get {
                 return ResourceManager.GetString("DEF_FILE", resourceCulture);
@@ -215,7 +235,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalDeliveryData.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DELIVERY_URL {
             get {
                 return ResourceManager.GetString("DELIVERY_URL", resourceCulture);
@@ -224,7 +245,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DidItRunAlready.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DID_IT_RUN_ALREADY {
             get {
                 return ResourceManager.GetString("DID_IT_RUN_ALREADY", resourceCulture);
@@ -233,7 +255,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a --.
-        /// </summary>
+        /// 
+/// </summary>
         public static string DOUBLE_DASH {
             get {
                 return ResourceManager.GetString("DOUBLE_DASH", resourceCulture);
@@ -242,7 +265,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ETag.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ETAG {
             get {
                 return ResourceManager.GetString("ETAG", resourceCulture);
@@ -251,7 +275,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a false.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FALSE {
             get {
                 return ResourceManager.GetString("FALSE", resourceCulture);
@@ -260,7 +285,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a asset.json.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_ASSET {
             get {
                 return ResourceManager.GetString("FILE_ASSET", resourceCulture);
@@ -269,7 +295,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a parameters.json.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_CONFIG {
             get {
                 return ResourceManager.GetString("FILE_CONFIG", resourceCulture);
@@ -278,7 +305,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a /etc/.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_CONFIG_PATH {
             get {
                 return ResourceManager.GetString("FILE_CONFIG_PATH", resourceCulture);
@@ -287,7 +315,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a users.json.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_CREDENTIALS {
             get {
                 return ResourceManager.GetString("FILE_CREDENTIALS", resourceCulture);
@@ -296,7 +325,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a model.json.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_MODEL {
             get {
                 return ResourceManager.GetString("FILE_MODEL", resourceCulture);
@@ -305,7 +335,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a asset-checksum.txt.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_SHA_ASSET {
             get {
                 return ResourceManager.GetString("FILE_SHA_ASSET", resourceCulture);
@@ -314,7 +345,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a config-checksum.txt.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_SHA_CONFIG {
             get {
                 return ResourceManager.GetString("FILE_SHA_CONFIG", resourceCulture);
@@ -323,7 +355,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a users-checksum.txt.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_SHA_CREDENTIALS {
             get {
                 return ResourceManager.GetString("FILE_SHA_CREDENTIALS", resourceCulture);
@@ -332,7 +365,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a model-checksum.txt.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FILE_SHA_MODEL {
             get {
                 return ResourceManager.GetString("FILE_SHA_MODEL", resourceCulture);
@@ -341,7 +375,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a FOP.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FOP {
             get {
                 return ResourceManager.GetString("FOP", resourceCulture);
@@ -350,7 +385,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a https://api.github.com/repos/Kevin64/features-overlay-presentation/releases/latest.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FOP_API_URL {
             get {
                 return ResourceManager.GetString("FOP_API_URL", resourceCulture);
@@ -359,7 +395,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Software\\FOP.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FOP_REG_KEY {
             get {
                 return ResourceManager.GetString("FOP_REG_KEY", resourceCulture);
@@ -368,7 +405,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FOP_RUN_ONCE_KEY {
             get {
                 return ResourceManager.GetString("FOP_RUN_ONCE_KEY", resourceCulture);
@@ -377,7 +415,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;C:\Program Files\FOP\FOP.lnk&quot;.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FOP_X64 {
             get {
                 return ResourceManager.GetString("FOP_X64", resourceCulture);
@@ -386,7 +425,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;C:\Program Files (x86)\FOP\FOP.lnk&quot;.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FOP_X86 {
             get {
                 return ResourceManager.GetString("FOP_X86", resourceCulture);
@@ -395,7 +435,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalFormattingData.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FORMAT_URL {
             get {
                 return ResourceManager.GetString("FORMAT_URL", resourceCulture);
@@ -404,7 +445,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a MHz.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FREQUENCY {
             get {
                 return ResourceManager.GetString("FREQUENCY", resourceCulture);
@@ -413,7 +455,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a BIOS.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FW_TYPE_BIOS {
             get {
                 return ResourceManager.GetString("FW_TYPE_BIOS", resourceCulture);
@@ -422,7 +465,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a UEFI.
-        /// </summary>
+        /// 
+/// </summary>
         public static string FW_TYPE_UEFI {
             get {
                 return ResourceManager.GetString("FW_TYPE_UEFI", resourceCulture);
@@ -431,7 +475,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a GB.
-        /// </summary>
+        /// 
+/// </summary>
         public static string GB {
             get {
                 return ResourceManager.GetString("GB", resourceCulture);
@@ -440,7 +485,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Kevin64.
-        /// </summary>
+        /// 
+/// </summary>
         public static string GITHUB_OWNER_AIR {
             get {
                 return ResourceManager.GetString("GITHUB_OWNER_AIR", resourceCulture);
@@ -449,7 +495,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Kevin64.
-        /// </summary>
+        /// 
+/// </summary>
         public static string GITHUB_OWNER_FOP {
             get {
                 return ResourceManager.GetString("GITHUB_OWNER_FOP", resourceCulture);
@@ -458,7 +505,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a asset-information-and-registration.
-        /// </summary>
+        /// 
+/// </summary>
         public static string GITHUB_REPO_AIR {
             get {
                 return ResourceManager.GetString("GITHUB_REPO_AIR", resourceCulture);
@@ -467,7 +515,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a features-overlay-presentation.
-        /// </summary>
+        /// 
+/// </summary>
         public static string GITHUB_REPO_FOP {
             get {
                 return ResourceManager.GetString("GITHUB_REPO_FOP", resourceCulture);
@@ -476,7 +525,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a HDD.
-        /// </summary>
+        /// 
+/// </summary>
         public static string HDD {
             get {
                 return ResourceManager.GetString("HDD", resourceCulture);
@@ -485,7 +535,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 768.
-        /// </summary>
+        /// 
+/// </summary>
         public static string HEIGHT {
             get {
                 return ResourceManager.GetString("HEIGHT", resourceCulture);
@@ -494,7 +545,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a PC-.
-        /// </summary>
+        /// 
+/// </summary>
         public static string HOSTNAME_PATTERN {
             get {
                 return ResourceManager.GetString("HOSTNAME_PATTERN", resourceCulture);
@@ -503,7 +555,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a HtmlUrl.
-        /// </summary>
+        /// 
+/// </summary>
         public static string HTML_URL {
             get {
                 return ResourceManager.GetString("HTML_URL", resourceCulture);
@@ -512,7 +565,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a http://.
-        /// </summary>
+        /// 
+/// </summary>
         public static string HTTP {
             get {
                 return ResourceManager.GetString("HTTP", resourceCulture);
@@ -521,7 +575,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Software\\AssetInformationAndRegistration.
-        /// </summary>
+        /// 
+/// </summary>
         public static string HWINFO_REG_PATH {
             get {
                 return ResourceManager.GetString("HWINFO_REG_PATH", resourceCulture);
@@ -530,7 +585,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_about_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_ABOUT_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_ABOUT_DARK_PATH", resourceCulture);
@@ -539,7 +595,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_about_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_ABOUT_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_ABOUT_LIGHT_PATH", resourceCulture);
@@ -548,7 +605,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_agent_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_AGENT_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_AGENT_DARK_PATH", resourceCulture);
@@ -557,7 +615,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_agent_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_AGENT_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_AGENT_LIGHT_PATH", resourceCulture);
@@ -566,7 +625,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ahci_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_AHCI_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_AHCI_DARK_PATH", resourceCulture);
@@ -575,7 +635,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ahci_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_AHCI_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_AHCI_LIGHT_PATH", resourceCulture);
@@ -584,7 +645,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_asset_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_ASSET_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_ASSET_DARK_PATH", resourceCulture);
@@ -593,7 +655,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_asset_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_ASSET_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_ASSET_LIGHT_PATH", resourceCulture);
@@ -602,7 +665,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_autotheme_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_AUTOTHEME_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_AUTOTHEME_DARK_PATH", resourceCulture);
@@ -611,7 +675,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_autotheme_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_AUTOTHEME_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_AUTOTHEME_LIGHT_PATH", resourceCulture);
@@ -620,7 +685,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_bios_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_BIOS_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_BIOS_DARK_PATH", resourceCulture);
@@ -629,7 +695,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_bios_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_BIOS_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_BIOS_LIGHT_PATH", resourceCulture);
@@ -638,7 +705,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_bios_version_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_BIOS_VERSION_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_BIOS_VERSION_DARK_PATH", resourceCulture);
@@ -647,7 +715,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_bios_version_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_BIOS_VERSION_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_BIOS_VERSION_LIGHT_PATH", resourceCulture);
@@ -656,7 +725,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_brand_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_BRAND_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_BRAND_DARK_PATH", resourceCulture);
@@ -665,7 +735,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_brand_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_BRAND_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_BRAND_LIGHT_PATH", resourceCulture);
@@ -674,7 +745,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_building_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_BUILDING_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_BUILDING_DARK_PATH", resourceCulture);
@@ -683,7 +755,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_building_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_BUILDING_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_BUILDING_LIGHT_PATH", resourceCulture);
@@ -692,7 +765,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_cmos_battery_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_CMOS_BATTERY_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_CMOS_BATTERY_DARK_PATH", resourceCulture);
@@ -701,7 +775,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_cmos_battery_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_CMOS_BATTERY_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_CMOS_BATTERY_LIGHT_PATH", resourceCulture);
@@ -710,7 +785,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_cpu_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_CPU_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_CPU_DARK_PATH", resourceCulture);
@@ -719,7 +795,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_cpu_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_CPU_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_CPU_LIGHT_PATH", resourceCulture);
@@ -728,7 +805,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_darktheme_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_DARKTHEME_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_DARKTHEME_DARK_PATH", resourceCulture);
@@ -737,7 +815,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_darktheme_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_DARKTHEME_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_DARKTHEME_LIGHT_PATH", resourceCulture);
@@ -746,7 +825,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_disk_size_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_DISK_SIZE_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_DISK_SIZE_DARK_PATH", resourceCulture);
@@ -755,7 +835,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_disk_size_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_DISK_SIZE_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_DISK_SIZE_LIGHT_PATH", resourceCulture);
@@ -764,7 +845,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_gpu_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_GPU_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_GPU_DARK_PATH", resourceCulture);
@@ -773,7 +855,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_gpu_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_GPU_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_GPU_LIGHT_PATH", resourceCulture);
@@ -782,7 +865,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_hdd_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_HDD_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_HDD_DARK_PATH", resourceCulture);
@@ -791,7 +875,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_hdd_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_HDD_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_HDD_LIGHT_PATH", resourceCulture);
@@ -800,7 +885,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_hostname_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_HOSTNAME_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_HOSTNAME_DARK_PATH", resourceCulture);
@@ -809,7 +895,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_hostname_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_HOSTNAME_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_HOSTNAME_LIGHT_PATH", resourceCulture);
@@ -818,7 +905,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_in_use_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_IN_USE_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_IN_USE_DARK_PATH", resourceCulture);
@@ -827,7 +915,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_in_use_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_IN_USE_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_IN_USE_LIGHT_PATH", resourceCulture);
@@ -836,7 +925,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ip_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_IP_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_IP_DARK_PATH", resourceCulture);
@@ -845,7 +935,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ip_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_IP_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_IP_LIGHT_PATH", resourceCulture);
@@ -854,7 +945,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_letter_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_LETTER_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_LETTER_DARK_PATH", resourceCulture);
@@ -863,7 +955,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_letter_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_LETTER_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_LETTER_LIGHT_PATH", resourceCulture);
@@ -872,7 +965,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_lighttheme_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_LIGHTTHEME_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_LIGHTTHEME_DARK_PATH", resourceCulture);
@@ -881,7 +975,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_lighttheme_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_LIGHTTHEME_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_LIGHTTHEME_LIGHT_PATH", resourceCulture);
@@ -890,7 +985,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_log_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_LOG_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_LOG_DARK_PATH", resourceCulture);
@@ -899,7 +995,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_log_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_LOG_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_LOG_LIGHT_PATH", resourceCulture);
@@ -908,7 +1005,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_mac_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_MAC_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_MAC_DARK_PATH", resourceCulture);
@@ -917,7 +1015,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_mac_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_MAC_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_MAC_LIGHT_PATH", resourceCulture);
@@ -926,7 +1025,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_model_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_MODEL_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_MODEL_DARK_PATH", resourceCulture);
@@ -935,7 +1035,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_model_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_MODEL_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_MODEL_LIGHT_PATH", resourceCulture);
@@ -944,7 +1045,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_password_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_PASSWORD_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_PASSWORD_DARK_PATH", resourceCulture);
@@ -953,7 +1055,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_password_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_PASSWORD_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_PASSWORD_LIGHT_PATH", resourceCulture);
@@ -962,7 +1065,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_port_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_PORT_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_PORT_DARK_PATH", resourceCulture);
@@ -971,7 +1075,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_port_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_PORT_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_PORT_LIGHT_PATH", resourceCulture);
@@ -980,7 +1085,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ram_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_RAM_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_RAM_DARK_PATH", resourceCulture);
@@ -989,7 +1095,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ram_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_RAM_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_RAM_LIGHT_PATH", resourceCulture);
@@ -998,7 +1105,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_room_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_ROOM_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_ROOM_DARK_PATH", resourceCulture);
@@ -1007,7 +1115,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_room_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_ROOM_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_ROOM_LIGHT_PATH", resourceCulture);
@@ -1016,7 +1125,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_seal_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SEAL_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_SEAL_DARK_PATH", resourceCulture);
@@ -1025,7 +1135,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_seal_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SEAL_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_SEAL_LIGHT_PATH", resourceCulture);
@@ -1034,7 +1145,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_secure_boot_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SECURE_BOOT_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_SECURE_BOOT_DARK_PATH", resourceCulture);
@@ -1043,7 +1155,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_secure_boot_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SECURE_BOOT_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_SECURE_BOOT_LIGHT_PATH", resourceCulture);
@@ -1052,7 +1165,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_serial_no_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SERIAL_NUMBER_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_SERIAL_NUMBER_DARK_PATH", resourceCulture);
@@ -1061,7 +1175,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_serial_no_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SERIAL_NUMBER_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_SERIAL_NUMBER_LIGHT_PATH", resourceCulture);
@@ -1070,7 +1185,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_server_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SERVER_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_SERVER_DARK_PATH", resourceCulture);
@@ -1079,7 +1195,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_server_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SERVER_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_SERVER_LIGHT_PATH", resourceCulture);
@@ -1088,7 +1205,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_service_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SERVICE_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_SERVICE_DARK_PATH", resourceCulture);
@@ -1097,7 +1215,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_service_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SERVICE_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_SERVICE_LIGHT_PATH", resourceCulture);
@@ -1106,7 +1225,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_smart_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SMART_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_SMART_DARK_PATH", resourceCulture);
@@ -1115,7 +1235,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_smart_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_SMART_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_SMART_LIGHT_PATH", resourceCulture);
@@ -1124,7 +1245,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_standard_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_STANDARD_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_STANDARD_LIGHT_PATH", resourceCulture);
@@ -1133,7 +1255,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_standard_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_STARDARD_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_STARDARD_DARK_PATH", resourceCulture);
@@ -1142,7 +1265,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_sticker_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_STICKER_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_STICKER_DARK_PATH", resourceCulture);
@@ -1151,7 +1275,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_sticker_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_STICKER_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_STICKER_LIGHT_PATH", resourceCulture);
@@ -1160,7 +1285,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ticket_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_TICKET_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_TICKET_DARK_PATH", resourceCulture);
@@ -1169,7 +1295,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_ticket_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_TICKET_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_TICKET_LIGHT_PATH", resourceCulture);
@@ -1178,7 +1305,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_tpm_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_TPM_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_TPM_DARK_PATH", resourceCulture);
@@ -1187,7 +1315,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_tpm_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_TPM_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_TPM_LIGHT_PATH", resourceCulture);
@@ -1196,7 +1325,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_type_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_TYPE_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_TYPE_DARK_PATH", resourceCulture);
@@ -1205,7 +1335,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_type_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_TYPE_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_TYPE_LIGHT_PATH", resourceCulture);
@@ -1214,7 +1345,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_VT_x_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_VT_X_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_VT_X_DARK_PATH", resourceCulture);
@@ -1223,7 +1355,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_VT_x_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_VT_X_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_VT_X_LIGHT_PATH", resourceCulture);
@@ -1232,7 +1365,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_who_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_WHO_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_WHO_DARK_PATH", resourceCulture);
@@ -1241,7 +1375,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_who_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_WHO_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_WHO_LIGHT_PATH", resourceCulture);
@@ -1250,7 +1385,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_windows_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_WINDOWS_DARK_PATH {
             get {
                 return ResourceManager.GetString("ICON_WINDOWS_DARK_PATH", resourceCulture);
@@ -1259,7 +1395,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\icons\\icon_windows_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ICON_WINDOWS_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("ICON_WINDOWS_LIGHT_PATH", resourceCulture);
@@ -1268,7 +1405,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a \\img\\.
-        /// </summary>
+        /// 
+/// </summary>
         public static string IMG_DIR {
             get {
                 return ResourceManager.GetString("IMG_DIR", resourceCulture);
@@ -1277,7 +1415,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string IMG_EXT {
             get {
                 return ResourceManager.GetString("IMG_EXT", resourceCulture);
@@ -1286,7 +1425,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Parameters.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1", resourceCulture);
@@ -1295,7 +1435,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a InstallDrivers.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_1 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_1", resourceCulture);
@@ -1304,7 +1445,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a AddDrivers.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_10 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_10", resourceCulture);
@@ -1313,7 +1455,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ServerIP.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_11 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_11", resourceCulture);
@@ -1322,7 +1465,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ServerPort.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_12 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_12", resourceCulture);
@@ -1331,7 +1475,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Buildings.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_13 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_13", resourceCulture);
@@ -1340,7 +1485,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a HWTypes.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_14 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_14", resourceCulture);
@@ -1349,7 +1495,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ThemeUI.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_15 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_15", resourceCulture);
@@ -1358,7 +1505,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Logo1URL.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_16 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_16", resourceCulture);
@@ -1367,7 +1515,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Logo2URL.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_17 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_17", resourceCulture);
@@ -1376,7 +1525,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Logo3URL.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_18 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_18", resourceCulture);
@@ -1385,7 +1535,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a CleanGarbage.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_2 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_2", resourceCulture);
@@ -1394,7 +1545,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ChangeResolution.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_3 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_3", resourceCulture);
@@ -1403,7 +1555,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ResolutionWidth.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_4 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_4", resourceCulture);
@@ -1412,7 +1565,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ResolutionHeight.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_5 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_5", resourceCulture);
@@ -1421,7 +1575,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DriverPath.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_6 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_6", resourceCulture);
@@ -1430,7 +1585,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a RebootAfterFinished.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_7 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_7", resourceCulture);
@@ -1439,7 +1595,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a PauseAfterFinished.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_8 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_8", resourceCulture);
@@ -1448,7 +1605,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a LogLocation.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_1_9 {
             get {
                 return ResourceManager.GetString("INI_SECTION_1_9", resourceCulture);
@@ -1457,7 +1615,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Enforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2", resourceCulture);
@@ -1466,7 +1625,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a RamLimitEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_1 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_1", resourceCulture);
@@ -1475,7 +1635,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SmartStatusEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_2 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_2", resourceCulture);
@@ -1484,7 +1645,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a MediaOperationModeEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_3 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_3", resourceCulture);
@@ -1493,7 +1655,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a HostnameEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_4 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_4", resourceCulture);
@@ -1502,7 +1665,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a FirmwareTypeEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_5 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_5", resourceCulture);
@@ -1511,7 +1675,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a FirmwareVersionEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_6 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_6", resourceCulture);
@@ -1520,7 +1685,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SecureBootEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_7 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_7", resourceCulture);
@@ -1529,7 +1695,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a VirtualizationTechnologyEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_8 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_8", resourceCulture);
@@ -1538,7 +1705,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a TpmEnforcement.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_2_9 {
             get {
                 return ResourceManager.GetString("INI_SECTION_2_9", resourceCulture);
@@ -1547,7 +1715,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a OrgData.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_3 {
             get {
                 return ResourceManager.GetString("INI_SECTION_3", resourceCulture);
@@ -1556,7 +1725,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a OrganizationFullName.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_3_1 {
             get {
                 return ResourceManager.GetString("INI_SECTION_3_1", resourceCulture);
@@ -1565,7 +1735,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a OrganizationAcronym.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_3_2 {
             get {
                 return ResourceManager.GetString("INI_SECTION_3_2", resourceCulture);
@@ -1574,7 +1745,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DepartamentFullName.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_3_3 {
             get {
                 return ResourceManager.GetString("INI_SECTION_3_3", resourceCulture);
@@ -1583,7 +1755,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DepartamentAcronym.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_3_4 {
             get {
                 return ResourceManager.GetString("INI_SECTION_3_4", resourceCulture);
@@ -1592,7 +1765,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SubDepartamentFullName.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_3_5 {
             get {
                 return ResourceManager.GetString("INI_SECTION_3_5", resourceCulture);
@@ -1601,7 +1775,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SubDepartamentAcronym.
-        /// </summary>
+        /// 
+/// </summary>
         public static string INI_SECTION_3_6 {
             get {
                 return ResourceManager.GetString("INI_SECTION_3_6", resourceCulture);
@@ -1610,7 +1785,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a output/.
-        /// </summary>
+        /// 
+/// </summary>
         public static string JSON_SERVER_PATH {
             get {
                 return ResourceManager.GetString("JSON_SERVER_PATH", resourceCulture);
@@ -1619,7 +1795,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LABEL_SCROLL_SPEED {
             get {
                 return ResourceManager.GetString("LABEL_SCROLL_SPEED", resourceCulture);
@@ -1628,7 +1805,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a LastInstallation.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LAST_INSTALL {
             get {
                 return ResourceManager.GetString("LAST_INSTALL", resourceCulture);
@@ -1637,7 +1815,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a LastMaintenance.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LAST_MAINTENANCE {
             get {
                 return ResourceManager.GetString("LAST_MAINTENANCE", resourceCulture);
@@ -1646,7 +1825,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Limited.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LIMITED_USER_TYPE {
             get {
                 return ResourceManager.GetString("LIMITED_USER_TYPE", resourceCulture);
@@ -1655,7 +1835,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .log.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOG_FILE_EXT {
             get {
                 return ResourceManager.GetString("LOG_FILE_EXT", resourceCulture);
@@ -1664,7 +1845,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a AssetInformationAndRegistration.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOG_FILENAME_CP {
             get {
                 return ResourceManager.GetString("LOG_FILENAME_CP", resourceCulture);
@@ -1673,7 +1855,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a FOP.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOG_FILENAME_FOP {
             get {
                 return ResourceManager.GetString("LOG_FILENAME_FOP", resourceCulture);
@@ -1682,7 +1865,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a OfflineDriverInstallerOOBE.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOG_FILENAME_OOBE {
             get {
                 return ResourceManager.GetString("LOG_FILENAME_OOBE", resourceCulture);
@@ -1691,7 +1875,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a XXXXXXXXXXXXXXX.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOG_PASSWORD_PLACEHOLDER {
             get {
                 return ResourceManager.GetString("LOG_PASSWORD_PLACEHOLDER", resourceCulture);
@@ -1700,7 +1885,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ____________________________________________________________________________________________________.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOG_SEPARATOR {
             get {
                 return ResourceManager.GetString("LOG_SEPARATOR", resourceCulture);
@@ -1709,7 +1895,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ------------------------------------------------.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOG_SEPARATOR_SMALL {
             get {
                 return ResourceManager.GetString("LOG_SEPARATOR_SMALL", resourceCulture);
@@ -1718,7 +1905,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a HH:mm:ss.ffffff.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOG_TIMESTAMP {
             get {
                 return ResourceManager.GetString("LOG_TIMESTAMP", resourceCulture);
@@ -1727,7 +1915,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\login_banner_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOGIN_BANNER_DARK_PATH {
             get {
                 return ResourceManager.GetString("LOGIN_BANNER_DARK_PATH", resourceCulture);
@@ -1736,7 +1925,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\login_banner_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string LOGIN_BANNER_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("LOGIN_BANNER_LIGHT_PATH", resourceCulture);
@@ -1745,7 +1935,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\main_banner_dark.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string MAIN_BANNER_DARK_PATH {
             get {
                 return ResourceManager.GetString("MAIN_BANNER_DARK_PATH", resourceCulture);
@@ -1754,7 +1945,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Resources\\header\\main_banner_light.png.
-        /// </summary>
+        /// 
+/// </summary>
         public static string MAIN_BANNER_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("MAIN_BANNER_LIGHT_PATH", resourceCulture);
@@ -1763,7 +1955,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalMaintenanceData.
-        /// </summary>
+        /// 
+/// </summary>
         public static string MAINTENANCE_URL {
             get {
                 return ResourceManager.GetString("MAINTENANCE_URL", resourceCulture);
@@ -1772,7 +1965,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 100.
-        /// </summary>
+        /// 
+/// </summary>
         public static string MAX_SIZE {
             get {
                 return ResourceManager.GetString("MAX_SIZE", resourceCulture);
@@ -1781,7 +1975,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a MB.
-        /// </summary>
+        /// 
+/// </summary>
         public static string MB {
             get {
                 return ResourceManager.GetString("MB", resourceCulture);
@@ -1790,7 +1985,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a AHCI.
-        /// </summary>
+        /// 
+/// </summary>
         public static string MEDIA_OPERATION_AHCI {
             get {
                 return ResourceManager.GetString("MEDIA_OPERATION_AHCI", resourceCulture);
@@ -1799,7 +1995,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a IDE/Legacy.
-        /// </summary>
+        /// 
+/// </summary>
         public static string MEDIA_OPERATION_IDE {
             get {
                 return ResourceManager.GetString("MEDIA_OPERATION_IDE", resourceCulture);
@@ -1808,7 +2005,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a NVMe.
-        /// </summary>
+        /// 
+/// </summary>
         public static string MEDIA_OPERATION_NVME {
             get {
                 return ResourceManager.GetString("MEDIA_OPERATION_NVME", resourceCulture);
@@ -1817,7 +2015,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a No.
-        /// </summary>
+        /// 
+/// </summary>
         public static string NO {
             get {
                 return ResourceManager.GetString("NO", resourceCulture);
@@ -1826,7 +2025,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 210.
-        /// </summary>
+        /// 
+/// </summary>
         public static string NON_SECBOOT_GPU_1 {
             get {
                 return ResourceManager.GetString("NON_SECBOOT_GPU_1", resourceCulture);
@@ -1835,7 +2035,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 430.
-        /// </summary>
+        /// 
+/// </summary>
         public static string NON_SECBOOT_GPU_2 {
             get {
                 return ResourceManager.GetString("NON_SECBOOT_GPU_2", resourceCulture);
@@ -1844,7 +2045,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a offlineModeConfig.json.
-        /// </summary>
+        /// 
+/// </summary>
         public static string OFFLINE_MODE_CONFIG {
             get {
                 return ResourceManager.GetString("OFFLINE_MODE_CONFIG", resourceCulture);
@@ -1853,7 +2055,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a OK.
-        /// </summary>
+        /// 
+/// </summary>
         public static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
@@ -1862,7 +2065,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;adRegistered=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_AD_REGISTERED {
             get {
                 return ResourceManager.GetString("PHP_AD_REGISTERED", resourceCulture);
@@ -1871,7 +2075,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;agentId=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_AGENT {
             get {
                 return ResourceManager.GetString("PHP_AGENT", resourceCulture);
@@ -1880,7 +2085,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ?assetNumber=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_ASSET_NUMBER {
             get {
                 return ResourceManager.GetString("PHP_ASSET_NUMBER", resourceCulture);
@@ -1889,7 +2095,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;batteryChange=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_BATTERY_CHANGE {
             get {
                 return ResourceManager.GetString("PHP_BATTERY_CHANGE", resourceCulture);
@@ -1898,7 +2105,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;brand=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_BRAND {
             get {
                 return ResourceManager.GetString("PHP_BRAND", resourceCulture);
@@ -1907,7 +2115,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;building=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_BUILDING {
             get {
                 return ResourceManager.GetString("PHP_BUILDING", resourceCulture);
@@ -1916,7 +2125,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;deliveredToRegistrationNumber=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_DELIVERED_TO_REGISTRATION_NUMBER {
             get {
                 return ResourceManager.GetString("PHP_DELIVERED_TO_REGISTRATION_NUMBER", resourceCulture);
@@ -1925,7 +2135,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;fwType=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_FW_TYPE {
             get {
                 return ResourceManager.GetString("PHP_FW_TYPE", resourceCulture);
@@ -1934,7 +2145,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;fwVersion=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_FW_VERSION {
             get {
                 return ResourceManager.GetString("PHP_FW_VERSION", resourceCulture);
@@ -1943,7 +2155,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;hostname=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_HOSTNAME {
             get {
                 return ResourceManager.GetString("PHP_HOSTNAME", resourceCulture);
@@ -1952,7 +2165,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;hwType=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_HW_TYPE {
             get {
                 return ResourceManager.GetString("PHP_HW_TYPE", resourceCulture);
@@ -1961,7 +2175,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;inUse=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_IN_USE {
             get {
                 return ResourceManager.GetString("PHP_IN_USE", resourceCulture);
@@ -1970,7 +2185,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ipAddress=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_IP_ADDRESS {
             get {
                 return ResourceManager.GetString("PHP_IP_ADDRESS", resourceCulture);
@@ -1979,7 +2195,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;lastDeliveryDate=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_LAST_DELIVERY_DATE {
             get {
                 return ResourceManager.GetString("PHP_LAST_DELIVERY_DATE", resourceCulture);
@@ -1988,7 +2205,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;lastDeliveryMadeBy=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_LAST_DELIVERY_MADE_BY {
             get {
                 return ResourceManager.GetString("PHP_LAST_DELIVERY_MADE_BY", resourceCulture);
@@ -1997,7 +2215,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;macAddress=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_MAC_ADDRESS {
             get {
                 return ResourceManager.GetString("PHP_MAC_ADDRESS", resourceCulture);
@@ -2006,7 +2225,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;mediaOperationMode=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_MEDIA_OPERATION_MODE {
             get {
                 return ResourceManager.GetString("PHP_MEDIA_OPERATION_MODE", resourceCulture);
@@ -2015,7 +2235,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;model=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_MODEL {
             get {
                 return ResourceManager.GetString("PHP_MODEL", resourceCulture);
@@ -2024,7 +2245,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;operatingSystem=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_OPERATING_SYSTEM {
             get {
                 return ResourceManager.GetString("PHP_OPERATING_SYSTEM", resourceCulture);
@@ -2033,7 +2255,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;previousServiceDates=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_PREVIOUS_SERVICE_DATES {
             get {
                 return ResourceManager.GetString("PHP_PREVIOUS_SERVICE_DATES", resourceCulture);
@@ -2042,7 +2265,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;processor=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_PROCESSOR {
             get {
                 return ResourceManager.GetString("PHP_PROCESSOR", resourceCulture);
@@ -2051,7 +2275,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ram=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_RAM {
             get {
                 return ResourceManager.GetString("PHP_RAM", resourceCulture);
@@ -2060,7 +2285,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;roomNumber=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_ROOM {
             get {
                 return ResourceManager.GetString("PHP_ROOM", resourceCulture);
@@ -2069,7 +2295,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;sealNumber=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_SEAL_NUMBER {
             get {
                 return ResourceManager.GetString("PHP_SEAL_NUMBER", resourceCulture);
@@ -2078,7 +2305,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;secureBoot=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_SECURE_BOOT {
             get {
                 return ResourceManager.GetString("PHP_SECURE_BOOT", resourceCulture);
@@ -2087,7 +2315,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;serialNumber=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_SERIAL_NUMBER {
             get {
                 return ResourceManager.GetString("PHP_SERIAL_NUMBER", resourceCulture);
@@ -2096,7 +2325,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;serviceDate=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_SERVICE_DATE {
             get {
                 return ResourceManager.GetString("PHP_SERVICE_DATE", resourceCulture);
@@ -2105,7 +2335,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;standard=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_STANDARD {
             get {
                 return ResourceManager.GetString("PHP_STANDARD", resourceCulture);
@@ -2114,7 +2345,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;storageSize=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_STORAGE_SIZE {
             get {
                 return ResourceManager.GetString("PHP_STORAGE_SIZE", resourceCulture);
@@ -2123,7 +2355,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;storageType=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_STORAGE_TYPE {
             get {
                 return ResourceManager.GetString("PHP_STORAGE_TYPE", resourceCulture);
@@ -2132,7 +2365,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;tag=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_TAG {
             get {
                 return ResourceManager.GetString("PHP_TAG", resourceCulture);
@@ -2141,7 +2375,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ticketNumber=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_TICKET_NUMBER {
             get {
                 return ResourceManager.GetString("PHP_TICKET_NUMBER", resourceCulture);
@@ -2150,7 +2385,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;tpmVersion=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_TPM_VERSION {
             get {
                 return ResourceManager.GetString("PHP_TPM_VERSION", resourceCulture);
@@ -2159,7 +2395,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;videoCard=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_VIDEO_CARD {
             get {
                 return ResourceManager.GetString("PHP_VIDEO_CARD", resourceCulture);
@@ -2168,7 +2405,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;virtualizationTechnology=.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PHP_VIRTUALIZATION_TECHNOLOGY {
             get {
                 return ResourceManager.GetString("PHP_VIRTUALIZATION_TECHNOLOGY", resourceCulture);
@@ -2177,7 +2415,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Pred Fail.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PRED_FAIL {
             get {
                 return ResourceManager.GetString("PRED_FAIL", resourceCulture);
@@ -2186,7 +2425,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a AppLog.
-        /// </summary>
+        /// 
+/// </summary>
         public static string PROGRAMDATA_FOLDERNAME {
             get {
                 return ResourceManager.GetString("PROGRAMDATA_FOLDERNAME", resourceCulture);
@@ -2195,7 +2435,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a RAID.
-        /// </summary>
+        /// 
+/// </summary>
         public static string RAID {
             get {
                 return ResourceManager.GetString("RAID", resourceCulture);
@@ -2204,7 +2445,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a \\resources\\.
-        /// </summary>
+        /// 
+/// </summary>
         public static string RESOURCES_DIR {
             get {
                 return ResourceManager.GetString("RESOURCES_DIR", resourceCulture);
@@ -2213,7 +2455,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 8.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_100 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_100", resourceCulture);
@@ -2222,7 +2465,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_125 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_125", resourceCulture);
@@ -2231,7 +2475,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 11.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_150 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_150", resourceCulture);
@@ -2240,7 +2485,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 14.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_175 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_175", resourceCulture);
@@ -2249,7 +2495,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 15.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_200 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_200", resourceCulture);
@@ -2258,7 +2505,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 17.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_225 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_225", resourceCulture);
@@ -2267,7 +2515,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 17.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_250 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_250", resourceCulture);
@@ -2276,7 +2525,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 22.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_300 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_300", resourceCulture);
@@ -2285,7 +2535,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_INNER_RADIUS_350 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_INNER_RADIUS_350", resourceCulture);
@@ -2294,7 +2545,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 28.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_100 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_100", resourceCulture);
@@ -2303,7 +2555,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_125 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_125", resourceCulture);
@@ -2312,7 +2565,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 36.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_150 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_150", resourceCulture);
@@ -2321,7 +2575,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 40.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_175 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_175", resourceCulture);
@@ -2330,7 +2585,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 44.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_200 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_200", resourceCulture);
@@ -2339,7 +2595,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 48.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_225 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_225", resourceCulture);
@@ -2348,7 +2605,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 52.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_250 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_250", resourceCulture);
@@ -2357,7 +2615,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 56.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_300 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_300", resourceCulture);
@@ -2366,7 +2625,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 60.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_NUMBER_SPOKE_350 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_NUMBER_SPOKE_350", resourceCulture);
@@ -2375,7 +2635,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 9.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_100 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_100", resourceCulture);
@@ -2384,7 +2645,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 12.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_125 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_125", resourceCulture);
@@ -2393,7 +2655,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 15.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_150 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_150", resourceCulture);
@@ -2402,7 +2665,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 18.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_175 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_175", resourceCulture);
@@ -2411,7 +2675,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 22.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_200 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_200", resourceCulture);
@@ -2420,7 +2685,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_225 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_225", resourceCulture);
@@ -2429,7 +2695,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_250 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_250", resourceCulture);
@@ -2438,7 +2705,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_300 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_300", resourceCulture);
@@ -2447,7 +2715,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 35.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_OUTER_RADIUS_350 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_OUTER_RADIUS_350", resourceCulture);
@@ -2456,7 +2725,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_ROTATION_SPEED {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_ROTATION_SPEED", resourceCulture);
@@ -2465,7 +2735,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 4.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_100 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_100", resourceCulture);
@@ -2474,7 +2745,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_125 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_125", resourceCulture);
@@ -2483,7 +2755,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_150 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_150", resourceCulture);
@@ -2492,7 +2765,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_175 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_175", resourceCulture);
@@ -2501,7 +2775,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_200 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_200", resourceCulture);
@@ -2510,7 +2785,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_225 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_225", resourceCulture);
@@ -2519,7 +2795,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_250 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_250", resourceCulture);
@@ -2528,7 +2805,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_300 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_300", resourceCulture);
@@ -2537,7 +2815,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 5.
-        /// </summary>
+        /// 
+/// </summary>
         public static string ROTATING_CIRCLE_SPOKE_THICKNESS_350 {
             get {
                 return ResourceManager.GetString("ROTATING_CIRCLE_SPOKE_THICKNESS_350", resourceCulture);
@@ -2546,7 +2825,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SATA.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SATA {
             get {
                 return ResourceManager.GetString("SATA", resourceCulture);
@@ -2555,7 +2835,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a shutdown.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SHUTDOWN_CMD_1 {
             get {
                 return ResourceManager.GetString("SHUTDOWN_CMD_1", resourceCulture);
@@ -2564,7 +2845,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a /r /f /t 0.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SHUTDOWN_CMD_2 {
             get {
                 return ResourceManager.GetString("SHUTDOWN_CMD_2", resourceCulture);
@@ -2573,7 +2855,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SSD.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SSD {
             get {
                 return ResourceManager.GetString("SSD", resourceCulture);
@@ -2582,7 +2865,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a generateAssetData.php.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SUPPLY_ASSET_DATA {
             get {
                 return ResourceManager.GetString("SUPPLY_ASSET_DATA", resourceCulture);
@@ -2591,7 +2875,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a /etc/config.json.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SUPPLY_CONFIG_DATA {
             get {
                 return ResourceManager.GetString("SUPPLY_CONFIG_DATA", resourceCulture);
@@ -2600,7 +2885,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a generateAgentData.php.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SUPPLY_CREDENTIALS_DATA {
             get {
                 return ResourceManager.GetString("SUPPLY_CREDENTIALS_DATA", resourceCulture);
@@ -2609,7 +2895,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a generateModelData.php.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SUPPLY_MODEL_DATA {
             get {
                 return ResourceManager.GetString("SUPPLY_MODEL_DATA", resourceCulture);
@@ -2618,7 +2905,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SYSTEM ROM.
-        /// </summary>
+        /// 
+/// </summary>
         public static string SYSTEM_ROM {
             get {
                 return ResourceManager.GetString("SYSTEM_ROM", resourceCulture);
@@ -2627,7 +2915,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a TagName.
-        /// </summary>
+        /// 
+/// </summary>
         public static string TAG_NAME {
             get {
                 return ResourceManager.GetString("TAG_NAME", resourceCulture);
@@ -2636,7 +2925,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a TB.
-        /// </summary>
+        /// 
+/// </summary>
         public static string TB {
             get {
                 return ResourceManager.GetString("TB", resourceCulture);
@@ -2645,7 +2935,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a AppsUseLightTheme.
-        /// </summary>
+        /// 
+/// </summary>
         public static string THEME_REG_KEY {
             get {
                 return ResourceManager.GetString("THEME_REG_KEY", resourceCulture);
@@ -2654,7 +2945,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize.
-        /// </summary>
+        /// 
+/// </summary>
         public static string THEME_REG_PATH {
             get {
                 return ResourceManager.GetString("THEME_REG_PATH", resourceCulture);
@@ -2663,7 +2955,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1000.
-        /// </summary>
+        /// 
+/// </summary>
         public static string TIMER_INTERVAL {
             get {
                 return ResourceManager.GetString("TIMER_INTERVAL", resourceCulture);
@@ -2672,7 +2965,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a To Be Filled By O.E.M..
-        /// </summary>
+        /// 
+/// </summary>
         public static string TO_BE_FILLED_BY_OEM {
             get {
                 return ResourceManager.GetString("TO_BE_FILLED_BY_OEM", resourceCulture);
@@ -2681,7 +2975,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a today.
-        /// </summary>
+        /// 
+/// </summary>
         public static string TODAY {
             get {
                 return ResourceManager.GetString("TODAY", resourceCulture);
@@ -2690,7 +2985,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1.2.
-        /// </summary>
+        /// 
+/// </summary>
         public static string TPM_1_2_NAME {
             get {
                 return ResourceManager.GetString("TPM_1_2_NAME", resourceCulture);
@@ -2699,7 +2995,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 2.0.
-        /// </summary>
+        /// 
+/// </summary>
         public static string TPM_2_0_NAME {
             get {
                 return ResourceManager.GetString("TPM_2_0_NAME", resourceCulture);
@@ -2708,7 +3005,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a true.
-        /// </summary>
+        /// 
+/// </summary>
         public static string TRUE {
             get {
                 return ResourceManager.GetString("TRUE", resourceCulture);
@@ -2717,7 +3015,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a webview2installer.exe.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WEBVIEW2_FILE {
             get {
                 return ResourceManager.GetString("WEBVIEW2_FILE", resourceCulture);
@@ -2726,7 +3025,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WEBVIEW2_REG_PATH_X64 {
             get {
                 return ResourceManager.GetString("WEBVIEW2_REG_PATH_X64", resourceCulture);
@@ -2735,7 +3035,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SOFTWARE\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WEBVIEW2_REG_PATH_X86 {
             get {
                 return ResourceManager.GetString("WEBVIEW2_REG_PATH_X86", resourceCulture);
@@ -2744,7 +3045,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WEBVIEW2_SYSTEM_PATH_X64 {
             get {
                 return ResourceManager.GetString("WEBVIEW2_SYSTEM_PATH_X64", resourceCulture);
@@ -2753,7 +3055,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WEBVIEW2_SYSTEM_PATH_X86 {
             get {
                 return ResourceManager.GetString("WEBVIEW2_SYSTEM_PATH_X86", resourceCulture);
@@ -2762,7 +3065,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a https://go.microsoft.com/fwlink/p/?LinkId=2124703.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WEBVIEW2_URL {
             get {
                 return ResourceManager.GetString("WEBVIEW2_URL", resourceCulture);
@@ -2771,7 +3075,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1366.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIDTH {
             get {
                 return ResourceManager.GetString("WIDTH", resourceCulture);
@@ -2780,7 +3085,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a \\windows10\\.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_10_IMG_DIR {
             get {
                 return ResourceManager.GetString("WIN_10_IMG_DIR", resourceCulture);
@@ -2789,7 +3095,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 19041.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_10_NT_BUILD {
             get {
                 return ResourceManager.GetString("WIN_10_NT_BUILD", resourceCulture);
@@ -2798,7 +3105,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_10_NT_MAJOR {
             get {
                 return ResourceManager.GetString("WIN_10_NT_MAJOR", resourceCulture);
@@ -2807,7 +3115,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_10_NT_MINOR {
             get {
                 return ResourceManager.GetString("WIN_10_NT_MINOR", resourceCulture);
@@ -2816,7 +3125,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a \\windows11\\.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_11_IMG_DIR {
             get {
                 return ResourceManager.GetString("WIN_11_IMG_DIR", resourceCulture);
@@ -2825,7 +3135,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 22000.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_11_NT_BUILD {
             get {
                 return ResourceManager.GetString("WIN_11_NT_BUILD", resourceCulture);
@@ -2834,7 +3145,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_11_NT_MAJOR {
             get {
                 return ResourceManager.GetString("WIN_11_NT_MAJOR", resourceCulture);
@@ -2843,7 +3155,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_11_NT_MINOR {
             get {
                 return ResourceManager.GetString("WIN_11_NT_MINOR", resourceCulture);
@@ -2852,7 +3165,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a \\windows7\\.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_7_IMG_DIR {
             get {
                 return ResourceManager.GetString("WIN_7_IMG_DIR", resourceCulture);
@@ -2861,7 +3175,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 7601.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_7_NT_BUILD {
             get {
                 return ResourceManager.GetString("WIN_7_NT_BUILD", resourceCulture);
@@ -2870,7 +3185,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 6.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_7_NT_MAJOR {
             get {
                 return ResourceManager.GetString("WIN_7_NT_MAJOR", resourceCulture);
@@ -2879,7 +3195,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WIN_7_NT_MINOR {
             get {
                 return ResourceManager.GetString("WIN_7_NT_MINOR", resourceCulture);
@@ -2888,7 +3205,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 10.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WINDOWS_10 {
             get {
                 return ResourceManager.GetString("WINDOWS_10", resourceCulture);
@@ -2897,7 +3215,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 11.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WINDOWS_11 {
             get {
                 return ResourceManager.GetString("WINDOWS_11", resourceCulture);
@@ -2906,7 +3225,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 7.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WINDOWS_7 {
             get {
                 return ResourceManager.GetString("WINDOWS_7", resourceCulture);
@@ -2915,7 +3235,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 8.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WINDOWS_8 {
             get {
                 return ResourceManager.GetString("WINDOWS_8", resourceCulture);
@@ -2924,7 +3245,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 8.1.
-        /// </summary>
+        /// 
+/// </summary>
         public static string WINDOWS_8_1 {
             get {
                 return ResourceManager.GetString("WINDOWS_8_1", resourceCulture);
@@ -2933,7 +3255,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a x64.
-        /// </summary>
+        /// 
+/// </summary>
         public static string X64 {
             get {
                 return ResourceManager.GetString("X64", resourceCulture);
@@ -2942,7 +3265,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a x86.
-        /// </summary>
+        /// 
+/// </summary>
         public static string X86 {
             get {
                 return ResourceManager.GetString("X86", resourceCulture);
@@ -2951,7 +3275,8 @@ namespace ConstantsDLL.Properties {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Yes.
-        /// </summary>
+        /// 
+/// </summary>
         public static string YES {
             get {
                 return ResourceManager.GetString("YES", resourceCulture);
