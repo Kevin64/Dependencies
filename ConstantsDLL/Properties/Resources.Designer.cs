@@ -79,15 +79,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a air-updater-curl.json.
-        /// </summary>
-        public static string AIR_FILE_UPDATER {
-            get {
-                return ResourceManager.GetString("AIR_FILE_UPDATER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
         /// </summary>
         public static string ARCH32 {
@@ -102,6 +93,15 @@ namespace ConstantsDLL.Properties {
         public static string ARCH64 {
             get {
                 return ResourceManager.GetString("ARCH64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Body.
+        /// </summary>
+        public static string BODY {
+            get {
+                return ResourceManager.GetString("BODY", resourceCulture);
             }
         }
         
@@ -241,6 +241,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ETag.
+        /// </summary>
+        public static string ETAG {
+            get {
+                return ResourceManager.GetString("ETAG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a false.
         /// </summary>
         public static string FALSE {
@@ -345,15 +354,6 @@ namespace ConstantsDLL.Properties {
         public static string FOP_API_URL {
             get {
                 return ResourceManager.GetString("FOP_API_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a fop-updater-curl.json.
-        /// </summary>
-        public static string FOP_FILE_UPDATER {
-            get {
-                return ResourceManager.GetString("FOP_FILE_UPDATER", resourceCulture);
             }
         }
         
@@ -498,6 +498,15 @@ namespace ConstantsDLL.Properties {
         public static string HOSTNAME_PATTERN {
             get {
                 return ResourceManager.GetString("HOSTNAME_PATTERN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a HtmlUrl.
+        /// </summary>
+        public static string HTML_URL {
+            get {
+                return ResourceManager.GetString("HTML_URL", resourceCulture);
             }
         }
         
@@ -2613,6 +2622,15 @@ namespace ConstantsDLL.Properties {
         public static string SYSTEM_ROM {
             get {
                 return ResourceManager.GetString("SYSTEM_ROM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a TagName.
+        /// </summary>
+        public static string TAG_NAME {
+            get {
+                return ResourceManager.GetString("TAG_NAME", resourceCulture);
             }
         }
         

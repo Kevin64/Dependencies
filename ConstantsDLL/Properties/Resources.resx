@@ -1066,16 +1066,22 @@
   <data name="GITHUB_REPO_FOP" xml:space="preserve">
     <value>features-overlay-presentation</value>
   </data>
-  <data name="AIR_FILE_UPDATER" xml:space="preserve">
-    <value>air-updater-curl.json</value>
-  </data>
   <data name="AIR_API_URL" xml:space="preserve">
     <value>https://api.github.com/repos/Kevin64/asset-information-and-registration/releases/latest</value>
   </data>
   <data name="FOP_API_URL" xml:space="preserve">
     <value>https://api.github.com/repos/Kevin64/features-overlay-presentation/releases/latest</value>
   </data>
-  <data name="FOP_FILE_UPDATER" xml:space="preserve">
-    <value>fop-updater-curl.json</value>
+  <data name="BODY" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="ETAG" xml:space="preserve">
+    <value>ETag</value>
+  </data>
+  <data name="HTML_URL" xml:space="preserve">
+    <value>HtmlUrl</value>
+  </data>
+  <data name="TAG_NAME" xml:space="preserve">
+    <value>TagName</value>
   </data>
 </root>
