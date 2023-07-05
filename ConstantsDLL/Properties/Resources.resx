@@ -1084,4 +1084,7 @@
   <data name="TAG_NAME" xml:space="preserve">
     <value>TagName</value>
   </data>
+  <data name="INI_SECTION_2_10" xml:space="preserve">
+    <value>CheckForUpdates</value>
+  </data>
 </root>
