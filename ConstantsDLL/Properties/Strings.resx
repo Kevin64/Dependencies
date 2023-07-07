@@ -217,7 +217,10 @@
   <data name="LOG_CHECKING_FOR_UPDATES" xml:space="preserve">
     <value>Checking for updates</value>
   </data>
-  <data name="LOG_CLOSING_UPDATER" xml:space="preserve">
+  <data name="LOG_CLOSING_ABOUTBOX" xml:space="preserve">
+    <value>Closing About window</value>
+  </data>
+  <data name="LOG_CLOSING_UPDATER_FORM" xml:space="preserve">
     <value>Closing updater window</value>
   </data>
   <data name="LOG_CONNECTING_GITHUB" xml:space="preserve">
@@ -255,6 +258,9 @@
   </data>
   <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
     <value>Authentication performed successfully</value>
+  </data>
+  <data name="LOG_MISC_ATTR" xml:space="preserve">
+    <value>&lt;MISCELLANEOUS&gt;</value>
   </data>
   <data name="LOG_NO_INTERNET_AVAILABLE" xml:space="preserve">
     <value>No internet connection available</value>

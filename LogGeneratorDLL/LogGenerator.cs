@@ -124,7 +124,7 @@ namespace LogGeneratorDLL
                 }
                 else
                 {
-                    logTypeAttr = string.Empty;
+                    logTypeAttr = ConstantsDLL.Properties.Strings.LOG_MISC_ATTR;
                     Console.ForegroundColor = StringsAndConstants.MISC_CONSOLE_COLOR;
                 }
 
