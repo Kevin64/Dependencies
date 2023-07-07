@@ -298,8 +298,8 @@
   <data name="NO_AUTH" xml:space="preserve">
     <value>Fill in your credentials.</value>
   </data>
-  <data name="NO_VERSION_AVAILABLE" xml:space="preserve">
-    <value>Your software is up-to-date.</value>
+  <data name="NO_NEW_VERSION_AVAILABLE" xml:space="preserve">
+    <value>Your software is up-to-date</value>
   </data>
   <data name="OF" xml:space="preserve">
     <value>of</value>

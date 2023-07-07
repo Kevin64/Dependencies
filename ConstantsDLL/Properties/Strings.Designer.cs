@@ -574,11 +574,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Your software is up-to-date..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Your software is up-to-date.
         /// </summary>
-        public static string NO_VERSION_AVAILABLE {
+        public static string NO_NEW_VERSION_AVAILABLE {
             get {
-                return ResourceManager.GetString("NO_VERSION_AVAILABLE", resourceCulture);
+                return ResourceManager.GetString("NO_NEW_VERSION_AVAILABLE", resourceCulture);
             }
         }
         
