@@ -162,11 +162,65 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
+        /// Creates a list of the computer's storage drives types
+        /// </summary>
+        /// <returns>List with the computer's storage drives types, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageTypeList()
+        {
+            IEnumerable<string> typeSliced = null;
+            try
+            {
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                {
+                    int size = 10, i = 0;
+                    string[] type = new string[size];
+                    string msftName = "Msft Virtual Disk";
+
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                        {
+                            if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                            {
+                                switch (Convert.ToInt16(queryObj["MediaType"]))
+                                {
+                                    case 3:
+                                        type[i] = ConstantsDLL.Properties.Resources.HDD;
+                                        i++;
+                                        break;
+                                    case 4:
+                                        type[i] = ConstantsDLL.Properties.Resources.SSD;
+                                        i++;
+                                        break;
+                                    case 0:
+                                        type[i] = ConstantsDLL.Properties.Resources.HDD;
+                                        i++;
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    typeSliced = type.Take(i);
+                    searcher.Dispose();
+                }
+                return typeSliced.ToList();
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.ToString() };
+            }
+        }
+
+        /// <summary> 
         /// Fetches the type of drive the system has (SSD or HDD), and the quantity of each
         /// </summary>
         /// <returns>String with the SSD/HDD amount</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static string GetStorageType()
+        public static string GetStorageSummary()
         {
             double dresult;
             string dresultStr;
@@ -264,60 +318,108 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
-        /// Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them
+        /// Fetches the computer's storage drive model
         /// </summary>
-        /// <returns>String with the SSD/HDD amount</returns>
-        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
-        public static string CountDistinct(string[] array, string[] array2, string[] array3)
+        /// <returns>String with the computer's storage drive model, or 'Unknown' otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageModelList()
         {
-            string result = string.Empty;
-            int j = 0;
-            List<string> sizesHDD = new List<string>();
-            List<string> sizesSSD = new List<string>();
-            char[] comma = { ',', ' ' };
-            IEnumerable<IGrouping<string, string>> groups = array.GroupBy(z => z);
-
+            string msftName = "Msft Virtual Disk";
+            List<string> list = new List<string>();
             try
             {
-                foreach (IGrouping<string, string> group in groups)
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                foreach (ManagementObject queryObj in searcher.Get())
                 {
-                    j = 0;
-                    result += group.Count() + "x " + group.Key;
-                    for (int i = 0; i < array.Length; i++)
+                    if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                     {
-                        if (array[i] == group.Key)
+                        if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
                         {
-                            array[i] = string.Empty;
-                            if (group.Key == ConstantsDLL.Properties.Resources.HDD)
-                            {
-                                sizesHDD.Add(array2[i]);
-                                j++;
-                            }
-                            else
-                            {
-                                sizesSSD.Add(array3[i]);
-                                j++;
-                            }
-                            if (group.Count() == j)
-                            {
-                                if (group.Key == ConstantsDLL.Properties.Resources.HDD)
-                                {
-                                    result += " (" + string.Join(", ", sizesHDD) + ")" + ", ";
-                                }
-                                else
-                                {
-                                    result += " (" + string.Join(", ", sizesSSD) + ")" + ", ";
-                                }
-                                break;
-                            }
+                            string s = queryObj.GetPropertyValue("Model").ToString();
+                            list.Add(s);
                         }
                     }
                 }
-                return result.TrimEnd(comma);
+                return list;
             }
-            catch (Exception e)
+            catch (ManagementException e)
             {
-                return e.Message;
+                return new List<string>();
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's storage drives serial numbers
+        /// </summary>
+        /// <returns>List with the computer's storage drives serial numbers, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageSerialNumberList()
+        {
+            string msftName = "Msft Virtual Disk";
+            List<string> list = new List<string>();
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                    {
+                        if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                        {
+                            string s = queryObj.GetPropertyValue("SerialNumber").ToString();
+                            list.Add(s);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.ToString() };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's storage drives sizes
+        /// </summary>
+        /// <returns>List with the computer's storage drives sizes, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageSizeList()
+        {
+            string msftName = "Msft Virtual Disk", dresultStr;
+            double dresult = 0;
+            List<string> list = new List<string>();
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                    {
+                        if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                        {
+                            dresult = Convert.ToInt64(queryObj.GetPropertyValue("Size"));
+                            dresult = Math.Round(dresult / 1000000000, 0);
+                            if (Math.Log10(dresult) > 2.9999)
+                            {
+                                dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB;
+                            }
+                            else
+                            {
+                                dresultStr = dresult + " " + ConstantsDLL.Properties.Resources.GB;
+                            }
+                            list.Add(dresultStr);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.ToString() };
             }
         }
 
@@ -326,7 +428,7 @@ namespace HardwareInfoDLL
         /// </summary>
         /// <returns>String with the SSD/HDD total size</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static string GetStorageSize()
+        public static string GetStorageTotalSize()
         {
             int i = 0;
             double dresult = 0;
@@ -1199,6 +1301,64 @@ namespace HardwareInfoDLL
                 }
             }
             catch (ManagementException e)
+            {
+                return e.Message;
+            }
+        }
+
+        /// <summary> 
+        /// Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them
+        /// </summary>
+        /// <returns>String with the SSD/HDD amount</returns>
+        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
+        public static string CountDistinct(string[] array, string[] array2, string[] array3)
+        {
+            string result = string.Empty;
+            int j = 0;
+            List<string> sizesHDD = new List<string>();
+            List<string> sizesSSD = new List<string>();
+            char[] comma = { ',', ' ' };
+            IEnumerable<IGrouping<string, string>> groups = array.GroupBy(z => z);
+
+            try
+            {
+                foreach (IGrouping<string, string> group in groups)
+                {
+                    j = 0;
+                    result += group.Count() + "x " + group.Key;
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        if (array[i] == group.Key)
+                        {
+                            array[i] = string.Empty;
+                            if (group.Key == ConstantsDLL.Properties.Resources.HDD)
+                            {
+                                sizesHDD.Add(array2[i]);
+                                j++;
+                            }
+                            else
+                            {
+                                sizesSSD.Add(array3[i]);
+                                j++;
+                            }
+                            if (group.Count() == j)
+                            {
+                                if (group.Key == ConstantsDLL.Properties.Resources.HDD)
+                                {
+                                    result += " (" + string.Join(", ", sizesHDD) + ")" + ", ";
+                                }
+                                else
+                                {
+                                    result += " (" + string.Join(", ", sizesSSD) + ")" + ", ";
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+                return result.TrimEnd(comma);
+            }
+            catch (Exception e)
             {
                 return e.Message;
             }
