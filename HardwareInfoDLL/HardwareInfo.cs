@@ -162,60 +162,6 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
-        /// Creates a list of the computer's storage drives types
-        /// </summary>
-        /// <returns>List with the computer's storage drives types, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static List<string> GetStorageTypeList()
-        {
-            IEnumerable<string> typeSliced = null;
-            try
-            {
-                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
-                {
-                    int size = 10, i = 0;
-                    string[] type = new string[size];
-                    string msftName = "Msft Virtual Disk";
-
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
-
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                    {
-                        if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
-                        {
-                            if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
-                            {
-                                switch (Convert.ToInt16(queryObj["MediaType"]))
-                                {
-                                    case 3:
-                                        type[i] = ConstantsDLL.Properties.Resources.HDD;
-                                        i++;
-                                        break;
-                                    case 4:
-                                        type[i] = ConstantsDLL.Properties.Resources.SSD;
-                                        i++;
-                                        break;
-                                    case 0:
-                                        type[i] = ConstantsDLL.Properties.Resources.HDD;
-                                        i++;
-                                        break;
-                                }
-                            }
-                        }
-                    }
-
-                    typeSliced = type.Take(i);
-                    searcher.Dispose();
-                }
-                return typeSliced.ToList();
-            }
-            catch (ManagementException e)
-            {
-                return new List<string>() { e.ToString() };
-            }
-        }
-
-        /// <summary> 
         /// Fetches the type of drive the system has (SSD or HDD), and the quantity of each
         /// </summary>
         /// <returns>String with the SSD/HDD amount</returns>
@@ -318,62 +264,71 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
-        /// Fetches the computer's storage drive model
+        /// Creates a list of the computer's storage drives types
         /// </summary>
-        /// <returns>String with the computer's storage drive model, or 'Unknown' otherwise</returns>
+        /// <returns>List with the computer's storage drives types, or an exception message otherwise</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static List<string> GetStorageModelList()
+        public static List<string> GetStorageTypeList()
         {
-            string msftName = "Msft Virtual Disk";
-            List<string> list = new List<string>();
+            IEnumerable<string> typeSliced;
             try
             {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
-
-                foreach (ManagementObject queryObj in searcher.Get())
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
                 {
-                    if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                    int size = 10, i = 0;
+                    string[] type = new string[size];
+                    string msftName = "Msft Virtual Disk";
+
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
-                        if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                        if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
-                            string s = queryObj.GetPropertyValue("Model").ToString();
-                            list.Add(s);
+                            if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                            {
+                                switch (Convert.ToInt16(queryObj["MediaType"]))
+                                {
+                                    case 3:
+                                        type[i] = ConstantsDLL.Properties.Resources.HDD;
+                                        i++;
+                                        break;
+                                    case 4:
+                                        type[i] = ConstantsDLL.Properties.Resources.SSD;
+                                        i++;
+                                        break;
+                                    case 0:
+                                        type[i] = ConstantsDLL.Properties.Resources.HDD;
+                                        i++;
+                                        break;
+                                }
+                            }
                         }
                     }
+
+                    typeSliced = type.Take(i);
+                    searcher.Dispose();
                 }
-                return list;
-            }
-            catch (ManagementException e)
-            {
-                return new List<string>();
-            }
-        }
-
-        /// <summary> 
-        /// Creates a list of the computer's storage drives serial numbers
-        /// </summary>
-        /// <returns>List with the computer's storage drives serial numbers, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static List<string> GetStorageSerialNumberList()
-        {
-            string msftName = "Msft Virtual Disk";
-            List<string> list = new List<string>();
-            try
-            {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
-
-                foreach (ManagementObject queryObj in searcher.Get())
+                else
                 {
-                    if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                    int size = 10;
+                    int i = 0;
+                    string[] type = new string[size];
+
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
-                        if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
-                            string s = queryObj.GetPropertyValue("SerialNumber").ToString();
-                            list.Add(s);
+                            type[i] = ConstantsDLL.Properties.Resources.HDD;
+                            i++;
                         }
                     }
+                    typeSliced = type.Take(i);
+                    searcher.Dispose();
                 }
-                return list;
+                return typeSliced.ToList();
             }
             catch (ManagementException e)
             {
@@ -389,33 +344,209 @@ namespace HardwareInfoDLL
         public static List<string> GetStorageSizeList()
         {
             string msftName = "Msft Virtual Disk", dresultStr;
-            double dresult = 0;
+            double dresult;
             List<string> list = new List<string>();
             try
             {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
-
-                foreach (ManagementObject queryObj in searcher.Get())
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
                 {
-                    if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get())
                     {
-                        if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                        if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
-                            dresult = Convert.ToInt64(queryObj.GetPropertyValue("Size"));
+                            if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                            {
+                                dresult = Convert.ToInt64(queryObj.GetPropertyValue("Size"));
+                                dresult = Math.Round(dresult / 1000000000, 0);
+                                if (Math.Log10(dresult) > 2.9999)
+                                {
+                                    dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB;
+                                }
+                                else
+                                {
+                                    dresultStr = dresult + " " + ConstantsDLL.Properties.Resources.GB;
+                                }
+                                list.Add(dresultStr);
+                            }
+                        }
+                    }
+                    return list;
+                }
+                else
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            dresult = Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
                             dresult = Math.Round(dresult / 1000000000, 0);
-                            if (Math.Log10(dresult) > 2.9999)
-                            {
-                                dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB;
-                            }
-                            else
-                            {
-                                dresultStr = dresult + " " + ConstantsDLL.Properties.Resources.GB;
-                            }
+
+                            dresultStr = Math.Log10(dresult) > 2.9999
+                                ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB
+                                : dresult + " " + ConstantsDLL.Properties.Resources.GB;
                             list.Add(dresultStr);
                         }
                     }
+                    return list;
                 }
-                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.ToString() };
+            }
+        }
+
+        /// <summary> 
+        /// Fetches the computer's storage drive model
+        /// </summary>
+        /// <returns>String with the computer's storage drive model, or 'Unknown' otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageModelList()
+        {
+            string msftName = "Msft Virtual Disk";
+            List<string> list = new List<string>();
+            try
+            {
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get())
+                    {
+                        if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                        {
+                            if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                            {
+                                string s = queryObj.GetPropertyValue("Model").ToString();
+                                list.Add(s);
+                            }
+                        }
+                    }
+                    return list;
+                }
+                else
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            string s = queryObj.Properties["Model"].Value.ToString();
+                            list.Add(s);
+                        }
+                    }
+                    return list;
+                }
+                
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.ToString() };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's storage drives serial numbers
+        /// </summary>
+        /// <returns>List with the computer's storage drives serial numbers, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageSerialNumberList()
+        {
+            string msftName = "Msft Virtual Disk";
+            List<string> list = new List<string>();
+            try
+            {
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get())
+                    {
+                        if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                        {
+                            if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                            {
+                                string s = queryObj.GetPropertyValue("SerialNumber").ToString();
+                                list.Add(s);
+                            }
+                        }
+                    }
+                    return list;
+                }
+                else
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            string s = queryObj.Properties["SerialNumber"].Value.ToString();
+                            list.Add(s);
+                        }
+                    }
+                    return list;
+                }
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.ToString() };
+            }
+        }
+
+        /// <summary> 
+        /// Fetches the S.M.A.R.T. status
+        /// </summary>
+        /// <returns>String with the S.M.A.R.T. status. 'OK' for ok, everything else for a problem</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageSmartList()
+        {
+            string msftName = "Msft Virtual Disk";
+            List<string> list = new List<string>();
+            try
+            {
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\wmi", "SELECT * FROM MSStorageDriver_FailurePredictStatus");
+
+                    foreach (ManagementObject queryObj in searcher.Get())
+                    {
+                        if(queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
+                        {
+                            list.Add(ConstantsDLL.Properties.Resources.OK);
+                        }
+                        else
+                        {
+                            list.Add(ConstantsDLL.Properties.Resources.PRED_FAIL);
+                        }
+                    }
+                    return list;
+                }
+                else
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            if (queryObj.GetPropertyValue("Status").ToString() == "OK")
+                            {
+                                list.Add(ConstantsDLL.Properties.Resources.OK);
+                            }
+                            else
+                            {
+                                list.Add(ConstantsDLL.Properties.Resources.PRED_FAIL);
+                            }
+                        }
+                    }
+                    return list;
+                }
             }
             catch (ManagementException e)
             {
@@ -1234,35 +1365,7 @@ namespace HardwareInfoDLL
             }
         }
 
-        /// <summary> 
-        /// Fetches the S.M.A.R.T. status
-        /// </summary>
-        /// <returns>String with the S.M.A.R.T. status. 'OK' for ok, everything else for a problem</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static string GetSMARTStatus()
-        {
-            string statusCaption, statusValue;
-
-            try
-            {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
-
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
-                    statusCaption = (string)queryObj.Properties["Caption"].Value;
-                    statusValue = (string)queryObj.Properties["Status"].Value;
-                    if (statusValue == ConstantsDLL.Properties.Resources.PRED_FAIL)
-                    {
-                        return statusCaption;
-                    }
-                }
-                return ConstantsDLL.Properties.Resources.OK;
-            }
-            catch (ManagementException e)
-            {
-                return e.Message;
-            }
-        }
+        
 
         /// <summary> 
         /// Fetches the TPM version
