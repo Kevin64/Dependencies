@@ -1087,4 +1087,13 @@
   <data name="INI_SECTION_2_10" xml:space="preserve">
     <value>CheckForUpdates</value>
   </data>
+  <data name="PCIE" xml:space="preserve">
+    <value>PCI-E</value>
+  </data>
+  <data name="WMI_PCIE" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="WMI_SATA" xml:space="preserve">
+    <value>11</value>
+  </data>
 </root>

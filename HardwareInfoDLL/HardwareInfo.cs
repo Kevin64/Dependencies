@@ -134,26 +134,49 @@ namespace HardwareInfoDLL
         {
             try
             {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_SCSIController");
-
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
                 {
-                    if (queryObj["Name"].ToString().Contains("NVM"))
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
-                        return ((int)MediaOperationTypes.NVMe).ToString();
+                        if (queryObj["DeviceId"].ToString().Equals("0"))
+                        {
+                            if (queryObj["BusType"].ToString().Equals(ConstantsDLL.Properties.Resources.WMI_PCIE))
+                            {
+                                return ((int)MediaOperationTypes.NVMe).ToString();
+                            }
+                            else if (queryObj["BusType"].ToString().Equals(ConstantsDLL.Properties.Resources.WMI_SATA))
+                            {
+                                return ((int)MediaOperationTypes.AHCI).ToString();
+                            }
+                        }
                     }
+                    return ((int)MediaOperationTypes.IDE_RAID).ToString();
                 }
-
-                searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_IDEController");
-
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                else
                 {
-                    if ((queryObj["Name"].ToString().Contains(MediaOperationTypes.AHCI.ToString()) || queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.SATA)) && !queryObj["Name"].ToString().Contains(ConstantsDLL.Properties.Resources.RAID))
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
-                        return ((int)MediaOperationTypes.AHCI).ToString();
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            if (queryObj["Index"].ToString().Equals("0"))
+                            {
+                                if (queryObj["InterfaceType"].ToString().Equals("IDE"))
+                                {
+                                    return ((int)MediaOperationTypes.AHCI).ToString();
+                                }
+                                else if (queryObj["InterfaceType"].ToString().Equals("SCSI"))
+                                {
+                                    return ((int)MediaOperationTypes.NVMe).ToString();
+                                }
+                            }
+                        }
                     }
+                    return ((int)MediaOperationTypes.IDE_RAID).ToString();
                 }
-                return ((int)MediaOperationTypes.IDE_RAID).ToString();
             }
             catch (ManagementException e)
             {
@@ -360,14 +383,9 @@ namespace HardwareInfoDLL
                             {
                                 dresult = Convert.ToInt64(queryObj.GetPropertyValue("Size"));
                                 dresult = Math.Round(dresult / 1000000000, 0);
-                                if (Math.Log10(dresult) > 2.9999)
-                                {
-                                    dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB;
-                                }
-                                else
-                                {
-                                    dresultStr = dresult + " " + ConstantsDLL.Properties.Resources.GB;
-                                }
+                                dresultStr = Math.Log10(dresult) > 2.9999
+                                    ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB
+                                    : dresult + " " + ConstantsDLL.Properties.Resources.GB;
                                 list.Add(dresultStr);
                             }
                         }
@@ -389,6 +407,75 @@ namespace HardwareInfoDLL
                                 ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB
                                 : dresult + " " + ConstantsDLL.Properties.Resources.GB;
                             list.Add(dresultStr);
+                        }
+                    }
+                    return list;
+                }
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.ToString() };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's storage drives sizes
+        /// </summary>
+        /// <returns>List with the computer's storage drives sizes, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageConnectionList()
+        {
+            string msftName = "Msft Virtual Disk";
+            List<string> list = new List<string>();
+            try
+            {
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get())
+                    {
+                        if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                        {
+                            if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                            {
+                                if (queryObj["BusType"].ToString() == ConstantsDLL.Properties.Resources.WMI_SATA)
+                                {
+                                    list.Add(ConstantsDLL.Properties.Resources.SATA);
+                                }
+                                else if (queryObj["BusType"].ToString() == ConstantsDLL.Properties.Resources.WMI_PCIE)
+                                {
+                                    list.Add(ConstantsDLL.Properties.Resources.PCIE);
+                                }
+                                else
+                                {
+                                    list.Add("IDE");
+                                }
+                            }
+                        }
+                    }
+                    return list;
+                }
+                else
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            if(queryObj["InterfaceType"].ToString().Equals("IDE"))
+                            {
+                                list.Add(ConstantsDLL.Properties.Resources.SATA);
+                            }
+                            else if(queryObj["InterfaceType"].ToString().Equals("SCSI"))
+                            {
+                                list.Add(ConstantsDLL.Properties.Resources.PCIE);
+                            }
+                            else
+                            {
+                                list.Add("IDE");
+                            }
                         }
                     }
                     return list;
@@ -442,7 +529,7 @@ namespace HardwareInfoDLL
                     }
                     return list;
                 }
-                
+
             }
             catch (ManagementException e)
             {
@@ -506,7 +593,6 @@ namespace HardwareInfoDLL
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetStorageSmartList()
         {
-            string msftName = "Msft Virtual Disk";
             List<string> list = new List<string>();
             try
             {
@@ -516,7 +602,7 @@ namespace HardwareInfoDLL
 
                     foreach (ManagementObject queryObj in searcher.Get())
                     {
-                        if(queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
+                        if (queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
                         {
                             list.Add(ConstantsDLL.Properties.Resources.OK);
                         }
@@ -1099,11 +1185,25 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10)
-                        ? Convert.ToInt32(releaseId) <= 2004
-                            ? (queryObj["Caption"].ToString().Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10)
-                            : (queryObj["Caption"].ToString().Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10)
-                        : (queryObj["Caption"].ToString().Trim() + " " + queryObj["CSDVersion"].ToString() + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                    if(GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10))
+                    {
+                        if(Convert.ToInt32(releaseId) <= 2004)
+                        {
+                            return (queryObj["Caption"].ToString().Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                        }
+                        else
+                        {
+                            return (queryObj["Caption"].ToString().Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                        }
+                    }
+                    else if(GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                    {
+                        return (queryObj["Caption"].ToString().Trim() + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                    }
+                    else
+                    {
+                        return (queryObj["Caption"].ToString().Trim() + " " + queryObj["CSDVersion"].ToString() + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                    }
                 }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
@@ -1365,7 +1465,7 @@ namespace HardwareInfoDLL
             }
         }
 
-        
+
 
         /// <summary> 
         /// Fetches the TPM version

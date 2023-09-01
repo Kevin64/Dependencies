@@ -301,11 +301,17 @@
   <data name="NO_NEW_VERSION_AVAILABLE" xml:space="preserve">
     <value>Seu software está atualizado</value>
   </data>
+  <data name="NO_PENDENCIES" xml:space="preserve">
+    <value>Nenhum item pendente encontrado</value>
+  </data>
   <data name="OF" xml:space="preserve">
     <value>de</value>
   </data>
   <data name="PARAMETER_ERROR" xml:space="preserve">
     <value>Um ou mais parâmetros do arquivo INI estão mal formados</value>
+  </data>
+  <data name="PENDENCIES" xml:space="preserve">
+    <value>item(ns) pendentes</value>
   </data>
   <data name="RESOLUTION_WARNING" xml:space="preserve">
     <value>Resolução insuficiente. Este programa suporta apenas resoluções iguais ou superiores a {0}x{1}.</value>

@@ -1870,6 +1870,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a PCI-E.
+        /// </summary>
+        public static string PCIE {
+            get {
+                return ResourceManager.GetString("PCIE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;adRegistered=.
         /// </summary>
         public static string PHP_AD_REGISTERED {
@@ -2937,6 +2946,24 @@ namespace ConstantsDLL.Properties {
         public static string WINDOWS_8_1 {
             get {
                 return ResourceManager.GetString("WINDOWS_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 17.
+        /// </summary>
+        public static string WMI_PCIE {
+            get {
+                return ResourceManager.GetString("WMI_PCIE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 11.
+        /// </summary>
+        public static string WMI_SATA {
+            get {
+                return ResourceManager.GetString("WMI_SATA", resourceCulture);
             }
         }
         

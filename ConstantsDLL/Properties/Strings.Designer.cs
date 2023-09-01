@@ -583,6 +583,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a No pending items found.
+        /// </summary>
+        public static string NO_PENDENCIES {
+            get {
+                return ResourceManager.GetString("NO_PENDENCIES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Not determined.
         /// </summary>
         public static string NOT_DETERMINED {
@@ -624,6 +633,15 @@ namespace ConstantsDLL.Properties {
         public static string PARAMETER_ERROR {
             get {
                 return ResourceManager.GetString("PARAMETER_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a pending item(s).
+        /// </summary>
+        public static string PENDENCIES {
+            get {
+                return ResourceManager.GetString("PENDENCIES", resourceCulture);
             }
         }
         

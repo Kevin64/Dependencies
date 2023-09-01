@@ -301,11 +301,17 @@
   <data name="NO_NEW_VERSION_AVAILABLE" xml:space="preserve">
     <value>Your software is up-to-date</value>
   </data>
+  <data name="NO_PENDENCIES" xml:space="preserve">
+    <value>No pending items found</value>
+  </data>
   <data name="OF" xml:space="preserve">
     <value>of</value>
   </data>
   <data name="PARAMETER_ERROR" xml:space="preserve">
     <value>One or more INI file parameters are malformed</value>
+  </data>
+  <data name="PENDENCIES" xml:space="preserve">
+    <value>pending item(s)</value>
   </data>
   <data name="RESOLUTION_WARNING" xml:space="preserve">
     <value>Insufficient resolution. This program only supports resolutions equal to or greater than {0}x{1}.</value>
