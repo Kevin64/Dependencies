@@ -112,15 +112,17 @@ namespace ConstantsDLL
         public static readonly Color DARK_BACKGROUND = Color.FromArgb(32, 32, 32);
         public static readonly Color DARK_SUBTLE_LIGHTLIGHTCOLOR = Color.DimGray;
         public static readonly Color LIGHT_SUBTLE_DARKDARKCOLOR = Color.FromArgb(192, 192, 192);
-        public static readonly Color DARK_SUBTLE_LIGHTCOLOR = Color.DarkSlateGray;
-        public static readonly Color LIGHT_SUBTLE_DARKCOLOR = Color.Silver;
+        public static readonly Color DARK_SUBTLE_LIGHTCOLOR = Color.Silver;
+        public static readonly Color LIGHT_SUBTLE_DARKCOLOR = Color.DarkSlateGray;
         public static readonly Color BLUE_FOREGROUND = SystemColors.Highlight;
         public static readonly Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(204, 204, 204);
         public static readonly Color HIGHLIGHT_LABEL_COLOR = Color.FromArgb(127, 127, 127);
         public static readonly Color PRESSED_STRIP_BUTTON = Color.FromArgb(128, 128, 128);
         public static readonly Color ROTATING_CIRCLE_COLOR = SystemColors.MenuHighlight;
+        public static readonly Color ROTATING_CIRCLE_BACKCOLOR = Color.Transparent;
 
         public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
+
         // Code exclusive for AssetInformationAndRegistration application - END
         ///////////////////////////////////////////////////////////////////////
 

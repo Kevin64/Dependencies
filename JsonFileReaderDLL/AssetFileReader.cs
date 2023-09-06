@@ -110,9 +110,7 @@ namespace JsonFileReaderDLL
             return Task.Run(async () =>
             {
                 if (!await CheckHostMT(ipAddress, port, assetNumber))
-                {
                     return null;
-                }
 
                 string[] arr;
                 fileAsset = new StreamReader(StringsAndConstants.ASSET_FILE_PATH);
@@ -149,9 +147,7 @@ namespace JsonFileReaderDLL
         public static string[] FetchInfoST(string assetNumber, string ipAddress, string port)
         {
             if (!CheckHostST(ipAddress, port, assetNumber))
-            {
                 return null;
-            }
 
             string[] arr;
             fileAsset = new StreamReader(StringsAndConstants.ASSET_FILE_PATH);

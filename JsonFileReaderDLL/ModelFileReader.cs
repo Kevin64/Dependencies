@@ -108,9 +108,7 @@ namespace JsonFileReaderDLL
             return Task.Run(async () =>
             {
                 if (!await CheckHostMT(ipAddress, port))
-                {
                     return null;
-                }
 
                 string[] arr;
                 string typeRet = ConstantsDLL.Properties.Resources.TRUE, tpmRet = ConstantsDLL.Properties.Resources.TRUE, mediaOpRet = ConstantsDLL.Properties.Resources.TRUE;
@@ -125,20 +123,11 @@ namespace JsonFileReaderDLL
                         if (model.Contains(jsonParse[i].Model) && brand.Contains(jsonParse[i].Brand))
                         {
                             if (!fwType.Equals(jsonParse[i].FwType))
-                            {
                                 typeRet = ConstantsDLL.Properties.Resources.FALSE;
-                            }
-
                             if (!tpmVersion.Equals(jsonParse[i].TpmVersion))
-                            {
                                 tpmRet = ConstantsDLL.Properties.Resources.FALSE;
-                            }
-
                             if (!mediaOperationMode.Equals(jsonParse[i].MediaOperationMode))
-                            {
                                 mediaOpRet = ConstantsDLL.Properties.Resources.FALSE;
-                            }
-
                             arr = new string[] { jsonParse[i].FwVersion, typeRet, tpmRet, mediaOpRet };
                             fileB.Close();
                             return arr;
@@ -167,9 +156,7 @@ namespace JsonFileReaderDLL
         public static string[] FetchInfoST(string brand, string model, string fwType, string tpmVersion, string mediaOperationMode, string ipAddress, string port)
         {
             if (!CheckHostST(ipAddress, port))
-            {
                 return null;
-            }
 
             string[] arr;
             string typeRet = ConstantsDLL.Properties.Resources.TRUE, tpmRet = ConstantsDLL.Properties.Resources.TRUE, mediaOpRet = ConstantsDLL.Properties.Resources.TRUE;
@@ -184,20 +171,11 @@ namespace JsonFileReaderDLL
                     if (model.Contains(jsonParse[i].Model) && brand.Contains(jsonParse[i].Brand))
                     {
                         if (!fwType.Equals(jsonParse[i].FwType))
-                        {
                             typeRet = ConstantsDLL.Properties.Resources.FALSE;
-                        }
-
                         if (!tpmVersion.Equals(jsonParse[i].TpmVersion))
-                        {
                             tpmRet = ConstantsDLL.Properties.Resources.FALSE;
-                        }
-
                         if (!mediaOperationMode.Equals(jsonParse[i].MediaOperationMode))
-                        {
                             mediaOpRet = ConstantsDLL.Properties.Resources.FALSE;
-                        }
-
                         arr = new string[] { jsonParse[i].FwVersion, typeRet, tpmRet, mediaOpRet };
                         fileB.Close();
                         return arr;

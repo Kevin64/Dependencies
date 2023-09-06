@@ -110,9 +110,7 @@ namespace JsonFileReaderDLL
             return Task.Run(async () =>
             {
                 if (!await CheckHostMT(ipAddress, port))
-                {
                     return null;
-                }
 
                 string[] arr;
                 fileL = new StreamReader(StringsAndConstants.CREDENTIALS_FILE_PATH);
@@ -150,9 +148,7 @@ namespace JsonFileReaderDLL
         public static string[] FetchInfoST(string username, string password, string ipAddress, string port)
         {
             if (!CheckHostST(ipAddress, port))
-            {
                 return null;
-            }
 
             string[] arr;
             fileL = new StreamReader(StringsAndConstants.CREDENTIALS_FILE_PATH);

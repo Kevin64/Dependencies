@@ -63,9 +63,7 @@ namespace HardwareInfoDLL
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
                     logical = queryObj["NumberOfLogicalProcessors"].ToString();
-                }
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
@@ -143,13 +141,9 @@ namespace HardwareInfoDLL
                         if (queryObj["DeviceId"].ToString().Equals("0"))
                         {
                             if (queryObj["BusType"].ToString().Equals(ConstantsDLL.Properties.Resources.WMI_PCIE))
-                            {
                                 return ((int)MediaOperationTypes.NVMe).ToString();
-                            }
                             else if (queryObj["BusType"].ToString().Equals(ConstantsDLL.Properties.Resources.WMI_SATA))
-                            {
                                 return ((int)MediaOperationTypes.AHCI).ToString();
-                            }
                         }
                     }
                     return ((int)MediaOperationTypes.IDE_RAID).ToString();
@@ -165,13 +159,9 @@ namespace HardwareInfoDLL
                             if (queryObj["Index"].ToString().Equals("0"))
                             {
                                 if (queryObj["InterfaceType"].ToString().Equals("IDE"))
-                                {
                                     return ((int)MediaOperationTypes.AHCI).ToString();
-                                }
                                 else if (queryObj["InterfaceType"].ToString().Equals("SCSI"))
-                                {
                                     return ((int)MediaOperationTypes.NVMe).ToString();
-                                }
                             }
                         }
                     }
@@ -440,17 +430,11 @@ namespace HardwareInfoDLL
                             if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
                             {
                                 if (queryObj["BusType"].ToString() == ConstantsDLL.Properties.Resources.WMI_SATA)
-                                {
                                     list.Add(ConstantsDLL.Properties.Resources.SATA);
-                                }
                                 else if (queryObj["BusType"].ToString() == ConstantsDLL.Properties.Resources.WMI_PCIE)
-                                {
                                     list.Add(ConstantsDLL.Properties.Resources.PCIE);
-                                }
                                 else
-                                {
                                     list.Add("IDE");
-                                }
                             }
                         }
                     }
@@ -464,18 +448,12 @@ namespace HardwareInfoDLL
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
-                            if(queryObj["InterfaceType"].ToString().Equals("IDE"))
-                            {
+                            if (queryObj["InterfaceType"].ToString().Equals("IDE"))
                                 list.Add(ConstantsDLL.Properties.Resources.SATA);
-                            }
-                            else if(queryObj["InterfaceType"].ToString().Equals("SCSI"))
-                            {
+                            else if (queryObj["InterfaceType"].ToString().Equals("SCSI"))
                                 list.Add(ConstantsDLL.Properties.Resources.PCIE);
-                            }
                             else
-                            {
                                 list.Add("IDE");
-                            }
                         }
                     }
                     return list;
@@ -603,13 +581,9 @@ namespace HardwareInfoDLL
                     foreach (ManagementObject queryObj in searcher.Get())
                     {
                         if (queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
-                        {
                             list.Add(ConstantsDLL.Properties.Resources.OK);
-                        }
                         else
-                        {
                             list.Add(ConstantsDLL.Properties.Resources.PRED_FAIL);
-                        }
                     }
                     return list;
                 }
@@ -622,13 +596,9 @@ namespace HardwareInfoDLL
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
                             if (queryObj.GetPropertyValue("Status").ToString() == "OK")
-                            {
                                 list.Add(ConstantsDLL.Properties.Resources.OK);
-                            }
                             else
-                            {
                                 list.Add(ConstantsDLL.Properties.Resources.PRED_FAIL);
-                            }
                         }
                     }
                     return list;
@@ -668,9 +638,7 @@ namespace HardwareInfoDLL
                     if (i == 0)
                     {
                         foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                        {
                             dresult += Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
-                        }
                     }
                 }
                 else
@@ -680,9 +648,7 @@ namespace HardwareInfoDLL
                     foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
-                        {
                             dresult += Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
-                        }
                     }
                 }
                 dresult = Math.Round(dresult / 1000000000, 0);
@@ -722,10 +688,9 @@ namespace HardwareInfoDLL
                     if (MACAddress == string.Empty)
                     {
                         if ((bool)queryObj["IPEnabled"] == true && gat != null)
-                        {
                             MACAddress = queryObj["MacAddress"].ToString();
-                        }
                     }
+
                     queryObj.Dispose();
                 }
                 return MACAddress != string.Empty ? MACAddress : null;
@@ -752,9 +717,7 @@ namespace HardwareInfoDLL
                 {
                     string[] gat = (string[])queryObj["DefaultIPGateway"];
                     if ((bool)queryObj["IPEnabled"] == true && gat != null)
-                    {
                         IPAddress = (string[])queryObj["IPAddress"];
-                    }
                     queryObj.Dispose();
                 }
                 return IPAddress[0];
@@ -777,9 +740,7 @@ namespace HardwareInfoDLL
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_ComputerSystem");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
-                }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (ManagementException e)
@@ -800,9 +761,7 @@ namespace HardwareInfoDLL
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BaseBoard");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
-                }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (ManagementException e)
@@ -873,9 +832,7 @@ namespace HardwareInfoDLL
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BaseBoard");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
-                }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (ManagementException e)
@@ -1021,10 +978,9 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (Convert.ToString(queryObj["Tag"]).Equals("Physical Memory Array 0"))
-                    {
                         MemSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
-                    }
                 }
+
                 return MemSlots.ToString();
             }
             catch (ManagementException e)
@@ -1049,10 +1005,9 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(ConstantsDLL.Properties.Resources.SYSTEM_ROM))
-                    {
                         i++;
-                    }
                 }
+
                 return i.ToString();
             }
             catch (ManagementException e)
@@ -1079,10 +1034,9 @@ namespace HardwareInfoDLL
                     if (gateway == string.Empty)
                     {
                         if ((bool)queryObj["IPEnabled"] == true)
-                        {
                             gateway = queryObj["DefaultIPGateway"].ToString();
-                        }
                     }
+
                     queryObj.Dispose();
                 }
                 gateway = gateway.Replace(":", string.Empty);
@@ -1148,10 +1102,12 @@ namespace HardwareInfoDLL
                     switch (vs.Major)
                     {
                         case 6:
-                            operatingSystem = vs.Minor == 1
-                                ? ConstantsDLL.Properties.Resources.WINDOWS_7
-                                : vs.Minor == 2 ? ConstantsDLL.Properties.Resources.WINDOWS_8 : ConstantsDLL.Properties.Resources.WINDOWS_8_1;
-
+                            if (vs.Minor == 1)
+                                operatingSystem = ConstantsDLL.Properties.Resources.WINDOWS_7;
+                            else if (vs.Minor == 2)
+                                operatingSystem = ConstantsDLL.Properties.Resources.WINDOWS_8;
+                            else
+                                operatingSystem = ConstantsDLL.Properties.Resources.WINDOWS_8_1;
                             break;
                         case 10:
                             operatingSystem = ConstantsDLL.Properties.Resources.WINDOWS_10;
@@ -1175,9 +1131,15 @@ namespace HardwareInfoDLL
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSString()
         {
-            string displayVersion = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", string.Empty).ToString();
-            string releaseId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "releaseId", string.Empty).ToString();
-            string updateBuildRevision = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "UBR", string.Empty).ToString();
+            RegistryKey rk;
+            if (Environment.Is64BitOperatingSystem)
+                rk = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
+            else
+                rk = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry32);
+            rk = rk.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+            string displayVersion = rk.GetValue("DisplayVersion", string.Empty).ToString();
+            string releaseId = rk.GetValue("releaseId", string.Empty).ToString();
+            string updateBuildRevision = rk.GetValue("UBR", string.Empty).ToString();
 
             try
             {
@@ -1185,18 +1147,14 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if(GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10))
+                    if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10))
                     {
-                        if(Convert.ToInt32(releaseId) <= 2004)
-                        {
+                        if (Convert.ToInt32(releaseId) <= 2004)
                             return (queryObj["Caption"].ToString().Trim() + ", v" + releaseId + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
-                        }
                         else
-                        {
                             return (queryObj["Caption"].ToString().Trim() + ", v" + displayVersion + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
-                        }
                     }
-                    else if(GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                    else if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
                     {
                         return (queryObj["Caption"].ToString().Trim() + ", " + ConstantsDLL.Properties.Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
                     }
@@ -1225,9 +1183,7 @@ namespace HardwareInfoDLL
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_OperatingSystem");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
                     return queryObj.GetPropertyValue("Version").ToString();
-                }
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (ManagementException e)
@@ -1251,9 +1207,7 @@ namespace HardwareInfoDLL
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_ComputerSystem");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
                     info = (string)queryObj["Name"];
-                }
                 return info;
             }
             catch (ManagementException e)
@@ -1276,9 +1230,7 @@ namespace HardwareInfoDLL
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BIOS");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
                     biosVersion = (string)queryObj["SMBIOSBIOSVersion"];
-                }
                 return biosVersion;
             }
             catch (ManagementException e)
@@ -1330,14 +1282,11 @@ namespace HardwareInfoDLL
                     if (GetFirmwareType(ref firmwaretype))
                     {
                         if (firmwaretype == 1)
-                        {
                             return ((int)FirmwareTypes.BIOS).ToString();
-                        }
                         else if (firmwaretype == 2)
-                        {
                             return ((int)FirmwareTypes.UEFI).ToString();
-                        }
                     }
+
                     return ConstantsDLL.Properties.Strings.NOT_DETERMINED;
                 }
                 else
@@ -1364,9 +1313,7 @@ namespace HardwareInfoDLL
                 Collection<PSObject> PSOutput = PowerShellInst.Invoke();
 
                 foreach (PSObject queryObj in PSOutput)
-                {
                     return ((int)SecureBootStates.ENABLED).ToString();
-                }
                 return ((int)SecureBootStates.DISABLED).ToString();
             }
             catch
@@ -1410,22 +1357,19 @@ namespace HardwareInfoDLL
                     foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (queryObj["VirtualizationFirmwareEnabled"].ToString().Equals("True"))
-                        {
                             flag = (int)VirtualizationTechnologyStates.ENABLED;
-                        }
                         else if (bool.Parse(GetHyperVStatus()))
-                        {
                             flag = (int)VirtualizationTechnologyStates.ENABLED;
-                        }
                     }
                     if (flag != (int)VirtualizationTechnologyStates.ENABLED)
-                    {
                         flag = GetFwType() == ((int)FirmwareTypes.UEFI).ToString() ? (int)VirtualizationTechnologyStates.DISABLED : (int)VirtualizationTechnologyStates.NOT_SUPPORTED;
-                    }
                 }
-                return flag == (int)VirtualizationTechnologyStates.ENABLED
-                    ? ((int)SecureBootStates.ENABLED).ToString()
-                    : flag == (int)VirtualizationTechnologyStates.DISABLED ? ((int)SecureBootStates.DISABLED).ToString() : ((int)SecureBootStates.NOT_SUPPORTED).ToString();
+                if (flag == (int)VirtualizationTechnologyStates.ENABLED)
+                    return ((int)SecureBootStates.ENABLED).ToString();
+                else if (flag == (int)VirtualizationTechnologyStates.DISABLED)
+                    return ((int)SecureBootStates.DISABLED).ToString();
+                else
+                    return ((int)SecureBootStates.NOT_SUPPORTED).ToString();
             }
             catch (ManagementException e)
             {
@@ -1453,9 +1397,7 @@ namespace HardwareInfoDLL
                     featureToggle = (uint)queryObj.Properties["InstallState"].Value;
 
                     if ((featureName.Equals("Microsoft-Hyper-V") && featureToggle.Equals(1)) || (featureName.Equals("Microsoft-Hyper-V-Hypervisor") && featureToggle.Equals(1)) || (featureName.Equals("Containers-DisposableClientVM") && featureToggle.Equals(1)))
-                    {
                         return ConstantsDLL.Properties.Resources.TRUE;
-                    }
                 }
                 return ConstantsDLL.Properties.Resources.FALSE;
             }
@@ -1482,20 +1424,14 @@ namespace HardwareInfoDLL
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2\\Security\\MicrosoftTpm", "SELECT * FROM Win32_Tpm");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
                     specVersion = queryObj.Properties["SpecVersion"].Value.ToString();
-                }
 
                 if (specVersion != string.Empty)
                 {
                     if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.TPM_1_2_NAME))
-                    {
                         str = ((int)TpmTypes.v1_2).ToString();
-                    }
                     else if (specVersion.Substring(0, 3).Equals(ConstantsDLL.Properties.Resources.TPM_2_0_NAME))
-                    {
                         str = ((int)TpmTypes.v2_0).ToString();
-                    }
                     return str;
                 }
                 else
@@ -1547,13 +1483,9 @@ namespace HardwareInfoDLL
                             if (group.Count() == j)
                             {
                                 if (group.Key == ConstantsDLL.Properties.Resources.HDD)
-                                {
                                     result += " (" + string.Join(", ", sizesHDD) + ")" + ", ";
-                                }
                                 else
-                                {
                                     result += " (" + string.Join(", ", sizesSSD) + ")" + ", ";
-                                }
                                 break;
                             }
                         }

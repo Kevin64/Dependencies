@@ -100,9 +100,7 @@ namespace JsonFileReaderDLL
             return Task.Run(async () =>
             {
                 if (!await CheckHostMT(ipAddress, port))
-                {
                     return null;
-                }
 
                 List<string[]> arr;
                 fileC = new StreamReader(StringsAndConstants.CONFIG_FILE_PATH);
@@ -128,9 +126,7 @@ namespace JsonFileReaderDLL
         public static List<string[]> FetchInfoST(string ipAddress, string port)
         {
             if (!CheckHostST(ipAddress, port))
-            {
                 return null;
-            }
 
             List<string[]> arr;
             fileC = new StreamReader(StringsAndConstants.CONFIG_FILE_PATH);
