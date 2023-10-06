@@ -439,6 +439,42 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/getAgent/.
+        /// </summary>
+        public static string GET_AGENT_URL {
+            get {
+                return ResourceManager.GetString("GET_AGENT_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/getAsset/.
+        /// </summary>
+        public static string GET_ASSET_URL {
+            get {
+                return ResourceManager.GetString("GET_ASSET_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/getConfig/.
+        /// </summary>
+        public static string GET_CONFIG_URL {
+            get {
+                return ResourceManager.GetString("GET_CONFIG_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/getModel/.
+        /// </summary>
+        public static string GET_MODEL_URL {
+            get {
+                return ResourceManager.GetString("GET_MODEL_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Kevin64.
         /// </summary>
         public static string GITHUB_OWNER_AIR {
@@ -2568,6 +2604,15 @@ namespace ConstantsDLL.Properties {
         public static string SATA {
             get {
                 return ResourceManager.GetString("SATA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/setAsset.php.
+        /// </summary>
+        public static string SET_ASSET_URL {
+            get {
+                return ResourceManager.GetString("SET_ASSET_URL", resourceCulture);
             }
         }
         

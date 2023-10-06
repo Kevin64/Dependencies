@@ -120,6 +120,8 @@ namespace ConstantsDLL
         public static readonly Color PRESSED_STRIP_BUTTON = Color.FromArgb(128, 128, 128);
         public static readonly Color ROTATING_CIRCLE_COLOR = SystemColors.MenuHighlight;
         public static readonly Color ROTATING_CIRCLE_BACKCOLOR = Color.Transparent;
+        public static readonly Color LIGHT_INACTIVE_CAPTION_COLOR = SystemColors.InactiveCaption;
+        public static readonly Color DARK_INACTIVE_CAPTION_COLOR = SystemColors.WindowFrame;
 
         public const ConsoleColor MISC_CONSOLE_COLOR = ConsoleColor.DarkCyan;
 

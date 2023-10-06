@@ -83,11 +83,11 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
-        /// Fetches the GPU information
+        /// Fetches the primary Video Card information
         /// </summary>
-        /// <returns>String with the GPU information</returns>
+        /// <returns>String with the primary Video Card information</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static string GetVideoCardInfo()
+        public static string GetVideoCardSummary()
         {
             string gpuname = string.Empty;
             string gpuramStr;
@@ -120,6 +120,103 @@ namespace HardwareInfoDLL
             catch (ManagementException e)
             {
                 return e.Message;
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's video card IDs
+        /// </summary>
+        /// <returns>List with the computer's video card IDs, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetVideoCardIdList()
+        {
+            string gpuId;
+            int gpuIdAdj;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
+                    {
+                        gpuId = queryObj["DeviceId"].ToString();
+                        gpuIdAdj = Convert.ToInt32(gpuId.Substring(gpuId.Length - 1)) - 1;
+                        list.Add(gpuIdAdj.ToString());
+                    }
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's video card names
+        /// </summary>
+        /// <returns>List with the computer's video card names, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetVideoCardNameList()
+        {
+            string gpuName;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
+                    {
+                        gpuName = queryObj["Name"].ToString();
+                        list.Add(gpuName);
+                    }
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's video card vRams
+        /// </summary>
+        /// <returns>List with the computer's video card vRams, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetVideoCardRamList()
+        {
+            double gpuRam;
+            string gpuRamStr;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
+                    {
+                        gpuRam = Convert.ToInt64(queryObj["AdapterRAM"]);
+                        gpuRam = Math.Round(gpuRam / 1048576, 0);
+                        gpuRamStr = Math.Ceiling(Math.Log10(gpuRam)) > 3
+                            ? Convert.ToString(Math.Round(gpuRam / 1024, 1)) + " " + ConstantsDLL.Properties.Resources.GB
+                            : gpuRam + " " + ConstantsDLL.Properties.Resources.MB;
+                        list.Add(gpuRamStr);
+                    }
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
             }
         }
 
@@ -277,6 +374,56 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
+        /// Fetches the computer's storage drive IDs
+        /// </summary>
+        /// <returns>String with the computer's storage drive IDs, or 'Unknown' otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetStorageIdsList()
+        {
+            string msftName = "Msft Virtual Disk";
+            List<string> list = new List<string>();
+            try
+            {
+                if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get())
+                    {
+                        if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
+                        {
+                            if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
+                            {
+                                string s = queryObj.GetPropertyValue("DeviceId").ToString();
+                                list.Add(s);
+                            }
+                        }
+                    }
+                    return list;
+                }
+                else
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            string s = queryObj.Properties["Index"].Value.ToString();
+                            list.Add(s);
+                        }
+                    }
+                    return list;
+                }
+
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.ToString() };
+            }
+        }
+
+        /// <summary> 
         /// Creates a list of the computer's storage drives types
         /// </summary>
         /// <returns>List with the computer's storage drives types, or an exception message otherwise</returns>
@@ -372,10 +519,7 @@ namespace HardwareInfoDLL
                             if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
                             {
                                 dresult = Convert.ToInt64(queryObj.GetPropertyValue("Size"));
-                                dresult = Math.Round(dresult / 1000000000, 0);
-                                dresultStr = Math.Log10(dresult) > 2.9999
-                                    ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB
-                                    : dresult + " " + ConstantsDLL.Properties.Resources.GB;
+                                dresultStr = dresult.ToString();
                                 list.Add(dresultStr);
                             }
                         }
@@ -391,11 +535,7 @@ namespace HardwareInfoDLL
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
                             dresult = Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
-                            dresult = Math.Round(dresult / 1000000000, 0);
-
-                            dresultStr = Math.Log10(dresult) > 2.9999
-                                ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB
-                                : dresult + " " + ConstantsDLL.Properties.Resources.GB;
+                            dresultStr = dresult.ToString();
                             list.Add(dresultStr);
                         }
                     }
@@ -604,9 +744,9 @@ namespace HardwareInfoDLL
                     return list;
                 }
             }
-            catch (ManagementException e)
+            catch (ManagementException)
             {
-                return new List<string>() { e.ToString() };
+                return new List<string>() { ConstantsDLL.Properties.Strings.UNKNOWN };
             }
         }
 
@@ -1049,6 +1189,16 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
+        /// Fetches the OS architecture in binary form
+        /// </summary>
+        /// <returns>String with the OS architecture. '1' for x64, '0' for x86</returns>
+        public static string GetOSArchBinary()
+        {
+            bool is64bit = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"));
+            return is64bit ? "1" : "0";
+        }
+
+        /// <summary> 
         /// Fetches the OS architecture
         /// </summary>
         /// <returns>String with the OS architecture. '64' for x64, '32' for x86</returns>
@@ -1061,7 +1211,7 @@ namespace HardwareInfoDLL
         /// <summary> 
         /// Fetches the OS architecture (alternative method)
         /// </summary>
-        /// <returns>String with the OS architecture. '64-bit' for x64, '32-bit' for x86</returns>
+        /// <returns>String with the OS architecture. 'x64' for 64-bit, 'x86' for 32-bit</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSArchAlt()
         {
@@ -1125,11 +1275,11 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
-        /// Fetches the operating system information
+        /// Fetches the operating system summary
         /// </summary>
-        /// <returns>String with the operating system information, or 'Unknown' otherwise</returns>
+        /// <returns>String with the operating system summary, or 'Unknown' otherwise</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static string GetOSString()
+        public static string GetOSSummary()
         {
             RegistryKey rk;
             if (Environment.Is64BitOperatingSystem)
@@ -1172,18 +1322,94 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
-        /// Fetches the OS build number
+        /// Fetches the operating system summary
         /// </summary>
-        /// <returns>String with the OS build number, or 'Unknown' otherwise</returns>
+        /// <returns>String with the operating system summary, or 'Unknown' otherwise</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSVersion()
+        {
+            RegistryKey rk;
+            if (Environment.Is64BitOperatingSystem)
+                rk = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
+            else
+                rk = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry32);
+            rk = rk.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+            string displayVersion = rk.GetValue("DisplayVersion", string.Empty).ToString();
+            string releaseId = rk.GetValue("releaseId", string.Empty).ToString();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_OperatingSystem");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_10))
+                    {
+                        if (Convert.ToInt32(releaseId) <= 2004)
+                            return releaseId;
+                        else
+                            return displayVersion;
+                    }
+                    else if (GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8_1) || GetWinVersion().Equals(ConstantsDLL.Properties.Resources.WINDOWS_8))
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        return queryObj["CSDVersion"].ToString();
+                    }
+                }
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
+            }
+            catch (ManagementException e)
+            {
+                return e.Message;
+            }
+        }
+
+        /// <summary> 
+        /// Fetches the operating system name
+        /// </summary>
+        /// <returns>String with the operating system name, or 'Unknown' otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static string GetOSName()
         {
             try
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_OperatingSystem");
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                    return queryObj.GetPropertyValue("Version").ToString();
+                {
+                    return (queryObj["Caption"].ToString().Trim());
+                }
+                return ConstantsDLL.Properties.Strings.UNKNOWN;
+            }
+            catch (ManagementException e)
+            {
+                return e.Message;
+            }
+        }
+
+        /// <summary> 
+        /// Fetches the OS build number
+        /// </summary>
+        /// <returns>String with the OS build number and revision, or 'Unknown' otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static string GetOSBuildAndRevision()
+        {
+            RegistryKey rk;
+            if (Environment.Is64BitOperatingSystem)
+                rk = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
+            else
+                rk = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry32);
+            rk = rk.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+            string updateBuildRevision = rk.GetValue("UBR", string.Empty).ToString();
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_OperatingSystem");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    return queryObj.GetPropertyValue("Version").ToString() + "." + updateBuildRevision;
                 return ConstantsDLL.Properties.Strings.UNKNOWN;
             }
             catch (ManagementException e)

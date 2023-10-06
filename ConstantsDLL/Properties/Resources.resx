@@ -1096,4 +1096,19 @@
   <data name="WMI_SATA" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="GET_AGENT_URL" xml:space="preserve">
+    <value>/api/getAgent/</value>
+  </data>
+  <data name="GET_ASSET_URL" xml:space="preserve">
+    <value>/api/getAsset/</value>
+  </data>
+  <data name="GET_MODEL_URL" xml:space="preserve">
+    <value>/api/getModel/</value>
+  </data>
+  <data name="SET_ASSET_URL" xml:space="preserve">
+    <value>/api/setAsset.php</value>
+  </data>
+  <data name="GET_CONFIG_URL" xml:space="preserve">
+    <value>/api/getConfig/</value>
+  </data>
 </root>
