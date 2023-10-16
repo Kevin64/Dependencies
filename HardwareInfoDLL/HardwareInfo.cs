@@ -53,7 +53,7 @@ namespace HardwareInfoDLL
         /// </summary>
         /// <returns>String with the CPU information</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static string GetProcessorInfo()
+        public static string GetProcessorSummary()
         {
             string Id = string.Empty;
             string logical = string.Empty;
@@ -67,7 +67,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    Id = queryObj.Properties["name"].Value.ToString() + " " + queryObj.Properties["CurrentClockSpeed"].Value.ToString()
+                    Id = queryObj.Properties["name"].Value.ToString() + " " + queryObj.Properties["MaxClockSpeed"].Value.ToString()
                        + " " + ConstantsDLL.Properties.Resources.FREQUENCY + " (" + queryObj.Properties["NumberOfCores"].Value.ToString() + "C/" + logical + "T)";
                     break;
                 }
@@ -79,6 +79,173 @@ namespace HardwareInfoDLL
             catch (ManagementException e)
             {
                 return e.Message;
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's processor IDs
+        /// </summary>
+        /// <returns>List with the computer's processor IDs, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetProcessorIdList()
+        {
+            string cpuId;
+            int cpuIdAdj;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    cpuId = queryObj["DeviceId"].ToString();
+                    cpuIdAdj = Convert.ToInt32(cpuId.Substring(cpuId.Length - 1));
+                    list.Add(cpuIdAdj.ToString());
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's processor names
+        /// </summary>
+        /// <returns>List with the computer's processor names, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetProcessorNameList()
+        {
+            string cpuName;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    cpuName = queryObj["Name"].ToString();
+                    list.Add(cpuName);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's processor frequencies
+        /// </summary>
+        /// <returns>List with the computer's processor frequencies, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetProcessorFrequencyList()
+        {
+            string cpuFreq;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    cpuFreq = queryObj["MaxClockSpeed"].ToString();
+                    list.Add(cpuFreq);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's processor number of cores
+        /// </summary>
+        /// <returns>List with the computer's processor number of cores, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetProcessorCoresList()
+        {
+            string cpuCores;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    cpuCores = queryObj["NumberOfCores"].ToString();
+                    list.Add(cpuCores);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's processor number of threads
+        /// </summary>
+        /// <returns>List with the computer's processor number of threads, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetProcessorThreadsList()
+        {
+            string cpuThreads;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    cpuThreads = queryObj["NumberOfLogicalProcessors"].ToString();
+                    list.Add(cpuThreads);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's processor cache
+        /// </summary>
+        /// <returns>List with the computer's processor cache, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetProcessorCacheList()
+        {
+            string cpuCache;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    if (queryObj["L3CacheSize"].ToString().Equals("0"))
+                        cpuCache = (Convert.ToInt64(queryObj["L2CacheSize"]) * 1024).ToString();
+                    else
+                        cpuCache = (Convert.ToInt64(queryObj["L3CacheSize"]) * 1024).ToString();
+                    list.Add(cpuCache);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
             }
         }
 
@@ -104,7 +271,7 @@ namespace HardwareInfoDLL
                         if (queryObj["MaxRefreshRate"] != null)
                         {
                             gpuram = Convert.ToInt64(queryObj["AdapterRAM"]);
-                            gpuram = Math.Round(gpuram / 1048576, 0);
+                            gpuram = Math.Round(gpuram / 1024 / 1024, 0);
                             gpuramStr = Math.Ceiling(Math.Log10(gpuram)) > 3
                                 ? Convert.ToString(Math.Round(gpuram / 1024, 1)) + " " + ConstantsDLL.Properties.Resources.GB
                                 : gpuram + " " + ConstantsDLL.Properties.Resources.MB;
@@ -205,10 +372,7 @@ namespace HardwareInfoDLL
                     if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
                     {
                         gpuRam = Convert.ToInt64(queryObj["AdapterRAM"]);
-                        gpuRam = Math.Round(gpuRam / 1048576, 0);
-                        gpuRamStr = Math.Ceiling(Math.Log10(gpuRam)) > 3
-                            ? Convert.ToString(Math.Round(gpuRam / 1024, 1)) + " " + ConstantsDLL.Properties.Resources.GB
-                            : gpuRam + " " + ConstantsDLL.Properties.Resources.MB;
+                        gpuRamStr = gpuRam.ToString();
                         list.Add(gpuRamStr);
                     }
                 }
@@ -300,7 +464,7 @@ namespace HardwareInfoDLL
                             if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
                             {
                                 dresult = Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
-                                dresult = Math.Round(dresult / 1000000000, 0);
+                                dresult = Math.Round(dresult / 1000 / 1000 / 1000, 0);
 
                                 dresultStr = Math.Log10(dresult) > 2.9999
                                     ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + ConstantsDLL.Properties.Resources.TB
@@ -982,11 +1146,11 @@ namespace HardwareInfoDLL
         }
 
         /// <summary> 
-        /// Fetches the amount of RAM of the system
+        /// Fetches the summary of RAM of the system
         /// </summary>
-        /// <returns>String with the amount of RAM of the system</returns>
+        /// <returns>String with the summary of RAM of the system</returns>
         ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
-        public static string GetRam()
+        public static string GetRamSummary()
         {
             long MemSize = 0;
             long mCap;
@@ -1153,6 +1317,195 @@ namespace HardwareInfoDLL
             catch (ManagementException e)
             {
                 return e.Message;
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's ram slots
+        /// </summary>
+        /// <returns>List with the computer's ram slots, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetRamSlotList()
+        {
+            string ramSlot;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    ramSlot = queryObj["DeviceLocator"].ToString();
+                    list.Add(ramSlot);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's ram amount
+        /// </summary>
+        /// <returns>List with the computer's ram amount, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetRamAmountList()
+        {
+            string ramAmount;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    ramAmount = queryObj["Capacity"].ToString();
+                    list.Add(ramAmount);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's ram types
+        /// </summary>
+        /// <returns>List with the computer's ram types, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetRamTypeList()
+        {
+            string ramType;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    ramType = queryObj["SMBIOSMemoryType"].ToString();
+                    list.Add(ramType);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's ram frequencies
+        /// </summary>
+        /// <returns>List with the computer's ram frequencies, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetRamFrequencyList()
+        {
+            string ramFrequency;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    ramFrequency = queryObj["Speed"].ToString();
+                    list.Add(ramFrequency);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's ram serial numbers
+        /// </summary>
+        /// <returns>List with the computer's ram serial numbers, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetRamSerialNumberList()
+        {
+            string ramSerialNumber;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    ramSerialNumber = queryObj["SerialNumber"].ToString();
+                    list.Add(ramSerialNumber);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's ram part numbers
+        /// </summary>
+        /// <returns>List with the computer's ram part numbers, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetRamPartNumberList()
+        {
+            string ramPartNumber;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    ramPartNumber = queryObj["PartNumber"].ToString();
+                    list.Add(ramPartNumber);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
+            }
+        }
+
+        /// <summary> 
+        /// Creates a list of the computer's ram manufacturers
+        /// </summary>
+        /// <returns>List with the computer's ram manufacturers, or an exception message otherwise</returns>
+        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
+        public static List<string> GetRamManufacturerList()
+        {
+            string ramManufacturer;
+            List<string> list = new List<string>();
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    ramManufacturer = queryObj["Manufacturer"].ToString();
+                    list.Add(ramManufacturer);
+                }
+                return list;
+            }
+            catch (ManagementException e)
+            {
+                return new List<string>() { e.Message };
             }
         }
 

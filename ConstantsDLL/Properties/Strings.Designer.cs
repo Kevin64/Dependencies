@@ -97,11 +97,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Asset added.
+        /// </summary>
+        public static string ASSET_ADDED {
+            get {
+                return ResourceManager.GetString("ASSET_ADDED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Asset disposed, registration cancelled. Revert the dispose and try again.
         /// </summary>
         public static string ASSET_DROPPED {
             get {
                 return ResourceManager.GetString("ASSET_DROPPED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Asset not added.
+        /// </summary>
+        public static string ASSET_NOT_ADDED {
+            get {
+                return ResourceManager.GetString("ASSET_NOT_ADDED", resourceCulture);
             }
         }
         
@@ -660,6 +678,15 @@ namespace ConstantsDLL.Properties {
         public static string SERVER_NOT_FOUND_ERROR {
             get {
                 return ResourceManager.GetString("SERVER_NOT_FOUND_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Success.
+        /// </summary>
+        public static string SUCCESS_WINDOWTITLE {
+            get {
+                return ResourceManager.GetString("SUCCESS_WINDOWTITLE", resourceCulture);
             }
         }
         

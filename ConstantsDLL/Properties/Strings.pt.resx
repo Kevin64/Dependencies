@@ -130,8 +130,14 @@
   <data name="ALREADY_RUNNING" xml:space="preserve">
     <value>Já existe uma instância do programa em execução!</value>
   </data>
+  <data name="ASSET_ADDED" xml:space="preserve">
+    <value>Ativo adicionado</value>
+  </data>
   <data name="ASSET_DROPPED" xml:space="preserve">
     <value>Ativo descartado, cadastro cancelado. Reverta o descarte e tente novamente</value>
+  </data>
+  <data name="ASSET_NOT_ADDED" xml:space="preserve">
+    <value>Ativo não adicionado</value>
   </data>
   <data name="ASSET_NOT_REGISTERED" xml:space="preserve">
     <value>Ativo não registrado inicialmente pelo software 'Asset Information and Registration'. Primeiramente realize o cadastro e depois tente novamente.</value>
@@ -318,6 +324,9 @@
   </data>
   <data name="SERVER_NOT_FOUND_ERROR" xml:space="preserve">
     <value>Servidor não encontrado. Selecione um servidor válido!</value>
+  </data>
+  <data name="SUCCESS_WINDOWTITLE" xml:space="preserve">
+    <value>Sucesso</value>
   </data>
   <data name="UNKNOWN" xml:space="preserve">
     <value>Desconhecido</value>

@@ -130,8 +130,14 @@
   <data name="ALREADY_RUNNING" xml:space="preserve">
     <value>There is already an instance of the program running!</value>
   </data>
+  <data name="ASSET_ADDED" xml:space="preserve">
+    <value>Asset added</value>
+  </data>
   <data name="ASSET_DROPPED" xml:space="preserve">
     <value>Asset disposed, registration cancelled. Revert the dispose and try again</value>
+  </data>
+  <data name="ASSET_NOT_ADDED" xml:space="preserve">
+    <value>Asset not added</value>
   </data>
   <data name="ASSET_NOT_REGISTERED" xml:space="preserve">
     <value>Assets not initially registered by the 'Asset Information and Registration' software. First register and then try again.</value>
@@ -318,6 +324,9 @@
   </data>
   <data name="SERVER_NOT_FOUND_ERROR" xml:space="preserve">
     <value>Server not found. Please select a valid server!</value>
+  </data>
+  <data name="SUCCESS_WINDOWTITLE" xml:space="preserve">
+    <value>Success</value>
   </data>
   <data name="UNKNOWN" xml:space="preserve">
     <value>Unknown</value>

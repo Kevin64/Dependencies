@@ -40,21 +40,33 @@ namespace JsonFileReaderDLL
     {
         public string brand { get; set; }
         public string model { get; set; }
-        public string processor { get; set; }
         public string serialNumber { get; set; }
         public string type { get; set; }
-        public ram ram { get; set; }
+        public List<processor> processor { get; set; }
+        public List<ram> ram { get; set; }
         public List<storage> storage { get; set; }
         public List<videoCard> videoCard { get; set; }
     }
 
+    public class processor
+    {
+        public string processorId { get; set; }
+        public string name { get; set; }
+        public string frequency { get; set; }
+        public string numberOfCores { get; set; }
+        public string numberOfThreads { get; set; }
+        public string cache { get; set; }
+    }
+
     public class ram
     {
+        public string slot { get; set; }
         public string amount { get; set; }
-        public string frequency { get; set; }
-        public string occupiedSlots { get; set; }
-        public string totalSlots { get; set; }
         public string type { get; set; }
+        public string frequency { get; set; }
+        public string serialNumber { get; set; }
+        public string partNumber { get; set; }
+        public string manufacturer { get; set; }
     }
 
     public class storage
