@@ -142,6 +142,9 @@
   <data name="ASSET_NOT_REGISTERED" xml:space="preserve">
     <value>Ativo não registrado inicialmente pelo software 'Asset Information and Registration'. Primeiramente realize o cadastro e depois tente novamente.</value>
   </data>
+  <data name="ASSET_UPDATED" xml:space="preserve">
+    <value>Ativo atualizado</value>
+  </data>
   <data name="CANCEL_EXECUTION" xml:space="preserve">
     <value>Apagar dados de entrega e cancelar execução no próximo boot</value>
   </data>

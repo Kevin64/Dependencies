@@ -133,6 +133,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Asset updated.
+        /// </summary>
+        public static string ASSET_UPDATED {
+            get {
+                return ResourceManager.GetString("ASSET_UPDATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Clear delivery data and cancel run on next boot.
         /// </summary>
         public static string CANCEL_EXECUTION {
