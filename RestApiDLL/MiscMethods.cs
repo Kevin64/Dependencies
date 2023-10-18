@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace JsonFileReaderDLL
+namespace RestApiDLL
 {
     /// <summary> 
     /// Class for miscelaneous methods

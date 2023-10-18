@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace JsonFileReaderDLL
+namespace RestApiDLL
 {
     /// <summary> 
     /// Template class for 'Model'

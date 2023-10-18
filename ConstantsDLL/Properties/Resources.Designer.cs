@@ -79,6 +79,51 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-username/.
+        /// </summary>
+        public static string API_AGENT_URL {
+            get {
+                return ResourceManager.GetString("API_AGENT_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-id/.
+        /// </summary>
+        public static string API_AGENTS_URL {
+            get {
+                return ResourceManager.GetString("API_AGENTS_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/asset/.
+        /// </summary>
+        public static string API_ASSET_URL {
+            get {
+                return ResourceManager.GetString("API_ASSET_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/model/.
+        /// </summary>
+        public static string API_MODEL_URL {
+            get {
+                return ResourceManager.GetString("API_MODEL_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/parameters/.
+        /// </summary>
+        public static string API_PARAMETERS_URL {
+            get {
+                return ResourceManager.GetString("API_PARAMETERS_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
         /// </summary>
         public static string ARCH32 {
@@ -160,11 +205,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
+        /// </summary>
+        public static string DDR2_APCS {
+            get {
+                return ResourceManager.GetString("DDR2_APCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DDR3.
         /// </summary>
         public static string DDR3 {
             get {
                 return ResourceManager.GetString("DDR3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string DDR3_APCS {
+            get {
+                return ResourceManager.GetString("DDR3_APCS", resourceCulture);
             }
         }
         
@@ -196,6 +259,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
+        /// </summary>
+        public static string DDR4_APCS {
+            get {
+                return ResourceManager.GetString("DDR4_APCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 26.
         /// </summary>
         public static string DDR4_SMBIOS {
@@ -210,15 +282,6 @@ namespace ConstantsDLL.Properties {
         public static string DEF_FILE {
             get {
                 return ResourceManager.GetString("DEF_FILE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalDeliveryData.
-        /// </summary>
-        public static string DELIVERY_URL {
-            get {
-                return ResourceManager.GetString("DELIVERY_URL", resourceCulture);
             }
         }
         
@@ -255,87 +318,6 @@ namespace ConstantsDLL.Properties {
         public static string FALSE {
             get {
                 return ResourceManager.GetString("FALSE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a asset.json.
-        /// </summary>
-        public static string FILE_ASSET {
-            get {
-                return ResourceManager.GetString("FILE_ASSET", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a parameters.json.
-        /// </summary>
-        public static string FILE_CONFIG {
-            get {
-                return ResourceManager.GetString("FILE_CONFIG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /etc/.
-        /// </summary>
-        public static string FILE_CONFIG_PATH {
-            get {
-                return ResourceManager.GetString("FILE_CONFIG_PATH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a users.json.
-        /// </summary>
-        public static string FILE_CREDENTIALS {
-            get {
-                return ResourceManager.GetString("FILE_CREDENTIALS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a model.json.
-        /// </summary>
-        public static string FILE_MODEL {
-            get {
-                return ResourceManager.GetString("FILE_MODEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a asset-checksum.txt.
-        /// </summary>
-        public static string FILE_SHA_ASSET {
-            get {
-                return ResourceManager.GetString("FILE_SHA_ASSET", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a config-checksum.txt.
-        /// </summary>
-        public static string FILE_SHA_CONFIG {
-            get {
-                return ResourceManager.GetString("FILE_SHA_CONFIG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a users-checksum.txt.
-        /// </summary>
-        public static string FILE_SHA_CREDENTIALS {
-            get {
-                return ResourceManager.GetString("FILE_SHA_CREDENTIALS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a model-checksum.txt.
-        /// </summary>
-        public static string FILE_SHA_MODEL {
-            get {
-                return ResourceManager.GetString("FILE_SHA_MODEL", resourceCulture);
             }
         }
         
@@ -394,15 +376,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalFormattingData.
-        /// </summary>
-        public static string FORMAT_URL {
-            get {
-                return ResourceManager.GetString("FORMAT_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a MHz.
         /// </summary>
         public static string FREQUENCY {
@@ -435,42 +408,6 @@ namespace ConstantsDLL.Properties {
         public static string GB {
             get {
                 return ResourceManager.GetString("GB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/getAgent/.
-        /// </summary>
-        public static string GET_AGENT_URL {
-            get {
-                return ResourceManager.GetString("GET_AGENT_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/getAsset/.
-        /// </summary>
-        public static string GET_ASSET_URL {
-            get {
-                return ResourceManager.GetString("GET_ASSET_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/getConfig/.
-        /// </summary>
-        public static string GET_CONFIG_URL {
-            get {
-                return ResourceManager.GetString("GET_CONFIG_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/getModel/.
-        /// </summary>
-        public static string GET_MODEL_URL {
-            get {
-                return ResourceManager.GetString("GET_MODEL_URL", resourceCulture);
             }
         }
         
@@ -1710,9 +1647,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a AssetInformationAndRegistration.
         /// </summary>
-        public static string LOG_FILENAME_CP {
+        public static string LOG_FILENAME_AIR {
             get {
-                return ResourceManager.GetString("LOG_FILENAME_CP", resourceCulture);
+                return ResourceManager.GetString("LOG_FILENAME_AIR", resourceCulture);
             }
         }
         
@@ -1803,15 +1740,6 @@ namespace ConstantsDLL.Properties {
         public static string MAIN_BANNER_LIGHT_PATH {
             get {
                 return ResourceManager.GetString("MAIN_BANNER_LIGHT_PATH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a getExternalMaintenanceData.
-        /// </summary>
-        public static string MAINTENANCE_URL {
-            get {
-                return ResourceManager.GetString("MAINTENANCE_URL", resourceCulture);
             }
         }
         
@@ -1911,321 +1839,6 @@ namespace ConstantsDLL.Properties {
         public static string PCIE {
             get {
                 return ResourceManager.GetString("PCIE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;adRegistered=.
-        /// </summary>
-        public static string PHP_AD_REGISTERED {
-            get {
-                return ResourceManager.GetString("PHP_AD_REGISTERED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;agentId=.
-        /// </summary>
-        public static string PHP_AGENT {
-            get {
-                return ResourceManager.GetString("PHP_AGENT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a ?assetNumber=.
-        /// </summary>
-        public static string PHP_ASSET_NUMBER {
-            get {
-                return ResourceManager.GetString("PHP_ASSET_NUMBER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;batteryChange=.
-        /// </summary>
-        public static string PHP_BATTERY_CHANGE {
-            get {
-                return ResourceManager.GetString("PHP_BATTERY_CHANGE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;brand=.
-        /// </summary>
-        public static string PHP_BRAND {
-            get {
-                return ResourceManager.GetString("PHP_BRAND", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;building=.
-        /// </summary>
-        public static string PHP_BUILDING {
-            get {
-                return ResourceManager.GetString("PHP_BUILDING", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;deliveredToRegistrationNumber=.
-        /// </summary>
-        public static string PHP_DELIVERED_TO_REGISTRATION_NUMBER {
-            get {
-                return ResourceManager.GetString("PHP_DELIVERED_TO_REGISTRATION_NUMBER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;fwType=.
-        /// </summary>
-        public static string PHP_FW_TYPE {
-            get {
-                return ResourceManager.GetString("PHP_FW_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;fwVersion=.
-        /// </summary>
-        public static string PHP_FW_VERSION {
-            get {
-                return ResourceManager.GetString("PHP_FW_VERSION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;hostname=.
-        /// </summary>
-        public static string PHP_HOSTNAME {
-            get {
-                return ResourceManager.GetString("PHP_HOSTNAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;hwType=.
-        /// </summary>
-        public static string PHP_HW_TYPE {
-            get {
-                return ResourceManager.GetString("PHP_HW_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;inUse=.
-        /// </summary>
-        public static string PHP_IN_USE {
-            get {
-                return ResourceManager.GetString("PHP_IN_USE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ipAddress=.
-        /// </summary>
-        public static string PHP_IP_ADDRESS {
-            get {
-                return ResourceManager.GetString("PHP_IP_ADDRESS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;lastDeliveryDate=.
-        /// </summary>
-        public static string PHP_LAST_DELIVERY_DATE {
-            get {
-                return ResourceManager.GetString("PHP_LAST_DELIVERY_DATE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;lastDeliveryMadeBy=.
-        /// </summary>
-        public static string PHP_LAST_DELIVERY_MADE_BY {
-            get {
-                return ResourceManager.GetString("PHP_LAST_DELIVERY_MADE_BY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;macAddress=.
-        /// </summary>
-        public static string PHP_MAC_ADDRESS {
-            get {
-                return ResourceManager.GetString("PHP_MAC_ADDRESS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;mediaOperationMode=.
-        /// </summary>
-        public static string PHP_MEDIA_OPERATION_MODE {
-            get {
-                return ResourceManager.GetString("PHP_MEDIA_OPERATION_MODE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;model=.
-        /// </summary>
-        public static string PHP_MODEL {
-            get {
-                return ResourceManager.GetString("PHP_MODEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;operatingSystem=.
-        /// </summary>
-        public static string PHP_OPERATING_SYSTEM {
-            get {
-                return ResourceManager.GetString("PHP_OPERATING_SYSTEM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;previousServiceDates=.
-        /// </summary>
-        public static string PHP_PREVIOUS_SERVICE_DATES {
-            get {
-                return ResourceManager.GetString("PHP_PREVIOUS_SERVICE_DATES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;processor=.
-        /// </summary>
-        public static string PHP_PROCESSOR {
-            get {
-                return ResourceManager.GetString("PHP_PROCESSOR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ram=.
-        /// </summary>
-        public static string PHP_RAM {
-            get {
-                return ResourceManager.GetString("PHP_RAM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;roomNumber=.
-        /// </summary>
-        public static string PHP_ROOM {
-            get {
-                return ResourceManager.GetString("PHP_ROOM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;sealNumber=.
-        /// </summary>
-        public static string PHP_SEAL_NUMBER {
-            get {
-                return ResourceManager.GetString("PHP_SEAL_NUMBER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;secureBoot=.
-        /// </summary>
-        public static string PHP_SECURE_BOOT {
-            get {
-                return ResourceManager.GetString("PHP_SECURE_BOOT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;serialNumber=.
-        /// </summary>
-        public static string PHP_SERIAL_NUMBER {
-            get {
-                return ResourceManager.GetString("PHP_SERIAL_NUMBER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;serviceDate=.
-        /// </summary>
-        public static string PHP_SERVICE_DATE {
-            get {
-                return ResourceManager.GetString("PHP_SERVICE_DATE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;standard=.
-        /// </summary>
-        public static string PHP_STANDARD {
-            get {
-                return ResourceManager.GetString("PHP_STANDARD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;storageSize=.
-        /// </summary>
-        public static string PHP_STORAGE_SIZE {
-            get {
-                return ResourceManager.GetString("PHP_STORAGE_SIZE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;storageType=.
-        /// </summary>
-        public static string PHP_STORAGE_TYPE {
-            get {
-                return ResourceManager.GetString("PHP_STORAGE_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;tag=.
-        /// </summary>
-        public static string PHP_TAG {
-            get {
-                return ResourceManager.GetString("PHP_TAG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;ticketNumber=.
-        /// </summary>
-        public static string PHP_TICKET_NUMBER {
-            get {
-                return ResourceManager.GetString("PHP_TICKET_NUMBER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;tpmVersion=.
-        /// </summary>
-        public static string PHP_TPM_VERSION {
-            get {
-                return ResourceManager.GetString("PHP_TPM_VERSION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;videoCard=.
-        /// </summary>
-        public static string PHP_VIDEO_CARD {
-            get {
-                return ResourceManager.GetString("PHP_VIDEO_CARD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;virtualizationTechnology=.
-        /// </summary>
-        public static string PHP_VIRTUALIZATION_TECHNOLOGY {
-            get {
-                return ResourceManager.GetString("PHP_VIRTUALIZATION_TECHNOLOGY", resourceCulture);
             }
         }
         
@@ -2608,15 +2221,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/setAsset.php.
-        /// </summary>
-        public static string SET_ASSET_URL {
-            get {
-                return ResourceManager.GetString("SET_ASSET_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a shutdown.
         /// </summary>
         public static string SHUTDOWN_CMD_1 {
@@ -2644,38 +2248,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a generateAssetData.php.
-        /// </summary>
-        public static string SUPPLY_ASSET_DATA {
-            get {
-                return ResourceManager.GetString("SUPPLY_ASSET_DATA", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a /etc/config.json.
         /// </summary>
         public static string SUPPLY_CONFIG_DATA {
             get {
                 return ResourceManager.GetString("SUPPLY_CONFIG_DATA", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a generateAgentData.php.
-        /// </summary>
-        public static string SUPPLY_CREDENTIALS_DATA {
-            get {
-                return ResourceManager.GetString("SUPPLY_CREDENTIALS_DATA", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a generateModelData.php.
-        /// </summary>
-        public static string SUPPLY_MODEL_DATA {
-            get {
-                return ResourceManager.GetString("SUPPLY_MODEL_DATA", resourceCulture);
             }
         }
         
@@ -2779,60 +2356,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a webview2installer.exe.
-        /// </summary>
-        public static string WEBVIEW2_FILE {
-            get {
-                return ResourceManager.GetString("WEBVIEW2_FILE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}.
-        /// </summary>
-        public static string WEBVIEW2_REG_PATH_X64 {
-            get {
-                return ResourceManager.GetString("WEBVIEW2_REG_PATH_X64", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a SOFTWARE\\Microsoft\\EdgeUpdate\\Clients\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}.
-        /// </summary>
-        public static string WEBVIEW2_REG_PATH_X86 {
-            get {
-                return ResourceManager.GetString("WEBVIEW2_REG_PATH_X86", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\.
-        /// </summary>
-        public static string WEBVIEW2_SYSTEM_PATH_X64 {
-            get {
-                return ResourceManager.GetString("WEBVIEW2_SYSTEM_PATH_X64", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a C:\\Program Files\\Microsoft\\EdgeWebView\\Application\\.
-        /// </summary>
-        public static string WEBVIEW2_SYSTEM_PATH_X86 {
-            get {
-                return ResourceManager.GetString("WEBVIEW2_SYSTEM_PATH_X86", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a https://go.microsoft.com/fwlink/p/?LinkId=2124703.
-        /// </summary>
-        public static string WEBVIEW2_URL {
-            get {
-                return ResourceManager.GetString("WEBVIEW2_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1366.
         /// </summary>
         public static string WIDTH {
@@ -2887,7 +2410,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 22000.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 22621.
         /// </summary>
         public static string WIN_11_NT_BUILD {
             get {

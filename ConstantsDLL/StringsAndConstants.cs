@@ -17,17 +17,6 @@ namespace ConstantsDLL
     /// </summary>
     public static class StringsAndConstants
     {
-        //////////////////////
-        // Common code - START
-        public static readonly string MODEL_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_MODEL;
-        public static readonly string CONFIG_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_CONFIG;
-        public static readonly string CREDENTIALS_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_CREDENTIALS;
-        public static readonly string ASSET_FILE_PATH = System.IO.Path.GetTempPath() + Resources.FILE_ASSET;
-        public static readonly string WEBVIEW2_FILE_PATH = System.IO.Path.GetTempPath() + Resources.WEBVIEW2_FILE;
-        // Common code - END
-        ////////////////////
-
-
         /////////////////////////////////////////////////////////////////////////
         // Code exclusive for AssetInformationAndRegistration application - START
         public const string CLI_SERVER_IP_SWITCH = "serverIP";
