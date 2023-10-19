@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -29,6 +31,9 @@ namespace RestApiDLL
     /// </summary>
     public static class ParameterHandler
     {
+        private static string jsonFile;
+        private static StreamReader fileC;
+
         public static async Task<ServerParam> GetParameterAsync(HttpClient client, string path)
         {
             ServerParam sp = null;
@@ -39,23 +44,17 @@ namespace RestApiDLL
         }
 
         /// <summary> 
-        /// 
-        ///Reads a json file retrieved from the application folder and parses standard building list, hardware types, firmware types, TPM types, Media operation types, secure boot states and virtualization technology states, returning them (single threaded)
-        ///
+        /// Reads a json file retrieved from the application folder and parses standard building list, hardware types, firmware types, TPM types, Media operation types, secure boot states and virtualization technology states, returning them (single threaded)
         /// </summary>
         /// <returns>An array with all data fetched.</returns>
-        //public static List<string[]> GetOfflineModeConfigFile()
-        //{
-        //    List<string[]> arr;
-        //    fileC = new StreamReader(ConstantsDLL.Properties.Resources.OFFLINE_MODE_CONFIG);
+        public static ServerParam GetOfflineModeConfigFile()
+        {
+            fileC = new StreamReader(ConstantsDLL.Properties.Resources.OFFLINE_MODE_CONFIG);
+            jsonFile = fileC.ReadToEnd();
+            ServerParam jsonParse = JsonConvert.DeserializeObject<ServerParam>(@jsonFile);
 
-        //    jsonFile = fileC.ReadToEnd();
-        //    ConfigFile jsonParse = JsonConvert.DeserializeObject<ConfigFile>(@jsonFile);
-
-        //    arr = new List<string[]>() { jsonParse.Parameters.Buildings, jsonParse.Parameters.HardwareTypes, jsonParse.Parameters.FirmwareTypes, jsonParse.Parameters.TpmTypes, jsonParse.Parameters.MediaOperationTypes, jsonParse.Parameters.SecureBootStates, jsonParse.Parameters.VirtualizationTechnologyStates };
-
-        //    fileC.Close();
-        //    return arr;
-        //}
+            fileC.Close();
+            return jsonParse;
+        }
     }
 }

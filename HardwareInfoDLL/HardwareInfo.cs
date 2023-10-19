@@ -1172,12 +1172,12 @@ namespace HardwareInfoDLL
                             if (queryObj["SMBIOSMemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.DDR4_SMBIOS))
                             {
                                 mType = ConstantsDLL.Properties.Resources.DDR4;
-                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
+                                mSpeed = " " + queryObj["Speed"].ToString() + " " + ConstantsDLL.Properties.Resources.MHZ;
                             }
                             else if (queryObj["SMBIOSMemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.DDR3_SMBIOS))
                             {
                                 mType = ConstantsDLL.Properties.Resources.DDR3;
-                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
+                                mSpeed = " " + queryObj["Speed"].ToString() + " " + ConstantsDLL.Properties.Resources.MHZ;
                             }
                             else if (queryObj["SMBIOSMemoryType"].ToString().Equals("3"))
                             {
@@ -1189,7 +1189,7 @@ namespace HardwareInfoDLL
                                 mType = ConstantsDLL.Properties.Resources.DDR2;
                                 try
                                 {
-                                    mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
+                                    mSpeed = " " + queryObj["Speed"].ToString() + " " + ConstantsDLL.Properties.Resources.MHZ;
                                 }
                                 catch
                                 {
@@ -1202,7 +1202,7 @@ namespace HardwareInfoDLL
                             if (queryObj["MemoryType"].ToString().Equals(ConstantsDLL.Properties.Resources.DDR3_MEMORY_TYPE))
                             {
                                 mType = ConstantsDLL.Properties.Resources.DDR3;
-                                mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
+                                mSpeed = " " + queryObj["Speed"].ToString() + " " + ConstantsDLL.Properties.Resources.MHZ;
                             }
                             else if (queryObj["MemoryType"].ToString().Equals("2") || queryObj["MemoryType"].ToString().Equals("0"))
                             {
@@ -1214,7 +1214,7 @@ namespace HardwareInfoDLL
                                 mType = ConstantsDLL.Properties.Resources.DDR2;
                                 try
                                 {
-                                    mSpeed = " " + queryObj["Speed"].ToString() + ConstantsDLL.Properties.Resources.FREQUENCY;
+                                    mSpeed = " " + queryObj["Speed"].ToString() + " " + ConstantsDLL.Properties.Resources.MHZ;
                                 }
                                 catch
                                 {

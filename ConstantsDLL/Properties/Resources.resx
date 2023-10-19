@@ -952,4 +952,13 @@
   <data name="DDR4_APCS" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="GHz" xml:space="preserve">
+    <value>GHz</value>
+  </data>
+  <data name="MHZ" xml:space="preserve">
+    <value>MHz</value>
+  </data>
+  <data name="DATE_DISPLAY" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
 </root>

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace RestApiDLL
@@ -136,7 +138,8 @@ namespace RestApiDLL
 
         public static async Task<Uri> SetAssetAsync(HttpClient client, string path, Asset a)
         {
-            HttpResponseMessage response = await client.PostAsJsonAsync(path, a);
+            var content = new StringContent(JsonConvert.SerializeObject(a), Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(path, content);
             _ = response.EnsureSuccessStatusCode();
             return response.Headers.Location;
         }

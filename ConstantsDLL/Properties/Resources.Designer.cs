@@ -187,6 +187,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a dd/MM/yyyy.
+        /// </summary>
+        public static string DATE_DISPLAY {
+            get {
+                return ResourceManager.GetString("DATE_DISPLAY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a yyyy-MM-dd.
         /// </summary>
         public static string DATE_FORMAT {
@@ -408,6 +417,15 @@ namespace ConstantsDLL.Properties {
         public static string GB {
             get {
                 return ResourceManager.GetString("GB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a GHz.
+        /// </summary>
+        public static string GHz {
+            get {
+                return ResourceManager.GetString("GHz", resourceCulture);
             }
         }
         
@@ -1785,6 +1803,15 @@ namespace ConstantsDLL.Properties {
         public static string MEDIA_OPERATION_NVME {
             get {
                 return ResourceManager.GetString("MEDIA_OPERATION_NVME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a MHz.
+        /// </summary>
+        public static string MHZ {
+            get {
+                return ResourceManager.GetString("MHZ", resourceCulture);
             }
         }
         

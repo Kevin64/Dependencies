@@ -136,11 +136,11 @@
   <data name="ASSET_DROPPED" xml:space="preserve">
     <value>Asset disposed, registration cancelled. Revert the dispose and try again</value>
   </data>
-  <data name="ASSET_NOT_ADDED" xml:space="preserve">
-    <value>Asset not added</value>
-  </data>
   <data name="ASSET_NOT_REGISTERED" xml:space="preserve">
     <value>Assets not initially registered by the 'Asset Information and Registration' software. First register and then try again.</value>
+  </data>
+  <data name="ASSET_NOT_UPDATED" xml:space="preserve">
+    <value>Asset not updated</value>
   </data>
   <data name="ASSET_UPDATED" xml:space="preserve">
     <value>Asset updated</value>
