@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace RestApiDLL
@@ -21,9 +22,23 @@ namespace RestApiDLL
     /// </summary>
     public static class ModelHandler
     {
-        public static bool CheckHost(HttpClient client, string path)
+        public static async Task<bool> CheckHost(HttpClient client, string path)
         {
-            return true;
+            HttpResponseMessage result;
+            try
+            {
+                HttpRequestMessage response = new HttpRequestMessage
+                {
+                    RequestUri = new Uri(path),
+                    Method = HttpMethod.Head
+                };
+                result = await client.SendAsync(response);
+            }
+            catch(HttpRequestException)
+            {
+                return false;
+            }
+            return result.IsSuccessStatusCode;
         }
 
         public static async Task<Model> GetModelAsync(HttpClient client, string path)

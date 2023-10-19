@@ -136,6 +136,9 @@
   <data name="ASSET_DROPPED" xml:space="preserve">
     <value>Ativo descartado, cadastro cancelado. Reverta o descarte e tente novamente</value>
   </data>
+  <data name="ASSET_NOT_ADDED" xml:space="preserve">
+    <value>Ativo não adicionado</value>
+  </data>
   <data name="ASSET_NOT_REGISTERED" xml:space="preserve">
     <value>Ativo não registrado inicialmente pelo software 'Asset Information and Registration'. Primeiramente realize o cadastro e depois tente novamente.</value>
   </data>

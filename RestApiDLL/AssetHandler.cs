@@ -129,18 +129,34 @@ namespace RestApiDLL
     {
         public static async Task<Asset> GetAssetAsync(HttpClient client, string path)
         {
-            Asset a = null;
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
-                a = await response.Content.ReadAsAsync<Asset>();
+            Asset a;
+            try
+            {
+                a = null;
+                HttpResponseMessage response = await client.GetAsync(path);
+                if (response.IsSuccessStatusCode)
+                    a = await response.Content.ReadAsAsync<Asset>();
+            }
+            catch(HttpRequestException)
+            {
+                return null;
+            }
             return a;
         }
 
         public static async Task<Uri> SetAssetAsync(HttpClient client, string path, Asset a)
         {
-            var content = new StringContent(JsonConvert.SerializeObject(a), Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync(path, content);
-            _ = response.EnsureSuccessStatusCode();
+            HttpResponseMessage response;
+            try
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(a), Encoding.UTF8, "application/json");
+                response = await client.PostAsync(path, content);
+                _ = response.EnsureSuccessStatusCode();
+            }
+            catch(HttpRequestException)
+            {
+                return null;
+            }
             return response.Headers.Location;
         }
     }

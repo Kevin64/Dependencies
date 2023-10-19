@@ -115,6 +115,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Asset not added.
+        /// </summary>
+        public static string ASSET_NOT_ADDED {
+            get {
+                return ResourceManager.GetString("ASSET_NOT_ADDED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Assets not initially registered by the &apos;Asset Information and Registration&apos; software. First register and then try again..
         /// </summary>
         public static string ASSET_NOT_REGISTERED {
