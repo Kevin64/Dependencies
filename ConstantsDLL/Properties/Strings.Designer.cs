@@ -214,6 +214,24 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Fill in the server data.
+        /// </summary>
+        public static string FILL_IN_SERVER_DETAILS {
+            get {
+                return ResourceManager.GetString("FILL_IN_SERVER_DETAILS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Fill in your credentials..
+        /// </summary>
+        public static string FILL_IN_YOUR_CREDENTIALS {
+            get {
+                return ResourceManager.GetString("FILL_IN_YOUR_CREDENTIALS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Finishing up.
         /// </summary>
         public static string FINALE_SCREEN {
@@ -246,6 +264,15 @@ namespace ConstantsDLL.Properties {
         public static string INTRO_SCREEN {
             get {
                 return ResourceManager.GetString("INTRO_SCREEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid credentials. Try again..
+        /// </summary>
+        public static string INVALID_CREDENTIALS {
+            get {
+                return ResourceManager.GetString("INVALID_CREDENTIALS", resourceCulture);
             }
         }
         
@@ -349,222 +376,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Found dependency files.
-        /// </summary>
-        public static string LOG_APPFILE_FOUND {
-            get {
-                return ResourceManager.GetString("LOG_APPFILE_FOUND", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a One or more missing dependency files.
-        /// </summary>
-        public static string LOG_APPFILE_NOT_FOUND {
-            get {
-                return ResourceManager.GetString("LOG_APPFILE_NOT_FOUND", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Checking for updates.
-        /// </summary>
-        public static string LOG_CHECKING_FOR_UPDATES {
-            get {
-                return ResourceManager.GetString("LOG_CHECKING_FOR_UPDATES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Closing About window.
-        /// </summary>
-        public static string LOG_CLOSING_ABOUTBOX {
-            get {
-                return ResourceManager.GetString("LOG_CLOSING_ABOUTBOX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Closing updater window.
-        /// </summary>
-        public static string LOG_CLOSING_UPDATER_FORM {
-            get {
-                return ResourceManager.GetString("LOG_CLOSING_UPDATER_FORM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Connecting to GitHub.
-        /// </summary>
-        public static string LOG_CONNECTING_GITHUB {
-            get {
-                return ResourceManager.GetString("LOG_CONNECTING_GITHUB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Running in DEBUG mode.
-        /// </summary>
-        public static string LOG_DEBUG_MODE {
-            get {
-                return ResourceManager.GetString("LOG_DEBUG_MODE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Definitions file found.
-        /// </summary>
-        public static string LOG_DEFFILE_FOUND {
-            get {
-                return ResourceManager.GetString("LOG_DEFFILE_FOUND", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Definitions file not found.
-        /// </summary>
-        public static string LOG_DEFFILE_NOT_FOUND {
-            get {
-                return ResourceManager.GetString("LOG_DEFFILE_NOT_FOUND", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;ERROR&gt;.
-        /// </summary>
-        public static string LOG_ERROR_ATTR {
-            get {
-                return ResourceManager.GetString("LOG_ERROR_ATTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a GitHub unreachable.
-        /// </summary>
-        public static string LOG_GITHUB_UNREACHABLE {
-            get {
-                return ResourceManager.GetString("LOG_GITHUB_UNREACHABLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a ------------------------ EXECUTION LOG ------------------------.
-        /// </summary>
-        public static string LOG_HEADER {
-            get {
-                return ResourceManager.GetString("LOG_HEADER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;INFORMATION&gt;.
-        /// </summary>
-        public static string LOG_INFO_ATTR {
-            get {
-                return ResourceManager.GetString("LOG_INFO_ATTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Start of execution.
-        /// </summary>
-        public static string LOG_INIT {
-            get {
-                return ResourceManager.GetString("LOG_INIT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Authenticating user.
-        /// </summary>
-        public static string LOG_INIT_LOGIN {
-            get {
-                return ResourceManager.GetString("LOG_INIT_LOGIN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Authentication failed.
-        /// </summary>
-        public static string LOG_LOGIN_FAILED {
-            get {
-                return ResourceManager.GetString("LOG_LOGIN_FAILED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Authentication performed successfully.
-        /// </summary>
-        public static string LOG_LOGIN_SUCCESS {
-            get {
-                return ResourceManager.GetString("LOG_LOGIN_SUCCESS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;MISCELLANEOUS&gt;.
-        /// </summary>
-        public static string LOG_MISC_ATTR {
-            get {
-                return ResourceManager.GetString("LOG_MISC_ATTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a No internet connection available.
-        /// </summary>
-        public static string LOG_NO_INTERNET_AVAILABLE {
-            get {
-                return ResourceManager.GetString("LOG_NO_INTERNET_AVAILABLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Opening About window.
-        /// </summary>
-        public static string LOG_OPENING_ABOUTBOX {
-            get {
-                return ResourceManager.GetString("LOG_OPENING_ABOUTBOX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Accessing release on GitHub.
-        /// </summary>
-        public static string LOG_OPENING_GITHUB {
-            get {
-                return ResourceManager.GetString("LOG_OPENING_GITHUB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Running in RELEASE mode.
-        /// </summary>
-        public static string LOG_RELEASE_MODE {
-            get {
-                return ResourceManager.GetString("LOG_RELEASE_MODE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Unable to check for updates.
-        /// </summary>
-        public static string LOG_UPDATE_CHECK_IMPOSSIBLE {
-            get {
-                return ResourceManager.GetString("LOG_UPDATE_CHECK_IMPOSSIBLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;WARNING&gt;.
-        /// </summary>
-        public static string LOG_WARNING_ATTR {
-            get {
-                return ResourceManager.GetString("LOG_WARNING_ATTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Found log file, adding information.
         /// </summary>
         public static string LOGFILE_EXISTS {
@@ -597,15 +408,6 @@ namespace ConstantsDLL.Properties {
         public static string NEXT_TEXT {
             get {
                 return ResourceManager.GetString("NEXT_TEXT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Fill in your credentials..
-        /// </summary>
-        public static string NO_AUTH {
-            get {
-                return ResourceManager.GetString("NO_AUTH", resourceCulture);
             }
         }
         
@@ -664,7 +466,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a One or more INI file parameters are malformed.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a One or more JSON file parameters are malformed.
         /// </summary>
         public static string PARAMETER_ERROR {
             get {

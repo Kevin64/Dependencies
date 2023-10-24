@@ -169,6 +169,12 @@
   <data name="FILL_FORM" xml:space="preserve">
     <value>Fill in the required fields!</value>
   </data>
+  <data name="FILL_IN_SERVER_DETAILS" xml:space="preserve">
+    <value>Fill in the server data</value>
+  </data>
+  <data name="FILL_IN_YOUR_CREDENTIALS" xml:space="preserve">
+    <value>Fill in your credentials.</value>
+  </data>
   <data name="FINALE_SCREEN" xml:space="preserve">
     <value>Finishing up</value>
   </data>
@@ -180,6 +186,9 @@
   </data>
   <data name="INTRO_SCREEN" xml:space="preserve">
     <value>Intro</value>
+  </data>
+  <data name="INVALID_CREDENTIALS" xml:space="preserve">
+    <value>Invalid credentials. Try again.</value>
   </data>
   <data name="KEY_FINISH" xml:space="preserve">
     <value>Press Enter to close...</value>
@@ -220,78 +229,6 @@
   <data name="LOGFILE_NOTEXISTS" xml:space="preserve">
     <value>Nonexistent log file, creating new file</value>
   </data>
-  <data name="LOG_APPFILE_FOUND" xml:space="preserve">
-    <value>Found dependency files</value>
-  </data>
-  <data name="LOG_APPFILE_NOT_FOUND" xml:space="preserve">
-    <value>One or more missing dependency files</value>
-  </data>
-  <data name="LOG_CHECKING_FOR_UPDATES" xml:space="preserve">
-    <value>Checking for updates</value>
-  </data>
-  <data name="LOG_CLOSING_ABOUTBOX" xml:space="preserve">
-    <value>Closing About window</value>
-  </data>
-  <data name="LOG_CLOSING_UPDATER_FORM" xml:space="preserve">
-    <value>Closing updater window</value>
-  </data>
-  <data name="LOG_CONNECTING_GITHUB" xml:space="preserve">
-    <value>Connecting to GitHub</value>
-  </data>
-  <data name="LOG_DEBUG_MODE" xml:space="preserve">
-    <value>Running in DEBUG mode</value>
-  </data>
-  <data name="LOG_DEFFILE_FOUND" xml:space="preserve">
-    <value>Definitions file found</value>
-  </data>
-  <data name="LOG_DEFFILE_NOT_FOUND" xml:space="preserve">
-    <value>Definitions file not found</value>
-  </data>
-  <data name="LOG_ERROR_ATTR" xml:space="preserve">
-    <value>&lt;ERROR&gt;</value>
-  </data>
-  <data name="LOG_GITHUB_UNREACHABLE" xml:space="preserve">
-    <value>GitHub unreachable</value>
-  </data>
-  <data name="LOG_HEADER" xml:space="preserve">
-    <value>------------------------ EXECUTION LOG ------------------------</value>
-  </data>
-  <data name="LOG_INFO_ATTR" xml:space="preserve">
-    <value>&lt;INFORMATION&gt;</value>
-  </data>
-  <data name="LOG_INIT" xml:space="preserve">
-    <value>Start of execution</value>
-  </data>
-  <data name="LOG_INIT_LOGIN" xml:space="preserve">
-    <value>Authenticating user</value>
-  </data>
-  <data name="LOG_LOGIN_FAILED" xml:space="preserve">
-    <value>Authentication failed</value>
-  </data>
-  <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
-    <value>Authentication performed successfully</value>
-  </data>
-  <data name="LOG_MISC_ATTR" xml:space="preserve">
-    <value>&lt;MISCELLANEOUS&gt;</value>
-  </data>
-  <data name="LOG_NO_INTERNET_AVAILABLE" xml:space="preserve">
-    <value>No internet connection available</value>
-  </data>
-  <data name="LOG_OPENING_ABOUTBOX" xml:space="preserve">
-    <value>Opening About window</value>
-  </data>
-  <data name="LOG_OPENING_GITHUB" xml:space="preserve">
-    <value>Accessing release on GitHub</value>
-  </data>
-  <data name="LOG_RELEASE_MODE" xml:space="preserve">
-    <value>Running in RELEASE mode</value>
-  </data>
-  <data name="LOG_UPDATE_CHECK_IMPOSSIBLE" xml:space="preserve">
-    <value>Unable to check for updates</value>
-  </data>
-  <data name="LOG_WARNING_ATTR" xml:space="preserve">
-    <value>&lt;WARNING&gt;</value>
-  </data>
   <data name="NEW_VERSION_AVAILABLE" xml:space="preserve">
     <value>New version available!</value>
   </data>
@@ -307,9 +244,6 @@
   <data name="NOT_SUPPORTED" xml:space="preserve">
     <value>Not supported</value>
   </data>
-  <data name="NO_AUTH" xml:space="preserve">
-    <value>Fill in your credentials.</value>
-  </data>
   <data name="NO_NEW_VERSION_AVAILABLE" xml:space="preserve">
     <value>Your software is up-to-date</value>
   </data>
@@ -320,7 +254,7 @@
     <value>of</value>
   </data>
   <data name="PARAMETER_ERROR" xml:space="preserve">
-    <value>One or more INI file parameters are malformed</value>
+    <value>One or more JSON file parameters are malformed</value>
   </data>
   <data name="PENDENCIES" xml:space="preserve">
     <value>pending item(s)</value>

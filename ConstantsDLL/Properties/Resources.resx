@@ -160,8 +160,8 @@
   <data name="DDR4_SMBIOS" xml:space="preserve">
     <value>26</value>
   </data>
-  <data name="DEF_FILE" xml:space="preserve">
-    <value>definitions.ini</value>
+  <data name="CONFIG_FILE" xml:space="preserve">
+    <value>config.json</value>
   </data>
   <data name="DID_IT_RUN_ALREADY" xml:space="preserve">
     <value>DidItRunAlready</value>
@@ -643,8 +643,8 @@
   <data name="NON_SECBOOT_GPU_2" xml:space="preserve">
     <value>430</value>
   </data>
-  <data name="OFFLINE_MODE_CONFIG" xml:space="preserve">
-    <value>offlineModeConfig.json</value>
+  <data name="OFFLINE_MODE_PARAMETER_FILE" xml:space="preserve">
+    <value>offlineModeParameters.json</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
@@ -872,10 +872,10 @@
     <value>Yes</value>
   </data>
   <data name="FALSE" xml:space="preserve">
-    <value>false</value>
+    <value>False</value>
   </data>
   <data name="TRUE" xml:space="preserve">
-    <value>true</value>
+    <value>True</value>
   </data>
   <data name="X64" xml:space="preserve">
     <value>x64</value>
@@ -960,5 +960,8 @@
   </data>
   <data name="DATE_DISPLAY" xml:space="preserve">
     <value>dd/MM/yyyy</value>
+  </data>
+  <data name="HTTP_CONTENT_TYPE_JSON" xml:space="preserve">
+    <value>application/json</value>
   </data>
 </root>

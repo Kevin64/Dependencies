@@ -1,4 +1,6 @@
-﻿using System.Net.Http;
+﻿using ConstantsDLL.Properties;
+using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace RestApiDLL
@@ -23,32 +25,43 @@ namespace RestApiDLL
         public string lastLoginDate { get; set; }
     }
 
+    [Serializable]
+    public class InvalidAgentException : Exception
+    {
+        public InvalidAgentException() : base(Strings.INVALID_CREDENTIALS) { }
+    }
+
     /// <summary> 
     /// Class for handling authentication through a REST API
     /// </summary>
     public static class AuthenticationHandler
     {
+        /// <summary>
+        /// Gets Agent data via REST
+        /// </summary>
+        /// <param name="client">HTTP Client</param>
+        /// <param name="path">Uri path</param>
+        /// <returns>An Agent object, or null if not inexistent</returns>
+        /// <exception cref="HttpRequestException"></exception>
+        /// <exception cref="InvalidAgentException"></exception>
         public static async Task<Agent> GetAgentAsync(HttpClient client, string path)
         {
-            Agent a = null;
             try
             {
+                Agent a = null;
                 HttpResponseMessage response = await client.GetAsync(path);
                 if (response.IsSuccessStatusCode)
                     a = await response.Content.ReadAsAsync<Agent>();
                 if (a == null)
                 {
-                    a = new Agent
-                    {
-                        username = string.Empty
-                    };
+                    throw new InvalidAgentException();
                 }
+                return a;
             }
             catch (HttpRequestException)
             {
-                a = null;
+                throw new HttpRequestException();
             }
-            return a;
         }
     }
 }

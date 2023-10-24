@@ -160,6 +160,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a config.json.
+        /// </summary>
+        public static string CONFIG_FILE {
+            get {
+                return ResourceManager.GetString("CONFIG_FILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a true.
         /// </summary>
         public static string CONSOLE_OUT_CLI {
@@ -286,15 +295,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a definitions.ini.
-        /// </summary>
-        public static string DEF_FILE {
-            get {
-                return ResourceManager.GetString("DEF_FILE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DidItRunAlready.
         /// </summary>
         public static string DID_IT_RUN_ALREADY {
@@ -322,7 +322,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a false.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a False.
         /// </summary>
         public static string FALSE {
             get {
@@ -507,6 +507,15 @@ namespace ConstantsDLL.Properties {
         public static string HTTP {
             get {
                 return ResourceManager.GetString("HTTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a application/json.
+        /// </summary>
+        public static string HTTP_CONTENT_TYPE_JSON {
+            get {
+                return ResourceManager.GetString("HTTP_CONTENT_TYPE_JSON", resourceCulture);
             }
         }
         
@@ -1843,11 +1852,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a offlineModeConfig.json.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a offlineModeParameters.json.
         /// </summary>
-        public static string OFFLINE_MODE_CONFIG {
+        public static string OFFLINE_MODE_PARAMETER_FILE {
             get {
-                return ResourceManager.GetString("OFFLINE_MODE_CONFIG", resourceCulture);
+                return ResourceManager.GetString("OFFLINE_MODE_PARAMETER_FILE", resourceCulture);
             }
         }
         
@@ -2374,7 +2383,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a true.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a True.
         /// </summary>
         public static string TRUE {
             get {

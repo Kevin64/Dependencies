@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ConstantsDLL.Properties;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
@@ -49,7 +50,7 @@ namespace RestApiDLL
         /// <returns>An array with all data fetched.</returns>
         public static ServerParam GetOfflineModeConfigFile()
         {
-            fileC = new StreamReader(ConstantsDLL.Properties.Resources.OFFLINE_MODE_CONFIG);
+            fileC = new StreamReader(Resources.OFFLINE_MODE_PARAMETER_FILE);
             jsonFile = fileC.ReadToEnd();
             ServerParam jsonParse = JsonConvert.DeserializeObject<ServerParam>(@jsonFile);
 

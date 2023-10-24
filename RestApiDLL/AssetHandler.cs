@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ConstantsDLL.Properties;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -137,7 +138,7 @@ namespace RestApiDLL
                 if (response.IsSuccessStatusCode)
                     a = await response.Content.ReadAsAsync<Asset>();
             }
-            catch(HttpRequestException)
+            catch (HttpRequestException)
             {
                 return null;
             }
@@ -149,11 +150,11 @@ namespace RestApiDLL
             HttpResponseMessage response;
             try
             {
-                var content = new StringContent(JsonConvert.SerializeObject(a), Encoding.UTF8, "application/json");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(a), Encoding.UTF8, Resources.HTTP_CONTENT_TYPE_JSON);
                 response = await client.PostAsync(path, content);
                 _ = response.EnsureSuccessStatusCode();
             }
-            catch(HttpRequestException)
+            catch (HttpRequestException)
             {
                 return null;
             }

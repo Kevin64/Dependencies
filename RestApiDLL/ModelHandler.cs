@@ -34,7 +34,7 @@ namespace RestApiDLL
                 };
                 result = await client.SendAsync(response);
             }
-            catch(HttpRequestException)
+            catch (HttpRequestException)
             {
                 return false;
             }
