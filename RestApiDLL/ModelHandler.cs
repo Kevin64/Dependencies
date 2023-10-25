@@ -17,11 +17,23 @@ namespace RestApiDLL
         public string mediaOperationMode { get; set; }
     }
 
+    [Serializable]
+    public class InvalidModelException : Exception
+    {
+        public InvalidModelException() : base("Modelo não encontrado") { }
+    }
+
     /// <summary> 
     /// Class for handling a model through a REST API
     /// </summary>
     public static class ModelHandler
     {
+        /// <summary>
+        /// Checks if host is alive
+        /// </summary>
+        /// <param name="client">HTTP client object</param>
+        /// <param name="path">Uri path</param>
+        /// <returns>True if is alive, False otherwise</returns>
         public static async Task<bool> CheckHost(HttpClient client, string path)
         {
             HttpResponseMessage result;
@@ -41,14 +53,31 @@ namespace RestApiDLL
             return result.IsSuccessStatusCode;
         }
 
+        /// <summary>
+        /// Gets Model data via REST
+        /// </summary>
+        /// <param name="client">HTTP client object</param>
+        /// <param name="path">Uri path</param>
+        /// <returns>A Model object</returns>
+        /// <exception cref="HttpRequestException">Server not found</exception>
+        /// <exception cref="InvalidModelException">Model not found</exception>
         public static async Task<Model> GetModelAsync(HttpClient client, string path)
         {
-            Model m = null;
-            path = path.Replace(" ", "-");
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
-                m = await response.Content.ReadAsAsync<Model>();
-            return m;
+            try
+            {
+                Model m = null;
+                path = path.Replace(" ", "-");
+                HttpResponseMessage response = await client.GetAsync(path);
+                if (response.IsSuccessStatusCode)
+                    m = await response.Content.ReadAsAsync<Model>();
+                if (m == null)
+                    throw new InvalidModelException();
+                return m;
+            }
+            catch (HttpRequestException)
+            {
+                throw new HttpRequestException();
+            }
         }
     }
 }

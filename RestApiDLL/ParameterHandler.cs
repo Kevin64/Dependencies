@@ -1,5 +1,6 @@
 ﻿using ConstantsDLL.Properties;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
@@ -27,21 +28,44 @@ namespace RestApiDLL
         public List<string> VirtualizationTechnologyStates { get; set; }
     }
 
+    [Serializable]
+    public class InvalidParameterException : Exception
+    {
+        public InvalidParameterException() : base(Strings.PARAMETER_ERROR) { }
+    }
+
     /// <summary> 
     /// Class for handling a 'Config' json file
     /// </summary>
     public static class ParameterHandler
     {
-        private static string jsonFile;
+        private static string jsonOfflineFile;
         private static StreamReader fileC;
 
+        /// <summary>
+        /// Gets server parameters via REST
+        /// </summary>
+        /// <param name="client">HTTP client object</param>
+        /// <param name="path">Uri path</param>
+        /// <returns>An object containing all server parameters</returns>
+        /// <exception cref="HttpRequestException"></exception>
+        /// <exception cref="InvalidParameterException"></exception>
         public static async Task<ServerParam> GetParameterAsync(HttpClient client, string path)
         {
-            ServerParam sp = null;
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
-                sp = await response.Content.ReadAsAsync<ServerParam>();
-            return sp;
+            try
+            {
+                ServerParam sp = null;
+                HttpResponseMessage response = await client.GetAsync(path);
+                if (response.IsSuccessStatusCode)
+                    sp = await response.Content.ReadAsAsync<ServerParam>();
+                if (sp == null)
+                    throw new InvalidParameterException();
+                return sp;
+            }
+            catch (HttpRequestException)
+            {
+                throw new HttpRequestException();
+            }
         }
 
         /// <summary> 
@@ -51,8 +75,8 @@ namespace RestApiDLL
         public static ServerParam GetOfflineModeConfigFile()
         {
             fileC = new StreamReader(Resources.OFFLINE_MODE_PARAMETER_FILE);
-            jsonFile = fileC.ReadToEnd();
-            ServerParam jsonParse = JsonConvert.DeserializeObject<ServerParam>(@jsonFile);
+            jsonOfflineFile = fileC.ReadToEnd();
+            ServerParam jsonParse = JsonConvert.DeserializeObject<ServerParam>(@jsonOfflineFile);
 
             fileC.Close();
             return jsonParse;

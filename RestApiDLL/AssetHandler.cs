@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -123,42 +124,65 @@ namespace RestApiDLL
         public string version { get; set; }
     }
 
+    [Serializable]
+    public class InvalidAssetException : Exception
+    {
+        public InvalidAssetException() : base("Ativo não encontrado") { }
+    }
+
     /// <summary> 
     /// Class for handling an asset through a REST API
     /// </summary>
     public static class AssetHandler
     {
+        /// <summary>
+        /// Gets Asset data via REST
+        /// </summary>
+        /// <param name="client">HTTP client object</param>
+        /// <param name="path">Uri path</param>
+        /// <returns>An Asset object</returns>
+        /// <exception cref="InvalidAssetException">Asset not found</exception>
+        /// <exception cref="HttpRequestException">Server not found</exception>
         public static async Task<Asset> GetAssetAsync(HttpClient client, string path)
         {
-            Asset a;
             try
             {
-                a = null;
+                Asset a = null;
                 HttpResponseMessage response = await client.GetAsync(path);
                 if (response.IsSuccessStatusCode)
                     a = await response.Content.ReadAsAsync<Asset>();
+                if (a == null)
+                    throw new InvalidAssetException();
+                return a;
             }
             catch (HttpRequestException)
             {
-                return null;
+                throw new HttpRequestException();
             }
-            return a;
         }
 
-        public static async Task<Uri> SetAssetAsync(HttpClient client, string path, Asset a)
+        /// <summary>
+        /// Sends asset info to server via REST
+        /// </summary>
+        /// <param name="client">HTTP client object</param>
+        /// <param name="path">Uri path</param>
+        /// <param name="a">Asset object</param>
+        /// <returns>The resulting HTTP status code</returns>
+        /// <exception cref="HttpRequestException">Server not found</exception>
+        public static async Task<HttpStatusCode> SetAssetAsync(HttpClient client, string path, Asset a)
         {
-            HttpResponseMessage response;
             try
             {
+                HttpResponseMessage response;
                 StringContent content = new StringContent(JsonConvert.SerializeObject(a), Encoding.UTF8, Resources.HTTP_CONTENT_TYPE_JSON);
                 response = await client.PostAsync(path, content);
                 _ = response.EnsureSuccessStatusCode();
+                return response.StatusCode;
             }
             catch (HttpRequestException)
             {
-                return null;
+                throw new HttpRequestException();
             }
-            return response.Headers.Location;
         }
     }
 }

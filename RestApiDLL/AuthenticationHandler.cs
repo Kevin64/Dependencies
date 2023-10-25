@@ -39,11 +39,11 @@ namespace RestApiDLL
         /// <summary>
         /// Gets Agent data via REST
         /// </summary>
-        /// <param name="client">HTTP Client</param>
+        /// <param name="client">HTTP client object</param>
         /// <param name="path">Uri path</param>
-        /// <returns>An Agent object, or null if not inexistent</returns>
-        /// <exception cref="HttpRequestException"></exception>
-        /// <exception cref="InvalidAgentException"></exception>
+        /// <returns>An Agent object</returns>
+        /// <exception cref="HttpRequestException">Server not found</exception>
+        /// <exception cref="InvalidAgentException">Agent not found</exception>
         public static async Task<Agent> GetAgentAsync(HttpClient client, string path)
         {
             try
@@ -53,14 +53,12 @@ namespace RestApiDLL
                 if (response.IsSuccessStatusCode)
                     a = await response.Content.ReadAsAsync<Agent>();
                 if (a == null)
-                {
                     throw new InvalidAgentException();
-                }
                 return a;
             }
             catch (HttpRequestException)
             {
-                throw new HttpRequestException();
+                 throw new HttpRequestException();
             }
         }
     }
