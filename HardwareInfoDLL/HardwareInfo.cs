@@ -53,7 +53,6 @@ namespace HardwareInfoDLL
         /// Fetches the CPU information, including the number of cores/threads
         /// </summary>
         /// <returns>String with the CPU information</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetProcessorSummary()
         {
             string Id = string.Empty;
@@ -87,7 +86,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's processor IDs
         /// </summary>
         /// <returns>List with the computer's processor IDs, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetProcessorIdList()
         {
             string cpuId;
@@ -116,7 +114,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's processor names
         /// </summary>
         /// <returns>List with the computer's processor names, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetProcessorNameList()
         {
             string cpuName;
@@ -143,7 +140,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's processor frequencies
         /// </summary>
         /// <returns>List with the computer's processor frequencies, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetProcessorFrequencyList()
         {
             string cpuFreq;
@@ -170,7 +166,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's processor number of cores
         /// </summary>
         /// <returns>List with the computer's processor number of cores, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetProcessorCoresList()
         {
             string cpuCores;
@@ -197,7 +192,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's processor number of threads
         /// </summary>
         /// <returns>List with the computer's processor number of threads, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetProcessorThreadsList()
         {
             string cpuThreads;
@@ -224,7 +218,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's processor cache
         /// </summary>
         /// <returns>List with the computer's processor cache, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetProcessorCacheList()
         {
             string cpuCache;
@@ -254,7 +247,6 @@ namespace HardwareInfoDLL
         /// Fetches the primary Video Card information
         /// </summary>
         /// <returns>String with the primary Video Card information</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetVideoCardSummary()
         {
             string gpuname = string.Empty;
@@ -295,7 +287,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's video card IDs
         /// </summary>
         /// <returns>List with the computer's video card IDs, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetVideoCardIdList()
         {
             string gpuId;
@@ -327,7 +318,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's video card names
         /// </summary>
         /// <returns>List with the computer's video card names, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetVideoCardNameList()
         {
             string gpuName;
@@ -357,7 +347,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's video card vRams
         /// </summary>
         /// <returns>List with the computer's video card vRams, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetVideoCardRamList()
         {
             double gpuRam;
@@ -389,7 +378,6 @@ namespace HardwareInfoDLL
         /// Fetches the operation mode that the storage is running (IDE/AHCI/NVMe)
         /// </summary>
         /// <returns>String with the current media operation mode</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetMediaOperationMode()
         {
             try
@@ -440,7 +428,6 @@ namespace HardwareInfoDLL
         /// Fetches the type of drive the system has (SSD or HDD), and the quantity of each
         /// </summary>
         /// <returns>String with the SSD/HDD amount</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetStorageSummary()
         {
             double dresult;
@@ -542,7 +529,6 @@ namespace HardwareInfoDLL
         /// Fetches the computer's storage drive IDs
         /// </summary>
         /// <returns>String with the computer's storage drive IDs, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetStorageIdsList()
         {
             string msftName = "Msft Virtual Disk";
@@ -592,7 +578,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's storage drives types
         /// </summary>
         /// <returns>List with the computer's storage drives types, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetStorageTypeList()
         {
             IEnumerable<string> typeSliced;
@@ -665,7 +650,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's storage drives sizes
         /// </summary>
         /// <returns>List with the computer's storage drives sizes, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetStorageSizeList()
         {
             string msftName = "Msft Virtual Disk", dresultStr;
@@ -717,7 +701,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's storage drives sizes
         /// </summary>
         /// <returns>List with the computer's storage drives sizes, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetStorageConnectionList()
         {
             string msftName = "Msft Virtual Disk";
@@ -774,7 +757,6 @@ namespace HardwareInfoDLL
         /// Fetches the computer's storage drive model
         /// </summary>
         /// <returns>String with the computer's storage drive model, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetStorageModelList()
         {
             string msftName = "Msft Virtual Disk";
@@ -824,7 +806,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's storage drives serial numbers
         /// </summary>
         /// <returns>List with the computer's storage drives serial numbers, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetStorageSerialNumberList()
         {
             string msftName = "Msft Virtual Disk";
@@ -873,7 +854,6 @@ namespace HardwareInfoDLL
         /// Fetches the S.M.A.R.T. status
         /// </summary>
         /// <returns>String with the S.M.A.R.T. status. 'OK' for ok, everything else for a problem</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetStorageSmartList()
         {
             List<string> list = new List<string>();
@@ -919,7 +899,6 @@ namespace HardwareInfoDLL
         /// Fetches the SSD/HDD total size (sums all drives sizes)
         /// </summary>
         /// <returns>String with the SSD/HDD total size</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetStorageTotalSize()
         {
             int i = 0;
@@ -978,7 +957,6 @@ namespace HardwareInfoDLL
         /// Fetches the primary MAC Address
         /// </summary>
         /// <returns>String with the primary MAC Address, or 'null' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetMacAddress()
         {
             string MACAddress = string.Empty;
@@ -1037,7 +1015,6 @@ namespace HardwareInfoDLL
         /// Fetches the computer's manufacturer
         /// </summary>
         /// <returns>String with the computer's manufacturer, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetBrand()
         {
             try
@@ -1058,7 +1035,6 @@ namespace HardwareInfoDLL
         /// Fetches the computer's manufacturer (alternative method)
         /// </summary>
         /// <returns>String with the computer's manufacturer, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetBrandAlt()
         {
             try
@@ -1079,7 +1055,6 @@ namespace HardwareInfoDLL
         /// Fetches the computer's model
         /// </summary>
         /// <returns>String with the computer's model, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetModel()
         {
             string str;
@@ -1104,7 +1079,6 @@ namespace HardwareInfoDLL
         /// Fetches the computer's model (alternative method)
         /// </summary>
         /// <returns>String with the computer's model, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetModelAlt()
         {
             string str;
@@ -1129,7 +1103,6 @@ namespace HardwareInfoDLL
         /// Fetches the motherboard serial number
         /// </summary>
         /// <returns>String with the motherboard serial number, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetSerialNumber()
         {
             try
@@ -1150,7 +1123,6 @@ namespace HardwareInfoDLL
         /// Fetches the summary of RAM of the system
         /// </summary>
         /// <returns>String with the summary of RAM of the system</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetRamSummary()
         {
             long MemSize = 0;
@@ -1238,7 +1210,6 @@ namespace HardwareInfoDLL
         /// Fetches the amount of RAM of the system (alternative method)
         /// </summary>
         /// <returns>String with the amount of RAM of the system</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetRamAlt()
         {
             double MemSize = 0;
@@ -1271,7 +1242,6 @@ namespace HardwareInfoDLL
         /// Fetches the number of RAM slots on the system
         /// </summary>
         /// <returns>String with the number of RAM slots</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetNumRamSlots()
         {
             int MemSlots = 0;
@@ -1298,7 +1268,6 @@ namespace HardwareInfoDLL
         /// Fetches the number of free RAM slots on the system
         /// </summary>
         /// <returns>String with the number of free RAM slots</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetNumFreeRamSlots()
         {
             int i = 0;
@@ -1325,7 +1294,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's ram slots
         /// </summary>
         /// <returns>List with the computer's ram slots, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetRamSlotList()
         {
             string ramSlot;
@@ -1352,7 +1320,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's ram amount
         /// </summary>
         /// <returns>List with the computer's ram amount, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetRamAmountList()
         {
             string ramAmount;
@@ -1379,7 +1346,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's ram types
         /// </summary>
         /// <returns>List with the computer's ram types, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetRamTypeList()
         {
             string ramType;
@@ -1406,7 +1372,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's ram frequencies
         /// </summary>
         /// <returns>List with the computer's ram frequencies, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetRamFrequencyList()
         {
             string ramFrequency;
@@ -1433,7 +1398,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's ram serial numbers
         /// </summary>
         /// <returns>List with the computer's ram serial numbers, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetRamSerialNumberList()
         {
             string ramSerialNumber;
@@ -1460,7 +1424,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's ram part numbers
         /// </summary>
         /// <returns>List with the computer's ram part numbers, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetRamPartNumberList()
         {
             string ramPartNumber;
@@ -1487,7 +1450,6 @@ namespace HardwareInfoDLL
         /// Creates a list of the computer's ram manufacturers
         /// </summary>
         /// <returns>List with the computer's ram manufacturers, or an exception message otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static List<string> GetRamManufacturerList()
         {
             string ramManufacturer;
@@ -1514,7 +1476,6 @@ namespace HardwareInfoDLL
         /// Fetches the default gateway of the NIC
         /// </summary>
         /// <returns>String with the NIC's gateway</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetDefaultIpGateway()
         {
             string gateway = string.Empty;
@@ -1566,7 +1527,6 @@ namespace HardwareInfoDLL
         /// Fetches the OS architecture (alternative method)
         /// </summary>
         /// <returns>String with the OS architecture. 'x64' for 64-bit, 'x86' for 32-bit</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSArchAlt()
         {
             try
@@ -1591,7 +1551,6 @@ namespace HardwareInfoDLL
         /// Fetches the NT version
         /// </summary>
         /// <returns>String with the NT version. '7' for Windows 7, '8' for Windows 8, '8.1' for Windows 8.1, '10' for Windows 10</returns>
-        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
         public static string GetWinVersion()
         {
             string operatingSystem = string.Empty;
@@ -1632,7 +1591,6 @@ namespace HardwareInfoDLL
         /// Fetches the operating system summary
         /// </summary>
         /// <returns>String with the operating system summary, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSSummary()
         {
             RegistryKey rk;
@@ -1679,7 +1637,6 @@ namespace HardwareInfoDLL
         /// Fetches the operating system summary
         /// </summary>
         /// <returns>String with the operating system summary, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSVersion()
         {
             RegistryKey rk;
@@ -1725,7 +1682,6 @@ namespace HardwareInfoDLL
         /// Fetches the operating system name
         /// </summary>
         /// <returns>String with the operating system name, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSName()
         {
             try
@@ -1748,7 +1704,6 @@ namespace HardwareInfoDLL
         /// Fetches the OS build number
         /// </summary>
         /// <returns>String with the OS build number and revision, or 'Unknown' otherwise</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetOSBuildAndRevision()
         {
             RegistryKey rk;
@@ -1777,7 +1732,6 @@ namespace HardwareInfoDLL
         /// Fetches the computer's hostname
         /// </summary>
         /// <returns>String with the hostname</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetHostname()
         {
             string info = string.Empty;
@@ -1800,7 +1754,6 @@ namespace HardwareInfoDLL
         /// Fetches the firmware version
         /// </summary>
         /// <returns>String with the firmware version</returns>
-        ///<exception cref="ManagementException ">Thrown when there is a problem with the query</exception>
         public static string GetFirmwareVersion()
         {
             string biosVersion = string.Empty;
@@ -1823,7 +1776,6 @@ namespace HardwareInfoDLL
         /// Fetches the firmware type on Windows 7
         /// </summary>
         /// <returns>String with the firmware type code. '1' for UEFI, '0' for BIOS</returns>
-        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
         public const int ERROR_INVALID_FUNCTION = 1;
         [DllImport("kernel32.dll",
             EntryPoint = "GetFirmwareEnvironmentVariableW",
@@ -1849,7 +1801,6 @@ namespace HardwareInfoDLL
         /// Fetches the firmware type on Windows 8 and later
         /// </summary>
         /// <returns>String with the firmware type code. '1' for UEFI, '0' for BIOS, 'Not determined' for not determined</returns>
-        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
         [DllImport("kernel32.dll")]
         private static extern bool GetFirmwareType(ref uint FirmwareType);
         public static string GetFwType()
@@ -1923,7 +1874,6 @@ namespace HardwareInfoDLL
         /// Fetches the Virtualization Technology status
         /// </summary>
         /// <returns>String with the Virtualization Technology status. '2' for activated, '1' for deactivated, '0' for not supported</returns>
-        ///<exception cref="ManagementException ">Thrown when there is a problem with the query</exception>
         public static string GetVirtualizationTechnology()
         {
             int flag = 0;
@@ -1961,7 +1911,6 @@ namespace HardwareInfoDLL
         /// Fetches the Hyper-V installation status
         /// </summary>
         /// <returns>String with the Hyper-V status. 'true' for true, 'false' for false</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetHyperVStatus()
         {
             string featureName;
@@ -1993,7 +1942,6 @@ namespace HardwareInfoDLL
         /// Fetches the TPM version
         /// </summary>
         /// <returns>String with the TPM version code. '0' for none, '1' for 1.2, '2' for 2.0</returns>
-        ///<exception cref="ManagementException">Thrown when there is a problem with the query</exception>
         public static string GetTPMStatus()
         {
             string specVersion = string.Empty;
@@ -2029,7 +1977,6 @@ namespace HardwareInfoDLL
         /// Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them
         /// </summary>
         /// <returns>String with the SSD/HDD amount</returns>
-        ///<exception cref="Exception">Thrown when there is a problem with the query</exception>
         public static string CountDistinct(string[] array, string[] array2, string[] array3)
         {
             string result = string.Empty;

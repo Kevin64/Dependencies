@@ -43,7 +43,6 @@ namespace LogGeneratorDLL
         /// <param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
         /// <param name="softwareName">Name of the software</param>
         /// <param name="consoleOut">Toggle for CLI output</param>
-        ///<exception cref="Exception">Throws when logging is not possible</exception>
         private void LogInit(TextWriter txtWriter, string softwareName, bool consoleOut)
         {
             try
@@ -101,7 +100,6 @@ namespace LogGeneratorDLL
         /// <param name="logMessage2">Log message for second field - Value/Explanation</param>
         /// <param name="txtWriter">StreamWriter for writing characters to a stream in a particular encoding</param>
         /// <param name="consoleOut">Toggle for CLI output</param>
-        ///<exception cref="Exception">Throws when logging is not possible</exception>
         private void Log(int logType, string logMessage1, string logMessage2, TextWriter txtWriter, bool consoleOut)
         {
             string logTypeAttr;
