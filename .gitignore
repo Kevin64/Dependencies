@@ -11,8 +11,8 @@
 /ConstantsDLL/obj/*
 /HardwareInfoDLL/bin/*
 /HardwareInfoDLL/obj/*
-/JsonFileReaderDLL/bin/*
-/JsonFileReaderDLL/obj/*
+/RestApiDLL/bin/*
+/RestApiDLl/obj/*
 /LogGeneratorDLL/bin/*
 /LogGeneratorDLL/obj/*
 /packages/*
