@@ -250,6 +250,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Free.
+        /// </summary>
+        public static string FREE {
+            get {
+                return ResourceManager.GetString("FREE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Intranet connection required..
         /// </summary>
         public static string INTRANET_REQUIRED {

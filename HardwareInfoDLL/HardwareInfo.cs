@@ -1296,23 +1296,35 @@ namespace HardwareInfoDLL
         /// <returns>List with the computer's ram slots, or an exception message otherwise</returns>
         public static List<string> GetRamSlotList()
         {
+            int count = 0, numRamFreeSlots = 0;
             string ramSlot;
             List<string> list = new List<string>();
 
             try
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
-
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     ramSlot = queryObj["DeviceLocator"].ToString();
+                    count++;
                     list.Add(ramSlot);
                 }
+
+                ManagementObjectSearcher searcher2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
+                foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
+                    numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
+
+                for(int i = 0; i < numRamFreeSlots - count; i++)
+                    list.Add(Strings.FREE);
                 return list;
             }
             catch (ManagementException e)
             {
                 return new List<string>() { e.Message };
+            }
+            catch (Exception)
+            {
+                return new List<string>() { Strings.UNKNOWN };
             }
         }
 
@@ -1322,6 +1334,7 @@ namespace HardwareInfoDLL
         /// <returns>List with the computer's ram amount, or an exception message otherwise</returns>
         public static List<string> GetRamAmountList()
         {
+            int count = 0, numRamFreeSlots = 0;
             string ramAmount;
             List<string> list = new List<string>();
 
@@ -1332,13 +1345,25 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     ramAmount = queryObj["Capacity"].ToString();
+                    count++;
                     list.Add(ramAmount);
                 }
+
+                ManagementObjectSearcher searcher2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
+                foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
+                    numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
+
+                for (int i = 0; i < numRamFreeSlots - count; i++)
+                    list.Add(Strings.FREE);
                 return list;
             }
             catch (ManagementException e)
             {
                 return new List<string>() { e.Message };
+            }
+            catch (Exception)
+            {
+                return new List<string>() { Strings.UNKNOWN };
             }
         }
 
@@ -1348,6 +1373,7 @@ namespace HardwareInfoDLL
         /// <returns>List with the computer's ram types, or an exception message otherwise</returns>
         public static List<string> GetRamTypeList()
         {
+            int count = 0, numRamFreeSlots = 0;
             string ramType;
             List<string> list = new List<string>();
 
@@ -1357,14 +1383,29 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    ramType = queryObj["SMBIOSMemoryType"].ToString();
+                    if (GetWinVersion().Equals(Resources.WINDOWS_10))
+                        ramType = queryObj["SMBIOSMemoryType"].ToString();
+                    else
+                        ramType = queryObj["MemoryType"].ToString();
+                    count++;
                     list.Add(ramType);
                 }
+
+                ManagementObjectSearcher searcher2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
+                foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
+                    numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
+
+                for (int i = 0; i < numRamFreeSlots - count; i++)
+                    list.Add(Strings.FREE);
                 return list;
             }
             catch (ManagementException e)
             {
                 return new List<string>() { e.Message };
+            }
+            catch (Exception)
+            {
+                return new List<string>() { Strings.UNKNOWN };
             }
         }
 
@@ -1374,6 +1415,7 @@ namespace HardwareInfoDLL
         /// <returns>List with the computer's ram frequencies, or an exception message otherwise</returns>
         public static List<string> GetRamFrequencyList()
         {
+            int count = 0, numRamFreeSlots = 0;
             string ramFrequency;
             List<string> list = new List<string>();
 
@@ -1384,13 +1426,25 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     ramFrequency = queryObj["Speed"].ToString();
+                    count++;
                     list.Add(ramFrequency);
                 }
+
+                ManagementObjectSearcher searcher2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
+                foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
+                    numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
+
+                for (int i = 0; i < numRamFreeSlots - count; i++)
+                    list.Add(Strings.FREE);
                 return list;
             }
             catch (ManagementException e)
             {
                 return new List<string>() { e.Message };
+            }
+            catch(Exception)
+            {
+                return new List<string>() { Strings.UNKNOWN };
             }
         }
 
@@ -1400,6 +1454,7 @@ namespace HardwareInfoDLL
         /// <returns>List with the computer's ram serial numbers, or an exception message otherwise</returns>
         public static List<string> GetRamSerialNumberList()
         {
+            int count = 0, numRamFreeSlots = 0;
             string ramSerialNumber;
             List<string> list = new List<string>();
 
@@ -1410,13 +1465,25 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     ramSerialNumber = queryObj["SerialNumber"].ToString();
+                    count++;
                     list.Add(ramSerialNumber);
                 }
+
+                ManagementObjectSearcher searcher2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
+                foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
+                    numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
+
+                for (int i = 0; i < numRamFreeSlots - count; i++)
+                    list.Add(Strings.FREE);
                 return list;
             }
             catch (ManagementException e)
             {
                 return new List<string>() { e.Message };
+            }
+            catch (Exception)
+            {
+                return new List<string>() { Strings.UNKNOWN };
             }
         }
 
@@ -1426,6 +1493,7 @@ namespace HardwareInfoDLL
         /// <returns>List with the computer's ram part numbers, or an exception message otherwise</returns>
         public static List<string> GetRamPartNumberList()
         {
+            int count = 0, numRamFreeSlots = 0;
             string ramPartNumber;
             List<string> list = new List<string>();
 
@@ -1436,13 +1504,25 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     ramPartNumber = queryObj["PartNumber"].ToString();
+                    count++;
                     list.Add(ramPartNumber);
                 }
+
+                ManagementObjectSearcher searcher2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
+                foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
+                    numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
+
+                for (int i = 0; i < numRamFreeSlots - count; i++)
+                    list.Add(Strings.FREE);
                 return list;
             }
             catch (ManagementException e)
             {
                 return new List<string>() { e.Message };
+            }
+            catch (Exception)
+            {
+                return new List<string>() { Strings.UNKNOWN };
             }
         }
 
@@ -1452,6 +1532,7 @@ namespace HardwareInfoDLL
         /// <returns>List with the computer's ram manufacturers, or an exception message otherwise</returns>
         public static List<string> GetRamManufacturerList()
         {
+            int count = 0, numRamFreeSlots = 0;
             string ramManufacturer;
             List<string> list = new List<string>();
 
@@ -1462,13 +1543,25 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     ramManufacturer = queryObj["Manufacturer"].ToString();
+                    count++;
                     list.Add(ramManufacturer);
                 }
+
+                ManagementObjectSearcher searcher2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
+                foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
+                    numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
+
+                for (int i = 0; i < numRamFreeSlots - count; i++)
+                    list.Add(Strings.FREE);
                 return list;
             }
             catch (ManagementException e)
             {
                 return new List<string>() { e.Message };
+            }
+            catch (Exception)
+            {
+                return new List<string>() { Strings.UNKNOWN };
             }
         }
 

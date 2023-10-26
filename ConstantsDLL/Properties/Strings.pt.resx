@@ -181,6 +181,9 @@
   <data name="FINISH_TEXT" xml:space="preserve">
     <value>Finalizar</value>
   </data>
+  <data name="FREE" xml:space="preserve">
+    <value>Livre</value>
+  </data>
   <data name="INTRANET_REQUIRED" xml:space="preserve">
     <value>É necessário conexão com a intranet.</value>
   </data>
