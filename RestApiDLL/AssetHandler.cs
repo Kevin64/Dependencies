@@ -174,7 +174,7 @@ namespace RestApiDLL
             try
             {
                 HttpResponseMessage response;
-                StringContent content = new StringContent(JsonConvert.SerializeObject(a), Encoding.UTF8, Resources.HTTP_CONTENT_TYPE_JSON);
+                StringContent content = new StringContent(JsonConvert.SerializeObject(a), Encoding.UTF8, GenericResources.HTTP_CONTENT_TYPE_JSON);
                 response = await client.PostAsync(path, content);
                 _ = response.EnsureSuccessStatusCode();
                 return response.StatusCode;

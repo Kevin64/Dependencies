@@ -52,10 +52,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LogStrings.pt.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\GenericResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>GenericResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\UIStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,9 +79,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LogStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Include="Properties\GenericResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>GenericResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\UIStrings.pt.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -74,7 +74,7 @@ namespace RestApiDLL
         /// <returns>An array with all data fetched.</returns>
         public static ServerParam GetOfflineModeConfigFile()
         {
-            fileC = new StreamReader(Resources.OFFLINE_MODE_PARAMETER_FILE);
+            fileC = new StreamReader(GenericResources.OFFLINE_MODE_PARAMETER_FILE);
             jsonOfflineFile = fileC.ReadToEnd();
             ServerParam jsonParse = JsonConvert.DeserializeObject<ServerParam>(@jsonOfflineFile);
 

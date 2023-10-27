@@ -964,4 +964,13 @@
   <data name="HTTP_CONTENT_TYPE_JSON" xml:space="preserve">
     <value>application/json</value>
   </data>
+  <data name="EB" xml:space="preserve">
+    <value>EB</value>
+  </data>
+  <data name="KB" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="PB" xml:space="preserve">
+    <value>PB</value>
+  </data>
 </root>

@@ -271,6 +271,18 @@
   <data name="LOG_OPENING_LOG" xml:space="preserve">
     <value>Abrindo log de eventos</value>
   </data>
+  <data name="LOG_OPENING_PROCESSOR_FORM" xml:space="preserve">
+    <value>Abrindo janela de processador</value>
+  </data>
+  <data name="LOG_OPENING_RAM_FORM" xml:space="preserve">
+    <value>Abrindo janela de RAM</value>
+  </data>
+  <data name="LOG_OPENING_STORAGE_FORM" xml:space="preserve">
+    <value>Abrindo janela de armazenamento</value>
+  </data>
+  <data name="LOG_OPENING_VIDEO_CARD_FORM" xml:space="preserve">
+    <value>Abrindo janela de placa de vídeo</value>
+  </data>
   <data name="LOG_OPERATING_SYSTEM" xml:space="preserve">
     <value>Sistema Operacional</value>
   </data>
@@ -302,7 +314,7 @@
     <value>ID do processador</value>
   </data>
   <data name="LOG_PROCESSOR_NAME" xml:space="preserve">
-    <value>Processador primário</value>
+    <value>Nome do processador</value>
   </data>
   <data name="LOG_PROCESSOR_THREADS" xml:space="preserve">
     <value>Threads do processador</value>

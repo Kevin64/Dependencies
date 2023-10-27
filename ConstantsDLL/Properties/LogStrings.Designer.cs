@@ -520,6 +520,42 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Opening processor form.
+        /// </summary>
+        public static string LOG_OPENING_PROCESSOR_FORM {
+            get {
+                return ResourceManager.GetString("LOG_OPENING_PROCESSOR_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Opening RAM form.
+        /// </summary>
+        public static string LOG_OPENING_RAM_FORM {
+            get {
+                return ResourceManager.GetString("LOG_OPENING_RAM_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Operning storage form.
+        /// </summary>
+        public static string LOG_OPENING_STORAGE_FORM {
+            get {
+                return ResourceManager.GetString("LOG_OPENING_STORAGE_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Opening video card form.
+        /// </summary>
+        public static string LOG_OPENING_VIDEO_CARD_FORM {
+            get {
+                return ResourceManager.GetString("LOG_OPENING_VIDEO_CARD_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Operating system.
         /// </summary>
         public static string LOG_OPERATING_SYSTEM {
@@ -610,7 +646,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Primary processor.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Processor name.
         /// </summary>
         public static string LOG_PROCESSOR_NAME {
             get {

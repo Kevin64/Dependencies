@@ -29,6 +29,14 @@ namespace HardwareInfoDLL
             v2_0
         }
 
+        public enum RamTypes
+        {
+            UNKNOWN = 0,
+            DDR2 = 22,
+            DDR3 = 24,
+            DDR4 = 26
+        }
+
         public enum FirmwareTypes
         {
             BIOS,
@@ -78,7 +86,7 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     Id = queryObj.Properties["name"].Value.ToString() + " " + queryObj.Properties["MaxClockSpeed"].Value.ToString()
-                       + " " + Resources.FREQUENCY + " (" + queryObj.Properties["NumberOfCores"].Value.ToString() + "C/" + logical + "T)";
+                       + " " + GenericResources.FREQUENCY + " (" + queryObj.Properties["NumberOfCores"].Value.ToString() + "C/" + logical + "T)";
                     break;
                 }
                 Id = Id.Replace("(R)", string.Empty);
@@ -280,8 +288,8 @@ namespace HardwareInfoDLL
                             gpuram = Convert.ToInt64(queryObj["AdapterRAM"]);
                             gpuram = Math.Round(gpuram / 1024 / 1024, 0);
                             gpuramStr = Math.Ceiling(Math.Log10(gpuram)) > 3
-                                ? Convert.ToString(Math.Round(gpuram / 1024, 1)) + " " + Resources.GB
-                                : gpuram + " " + Resources.MB;
+                                ? Convert.ToString(Math.Round(gpuram / 1024, 1)) + " " + GenericResources.GB
+                                : gpuram + " " + GenericResources.MB;
                             gpuname = queryObj["Caption"].ToString() + " (" + gpuramStr + ")";
                         }
                     }
@@ -403,7 +411,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     int size = 10, i = 0;
                     string[] type = new string[size];
@@ -423,23 +431,23 @@ namespace HardwareInfoDLL
                                 dresult = Math.Round(dresult / 1000 / 1000 / 1000, 0);
 
                                 dresultStr = Math.Log10(dresult) > 2.9999
-                                    ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + Resources.TB
-                                    : dresult + " " + Resources.GB;
+                                    ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + GenericResources.TB
+                                    : dresult + " " + GenericResources.GB;
 
                                 switch (Convert.ToInt16(queryObj["MediaType"]))
                                 {
                                     case 3:
-                                        type[i] = Resources.HDD;
+                                        type[i] = GenericResources.HDD;
                                         bytesHDD[i] = dresultStr;
                                         i++;
                                         break;
                                     case 4:
-                                        type[i] = Resources.SSD;
+                                        type[i] = GenericResources.SSD;
                                         bytesSSD[i] = dresultStr;
                                         i++;
                                         break;
                                     case 0:
-                                        type[i] = Resources.HDD;
+                                        type[i] = GenericResources.HDD;
                                         bytesHDD[i] = dresultStr;
                                         i++;
                                         break;
@@ -473,9 +481,9 @@ namespace HardwareInfoDLL
                             dresult = Math.Round(dresult / 1000000000, 0);
 
                             dresultStr = Math.Log10(dresult) > 2.9999
-                                ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + Resources.TB
-                                : dresult + " " + Resources.GB;
-                            type[i] = Resources.HDD;
+                                ? Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + GenericResources.TB
+                                : dresult + " " + GenericResources.GB;
+                            type[i] = GenericResources.HDD;
                             bytesHDD[i] = dresultStr;
                             i++;
                         }
@@ -503,7 +511,7 @@ namespace HardwareInfoDLL
             List<string> list = new List<string>();
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
@@ -551,7 +559,7 @@ namespace HardwareInfoDLL
             IEnumerable<string> typeSliced;
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     int size = 10, i = 0;
                     string[] type = new string[size];
@@ -568,15 +576,15 @@ namespace HardwareInfoDLL
                                 switch (Convert.ToInt16(queryObj["MediaType"]))
                                 {
                                     case 3:
-                                        type[i] = Resources.HDD;
+                                        type[i] = GenericResources.HDD;
                                         i++;
                                         break;
                                     case 4:
-                                        type[i] = Resources.SSD;
+                                        type[i] = GenericResources.SSD;
                                         i++;
                                         break;
                                     case 0:
-                                        type[i] = Resources.HDD;
+                                        type[i] = GenericResources.HDD;
                                         i++;
                                         break;
                                 }
@@ -599,7 +607,7 @@ namespace HardwareInfoDLL
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
-                            type[i] = Resources.HDD;
+                            type[i] = GenericResources.HDD;
                             i++;
                         }
                     }
@@ -625,7 +633,7 @@ namespace HardwareInfoDLL
             List<string> list = new List<string>();
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
@@ -675,7 +683,7 @@ namespace HardwareInfoDLL
             List<string> list = new List<string>();
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
@@ -685,10 +693,10 @@ namespace HardwareInfoDLL
                         {
                             if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
                             {
-                                if (queryObj["BusType"].ToString() == Resources.WMI_SATA)
-                                    list.Add(Resources.SATA);
-                                else if (queryObj["BusType"].ToString() == Resources.WMI_PCIE)
-                                    list.Add(Resources.PCIE);
+                                if (queryObj["BusType"].ToString() == GenericResources.WMI_SATA)
+                                    list.Add(GenericResources.SATA);
+                                else if (queryObj["BusType"].ToString() == GenericResources.WMI_PCIE)
+                                    list.Add(GenericResources.PCIE);
                                 else
                                     list.Add("IDE");
                             }
@@ -705,9 +713,9 @@ namespace HardwareInfoDLL
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
                             if (queryObj["InterfaceType"].ToString().Equals("IDE"))
-                                list.Add(Resources.SATA);
+                                list.Add(GenericResources.SATA);
                             else if (queryObj["InterfaceType"].ToString().Equals("SCSI"))
-                                list.Add(Resources.PCIE);
+                                list.Add(GenericResources.PCIE);
                             else
                                 list.Add("IDE");
                         }
@@ -731,7 +739,7 @@ namespace HardwareInfoDLL
             List<string> list = new List<string>();
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
@@ -780,7 +788,7 @@ namespace HardwareInfoDLL
             List<string> list = new List<string>();
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
@@ -827,16 +835,16 @@ namespace HardwareInfoDLL
             List<string> list = new List<string>();
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\wmi", "SELECT * FROM MSStorageDriver_FailurePredictStatus");
 
                     foreach (ManagementObject queryObj in searcher.Get())
                     {
                         if (queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
-                            list.Add(Resources.OK);
+                            list.Add(GenericResources.OK);
                         else
-                            list.Add(Resources.PRED_FAIL);
+                            list.Add(GenericResources.PRED_FAIL);
                     }
                     return list;
                 }
@@ -849,9 +857,9 @@ namespace HardwareInfoDLL
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
                             if (queryObj.GetPropertyValue("Status").ToString() == "OK")
-                                list.Add(Resources.OK);
+                                list.Add(GenericResources.OK);
                             else
-                                list.Add(Resources.PRED_FAIL);
+                                list.Add(GenericResources.PRED_FAIL);
                         }
                     }
                     return list;
@@ -875,7 +883,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
@@ -906,12 +914,12 @@ namespace HardwareInfoDLL
                 dresult = Math.Round(dresult / 1000000000, 0);
                 if (Math.Log10(dresult) > 2.9999)
                 {
-                    dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + Resources.TB;
+                    dresultStr = Convert.ToString(Math.Round(dresult / 1000, 1)) + " " + GenericResources.TB;
                     return dresultStr;
                 }
                 else
                 {
-                    dresultStr = dresult + " " + Resources.GB;
+                    dresultStr = dresult + " " + GenericResources.GB;
                     return dresultStr;
                 }
             }
@@ -1169,21 +1177,21 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(Resources.SYSTEM_ROM))
+                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(GenericResources.SYSTEM_ROM))
                     {
                         mCap = Convert.ToInt64(queryObj["Capacity"]);
                         MemSize += mCap;
-                        if (GetWinVersion().Equals(Resources.WINDOWS_10))
+                        if (GetWinVersion().Equals(GenericResources.WINDOWS_10))
                         {
-                            if (queryObj["SMBIOSMemoryType"].ToString().Equals(Resources.DDR4_SMBIOS))
+                            if (queryObj["SMBIOSMemoryType"].ToString().Equals(GenericResources.DDR4_SMBIOS))
                             {
-                                mType = Resources.DDR4;
-                                mSpeed = " " + queryObj["Speed"].ToString() + " " + Resources.MHZ;
+                                mType = GenericResources.DDR4;
+                                mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
                             }
-                            else if (queryObj["SMBIOSMemoryType"].ToString().Equals(Resources.DDR3_SMBIOS))
+                            else if (queryObj["SMBIOSMemoryType"].ToString().Equals(GenericResources.DDR3_SMBIOS))
                             {
-                                mType = Resources.DDR3;
-                                mSpeed = " " + queryObj["Speed"].ToString() + " " + Resources.MHZ;
+                                mType = GenericResources.DDR3;
+                                mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
                             }
                             else if (queryObj["SMBIOSMemoryType"].ToString().Equals("3"))
                             {
@@ -1192,10 +1200,10 @@ namespace HardwareInfoDLL
                             }
                             else
                             {
-                                mType = Resources.DDR2;
+                                mType = GenericResources.DDR2;
                                 try
                                 {
-                                    mSpeed = " " + queryObj["Speed"].ToString() + " " + Resources.MHZ;
+                                    mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
                                 }
                                 catch
                                 {
@@ -1205,10 +1213,10 @@ namespace HardwareInfoDLL
                         }
                         else
                         {
-                            if (queryObj["MemoryType"].ToString().Equals(Resources.DDR3_MEMORY_TYPE))
+                            if (queryObj["MemoryType"].ToString().Equals(GenericResources.DDR3_MEMORY_TYPE))
                             {
-                                mType = Resources.DDR3;
-                                mSpeed = " " + queryObj["Speed"].ToString() + " " + Resources.MHZ;
+                                mType = GenericResources.DDR3;
+                                mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
                             }
                             else if (queryObj["MemoryType"].ToString().Equals("2") || queryObj["MemoryType"].ToString().Equals("0"))
                             {
@@ -1217,10 +1225,10 @@ namespace HardwareInfoDLL
                             }
                             else
                             {
-                                mType = Resources.DDR2;
+                                mType = GenericResources.DDR2;
                                 try
                                 {
-                                    mSpeed = " " + queryObj["Speed"].ToString() + " " + Resources.MHZ;
+                                    mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
                                 }
                                 catch
                                 {
@@ -1231,7 +1239,7 @@ namespace HardwareInfoDLL
                     }
                 }
                 MemSize = MemSize / 1024 / 1024 / 1024;
-                return MemSize.ToString() + " " + Resources.GB + " " + mType + mSpeed;
+                return MemSize.ToString() + " " + GenericResources.GB + " " + mType + mSpeed;
             }
             catch (ManagementException e)
             {
@@ -1255,7 +1263,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(Resources.SYSTEM_ROM))
+                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(GenericResources.SYSTEM_ROM))
                     {
                         mCap = Convert.ToInt64(queryObj["Capacity"]);
                         MemSize += mCap;
@@ -1311,7 +1319,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(Resources.SYSTEM_ROM))
+                    if (!Convert.ToString(queryObj["DeviceLocator"]).Contains(GenericResources.SYSTEM_ROM))
                         i++;
                 }
 
@@ -1417,7 +1425,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (GetWinVersion().Equals(Resources.WINDOWS_10))
+                    if (GetWinVersion().Equals(GenericResources.WINDOWS_10))
                         ramType = queryObj["SMBIOSMemoryType"].ToString();
                     else
                         ramType = queryObj["MemoryType"].ToString();
@@ -1620,7 +1628,7 @@ namespace HardwareInfoDLL
         public static string GetOSArch()
         {
             bool is64bit = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"));
-            return is64bit ? Resources.ARCH64 : Resources.ARCH32;
+            return is64bit ? GenericResources.ARCH64 : GenericResources.ARCH32;
         }
 
         /// <summary> 
@@ -1635,9 +1643,9 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return queryObj.GetPropertyValue("OSArchitecture").ToString().Contains(Resources.ARCH64)
-                        ? Resources.X64
-                        : Resources.X86;
+                    return queryObj.GetPropertyValue("OSArchitecture").ToString().Contains(GenericResources.ARCH64)
+                        ? GenericResources.X64
+                        : GenericResources.X86;
                 }
                 return UIStrings.UNKNOWN;
             }
@@ -1666,14 +1674,14 @@ namespace HardwareInfoDLL
                     {
                         case 6:
                             if (vs.Minor == 1)
-                                operatingSystem = Resources.WINDOWS_7;
+                                operatingSystem = GenericResources.WINDOWS_7;
                             else if (vs.Minor == 2)
-                                operatingSystem = Resources.WINDOWS_8;
+                                operatingSystem = GenericResources.WINDOWS_8;
                             else
-                                operatingSystem = Resources.WINDOWS_8_1;
+                                operatingSystem = GenericResources.WINDOWS_8_1;
                             break;
                         case 10:
-                            operatingSystem = Resources.WINDOWS_10;
+                            operatingSystem = GenericResources.WINDOWS_10;
                             break;
                         default:
                             break;
@@ -1709,20 +1717,20 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (GetWinVersion().Equals(Resources.WINDOWS_10))
+                    if (GetWinVersion().Equals(GenericResources.WINDOWS_10))
                     {
                         if (Convert.ToInt32(releaseId) <= 2004)
-                            return (queryObj["Caption"].ToString() + ", v" + releaseId + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
+                            return (queryObj["Caption"].ToString() + ", v" + releaseId + ", " + GenericResources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                         else
-                            return (queryObj["Caption"].ToString() + ", v" + displayVersion + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
+                            return (queryObj["Caption"].ToString() + ", v" + displayVersion + ", " + GenericResources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
-                    else if (GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                    else if (GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                     {
-                        return (queryObj["Caption"].ToString() + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
+                        return (queryObj["Caption"].ToString() + ", " + GenericResources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
                     else
                     {
-                        return (queryObj["Caption"].ToString() + " " + queryObj["CSDVersion"].ToString() + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
+                        return (queryObj["Caption"].ToString() + " " + queryObj["CSDVersion"].ToString() + ", " + GenericResources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
                 }
                 return UIStrings.UNKNOWN;
@@ -1754,14 +1762,14 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    if (GetWinVersion().Equals(Resources.WINDOWS_10))
+                    if (GetWinVersion().Equals(GenericResources.WINDOWS_10))
                     {
                         if (Convert.ToInt32(releaseId) <= 2004)
                             return releaseId;
                         else
                             return displayVersion;
                     }
-                    else if (GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                    else if (GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                     {
                         return null;
                     }
@@ -1889,7 +1897,7 @@ namespace HardwareInfoDLL
         {
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     uint firmwaretype = 0;
                     if (GetFirmwareType(ref firmwaretype))
@@ -1962,7 +1970,7 @@ namespace HardwareInfoDLL
 
             try
             {
-                if (!GetWinVersion().Equals(Resources.WINDOWS_7))
+                if (!GetWinVersion().Equals(GenericResources.WINDOWS_7))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
@@ -2008,9 +2016,9 @@ namespace HardwareInfoDLL
                     featureToggle = (uint)queryObj.Properties["InstallState"].Value;
 
                     if ((featureName.Equals("Microsoft-Hyper-V") && featureToggle.Equals(1)) || (featureName.Equals("Microsoft-Hyper-V-Hypervisor") && featureToggle.Equals(1)) || (featureName.Equals("Containers-DisposableClientVM") && featureToggle.Equals(1)))
-                        return Resources.TRUE;
+                        return GenericResources.TRUE;
                 }
-                return Resources.FALSE;
+                return GenericResources.FALSE;
             }
             catch (ManagementException e)
             {
@@ -2036,9 +2044,9 @@ namespace HardwareInfoDLL
 
                 if (specVersion != string.Empty)
                 {
-                    if (specVersion.Substring(0, 3).Equals(Resources.TPM_1_2_NAME))
+                    if (specVersion.Substring(0, 3).Equals(GenericResources.TPM_1_2_NAME))
                         str = ((int)TpmTypes.v1_2).ToString();
-                    else if (specVersion.Substring(0, 3).Equals(Resources.TPM_2_0_NAME))
+                    else if (specVersion.Substring(0, 3).Equals(GenericResources.TPM_2_0_NAME))
                         str = ((int)TpmTypes.v2_0).ToString();
                     return str;
                 }
@@ -2061,7 +2069,7 @@ namespace HardwareInfoDLL
         {
             try
             {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                if (GetWinVersion().Equals(GenericResources.WINDOWS_10) || GetWinVersion().Equals(GenericResources.WINDOWS_8_1) || GetWinVersion().Equals(GenericResources.WINDOWS_8))
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
@@ -2069,9 +2077,9 @@ namespace HardwareInfoDLL
                     {
                         if (queryObj["DeviceId"].ToString().Equals("0"))
                         {
-                            if (queryObj["BusType"].ToString().Equals(Resources.WMI_PCIE))
+                            if (queryObj["BusType"].ToString().Equals(GenericResources.WMI_PCIE))
                                 return ((int)MediaOperationTypes.NVMe).ToString();
-                            else if (queryObj["BusType"].ToString().Equals(Resources.WMI_SATA))
+                            else if (queryObj["BusType"].ToString().Equals(GenericResources.WMI_SATA))
                                 return ((int)MediaOperationTypes.AHCI).ToString();
                         }
                     }
@@ -2131,7 +2139,7 @@ namespace HardwareInfoDLL
                         if (array[i] == group.Key)
                         {
                             array[i] = string.Empty;
-                            if (group.Key == Resources.HDD)
+                            if (group.Key == GenericResources.HDD)
                             {
                                 sizesHDD.Add(array2[i]);
                                 j++;
@@ -2143,7 +2151,7 @@ namespace HardwareInfoDLL
                             }
                             if (group.Count() == j)
                             {
-                                if (group.Key == Resources.HDD)
+                                if (group.Key == GenericResources.HDD)
                                     result += " (" + string.Join(", ", sizesHDD) + ")" + ", ";
                                 else
                                     result += " (" + string.Join(", ", sizesSSD) + ")" + ", ";

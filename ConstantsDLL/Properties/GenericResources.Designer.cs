@@ -22,14 +22,14 @@ namespace ConstantsDLL.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    public class GenericResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal GenericResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace ConstantsDLL.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ConstantsDLL.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ConstantsDLL.Properties.GenericResources", typeof(GenericResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -309,6 +309,15 @@ namespace ConstantsDLL.Properties {
         public static string DOUBLE_DASH {
             get {
                 return ResourceManager.GetString("DOUBLE_DASH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a EB.
+        /// </summary>
+        public static string EB {
+            get {
+                return ResourceManager.GetString("EB", resourceCulture);
             }
         }
         
@@ -1627,6 +1636,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a KB.
+        /// </summary>
+        public static string KB {
+            get {
+                return ResourceManager.GetString("KB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
         /// </summary>
         public static string LABEL_SCROLL_SPEED {
@@ -1866,6 +1884,15 @@ namespace ConstantsDLL.Properties {
         public static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a PB.
+        /// </summary>
+        public static string PB {
+            get {
+                return ResourceManager.GetString("PB", resourceCulture);
             }
         }
         
