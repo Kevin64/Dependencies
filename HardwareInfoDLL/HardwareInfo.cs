@@ -49,6 +49,10 @@ namespace HardwareInfoDLL
             ENABLED
         }
 
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Processor functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
         /// <summary> 
         /// Fetches the CPU information, including the number of cores/threads
         /// </summary>
@@ -243,6 +247,10 @@ namespace HardwareInfoDLL
             }
         }
 
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Video Card functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
         /// <summary> 
         /// Fetches the primary Video Card information
         /// </summary>
@@ -374,55 +382,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        /// <summary> 
-        /// Fetches the operation mode that the storage is running (IDE/AHCI/NVMe)
-        /// </summary>
-        /// <returns>String with the current media operation mode</returns>
-        public static string GetMediaOperationMode()
-        {
-            try
-            {
-                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
-                {
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
-
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                    {
-                        if (queryObj["DeviceId"].ToString().Equals("0"))
-                        {
-                            if (queryObj["BusType"].ToString().Equals(Resources.WMI_PCIE))
-                                return ((int)MediaOperationTypes.NVMe).ToString();
-                            else if (queryObj["BusType"].ToString().Equals(Resources.WMI_SATA))
-                                return ((int)MediaOperationTypes.AHCI).ToString();
-                        }
-                    }
-                    return ((int)MediaOperationTypes.IDE_RAID).ToString();
-                }
-                else
-                {
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
-
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                    {
-                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
-                        {
-                            if (queryObj["Index"].ToString().Equals("0"))
-                            {
-                                if (queryObj["InterfaceType"].ToString().Equals("IDE"))
-                                    return ((int)MediaOperationTypes.AHCI).ToString();
-                                else if (queryObj["InterfaceType"].ToString().Equals("SCSI"))
-                                    return ((int)MediaOperationTypes.NVMe).ToString();
-                            }
-                        }
-                    }
-                    return ((int)MediaOperationTypes.IDE_RAID).ToString();
-                }
-            }
-            catch (ManagementException e)
-            {
-                return e.Message;
-            }
-        }
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Storage functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
         /// <summary> 
         /// Fetches the type of drive the system has (SSD or HDD), and the quantity of each
@@ -953,6 +915,10 @@ namespace HardwareInfoDLL
             }
         }
 
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Network functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
         /// <summary> 
         /// Fetches the primary MAC Address
         /// </summary>
@@ -1010,6 +976,63 @@ namespace HardwareInfoDLL
                 return null;
             }
         }
+
+        /// <summary> 
+        /// Fetches the computer's hostname
+        /// </summary>
+        /// <returns>String with the hostname</returns>
+        public static string GetHostname()
+        {
+            string info = string.Empty;
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_ComputerSystem");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    info = (string)queryObj["Name"];
+                return info;
+            }
+            catch (ManagementException e)
+            {
+                return e.Message;
+            }
+        }
+
+        /// <summary> 
+        /// Fetches the default gateway of the NIC
+        /// </summary>
+        /// <returns>String with the NIC's gateway</returns>
+        public static string GetDefaultIpGateway()
+        {
+            string gateway = string.Empty;
+
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_NetworkAdapterConfiguration");
+
+                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                {
+                    if (gateway == string.Empty)
+                    {
+                        if ((bool)queryObj["IPEnabled"] == true)
+                            gateway = queryObj["DefaultIPGateway"].ToString();
+                    }
+
+                    queryObj.Dispose();
+                }
+                gateway = gateway.Replace(":", string.Empty);
+                return gateway;
+            }
+            catch (ManagementException e)
+            {
+                return e.Message;
+            }
+        }
+
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Hardware functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
         /// <summary> 
         /// Fetches the computer's manufacturer
@@ -1118,6 +1141,10 @@ namespace HardwareInfoDLL
                 return e.Message;
             }
         }
+
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Ram functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
         /// <summary> 
         /// Fetches the summary of RAM of the system
@@ -1314,7 +1341,7 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
-                for(int i = 0; i < numRamFreeSlots - count; i++)
+                for (int i = 0; i < numRamFreeSlots - count; i++)
                     list.Add(Strings.FREE);
                 return list;
             }
@@ -1442,7 +1469,7 @@ namespace HardwareInfoDLL
             {
                 return new List<string>() { e.Message };
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return new List<string>() { Strings.UNKNOWN };
             }
@@ -1565,36 +1592,9 @@ namespace HardwareInfoDLL
             }
         }
 
-        /// <summary> 
-        /// Fetches the default gateway of the NIC
-        /// </summary>
-        /// <returns>String with the NIC's gateway</returns>
-        public static string GetDefaultIpGateway()
-        {
-            string gateway = string.Empty;
-
-            try
-            {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_NetworkAdapterConfiguration");
-
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                {
-                    if (gateway == string.Empty)
-                    {
-                        if ((bool)queryObj["IPEnabled"] == true)
-                            gateway = queryObj["DefaultIPGateway"].ToString();
-                    }
-
-                    queryObj.Dispose();
-                }
-                gateway = gateway.Replace(":", string.Empty);
-                return gateway;
-            }
-            catch (ManagementException e)
-            {
-                return e.Message;
-            }
-        }
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Operating System functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
         /// <summary> 
         /// Fetches the OS architecture in binary form
@@ -1821,27 +1821,9 @@ namespace HardwareInfoDLL
 
         }
 
-        /// <summary> 
-        /// Fetches the computer's hostname
-        /// </summary>
-        /// <returns>String with the hostname</returns>
-        public static string GetHostname()
-        {
-            string info = string.Empty;
-
-            try
-            {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_ComputerSystem");
-
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
-                    info = (string)queryObj["Name"];
-                return info;
-            }
-            catch (ManagementException e)
-            {
-                return e.Message;
-            }
-        }
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Firmware functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
         /// <summary> 
         /// Fetches the firmware version
@@ -2029,8 +2011,6 @@ namespace HardwareInfoDLL
             }
         }
 
-
-
         /// <summary> 
         /// Fetches the TPM version
         /// </summary>
@@ -2065,6 +2045,60 @@ namespace HardwareInfoDLL
                 return e.Message;
             }
         }
+
+        /// <summary> 
+        /// Fetches the operation mode that the storage is running (IDE/AHCI/NVMe)
+        /// </summary>
+        /// <returns>String with the current media operation mode</returns>
+        public static string GetMediaOperationMode()
+        {
+            try
+            {
+                if (GetWinVersion().Equals(Resources.WINDOWS_10) || GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (queryObj["DeviceId"].ToString().Equals("0"))
+                        {
+                            if (queryObj["BusType"].ToString().Equals(Resources.WMI_PCIE))
+                                return ((int)MediaOperationTypes.NVMe).ToString();
+                            else if (queryObj["BusType"].ToString().Equals(Resources.WMI_SATA))
+                                return ((int)MediaOperationTypes.AHCI).ToString();
+                        }
+                    }
+                    return ((int)MediaOperationTypes.IDE_RAID).ToString();
+                }
+                else
+                {
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    {
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            if (queryObj["Index"].ToString().Equals("0"))
+                            {
+                                if (queryObj["InterfaceType"].ToString().Equals("IDE"))
+                                    return ((int)MediaOperationTypes.AHCI).ToString();
+                                else if (queryObj["InterfaceType"].ToString().Equals("SCSI"))
+                                    return ((int)MediaOperationTypes.NVMe).ToString();
+                            }
+                        }
+                    }
+                    return ((int)MediaOperationTypes.IDE_RAID).ToString();
+                }
+            }
+            catch (ManagementException e)
+            {
+                return e.Message;
+            }
+        }
+
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
+        // Auxiliary functions
+        /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
         /// <summary> 
         /// Auxiliary method for GetStorageType method, that groups the same objects in a list and counts them
