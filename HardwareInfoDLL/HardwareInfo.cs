@@ -1705,17 +1705,17 @@ namespace HardwareInfoDLL
                     if (GetWinVersion().Equals(Resources.WINDOWS_10))
                     {
                         if (Convert.ToInt32(releaseId) <= 2004)
-                            return (queryObj["Caption"].ToString().Trim() + ", v" + releaseId + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                            return (queryObj["Caption"].ToString() + ", v" + releaseId + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                         else
-                            return (queryObj["Caption"].ToString().Trim() + ", v" + displayVersion + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                            return (queryObj["Caption"].ToString() + ", v" + displayVersion + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
                     else if (GetWinVersion().Equals(Resources.WINDOWS_8_1) || GetWinVersion().Equals(Resources.WINDOWS_8))
                     {
-                        return (queryObj["Caption"].ToString().Trim() + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                        return (queryObj["Caption"].ToString() + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
                     else
                     {
-                        return (queryObj["Caption"].ToString().Trim() + " " + queryObj["CSDVersion"].ToString() + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Substring(10);
+                        return (queryObj["Caption"].ToString() + " " + queryObj["CSDVersion"].ToString() + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
                 }
                 return Strings.UNKNOWN;
@@ -1783,7 +1783,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
-                    return queryObj["Caption"].ToString().Trim();
+                    return queryObj["Caption"].ToString().Replace("Microsoft", string.Empty).Trim();
                 }
                 return Strings.UNKNOWN;
             }
