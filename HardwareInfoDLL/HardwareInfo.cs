@@ -859,7 +859,7 @@ namespace HardwareInfoDLL
             }
             catch (ManagementException)
             {
-                return new List<string>() { Strings.UNKNOWN };
+                return new List<string>() { UIStrings.UNKNOWN };
             }
         }
 
@@ -1052,7 +1052,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1072,7 +1072,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1094,9 +1094,9 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     str = queryObj.GetPropertyValue("Model").ToString();
-                    return str != string.Empty ? str : Strings.UNKNOWN;
+                    return str != string.Empty ? str : UIStrings.UNKNOWN;
                 }
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1118,9 +1118,9 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     str = queryObj.GetPropertyValue("Product").ToString();
-                    return str != string.Empty ? str : Strings.UNKNOWN;
+                    return str != string.Empty ? str : UIStrings.UNKNOWN;
                 }
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1140,7 +1140,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1349,7 +1349,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(Strings.FREE);
+                    list.Add(UIStrings.FREE);
                 return list;
             }
             catch (ManagementException e)
@@ -1358,7 +1358,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { Strings.UNKNOWN };
+                return new List<string>() { UIStrings.UNKNOWN };
             }
         }
 
@@ -1388,7 +1388,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(Strings.FREE);
+                    list.Add(UIStrings.FREE);
                 return list;
             }
             catch (ManagementException e)
@@ -1397,7 +1397,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { Strings.UNKNOWN };
+                return new List<string>() { UIStrings.UNKNOWN };
             }
         }
 
@@ -1430,7 +1430,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(Strings.FREE);
+                    list.Add(UIStrings.FREE);
                 return list;
             }
             catch (ManagementException e)
@@ -1439,7 +1439,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { Strings.UNKNOWN };
+                return new List<string>() { UIStrings.UNKNOWN };
             }
         }
 
@@ -1469,7 +1469,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(Strings.FREE);
+                    list.Add(UIStrings.FREE);
                 return list;
             }
             catch (ManagementException e)
@@ -1478,7 +1478,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { Strings.UNKNOWN };
+                return new List<string>() { UIStrings.UNKNOWN };
             }
         }
 
@@ -1508,7 +1508,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(Strings.FREE);
+                    list.Add(UIStrings.FREE);
                 return list;
             }
             catch (ManagementException e)
@@ -1517,7 +1517,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { Strings.UNKNOWN };
+                return new List<string>() { UIStrings.UNKNOWN };
             }
         }
 
@@ -1547,7 +1547,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(Strings.FREE);
+                    list.Add(UIStrings.FREE);
                 return list;
             }
             catch (ManagementException e)
@@ -1556,7 +1556,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { Strings.UNKNOWN };
+                return new List<string>() { UIStrings.UNKNOWN };
             }
         }
 
@@ -1586,7 +1586,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(Strings.FREE);
+                    list.Add(UIStrings.FREE);
                 return list;
             }
             catch (ManagementException e)
@@ -1595,7 +1595,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { Strings.UNKNOWN };
+                return new List<string>() { UIStrings.UNKNOWN };
             }
         }
 
@@ -1639,7 +1639,7 @@ namespace HardwareInfoDLL
                         ? Resources.X64
                         : Resources.X86;
                 }
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1725,7 +1725,7 @@ namespace HardwareInfoDLL
                         return (queryObj["Caption"].ToString() + " " + queryObj["CSDVersion"].ToString() + ", " + Resources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
                 }
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1770,7 +1770,7 @@ namespace HardwareInfoDLL
                         return queryObj["CSDVersion"].ToString();
                     }
                 }
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1792,7 +1792,7 @@ namespace HardwareInfoDLL
                 {
                     return queryObj["Caption"].ToString().Replace("Microsoft", string.Empty).Trim();
                 }
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1819,7 +1819,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Version").ToString() + "." + updateBuildRevision;
-                return Strings.UNKNOWN;
+                return UIStrings.UNKNOWN;
             }
             catch (ManagementException e)
             {
@@ -1900,7 +1900,7 @@ namespace HardwareInfoDLL
                             return ((int)FirmwareTypes.UEFI).ToString();
                     }
 
-                    return Strings.NOT_DETERMINED;
+                    return UIStrings.NOT_DETERMINED;
                 }
                 else
                 {

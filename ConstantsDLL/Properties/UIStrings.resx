@@ -119,7 +119,7 @@
   </resheader>
   <data name="aaaPROJECTaaa" xml:space="preserve">
     <value />
-    <comment>ConstantsDLL.Strings.Generic</comment>
+    <comment>ConstantsDLL.UIStrings.Generic</comment>
   </data>
   <data name="ABSENT" xml:space="preserve">
     <value>Absent</value>

@@ -31,7 +31,7 @@ namespace RestApiDLL
     [Serializable]
     public class InvalidParameterException : Exception
     {
-        public InvalidParameterException() : base(Strings.PARAMETER_ERROR) { }
+        public InvalidParameterException() : base(UIStrings.PARAMETER_ERROR) { }
     }
 
     /// <summary> 

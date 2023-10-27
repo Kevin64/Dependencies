@@ -43,29 +43,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\LogStrings.Designer.cs">
-      <DependentUpon>LogStrings.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\LogStrings.pt.Designer.cs">
-      <DependentUpon>LogStrings.pt.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogStrings.pt.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Properties\Strings.Designer.cs">
-      <DependentUpon>Strings.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
+    <Compile Include="Properties\UIStrings.Designer.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Strings.pt.Designer.cs">
-      <DependentUpon>Strings.pt.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
+    <Compile Include="Properties\UIStrings.pt.Designer.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIStrings.pt.resx</DependentUpon>
     </Compile>
     <Compile Include="StringsAndConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,13 +83,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Strings.pt.resx">
+    <EmbeddedResource Include="Properties\UIStrings.pt.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.pt.Designer.cs</LastGenOutput>
+      <LastGenOutput>UIStrings.pt.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Strings.resx">
+    <EmbeddedResource Include="Properties\UIStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <LastGenOutput>UIStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

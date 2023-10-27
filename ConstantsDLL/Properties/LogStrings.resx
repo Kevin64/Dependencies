@@ -136,23 +136,11 @@
   <data name="LOG_AUTOTHEME_CHANGE" xml:space="preserve">
     <value>Automatically selecting theme</value>
   </data>
-  <data name="LOG_BIOS" xml:space="preserve">
-    <value>Firmware version</value>
-  </data>
-  <data name="LOG_BIOSTYPE" xml:space="preserve">
-    <value>Firmware type</value>
-  </data>
-  <data name="LOG_BM" xml:space="preserve">
-    <value>Brand</value>
-  </data>
   <data name="LOG_CHECKING_FOR_UPDATES" xml:space="preserve">
     <value>Checking for updates</value>
   </data>
-  <data name="LOG_CHECKING_WEBVIEW2" xml:space="preserve">
-    <value>Checking presence of WebView2 Runtime on the system</value>
-  </data>
   <data name="LOG_CLI_MODE" xml:space="preserve">
-    <value>Arguments detected, starting in CLI mode. list of arguments</value>
+    <value>Arguments detected, starting in CLI mode. List of arguments</value>
   </data>
   <data name="LOG_CLOSING_ABOUTBOX" xml:space="preserve">
     <value>Closing About window</value>
@@ -172,17 +160,14 @@
   <data name="LOG_CONNECTING_GITHUB" xml:space="preserve">
     <value>Connecting to GitHub</value>
   </data>
-  <data name="LOG_DARKMODE_CHANGE" xml:space="preserve">
-    <value>Switching to dark mode</value>
+  <data name="LOG_DARK_THEME_CHANGE" xml:space="preserve">
+    <value>Switching to dark theme</value>
   </data>
   <data name="LOG_DEBUG_MODE" xml:space="preserve">
     <value>Running in DEBUG mode</value>
   </data>
   <data name="LOG_END_COLLECTING" xml:space="preserve">
     <value>Completion of hardware collection</value>
-  </data>
-  <data name="LOG_END_LOADING_WEBVIEW2" xml:space="preserve">
-    <value>WebView2 Runtime loading finished</value>
   </data>
   <data name="LOG_FETCHING_ASSET_DATA" xml:space="preserve">
     <value>Searching asset information</value>
@@ -196,26 +181,44 @@
   <data name="LOG_FETCHING_SERVER_DATA" xml:space="preserve">
     <value>Searching available buildings and types of hardware</value>
   </data>
+  <data name="LOG_FIRMWARE_MEDIA_OPERATION_TYPE" xml:space="preserve">
+    <value>SATA/M.2 operating mode</value>
+  </data>
+  <data name="LOG_FIRMWARE_SECURE_BOOT" xml:space="preserve">
+    <value>Secure Boot</value>
+  </data>
+  <data name="LOG_FIRMWARE_TPM" xml:space="preserve">
+    <value>TPM version</value>
+  </data>
+  <data name="LOG_FIRMWARE_TYPE" xml:space="preserve">
+    <value>Firmware type</value>
+  </data>
+  <data name="LOG_FIRMWARE_VERSION" xml:space="preserve">
+    <value>Firmware version</value>
+  </data>
+  <data name="LOG_FIRMWARE_VIRTUALIZATION_TECHNOLOGY" xml:space="preserve">
+    <value>Virtualization Technology</value>
+  </data>
   <data name="LOG_GITHUB_UNREACHABLE" xml:space="preserve">
     <value>GitHub unreachable</value>
-  </data>
-  <data name="LOG_GPUINFO" xml:space="preserve">
-    <value>Video card and vRAM</value>
   </data>
   <data name="LOG_GUI_MODE" xml:space="preserve">
     <value>Missing arguments, starting in GUI mode</value>
   </data>
+  <data name="LOG_HARDWARE_BRAND" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="LOG_HARDWARE_MODEL" xml:space="preserve">
+    <value>Model</value>
+  </data>
   <data name="LOG_HARDWARE_PASSED" xml:space="preserve">
     <value>Compliant configuration, ready for registration</value>
   </data>
-  <data name="LOG_HDSIZE" xml:space="preserve">
-    <value>Storage (total space)</value>
+  <data name="LOG_HARDWARE_SERIAL_NUMBER" xml:space="preserve">
+    <value>Serial Number</value>
   </data>
   <data name="LOG_HEADER" xml:space="preserve">
     <value>------------------------ EXECUTION LOG ------------------------</value>
-  </data>
-  <data name="LOG_HOSTNAME" xml:space="preserve">
-    <value>Hostname</value>
   </data>
   <data name="LOG_INIT" xml:space="preserve">
     <value>Start of execution</value>
@@ -229,11 +232,8 @@
   <data name="LOG_INSTALLING_WEBVIEW2" xml:space="preserve">
     <value>Installing WebView2 Runtime</value>
   </data>
-  <data name="LOG_IP" xml:space="preserve">
-    <value>NIC's IP Address</value>
-  </data>
-  <data name="LOG_LIGHTMODE_CHANGE" xml:space="preserve">
-    <value>Switching to light mode</value>
+  <data name="LOG_LIGHT_THEME_CHANGE" xml:space="preserve">
+    <value>Switching to light theme</value>
   </data>
   <data name="LOG_LOGIN_FAILED" xml:space="preserve">
     <value>Authentication failed</value>
@@ -241,17 +241,14 @@
   <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
     <value>Authentication performed successfully</value>
   </data>
-  <data name="LOG_MAC" xml:space="preserve">
-    <value>NIC's MAC Address</value>
+  <data name="LOG_NETWORK_HOSTNAME" xml:space="preserve">
+    <value>Hostname</value>
   </data>
-  <data name="LOG_MEDIAOP" xml:space="preserve">
-    <value>SATA/M.2 operating mode</value>
+  <data name="LOG_NETWORK_IP_ADDRESS" xml:space="preserve">
+    <value>Primary IP Address</value>
   </data>
-  <data name="LOG_MEDIATYPE" xml:space="preserve">
-    <value>Storage type</value>
-  </data>
-  <data name="LOG_MODEL" xml:space="preserve">
-    <value>Model</value>
+  <data name="LOG_NETWORK_MAC_ADDRESS" xml:space="preserve">
+    <value>Primary MAC Address</value>
   </data>
   <data name="LOG_NO_INTERNET_AVAILABLE" xml:space="preserve">
     <value>No internet connection available</value>
@@ -274,7 +271,7 @@
   <data name="LOG_OPENING_LOG" xml:space="preserve">
     <value>Opening event log</value>
   </data>
-  <data name="LOG_OS" xml:space="preserve">
+  <data name="LOG_OPERATING_SYSTEM" xml:space="preserve">
     <value>Operating system</value>
   </data>
   <data name="LOG_PARAMETER_FILE_FOUND" xml:space="preserve">
@@ -289,11 +286,50 @@
   <data name="LOG_PINGGING_SERVER" xml:space="preserve">
     <value>Checking server availability</value>
   </data>
-  <data name="LOG_PM" xml:space="preserve">
-    <value>RAM amount and number of slots</value>
+  <data name="LOG_PROCESSOR" xml:space="preserve">
+    <value>Processor</value>
   </data>
-  <data name="LOG_PROCNAME" xml:space="preserve">
-    <value>Processor and number of cores</value>
+  <data name="LOG_PROCESSOR_CACHE" xml:space="preserve">
+    <value>Processor cache</value>
+  </data>
+  <data name="LOG_PROCESSOR_CORES" xml:space="preserve">
+    <value>Processor cores</value>
+  </data>
+  <data name="LOG_PROCESSOR_FREQUENCY" xml:space="preserve">
+    <value>Processor frequency</value>
+  </data>
+  <data name="LOG_PROCESSOR_ID" xml:space="preserve">
+    <value>Processor ID</value>
+  </data>
+  <data name="LOG_PROCESSOR_NAME" xml:space="preserve">
+    <value>Primary processor</value>
+  </data>
+  <data name="LOG_PROCESSOR_THREADS" xml:space="preserve">
+    <value>Processor threads</value>
+  </data>
+  <data name="LOG_RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="LOG_RAM_AMOUNT" xml:space="preserve">
+    <value>RAM module memory amount</value>
+  </data>
+  <data name="LOG_RAM_FREQUENCY" xml:space="preserve">
+    <value>RAM module frequency</value>
+  </data>
+  <data name="LOG_RAM_MANUFACTURER" xml:space="preserve">
+    <value>RAM module manufacturer</value>
+  </data>
+  <data name="LOG_RAM_PART_NUMBER" xml:space="preserve">
+    <value>RAM module part number</value>
+  </data>
+  <data name="LOG_RAM_SERIAL_NUMBER" xml:space="preserve">
+    <value>RAM module serial number</value>
+  </data>
+  <data name="LOG_RAM_SLOT" xml:space="preserve">
+    <value>RAM module slot</value>
+  </data>
+  <data name="LOG_RAM_TYPE" xml:space="preserve">
+    <value>RAM module type</value>
   </data>
   <data name="LOG_REGISTRY_FINISHED" xml:space="preserve">
     <value>Registration finished</value>
@@ -301,17 +337,8 @@
   <data name="LOG_RELEASE_MODE" xml:space="preserve">
     <value>Running in RELEASE mode</value>
   </data>
-  <data name="LOG_RESETTING_LASTSERVICE_DATE" xml:space="preserve">
-    <value>Recalculating last service date</value>
-  </data>
   <data name="LOG_SAMEWORD_NOFIRSTREGISTRY" xml:space="preserve">
     <value>One or more 'same' arguments detected, however there is no existing record for the current asset. Computer must be registered first via GUI or via CLI with all command line options correctly filled in</value>
-  </data>
-  <data name="LOG_SECBOOT" xml:space="preserve">
-    <value>Secure Boot</value>
-  </data>
-  <data name="LOG_SERIALNO" xml:space="preserve">
-    <value>Serial Number</value>
   </data>
   <data name="LOG_SERVER_DATA" xml:space="preserve">
     <value>Server and port</value>
@@ -319,17 +346,11 @@
   <data name="LOG_SHOWING_HELP" xml:space="preserve">
     <value>Displaying list of commands</value>
   </data>
-  <data name="LOG_SMART" xml:space="preserve">
-    <value>S.M.A.R.T. status</value>
-  </data>
   <data name="LOG_START_COLLECTING" xml:space="preserve">
     <value>Collecting hardware</value>
   </data>
   <data name="LOG_START_COLLECT_THREAD" xml:space="preserve">
     <value>Initializing collection procedure thread</value>
-  </data>
-  <data name="LOG_START_LOADING_WEBVIEW2" xml:space="preserve">
-    <value>Starting loading of WebView2 Runtime</value>
   </data>
   <data name="LOG_STATUS_ERROR" xml:space="preserve">
     <value>&lt;ERROR&gt;</value>
@@ -343,19 +364,55 @@
   <data name="LOG_STATUS_WARNING" xml:space="preserve">
     <value>&lt;WARNING&gt;</value>
   </data>
-  <data name="LOG_THEME" xml:space="preserve">
-    <value>Using dark theme</value>
+  <data name="LOG_STORAGE" xml:space="preserve">
+    <value>Storage</value>
   </data>
-  <data name="LOG_TPM" xml:space="preserve">
-    <value>TPM version</value>
+  <data name="LOG_STORAGE_CONNECTION" xml:space="preserve">
+    <value>Storage device connection</value>
+  </data>
+  <data name="LOG_STORAGE_ID" xml:space="preserve">
+    <value>Storage device ID</value>
+  </data>
+  <data name="LOG_STORAGE_MODEL" xml:space="preserve">
+    <value>Storage device model</value>
+  </data>
+  <data name="LOG_STORAGE_SERIAL_NUMBER" xml:space="preserve">
+    <value>Storage device serial number</value>
+  </data>
+  <data name="LOG_STORAGE_SIZE" xml:space="preserve">
+    <value>Storage device size</value>
+  </data>
+  <data name="LOG_STORAGE_SMART_STATUS" xml:space="preserve">
+    <value>Storage device S.M.A.R.T. status</value>
+  </data>
+  <data name="LOG_STORAGE_TYPE" xml:space="preserve">
+    <value>Storage device type</value>
+  </data>
+  <data name="LOG_THEME" xml:space="preserve">
+    <value>Active theme</value>
+  </data>
+  <data name="LOG_THEME_DARK" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="LOG_THEME_LIGHT" xml:space="preserve">
+    <value>Light</value>
   </data>
   <data name="LOG_UPDATE_CHECK_IMPOSSIBLE" xml:space="preserve">
     <value>Unable to check for updates</value>
   </data>
+  <data name="LOG_VIDEO_CARD" xml:space="preserve">
+    <value>Video card</value>
+  </data>
+  <data name="LOG_VIDEO_CARD_ID" xml:space="preserve">
+    <value>Video card ID</value>
+  </data>
+  <data name="LOG_VIDEO_CARD_NAME" xml:space="preserve">
+    <value>Video card name</value>
+  </data>
+  <data name="LOG_VIDEO_CARD_RAM" xml:space="preserve">
+    <value>Video card memory</value>
+  </data>
   <data name="LOG_VIEW_SERVER" xml:space="preserve">
     <value>Accessing asset control system</value>
-  </data>
-  <data name="LOG_VT" xml:space="preserve">
-    <value>Virtualization Technology</value>
   </data>
 </root>
