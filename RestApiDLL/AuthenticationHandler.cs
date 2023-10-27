@@ -58,7 +58,7 @@ namespace RestApiDLL
             }
             catch (HttpRequestException)
             {
-                 throw new HttpRequestException();
+                throw new HttpRequestException();
             }
         }
     }
