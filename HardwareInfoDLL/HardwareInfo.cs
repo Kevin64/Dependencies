@@ -49,6 +49,12 @@ namespace HardwareInfoDLL
             ENABLED
         }
 
+        public enum SpecBinaryStates
+        {
+            DISABLED,
+            ENABLED
+        }
+
         /*-------------------------------------------------------------------------------------------------------------------------------------------*/
         // Processor functions
         /*-------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -1333,6 +1339,7 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     ramSlot = queryObj["DeviceLocator"].ToString();
+                    ramSlot = ramSlot.Substring(ramSlot.Length - 1);
                     count++;
                     list.Add(ramSlot);
                 }
