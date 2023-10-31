@@ -142,6 +142,9 @@
   <data name="LOG_ASSET_NOT_EXIST" xml:space="preserve">
     <value>Ativo não presente no banco de dados</value>
   </data>
+  <data name="LOG_AUTH_USER" xml:space="preserve">
+    <value>Autenticando usuário</value>
+  </data>
   <data name="LOG_AUTOTHEME_CHANGE" xml:space="preserve">
     <value>Selecionando tema automaticamente</value>
   </data>
@@ -243,9 +246,6 @@
   </data>
   <data name="LOG_INIT" xml:space="preserve">
     <value>Inicio da execução</value>
-  </data>
-  <data name="LOG_INIT_LOGIN" xml:space="preserve">
-    <value>Autenticando usuário</value>
   </data>
   <data name="LOG_INIT_REGISTRY" xml:space="preserve">
     <value>Iniciando processo de registro</value>

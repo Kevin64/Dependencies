@@ -133,6 +133,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Authenticating user.
+        /// </summary>
+        public static string LOG_AUTH_USER {
+            get {
+                return ResourceManager.GetString("LOG_AUTH_USER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Automatically selecting theme.
         /// </summary>
         public static string LOG_AUTOTHEME_CHANGE {
@@ -435,15 +444,6 @@ namespace ConstantsDLL.Properties {
         public static string LOG_INIT {
             get {
                 return ResourceManager.GetString("LOG_INIT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Authenticating user.
-        /// </summary>
-        public static string LOG_INIT_LOGIN {
-            get {
-                return ResourceManager.GetString("LOG_INIT_LOGIN", resourceCulture);
             }
         }
         
