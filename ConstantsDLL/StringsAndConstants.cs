@@ -71,18 +71,18 @@ namespace ConstantsDLL
         public const string CLI_HELP_TEXT_PASSWORD = "Login password - " + MANDATORY;
 
         //Parameters list
-        public static readonly List<string> LIST_MODE_CLI = new List<string>() { CLI_SERVICE_TYPE_0, CLI_SERVICE_TYPE_1 };
-        public static readonly List<string> LIST_MODE_GUI = new List<string>() { UIStrings.LIST_MODE_GUI_FORMAT, UIStrings.LIST_MODE_GUI_MAINTENANCE };
-        public static readonly List<string> LIST_ACTIVE_DIRECTORY_CLI = new List<string>() { LIST_YES_ABBREV, LIST_NO_ABBREV };
-        public static readonly List<string> LIST_ACTIVE_DIRECTORY_GUI = new List<string>() { UIStrings.LIST_YES_0, UIStrings.LIST_NO_0 };
+        public static readonly List<string> LIST_SERVICE_TYPE_CLI = new List<string>() { CLI_SERVICE_TYPE_0, CLI_SERVICE_TYPE_1 };
+        public static readonly List<string> LIST_SERVICE_TYPE_GUI = new List<string>() { UIStrings.LIST_MODE_GUI_FORMAT, UIStrings.LIST_MODE_GUI_MAINTENANCE };
+        public static readonly List<string> LIST_ACTIVE_DIRECTORY_CLI = new List<string>() { LIST_NO_ABBREV, LIST_YES_ABBREV };
+        public static readonly List<string> LIST_ACTIVE_DIRECTORY_GUI = new List<string>() { UIStrings.LIST_NO_0, UIStrings.LIST_YES_0 };
         public static readonly List<string> LIST_STANDARD_CLI = new List<string>() { CLI_EMPLOYEE_TYPE_0, CLI_EMPLOYEE_TYPE_1 };
         public static readonly List<string> LIST_STANDARD_GUI = new List<string>() { UIStrings.LIST_STANDARD_GUI_EMPLOYEE, UIStrings.LIST_STANDARD_GUI_STUDENT };
-        public static readonly List<string> LIST_IN_USE_CLI = new List<string>() { LIST_YES_ABBREV, LIST_NO_ABBREV };
-        public static readonly List<string> LIST_IN_USE_GUI = new List<string>() { UIStrings.LIST_YES_0, UIStrings.LIST_NO_0 };
-        public static readonly List<string> LIST_TAG_CLI = new List<string>() { LIST_YES_ABBREV, LIST_NO_ABBREV };
-        public static readonly List<string> LIST_TAG_GUI = new List<string>() { UIStrings.LIST_YES_0, UIStrings.LIST_NO_0 };
-        public static readonly List<string> LIST_BATTERY_CLI = new List<string>() { LIST_YES_ABBREV, LIST_NO_ABBREV };
-        public static readonly List<string> LIST_BATTERY_GUI = new List<string>() { UIStrings.LIST_YES_0, UIStrings.LIST_NO_0 };
+        public static readonly List<string> LIST_IN_USE_CLI = new List<string>() { LIST_NO_ABBREV, LIST_YES_ABBREV };
+        public static readonly List<string> LIST_IN_USE_GUI = new List<string>() { UIStrings.LIST_NO_0, UIStrings.LIST_YES_0 };
+        public static readonly List<string> LIST_TAG_CLI = new List<string>() { LIST_NO_ABBREV, LIST_YES_ABBREV };
+        public static readonly List<string> LIST_TAG_GUI = new List<string>() { UIStrings.LIST_NO_0, UIStrings.LIST_YES_0 };
+        public static readonly List<string> LIST_BATTERY_CLI = new List<string>() { LIST_NO_ABBREV, LIST_YES_ABBREV };
+        public static readonly List<string> LIST_BATTERY_GUI = new List<string>() { UIStrings.LIST_NO_0, UIStrings.LIST_YES_0 };
         public static readonly List<string> LIST_STATES = new List<string>() { UIStrings.NOT_SUPPORTED, UIStrings.DEACTIVATED, UIStrings.ACTIVATED };
         public static readonly List<string> LIST_THEME_GUI = new List<string>() { "Auto", "Light", "Dark" };
 

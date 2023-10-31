@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConstantsDLL.Properties;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace RestApiDLL
     [Serializable]
     public class InvalidModelException : Exception
     {
-        public InvalidModelException() : base("Modelo não encontrado") { }
+        public InvalidModelException() : base(LogStrings.LOG_MODEL_NOT_EXIST) { }
     }
 
     /// <summary> 

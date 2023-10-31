@@ -121,8 +121,14 @@
     <value />
     <comment>ConstantsDLL.LogStrings.Generic</comment>
   </data>
+  <data name="LOG_ACCESS_APCS" xml:space="preserve">
+    <value>Accessing APCS</value>
+  </data>
   <data name="LOG_AD_REGISTERED" xml:space="preserve">
     <value>Active Directory registered</value>
+  </data>
+  <data name="LOG_AGENT_NOT_EXIST" xml:space="preserve">
+    <value>Agent not present in database</value>
   </data>
   <data name="LOG_APCS_REGISTERING" xml:space="preserve">
     <value>Registering on the APCS Server</value>
@@ -132,6 +138,9 @@
   </data>
   <data name="LOG_APPFILE_NOT_FOUND" xml:space="preserve">
     <value>One or more missing dependency files</value>
+  </data>
+  <data name="LOG_ASSET_NOT_EXIST" xml:space="preserve">
+    <value>Asset not present in database</value>
   </data>
   <data name="LOG_AUTOTHEME_CHANGE" xml:space="preserve">
     <value>Automatically selecting theme</value>
@@ -154,8 +163,20 @@
   <data name="LOG_CLOSING_MAIN_FORM" xml:space="preserve">
     <value>Finalizing main form</value>
   </data>
+  <data name="LOG_CLOSING_PROCESSOR_FORM" xml:space="preserve">
+    <value>Closing processor form</value>
+  </data>
+  <data name="LOG_CLOSING_RAM_FORM" xml:space="preserve">
+    <value>Closing RAM form</value>
+  </data>
+  <data name="LOG_CLOSING_STORAGE_FORM" xml:space="preserve">
+    <value>Closing storage form</value>
+  </data>
   <data name="LOG_CLOSING_UPDATER_FORM" xml:space="preserve">
     <value>Closing updater window</value>
+  </data>
+  <data name="LOG_CLOSING_VIDEO_CARD_FORM" xml:space="preserve">
+    <value>Closing video card form</value>
   </data>
   <data name="LOG_CONNECTING_GITHUB" xml:space="preserve">
     <value>Connecting to GitHub</value>
@@ -229,9 +250,6 @@
   <data name="LOG_INIT_REGISTRY" xml:space="preserve">
     <value>Starting registration process</value>
   </data>
-  <data name="LOG_INSTALLING_WEBVIEW2" xml:space="preserve">
-    <value>Installing WebView2 Runtime</value>
-  </data>
   <data name="LOG_LIGHT_THEME_CHANGE" xml:space="preserve">
     <value>Switching to light theme</value>
   </data>
@@ -240,6 +258,9 @@
   </data>
   <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
     <value>Authentication performed successfully</value>
+  </data>
+  <data name="LOG_MODEL_NOT_EXIST" xml:space="preserve">
+    <value>Model not present in database</value>
   </data>
   <data name="LOG_NETWORK_HOSTNAME" xml:space="preserve">
     <value>Hostname</value>
@@ -355,11 +376,14 @@
   <data name="LOG_SERVER_DATA" xml:space="preserve">
     <value>Server and port</value>
   </data>
+  <data name="LOG_SERVICES_MADE" xml:space="preserve">
+    <value>Services made</value>
+  </data>
   <data name="LOG_SHOWING_HELP" xml:space="preserve">
     <value>Displaying list of commands</value>
   </data>
   <data name="LOG_START_COLLECTING" xml:space="preserve">
-    <value>Collecting hardware</value>
+    <value>Collecting asset data</value>
   </data>
   <data name="LOG_START_COLLECT_THREAD" xml:space="preserve">
     <value>Initializing collection procedure thread</value>
@@ -423,8 +447,5 @@
   </data>
   <data name="LOG_VIDEO_CARD_RAM" xml:space="preserve">
     <value>Video card memory</value>
-  </data>
-  <data name="LOG_VIEW_SERVER" xml:space="preserve">
-    <value>Accessing asset control system</value>
   </data>
 </root>

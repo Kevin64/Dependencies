@@ -28,7 +28,7 @@ namespace RestApiDLL
     [Serializable]
     public class InvalidAgentException : Exception
     {
-        public InvalidAgentException() : base(UIStrings.INVALID_CREDENTIALS) { }
+        public InvalidAgentException() : base(LogStrings.LOG_AGENT_NOT_EXIST) { }
     }
 
     /// <summary> 

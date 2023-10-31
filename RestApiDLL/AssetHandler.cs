@@ -127,7 +127,7 @@ namespace RestApiDLL
     [Serializable]
     public class InvalidAssetException : Exception
     {
-        public InvalidAssetException() : base("Ativo não encontrado") { }
+        public InvalidAssetException() : base(LogStrings.LOG_ASSET_NOT_EXIST) { }
     }
 
     /// <summary> 

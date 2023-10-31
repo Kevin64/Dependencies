@@ -70,11 +70,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Accessing APCS.
+        /// </summary>
+        public static string LOG_ACCESS_APCS {
+            get {
+                return ResourceManager.GetString("LOG_ACCESS_APCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Active Directory registered.
         /// </summary>
         public static string LOG_AD_REGISTERED {
             get {
                 return ResourceManager.GetString("LOG_AD_REGISTERED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Agent not present in database.
+        /// </summary>
+        public static string LOG_AGENT_NOT_EXIST {
+            get {
+                return ResourceManager.GetString("LOG_AGENT_NOT_EXIST", resourceCulture);
             }
         }
         
@@ -102,6 +120,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_APPFILE_NOT_FOUND {
             get {
                 return ResourceManager.GetString("LOG_APPFILE_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Asset not present in database.
+        /// </summary>
+        public static string LOG_ASSET_NOT_EXIST {
+            get {
+                return ResourceManager.GetString("LOG_ASSET_NOT_EXIST", resourceCulture);
             }
         }
         
@@ -169,11 +196,47 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Closing processor form.
+        /// </summary>
+        public static string LOG_CLOSING_PROCESSOR_FORM {
+            get {
+                return ResourceManager.GetString("LOG_CLOSING_PROCESSOR_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Closing RAM form.
+        /// </summary>
+        public static string LOG_CLOSING_RAM_FORM {
+            get {
+                return ResourceManager.GetString("LOG_CLOSING_RAM_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Closing storage form.
+        /// </summary>
+        public static string LOG_CLOSING_STORAGE_FORM {
+            get {
+                return ResourceManager.GetString("LOG_CLOSING_STORAGE_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Closing updater window.
         /// </summary>
         public static string LOG_CLOSING_UPDATER_FORM {
             get {
                 return ResourceManager.GetString("LOG_CLOSING_UPDATER_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Closing video card form.
+        /// </summary>
+        public static string LOG_CLOSING_VIDEO_CARD_FORM {
+            get {
+                return ResourceManager.GetString("LOG_CLOSING_VIDEO_CARD_FORM", resourceCulture);
             }
         }
         
@@ -394,15 +457,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Installing WebView2 Runtime.
-        /// </summary>
-        public static string LOG_INSTALLING_WEBVIEW2 {
-            get {
-                return ResourceManager.GetString("LOG_INSTALLING_WEBVIEW2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Switching to light theme.
         /// </summary>
         public static string LOG_LIGHT_THEME_CHANGE {
@@ -426,6 +480,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_LOGIN_SUCCESS {
             get {
                 return ResourceManager.GetString("LOG_LOGIN_SUCCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Model not present in database.
+        /// </summary>
+        public static string LOG_MODEL_NOT_EXIST {
+            get {
+                return ResourceManager.GetString("LOG_MODEL_NOT_EXIST", resourceCulture);
             }
         }
         
@@ -772,6 +835,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Services made.
+        /// </summary>
+        public static string LOG_SERVICES_MADE {
+            get {
+                return ResourceManager.GetString("LOG_SERVICES_MADE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Displaying list of commands.
         /// </summary>
         public static string LOG_SHOWING_HELP {
@@ -790,7 +862,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Collecting hardware.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Collecting asset data.
         /// </summary>
         public static string LOG_START_COLLECTING {
             get {
@@ -975,15 +1047,6 @@ namespace ConstantsDLL.Properties {
         public static string LOG_VIDEO_CARD_RAM {
             get {
                 return ResourceManager.GetString("LOG_VIDEO_CARD_RAM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Accessing asset control system.
-        /// </summary>
-        public static string LOG_VIEW_SERVER {
-            get {
-                return ResourceManager.GetString("LOG_VIEW_SERVER", resourceCulture);
             }
         }
     }

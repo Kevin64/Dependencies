@@ -928,19 +928,19 @@
   <data name="WMI_SATA" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="API_AGENT_URL" xml:space="preserve">
+  <data name="V1_API_AGENT_URL" xml:space="preserve">
     <value>/api/v1/agent-username/</value>
   </data>
-  <data name="API_ASSET_URL" xml:space="preserve">
+  <data name="V1_API_ASSET_URL" xml:space="preserve">
     <value>/api/v1/asset/</value>
   </data>
-  <data name="API_MODEL_URL" xml:space="preserve">
+  <data name="V1_API_MODEL_URL" xml:space="preserve">
     <value>/api/v1/model/</value>
   </data>
-  <data name="API_PARAMETERS_URL" xml:space="preserve">
+  <data name="V1_API_PARAMETERS_URL" xml:space="preserve">
     <value>/api/v1/parameters/</value>
   </data>
-  <data name="API_AGENTS_URL" xml:space="preserve">
+  <data name="V1_API_AGENTS_URL" xml:space="preserve">
     <value>/api/v1/agent-id/</value>
   </data>
   <data name="DDR2_APCS" xml:space="preserve">

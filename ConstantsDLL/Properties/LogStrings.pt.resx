@@ -121,8 +121,14 @@
     <value />
     <comment>ConstantsDLL.LogStrings.PT</comment>
   </data>
+  <data name="LOG_ACCESS_APCS" xml:space="preserve">
+    <value>Acessando APCS</value>
+  </data>
   <data name="LOG_AD_REGISTERED" xml:space="preserve">
     <value>Registrado no Active Directory</value>
+  </data>
+  <data name="LOG_AGENT_NOT_EXIST" xml:space="preserve">
+    <value>Agente não presente no banco de dados</value>
   </data>
   <data name="LOG_APCS_REGISTERING" xml:space="preserve">
     <value>Registrando no servidor APCS</value>
@@ -132,6 +138,9 @@
   </data>
   <data name="LOG_APPFILE_NOT_FOUND" xml:space="preserve">
     <value>Um ou mais arquivos de dependência ausentes</value>
+  </data>
+  <data name="LOG_ASSET_NOT_EXIST" xml:space="preserve">
+    <value>Ativo não presente no banco de dados</value>
   </data>
   <data name="LOG_AUTOTHEME_CHANGE" xml:space="preserve">
     <value>Selecionando tema automaticamente</value>
@@ -154,8 +163,20 @@
   <data name="LOG_CLOSING_MAIN_FORM" xml:space="preserve">
     <value>Finalizando form principal</value>
   </data>
+  <data name="LOG_CLOSING_PROCESSOR_FORM" xml:space="preserve">
+    <value>Fechando janela de processador</value>
+  </data>
+  <data name="LOG_CLOSING_RAM_FORM" xml:space="preserve">
+    <value>Fechando janela de RAM</value>
+  </data>
+  <data name="LOG_CLOSING_STORAGE_FORM" xml:space="preserve">
+    <value>Fechando janela de armazenamento</value>
+  </data>
   <data name="LOG_CLOSING_UPDATER_FORM" xml:space="preserve">
     <value>Fechando janela do atualizador</value>
+  </data>
+  <data name="LOG_CLOSING_VIDEO_CARD_FORM" xml:space="preserve">
+    <value>Fechando janela de placa de vídeo</value>
   </data>
   <data name="LOG_CONNECTING_GITHUB" xml:space="preserve">
     <value>Conectando ao GitHub</value>
@@ -229,9 +250,6 @@
   <data name="LOG_INIT_REGISTRY" xml:space="preserve">
     <value>Iniciando processo de registro</value>
   </data>
-  <data name="LOG_INSTALLING_WEBVIEW2" xml:space="preserve">
-    <value>Instalando WebView2 Runtime</value>
-  </data>
   <data name="LOG_LIGHT_THEME_CHANGE" xml:space="preserve">
     <value>Mudando para tema claro</value>
   </data>
@@ -240,6 +258,9 @@
   </data>
   <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
     <value>Autenticação realizada com êxito</value>
+  </data>
+  <data name="LOG_MODEL_NOT_EXIST" xml:space="preserve">
+    <value>Modelo não presente no banco de dados</value>
   </data>
   <data name="LOG_NETWORK_HOSTNAME" xml:space="preserve">
     <value>Nome do Computador</value>
@@ -355,11 +376,14 @@
   <data name="LOG_SERVER_DATA" xml:space="preserve">
     <value>Servidor e porta</value>
   </data>
+  <data name="LOG_SERVICES_MADE" xml:space="preserve">
+    <value>Serviços realizados</value>
+  </data>
   <data name="LOG_SHOWING_HELP" xml:space="preserve">
     <value>Exibindo lista de comandos</value>
   </data>
   <data name="LOG_START_COLLECTING" xml:space="preserve">
-    <value>Coletando hardware</value>
+    <value>Coletando dados do ativo</value>
   </data>
   <data name="LOG_START_COLLECT_THREAD" xml:space="preserve">
     <value>Inicializando thread de procedimento de coleta</value>
@@ -423,8 +447,5 @@
   </data>
   <data name="LOG_VIDEO_CARD_RAM" xml:space="preserve">
     <value>Memória da placa de vídeo</value>
-  </data>
-  <data name="LOG_VIEW_SERVER" xml:space="preserve">
-    <value>Acessando sistema de controle patrimonial</value>
   </data>
 </root>

@@ -79,51 +79,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-username/.
-        /// </summary>
-        public static string API_AGENT_URL {
-            get {
-                return ResourceManager.GetString("API_AGENT_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-id/.
-        /// </summary>
-        public static string API_AGENTS_URL {
-            get {
-                return ResourceManager.GetString("API_AGENTS_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/asset/.
-        /// </summary>
-        public static string API_ASSET_URL {
-            get {
-                return ResourceManager.GetString("API_ASSET_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/model/.
-        /// </summary>
-        public static string API_MODEL_URL {
-            get {
-                return ResourceManager.GetString("API_MODEL_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/parameters/.
-        /// </summary>
-        public static string API_PARAMETERS_URL {
-            get {
-                return ResourceManager.GetString("API_PARAMETERS_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 32.
         /// </summary>
         public static string ARCH32 {
@@ -2415,6 +2370,51 @@ namespace ConstantsDLL.Properties {
         public static string TRUE {
             get {
                 return ResourceManager.GetString("TRUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-username/.
+        /// </summary>
+        public static string V1_API_AGENT_URL {
+            get {
+                return ResourceManager.GetString("V1_API_AGENT_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-id/.
+        /// </summary>
+        public static string V1_API_AGENTS_URL {
+            get {
+                return ResourceManager.GetString("V1_API_AGENTS_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/asset/.
+        /// </summary>
+        public static string V1_API_ASSET_URL {
+            get {
+                return ResourceManager.GetString("V1_API_ASSET_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/model/.
+        /// </summary>
+        public static string V1_API_MODEL_URL {
+            get {
+                return ResourceManager.GetString("V1_API_MODEL_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/parameters/.
+        /// </summary>
+        public static string V1_API_PARAMETERS_URL {
+            get {
+                return ResourceManager.GetString("V1_API_PARAMETERS_URL", resourceCulture);
             }
         }
         
