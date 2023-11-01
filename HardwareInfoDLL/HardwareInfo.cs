@@ -63,6 +63,12 @@ namespace HardwareInfoDLL
             ENABLED
         }
 
+        public enum StorageTypes
+        {
+            HDD,
+            SSD
+        }
+
         /*-------------------------------------------------------------------------------------------------------------------------------------------*/
         // Processor functions
         /*-------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -576,15 +582,15 @@ namespace HardwareInfoDLL
                                 switch (Convert.ToInt16(queryObj["MediaType"]))
                                 {
                                     case 3:
-                                        type[i] = GenericResources.HDD;
+                                        type[i] = ((int)StorageTypes.HDD).ToString();
                                         i++;
                                         break;
                                     case 4:
-                                        type[i] = GenericResources.SSD;
+                                        type[i] = ((int)StorageTypes.SSD).ToString();
                                         i++;
                                         break;
                                     case 0:
-                                        type[i] = GenericResources.HDD;
+                                        type[i] = ((int)StorageTypes.HDD).ToString();
                                         i++;
                                         break;
                                 }
@@ -607,7 +613,7 @@ namespace HardwareInfoDLL
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
-                            type[i] = GenericResources.HDD;
+                            type[i] = ((int)StorageTypes.HDD).ToString();
                             i++;
                         }
                     }
