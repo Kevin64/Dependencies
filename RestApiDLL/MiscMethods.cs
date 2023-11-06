@@ -1,6 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Security.Cryptography;
+﻿using ConstantsDLL.Properties;
+using System;
+using System.Net.Http.Headers;
+using System.Net.Http;
+using System.Text;
 
 namespace RestApiDLL
 {
@@ -9,20 +11,24 @@ namespace RestApiDLL
     /// </summary>
     public static class MiscMethods
     {
-        /// <summary> 
-        /// 
-        ///Gets the SHA-256 hash from a specific file
-        ///
+        /// <summary>
+        /// Sets the HTTP client used throughout the application 
         /// </summary>
-        /// <param name="filePath">Path of the file you want to know the hash</param>
-        /// <returns>The SHA-256 hash.</returns>
-        public static string GetSha256Hash(string filePath)
+        /// <param name="ip">Server IP</param>
+        /// <param name="port">Server Port</param>
+        /// <param name="mediaType">Content-Type HTTP header</param>
+        /// <returns></returns>
+        public static HttpClient SetHttpClient(string ip, string port, string mediaType, string username, string password)
         {
-            using (FileStream fs = File.OpenRead(filePath))
+
+            HttpClient client = new HttpClient
             {
-                SHA256 sha = new SHA256Managed();
-                return BitConverter.ToString(sha.ComputeHash(fs)).Replace("-", string.Empty);
-            }
+                BaseAddress = new Uri(GenericResources.HTTP + ip + ":" + port)
+            };
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes(username + ":" + password)));
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
+            return client;
         }
     }
 }
