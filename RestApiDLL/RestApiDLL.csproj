@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions.cs" />
     <Compile Include="ModelHandler.cs" />
     <Compile Include="ParameterHandler.cs" />
     <Compile Include="AuthenticationHandler.cs" />

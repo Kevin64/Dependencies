@@ -502,6 +502,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Error in the APCS service.
+        /// </summary>
+        public static string SERVER_ERROR {
+            get {
+                return ResourceManager.GetString("SERVER_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Server not found. Please select a valid server!.
         /// </summary>
         public static string SERVER_NOT_FOUND_ERROR {

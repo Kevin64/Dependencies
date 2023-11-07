@@ -265,6 +265,9 @@
   <data name="RESOLUTION_WARNING" xml:space="preserve">
     <value>Resolução insuficiente. Este programa suporta apenas resoluções iguais ou superiores a {0}x{1}.</value>
   </data>
+  <data name="SERVER_ERROR" xml:space="preserve">
+    <value>Erro no serviço APCS</value>
+  </data>
   <data name="SERVER_NOT_FOUND_ERROR" xml:space="preserve">
     <value>Servidor não encontrado. Selecione um servidor válido!</value>
   </data>

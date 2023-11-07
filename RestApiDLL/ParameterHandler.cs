@@ -28,12 +28,6 @@ namespace RestApiDLL
         public List<string> VirtualizationTechnologyStates { get; set; }
     }
 
-    [Serializable]
-    public class InvalidParameterException : Exception
-    {
-        public InvalidParameterException() : base(UIStrings.PARAMETER_ERROR) { }
-    }
-
     /// <summary> 
     /// Class for handling a 'Config' json file
     /// </summary>
@@ -49,7 +43,8 @@ namespace RestApiDLL
         /// <param name="path">Uri path</param>
         /// <returns>An object containing all server parameters</returns>
         /// <exception cref="HttpRequestException"></exception>
-        /// <exception cref="InvalidParameterException"></exception>
+        /// <exception cref="InvalidAgentException"></exception>
+        /// <exception cref="InvalidRestApiCallException"></exception>
         public static async Task<ServerParam> GetParameterAsync(HttpClient client, string path)
         {
             try
@@ -58,8 +53,10 @@ namespace RestApiDLL
                 HttpResponseMessage response = await client.GetAsync(path);
                 if (response.IsSuccessStatusCode)
                     sp = await response.Content.ReadAsAsync<ServerParam>();
-                if (sp == null)
-                    throw new InvalidParameterException();
+                else if(Convert.ToInt32(response.StatusCode).Equals(401) || Convert.ToInt32(response.StatusCode).Equals(400))
+                    throw new InvalidAgentException();
+                else if (Convert.ToInt32(response.StatusCode).Equals(404))
+                    throw new InvalidRestApiCallException();
                 return sp;
             }
             catch (HttpRequestException)

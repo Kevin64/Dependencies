@@ -25,12 +25,6 @@ namespace RestApiDLL
         public string lastLoginDate { get; set; }
     }
 
-    [Serializable]
-    public class InvalidAgentException : Exception
-    {
-        public InvalidAgentException() : base(LogStrings.LOG_AGENT_NOT_EXIST) { }
-    }
-
     /// <summary> 
     /// Class for handling authentication through a REST API
     /// </summary>
@@ -52,8 +46,10 @@ namespace RestApiDLL
                 HttpResponseMessage response = await client.GetAsync(path);
                 if (response.IsSuccessStatusCode)
                     a = await response.Content.ReadAsAsync<Agent>();
-                if (a == null)
+                else if (Convert.ToInt32(response.StatusCode).Equals(401) || Convert.ToInt32(response.StatusCode).Equals(400))
                     throw new InvalidAgentException();
+                else if (Convert.ToInt32(response.StatusCode).Equals(404))
+                    throw new InvalidRestApiCallException();
                 return a;
             }
             catch (HttpRequestException)

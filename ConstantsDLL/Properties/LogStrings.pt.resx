@@ -127,8 +127,8 @@
   <data name="LOG_AD_REGISTERED" xml:space="preserve">
     <value>Registrado no Active Directory</value>
   </data>
-  <data name="LOG_AGENT_NOT_EXIST" xml:space="preserve">
-    <value>Agente não presente no banco de dados</value>
+  <data name="LOG_AGENT_INVALID_CREDENTIALS" xml:space="preserve">
+    <value>Credenciais de agente inválidas</value>
   </data>
   <data name="LOG_APCS_REGISTERING" xml:space="preserve">
     <value>Registrando no servidor APCS</value>
@@ -159,6 +159,9 @@
   </data>
   <data name="LOG_CLOSING_CLI" xml:space="preserve">
     <value>Finalizando sequência do programa</value>
+  </data>
+  <data name="LOG_CLOSING_FORM" xml:space="preserve">
+    <value>Finalizando form</value>
   </data>
   <data name="LOG_CLOSING_LOGIN_FORM" xml:space="preserve">
     <value>Finalizando form de login</value>
@@ -196,14 +199,14 @@
   <data name="LOG_FETCHING_ASSET_DATA" xml:space="preserve">
     <value>Buscando informações do ativo</value>
   </data>
-  <data name="LOG_FETCHING_LOCAL_DATA" xml:space="preserve">
-    <value>Buscando prédios e tipos de hardware disponíveis</value>
+  <data name="LOG_FETCHING_LOCAL_PARAMETERS" xml:space="preserve">
+    <value>Buscando parâmetros disponíveis (Local)</value>
   </data>
   <data name="LOG_FETCHING_MODEL_DATA" xml:space="preserve">
-    <value>Buscando arquivo com informações de modelo de hardware</value>
+    <value>Buscando informações de modelo de hardware</value>
   </data>
-  <data name="LOG_FETCHING_SERVER_DATA" xml:space="preserve">
-    <value>Buscando prédios e tipos de hardware disponíveis</value>
+  <data name="LOG_FETCHING_SERVER_PARAMETERS" xml:space="preserve">
+    <value>Buscando parâmetros disponíveis</value>
   </data>
   <data name="LOG_FIRMWARE_MEDIA_OPERATION_TYPE" xml:space="preserve">
     <value>Modo de operação SATA/M.2</value>
@@ -447,5 +450,8 @@
   </data>
   <data name="LOG_VIDEO_CARD_RAM" xml:space="preserve">
     <value>Memória da placa de vídeo</value>
+  </data>
+  <data name="LOG_WEB_SERVICE_ERROR" xml:space="preserve">
+    <value>Erro no serviço APCS, talvez algum arquivo do serviço web esteja corrompido</value>
   </data>
 </root>

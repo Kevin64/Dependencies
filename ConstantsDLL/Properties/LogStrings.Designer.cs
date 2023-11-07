@@ -88,11 +88,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Agent not present in database.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid agent credentials.
         /// </summary>
-        public static string LOG_AGENT_NOT_EXIST {
+        public static string LOG_AGENT_INVALID_CREDENTIALS {
             get {
-                return ResourceManager.GetString("LOG_AGENT_NOT_EXIST", resourceCulture);
+                return ResourceManager.GetString("LOG_AGENT_INVALID_CREDENTIALS", resourceCulture);
             }
         }
         
@@ -183,6 +183,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_CLOSING_CLI {
             get {
                 return ResourceManager.GetString("LOG_CLOSING_CLI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Finalizing form.
+        /// </summary>
+        public static string LOG_CLOSING_FORM {
+            get {
+                return ResourceManager.GetString("LOG_CLOSING_FORM", resourceCulture);
             }
         }
         
@@ -295,11 +304,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Searching available buildings and types of hardware in the local file.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Searching available parameters (Local).
         /// </summary>
-        public static string LOG_FETCHING_LOCAL_DATA {
+        public static string LOG_FETCHING_LOCAL_PARAMETERS {
             get {
-                return ResourceManager.GetString("LOG_FETCHING_LOCAL_DATA", resourceCulture);
+                return ResourceManager.GetString("LOG_FETCHING_LOCAL_PARAMETERS", resourceCulture);
             }
         }
         
@@ -313,11 +322,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Searching available buildings and types of hardware.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Searching available parameters.
         /// </summary>
-        public static string LOG_FETCHING_SERVER_DATA {
+        public static string LOG_FETCHING_SERVER_PARAMETERS {
             get {
-                return ResourceManager.GetString("LOG_FETCHING_SERVER_DATA", resourceCulture);
+                return ResourceManager.GetString("LOG_FETCHING_SERVER_PARAMETERS", resourceCulture);
             }
         }
         
@@ -1047,6 +1056,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_VIDEO_CARD_RAM {
             get {
                 return ResourceManager.GetString("LOG_VIDEO_CARD_RAM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Error on APCS service, perhaps some web service file is corrupted.
+        /// </summary>
+        public static string LOG_WEB_SERVICE_ERROR {
+            get {
+                return ResourceManager.GetString("LOG_WEB_SERVICE_ERROR", resourceCulture);
             }
         }
     }

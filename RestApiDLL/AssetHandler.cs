@@ -124,12 +124,6 @@ namespace RestApiDLL
         public string version { get; set; }
     }
 
-    [Serializable]
-    public class InvalidAssetException : Exception
-    {
-        public InvalidAssetException() : base(LogStrings.LOG_ASSET_NOT_EXIST) { }
-    }
-
     /// <summary> 
     /// Class for handling an asset through a REST API
     /// </summary>
@@ -149,8 +143,14 @@ namespace RestApiDLL
             {
                 Asset a = null;
                 HttpResponseMessage response = await client.GetAsync(path);
-                if (response.IsSuccessStatusCode)
+                if (Convert.ToInt32(response.StatusCode).Equals(200))
                     a = await response.Content.ReadAsAsync<Asset>();
+                else if (Convert.ToInt32(response.StatusCode).Equals(204))
+                    a = null;
+                else if (Convert.ToInt32(response.StatusCode).Equals(401) || Convert.ToInt32(response.StatusCode).Equals(400))
+                    throw new InvalidAgentException();
+                else if (Convert.ToInt32(response.StatusCode).Equals(404))
+                    throw new InvalidRestApiCallException();
                 if (a == null)
                     throw new InvalidAssetException();
                 return a;

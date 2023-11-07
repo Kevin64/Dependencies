@@ -127,8 +127,8 @@
   <data name="LOG_AD_REGISTERED" xml:space="preserve">
     <value>Active Directory registered</value>
   </data>
-  <data name="LOG_AGENT_NOT_EXIST" xml:space="preserve">
-    <value>Agent not present in database</value>
+  <data name="LOG_AGENT_INVALID_CREDENTIALS" xml:space="preserve">
+    <value>Invalid agent credentials</value>
   </data>
   <data name="LOG_APCS_REGISTERING" xml:space="preserve">
     <value>Registering on the APCS Server</value>
@@ -159,6 +159,9 @@
   </data>
   <data name="LOG_CLOSING_CLI" xml:space="preserve">
     <value>Ending program sequence</value>
+  </data>
+  <data name="LOG_CLOSING_FORM" xml:space="preserve">
+    <value>Finalizing form</value>
   </data>
   <data name="LOG_CLOSING_LOGIN_FORM" xml:space="preserve">
     <value>Finalizing login form</value>
@@ -196,14 +199,14 @@
   <data name="LOG_FETCHING_ASSET_DATA" xml:space="preserve">
     <value>Searching asset information</value>
   </data>
-  <data name="LOG_FETCHING_LOCAL_DATA" xml:space="preserve">
-    <value>Searching available buildings and types of hardware in the local file</value>
+  <data name="LOG_FETCHING_LOCAL_PARAMETERS" xml:space="preserve">
+    <value>Searching available parameters (Local)</value>
   </data>
   <data name="LOG_FETCHING_MODEL_DATA" xml:space="preserve">
     <value>Searching hardware model information</value>
   </data>
-  <data name="LOG_FETCHING_SERVER_DATA" xml:space="preserve">
-    <value>Searching available buildings and types of hardware</value>
+  <data name="LOG_FETCHING_SERVER_PARAMETERS" xml:space="preserve">
+    <value>Searching available parameters</value>
   </data>
   <data name="LOG_FIRMWARE_MEDIA_OPERATION_TYPE" xml:space="preserve">
     <value>SATA/M.2 operating mode</value>
@@ -447,5 +450,8 @@
   </data>
   <data name="LOG_VIDEO_CARD_RAM" xml:space="preserve">
     <value>Video card memory</value>
+  </data>
+  <data name="LOG_WEB_SERVICE_ERROR" xml:space="preserve">
+    <value>Error on APCS service, perhaps some web service file is corrupted</value>
   </data>
 </root>

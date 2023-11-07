@@ -18,12 +18,6 @@ namespace RestApiDLL
         public string mediaOperationMode { get; set; }
     }
 
-    [Serializable]
-    public class InvalidModelException : Exception
-    {
-        public InvalidModelException() : base(LogStrings.LOG_MODEL_NOT_EXIST) { }
-    }
-
     /// <summary> 
     /// Class for handling a model through a REST API
     /// </summary>
@@ -69,10 +63,14 @@ namespace RestApiDLL
                 Model m = null;
                 path = path.Replace(" ", "-");
                 HttpResponseMessage response = await client.GetAsync(path);
-                if (response.IsSuccessStatusCode)
+                if (Convert.ToInt32(response.StatusCode).Equals(200))
                     m = await response.Content.ReadAsAsync<Model>();
-                if (m == null)
-                    throw new InvalidModelException();
+                else if (Convert.ToInt32(response.StatusCode).Equals(204))
+                    m = null;
+                else if (Convert.ToInt32(response.StatusCode).Equals(401) || Convert.ToInt32(response.StatusCode).Equals(400))
+                    throw new InvalidAgentException();
+                else if (Convert.ToInt32(response.StatusCode).Equals(404))
+                    throw new InvalidRestApiCallException();
                 return m;
             }
             catch (HttpRequestException)
