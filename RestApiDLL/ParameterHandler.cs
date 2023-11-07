@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace RestApiDLL
 {
+    /// <summary>
+    /// Class for ServerParam
+    /// </summary>
     public class ServerParam
     {
         public Parameters Parameters { get; set; }
@@ -42,9 +45,9 @@ namespace RestApiDLL
         /// <param name="client">HTTP client object</param>
         /// <param name="path">Uri path</param>
         /// <returns>An object containing all server parameters</returns>
-        /// <exception cref="HttpRequestException"></exception>
-        /// <exception cref="InvalidAgentException"></exception>
-        /// <exception cref="InvalidRestApiCallException"></exception>
+        /// <exception cref="HttpRequestException">Server not found</exception>
+        /// <exception cref="InvalidAgentException">Unauthorized agent</exception>
+        /// <exception cref="InvalidRestApiCallException">Rest call unsuccessful</exception>
         public static async Task<ServerParam> GetParameterAsync(HttpClient client, string path)
         {
             try
@@ -53,7 +56,7 @@ namespace RestApiDLL
                 HttpResponseMessage response = await client.GetAsync(path);
                 if (response.IsSuccessStatusCode)
                     sp = await response.Content.ReadAsAsync<ServerParam>();
-                else if(Convert.ToInt32(response.StatusCode).Equals(401) || Convert.ToInt32(response.StatusCode).Equals(400))
+                else if (Convert.ToInt32(response.StatusCode).Equals(401) || Convert.ToInt32(response.StatusCode).Equals(400))
                     throw new InvalidAgentException();
                 else if (Convert.ToInt32(response.StatusCode).Equals(404))
                     throw new InvalidRestApiCallException();

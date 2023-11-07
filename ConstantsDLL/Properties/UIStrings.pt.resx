@@ -136,6 +136,9 @@
   <data name="ASSET_DROPPED" xml:space="preserve">
     <value>Ativo descartado, cadastro cancelado. Reverta o descarte e tente novamente</value>
   </data>
+  <data name="ASSET_HARDWARE_MODIFIED" xml:space="preserve">
+    <value>Foi detectada uma alteração de hardware desde o último serviço</value>
+  </data>
   <data name="ASSET_NOT_ADDED" xml:space="preserve">
     <value>Ativo não adicionado</value>
   </data>

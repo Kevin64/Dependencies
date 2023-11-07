@@ -139,6 +139,9 @@
   <data name="LOG_APPFILE_NOT_FOUND" xml:space="preserve">
     <value>One or more missing dependency files</value>
   </data>
+  <data name="LOG_ASSET_HARDWARE_MODIFIED" xml:space="preserve">
+    <value>Hardware changed since last service</value>
+  </data>
   <data name="LOG_ASSET_NOT_EXIST" xml:space="preserve">
     <value>Asset not present in database</value>
   </data>

@@ -1,5 +1,4 @@
-﻿using ConstantsDLL.Properties;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -55,7 +54,9 @@ namespace RestApiDLL
         /// <param name="path">Uri path</param>
         /// <returns>A Model object</returns>
         /// <exception cref="HttpRequestException">Server not found</exception>
-        /// <exception cref="InvalidModelException">Model not found</exception>
+        /// <exception cref="InvalidAgentException">Unauthorized agent</exception>
+        /// <exception cref="InvalidRestApiCallException">Rest call unsuccessful</exception>
+        /// <exception cref="UnregisteredModelException">Model not found</exception>
         public static async Task<Model> GetModelAsync(HttpClient client, string path)
         {
             try

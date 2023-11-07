@@ -124,6 +124,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Hardware changed since last service.
+        /// </summary>
+        public static string LOG_ASSET_HARDWARE_MODIFIED {
+            get {
+                return ResourceManager.GetString("LOG_ASSET_HARDWARE_MODIFIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Asset not present in database.
         /// </summary>
         public static string LOG_ASSET_NOT_EXIST {

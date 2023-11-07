@@ -115,6 +115,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A hardware change has been detected since the last service.
+        /// </summary>
+        public static string ASSET_HARDWARE_MODIFIED {
+            get {
+                return ResourceManager.GetString("ASSET_HARDWARE_MODIFIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Asset not added.
         /// </summary>
         public static string ASSET_NOT_ADDED {

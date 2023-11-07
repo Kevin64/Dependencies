@@ -37,7 +37,8 @@ namespace RestApiDLL
         /// <param name="path">Uri path</param>
         /// <returns>An Agent object</returns>
         /// <exception cref="HttpRequestException">Server not found</exception>
-        /// <exception cref="InvalidAgentException">Agent not found</exception>
+        /// <exception cref="InvalidAgentException">Unauthorized agent</exception>
+        /// <exception cref="InvalidRestApiCallException">Rest call unsuccessful</exception>
         public static async Task<Agent> GetAgentAsync(HttpClient client, string path)
         {
             try

@@ -136,6 +136,9 @@
   <data name="ASSET_DROPPED" xml:space="preserve">
     <value>Asset disposed, registration cancelled. Revert the dispose and try again</value>
   </data>
+  <data name="ASSET_HARDWARE_MODIFIED" xml:space="preserve">
+    <value>A hardware change has been detected since the last service</value>
+  </data>
   <data name="ASSET_NOT_ADDED" xml:space="preserve">
     <value>Asset not added</value>
   </data>

@@ -22,14 +22,23 @@ namespace RestApiDLL
         public string standard { get; set; }
         public string tag { get; set; }
         public string adRegistered { get; set; }
+        public string hwUid { get; set; }
         public firmware firmware { get; set; }
         public hardware hardware { get; set; }
         public location location { get; set; }
         public List<maintenances> maintenances { get; set; }
         public network network { get; set; }
         public operatingSystem operatingSystem { get; set; }
+
+        public Asset ShallowCopy()
+        {
+            return (Asset)MemberwiseClone();
+        }
     }
 
+    /// <summary> 
+    /// Template class for 'firmware'
+    /// </summary>
     public class firmware
     {
         public string mediaOperationMode { get; set; }
@@ -40,6 +49,9 @@ namespace RestApiDLL
         public string virtualizationTechnology { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'hardware'
+    /// </summary>
     public class hardware
     {
         public string brand { get; set; }
@@ -52,6 +64,9 @@ namespace RestApiDLL
         public List<videoCard> videoCard { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'processor'
+    /// </summary>
     public class processor
     {
         public string processorId { get; set; }
@@ -62,6 +77,9 @@ namespace RestApiDLL
         public string cache { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'ram'
+    /// </summary>
     public class ram
     {
         public string slot { get; set; }
@@ -73,6 +91,9 @@ namespace RestApiDLL
         public string manufacturer { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'storage'
+    /// </summary>
     public class storage
     {
         public string connection { get; set; }
@@ -84,6 +105,9 @@ namespace RestApiDLL
         public string type { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'videoCard'
+    /// </summary>
     public class videoCard
     {
         public string gpuId { get; set; }
@@ -91,6 +115,9 @@ namespace RestApiDLL
         public string vRam { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'location'
+    /// </summary>
     public class location
     {
         public string building { get; set; }
@@ -100,6 +127,9 @@ namespace RestApiDLL
         public string roomNumber { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'maintenances'
+    /// </summary>
     public class maintenances
     {
         public string agentId { get; set; }
@@ -109,6 +139,9 @@ namespace RestApiDLL
         public string ticketNumber { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'network'
+    /// </summary>
     public class network
     {
         public string hostname { get; set; }
@@ -116,6 +149,9 @@ namespace RestApiDLL
         public string macAddress { get; set; }
     }
 
+    /// <summary> 
+    /// Template class for 'operatingSystem'
+    /// </summary>
     public class operatingSystem
     {
         public string arch { get; set; }
@@ -135,7 +171,9 @@ namespace RestApiDLL
         /// <param name="client">HTTP client object</param>
         /// <param name="path">Uri path</param>
         /// <returns>An Asset object</returns>
-        /// <exception cref="InvalidAssetException">Asset not found</exception>
+        /// <exception cref="UnregisteredAssetException">Asset not found</exception>
+        /// <exception cref="InvalidAgentException">Unauthorized agent</exception>
+        /// <exception cref="InvalidRestApiCallException">Rest call unsuccessful</exception>
         /// <exception cref="HttpRequestException">Server not found</exception>
         public static async Task<Asset> GetAssetAsync(HttpClient client, string path)
         {

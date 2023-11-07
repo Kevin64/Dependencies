@@ -139,6 +139,9 @@
   <data name="LOG_APPFILE_NOT_FOUND" xml:space="preserve">
     <value>Um ou mais arquivos de dependência ausentes</value>
   </data>
+  <data name="LOG_ASSET_HARDWARE_MODIFIED" xml:space="preserve">
+    <value>Hardware alterado desde o último serviço</value>
+  </data>
   <data name="LOG_ASSET_NOT_EXIST" xml:space="preserve">
     <value>Ativo não presente no banco de dados</value>
   </data>
