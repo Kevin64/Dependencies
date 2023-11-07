@@ -145,14 +145,12 @@ namespace RestApiDLL
                 HttpResponseMessage response = await client.GetAsync(path);
                 if (Convert.ToInt32(response.StatusCode).Equals(200))
                     a = await response.Content.ReadAsAsync<Asset>();
-                else if (Convert.ToInt32(response.StatusCode).Equals(204))
-                    a = null;
-                else if (Convert.ToInt32(response.StatusCode).Equals(401) || Convert.ToInt32(response.StatusCode).Equals(400))
+                else if (Convert.ToInt32(response.StatusCode).Equals(204) || Convert.ToInt32(response.StatusCode).Equals(400))
+                    throw new UnregisteredAssetException();
+                else if (Convert.ToInt32(response.StatusCode).Equals(401))
                     throw new InvalidAgentException();
                 else if (Convert.ToInt32(response.StatusCode).Equals(404))
                     throw new InvalidRestApiCallException();
-                if (a == null)
-                    throw new InvalidAssetException();
                 return a;
             }
             catch (HttpRequestException)

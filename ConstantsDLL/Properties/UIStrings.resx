@@ -277,7 +277,13 @@
   <data name="UNKNOWN" xml:space="preserve">
     <value>Unknown</value>
   </data>
+  <data name="UNREGISTERED_MODEL" xml:space="preserve">
+    <value>Unregistered hardware model</value>
+  </data>
   <data name="WAIT_TEXT" xml:space="preserve">
     <value>Please wait</value>
+  </data>
+  <data name="WARNING_WINDOWTITLE" xml:space="preserve">
+    <value>Notice</value>
   </data>
 </root>

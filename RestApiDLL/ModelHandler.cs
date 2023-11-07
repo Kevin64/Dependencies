@@ -66,7 +66,7 @@ namespace RestApiDLL
                 if (Convert.ToInt32(response.StatusCode).Equals(200))
                     m = await response.Content.ReadAsAsync<Model>();
                 else if (Convert.ToInt32(response.StatusCode).Equals(204))
-                    m = null;
+                    throw new UnregisteredModelException();
                 else if (Convert.ToInt32(response.StatusCode).Equals(401) || Convert.ToInt32(response.StatusCode).Equals(400))
                     throw new InvalidAgentException();
                 else if (Convert.ToInt32(response.StatusCode).Equals(404))

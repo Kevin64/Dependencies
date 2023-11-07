@@ -1,16 +1,12 @@
 ﻿using ConstantsDLL.Properties;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestApiDLL
 {
     [Serializable]
-    public class InvalidAssetException : Exception
+    public class UnregisteredAssetException : Exception
     {
-        public InvalidAssetException() : base(LogStrings.LOG_ASSET_NOT_EXIST) { }
+        public UnregisteredAssetException() : base(LogStrings.LOG_ASSET_NOT_EXIST) { }
     }
 
     [Serializable]
@@ -20,9 +16,9 @@ namespace RestApiDLL
     }
 
     [Serializable]
-    public class InvalidModelException : Exception
+    public class UnregisteredModelException : Exception
     {
-        public InvalidModelException() : base(LogStrings.LOG_MODEL_NOT_EXIST) { }
+        public UnregisteredModelException() : base(LogStrings.LOG_MODEL_NOT_EXIST) { }
     }
 
     [Serializable]

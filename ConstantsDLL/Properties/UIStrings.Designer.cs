@@ -538,11 +538,29 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Unregistered hardware model.
+        /// </summary>
+        public static string UNREGISTERED_MODEL {
+            get {
+                return ResourceManager.GetString("UNREGISTERED_MODEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Please wait.
         /// </summary>
         public static string WAIT_TEXT {
             get {
                 return ResourceManager.GetString("WAIT_TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Notice.
+        /// </summary>
+        public static string WARNING_WINDOWTITLE {
+            get {
+                return ResourceManager.GetString("WARNING_WINDOWTITLE", resourceCulture);
             }
         }
     }
