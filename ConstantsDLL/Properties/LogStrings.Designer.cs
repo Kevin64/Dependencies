@@ -205,6 +205,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Closing hardware change form.
+        /// </summary>
+        public static string LOG_CLOSING_HARDWARE_CHANGE_FORM {
+            get {
+                return ResourceManager.GetString("LOG_CLOSING_HARDWARE_CHANGE_FORM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Finalizing login form.
         /// </summary>
         public static string LOG_CLOSING_LOGIN_FORM {
@@ -588,6 +597,15 @@ namespace ConstantsDLL.Properties {
         public static string LOG_OPENING_GITHUB {
             get {
                 return ResourceManager.GetString("LOG_OPENING_GITHUB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Opening hardware change form.
+        /// </summary>
+        public static string LOG_OPENING_HARDWARE_CHANGE_FORM {
+            get {
+                return ResourceManager.GetString("LOG_OPENING_HARDWARE_CHANGE_FORM", resourceCulture);
             }
         }
         

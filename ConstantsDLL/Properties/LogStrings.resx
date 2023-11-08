@@ -166,6 +166,9 @@
   <data name="LOG_CLOSING_FORM" xml:space="preserve">
     <value>Finalizing form</value>
   </data>
+  <data name="LOG_CLOSING_HARDWARE_CHANGE_FORM" xml:space="preserve">
+    <value>Closing hardware change form</value>
+  </data>
   <data name="LOG_CLOSING_LOGIN_FORM" xml:space="preserve">
     <value>Finalizing login form</value>
   </data>
@@ -294,6 +297,9 @@
   </data>
   <data name="LOG_OPENING_GITHUB" xml:space="preserve">
     <value>Accessing release on GitHub</value>
+  </data>
+  <data name="LOG_OPENING_HARDWARE_CHANGE_FORM" xml:space="preserve">
+    <value>Opening hardware change form</value>
   </data>
   <data name="LOG_OPENING_LOG" xml:space="preserve">
     <value>Opening event log</value>

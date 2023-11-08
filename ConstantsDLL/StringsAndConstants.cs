@@ -90,6 +90,7 @@ namespace ConstantsDLL
         public static readonly Color LIGHT_FORECOLOR = SystemColors.ControlText;
         public static readonly Color LIGHT_BACKCOLOR = SystemColors.Window;
         public static readonly Color LIGHT_ASTERISKCOLOR = Color.Red;
+        public static readonly Color LIGHT_NOTICECOLOR = Color.DarkOrange;
         public static readonly Color LIGHT_AGENT = Color.DarkCyan;
         public static readonly Color ALERT_COLOR = Color.Red;
         public static readonly Color OFFLINE_ALERT = Color.Red;
@@ -97,6 +98,7 @@ namespace ConstantsDLL
         public static readonly Color DARK_FORECOLOR = SystemColors.ControlLightLight;
         public static readonly Color DARK_BACKCOLOR = Color.FromArgb(64, 64, 64);
         public static readonly Color DARK_ASTERISKCOLOR = Color.FromArgb(255, 200, 0);
+        public static readonly Color DARK_NOTICECOLOR = Color.DarkOrange;
         public static readonly Color DARK_AGENT = Color.DarkCyan;
         public static readonly Color LIGHT_DROPDOWN_BORDER = Color.FromArgb(122, 122, 122);
         public static readonly Color LIGHT_BACKGROUND = Color.FromArgb(248, 248, 248);
