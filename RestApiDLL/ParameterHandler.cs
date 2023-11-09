@@ -23,12 +23,6 @@ namespace RestApiDLL
     {
         public List<string> Buildings { get; set; }
         public List<string> HardwareTypes { get; set; }
-        public List<string> FirmwareTypes { get; set; }
-        public List<string> TpmTypes { get; set; }
-        public List<string> MediaOperationTypes { get; set; }
-        public List<string> RamTypes { get; set; }
-        public List<string> SecureBootStates { get; set; }
-        public List<string> VirtualizationTechnologyStates { get; set; }
     }
 
     /// <summary> 

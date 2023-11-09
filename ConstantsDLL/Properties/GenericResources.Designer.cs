@@ -1231,6 +1231,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a IDE.
+        /// </summary>
+        public static string IDE {
+            get {
+                return ResourceManager.GetString("IDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a \\img\\.
         /// </summary>
         public static string IMG_DIR {
@@ -1825,6 +1834,24 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a -1.
+        /// </summary>
+        public static string NOT_AVAILABLE {
+            get {
+                return ResourceManager.GetString("NOT_AVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a N/A.
+        /// </summary>
+        public static string NOT_AVAILABLE_NAME {
+            get {
+                return ResourceManager.GetString("NOT_AVAILABLE_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a offlineModeParameters.json.
         /// </summary>
         public static string OFFLINE_MODE_PARAMETER_FILE {
@@ -1834,11 +1861,20 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a OK.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
         /// </summary>
         public static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a OK.
+        /// </summary>
+        public static string OK_NAME {
+            get {
+                return ResourceManager.GetString("OK_NAME", resourceCulture);
             }
         }
         
@@ -1854,18 +1890,27 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a PCI-E.
         /// </summary>
-        public static string PCIE {
+        public static string PCI_E {
             get {
-                return ResourceManager.GetString("PCIE", resourceCulture);
+                return ResourceManager.GetString("PCI_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
+        /// </summary>
+        public static string PRED_FAIL {
+            get {
+                return ResourceManager.GetString("PRED_FAIL", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Pred Fail.
         /// </summary>
-        public static string PRED_FAIL {
+        public static string PRED_FAIL_NAME {
             get {
-                return ResourceManager.GetString("PRED_FAIL", resourceCulture);
+                return ResourceManager.GetString("PRED_FAIL_NAME", resourceCulture);
             }
         }
         

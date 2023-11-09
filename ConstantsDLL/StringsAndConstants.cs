@@ -84,6 +84,8 @@ namespace ConstantsDLL
         public static readonly List<string> LIST_BATTERY_CLI = new List<string>() { LIST_NO_ABBREV, LIST_YES_ABBREV };
         public static readonly List<string> LIST_BATTERY_GUI = new List<string>() { UIStrings.LIST_NO_0, UIStrings.LIST_YES_0 };
         public static readonly List<string> LIST_STATES = new List<string>() { UIStrings.NOT_SUPPORTED, UIStrings.DEACTIVATED, UIStrings.ACTIVATED };
+        public static readonly List<string> LIST_STORAGE_CONNECTION_TYPES = new List<string>() { GenericResources.IDE, GenericResources.SATA, GenericResources.PCI_E};
+        public static readonly List<string> LIST_TPM_TYPES = new List<string>() { GenericResources.NOT_AVAILABLE_NAME, GenericResources.TPM_1_2_NAME, GenericResources.TPM_2_0_NAME };
         public static readonly List<string> LIST_THEME_GUI = new List<string>() { "Auto", "Light", "Dark" };
 
         //UI colors

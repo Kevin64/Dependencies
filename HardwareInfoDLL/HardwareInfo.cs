@@ -15,11 +15,10 @@ namespace HardwareInfoDLL
     /// </summary>
     public static class HardwareInfo
     {
-        public enum MediaOperationTypes
+        public enum FirmwareTypes
         {
-            IDE_RAID,
-            AHCI,
-            NVMe
+            BIOS,
+            UEFI
         }
 
         public enum TpmTypes
@@ -29,18 +28,32 @@ namespace HardwareInfoDLL
             v2_0
         }
 
+        public enum MediaOperationTypes
+        {
+            IDE_RAID,
+            AHCI,
+            NVMe
+        }
+
+        public enum StorageTypes
+        {
+            HDD,
+            SSD
+        }
+
+        public enum StorageConnectionTypes
+        {
+            IDE,
+            SATA,
+            PCI_E
+        }
+
         public enum RamTypes
         {
             UNKNOWN = 0,
             DDR2 = 22,
             DDR3 = 24,
             DDR4 = 26
-        }
-
-        public enum FirmwareTypes
-        {
-            BIOS,
-            UEFI
         }
 
         public enum SecureBootStates
@@ -61,12 +74,6 @@ namespace HardwareInfoDLL
         {
             DISABLED,
             ENABLED
-        }
-
-        public enum StorageTypes
-        {
-            HDD,
-            SSD
         }
 
         /*-------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -700,11 +707,11 @@ namespace HardwareInfoDLL
                             if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
                             {
                                 if (queryObj["BusType"].ToString() == GenericResources.WMI_SATA)
-                                    list.Add(GenericResources.SATA);
+                                    list.Add(((int)StorageConnectionTypes.SATA).ToString());
                                 else if (queryObj["BusType"].ToString() == GenericResources.WMI_PCIE)
-                                    list.Add(GenericResources.PCIE);
+                                    list.Add(((int)StorageConnectionTypes.PCI_E).ToString());
                                 else
-                                    list.Add("IDE");
+                                    list.Add(((int)StorageConnectionTypes.IDE).ToString());
                             }
                         }
                     }
@@ -719,11 +726,11 @@ namespace HardwareInfoDLL
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
                             if (queryObj["InterfaceType"].ToString().Equals("IDE"))
-                                list.Add(GenericResources.SATA);
+                                list.Add(((int)StorageConnectionTypes.SATA).ToString());
                             else if (queryObj["InterfaceType"].ToString().Equals("SCSI"))
-                                list.Add(GenericResources.PCIE);
+                                list.Add(((int)StorageConnectionTypes.PCI_E).ToString());
                             else
-                                list.Add("IDE");
+                                list.Add(((int)StorageConnectionTypes.IDE).ToString());
                         }
                     }
                     return list;
@@ -873,7 +880,7 @@ namespace HardwareInfoDLL
             }
             catch (ManagementException)
             {
-                return new List<string>() { UIStrings.UNKNOWN };
+                return new List<string>() { GenericResources.NOT_AVAILABLE };
             }
         }
 
@@ -1066,7 +1073,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE_NAME;
             }
             catch (ManagementException e)
             {
@@ -1086,7 +1093,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Manufacturer").ToString();
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE_NAME;
             }
             catch (ManagementException e)
             {
@@ -1108,9 +1115,9 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     str = queryObj.GetPropertyValue("Model").ToString();
-                    return str != string.Empty ? str : UIStrings.UNKNOWN;
+                    return str != string.Empty ? str : GenericResources.NOT_AVAILABLE_NAME;
                 }
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE_NAME;
             }
             catch (ManagementException e)
             {
@@ -1132,9 +1139,9 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     str = queryObj.GetPropertyValue("Product").ToString();
-                    return str != string.Empty ? str : UIStrings.UNKNOWN;
+                    return str != string.Empty ? str : GenericResources.NOT_AVAILABLE;
                 }
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE;
             }
             catch (ManagementException e)
             {
@@ -1154,7 +1161,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE;
             }
             catch (ManagementException e)
             {
@@ -1372,7 +1379,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { UIStrings.UNKNOWN };
+                return new List<string>() { GenericResources.NOT_AVAILABLE };
             }
         }
 
@@ -1411,7 +1418,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { UIStrings.UNKNOWN };
+                return new List<string>() { GenericResources.NOT_AVAILABLE };
             }
         }
 
@@ -1453,7 +1460,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { UIStrings.UNKNOWN };
+                return new List<string>() { GenericResources.NOT_AVAILABLE };
             }
         }
 
@@ -1492,7 +1499,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { UIStrings.UNKNOWN };
+                return new List<string>() { GenericResources.NOT_AVAILABLE };
             }
         }
 
@@ -1531,7 +1538,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { UIStrings.UNKNOWN };
+                return new List<string>() { GenericResources.NOT_AVAILABLE };
             }
         }
 
@@ -1570,7 +1577,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { UIStrings.UNKNOWN };
+                return new List<string>() { GenericResources.NOT_AVAILABLE };
             }
         }
 
@@ -1609,7 +1616,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { UIStrings.UNKNOWN };
+                return new List<string>() { GenericResources.NOT_AVAILABLE };
             }
         }
 
@@ -1653,7 +1660,7 @@ namespace HardwareInfoDLL
                         ? GenericResources.X64
                         : GenericResources.X86;
                 }
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE;
             }
             catch (ManagementException e)
             {
@@ -1739,7 +1746,7 @@ namespace HardwareInfoDLL
                         return (queryObj["Caption"].ToString() + " " + queryObj["CSDVersion"].ToString() + ", " + GenericResources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
                 }
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE;
             }
             catch (ManagementException e)
             {
@@ -1784,7 +1791,7 @@ namespace HardwareInfoDLL
                         return queryObj["CSDVersion"].ToString();
                     }
                 }
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE;
             }
             catch (ManagementException e)
             {
@@ -1806,7 +1813,7 @@ namespace HardwareInfoDLL
                 {
                     return queryObj["Caption"].ToString().Replace("Microsoft", string.Empty).Trim();
                 }
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE;
             }
             catch (ManagementException e)
             {
@@ -1833,7 +1840,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Version").ToString() + "." + updateBuildRevision;
-                return UIStrings.UNKNOWN;
+                return GenericResources.NOT_AVAILABLE;
             }
             catch (ManagementException e)
             {

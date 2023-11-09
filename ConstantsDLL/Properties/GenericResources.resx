@@ -646,10 +646,10 @@
   <data name="OFFLINE_MODE_PARAMETER_FILE" xml:space="preserve">
     <value>offlineModeParameters.json</value>
   </data>
-  <data name="OK" xml:space="preserve">
+  <data name="OK_NAME" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="PRED_FAIL" xml:space="preserve">
+  <data name="PRED_FAIL_NAME" xml:space="preserve">
     <value>Pred Fail</value>
   </data>
   <data name="PROGRAMDATA_FOLDERNAME" xml:space="preserve">
@@ -919,7 +919,7 @@
   <data name="INI_SECTION_2_10" xml:space="preserve">
     <value>CheckForUpdates</value>
   </data>
-  <data name="PCIE" xml:space="preserve">
+  <data name="PCI_E" xml:space="preserve">
     <value>PCI-E</value>
   </data>
   <data name="WMI_PCIE" xml:space="preserve">
@@ -972,5 +972,20 @@
   </data>
   <data name="PB" xml:space="preserve">
     <value>PB</value>
+  </data>
+  <data name="NOT_AVAILABLE_NAME" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="IDE" xml:space="preserve">
+    <value>IDE</value>
+  </data>
+  <data name="NOT_AVAILABLE" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PRED_FAIL" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>
