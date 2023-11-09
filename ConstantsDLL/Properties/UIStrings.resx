@@ -157,6 +157,9 @@
   <data name="CANCEL_EXECUTION_RES_ERROR" xml:space="preserve">
     <value>Delete delivery data</value>
   </data>
+  <data name="COLLECTION_ERROR" xml:space="preserve">
+    <value>Collection error. Program will be closed</value>
+  </data>
   <data name="DEACTIVATED" xml:space="preserve">
     <value>Disabled</value>
   </data>

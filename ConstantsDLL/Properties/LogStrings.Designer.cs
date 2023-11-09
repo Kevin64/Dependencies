@@ -277,6 +277,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Collection error.
+        /// </summary>
+        public static string LOG_COLLECTION_ERROR {
+            get {
+                return ResourceManager.GetString("LOG_COLLECTION_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Connecting to GitHub.
         /// </summary>
         public static string LOG_CONNECTING_GITHUB {

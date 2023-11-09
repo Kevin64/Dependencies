@@ -190,6 +190,9 @@
   <data name="LOG_CLOSING_VIDEO_CARD_FORM" xml:space="preserve">
     <value>Closing video card form</value>
   </data>
+  <data name="LOG_COLLECTION_ERROR" xml:space="preserve">
+    <value>Collection error</value>
+  </data>
   <data name="LOG_CONNECTING_GITHUB" xml:space="preserve">
     <value>Connecting to GitHub</value>
   </data>

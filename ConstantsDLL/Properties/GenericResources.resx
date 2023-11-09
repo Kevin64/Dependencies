@@ -142,22 +142,22 @@
   <data name="DATE_FORMAT" xml:space="preserve">
     <value>yyyy-MM-dd</value>
   </data>
-  <data name="DDR2" xml:space="preserve">
+  <data name="DDR2_NAME" xml:space="preserve">
     <value>DDR2</value>
   </data>
-  <data name="DDR3" xml:space="preserve">
+  <data name="DDR3_NAME" xml:space="preserve">
     <value>DDR3</value>
   </data>
-  <data name="DDR3_MEMORY_TYPE" xml:space="preserve">
+  <data name="DDR3_MEMORY_TYPE_CODE" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="DDR3_SMBIOS" xml:space="preserve">
+  <data name="DDR3_SMBIOS_CODE" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="DDR4" xml:space="preserve">
+  <data name="DDR4_NAME" xml:space="preserve">
     <value>DDR4</value>
   </data>
-  <data name="DDR4_SMBIOS" xml:space="preserve">
+  <data name="DDR4_SMBIOS_CODE" xml:space="preserve">
     <value>26</value>
   </data>
   <data name="CONFIG_FILE" xml:space="preserve">
@@ -949,7 +949,7 @@
   <data name="DDR3_APCS" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="DDR4_APCS" xml:space="preserve">
+  <data name="DDR4_APCS_CODE" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="GHz" xml:space="preserve">
@@ -976,16 +976,22 @@
   <data name="NOT_AVAILABLE_NAME" xml:space="preserve">
     <value>N/A</value>
   </data>
+  <data name="FREE_CODE" xml:space="preserve">
+    <value>-2</value>
+  </data>
   <data name="IDE" xml:space="preserve">
     <value>IDE</value>
   </data>
-  <data name="NOT_AVAILABLE" xml:space="preserve">
+  <data name="NOT_AVAILABLE_CODE" xml:space="preserve">
     <value>-1</value>
   </data>
-  <data name="OK" xml:space="preserve">
+  <data name="OK_CODE" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PRED_FAIL" xml:space="preserve">
+  <data name="PRED_FAIL_CODE" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="UNKNOWN_CODE" xml:space="preserve">
+    <value>0</value>
   </data>
 </root>

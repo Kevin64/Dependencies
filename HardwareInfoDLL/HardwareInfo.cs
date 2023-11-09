@@ -50,7 +50,9 @@ namespace HardwareInfoDLL
 
         public enum RamTypes
         {
-            UNKNOWN = 0,
+            Free = -2,
+            Unknown = 0,
+            Invalid = 2,
             DDR2 = 22,
             DDR3 = 24,
             DDR4 = 26
@@ -855,9 +857,9 @@ namespace HardwareInfoDLL
                     foreach (ManagementObject queryObj in searcher.Get())
                     {
                         if (queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
-                            list.Add(GenericResources.OK);
+                            list.Add(GenericResources.OK_CODE);
                         else
-                            list.Add(GenericResources.PRED_FAIL);
+                            list.Add(GenericResources.PRED_FAIL_CODE);
                     }
                     return list;
                 }
@@ -870,9 +872,9 @@ namespace HardwareInfoDLL
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
                             if (queryObj.GetPropertyValue("Status").ToString() == "OK")
-                                list.Add(GenericResources.OK);
+                                list.Add(GenericResources.OK_CODE);
                             else
-                                list.Add(GenericResources.PRED_FAIL);
+                                list.Add(GenericResources.PRED_FAIL_CODE);
                         }
                     }
                     return list;
@@ -880,7 +882,7 @@ namespace HardwareInfoDLL
             }
             catch (ManagementException)
             {
-                return new List<string>() { GenericResources.NOT_AVAILABLE };
+                return new List<string>() { GenericResources.NOT_AVAILABLE_CODE };
             }
         }
 
@@ -1139,9 +1141,9 @@ namespace HardwareInfoDLL
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                 {
                     str = queryObj.GetPropertyValue("Product").ToString();
-                    return str != string.Empty ? str : GenericResources.NOT_AVAILABLE;
+                    return str != string.Empty ? str : GenericResources.NOT_AVAILABLE_CODE;
                 }
-                return GenericResources.NOT_AVAILABLE;
+                return GenericResources.NOT_AVAILABLE_CODE;
             }
             catch (ManagementException e)
             {
@@ -1161,7 +1163,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("SerialNumber").ToString();
-                return GenericResources.NOT_AVAILABLE;
+                return GenericResources.NOT_AVAILABLE_CODE;
             }
             catch (ManagementException e)
             {
@@ -1196,14 +1198,14 @@ namespace HardwareInfoDLL
                         MemSize += mCap;
                         if (GetWinVersion().Equals(GenericResources.WINDOWS_10))
                         {
-                            if (queryObj["SMBIOSMemoryType"].ToString().Equals(GenericResources.DDR4_SMBIOS))
+                            if (queryObj["SMBIOSMemoryType"].ToString().Equals(GenericResources.DDR4_SMBIOS_CODE))
                             {
-                                mType = GenericResources.DDR4;
+                                mType = GenericResources.DDR4_NAME;
                                 mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
                             }
-                            else if (queryObj["SMBIOSMemoryType"].ToString().Equals(GenericResources.DDR3_SMBIOS))
+                            else if (queryObj["SMBIOSMemoryType"].ToString().Equals(GenericResources.DDR3_SMBIOS_CODE))
                             {
-                                mType = GenericResources.DDR3;
+                                mType = GenericResources.DDR3_NAME;
                                 mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
                             }
                             else if (queryObj["SMBIOSMemoryType"].ToString().Equals("3"))
@@ -1213,7 +1215,7 @@ namespace HardwareInfoDLL
                             }
                             else
                             {
-                                mType = GenericResources.DDR2;
+                                mType = GenericResources.DDR2_NAME;
                                 try
                                 {
                                     mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
@@ -1226,9 +1228,9 @@ namespace HardwareInfoDLL
                         }
                         else
                         {
-                            if (queryObj["MemoryType"].ToString().Equals(GenericResources.DDR3_MEMORY_TYPE))
+                            if (queryObj["MemoryType"].ToString().Equals(GenericResources.DDR3_MEMORY_TYPE_CODE))
                             {
-                                mType = GenericResources.DDR3;
+                                mType = GenericResources.DDR3_NAME;
                                 mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
                             }
                             else if (queryObj["MemoryType"].ToString().Equals("2") || queryObj["MemoryType"].ToString().Equals("0"))
@@ -1238,7 +1240,7 @@ namespace HardwareInfoDLL
                             }
                             else
                             {
-                                mType = GenericResources.DDR2;
+                                mType = GenericResources.DDR2_NAME;
                                 try
                                 {
                                     mSpeed = " " + queryObj["Speed"].ToString() + " " + GenericResources.MHZ;
@@ -1370,7 +1372,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(UIStrings.FREE);
+                    list.Add(GenericResources.FREE_CODE);
                 return list;
             }
             catch (ManagementException e)
@@ -1379,7 +1381,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { GenericResources.NOT_AVAILABLE };
+                return new List<string>() { GenericResources.NOT_AVAILABLE_CODE };
             }
         }
 
@@ -1409,7 +1411,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(UIStrings.FREE);
+                    list.Add(GenericResources.FREE_CODE);
                 return list;
             }
             catch (ManagementException e)
@@ -1418,7 +1420,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { GenericResources.NOT_AVAILABLE };
+                return new List<string>() { GenericResources.NOT_AVAILABLE_CODE };
             }
         }
 
@@ -1451,7 +1453,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(UIStrings.FREE);
+                    list.Add(GenericResources.FREE_CODE);
                 return list;
             }
             catch (ManagementException e)
@@ -1460,7 +1462,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { GenericResources.NOT_AVAILABLE };
+                return new List<string>() { GenericResources.NOT_AVAILABLE_CODE };
             }
         }
 
@@ -1490,7 +1492,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(UIStrings.FREE);
+                    list.Add(GenericResources.FREE_CODE);
                 return list;
             }
             catch (ManagementException e)
@@ -1499,7 +1501,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { GenericResources.NOT_AVAILABLE };
+                return new List<string>() { GenericResources.NOT_AVAILABLE_CODE };
             }
         }
 
@@ -1529,7 +1531,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(UIStrings.FREE);
+                    list.Add(GenericResources.FREE_CODE);
                 return list;
             }
             catch (ManagementException e)
@@ -1538,7 +1540,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { GenericResources.NOT_AVAILABLE };
+                return new List<string>() { GenericResources.NOT_AVAILABLE_CODE };
             }
         }
 
@@ -1568,7 +1570,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(UIStrings.FREE);
+                    list.Add(GenericResources.FREE_CODE);
                 return list;
             }
             catch (ManagementException e)
@@ -1577,7 +1579,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { GenericResources.NOT_AVAILABLE };
+                return new List<string>() { GenericResources.NOT_AVAILABLE_CODE };
             }
         }
 
@@ -1607,7 +1609,7 @@ namespace HardwareInfoDLL
                     numRamFreeSlots = Convert.ToInt32(queryObj["MemoryDevices"]);
 
                 for (int i = 0; i < numRamFreeSlots - count; i++)
-                    list.Add(UIStrings.FREE);
+                    list.Add(GenericResources.FREE_CODE);
                 return list;
             }
             catch (ManagementException e)
@@ -1616,7 +1618,7 @@ namespace HardwareInfoDLL
             }
             catch (Exception)
             {
-                return new List<string>() { GenericResources.NOT_AVAILABLE };
+                return new List<string>() { GenericResources.NOT_AVAILABLE_CODE };
             }
         }
 
@@ -1660,7 +1662,7 @@ namespace HardwareInfoDLL
                         ? GenericResources.X64
                         : GenericResources.X86;
                 }
-                return GenericResources.NOT_AVAILABLE;
+                return GenericResources.NOT_AVAILABLE_CODE;
             }
             catch (ManagementException e)
             {
@@ -1746,7 +1748,7 @@ namespace HardwareInfoDLL
                         return (queryObj["Caption"].ToString() + " " + queryObj["CSDVersion"].ToString() + ", " + GenericResources.BUILD + " " + queryObj["Version"].ToString() + "." + updateBuildRevision + " (" + GetOSArchAlt() + ")").Replace("Microsoft", string.Empty).Trim();
                     }
                 }
-                return GenericResources.NOT_AVAILABLE;
+                return GenericResources.NOT_AVAILABLE_CODE;
             }
             catch (ManagementException e)
             {
@@ -1791,7 +1793,7 @@ namespace HardwareInfoDLL
                         return queryObj["CSDVersion"].ToString();
                     }
                 }
-                return GenericResources.NOT_AVAILABLE;
+                return GenericResources.NOT_AVAILABLE_CODE;
             }
             catch (ManagementException e)
             {
@@ -1813,7 +1815,7 @@ namespace HardwareInfoDLL
                 {
                     return queryObj["Caption"].ToString().Replace("Microsoft", string.Empty).Trim();
                 }
-                return GenericResources.NOT_AVAILABLE;
+                return GenericResources.NOT_AVAILABLE_CODE;
             }
             catch (ManagementException e)
             {
@@ -1840,7 +1842,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     return queryObj.GetPropertyValue("Version").ToString() + "." + updateBuildRevision;
-                return GenericResources.NOT_AVAILABLE;
+                return GenericResources.NOT_AVAILABLE_CODE;
             }
             catch (ManagementException e)
             {

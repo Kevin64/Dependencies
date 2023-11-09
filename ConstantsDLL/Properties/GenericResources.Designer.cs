@@ -169,15 +169,6 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a DDR2.
-        /// </summary>
-        public static string DDR2 {
-            get {
-                return ResourceManager.GetString("DDR2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
         /// </summary>
         public static string DDR2_APCS {
@@ -187,11 +178,11 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a DDR3.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a DDR2.
         /// </summary>
-        public static string DDR3 {
+        public static string DDR2_NAME {
             get {
-                return ResourceManager.GetString("DDR3", resourceCulture);
+                return ResourceManager.GetString("DDR2_NAME", resourceCulture);
             }
         }
         
@@ -207,45 +198,54 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
         /// </summary>
-        public static string DDR3_MEMORY_TYPE {
+        public static string DDR3_MEMORY_TYPE_CODE {
             get {
-                return ResourceManager.GetString("DDR3_MEMORY_TYPE", resourceCulture);
+                return ResourceManager.GetString("DDR3_MEMORY_TYPE_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a DDR3.
+        /// </summary>
+        public static string DDR3_NAME {
+            get {
+                return ResourceManager.GetString("DDR3_NAME", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 24.
         /// </summary>
-        public static string DDR3_SMBIOS {
+        public static string DDR3_SMBIOS_CODE {
             get {
-                return ResourceManager.GetString("DDR3_SMBIOS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a DDR4.
-        /// </summary>
-        public static string DDR4 {
-            get {
-                return ResourceManager.GetString("DDR4", resourceCulture);
+                return ResourceManager.GetString("DDR3_SMBIOS_CODE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 2.
         /// </summary>
-        public static string DDR4_APCS {
+        public static string DDR4_APCS_CODE {
             get {
-                return ResourceManager.GetString("DDR4_APCS", resourceCulture);
+                return ResourceManager.GetString("DDR4_APCS_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a DDR4.
+        /// </summary>
+        public static string DDR4_NAME {
+            get {
+                return ResourceManager.GetString("DDR4_NAME", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 26.
         /// </summary>
-        public static string DDR4_SMBIOS {
+        public static string DDR4_SMBIOS_CODE {
             get {
-                return ResourceManager.GetString("DDR4_SMBIOS", resourceCulture);
+                return ResourceManager.GetString("DDR4_SMBIOS_CODE", resourceCulture);
             }
         }
         
@@ -345,6 +345,15 @@ namespace ConstantsDLL.Properties {
         public static string FOP_X86 {
             get {
                 return ResourceManager.GetString("FOP_X86", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a -2.
+        /// </summary>
+        public static string FREE_CODE {
+            get {
+                return ResourceManager.GetString("FREE_CODE", resourceCulture);
             }
         }
         
@@ -1836,9 +1845,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a -1.
         /// </summary>
-        public static string NOT_AVAILABLE {
+        public static string NOT_AVAILABLE_CODE {
             get {
-                return ResourceManager.GetString("NOT_AVAILABLE", resourceCulture);
+                return ResourceManager.GetString("NOT_AVAILABLE_CODE", resourceCulture);
             }
         }
         
@@ -1863,9 +1872,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
         /// </summary>
-        public static string OK {
+        public static string OK_CODE {
             get {
-                return ResourceManager.GetString("OK", resourceCulture);
+                return ResourceManager.GetString("OK_CODE", resourceCulture);
             }
         }
         
@@ -1899,9 +1908,9 @@ namespace ConstantsDLL.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a 1.
         /// </summary>
-        public static string PRED_FAIL {
+        public static string PRED_FAIL_CODE {
             get {
-                return ResourceManager.GetString("PRED_FAIL", resourceCulture);
+                return ResourceManager.GetString("PRED_FAIL_CODE", resourceCulture);
             }
         }
         
@@ -2415,6 +2424,15 @@ namespace ConstantsDLL.Properties {
         public static string TRUE {
             get {
                 return ResourceManager.GetString("TRUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
+        /// </summary>
+        public static string UNKNOWN_CODE {
+            get {
+                return ResourceManager.GetString("UNKNOWN_CODE", resourceCulture);
             }
         }
         

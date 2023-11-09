@@ -178,6 +178,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Collection error. Program will be closed.
+        /// </summary>
+        public static string COLLECTION_ERROR {
+            get {
+                return ResourceManager.GetString("COLLECTION_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Disabled.
         /// </summary>
         public static string DEACTIVATED {
