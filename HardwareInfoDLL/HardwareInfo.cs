@@ -129,7 +129,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     cpuId = queryObj["DeviceId"].ToString();
                     cpuIdAdj = Convert.ToInt32(cpuId.Substring(cpuId.Length - 1));
@@ -156,7 +156,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     cpuName = queryObj["Name"].ToString();
                     list.Add(cpuName);
@@ -182,7 +182,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     cpuFreq = queryObj["MaxClockSpeed"].ToString();
                     list.Add(cpuFreq);
@@ -208,7 +208,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     cpuCores = queryObj["NumberOfCores"].ToString();
                     list.Add(cpuCores);
@@ -234,7 +234,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     cpuThreads = queryObj["NumberOfLogicalProcessors"].ToString();
                     list.Add(cpuThreads);
@@ -260,7 +260,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     if (queryObj["L3CacheSize"].ToString().Equals("0"))
                         cpuCache = (Convert.ToInt64(queryObj["L2CacheSize"]) * 1024).ToString();
@@ -326,21 +326,21 @@ namespace HardwareInfoDLL
         /// <returns>List with the computer's video card IDs, or an exception message otherwise</returns>
         public static List<string> GetVideoCardIdList()
         {
-            string gpuId;
-            int gpuIdAdj;
+            string videoCardId;
+            int videoCardIdAdj;
             List<string> list = new List<string>();
 
             try
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
                     {
-                        gpuId = queryObj["DeviceId"].ToString();
-                        gpuIdAdj = Convert.ToInt32(gpuId.Substring(gpuId.Length - 1)) - 1;
-                        list.Add(gpuIdAdj.ToString());
+                        videoCardId = queryObj["DeviceId"].ToString();
+                        videoCardIdAdj = Convert.ToInt32(videoCardId.Substring(videoCardId.Length - 1)) - 1;
+                        list.Add(videoCardIdAdj.ToString());
                     }
                 }
                 return list;
@@ -364,7 +364,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
                     {
@@ -394,7 +394,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
                     if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
                     {
@@ -530,7 +530,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                     {
                         if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
@@ -547,7 +547,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -582,7 +582,7 @@ namespace HardwareInfoDLL
 
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                     {
                         if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
@@ -618,7 +618,7 @@ namespace HardwareInfoDLL
 
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -652,7 +652,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                     {
                         if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
@@ -670,7 +670,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -702,7 +702,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                     {
                         if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
@@ -723,7 +723,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -758,7 +758,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                     {
                         if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
@@ -775,7 +775,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -807,7 +807,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                     {
                         if (!Convert.ToString(queryObj["FriendlyName"]).Equals(msftName))
                         {
@@ -824,7 +824,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -854,7 +854,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\wmi", "SELECT * FROM MSStorageDriver_FailurePredictStatus");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                     {
                         if (queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
                             list.Add(GenericResources.OK_CODE);
@@ -867,7 +867,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -1359,7 +1359,7 @@ namespace HardwareInfoDLL
             try
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceLocator"].ToString().Substring(obj["DeviceLocator"].ToString().Length - 1)))
                 {
                     ramSlot = queryObj["DeviceLocator"].ToString();
                     ramSlot = ramSlot.Substring(ramSlot.Length - 1);
@@ -1480,7 +1480,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceLocator"].ToString().Substring(obj["DeviceLocator"].ToString().Length - 1)))
                 {
                     ramFrequency = queryObj["Speed"].ToString();
                     count++;
@@ -1519,7 +1519,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceLocator"].ToString().Substring(obj["DeviceLocator"].ToString().Length - 1)))
                 {
                     ramSerialNumber = queryObj["SerialNumber"].ToString();
                     count++;
@@ -1558,7 +1558,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceLocator"].ToString().Substring(obj["DeviceLocator"].ToString().Length - 1)))
                 {
                     ramPartNumber = queryObj["PartNumber"].ToString();
                     count++;
@@ -1597,7 +1597,7 @@ namespace HardwareInfoDLL
             {
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
 
-                foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
+                foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceLocator"].ToString().Substring(obj["DeviceLocator"].ToString().Length - 1)))
                 {
                     ramManufacturer = queryObj["Manufacturer"].ToString();
                     count++;

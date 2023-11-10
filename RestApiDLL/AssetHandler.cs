@@ -96,12 +96,12 @@ namespace RestApiDLL
     /// </summary>
     public class storage
     {
+        public string storageId { get; set; }
         public string connection { get; set; }
         public string model { get; set; }
         public string serialNumber { get; set; }
         public string size { get; set; }
         public string smartStatus { get; set; }
-        public string storageId { get; set; }
         public string type { get; set; }
     }
 
@@ -110,7 +110,7 @@ namespace RestApiDLL
     /// </summary>
     public class videoCard
     {
-        public string gpuId { get; set; }
+        public string videoCardId { get; set; }
         public string name { get; set; }
         public string vRam { get; set; }
     }
