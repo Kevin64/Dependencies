@@ -854,7 +854,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\wmi", "SELECT * FROM MSStorageDriver_FailurePredictStatus");
 
-                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
+                    foreach (ManagementObject queryObj in searcher.Get())
                     {
                         if (queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
                             list.Add(GenericResources.OK_CODE);
