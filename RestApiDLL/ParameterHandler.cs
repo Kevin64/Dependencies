@@ -23,6 +23,11 @@ namespace RestApiDLL
     {
         public List<string> Buildings { get; set; }
         public List<string> HardwareTypes { get; set; }
+        public string HostnamePattern { get; set; }
+        public int AssetNumberDigitLimit { get; set; }
+        public int SealNumberDigitLimit { get; set; }
+        public int RoomNumberDigitLimit { get; set; }
+        public int TicketNumberDigitLimit { get; set; }
     }
 
     /// <summary> 

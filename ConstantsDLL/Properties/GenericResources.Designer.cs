@@ -250,6 +250,33 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a alpha.
+        /// </summary>
+        public static string DEV_STATUS_ALPHA {
+            get {
+                return ResourceManager.GetString("DEV_STATUS_ALPHA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a beta.
+        /// </summary>
+        public static string DEV_STATUS_BETA {
+            get {
+                return ResourceManager.GetString("DEV_STATUS_BETA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a RC.
+        /// </summary>
+        public static string DEV_STATUS_RC {
+            get {
+                return ResourceManager.GetString("DEV_STATUS_RC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a DidItRunAlready.
         /// </summary>
         public static string DID_IT_RUN_ALREADY {
@@ -2451,6 +2478,15 @@ namespace ConstantsDLL.Properties {
         public static string V1_API_AGENTS_URL {
             get {
                 return ResourceManager.GetString("V1_API_AGENTS_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/asset-hwuid/.
+        /// </summary>
+        public static string V1_API_ASSET_HWUID_URL {
+            get {
+                return ResourceManager.GetString("V1_API_ASSET_HWUID_URL", resourceCulture);
             }
         }
         

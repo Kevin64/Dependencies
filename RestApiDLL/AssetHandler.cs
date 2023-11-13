@@ -23,6 +23,7 @@ namespace RestApiDLL
         public string tag { get; set; }
         public string adRegistered { get; set; }
         public string hwUid { get; set; }
+        public string hwHash { get; set; }
         public firmware firmware { get; set; }
         public hardware hardware { get; set; }
         public location location { get; set; }

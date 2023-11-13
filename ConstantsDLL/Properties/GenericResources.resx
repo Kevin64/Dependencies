@@ -994,4 +994,16 @@
   <data name="UNKNOWN_CODE" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="DEV_STATUS_ALPHA" xml:space="preserve">
+    <value>alpha</value>
+  </data>
+  <data name="DEV_STATUS_BETA" xml:space="preserve">
+    <value>beta</value>
+  </data>
+  <data name="DEV_STATUS_RC" xml:space="preserve">
+    <value>RC</value>
+  </data>
+  <data name="V1_API_ASSET_HWUID_URL" xml:space="preserve">
+    <value>/api/v1/asset-hwuid/</value>
+  </data>
 </root>
