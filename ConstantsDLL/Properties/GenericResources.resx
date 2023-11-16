@@ -136,7 +136,7 @@
   <data name="CONSOLE_OUT_GUI" xml:space="preserve">
     <value>false</value>
   </data>
-  <data name="DASH" xml:space="preserve">
+  <data name="DASH_SINGLE" xml:space="preserve">
     <value>-</value>
   </data>
   <data name="DATE_FORMAT" xml:space="preserve">
@@ -163,28 +163,28 @@
   <data name="CONFIG_FILE" xml:space="preserve">
     <value>config.json</value>
   </data>
-  <data name="DID_IT_RUN_ALREADY" xml:space="preserve">
+  <data name="REGISTRY_DID_IT_RUN_ALREADY" xml:space="preserve">
     <value>DidItRunAlready</value>
   </data>
-  <data name="DOUBLE_DASH" xml:space="preserve">
+  <data name="DASH_DOUBLE" xml:space="preserve">
     <value>--</value>
   </data>
-  <data name="FOP" xml:space="preserve">
+  <data name="FOP_NAME" xml:space="preserve">
     <value>FOP</value>
   </data>
-  <data name="FOP_REG_KEY" xml:space="preserve">
+  <data name="REGISTRY_FOP_REG_KEY" xml:space="preserve">
     <value>Software\\FOP</value>
   </data>
-  <data name="FOP_RUN_ONCE_KEY" xml:space="preserve">
+  <data name="REGISTRY_FOP_RUN_ONCE_KEY" xml:space="preserve">
     <value>Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</value>
   </data>
-  <data name="FOP_X64" xml:space="preserve">
+  <data name="INSTALL_PATH_FOP_X64" xml:space="preserve">
     <value>"C:\Program Files\FOP\FOP.lnk"</value>
   </data>
-  <data name="FOP_X86" xml:space="preserve">
+  <data name="INSTALL_PATH_FOP_X86" xml:space="preserve">
     <value>"C:\Program Files (x86)\FOP\FOP.lnk"</value>
   </data>
-  <data name="FREQUENCY" xml:space="preserve">
+  <data name="FREQUENCY_MHZ" xml:space="preserve">
     <value>MHz</value>
   </data>
   <data name="FW_TYPE_BIOS" xml:space="preserve">
@@ -193,22 +193,19 @@
   <data name="FW_TYPE_UEFI" xml:space="preserve">
     <value>UEFI</value>
   </data>
-  <data name="GB" xml:space="preserve">
+  <data name="SIZE_GB" xml:space="preserve">
     <value>GB</value>
   </data>
-  <data name="HDD" xml:space="preserve">
+  <data name="STORAGE_TYPE_HDD_NAME" xml:space="preserve">
     <value>HDD</value>
   </data>
-  <data name="HEIGHT" xml:space="preserve">
+  <data name="FOP_MIN_SCREEN_HEIGHT" xml:space="preserve">
     <value>768</value>
-  </data>
-  <data name="HOSTNAME_PATTERN" xml:space="preserve">
-    <value>PC-</value>
   </data>
   <data name="HTTP" xml:space="preserve">
     <value>http://</value>
   </data>
-  <data name="HWINFO_REG_PATH" xml:space="preserve">
+  <data name="REGISTRY_AIR_PATH" xml:space="preserve">
     <value>Software\\AssetInformationAndRegistration</value>
   </data>
   <data name="ICON_ABOUT_DARK_PATH" xml:space="preserve">
@@ -457,122 +454,11 @@
   <data name="ICON_WINDOWS_LIGHT_PATH" xml:space="preserve">
     <value>Resources\\icons\\icon_windows_light.png</value>
   </data>
-  <data name="IMG_DIR" xml:space="preserve">
+  <data name="FOP_IMG_DIR" xml:space="preserve">
     <value>\\img\\</value>
   </data>
-  <data name="IMG_EXT" xml:space="preserve">
+  <data name="FOP_IMG_EXT" xml:space="preserve">
     <value>.png</value>
-  </data>
-  <data name="INI_SECTION_1" xml:space="preserve">
-    <value>Parameters</value>
-  </data>
-  <data name="INI_SECTION_1_1" xml:space="preserve">
-    <value>InstallDrivers</value>
-  </data>
-  <data name="INI_SECTION_1_10" xml:space="preserve">
-    <value>AddDrivers</value>
-  </data>
-  <data name="INI_SECTION_1_11" xml:space="preserve">
-    <value>ServerIP</value>
-  </data>
-  <data name="INI_SECTION_1_12" xml:space="preserve">
-    <value>ServerPort</value>
-  </data>
-  <data name="INI_SECTION_1_13" xml:space="preserve">
-    <value>Buildings</value>
-  </data>
-  <data name="INI_SECTION_1_14" xml:space="preserve">
-    <value>HWTypes</value>
-  </data>
-  <data name="INI_SECTION_1_15" xml:space="preserve">
-    <value>ThemeUI</value>
-  </data>
-  <data name="INI_SECTION_1_16" xml:space="preserve">
-    <value>Logo1URL</value>
-  </data>
-  <data name="INI_SECTION_1_17" xml:space="preserve">
-    <value>Logo2URL</value>
-  </data>
-  <data name="INI_SECTION_1_18" xml:space="preserve">
-    <value>Logo3URL</value>
-  </data>
-  <data name="INI_SECTION_1_2" xml:space="preserve">
-    <value>CleanGarbage</value>
-  </data>
-  <data name="INI_SECTION_1_3" xml:space="preserve">
-    <value>ChangeResolution</value>
-  </data>
-  <data name="INI_SECTION_1_4" xml:space="preserve">
-    <value>ResolutionWidth</value>
-  </data>
-  <data name="INI_SECTION_1_5" xml:space="preserve">
-    <value>ResolutionHeight</value>
-  </data>
-  <data name="INI_SECTION_1_6" xml:space="preserve">
-    <value>DriverPath</value>
-  </data>
-  <data name="INI_SECTION_1_7" xml:space="preserve">
-    <value>RebootAfterFinished</value>
-  </data>
-  <data name="INI_SECTION_1_8" xml:space="preserve">
-    <value>PauseAfterFinished</value>
-  </data>
-  <data name="INI_SECTION_1_9" xml:space="preserve">
-    <value>LogLocation</value>
-  </data>
-  <data name="INI_SECTION_2" xml:space="preserve">
-    <value>Enforcement</value>
-  </data>
-  <data name="INI_SECTION_2_1" xml:space="preserve">
-    <value>RamLimitEnforcement</value>
-  </data>
-  <data name="INI_SECTION_2_2" xml:space="preserve">
-    <value>SmartStatusEnforcement</value>
-  </data>
-  <data name="INI_SECTION_2_3" xml:space="preserve">
-    <value>MediaOperationModeEnforcement</value>
-  </data>
-  <data name="INI_SECTION_2_4" xml:space="preserve">
-    <value>HostnameEnforcement</value>
-  </data>
-  <data name="INI_SECTION_2_5" xml:space="preserve">
-    <value>FirmwareTypeEnforcement</value>
-  </data>
-  <data name="INI_SECTION_2_6" xml:space="preserve">
-    <value>FirmwareVersionEnforcement</value>
-  </data>
-  <data name="INI_SECTION_2_7" xml:space="preserve">
-    <value>SecureBootEnforcement</value>
-  </data>
-  <data name="INI_SECTION_2_8" xml:space="preserve">
-    <value>VirtualizationTechnologyEnforcement</value>
-  </data>
-  <data name="INI_SECTION_2_9" xml:space="preserve">
-    <value>TpmEnforcement</value>
-  </data>
-  <data name="INI_SECTION_3" xml:space="preserve">
-    <value>OrgData</value>
-  </data>
-  <data name="INI_SECTION_3_1" xml:space="preserve">
-    <value>OrganizationFullName</value>
-  </data>
-  <data name="INI_SECTION_3_2" xml:space="preserve">
-    <value>OrganizationAcronym</value>
-  </data>
-  <data name="INI_SECTION_3_3" xml:space="preserve">
-    <value>DepartamentFullName</value>
-  </data>
-  <data name="INI_SECTION_3_4" xml:space="preserve">
-    <value>DepartamentAcronym</value>
-  </data>
-  <data name="INI_SECTION_3_5" xml:space="preserve">
-    <value>SubDepartamentFullName</value>
-  </data>
-  <data name="INI_SECTION_3_6" xml:space="preserve">
-    <value>SubDepartamentAcronym</value>
-  </data>
-  <data name="JSON_SERVER_PATH" xml:space="preserve">
-    <value>output/</value>
   </data>
   <data name="LAST_INSTALL" xml:space="preserve">
     <value>LastInstallation</value>
@@ -593,7 +479,7 @@
     <value>AssetInformationAndRegistration</value>
   </data>
   <data name="LOG_FILENAME_FOP" xml:space="preserve">
-    <value>FOP</value>
+    <value>FeaturesOverlayPresentation</value>
   </data>
   <data name="LOG_FILENAME_OOBE" xml:space="preserve">
     <value>OfflineDriverInstallerOOBE</value>
@@ -604,7 +490,7 @@
   <data name="LOG_PASSWORD_PLACEHOLDER" xml:space="preserve">
     <value>XXXXXXXXXXXXXXX</value>
   </data>
-  <data name="LOG_SEPARATOR" xml:space="preserve">
+  <data name="LOG_SEPARATOR_LARGE" xml:space="preserve">
     <value>____________________________________________________________________________________________________</value>
   </data>
   <data name="LOG_SEPARATOR_SMALL" xml:space="preserve">
@@ -622,26 +508,17 @@
   <data name="MAX_SIZE" xml:space="preserve">
     <value>100</value>
   </data>
-  <data name="MB" xml:space="preserve">
+  <data name="SIZE_MB" xml:space="preserve">
     <value>MB</value>
   </data>
   <data name="MEDIA_OPERATION_AHCI" xml:space="preserve">
     <value>AHCI</value>
-  </data>
-  <data name="MEDIA_OPERATION_IDE" xml:space="preserve">
-    <value>IDE/Legacy</value>
   </data>
   <data name="MEDIA_OPERATION_NVME" xml:space="preserve">
     <value>NVMe</value>
   </data>
   <data name="NO" xml:space="preserve">
     <value>No</value>
-  </data>
-  <data name="NON_SECBOOT_GPU_1" xml:space="preserve">
-    <value>210</value>
-  </data>
-  <data name="NON_SECBOOT_GPU_2" xml:space="preserve">
-    <value>430</value>
   </data>
   <data name="OFFLINE_MODE_PARAMETER_FILE" xml:space="preserve">
     <value>offlineModeParameters.json</value>
@@ -655,124 +532,124 @@
   <data name="PROGRAMDATA_FOLDERNAME" xml:space="preserve">
     <value>AppLog</value>
   </data>
-  <data name="RAID" xml:space="preserve">
+  <data name="RAID_NAME" xml:space="preserve">
     <value>RAID</value>
   </data>
-  <data name="RESOURCES_DIR" xml:space="preserve">
+  <data name="AIR_RESOURCES_DIR" xml:space="preserve">
     <value>\\resources\\</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_100" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_100" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_125" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_125" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_150" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_150" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_175" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_175" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_200" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_200" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_225" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_225" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_250" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_250" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_300" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_300" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="ROTATING_CIRCLE_INNER_RADIUS_350" xml:space="preserve">
+  <data name="LOADING_CIRCLE_INNER_RADIUS_350" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_100" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_100" xml:space="preserve">
     <value>28</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_125" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_125" xml:space="preserve">
     <value>32</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_150" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_150" xml:space="preserve">
     <value>36</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_175" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_175" xml:space="preserve">
     <value>40</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_200" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_200" xml:space="preserve">
     <value>44</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_225" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_225" xml:space="preserve">
     <value>48</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_250" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_250" xml:space="preserve">
     <value>52</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_300" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_300" xml:space="preserve">
     <value>56</value>
   </data>
-  <data name="ROTATING_CIRCLE_NUMBER_SPOKE_350" xml:space="preserve">
+  <data name="LOADING_CIRCLE_NUMBER_SPOKE_350" xml:space="preserve">
     <value>60</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_100" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_100" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_125" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_125" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_150" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_150" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_175" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_175" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_200" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_200" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_225" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_225" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_250" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_250" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_300" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_300" xml:space="preserve">
     <value>32</value>
   </data>
-  <data name="ROTATING_CIRCLE_OUTER_RADIUS_350" xml:space="preserve">
+  <data name="LOADING_CIRCLE_OUTER_RADIUS_350" xml:space="preserve">
     <value>35</value>
   </data>
-  <data name="ROTATING_CIRCLE_ROTATION_SPEED" xml:space="preserve">
+  <data name="LOADING_CIRCLE_ROTATION_SPEED" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_100" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_100" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_125" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_125" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_150" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_150" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_175" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_175" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_200" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_200" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_225" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_225" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_250" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_250" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_300" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_300" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ROTATING_CIRCLE_SPOKE_THICKNESS_350" xml:space="preserve">
+  <data name="LOADING_CIRCLE_SPOKE_THICKNESS_350" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="SATA" xml:space="preserve">
+  <data name="CONNECTION_SATA_NAME" xml:space="preserve">
     <value>SATA</value>
   </data>
   <data name="SHUTDOWN_CMD_1" xml:space="preserve">
@@ -781,25 +658,22 @@
   <data name="SHUTDOWN_CMD_2" xml:space="preserve">
     <value>/r /f /t 0</value>
   </data>
-  <data name="SSD" xml:space="preserve">
+  <data name="STORAGE_TYPE_SSD_NAME" xml:space="preserve">
     <value>SSD</value>
-  </data>
-  <data name="SUPPLY_CONFIG_DATA" xml:space="preserve">
-    <value>/etc/config.json</value>
   </data>
   <data name="SYSTEM_ROM" xml:space="preserve">
     <value>SYSTEM ROM</value>
   </data>
-  <data name="TB" xml:space="preserve">
+  <data name="SIZE_TB" xml:space="preserve">
     <value>TB</value>
   </data>
-  <data name="THEME_REG_KEY" xml:space="preserve">
+  <data name="REGISTRY_THEME_KEY" xml:space="preserve">
     <value>AppsUseLightTheme</value>
   </data>
-  <data name="THEME_REG_PATH" xml:space="preserve">
+  <data name="REGISTRY_THEME_PATH" xml:space="preserve">
     <value>SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize</value>
   </data>
-  <data name="TIMER_INTERVAL" xml:space="preserve">
+  <data name="ALERT_TIMER_INTERVAL" xml:space="preserve">
     <value>1000</value>
   </data>
   <data name="TO_BE_FILLED_BY_OEM" xml:space="preserve">
@@ -814,10 +688,10 @@
   <data name="TPM_2_0_NAME" xml:space="preserve">
     <value>2.0</value>
   </data>
-  <data name="WIDTH" xml:space="preserve">
+  <data name="FOP_MIN_SCREEN_WIDTH" xml:space="preserve">
     <value>1366</value>
   </data>
-  <data name="WIN_10_IMG_DIR" xml:space="preserve">
+  <data name="WIN_10_FOP_IMG_DIR" xml:space="preserve">
     <value>\\windows10\\</value>
   </data>
   <data name="WIN_10_NT_BUILD" xml:space="preserve">
@@ -829,7 +703,7 @@
   <data name="WIN_10_NT_MINOR" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="WIN_11_IMG_DIR" xml:space="preserve">
+  <data name="WIN_11_FOP_IMG_DIR" xml:space="preserve">
     <value>\\windows11\\</value>
   </data>
   <data name="WIN_11_NT_BUILD" xml:space="preserve">
@@ -841,7 +715,7 @@
   <data name="WIN_11_NT_MINOR" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="WIN_7_IMG_DIR" xml:space="preserve">
+  <data name="WIN_7_FOP_IMG_DIR" xml:space="preserve">
     <value>\\windows7\\</value>
   </data>
   <data name="WIN_7_NT_BUILD" xml:space="preserve">
@@ -853,19 +727,19 @@
   <data name="WIN_7_NT_MINOR" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="WINDOWS_10" xml:space="preserve">
+  <data name="WIN_10_NAMENUM" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="WINDOWS_11" xml:space="preserve">
+  <data name="WIN_11_NAMENUM" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="WINDOWS_7" xml:space="preserve">
+  <data name="WIN_7_NAMENUM" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="WINDOWS_8" xml:space="preserve">
+  <data name="WIN_8_NAMENUM" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="WINDOWS_8_1" xml:space="preserve">
+  <data name="WIN_8_1_NAMENUM" xml:space="preserve">
     <value>8.1</value>
   </data>
   <data name="YES" xml:space="preserve">
@@ -877,10 +751,10 @@
   <data name="TRUE" xml:space="preserve">
     <value>True</value>
   </data>
-  <data name="X64" xml:space="preserve">
+  <data name="X64_NAME" xml:space="preserve">
     <value>x64</value>
   </data>
-  <data name="X86" xml:space="preserve">
+  <data name="X86_NAME" xml:space="preserve">
     <value>x86</value>
   </data>
   <data name="LABEL_SCROLL_SPEED" xml:space="preserve">
@@ -898,49 +772,46 @@
   <data name="GITHUB_REPO_FOP" xml:space="preserve">
     <value>features-overlay-presentation</value>
   </data>
-  <data name="AIR_API_URL" xml:space="preserve">
+  <data name="GITHUB_AIR_API_URL" xml:space="preserve">
     <value>https://api.github.com/repos/Kevin64/asset-information-and-registration/releases/latest</value>
   </data>
-  <data name="FOP_API_URL" xml:space="preserve">
+  <data name="GITHUB_FOP_API_URL" xml:space="preserve">
     <value>https://api.github.com/repos/Kevin64/features-overlay-presentation/releases/latest</value>
   </data>
-  <data name="BODY" xml:space="preserve">
+  <data name="GITHUB_BODY" xml:space="preserve">
     <value>Body</value>
   </data>
-  <data name="ETAG" xml:space="preserve">
+  <data name="GITHUB_ETAG" xml:space="preserve">
     <value>ETag</value>
   </data>
-  <data name="HTML_URL" xml:space="preserve">
+  <data name="GITHUB_HTML_URL" xml:space="preserve">
     <value>HtmlUrl</value>
   </data>
-  <data name="TAG_NAME" xml:space="preserve">
+  <data name="GITHUB_TAG_NAME" xml:space="preserve">
     <value>TagName</value>
   </data>
-  <data name="INI_SECTION_2_10" xml:space="preserve">
-    <value>CheckForUpdates</value>
-  </data>
-  <data name="PCI_E" xml:space="preserve">
+  <data name="CONNECTION_PCI_E_NAME" xml:space="preserve">
     <value>PCI-E</value>
   </data>
-  <data name="WMI_PCIE" xml:space="preserve">
+  <data name="WMI_PCIE_CODE" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="WMI_SATA" xml:space="preserve">
+  <data name="WMI_SATA_CODE" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="V1_API_AGENT_URL" xml:space="preserve">
+  <data name="APCS_V1_API_AGENT_URL" xml:space="preserve">
     <value>/api/v1/agent-username/</value>
   </data>
-  <data name="V1_API_ASSET_URL" xml:space="preserve">
+  <data name="APCS_V1_API_ASSET_URL" xml:space="preserve">
     <value>/api/v1/asset/</value>
   </data>
-  <data name="V1_API_MODEL_URL" xml:space="preserve">
+  <data name="APCS_V1_API_MODEL_URL" xml:space="preserve">
     <value>/api/v1/model/</value>
   </data>
-  <data name="V1_API_PARAMETERS_URL" xml:space="preserve">
+  <data name="APCS_V1_API_PARAMETERS_URL" xml:space="preserve">
     <value>/api/v1/parameters/</value>
   </data>
-  <data name="V1_API_AGENTS_URL" xml:space="preserve">
+  <data name="APCS_V1_API_AGENTS_URL" xml:space="preserve">
     <value>/api/v1/agent-id/</value>
   </data>
   <data name="DDR2_APCS" xml:space="preserve">
@@ -952,34 +823,28 @@
   <data name="DDR4_APCS_CODE" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="GHz" xml:space="preserve">
-    <value>GHz</value>
-  </data>
-  <data name="MHZ" xml:space="preserve">
-    <value>MHz</value>
-  </data>
   <data name="DATE_DISPLAY" xml:space="preserve">
     <value>dd/MM/yyyy</value>
   </data>
   <data name="HTTP_CONTENT_TYPE_JSON" xml:space="preserve">
     <value>application/json</value>
   </data>
-  <data name="EB" xml:space="preserve">
+  <data name="SIZE_EB" xml:space="preserve">
     <value>EB</value>
   </data>
-  <data name="KB" xml:space="preserve">
+  <data name="SIZE_KB" xml:space="preserve">
     <value>KB</value>
   </data>
-  <data name="PB" xml:space="preserve">
+  <data name="SIZE_PB" xml:space="preserve">
     <value>PB</value>
   </data>
   <data name="NOT_AVAILABLE_NAME" xml:space="preserve">
     <value>N/A</value>
   </data>
-  <data name="FREE_CODE" xml:space="preserve">
+  <data name="RAM_FREE_CODE" xml:space="preserve">
     <value>-2</value>
   </data>
-  <data name="IDE" xml:space="preserve">
+  <data name="CONNECTION_IDE_NAME" xml:space="preserve">
     <value>IDE</value>
   </data>
   <data name="NOT_AVAILABLE_CODE" xml:space="preserve">
@@ -1003,7 +868,10 @@
   <data name="DEV_STATUS_RC" xml:space="preserve">
     <value>RC</value>
   </data>
-  <data name="V1_API_ASSET_HWUID_URL" xml:space="preserve">
+  <data name="APCS_V1_API_ASSET_HWUID_URL" xml:space="preserve">
     <value>/api/v1/asset-hwuid/</value>
+  </data>
+  <data name="MEDIA_OPERATION_IDE" xml:space="preserve">
+    <value>IDE</value>
   </data>
 </root>

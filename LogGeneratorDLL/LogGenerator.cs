@@ -47,7 +47,7 @@ namespace LogGeneratorDLL
         {
             try
             {
-                txtWriter.WriteLine(GenericResources.LOG_SEPARATOR);
+                txtWriter.WriteLine(GenericResources.LOG_SEPARATOR_LARGE);
                 txtWriter.WriteLine();
                 txtWriter.WriteLine(softwareName);
                 txtWriter.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
@@ -56,7 +56,7 @@ namespace LogGeneratorDLL
                 if (consoleOut)
                 {
                     Console.ForegroundColor = StringsAndConstants.MISC_CONSOLE_COLOR;
-                    Console.WriteLine(GenericResources.LOG_SEPARATOR);
+                    Console.WriteLine(GenericResources.LOG_SEPARATOR_LARGE);
                     Console.WriteLine();
                     Console.WriteLine(softwareName);
                     Console.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());

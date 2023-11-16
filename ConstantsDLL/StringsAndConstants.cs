@@ -84,7 +84,7 @@ namespace ConstantsDLL
         public static readonly List<string> LIST_BATTERY_CLI = new List<string>() { LIST_NO_ABBREV, LIST_YES_ABBREV };
         public static readonly List<string> LIST_BATTERY_GUI = new List<string>() { UIStrings.LIST_NO_0, UIStrings.LIST_YES_0 };
         public static readonly List<string> LIST_STATES = new List<string>() { UIStrings.NOT_SUPPORTED, UIStrings.DEACTIVATED, UIStrings.ACTIVATED };
-        public static readonly List<string> LIST_STORAGE_CONNECTION_TYPES = new List<string>() { GenericResources.IDE, GenericResources.SATA, GenericResources.PCI_E };
+        public static readonly List<string> LIST_STORAGE_CONNECTION_TYPES = new List<string>() { GenericResources.CONNECTION_IDE_NAME, GenericResources.CONNECTION_SATA_NAME, GenericResources.CONNECTION_PCI_E_NAME };
         public static readonly List<string> LIST_TPM_TYPES = new List<string>() { GenericResources.NOT_AVAILABLE_NAME, GenericResources.TPM_1_2_NAME, GenericResources.TPM_2_0_NAME };
         public static readonly List<string> LIST_THEME_GUI = new List<string>() { "Auto", "Light", "Dark" };
 
@@ -113,8 +113,8 @@ namespace ConstantsDLL
         public static readonly Color INACTIVE_SYSTEM_BUTTON_COLOR = Color.FromArgb(204, 204, 204);
         public static readonly Color HIGHLIGHT_LABEL_COLOR = Color.FromArgb(127, 127, 127);
         public static readonly Color PRESSED_STRIP_BUTTON = Color.FromArgb(128, 128, 128);
-        public static readonly Color ROTATING_CIRCLE_COLOR = SystemColors.MenuHighlight;
-        public static readonly Color ROTATING_CIRCLE_BACKCOLOR = Color.Transparent;
+        public static readonly Color LOADING_CIRCLE_COLOR = SystemColors.MenuHighlight;
+        public static readonly Color LOADING_CIRCLE_BACKCOLOR = Color.Transparent;
         public static readonly Color LIGHT_INACTIVE_CAPTION_COLOR = SystemColors.InactiveCaption;
         public static readonly Color DARK_INACTIVE_CAPTION_COLOR = SystemColors.WindowFrame;
 
