@@ -31,7 +31,7 @@ namespace RestApiDLL
     }
 
     /// <summary> 
-    /// Class for handling a 'Config' json file
+    /// Class for handling config through a REST API
     /// </summary>
     public static class ParameterHandler
     {

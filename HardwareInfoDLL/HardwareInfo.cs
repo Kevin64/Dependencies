@@ -142,41 +142,87 @@ namespace HardwareInfoDLL
                 {
                     List<string> device = new List<string>();
 
-                    //Grabs processor ID (DeviceId property)
-                    cpuId = queryObj["DeviceId"].ToString();
-                    cpuIdAdj = Convert.ToInt32(cpuId.Substring(cpuId.Length - 1));
+                    try
+                    {
+                        //Grabs processor ID (DeviceId property)
+                        cpuId = queryObj["DeviceId"].ToString();
+                        cpuIdAdj = Convert.ToInt32(cpuId.Substring(cpuId.Length - 1));
+                    }
+                    catch (Exception)
+                    {
+                        cpuIdAdj = Convert.ToInt32(GenericResources.NOT_AVAILABLE_CODE);
+                    }
                     device.Add(cpuIdAdj.ToString());
 
-                    //Grabs processor name (Name property)
-                    cpuName = queryObj["Name"].ToString();
+                    try
+                    {
+                        //Grabs processor name (Name property)
+                        cpuName = queryObj["Name"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        cpuName = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(cpuName);
 
-                    //Grabs processor maximum clock speed (MaxClockSpeed property)
-                    cpuFreq = queryObj["MaxClockSpeed"].ToString();
+                    try
+                    {
+                        //Grabs processor maximum clock speed (MaxClockSpeed property)
+                        cpuFreq = queryObj["MaxClockSpeed"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        cpuFreq = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(cpuFreq);
 
-                    //Grabs processor number of cores (NumberOfCores property)
-                    cpuCores = queryObj["NumberOfCores"].ToString();
+                    try
+                    {
+                        //Grabs processor number of cores (NumberOfCores property)
+                        cpuCores = queryObj["NumberOfCores"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        cpuCores = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(cpuCores);
 
-                    //Grabs processor number of threads (NumberOfThreads property)
-                    cpuThreads = queryObj["NumberOfLogicalProcessors"].ToString();
+                    try
+                    {
+                        //Grabs processor number of threads (NumberOfThreads property)
+                        cpuThreads = queryObj["NumberOfLogicalProcessors"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        cpuThreads = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(cpuThreads);
 
-                    //Grabs processor cache memory (L2CacheSize or L3CacheSize property)
-                    if (queryObj["L3CacheSize"].ToString().Equals("0"))
-                        cpuCache = (Convert.ToInt64(queryObj["L2CacheSize"]) * 1024).ToString();
-                    else
-                        cpuCache = (Convert.ToInt64(queryObj["L3CacheSize"]) * 1024).ToString();
+                    try
+                    {
+                        //Grabs processor cache memory (L2CacheSize or L3CacheSize property)
+                        if (queryObj["L3CacheSize"].ToString().Equals("0"))
+                            cpuCache = (Convert.ToInt64(queryObj["L2CacheSize"]) * 1024).ToString();
+                        else
+                            cpuCache = (Convert.ToInt64(queryObj["L3CacheSize"]) * 1024).ToString();
+                    }
+                    catch (Exception)
+                    {
+                        cpuCache = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(cpuCache);
 
                     list.Add(device);
                 }
                 return list;
             }
-            catch (ManagementException)
+            catch (ManagementException e)
             {
-                return new List<List<string>>() { };
+                return new List<List<string>>() { new List<string> { e.Message } };
+            }
+            catch (Exception)
+            {
+                return new List<List<string>>() { new List<string> { GenericResources.NOT_AVAILABLE_CODE } };
             }
         }
 
@@ -407,19 +453,39 @@ namespace HardwareInfoDLL
 
                     if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
                     {
-                        //Grabs video card ID (DeviceId property)
-                        videoCardId = queryObj["DeviceId"].ToString();
-                        videoCardIdAdj = Convert.ToInt32(videoCardId.Substring(videoCardId.Length - 1)) - 1;
+                        try
+                        {
+                            //Grabs video card ID (DeviceId property)
+                            videoCardId = queryObj["DeviceId"].ToString();
+                            videoCardIdAdj = Convert.ToInt32(videoCardId.Substring(videoCardId.Length - 1)) - 1;
+                        }
+                        catch (Exception)
+                        {
+                            videoCardIdAdj = Convert.ToInt32(GenericResources.NOT_AVAILABLE_CODE);
+                        }
                         device.Add(videoCardIdAdj.ToString());
 
-                        //Grabs video card name (Name property)
-                        gpuName = queryObj["Name"].ToString();
+                        try
+                        {
+                            //Grabs video card name (Name property)
+                            gpuName = queryObj["Name"].ToString();
+                        }
+                        catch (Exception)
+                        {
+                            gpuName = GenericResources.NOT_AVAILABLE_CODE;
+                        }
                         device.Add(gpuName);
 
-                        //Grabs video card vRAM (AdapterRAM property)
-                        gpuRam = Convert.ToInt64(queryObj["AdapterRAM"]);
-                        gpuRamStr = gpuRam.ToString();
-
+                        try
+                        {
+                            //Grabs video card vRAM (AdapterRAM property)
+                            gpuRam = Convert.ToInt64(queryObj["AdapterRAM"]);
+                            gpuRamStr = gpuRam.ToString();
+                        }
+                        catch (Exception)
+                        {
+                            gpuRamStr = GenericResources.NOT_AVAILABLE_CODE;
+                        }
                         device.Add(gpuRamStr);
 
                         list.Add(device);
@@ -427,9 +493,13 @@ namespace HardwareInfoDLL
                 }
                 return list;
             }
-            catch (ManagementException)
+            catch (ManagementException e)
             {
-                return new List<List<string>>() { };
+                return new List<List<string>>() { new List<string> { e.Message } };
+            }
+            catch (Exception)
+            {
+                return new List<List<string>>() { new List<string> { GenericResources.NOT_AVAILABLE_CODE } };
             }
         }
 
@@ -636,6 +706,7 @@ namespace HardwareInfoDLL
         public static List<List<string>> GetStorageDeviceDetails()
         {
             string msftName = "Msft Virtual Disk", dresultStr;
+            string storageId, storageType, storageConnection, storageModel, storageSerialNumber;
             int size = 10;
             string[] type = new string[size];
             double dresult;
@@ -657,63 +728,111 @@ namespace HardwareInfoDLL
                             if ((Convert.ToInt16(queryObj["MediaType"]).Equals(3) || Convert.ToInt16(queryObj["MediaType"]).Equals(4) || Convert.ToInt16(queryObj["MediaType"]).Equals(0)) && !Convert.ToInt16(queryObj["BusType"]).Equals(7))
                             {
                                 List<string> device = new List<string>();
+                                bool smart;
 
-                                //Grabs storage ID (DeviceId property)
-                                string id = queryObj.GetPropertyValue("DeviceId").ToString();
-                                device.Add(id);
-
-                                //Grabs storage type (MediaType property)
-                                switch (Convert.ToInt16(queryObj["MediaType"]))
+                                try
                                 {
-                                    case 3:
+                                    //Grabs storage ID (DeviceId property)
+                                    storageId = queryObj["DeviceId"].ToString();
+                                }
+                                catch (Exception)
+                                {
+                                    storageId = GenericResources.NOT_AVAILABLE_CODE;
+                                }
+                                device.Add(storageId);
+
+                                try
+                                {
+                                    //Grabs storage type (MediaType property)
+                                    storageType = queryObj["MediaType"].ToString();
+                                }
+                                catch (Exception)
+                                {
+                                    storageType = GenericResources.NOT_AVAILABLE_CODE;
+                                }
+                                switch (storageType)
+                                {
+                                    case "3":
                                         device.Add(Convert.ToInt32(StorageTypes.HDD).ToString());
                                         break;
-                                    case 4:
+                                    case "4":
                                         device.Add(Convert.ToInt32(StorageTypes.SSD).ToString());
                                         break;
-                                    case 0:
+                                    case "0":
                                         device.Add(Convert.ToInt32(StorageTypes.HDD).ToString());
                                         break;
                                 }
 
-                                //Grabs storage total size (Size property)
-                                dresult = Convert.ToInt64(queryObj.GetPropertyValue("Size"));
-                                dresultStr = dresult.ToString();
+                                try
+                                {
+                                    //Grabs storage total size (Size property)
+                                    dresult = Convert.ToInt64(queryObj.GetPropertyValue("Size"));
+                                    dresultStr = dresult.ToString();
+                                }
+                                catch (Exception)
+                                {
+                                    dresultStr = GenericResources.NOT_AVAILABLE_CODE;
+                                }
                                 device.Add(dresultStr);
 
-                                bool smart;
-                                //Grabs connection type (BusType property)
-                                if (queryObj["BusType"].ToString() == GenericResources.WMI_SATA_CODE)
+                                try
                                 {
-                                    smart = true;
-                                    device.Add(Convert.ToInt32(StorageConnectionTypes.SATA).ToString());
+                                    //Grabs connection type (BusType property)
+                                    storageConnection = queryObj["BusType"].ToString();
+
+                                    if (storageConnection == GenericResources.WMI_SATA_CODE)
+                                    {
+                                        smart = true;
+                                        device.Add(Convert.ToInt32(StorageConnectionTypes.SATA).ToString());
+                                    }
+                                    else if (storageConnection == GenericResources.WMI_PCIE_CODE)
+                                    {
+                                        smart = false;
+                                        device.Add(Convert.ToInt32(StorageConnectionTypes.PCI_E).ToString());
+                                    }
+                                    else
+                                    {
+                                        smart = true;
+                                        device.Add(Convert.ToInt32(StorageConnectionTypes.IDE).ToString());
+                                    }
                                 }
-                                else if (queryObj["BusType"].ToString() == GenericResources.WMI_PCIE_CODE)
+                                catch (Exception)
                                 {
                                     smart = false;
-                                    device.Add(Convert.ToInt32(StorageConnectionTypes.PCI_E).ToString());
+                                    storageConnection = GenericResources.NOT_AVAILABLE_CODE;
+                                    device.Add(storageConnection);
                                 }
-                                else
+
+                                try
                                 {
-                                    smart = true;
-                                    device.Add(Convert.ToInt32(StorageConnectionTypes.IDE).ToString());
+                                    //Grabs storage model (Model property)
+                                    storageModel = queryObj["Model"].ToString();
                                 }
+                                catch (Exception)
+                                {
+                                    storageModel = GenericResources.NOT_AVAILABLE_CODE;
+                                }
+                                device.Add(storageModel);
 
-                                //Grabs storage model (Model property)
-                                string mod = queryObj["Model"].ToString();
-                                device.Add(mod);
-
-                                //Grabs storage serial number (SerialNumber property)
-                                string sn = queryObj["SerialNumber"].ToString();
-                                device.Add(sn);
+                                try
+                                {
+                                    //Grabs storage serial number (SerialNumber property)
+                                    storageSerialNumber = queryObj["SerialNumber"].ToString();
+                                }
+                                catch (Exception)
+                                {
+                                    storageSerialNumber = GenericResources.NOT_AVAILABLE_CODE;
+                                }
+                                device.Add(storageSerialNumber);
 
                                 if (smart)
                                 {
-                                    foreach (ManagementObject queryObj2 in searcher2.Get())
+                                    //Grabs storage S.M.A.R.T. status (PredictFailure property)
+                                    foreach (ManagementObject queryObj2 in searcher2.Get().Cast<ManagementObject>())
                                     {
                                         if (queryObj["Model"].ToString() == queryObj2["Model"].ToString())
                                         {
-                                            foreach (ManagementObject queryObj3 in searcher3.Get())
+                                            foreach (ManagementObject queryObj3 in searcher3.Get().Cast<ManagementObject>())
                                             {
                                                 if (queryObj3["InstanceName"].ToString().ToUpper().Contains(queryObj2["PNPDeviceID"].ToString().ToUpper()))
                                                 {
@@ -743,12 +862,111 @@ namespace HardwareInfoDLL
                 }
                 else
                 {
-                    return new List<List<string>>() { };
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
+
+                    foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
+                    {
+                        List<string> device = new List<string>();
+                        if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
+                        {
+                            try
+                            {
+                                //Grabs storage ID (Index property)
+                                storageId = queryObj.Properties["Index"].Value.ToString();
+                            }
+                            catch (Exception)
+                            {
+                                storageId = GenericResources.NOT_AVAILABLE_CODE;
+                            }
+                            device.Add(storageId);
+
+                            try
+                            {
+                                //Grabs storage type
+                                device.Add(Convert.ToInt32(StorageTypes.HDD).ToString());
+                            }
+                            catch (Exception)
+                            {
+                                device.Add(GenericResources.NOT_AVAILABLE_CODE);
+                            }
+
+                            try
+                            {
+                                //Grabs storage total size (Size property)
+                                dresult = Convert.ToInt64(queryObj.Properties["Size"].Value.ToString());
+                                dresultStr = dresult.ToString();
+                            }
+                            catch (Exception)
+                            {
+                                dresultStr = GenericResources.NOT_AVAILABLE_CODE;
+                            }
+                            device.Add(dresultStr);
+
+                            try
+                            {
+                                //Grabs connection type (InterfaceType property)
+                                storageConnection = queryObj["InterfaceType"].ToString();
+
+                                if (storageConnection.Equals(StorageConnectionTypes.IDE.ToString()))
+                                    device.Add(Convert.ToInt32(StorageConnectionTypes.SATA).ToString());
+                                else if (storageConnection.Equals("SCSI"))
+                                    device.Add(Convert.ToInt32(StorageConnectionTypes.PCI_E).ToString());
+                                else
+                                    device.Add(Convert.ToInt32(StorageConnectionTypes.IDE).ToString());
+                            }
+                            catch (Exception)
+                            {
+                                storageConnection = GenericResources.NOT_AVAILABLE_CODE;
+                                device.Add(storageConnection);
+                            }
+
+                            try
+                            {
+                                //Grabs storage model (Model property)
+                                storageModel = queryObj.Properties["Model"].Value.ToString();
+                            }
+                            catch (Exception)
+                            {
+                                storageModel = GenericResources.NOT_AVAILABLE_CODE;
+                            }
+                            device.Add(storageModel);
+
+                            try
+                            {
+                                //Grabs storage serial number (SerialNumber property)
+                                storageSerialNumber = queryObj.Properties["SerialNumber"].Value.ToString();
+                            }
+                            catch (Exception)
+                            {
+                                storageSerialNumber = GenericResources.NOT_AVAILABLE_CODE;
+                            }
+                            device.Add(storageSerialNumber);
+
+                            try
+                            {
+                                //Grabs storage S.M.A.R.T. status (Status property)
+                                if (queryObj.GetPropertyValue("Status").ToString() == "OK")
+                                    device.Add(Convert.ToInt32(SmartStates.OK).ToString());
+                                else
+                                    device.Add(Convert.ToInt32(SmartStates.Pred_Fail).ToString());
+                            }
+                            catch (Exception)
+                            {
+                                device.Add(GenericResources.NOT_AVAILABLE_CODE);
+                            }
+                            list.Add(device);
+                        }
+                    }
+                    return list;
                 }
             }
-            catch (ManagementException)
+            catch (ManagementException e)
             {
-                return new List<List<string>>() { };
+                return new List<List<string>>() { new List<string> { e.Message } };
+            }
+            catch (Exception)
+            {
+                return new List<List<string>>() { new List<string> { GenericResources.NOT_AVAILABLE_CODE } };
             }
         }
 
@@ -808,14 +1026,13 @@ namespace HardwareInfoDLL
         public static List<string> GetStorageTypeList()
         {
             IEnumerable<string> typeSliced;
+            int size = 10, i = 0;
+            string[] type = new string[size];
+            string msftName = "Msft Virtual Disk";
             try
             {
                 if (GetWinVersion().Equals(GenericResources.WIN_10_NAMENUM) || GetWinVersion().Equals(GenericResources.WIN_8_1_NAMENUM) || GetWinVersion().Equals(GenericResources.WIN_8_NAMENUM))
                 {
-                    int size = 10, i = 0;
-                    string[] type = new string[size];
-                    string msftName = "Msft Virtual Disk";
-
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\Microsoft\\Windows\\Storage", "SELECT * FROM MSFT_PhysicalDisk");
 
                     foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
@@ -848,10 +1065,6 @@ namespace HardwareInfoDLL
                 }
                 else
                 {
-                    int size = 10;
-                    int i = 0;
-                    string[] type = new string[size];
-
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
                     foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["Index"]))
@@ -1090,7 +1303,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\wmi", "SELECT * FROM MSStorageDriver_FailurePredictStatus");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (queryObj.GetPropertyValue("PredictFailure").ToString() == "False")
                             list.Add(Convert.ToInt32(SmartStates.OK).ToString());
@@ -1103,7 +1316,7 @@ namespace HardwareInfoDLL
                 {
                     ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");
 
-                    foreach (ManagementObject queryObj in searcher.Get())
+                    foreach (ManagementObject queryObj in searcher.Get().Cast<ManagementObject>())
                     {
                         if (!queryObj.Properties["MediaType"].Value.ToString().Equals("External hard disk media"))
                         {
@@ -1516,43 +1729,90 @@ namespace HardwareInfoDLL
                 {
                     List<string> device = new List<string>();
 
-                    //Grabs RAM slot (DeviceLocator property)
-                    ramSlot = queryObj["DeviceLocator"].ToString();
-                    ramSlot = ramSlot.Substring(ramSlot.Length - 1);
+                    try
+                    {
+                        //Grabs RAM slot (DeviceLocator property)
+                        ramSlot = queryObj["DeviceLocator"].ToString();
+                        ramSlot = ramSlot.Substring(ramSlot.Length - 1);
+                    }
+                    catch (Exception)
+                    {
+                        ramSlot = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(ramSlot);
 
-                    //Grabs RAM amount (Capacity property)
-                    ramAmount = queryObj["Capacity"].ToString();
+                    try
+                    {
+                        //Grabs RAM amount (Capacity property)
+                        ramAmount = queryObj["Capacity"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        ramAmount = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(ramAmount);
 
-                    //Grabs RAM type (SMBIOSMemoryType or MemoryType property)
-                    if (GetWinVersion().Equals(GenericResources.WIN_10_NAMENUM))
-                        ramType = queryObj["SMBIOSMemoryType"].ToString();
-                    else
-                        ramType = queryObj["MemoryType"].ToString();
+                    try
+                    {
+                        //Grabs RAM type (SMBIOSMemoryType or MemoryType property)
+                        if (GetWinVersion().Equals(GenericResources.WIN_10_NAMENUM))
+                            ramType = queryObj["SMBIOSMemoryType"].ToString();
+                        else
+                            ramType = queryObj["MemoryType"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        ramType = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(ramType);
 
-                    //Grabs RAM speed (Speed property)
-                    ramFrequency = queryObj["Speed"].ToString();
+                    try
+                    {
+                        //Grabs RAM speed (Speed property)
+                        ramFrequency = queryObj["Speed"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        ramFrequency = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(ramFrequency);
 
-                    //Grabs RAM Serial Number (SerialNumber property)
-                    ramSerialNumber = queryObj["SerialNumber"].ToString();
+                    try
+                    {
+                        //Grabs RAM Serial Number (SerialNumber property)
+                        ramSerialNumber = queryObj["SerialNumber"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        ramSerialNumber = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(ramSerialNumber);
 
-                    //Grabs RAM PartNumber (PartNumber property)
-                    ramPartNumber = queryObj["PartNumber"].ToString();
-
+                    try
+                    {
+                        //Grabs RAM PartNumber (PartNumber property)
+                        ramPartNumber = queryObj["PartNumber"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        ramPartNumber = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(ramPartNumber);
 
-                    //Grabs RAM Manufacturer (Manufacturer property)
-                    ramManufacturer = queryObj["Manufacturer"].ToString();
+                    try
+                    {
+                        //Grabs RAM Manufacturer (Manufacturer property)
+                        ramManufacturer = queryObj["Manufacturer"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        ramManufacturer = GenericResources.NOT_AVAILABLE_CODE;
+                    }
                     device.Add(ramManufacturer);
 
                     count++;
                     list.Add(device);
                 }
-
 
                 ManagementObjectSearcher searcher2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemoryArray");
                 foreach (ManagementObject queryObj in searcher2.Get().Cast<ManagementObject>())
@@ -1575,9 +1835,13 @@ namespace HardwareInfoDLL
 
                 return list;
             }
-            catch (ManagementException)
+            catch (ManagementException e)
             {
-                return new List<List<string>>() { };
+                return new List<List<string>>() { new List<string> { e.Message } };
+            }
+            catch (Exception)
+            {
+                return new List<List<string>>() { new List<string> { GenericResources.NOT_AVAILABLE_CODE } };
             }
         }
 
