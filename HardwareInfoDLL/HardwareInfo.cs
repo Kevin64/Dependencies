@@ -2579,11 +2579,11 @@ namespace HardwareInfoDLL
                         flag = GetFirmwareType() == Convert.ToInt32(FirmwareTypes.UEFI).ToString() ? Convert.ToInt32(VirtualizationTechnologyStates.DISABLED) : Convert.ToInt32(VirtualizationTechnologyStates.NOT_SUPPORTED);
                 }
                 if (flag == Convert.ToInt32(VirtualizationTechnologyStates.ENABLED))
-                    return Convert.ToInt32(SecureBootStates.ENABLED).ToString();
+                    return Convert.ToInt32(VirtualizationTechnologyStates.ENABLED).ToString();
                 else if (flag == Convert.ToInt32(VirtualizationTechnologyStates.DISABLED))
-                    return Convert.ToInt32(SecureBootStates.DISABLED).ToString();
+                    return Convert.ToInt32(VirtualizationTechnologyStates.DISABLED).ToString();
                 else
-                    return Convert.ToInt32(SecureBootStates.NOT_SUPPORTED).ToString();
+                    return Convert.ToInt32(VirtualizationTechnologyStates.NOT_SUPPORTED).ToString();
             }
             catch (ManagementException e)
             {
