@@ -124,6 +124,9 @@
   <data name="LOG_ACCESS_APCS" xml:space="preserve">
     <value>Accessing APCS</value>
   </data>
+  <data name="LOG_ADDING_REG" xml:space="preserve">
+    <value>Adding registry keys</value>
+  </data>
   <data name="LOG_AD_REGISTERED" xml:space="preserve">
     <value>Active Directory registered</value>
   </data>
@@ -156,6 +159,9 @@
   </data>
   <data name="LOG_CLI_MODE" xml:space="preserve">
     <value>Arguments detected, starting in CLI mode. List of arguments</value>
+  </data>
+  <data name="LOG_CLOSING" xml:space="preserve">
+    <value>Closing program</value>
   </data>
   <data name="LOG_CLOSING_ABOUTBOX" xml:space="preserve">
     <value>Closing About window</value>
@@ -202,8 +208,23 @@
   <data name="LOG_DEBUG_MODE" xml:space="preserve">
     <value>Running in DEBUG mode</value>
   </data>
+  <data name="LOG_DETECTING_OS" xml:space="preserve">
+    <value>Detecting operating system</value>
+  </data>
+  <data name="LOG_DISABLE_BOOT" xml:space="preserve">
+    <value>Do not run on boot</value>
+  </data>
+  <data name="LOG_EMPLOYEEAWAY" xml:space="preserve">
+    <value>Absent employee</value>
+  </data>
+  <data name="LOG_EMPLOYEEPRESENT" xml:space="preserve">
+    <value>Employee present</value>
+  </data>
   <data name="LOG_END_COLLECTING" xml:space="preserve">
     <value>Completion of hardware collection</value>
+  </data>
+  <data name="LOG_ENUM_FILES" xml:space="preserve">
+    <value>Gathering image files</value>
   </data>
   <data name="LOG_FETCHING_ASSET_DATA" xml:space="preserve">
     <value>Searching asset information</value>
@@ -235,6 +256,9 @@
   <data name="LOG_FIRMWARE_VIRTUALIZATION_TECHNOLOGY" xml:space="preserve">
     <value>Virtualization Technology</value>
   </data>
+  <data name="LOG_FORMAT_SERVICE" xml:space="preserve">
+    <value>Formatting</value>
+  </data>
   <data name="LOG_GITHUB_UNREACHABLE" xml:space="preserve">
     <value>GitHub unreachable</value>
   </data>
@@ -256,6 +280,12 @@
   <data name="LOG_HEADER" xml:space="preserve">
     <value>------------------------ EXECUTION LOG ------------------------</value>
   </data>
+  <data name="LOG_IMG_FOUND" xml:space="preserve">
+    <value>Found image directory</value>
+  </data>
+  <data name="LOG_IMG_NOTFOUND" xml:space="preserve">
+    <value>Image directory not found</value>
+  </data>
   <data name="LOG_INIT" xml:space="preserve">
     <value>Start of execution</value>
   </data>
@@ -271,6 +301,9 @@
   <data name="LOG_LOGIN_SUCCESS" xml:space="preserve">
     <value>Authentication performed successfully</value>
   </data>
+  <data name="LOG_MAINTENANCE_SERVICE" xml:space="preserve">
+    <value>Maintenance</value>
+  </data>
   <data name="LOG_MODEL_NOT_EXIST" xml:space="preserve">
     <value>Model not present in database</value>
   </data>
@@ -282,6 +315,12 @@
   </data>
   <data name="LOG_NETWORK_MAC_ADDRESS" xml:space="preserve">
     <value>Primary MAC Address</value>
+  </data>
+  <data name="LOG_NOTSCHEDULING" xml:space="preserve">
+    <value>Deleting a record in the database</value>
+  </data>
+  <data name="LOG_NOT_ADDING_REG" xml:space="preserve">
+    <value>Not adding registry keys</value>
   </data>
   <data name="LOG_NO_INTERNET_AVAILABLE" xml:space="preserve">
     <value>No internet connection available</value>
@@ -327,6 +366,9 @@
   </data>
   <data name="LOG_PARAMETER_FILE_NOT_FOUND" xml:space="preserve">
     <value>Parameters file not found</value>
+  </data>
+  <data name="LOG_PATR_NUM" xml:space="preserve">
+    <value>Asset number</value>
   </data>
   <data name="LOG_PENDENCY_ERROR" xml:space="preserve">
     <value>Issues detected in the configuration</value>
@@ -379,20 +421,44 @@
   <data name="LOG_RAM_TYPE" xml:space="preserve">
     <value>RAM module type</value>
   </data>
+  <data name="LOG_REGISTERING_DELIVERY" xml:space="preserve">
+    <value>Registering delivery</value>
+  </data>
   <data name="LOG_REGISTRY_FINISHED" xml:space="preserve">
     <value>Registration finished</value>
   </data>
   <data name="LOG_RELEASE_MODE" xml:space="preserve">
     <value>Running in RELEASE mode</value>
   </data>
+  <data name="LOG_REMOVING_REG" xml:space="preserve">
+    <value>Undoing registry keys</value>
+  </data>
+  <data name="LOG_RESOLUTION_ERROR" xml:space="preserve">
+    <value>Resolution error</value>
+  </data>
+  <data name="LOG_RESOLUTION_FAILED" xml:space="preserve">
+    <value>Resolution below requirement</value>
+  </data>
+  <data name="LOG_RESOLUTION_PASSED" xml:space="preserve">
+    <value>Suitable display resolution</value>
+  </data>
+  <data name="LOG_RUNNING" xml:space="preserve">
+    <value>Running main window</value>
+  </data>
   <data name="LOG_SAMEWORD_NOFIRSTREGISTRY" xml:space="preserve">
     <value>One or more 'same' arguments detected, however there is no existing record for the current asset. Computer must be registered first via GUI or via CLI with all command line options correctly filled in</value>
+  </data>
+  <data name="LOG_SCHEDULING" xml:space="preserve">
+    <value>Creating boot entry</value>
   </data>
   <data name="LOG_SERVER_DATA" xml:space="preserve">
     <value>Server and port</value>
   </data>
   <data name="LOG_SERVICES_MADE" xml:space="preserve">
     <value>Services made</value>
+  </data>
+  <data name="LOG_SERVICE_TYPE" xml:space="preserve">
+    <value>Service type</value>
   </data>
   <data name="LOG_SHOWING_HELP" xml:space="preserve">
     <value>Displaying list of commands</value>

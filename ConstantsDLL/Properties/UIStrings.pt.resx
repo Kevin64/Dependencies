@@ -160,6 +160,9 @@
   <data name="COLLECTION_ERROR" xml:space="preserve">
     <value>Erro na coleta. Programa será fechado</value>
   </data>
+  <data name="DATABASE_REACH_ERROR" xml:space="preserve">
+    <value>Erro ao contatar o banco de dados, verifique a sua conexão com a intranet e se o servidor web está ativo!</value>
+  </data>
   <data name="DEACTIVATED" xml:space="preserve">
     <value>Desativado</value>
   </data>

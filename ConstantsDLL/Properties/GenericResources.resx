@@ -874,4 +874,7 @@
   <data name="MEDIA_OPERATION_IDE" xml:space="preserve">
     <value>IDE</value>
   </data>
+  <data name="FOP_RESOURCES_DIR" xml:space="preserve">
+    <value>\\resources\\</value>
+  </data>
 </root>

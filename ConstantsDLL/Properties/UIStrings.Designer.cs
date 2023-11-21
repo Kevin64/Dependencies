@@ -187,6 +187,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Error contacting the database, check your intranet connection and that the web server is up!.
+        /// </summary>
+        public static string DATABASE_REACH_ERROR {
+            get {
+                return ResourceManager.GetString("DATABASE_REACH_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Disabled.
         /// </summary>
         public static string DEACTIVATED {

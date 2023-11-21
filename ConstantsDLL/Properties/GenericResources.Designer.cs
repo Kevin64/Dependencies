@@ -421,6 +421,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a \\resources\\.
+        /// </summary>
+        public static string FOP_RESOURCES_DIR {
+            get {
+                return ResourceManager.GetString("FOP_RESOURCES_DIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a MHz.
         /// </summary>
         public static string FREQUENCY_MHZ {
