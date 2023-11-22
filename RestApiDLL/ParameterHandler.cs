@@ -28,6 +28,7 @@ namespace RestApiDLL
         public int SealNumberDigitLimit { get; set; }
         public int RoomNumberDigitLimit { get; set; }
         public int TicketNumberDigitLimit { get; set; }
+        public int DeliveryRegistrationNumberDigitLimit { get; set; }
     }
 
     /// <summary> 
