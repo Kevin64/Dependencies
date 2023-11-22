@@ -877,4 +877,7 @@
   <data name="FOP_RESOURCES_DIR" xml:space="preserve">
     <value>\\resources\\</value>
   </data>
+  <data name="APCS_V1_API_DELIVERY_URL" xml:space="preserve">
+    <value>/api/v1/delivery/</value>
+  </data>
 </root>

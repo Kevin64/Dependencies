@@ -124,6 +124,15 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/delivery/.
+        /// </summary>
+        public static string APCS_V1_API_DELIVERY_URL {
+            get {
+                return ResourceManager.GetString("APCS_V1_API_DELIVERY_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/model/.
         /// </summary>
         public static string APCS_V1_API_MODEL_URL {
