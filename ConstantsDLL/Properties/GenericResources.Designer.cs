@@ -88,38 +88,38 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-username/.
-        /// </summary>
-        public static string APCS_V1_API_AGENT_URL {
-            get {
-                return ResourceManager.GetString("APCS_V1_API_AGENT_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-id/.
         /// </summary>
-        public static string APCS_V1_API_AGENTS_URL {
+        public static string APCS_V1_API_AGENT_ID_URL {
             get {
-                return ResourceManager.GetString("APCS_V1_API_AGENTS_URL", resourceCulture);
+                return ResourceManager.GetString("APCS_V1_API_AGENT_ID_URL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/asset-hwuid/.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/agent-username/.
         /// </summary>
-        public static string APCS_V1_API_ASSET_HWUID_URL {
+        public static string APCS_V1_API_AGENT_USERNAME_URL {
             get {
-                return ResourceManager.GetString("APCS_V1_API_ASSET_HWUID_URL", resourceCulture);
+                return ResourceManager.GetString("APCS_V1_API_AGENT_USERNAME_URL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/asset/.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/asset-hash/.
         /// </summary>
-        public static string APCS_V1_API_ASSET_URL {
+        public static string APCS_V1_API_ASSET_HASH_URL {
             get {
-                return ResourceManager.GetString("APCS_V1_API_ASSET_URL", resourceCulture);
+                return ResourceManager.GetString("APCS_V1_API_ASSET_HASH_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a /api/v1/asset-number/.
+        /// </summary>
+        public static string APCS_V1_API_ASSET_NUMBER_URL {
+            get {
+                return ResourceManager.GetString("APCS_V1_API_ASSET_NUMBER_URL", resourceCulture);
             }
         }
         

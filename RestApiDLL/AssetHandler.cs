@@ -63,6 +63,10 @@ namespace RestApiDLL
         public List<ram> ram { get; set; }
         public List<storage> storage { get; set; }
         public List<videoCard> videoCard { get; set; }
+        public hardware ShallowCopy()
+        {
+            return (hardware)MemberwiseClone();
+        }
     }
 
     /// <summary> 
