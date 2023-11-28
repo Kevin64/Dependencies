@@ -2369,7 +2369,7 @@ namespace HardwareInfoDLL
                     }
                     else if (GetWinVersion().Equals(GenericResources.WIN_8_1_NAMENUM) || GetWinVersion().Equals(GenericResources.WIN_8_NAMENUM))
                     {
-                        return null;
+                        return string.Empty;
                     }
                     else
                     {
