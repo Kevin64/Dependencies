@@ -42,12 +42,12 @@ namespace RestApiDLL
     /// </summary>
     public class firmware
     {
-        public string mediaOperationMode { get; set; }
-        public string secureBoot { get; set; }
-        public string tpmVersion { get; set; }
-        public string type { get; set; }
-        public string version { get; set; }
-        public string virtualizationTechnology { get; set; }
+        public string fwMediaOperationMode { get; set; }
+        public string fwSecureBoot { get; set; }
+        public string fwTpmVersion { get; set; }
+        public string fwType { get; set; }
+        public string fwVersion { get; set; }
+        public string fwVirtualizationTechnology { get; set; }
     }
 
     /// <summary> 
@@ -55,10 +55,10 @@ namespace RestApiDLL
     /// </summary>
     public class hardware
     {
-        public string brand { get; set; }
-        public string model { get; set; }
-        public string serialNumber { get; set; }
-        public string type { get; set; }
+        public string hwBrand { get; set; }
+        public string hwModel { get; set; }
+        public string hwSerialNumber { get; set; }
+        public string hwType { get; set; }
         public List<processor> processor { get; set; }
         public List<ram> ram { get; set; }
         public List<storage> storage { get; set; }
@@ -74,12 +74,12 @@ namespace RestApiDLL
     /// </summary>
     public class processor
     {
-        public string processorId { get; set; }
-        public string name { get; set; }
-        public string frequency { get; set; }
-        public string numberOfCores { get; set; }
-        public string numberOfThreads { get; set; }
-        public string cache { get; set; }
+        public string procId { get; set; }
+        public string procName { get; set; }
+        public string procFrequency { get; set; }
+        public string procNumberOfCores { get; set; }
+        public string procNumberOfThreads { get; set; }
+        public string procCache { get; set; }
     }
 
     /// <summary> 
@@ -87,13 +87,13 @@ namespace RestApiDLL
     /// </summary>
     public class ram
     {
-        public string slot { get; set; }
-        public string amount { get; set; }
-        public string type { get; set; }
-        public string frequency { get; set; }
-        public string serialNumber { get; set; }
-        public string partNumber { get; set; }
-        public string manufacturer { get; set; }
+        public string ramSlot { get; set; }
+        public string ramAmount { get; set; }
+        public string ramType { get; set; }
+        public string ramFrequency { get; set; }
+        public string ramSerialNumber { get; set; }
+        public string ramPartNumber { get; set; }
+        public string ramManufacturer { get; set; }
     }
 
     /// <summary> 
@@ -101,13 +101,13 @@ namespace RestApiDLL
     /// </summary>
     public class storage
     {
-        public string storageId { get; set; }
-        public string connection { get; set; }
-        public string model { get; set; }
-        public string serialNumber { get; set; }
-        public string size { get; set; }
-        public string smartStatus { get; set; }
-        public string type { get; set; }
+        public string storId { get; set; }
+        public string storConnection { get; set; }
+        public string storModel { get; set; }
+        public string storSerialNumber { get; set; }
+        public string storSize { get; set; }
+        public string storSmartStatus { get; set; }
+        public string storType { get; set; }
     }
 
     /// <summary> 
@@ -115,9 +115,9 @@ namespace RestApiDLL
     /// </summary>
     public class videoCard
     {
-        public string videoCardId { get; set; }
-        public string name { get; set; }
-        public string vRam { get; set; }
+        public string vcId { get; set; }
+        public string vcName { get; set; }
+        public string vcRam { get; set; }
     }
 
     /// <summary> 
@@ -125,11 +125,11 @@ namespace RestApiDLL
     /// </summary>
     public class location
     {
-        public string building { get; set; }
-        public string deliveredToRegistrationNumber { get; set; }
-        public string lastDeliveryDate { get; set; }
-        public string lastDeliveryMadeBy { get; set; }
-        public string roomNumber { get; set; }
+        public string locBuilding { get; set; }
+        public string locDeliveredToRegistrationNumber { get; set; }
+        public string locLastDeliveryDate { get; set; }
+        public string locLastDeliveryMadeBy { get; set; }
+        public string locRoomNumber { get; set; }
     }
 
     /// <summary> 
@@ -137,11 +137,11 @@ namespace RestApiDLL
     /// </summary>
     public class maintenances
     {
-        public string agentId { get; set; }
-        public string batteryChange { get; set; }
-        public string serviceDate { get; set; }
-        public string serviceType { get; set; }
-        public string ticketNumber { get; set; }
+        public string mainAgentId { get; set; }
+        public string mainBatteryChange { get; set; }
+        public string mainServiceDate { get; set; }
+        public string mainServiceType { get; set; }
+        public string mainTicketNumber { get; set; }
     }
 
     /// <summary> 
@@ -149,9 +149,9 @@ namespace RestApiDLL
     /// </summary>
     public class network
     {
-        public string hostname { get; set; }
-        public string ipAddress { get; set; }
-        public string macAddress { get; set; }
+        public string netHostname { get; set; }
+        public string netIpAddress { get; set; }
+        public string netMacAddress { get; set; }
     }
 
     /// <summary> 
@@ -159,10 +159,10 @@ namespace RestApiDLL
     /// </summary>
     public class operatingSystem
     {
-        public string arch { get; set; }
-        public string build { get; set; }
-        public string name { get; set; }
-        public string version { get; set; }
+        public string osArch { get; set; }
+        public string osBuild { get; set; }
+        public string osName { get; set; }
+        public string osVersion { get; set; }
     }
 
     /// <summary> 
