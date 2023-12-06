@@ -1779,6 +1779,17 @@ namespace HardwareInfoDLL
 
                     try
                     {
+                        //Grabs RAM Manufacturer (Manufacturer property)
+                        ramManufacturer = queryObj["Manufacturer"].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        ramManufacturer = GenericResources.NOT_AVAILABLE_CODE;
+                    }
+                    device.Add(ramManufacturer);
+
+                    try
+                    {
                         //Grabs RAM Serial Number (SerialNumber property)
                         ramSerialNumber = queryObj["SerialNumber"].ToString();
                     }
@@ -1798,17 +1809,6 @@ namespace HardwareInfoDLL
                         ramPartNumber = GenericResources.NOT_AVAILABLE_CODE;
                     }
                     device.Add(ramPartNumber);
-
-                    try
-                    {
-                        //Grabs RAM Manufacturer (Manufacturer property)
-                        ramManufacturer = queryObj["Manufacturer"].ToString();
-                    }
-                    catch (Exception)
-                    {
-                        ramManufacturer = GenericResources.NOT_AVAILABLE_CODE;
-                    }
-                    device.Add(ramManufacturer);
 
                     count++;
                     list.Add(device);
