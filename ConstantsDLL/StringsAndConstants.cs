@@ -52,18 +52,17 @@ namespace ConstantsDLL
         public const string OPTIONAL = "Optional";
 
         //CLI switch text
-        public const string CLI_HELP_TEXT_SERVER_IP = "APCS server IP address (Ex.: 192.168.1.100, 10.0.0.10, localhost, etc. Modify INI file for fixed configuration. The first IP in the file will be chosen if the parameter is absent) - " + OPTIONAL;
-        public const string CLI_HELP_TEXT_SERVER_PORT = "APCS server port (Ex.: 80, 8080, etc. Modify INI file for fixed configuration. The first port in the file will be chosen if the parameter is absent) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_SERVER_IP = "APCS server IP address (Ex.: 192.168.1.100, 10.0.0.10, localhost, etc. Modify JSON file for fixed configuration. The first IP in the file will be chosen if the parameter is absent) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_SERVER_PORT = "APCS server port (Ex.: 80, 8080, etc. Modify JSON file for fixed configuration. The first port in the file will be chosen if the parameter is absent) - " + OPTIONAL;
         public const string CLI_HELP_TEXT_SERVICE_TYPE = "Type of service performed (Possible values: \'" + CLI_SERVICE_TYPE_1 + "\' for maintenance (default), \'" + CLI_SERVICE_TYPE_0 + "\' for formatting) - " + OPTIONAL;
-        public const string CLI_HELP_TEXT_ASSET_NUMBER = "Equipment's asset number (Ex.: 123456). If the parameter is absent, it will be collected by hostname PC-123456 (default) - " + OPTIONAL;
-        public const string CLI_HELP_TEXT_SEAL_NUMBER = "Equipament's seal number (if exists) (Ex.: 12345678, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
-        public const string CLI_HELP_TEXT_ROOM_NUMBER = "Room where the equipment will be located (Ex.: 1234, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_ASSET_NUMBER = "Equipment's asset number (Ex.: 123456). Digit number limit is defined by APCS predefined parameters - " + MANDATORY;
+        public const string CLI_HELP_TEXT_SEAL_NUMBER = "Equipament's seal number (if exists) (Ex.: 12345678, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged). Digit number limit is defined by APCS predefined parameters - " + OPTIONAL;
+        public const string CLI_HELP_TEXT_ROOM_NUMBER = "Room where the equipment will be located (Ex.: 1234, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged). Digit number limit is defined by APCS predefined parameters - " + OPTIONAL;
         public const string CLI_HELP_TEXT_BUILDING = "Building where the equipment will be located (Possible values: see APCS for a list of building names, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
-        public const string CLI_HELP_TEXT_AD_REGISTERED = "Registered in Active Directory (Possible values: \'" + LIST_YES_ABBREV + "\' (Yes), \'" + LIST_NO_ABBREV + "\' (No), or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
         public const string CLI_HELP_TEXT_STANDARD = "Type of image deployed (Possible values: \'" + CLI_EMPLOYEE_TYPE_1 + "\' for student, \'" + CLI_EMPLOYEE_TYPE_0 + "\' for employee, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
         public const string CLI_HELP_TEXT_SERVICE_DATE = "Date of service performed (Possible values: \'" + CLI_DEFAULT_SERVICE_DATE + "\' (default), or specify a date in the 'yyyy-mm-dd' format, ex.: 2020-12-25) - " + OPTIONAL;
         public const string CLI_HELP_TEXT_BATTERY_CHANGE = "CMOS Battery replaced? (Possible values: \'" + LIST_YES_ABBREV + "\' (Yes), \'" + LIST_NO_ABBREV + "\' (No)) - " + MANDATORY;
-        public const string CLI_HELP_TEXT_TICKET_NUMBER = "Ticket number (Ex.: 123456) - " + MANDATORY;
+        public const string CLI_HELP_TEXT_TICKET_NUMBER = "Ticket number (Ex.: 123456). Digit number limit is defined by APCS predefined parameters - " + MANDATORY;
         public const string CLI_HELP_TEXT_IN_USE = "Equipment in use? (Possible values: \'" + LIST_YES_ABBREV + "\' (Yes), \'" + LIST_NO_ABBREV + "\' (No), or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
         public const string CLI_HELP_TEXT_TAG = "Does the equipment have a label? (Possible value: \'" + LIST_YES_ABBREV + "\' (Yes), \'" + LIST_NO_ABBREV + "\' (No), or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
         public const string CLI_HELP_TEXT_HW_TYPE = "Equipment category (Possible values: see APCS for a list of categories, or \'" + CLI_DEFAULT_UNCHANGED + "\' (default) to keep unchanged) - " + OPTIONAL;
