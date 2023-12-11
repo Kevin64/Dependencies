@@ -451,7 +451,7 @@ namespace HardwareInfoDLL
                 {
                     List<string> device = new List<string>();
 
-                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
+                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter") && queryObj["Availability"].ToString().Equals("3"))
                     {
                         try
                         {
@@ -519,7 +519,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
-                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
+                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter") && queryObj["Availability"].ToString().Equals("3"))
                     {
                         videoCardId = queryObj["DeviceId"].ToString();
                         videoCardIdAdj = Convert.ToInt32(videoCardId.Substring(videoCardId.Length - 1)) - 1;
@@ -549,7 +549,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
-                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
+                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter") && queryObj["Availability"].ToString().Equals("3"))
                     {
                         gpuName = queryObj["Name"].ToString();
                         list.Add(gpuName);
@@ -579,7 +579,7 @@ namespace HardwareInfoDLL
 
                 foreach (ManagementObject queryObj in searcher.Get().OfType<ManagementObject>().OrderBy(obj => obj["DeviceId"]))
                 {
-                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter"))
+                    if (!queryObj["Caption"].ToString().Equals("Microsoft Remote Display Adapter") && queryObj["Availability"].ToString().Equals("3"))
                     {
                         gpuRam = Convert.ToInt64(queryObj["AdapterRAM"]);
                         gpuRamStr = gpuRam.ToString();
