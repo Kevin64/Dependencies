@@ -16,3 +16,4 @@
 /LogGeneratorDLL/bin/*
 /LogGeneratorDLL/obj/*
 /packages/*
+.vs/*

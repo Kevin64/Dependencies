@@ -2212,7 +2212,7 @@ namespace ConstantsDLL.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 22621.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 22000.
         /// </summary>
         public static string WIN_11_NT_BUILD {
             get {

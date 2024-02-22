@@ -2279,7 +2279,10 @@ namespace HardwareInfoDLL
                                 operatingSystem = GenericResources.WIN_8_1_NAMENUM;
                             break;
                         case 10:
-                            operatingSystem = GenericResources.WIN_10_NAMENUM;
+                            if(vs.Build >= Convert.ToInt32(GenericResources.WIN_11_NT_BUILD))
+                                operatingSystem = GenericResources.WIN_11_NAMENUM;
+                            else
+                                operatingSystem = GenericResources.WIN_10_NAMENUM;
                             break;
                         default:
                             break;
